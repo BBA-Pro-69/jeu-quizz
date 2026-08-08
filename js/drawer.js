@@ -13,7 +13,7 @@
 
 var LS_VUES = 'quiz.vues.v1';
 
-/* Valeurs de secours, si categories.json ne fournit pas encore le bloc
+/* Valeurs de secours, si categories.json ne fournit pas le bloc
    "handicaps". La source de vérité reste le JSON. */
 var HANDICAPS = {
   expert:     { label: 'Expert',     pct: 0,  plusMoins: 0, weight: 1.00 },
@@ -33,6 +33,7 @@ function lireVues() {
   try { return JSON.parse(localStorage.getItem(LS_VUES)) || {}; }
   catch (e) { return {}; }
 }
+
 function ecrireVues(v) {
   try { localStorage.setItem(LS_VUES, JSON.stringify(v)); }
   catch (e) { /* navigation privée, quota plein : on continue sans mémoire */ }
@@ -58,13 +59,13 @@ async function lireJson(url) {
    générosité, 6 % (« touches d'un piano ») reste une vraie question.
 
    Rappel : en mode « le plus proche gagne », rien de tout ceci ne
-   s'applique. On compare des écarts pondérés par le weight du
-   handicap (voir ecartPondere ci-dessous). C'est le comportement
+   s'applique. C'est ecartPondere qui décide. Et c'est le comportement
    par défaut des estimations en partie familiale.
    --------------------------------------------------------------- */
 function marge(q, handicap) {
   if (!q || q.type !== 'estimation' || typeof q.answer !== 'number') return null;
-  var h = (typeof handicap === 'string' ? HANDICAPS[handicap] : handicap) || HANDICAPS.normal;
+
+  var h   = (typeof handicap === 'string' ? HANDICAPS[handicap] : handicap) || HANDICAPS.normal;
   var tol = q.tol || {};
   var ecart;
 
@@ -80,18 +81,29 @@ function marge(q, handicap) {
   return { ecart: ecart, min: q.answer - ecart, max: q.answer + ecart };
 }
 
+/* ---------------------------------------------------------------
+   Mode « le plus proche gagne » : on ne tolère rien, on pondère.
+   L'écart de chaque joueur est divisé par le weight de son handicap
+   avant comparaison. Un enfant qui se trompe de 145 fait aussi bien
+   qu'un expert qui se trompe de 100.
+   --------------------------------------------------------------- */
+function ecartPondere(reponseJoueur, q, handicap) {
+  var h = (typeof handicap === 'string' ? HANDICAPS[handicap] : handicap) || HANDICAPS.normal;
+  return Math.abs(reponseJoueur - q.answer) / (h.weight || 1);
+}
+
 /* =====================================================================
    La pioche
    ===================================================================== */
 function creerPioche(options) {
   var opt = Object.assign({ base: 'data/', memoire: true }, options || {});
 
-  var index   = null;   // contenu de categories.json
-  var metas   = [];     // catégories jouables
-  var parId   = {};     // id -> question enrichie
-  var banque  = {};     // clé catégorie -> [ids]
-  var sacs    = {};     // clé catégorie -> ids pas encore tirés
-  var vues    = opt.memoire ? lireVues() : {};
+  var index  = null;   // contenu de categories.json
+  var metas  = [];     // catégories jouables
+  var parId  = {};     // id -> question enrichie
+  var banque = {};     // clé catégorie -> tous les ids
+  var sacs   = {};     // clé catégorie -> ids pas encore tirés
+  var vues   = opt.memoire ? lireVues() : {};
 
   /* ---- chargement ---- */
   async function charger() {
@@ -156,10 +168,10 @@ function creerPioche(options) {
 
   /* ---- la pioche proprement dite ----
      Sac de jetons : on retire le jeton tiré, on ne le remet pas.
-     Sac vide -> on le remplit à nouveau et on oublie l'historique
-     de cette catégorie, plutôt que de refuser de jouer.            */
+     Sac vide -> on le remplit et on oublie l'historique de cette
+     catégorie, plutôt que de refuser de jouer.                    */
   function piocher(critere) {
-    var c = critere || {};
+    var c    = critere || {};
     var cles = clesRetenues(c);
 
     var dispo = cles.filter(function (k) {
@@ -167,7 +179,7 @@ function creerPioche(options) {
     });
 
     if (!dispo.length) {
-      if (c._recycle) return null;              // vraiment rien, même à neuf
+      if (c._recycle) return null;            // vraiment rien, même à neuf
       cles.forEach(function (k) { oublier(k); });
       return piocher(Object.assign({}, c, { _recycle: true }));
     }
@@ -198,8 +210,13 @@ function creerPioche(options) {
   }
 
   function oublier(cle) {
-    if (cle) { delete vues[cle]; remplirSac(cle); }
-    else { vues = {}; Object.keys(banque).forEach(remplirSac); }
+    if (cle) {
+      delete vues[cle];
+      remplirSac(cle);
+    } else {
+      vues = {};
+      Object.keys(banque).forEach(remplirSac);
+    }
     if (opt.memoire) ecrireVues(vues);
   }
 
@@ -218,9 +235,9 @@ function creerPioche(options) {
 
 /* ---------------------------------------------------------------- */
 global.Quiz = global.Quiz || {};
-global.Quiz.creerPioche   = creerPioche;
-global.Quiz.marge         = marge;
-global.Quiz.ecartPondere  = ecartPondere;
-global.Quiz.handicaps     = function () { return HANDICAPS; };
+global.Quiz.creerPioche  = creerPioche;
+global.Quiz.marge        = marge;
+global.Quiz.ecartPondere = ecartPondere;
+global.Quiz.handicaps    = function () { return HANDICAPS; };
 
 })(window);

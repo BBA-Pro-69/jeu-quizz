@@ -181,7 +181,7 @@
       "q": "Combien de médailles d'or olympiques le nageur Michael Phelps a-t-il remportées ?",
       "answer": 23,
       "unit": "médailles d'or",
-      "tol": { "pct": 15 },
+      "tol": { "exact": true },
       "fun": "28 médailles au total, sur quatre olympiades. Plus que la majorité des pays.",
       "tags": ["natation", "records"]
     },
@@ -193,7 +193,7 @@
       "q": "À quelle distance du but se trouve le point de penalty au football, en mètres ?",
       "answer": 11,
       "unit": "m",
-      "tol": { "pct": 15 },
+      "tol": { "exact": true },
       "fun": "11 mètres, soit 12 yards dans le système d'origine. D'où le surnom anglais « twelve-yard kick ».",
       "tags": ["football"]
     },

@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "updated": "2026-08-08",
   "types": {
     "qcm":       "Question à choix multiples (4 propositions)",
@@ -14,6 +14,13 @@
     "3": "Il faut réfléchir",
     "4": "Costaud",
     "5": "Pour les spécialistes"
+  },
+  "handicaps": {
+    "expert":     { "label": "Expert",     "pct": 0,  "plusMoins": 0, "weight": 1.00, "hint": "Aucune marge. Assume." },
+    "confirme":   { "label": "Confirmé",   "pct": 5,  "plusMoins": 0, "weight": 1.05, "hint": "Un cheveu de tolérance." },
+    "normal":     { "label": "Normal",     "pct": 12, "plusMoins": 0, "weight": 1.12, "hint": "Le réglage par défaut." },
+    "decouverte": { "label": "Découverte", "pct": 25, "plusMoins": 1, "weight": 1.25, "hint": "Pour qui débute, ou revient de loin." },
+    "enfant":     { "label": "Enfant",     "pct": 45, "plusMoins": 1, "weight": 1.45, "hint": "Large marge sur les estimations." }
   },
   "categories": [
     {

@@ -46,24 +46,38 @@ async function lireJson(url) {
 
 /* ---------------------------------------------------------------
    Marge de tolérance sur une estimation.
-   Règles du contrat, implémentées une seule fois, ici :
-     tol.pct   -> écart = réponse × (tol.pct + handicap.pct) / 100
+
      tol.exact -> écart = handicap.plusMoins  (0, sauf découverte/enfant)
+     tol.pct   -> écart = réponse × (tol.pct + handicap.pct) / 100,
+                  PLAFONNÉ à trois fois la tolérance de base.
+
+   Le plafond corrige un effet de bord mesuré sur les 218 questions :
+   +45 % sur « combien de dents » acceptait de 15 à 49. Le tol.pct
+   écrit dans la question dit à quel point elle est devinable —
+   25 % (« combien de langues dans le monde ») garde toute sa
+   générosité, 6 % (« touches d'un piano ») reste une vraie question.
+
+   Rappel : en mode « le plus proche gagne », rien de tout ceci ne
+   s'applique. On compare des écarts pondérés par le weight du
+   handicap (voir ecartPondere ci-dessous). C'est le comportement
+   par défaut des estimations en partie familiale.
    --------------------------------------------------------------- */
 function marge(q, handicap) {
   if (!q || q.type !== 'estimation' || typeof q.answer !== 'number') return null;
   var h = (typeof handicap === 'string' ? HANDICAPS[handicap] : handicap) || HANDICAPS.normal;
   var tol = q.tol || {};
-  var ecart = tol.exact
-    ? (h.plusMoins || 0)
-    : Math.abs(q.answer) * (((tol.pct || 0) + (h.pct || 0)) / 100);
-  return { ecart: ecart, min: q.answer - ecart, max: q.answer + ecart };
-}
+  var ecart;
 
-/* Mode « le plus proche gagne » : on ne tolère rien, on pondère l'écart. */
-function ecartPondere(reponseJoueur, q, handicap) {
-  var h = (typeof handicap === 'string' ? HANDICAPS[handicap] : handicap) || HANDICAPS.normal;
-  return Math.abs(reponseJoueur - q.answer) / (h.weight || 1);
+  if (tol.exact) {
+    ecart = h.plusMoins || 0;
+  } else {
+    var base    = Math.abs(q.answer) * (tol.pct || 0) / 100;
+    var additif = Math.abs(q.answer) * ((tol.pct || 0) + (h.pct || 0)) / 100;
+    ecart = Math.min(additif, base * 3);
+    if (h.plusMoins) ecart = Math.max(ecart, h.plusMoins);
+  }
+
+  return { ecart: ecart, min: q.answer - ecart, max: q.answer + ecart };
 }
 
 /* =====================================================================

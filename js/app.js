@@ -1,7 +1,7 @@
 /* =====================================================================
    Quiz Famille · js/app.js
-   Navigation entre écrans, écran de configuration, banc d'essai de pioche.
-   Pilote drawer.js, ne réimplémente aucune de ses règles.
+   Écrans, configuration, déroulé d'une partie, résultats.
+   Pilote drawer.js et engine.js, ne réimplémente aucune de leurs règles.
    ===================================================================== */
 (function () {
 'use strict';
@@ -11,42 +11,40 @@ var $$ = function (s) { return Array.prototype.slice.call(document.querySelector
 
 var LS_CFG = 'quiz.config.v1';
 
-var pioche = null;
-var cats   = [];
-var handi  = {};
+var pioche = null, cats = [], handi = {};
 
 var cfg = {
   joueurs: [],
   categories: [],
   maxDifficulty: 5,
-  exclureAlcool: true
+  exclureAlcool: true,
+  parJoueur: 5
 };
 
-/* ---------- écrans ---------- */
+var P = null;        // partie en cours
+var Q = null;        // question affichée
+var chrono = null;   // minuteur des défis
+
+/* ================= écrans ================= */
 function montrer(id) {
   $$('.ecran').forEach(function (e) { e.classList.add('hidden'); });
   $('#' + id).classList.remove('hidden');
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-/* ---------- handicap proposé selon l'âge ----------
-   Proposition, pas verdict : le tuteur du select reste modifiable.
-   Un enfant de 9 ans passionné de dinosaures mérite « normal ».  */
 function handicapPropose(age) {
   if (age <= 7)  return 'enfant';
   if (age <= 10) return 'decouverte';
   return 'normal';
 }
 
-/* ---------- joueurs ---------- */
+/* ================= joueurs ================= */
 var seq = 1;
 
 function ajouterJoueur(nom, age, hcp) {
   var a = typeof age === 'number' ? age : 30;
   cfg.joueurs.push({
-    id: 'j' + (seq++),
-    nom: nom || '',
-    age: a,
+    id: 'j' + (seq++), nom: nom || '', age: a,
     handicap: hcp || handicapPropose(a)
   });
   rendreJoueurs();
@@ -65,35 +63,26 @@ function rendreJoueurs() {
     var row = document.createElement('div');
     row.className = 'card p-4 flex flex-wrap items-end gap-3';
     row.innerHTML =
-      '<div class="flex-1 min-w-[9rem]">' +
-        '<label class="lbl">Prénom</label>' +
-        '<input class="inp" data-champ="nom" value="' + escapeAttr(j.nom) + '" placeholder="Joueur ' + (i + 1) + '">' +
-      '</div>' +
-      '<div class="w-24">' +
-        '<label class="lbl">Âge</label>' +
-        '<input class="inp" data-champ="age" type="number" min="3" max="110" value="' + j.age + '">' +
-      '</div>' +
-      '<div class="w-44">' +
-        '<label class="lbl">Handicap</label>' +
-        '<select class="inp" data-champ="handicap">' + options + '</select>' +
-      '</div>' +
-      '<button class="btn btn-ghost" data-suppr title="Retirer ce joueur">' +
-        '<i class="fa-solid fa-user-minus"></i></button>';
+      '<div class="flex-1 min-w-[9rem]"><label class="lbl">Prénom</label>' +
+        '<input class="inp" data-champ="nom" value="' + String(j.nom).replace(/"/g,'&quot;') +
+        '" placeholder="Joueur ' + (i + 1) + '"></div>' +
+      '<div class="w-24"><label class="lbl">Âge</label>' +
+        '<input class="inp" data-champ="age" type="number" min="3" max="110" value="' + j.age + '"></div>' +
+      '<div class="w-44"><label class="lbl">Handicap</label>' +
+        '<select class="inp" data-champ="handicap">' + options + '</select></div>' +
+      '<button class="btn btn-ghost" data-suppr title="Retirer"><i class="fa-solid fa-user-minus"></i></button>';
 
     row.querySelectorAll('[data-champ]').forEach(function (el) {
       el.addEventListener('input', function () {
         var champ = el.getAttribute('data-champ');
         if (champ === 'age') {
-          var ancienPropose = handicapPropose(j.age);
+          var ancien = handicapPropose(j.age);
           j.age = parseInt(el.value, 10) || 0;
-          // On ne réajuste le handicap que s'il n'a pas été touché à la main.
-          if (j.handicap === ancienPropose) {
+          if (j.handicap === ancien) {   // pas encore touché à la main
             j.handicap = handicapPropose(j.age);
             row.querySelector('[data-champ="handicap"]').value = j.handicap;
           }
-        } else {
-          j[champ] = champ === 'nom' ? el.value : el.value;
-        }
+        } else { j[champ] = el.value; }
         sauver(); rafraichirDispo();
       });
     });
@@ -107,51 +96,38 @@ function rendreJoueurs() {
   });
 }
 
-function escapeAttr(s) { return String(s).replace(/"/g, '&quot;'); }
-
-/* ---------- catégories ---------- */
+/* ================= catégories ================= */
 function rendreCategories() {
   var box = $('#categories');
   box.innerHTML = '';
-
   cats.forEach(function (c) {
-    var actif = cfg.categories.indexOf(c.key) !== -1;
     var el = document.createElement('button');
     el.type = 'button';
-    el.className = 'cat-tuile' + (actif ? ' on' : '');
+    el.className = 'cat-tuile' + (cfg.categories.indexOf(c.key) !== -1 ? ' on' : '');
     el.style.setProperty('--c', c.color);
-    el.innerHTML =
-      '<i class="' + c.icon + '"></i>' +
-      '<span class="cat-nom">' + c.label + '</span>' +
+    el.innerHTML = '<i class="' + c.icon + '"></i><span class="cat-nom">' + c.label + '</span>' +
       '<span class="cat-blurb">' + c.blurb + '</span>' +
       '<span class="cat-age">dès ' + c.minAge + ' ans</span>';
-
     el.addEventListener('click', function () {
       var i = cfg.categories.indexOf(c.key);
       if (i === -1) cfg.categories.push(c.key); else cfg.categories.splice(i, 1);
-      el.classList.toggle('on');
-      sauver(); rafraichirDispo();
+      el.classList.toggle('on'); sauver(); rafraichirDispo();
     });
-
     box.appendChild(el);
   });
 }
 
-/* ---------- disponibilité ----------
-   Le chiffre qui compte vraiment : combien de questions restent
-   jouables pour chacun. En dessous de 25, la soirée tourne en rond. */
-function critereJoueur(j) {
-  return {
-    categories: cfg.categories,
-    age: j.age,
-    maxDifficulty: cfg.maxDifficulty,
-    excludeTags: tagsExclus()
-  };
-}
-
+/* ================= disponibilité ================= */
 function tagsExclus() {
   var mineur = cfg.joueurs.some(function (j) { return j.age < 13; });
   return (cfg.exclureAlcool || mineur) ? ['alcool'] : [];
+}
+
+function critereJoueur(j) {
+  return {
+    categories: cfg.categories, age: j.age,
+    maxDifficulty: cfg.maxDifficulty, excludeTags: tagsExclus()
+  };
 }
 
 function rafraichirDispo() {
@@ -159,156 +135,249 @@ function rafraichirDispo() {
   if (!pioche) return;
 
   if (!cfg.joueurs.length || !cfg.categories.length) {
-    box.innerHTML = '<p class="text-slate-500 text-sm italic">' +
-      'Ajoute au moins un joueur et coche une catégorie.</p>';
-    $('#btnPiocher').disabled = true;
+    box.innerHTML = '<p class="text-slate-500 text-sm italic">Ajoute un joueur et coche une catégorie.</p>';
+    $('#btnJouerPartie').disabled = true;
     return;
   }
 
   var lignes = cfg.joueurs.map(function (j) {
     var n = pioche.restantes(critereJoueur(j));
-    var t = pioche.total(critereJoueur(j));
     var ton = n < 15 ? 'text-q-red' : (n < 25 ? 'text-amber-400' : 'text-emerald-400');
-    return '<tr>' +
-      '<td class="text-white font-semibold">' + (j.nom || '—') + '</td>' +
-      '<td>' + j.age + ' ans</td>' +
-      '<td>' + (handi[j.handicap] ? handi[j.handicap].label : j.handicap) + '</td>' +
+    return '<tr><td class="text-white font-semibold">' + (j.nom || '—') + '</td><td>' + j.age +
+      ' ans</td><td>' + (handi[j.handicap] ? handi[j.handicap].label : j.handicap) + '</td>' +
       '<td class="' + ton + ' font-bold">' + n + '</td>' +
-      '<td class="text-slate-500">' + t + '</td>' +
-      '</tr>';
+      '<td class="text-slate-500">' + pioche.total(critereJoueur(j)) + '</td></tr>';
   }).join('');
 
   var mini = Math.min.apply(null, cfg.joueurs.map(function (j) {
     return pioche.restantes(critereJoueur(j));
   }));
 
-  box.innerHTML =
-    '<table><thead><tr><th>Joueur</th><th>Âge</th><th>Handicap</th>' +
+  box.innerHTML = '<table><thead><tr><th>Joueur</th><th>Âge</th><th>Handicap</th>' +
     '<th>Restantes</th><th>Vivier</th></tr></thead><tbody>' + lignes + '</tbody></table>' +
-    (mini < 25
-      ? '<p class="mt-3 text-sm text-amber-400"><i class="fa-solid fa-triangle-exclamation mr-2"></i>' +
-        'Le joueur le moins servi n\'a que ' + mini + ' questions. Coche des catégories, ' +
-        'ou remonte la difficulté maximale.</p>'
-      : '');
+    (mini < 25 ? '<p class="mt-3 text-sm text-amber-400"><i class="fa-solid fa-triangle-exclamation mr-2"></i>' +
+      'Le joueur le moins servi n\'a que ' + mini + ' questions.</p>' : '');
 
-  $('#btnPiocher').disabled = false;
+  $('#btnJouerPartie').disabled = false;
 }
 
-/* ---------- persistance ---------- */
-function sauver() {
-  try { localStorage.setItem(LS_CFG, JSON.stringify(cfg)); } catch (e) {}
-}
+/* ================= persistance ================= */
+function sauver() { try { localStorage.setItem(LS_CFG, JSON.stringify(cfg)); } catch (e) {} }
 function relire() {
   try {
     var c = JSON.parse(localStorage.getItem(LS_CFG));
-    if (c && c.joueurs) {
-      cfg = Object.assign(cfg, c);
-      seq = cfg.joueurs.length + 1;
-    }
+    if (c && c.joueurs) { cfg = Object.assign(cfg, c); seq = cfg.joueurs.length + 1; }
   } catch (e) {}
 }
 
-/* ---------- banc d'essai de pioche ---------- */
-var courante = null;
-
-function remplirSelectJoueur() {
-  $('#qPour').innerHTML = cfg.joueurs.map(function (j) {
-    return '<option value="' + j.id + '">' + (j.nom || 'Joueur') + ' · ' + j.age + ' ans</option>';
-  }).join('');
+/* =====================================================================
+   LA PARTIE
+   ===================================================================== */
+function demarrerPartie() {
+  P = {
+    joueurs: cfg.joueurs.map(function (j, i) {
+      return Object.assign({}, j, { nom: j.nom || 'Joueur ' + (i + 1) });
+    }),
+    i: 0, tour: 0, stats: {}
+  };
+  P.joueurs.forEach(function (j) { P.stats[j.id] = { score: 0, bonnes: 0, posees: 0 }; });
+  montrer('ecran-jeu');
+  poser();
 }
 
-function joueurCourant() {
-  var id = $('#qPour').value;
-  return cfg.joueurs.filter(function (j) { return j.id === id; })[0] || cfg.joueurs[0];
-}
+function joueurCourant() { return P.joueurs[P.i]; }
 
-function tirer() {
+function poser() {
+  arreterChrono();
   var j = joueurCourant();
-  if (!j) return;
+  Q = pioche.piocher(critereJoueur(j));
 
-  courante = pioche.piocher(critereJoueur(j));
-  $('#qReponse').classList.add('hidden');
-  $('#btnReveler').disabled = false;
+  $('#jTour').textContent = 'Manche ' + (P.tour + 1) + ' / ' + cfg.parJoueur;
+  $('#jJoueur').textContent = j.nom;
+  $('#jScore').textContent = P.stats[j.id].score + ' pts';
+  $('#feedback').classList.add('hidden');
+  $('#btnSuivant').classList.add('hidden');
 
-  if (!courante) {
-    $('#qEnonce').textContent = 'Plus rien à tirer pour ce joueur avec ces réglages.';
-    $('#qCat').textContent = '—';
-    $('#qChoix').innerHTML = '';
+  if (!Q) {
+    $('#qEnonce').textContent = 'Plus aucune question disponible pour ' + j.nom + '.';
+    $('#qCat').textContent = '—'; $('#zoneReponse').innerHTML = '';
+    $('#btnSuivant').classList.remove('hidden');
     return;
   }
 
-  $('#qCat').textContent = courante.categorieLabel;
-  $('#qCat').style.color = courante.couleur;
-  $('#qMeta').textContent =
-    courante.type + ' · difficulté ' + courante.difficulty + ' · dès ' + courante.minAge + ' ans' +
-    (courante.tags && courante.tags.length ? ' · ' + courante.tags.join(', ') : '');
-  $('#qEnonce').textContent = courante.q;
-
-  var choix = '';
-  if (courante.type === 'qcm' && Array.isArray(courante.choices)) {
-    choix = courante.choices.map(function (t, i) {
-      return '<div class="prop">' + 'ABCD'[i] + ' · ' + t + '</div>';
-    }).join('');
-  } else if (courante.type === 'vraifaux') {
-    choix = '<div class="prop">Vrai</div><div class="prop">Faux</div>';
-  } else if (courante.type === 'estimation') {
-    choix = '<div class="prop text-slate-400">Réponse chiffrée' +
-            (courante.unit ? ' — en ' + courante.unit : '') + '</div>';
-  } else if (courante.type === 'defi') {
-    choix = '<div class="prop text-slate-400">Défi · ' + (courante.duration || 60) + ' s · ' +
-            (courante.scoring || 'collectif') + '</div>';
-  }
-  $('#qChoix').innerHTML = choix;
-
-  $('#qRestantes').textContent = pioche.restantes(critereJoueur(j)) + ' restantes pour ' + (j.nom || 'ce joueur');
+  $('#qCat').textContent = Q.categorieLabel;
+  $('#qCat').style.color = Q.couleur;
+  $('#qMeta').textContent = 'difficulté ' + Q.difficulty + ' · ' + (Q.difficulty * 10) + ' pts';
+  $('#qEnonce').textContent = Q.q;
+  rendreZoneReponse(Q, j);
 }
 
-function reveler() {
-  if (!courante) return;
+function rendreZoneReponse(q, j) {
+  var z = $('#zoneReponse');
+  z.innerHTML = '';
+
+  if (q.type === 'qcm') {
+    q.choices.forEach(function (t, i) {
+      var b = document.createElement('button');
+      b.className = 'prop prop-btn';
+      b.innerHTML = '<span class="lettre">' + 'ABCD'[i] + '</span>' + t;
+      b.onclick = function () { repondre(i); };
+      z.appendChild(b);
+    });
+
+  } else if (q.type === 'vraifaux') {
+    [['Vrai', true], ['Faux', false]].forEach(function (p) {
+      var b = document.createElement('button');
+      b.className = 'prop prop-btn text-center font-bold';
+      b.textContent = p[0];
+      b.onclick = function () { repondre(p[1]); };
+      z.appendChild(b);
+    });
+
+  } else if (q.type === 'libre' || q.type === 'estimation') {
+    var est = q.type === 'estimation';
+    z.innerHTML =
+      '<input id="saisie" class="inp text-lg" ' +
+        (est ? 'type="number" step="any" inputmode="decimal"' : 'type="text" autocomplete="off"') +
+        ' placeholder="' + (est ? ('Ton estimation' + (q.unit ? ' en ' + q.unit : '')) : 'Ta réponse') + '">' +
+      '<button id="btnValider" class="btn btn-primary w-full mt-3">' +
+        '<i class="fa-solid fa-check"></i>Valider</button>';
+    $('#btnValider').onclick = function () { repondre($('#saisie').value); };
+    $('#saisie').addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') repondre($('#saisie').value);
+    });
+    setTimeout(function () { var s = $('#saisie'); if (s) s.focus(); }, 60);
+
+  } else if (q.type === 'defi') {
+    var d = q.duration || 60;
+    z.innerHTML =
+      '<p class="text-center text-slate-400 text-sm mb-2">' +
+        'Défi · ' + d + ' s · notation ' + (q.scoring || 'collectif') + '</p>' +
+      '<p id="compte" class="text-center font-serif text-5xl font-black text-white mb-4">' + d + '</p>' +
+      '<div class="flex gap-3">' +
+        '<button id="btnRate" class="btn btn-ghost flex-1">Raté</button>' +
+        '<button id="btnReussi" class="btn btn-primary flex-1">Réussi</button></div>';
+    $('#btnReussi').onclick = function () { repondre(true); };
+    $('#btnRate').onclick   = function () { repondre(false); };
+    lancerChrono(d);
+  }
+}
+
+function lancerChrono(d) {
+  var reste = d;
+  chrono = setInterval(function () {
+    reste--;
+    var el = $('#compte');
+    if (!el) return arreterChrono();
+    el.textContent = reste;
+    if (reste <= 5) el.classList.add('text-q-red');
+    if (reste <= 0) arreterChrono();
+  }, 1000);
+}
+function arreterChrono() { if (chrono) { clearInterval(chrono); chrono = null; } }
+
+function repondre(valeur) {
+  arreterChrono();
   var j = joueurCourant();
-  var txt;
+  var r = Quiz.verifier(Q, valeur, j.handicap);
+  var pts = Quiz.points(Q, r.bon);
 
-  if (courante.type === 'qcm') {
-    txt = 'ABCD'[courante.answer] + ' · ' + courante.choices[courante.answer];
-  } else if (courante.type === 'vraifaux') {
-    txt = courante.answer ? 'Vrai' : 'Faux';
-  } else if (courante.type === 'estimation') {
-    var m = Quiz.marge(courante, j.handicap);
-    txt = courante.answer + (courante.unit ? ' ' + courante.unit : '');
-    if (m) {
-      txt += '  —  accepté de ' + arrondi(m.min) + ' à ' + arrondi(m.max) +
-             ' (handicap ' + (handi[j.handicap] ? handi[j.handicap].label : j.handicap) + ')';
-    }
-  } else if (courante.type === 'defi') {
-    txt = 'Pas de bonne réponse : c\'est un défi.';
-  } else {
-    txt = courante.answer + (courante.accept ? '  (aussi : ' + courante.accept.join(', ') + ')' : '');
+  var st = P.stats[j.id];
+  st.posees++;
+  if (r.bon) { st.bonnes++; st.score += pts; }
+  $('#jScore').textContent = st.score + ' pts';
+
+  $$('.prop-btn').forEach(function (b) { b.disabled = true; });
+  var f = $('#feedback');
+  f.className = 'card p-5 mt-5 ' + (r.bon ? 'verdict-bon' : 'verdict-faux');
+  f.innerHTML =
+    '<p class="font-serif text-2xl font-black ' + (r.bon ? 'text-emerald-400' : 'text-q-red') + '">' +
+      (r.bon ? 'Bien joué. +' + pts + ' pts' : 'Raté.') + '</p>' +
+    (Q.type !== 'defi' ? '<p class="text-white mt-2"><span class="text-slate-500 text-sm">Réponse : </span>' +
+      r.attendu + (r.detail ? ' <span class="text-slate-500 text-xs">(' + r.detail + ')</span>' : '') + '</p>' : '') +
+    (Q.fun ? '<p class="text-sm text-slate-400 mt-3 italic leading-relaxed">' + Q.fun + '</p>' : '') +
+    (Q.type === 'libre' && !r.bon
+      ? '<button id="btnQuandMeme" class="btn btn-ghost mt-4 text-xs">' +
+        '<i class="fa-solid fa-gavel"></i>La table valide quand même</button>' : '');
+  f.classList.remove('hidden');
+
+  if ($('#btnQuandMeme')) {
+    $('#btnQuandMeme').onclick = function () {
+      st.bonnes++; st.score += Quiz.points(Q, true);
+      $('#jScore').textContent = st.score + ' pts';
+      this.outerHTML = '<p class="text-xs text-emerald-400 mt-3">Validé par la table. +' +
+        Quiz.points(Q, true) + ' pts</p>';
+    };
   }
 
-  $('#qBonne').textContent = txt;
-  $('#qFun').textContent = courante.fun || '';
-  $('#qFun').classList.toggle('hidden', !courante.fun);
-  $('#qReponse').classList.remove('hidden');
-  $('#btnReveler').disabled = true;
+  $('#btnSuivant').classList.remove('hidden');
+  $('#btnSuivant').focus();
 }
 
-function arrondi(n) { return Math.round(n * 100) / 100; }
+function suivant() {
+  P.i++;
+  if (P.i >= P.joueurs.length) { P.i = 0; P.tour++; }
+  if (P.tour >= cfg.parJoueur) return terminer();
+  poser();
+}
 
-/* ---------- démarrage ---------- */
+/* ================= fin de partie ================= */
+function terminer() {
+  arreterChrono();
+  var classement = P.joueurs.slice().sort(function (a, b) {
+    return P.stats[b.id].score - P.stats[a.id].score;
+  });
+
+  $('#podium').innerHTML = classement.map(function (j, i) {
+    var s = P.stats[j.id];
+    var medaille = ['🥇', '🥈', '🥉'][i] || (i + 1);
+    return '<tr><td class="text-xl">' + medaille + '</td>' +
+      '<td class="text-white font-bold">' + j.nom + '</td>' +
+      '<td class="text-q-blue font-black text-lg">' + s.score + '</td>' +
+      '<td>' + s.bonnes + ' / ' + s.posees + '</td>' +
+      '<td class="text-slate-500">' + (s.posees ? Math.round(s.bonnes / s.posees * 100) : 0) + ' %</td></tr>';
+  }).join('');
+
+  $('#envoiEtat').textContent = '';
+  montrer('ecran-fin');
+}
+
+async function envoyerResultats() {
+  var btn = $('#btnEnvoyer');
+  btn.disabled = true;
+  $('#envoiEtat').textContent = 'Envoi…';
+
+  var lignes = P.joueurs.map(function (j) {
+    var s = P.stats[j.id];
+    return { joueur: j.nom.slice(0, 40), mode: 'libre', score: s.score, bonnes: s.bonnes, posees: s.posees };
+  });
+
+  try {
+    var res = await Quiz.envoyerScores(lignes);
+    $('#envoiEtat').innerHTML = '<span class="text-emerald-400">' + res.length +
+      ' résultats enregistrés.</span>';
+  } catch (e) {
+    // Le jeu n'attend rien du réseau : on informe, on n'empêche rien.
+    $('#envoiEtat').innerHTML = '<span class="text-q-red">Échec de l\'envoi : ' + e.message +
+      '</span><br><span class="text-xs text-slate-500">La partie compte quand même. ' +
+      'Regarde la console (F12) pour le détail.</span>';
+    btn.disabled = false;
+    console.error('Envoi des scores', e);
+  }
+}
+
+/* ================= démarrage ================= */
 async function demarrer() {
   pioche = Quiz.creerPioche({ base: 'data/' });
 
   try {
     var r = await pioche.charger();
-    cats  = r.categories;
+    cats = r.categories;
     handi = Quiz.handicaps();
     $('#chargement').textContent = r.total + ' questions chargées, ' + cats.length + ' catégories.';
   } catch (e) {
-    $('#chargement').innerHTML =
-      '<span class="text-q-red"><i class="fa-solid fa-circle-exclamation mr-2"></i>' +
-      e.message + '</span><br>' +
-      '<span class="text-slate-500 text-xs">Ouvre la page via GitHub Pages ou un serveur local : ' +
-      'un fetch() ne fonctionne pas en double-clic sur un fichier.</span>';
+    $('#chargement').innerHTML = '<span class="text-q-red">' + e.message + '</span>';
+    console.error(e);
     return;
   }
 
@@ -320,33 +389,34 @@ async function demarrer() {
   rendreCategories();
   $('#diff').value = cfg.maxDifficulty;
   $('#diffTxt').textContent = cfg.maxDifficulty;
+  $('#nbq').value = cfg.parJoueur;
   $('#alcool').checked = cfg.exclureAlcool;
   rafraichirDispo();
 
-  $('#btnJouer').onclick     = function () { montrer('ecran-config'); };
-  $('#btnAjouter').onclick   = function () { ajouterJoueur('', 30); sauver(); rafraichirDispo(); };
-  $('#btnRetour').onclick    = function () { montrer('ecran-accueil'); };
-  $('#btnConfig').onclick    = function () { montrer('ecran-config'); };
+  $('#btnJouer').onclick   = function () { montrer('ecran-config'); };
+  $('#btnAjouter').onclick = function () { ajouterJoueur('', 30); sauver(); rafraichirDispo(); };
+  $('#btnRetour').onclick  = function () { montrer('ecran-accueil'); };
 
   $('#diff').oninput = function () {
     cfg.maxDifficulty = parseInt(this.value, 10);
     $('#diffTxt').textContent = cfg.maxDifficulty;
     sauver(); rafraichirDispo();
   };
-  $('#alcool').onchange = function () {
-    cfg.exclureAlcool = this.checked; sauver(); rafraichirDispo();
+  $('#nbq').oninput = function () {
+    cfg.parJoueur = Math.max(1, parseInt(this.value, 10) || 1); sauver();
   };
+  $('#alcool').onchange = function () { cfg.exclureAlcool = this.checked; sauver(); rafraichirDispo(); };
   $('#btnOublier').onclick = function () {
     pioche.oublier(); rafraichirDispo();
-    $('#chargement').textContent = 'Historique effacé : toutes les questions redeviennent tirables.';
+    $('#dispo').insertAdjacentHTML('beforeend',
+      '<p class="text-xs text-emerald-400 mt-2">Historique effacé.</p>');
   };
 
-  $('#btnPiocher').onclick = function () {
-    remplirSelectJoueur(); montrer('ecran-pioche'); tirer();
-  };
-  $('#qPour').onchange   = tirer;
-  $('#btnSuivante').onclick = tirer;
-  $('#btnReveler').onclick  = reveler;
+  $('#btnJouerPartie').onclick = demarrerPartie;
+  $('#btnSuivant').onclick     = suivant;
+  $('#btnAbandon').onclick     = function () { arreterChrono(); montrer('ecran-config'); };
+  $('#btnEnvoyer').onclick     = envoyerResultats;
+  $('#btnRejouer').onclick     = function () { montrer('ecran-config'); };
 }
 
 document.addEventListener('DOMContentLoaded', demarrer);

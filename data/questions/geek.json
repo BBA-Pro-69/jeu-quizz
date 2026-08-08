@@ -1,0 +1,348 @@
+{
+  "category": "geek",
+  "label": "Jeux vidéo, BD & Manga",
+  "version": 1,
+  "note": "Catégorie 'revanche des enfants' : volontairement calibrée pour que les plus jeunes battent les adultes.",
+  "questions": [
+    {
+      "id": "gek-0001",
+      "type": "qcm",
+      "difficulty": 1,
+      "minAge": 5,
+      "q": "Comment s'appelle le frère de Mario ?",
+      "choices": [
+        "Wario",
+        "Luigi",
+        "Toad",
+        "Yoshi"
+      ],
+      "answer": 1,
+      "fun": "Il est né parce qu'il fallait un deuxième joueur : il n'était au départ qu'un Mario recoloré en vert.",
+      "tags": [
+        "nintendo"
+      ]
+    },
+    {
+      "id": "gek-0002",
+      "type": "libre",
+      "difficulty": 1,
+      "minAge": 5,
+      "q": "Comment s'appelle le célèbre hérisson bleu de Sega ?",
+      "answer": "Sonic",
+      "accept": [
+        "sonic",
+        "sonic the hedgehog"
+      ],
+      "fun": "Il a été créé pour concurrencer Mario en misant sur une seule chose : la vitesse.",
+      "tags": [
+        "sega"
+      ]
+    },
+    {
+      "id": "gek-0003",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 6,
+      "q": "Quelle princesse Mario passe-t-il son temps à sauver ?",
+      "choices": [
+        "Zelda",
+        "Daisy",
+        "Peach",
+        "Rosalina"
+      ],
+      "answer": 2,
+      "fun": "En France, elle s'appelait « Princesse Toadstool » dans les premières traductions.",
+      "tags": [
+        "nintendo"
+      ]
+    },
+    {
+      "id": "gek-0004",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 6,
+      "q": "Dans Minecraft, quel monstre vert explose quand tu t'approches ?",
+      "choices": [
+        "Le Zombie",
+        "Le Creeper",
+        "L'Enderman",
+        "Le Squelette"
+      ],
+      "answer": 1,
+      "fun": "Il est né d'un bug : son créateur voulait faire un cochon, il a inversé deux dimensions par erreur.",
+      "tags": [
+        "minecraft"
+      ]
+    },
+    {
+      "id": "gek-0005",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 6,
+      "q": "Dans la série Zelda, comment s'appelle le héros que l'on contrôle ?",
+      "choices": [
+        "Zelda",
+        "Link",
+        "Ganon",
+        "Navi"
+      ],
+      "answer": 1,
+      "fun": "Non, le héros ne s'appelle pas Zelda. C'est le piège le plus vieux du jeu vidéo.",
+      "tags": [
+        "nintendo",
+        "piège"
+      ]
+    },
+    {
+      "id": "gek-0006",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 7,
+      "q": "Quel est le Pokémon numéro 1 du Pokédex ?",
+      "choices": [
+        "Pikachu",
+        "Salamèche",
+        "Bulbizarre",
+        "Carapuce"
+      ],
+      "answer": 2,
+      "fun": "Pikachu n'est que le 25e. Il est devenu la mascotte bien après.",
+      "tags": [
+        "pokemon"
+      ]
+    },
+    {
+      "id": "gek-0007",
+      "type": "estimation",
+      "difficulty": 3,
+      "minAge": 8,
+      "q": "Combien de Pokémon comptait la première génération ?",
+      "answer": 151,
+      "unit": "Pokémon",
+      "tol": {
+        "pct": 5
+      },
+      "fun": "« Attrapez-les tous » était donc un objectif à 151. On en est aujourd'hui à plus de mille.",
+      "tags": [
+        "pokemon"
+      ]
+    },
+    {
+      "id": "gek-0008",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 7,
+      "q": "Dans quel manga suit-on les aventures de Luffy, un pirate en chapeau de paille ?",
+      "choices": [
+        "Naruto",
+        "One Piece",
+        "Dragon Ball",
+        "Bleach"
+      ],
+      "answer": 1,
+      "fun": "C'est la bande dessinée la plus vendue au monde, tous pays et toutes époques confondus.",
+      "tags": [
+        "manga"
+      ]
+    },
+    {
+      "id": "gek-0009",
+      "type": "libre",
+      "difficulty": 2,
+      "minAge": 7,
+      "q": "Dans Naruto, comment s'appelle le village où grandit le héros ?",
+      "answer": "Konoha",
+      "accept": [
+        "konoha",
+        "village caché de la feuille",
+        "konohagakure"
+      ],
+      "fun": "« Konoha » signifie « feuille » : le village est caché au cœur de la forêt.",
+      "tags": [
+        "manga"
+      ]
+    },
+    {
+      "id": "gek-0010",
+      "type": "libre",
+      "difficulty": 1,
+      "minAge": 6,
+      "q": "Comment s'appelle le chien de Tintin ?",
+      "answer": "Milou",
+      "accept": [
+        "milou"
+      ],
+      "fun": "En anglais, il s'appelle Snowy. En néerlandais, Bobbie.",
+      "tags": [
+        "bd"
+      ]
+    },
+    {
+      "id": "gek-0011",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 7,
+      "q": "Comment s'appelle le sorcier qui poursuit les Schtroumpfs ?",
+      "choices": [
+        "Gargamel",
+        "Grosminet",
+        "Balthazar",
+        "Merlin"
+      ],
+      "answer": 0,
+      "fun": "Il veut les transformer en or. Son chat s'appelle Azraël.",
+      "tags": [
+        "bd"
+      ]
+    },
+    {
+      "id": "gek-0012",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 8,
+      "q": "Dans quelle région vivent Astérix et Obélix ?",
+      "choices": [
+        "En Normandie",
+        "En Armorique",
+        "En Aquitaine",
+        "En Provence"
+      ],
+      "answer": 1,
+      "fun": "L'Armorique, c'est-à-dire la Bretagne actuelle. Le village n'a jamais été situé précisément par les auteurs.",
+      "tags": [
+        "bd",
+        "histoire"
+      ]
+    },
+    {
+      "id": "gek-0013",
+      "type": "libre",
+      "difficulty": 3,
+      "minAge": 9,
+      "q": "Qui a créé le manga Dragon Ball ?",
+      "answer": "Akira Toriyama",
+      "accept": [
+        "akira toriyama",
+        "toriyama"
+      ],
+      "fun": "Il a aussi dessiné les personnages des jeux Dragon Quest et Chrono Trigger.",
+      "tags": [
+        "manga"
+      ]
+    },
+    {
+      "id": "gek-0014",
+      "type": "vraifaux",
+      "difficulty": 3,
+      "minAge": 9,
+      "q": "Pac-Man est sorti avant Super Mario Bros.",
+      "answer": true,
+      "fun": "Pac-Man en 1980, Super Mario Bros en 1985. Cinq ans d'écart.",
+      "tags": [
+        "histoire du jeu vidéo"
+      ]
+    },
+    {
+      "id": "gek-0015",
+      "type": "estimation",
+      "difficulty": 4,
+      "minAge": 10,
+      "q": "En quelle année est sortie la première PlayStation ?",
+      "answer": 1994,
+      "unit": "",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Au Japon, en décembre 1994. Elle est née d'un projet de console avorté entre Sony et Nintendo.",
+      "tags": [
+        "histoire du jeu vidéo"
+      ]
+    },
+    {
+      "id": "gek-0016",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 7,
+      "q": "Dans l'univers Marvel, quel est le vrai nom d'Iron Man ?",
+      "choices": [
+        "Bruce Banner",
+        "Tony Stark",
+        "Steve Rogers",
+        "Peter Parker"
+      ],
+      "answer": 1,
+      "fun": "Son personnage a été inventé en 1963 comme un industriel de l'armement — le héros le moins sympathique possible à l'époque.",
+      "tags": [
+        "comics"
+      ]
+    },
+    {
+      "id": "gek-0017",
+      "type": "libre",
+      "difficulty": 2,
+      "minAge": 7,
+      "q": "Dans Harry Potter, quelle maison de Poudlard a un lion pour emblème ?",
+      "answer": "Gryffondor",
+      "accept": [
+        "gryffondor",
+        "gryffindor"
+      ],
+      "fun": "Serpentard a un serpent, Poufsouffle un blaireau, Serdaigle un aigle.",
+      "tags": [
+        "fantasy"
+      ]
+    },
+    {
+      "id": "gek-0018",
+      "type": "libre",
+      "difficulty": 2,
+      "minAge": 7,
+      "q": "Comment s'appelle le majordome de Batman ?",
+      "answer": "Alfred",
+      "accept": [
+        "alfred",
+        "alfred pennyworth"
+      ],
+      "fun": "Il apparaît en 1943, cinq ans après Batman. Dans ses premières apparitions, il était rond et maladroit.",
+      "tags": [
+        "comics"
+      ]
+    },
+    {
+      "id": "gek-0019",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 8,
+      "q": "Quelle est la particularité physique du personnage de BD Titeuf ?",
+      "choices": [
+        "Des lunettes rondes",
+        "Une mèche blonde en forme de vague",
+        "Un bandeau rouge",
+        "Une casquette à l'envers"
+      ],
+      "answer": 1,
+      "fun": "Son créateur, Zep, s'est inspiré de sa propre coupe d'adolescent.",
+      "tags": [
+        "bd"
+      ]
+    },
+    {
+      "id": "gek-0020",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 10,
+      "q": "Quel jeu vidéo est le plus vendu de toute l'histoire ?",
+      "choices": [
+        "Tetris",
+        "Minecraft",
+        "GTA V",
+        "Wii Sports"
+      ],
+      "answer": 1,
+      "fun": "Plus de 300 millions d'exemplaires. Et il a été racheté par Microsoft pour 2,5 milliards de dollars.",
+      "tags": [
+        "records"
+      ]
+    }
+  ]
+}

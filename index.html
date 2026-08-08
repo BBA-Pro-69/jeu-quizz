@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Quiz Famille</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<script>
+tailwind.config = { theme: { extend: {
+  fontFamily: { sans:['Inter','sans-serif'], serif:['Playfair Display','serif'] },
+  colors: { q:{ blue:'#41B6E6', dark:'#002B49', red:'#E4002B', sand:'#F5F1EA' } }
+}}}
+</script>
+<style>
+  body{background:#0b1a26;min-height:100vh}
+  .hero{background-color:#002B49;
+    background-image:radial-gradient(circle at 18% 12%,rgba(65,182,230,.24),transparent 46%),
+                     radial-gradient(circle at 86% 78%,rgba(228,0,43,.18),transparent 52%)}
+  .card{background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.09);
+    border-radius:1.25rem;backdrop-filter:blur(8px);transition:transform .3s cubic-bezier(.16,1,.3,1),border-color .3s ease}
+  .card:hover{transform:translateY(-3px);border-color:rgba(65,182,230,.45)}
+  .kicker{font-size:.68rem;font-weight:800;letter-spacing:.26em;text-transform:uppercase}
+  .kicker-line{display:block;height:3px;width:60px;background:#E4002B;margin:.55rem 0 0;border-radius:2px}
+  .btn{display:inline-flex;align-items:center;gap:.55rem;padding:.75rem 1.2rem;border-radius:.8rem;
+    font-size:.82rem;font-weight:700;transition:all .25s cubic-bezier(.16,1,.3,1)}
+  .btn-primary{background:#41B6E6;color:#002B49}
+  .btn-primary:hover{background:#6cc9ee;transform:translateY(-2px);box-shadow:0 16px 30px -18px rgba(65,182,230,.9)}
+  .btn-ghost{background:rgba(255,255,255,.06);color:#e2e8f0;border:1px solid rgba(255,255,255,.14)}
+  .btn-ghost:hover{background:rgba(255,255,255,.12);transform:translateY(-2px)}
+  .chip{font-size:.7rem;font-weight:600;padding:.3rem .7rem;border-radius:99px;
+    border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);color:#cbd5e1}
+</style>
+</head>
+<body class="font-sans text-slate-200 antialiased">
+
+<header class="hero border-b border-white/10">
+  <div class="max-w-4xl mx-auto px-5 py-16 md:py-24 text-center">
+    <p class="kicker text-q-blue">Bientôt</p>
+    <span class="kicker-line mx-auto"></span>
+    <h1 class="font-serif text-5xl md:text-7xl font-black text-white mt-6 leading-none">
+      Quiz<span class="text-q-blue">&nbsp;Famille</span>
+    </h1>
+    <p class="mt-6 text-slate-300 max-w-xl mx-auto leading-relaxed">
+      Un quiz qui s'adapte à l'âge de chaque joueur, pour qu'un enfant de sept ans
+      et son grand-père puissent jouer la même partie sans que l'un s'ennuie
+      ni que l'autre s'écrase.
+    </p>
+    <div class="mt-8 flex flex-wrap justify-center gap-2">
+      <span class="chip"><i class="fa-solid fa-layer-group text-q-blue mr-1.5"></i>11 catégories</span>
+      <span class="chip"><i class="fa-solid fa-circle-question text-q-blue mr-1.5"></i>218 questions</span>
+      <span class="chip"><i class="fa-solid fa-children text-q-blue mr-1.5"></i>dès 4 ans</span>
+      <span class="chip"><i class="fa-solid fa-wifi-slash text-q-blue mr-1.5"></i>jouable hors ligne</span>
+    </div>
+  </div>
+</header>
+
+<main class="max-w-4xl mx-auto px-5 py-12 space-y-6">
+
+  <section class="card p-7">
+    <p class="kicker text-q-blue">Chantier en cours</p>
+    <h2 class="font-serif text-2xl font-bold text-white mt-2">Le jeu arrive</h2>
+    <p class="text-sm text-slate-400 mt-3 leading-relaxed">
+      Les bibliothèques de questions sont écrites et validées. Restent l'écran de
+      configuration des joueurs, le moteur de pioche et les modes de jeu.
+    </p>
+    <ul class="mt-5 space-y-2.5 text-sm">
+      <li><i class="fa-solid fa-circle-check text-emerald-400 w-5"></i> 11 bibliothèques de questions, 218 questions</li>
+      <li><i class="fa-solid fa-circle-check text-emerald-400 w-5"></i> Liaison backend éprouvée</li>
+      <li><i class="fa-regular fa-circle text-slate-600 w-5"></i> Écran de configuration : joueurs, âges, catégories</li>
+      <li><i class="fa-regular fa-circle text-slate-600 w-5"></i> Moteur de pioche anti-répétition</li>
+      <li><i class="fa-regular fa-circle text-slate-600 w-5"></i> Modes de jeu</li>
+    </ul>
+    <div class="mt-7 flex flex-wrap gap-3">
+      <a href="tools/test-backend.html" class="btn btn-primary"><i class="fa-solid fa-flask-vial"></i>Banc de test backend</a>
+      <a href="data/categories.json" class="btn btn-ghost"><i class="fa-solid fa-code"></i>Voir les catégories</a>
+    </div>
+  </section>
+
+  <section class="card p-7">
+    <p class="kicker text-q-red">Le principe</p>
+    <h2 class="font-serif text-2xl font-bold text-white mt-2">L'équité entre les âges</h2>
+    <p class="text-sm text-slate-400 mt-3 leading-relaxed">
+      Filtrer les questions par âge ne suffit pas : le plus jeune aurait des questions
+      faciles et finirait quand même dernier. Trois mécanismes s'en occupent vraiment.
+    </p>
+    <div class="grid sm:grid-cols-3 gap-4 mt-6">
+      <div>
+        <p class="text-q-blue font-bold text-sm">Handicap par joueur</p>
+        <p class="text-xs text-slate-400 mt-1.5 leading-relaxed">Sur une estimation, la marge d'erreur acceptée s'élargit selon le niveau. Même question, chance égale.</p>
+      </div>
+      <div>
+        <p class="text-q-blue font-bold text-sm">Manches égalisatrices</p>
+        <p class="text-xs text-slate-400 mt-1.5 leading-relaxed">Estimations, mimes, défis : l'expérience n'y sert à rien. Un enfant peut y battre un adulte.</p>
+      </div>
+      <div>
+        <p class="text-q-blue font-bold text-sm">Catégories dédiées</p>
+        <p class="text-xs text-slate-400 mt-1.5 leading-relaxed">Jeux vidéo, BD et manga : volontairement calibrée en faveur des plus jeunes.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="text-center text-xs text-slate-600 py-8">
+    Page provisoire — remplacée par le jeu dès que le moteur sera prêt.
+  </footer>
+</main>
+</body>
+</html>

@@ -1,0 +1,3 @@
+# Ce site est public mais n'a pas à figurer dans les moteurs de recherche.
+User-agent: *
+Disallow: /

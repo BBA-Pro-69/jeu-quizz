@@ -1,0 +1,1662 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chicago City Trip · Septembre 2026 · Bruno &amp; Christophe</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: { extend: {
+    fontFamily: { sans: ['Inter','sans-serif'], serif: ['Playfair Display','serif'] },
+    colors: { chicago: { blue:'#41B6E6', dark:'#002B49', red:'#E4002B', sand:'#F5F1EA' } }
+  }}
+}
+</script>
+<style>
+  .hero-pattern{
+    background-color:#002B49;
+    background-image:linear-gradient(rgba(0,43,73,.82),rgba(0,43,73,.94)),url('https://images.unsplash.com/photo-1494522855154-9297ac14b55f?q=80&w=2070&auto=format&fit=crop');
+    background-size:cover;background-position:center;
+  }
+  .section-pattern{
+    background-color:#f8fafc;
+    background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e2e8f0' fill-opacity='0.5'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  section[id]{scroll-margin-top:4.5rem}
+  .ratio{position:relative;width:100%;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:.9rem;background:#000;box-shadow:0 18px 35px -18px rgba(0,0,0,.55)}
+  .ratio > *{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .yt-play{transition:transform .25s ease, color .25s ease}
+  .yt:hover .yt-play{transform:scale(1.12);color:#ff0000}
+  .card-hover{transition:transform .3s ease, box-shadow .3s ease}
+  .card-hover:hover{transform:translateY(-4px);box-shadow:0 22px 40px -22px rgba(0,43,73,.45)}
+
+  /* ============ RYTHME VISUEL ============ */
+  section, footer { position: relative; }
+
+  /* Barre de progression de lecture */
+  #progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:60;
+    background:linear-gradient(90deg,#41B6E6,#E4002B);transition:width .12s linear}
+
+  /* Numéro fantôme */
+  .ghost{position:absolute;top:.55rem;left:max(1.25rem,calc(50% - 40rem));z-index:0;
+    font-weight:900;font-size:clamp(6rem,17vw,14rem);line-height:.78;letter-spacing:-.05em;
+    color:transparent;-webkit-text-stroke:2px rgba(0,43,73,.09);pointer-events:none;user-select:none}
+  .ghost-light{-webkit-text-stroke:2px rgba(255,255,255,.11)}
+  .sec-inner{position:relative;z-index:1}
+
+  /* Trait animé sous le sur-titre */
+  .kicker-line{display:block;height:3px;width:0;background:#E4002B;margin:.55rem auto 0;
+    transition:width .85s cubic-bezier(.16,1,.3,1) .15s;border-radius:2px}
+  .kicker-line.left{margin-left:0;margin-right:auto}
+  .in .kicker-line, .reveal.in .kicker-line{width:60px}
+
+  /* Révélation au défilement */
+  .reveal{opacity:0;transform:translateY(34px);
+    transition:opacity .75s cubic-bezier(.16,1,.3,1),transform .75s cubic-bezier(.16,1,.3,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ============ SÉPARATEURS ============ */
+  .sep{line-height:0;position:relative;z-index:1}
+  .sep svg{display:block;width:100%;height:100%}
+  .sep-curtain > div{border-top-left-radius:2.75rem;border-top-right-radius:2.75rem;height:3rem;
+    box-shadow:0 -22px 45px -22px rgba(0,0,0,.45)}
+  .sep-band{position:relative;height:5.5rem;overflow:hidden}
+  .sep-band .band{position:absolute;left:-10%;right:-10%;top:1.1rem;height:3.3rem;
+    transform:rotate(-1.6deg);display:flex;align-items:center;justify-content:center;gap:2.5rem;
+    color:#002B49;font-size:.7rem;font-weight:800;letter-spacing:.28em;text-transform:uppercase;white-space:nowrap}
+  .sep-medallion{position:relative;height:6rem}
+  .sep-medallion .rule{position:absolute;top:50%;left:8%;right:8%;height:1px;background:rgba(0,43,73,.14)}
+  .sep-medallion .badge{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+    width:3.25rem;height:3.25rem;border-radius:99px;display:flex;align-items:center;justify-content:center;
+    background:#fff;border:1px solid rgba(0,43,73,.12);color:#41B6E6;font-size:1.05rem;
+    box-shadow:0 10px 25px -12px rgba(0,43,73,.35)}
+
+  /* ============ RAIL DE NAVIGATION ============ */
+  #rail{position:fixed;right:.75rem;top:50%;transform:translateY(-50%);z-index:55;
+    display:none;flex-direction:column;align-items:stretch;gap:.1rem;
+    padding:.75rem .75rem .75rem 1rem;border-radius:1.4rem;
+    background:transparent;border:1px solid transparent;
+    transition:background .45s ease, box-shadow .45s ease, border-color .45s ease, backdrop-filter .45s ease}
+  @media (min-width:1100px){#rail{display:flex}}
+  #rail:hover{background:rgba(255,255,255,.82);backdrop-filter:blur(14px);
+    border-color:rgba(0,43,73,.08);box-shadow:0 24px 50px -28px rgba(0,43,73,.55)}
+  #rail.on-dark:hover{background:rgba(0,20,36,.72);border-color:rgba(255,255,255,.10);
+    box-shadow:0 24px 50px -28px rgba(0,0,0,.8)}
+
+  .rail-item{display:grid;grid-template-columns:1fr 34px;align-items:center;
+    background:none;border:0;padding:.3rem 0;cursor:pointer;text-align:right;
+    -webkit-tap-highlight-color:transparent}
+  .rail-item:focus{outline:none}
+  .rail-item:focus-visible .rail-label{opacity:1;transform:none;color:#E4002B}
+  .rail-item:focus-visible .rail-dot::after{width:22px;opacity:1}
+
+  .rail-label{grid-column:1;justify-self:end;padding-right:.85rem;
+    font-size:.7rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+    color:#64748b;white-space:nowrap;opacity:0;transform:translateX(10px);
+    transition:opacity .4s cubic-bezier(.16,1,.3,1),transform .4s cubic-bezier(.16,1,.3,1),color .25s ease}
+  #rail.on-dark .rail-label{color:#cbd5e1}
+  #rail:hover .rail-label{opacity:.7;transform:none}
+  .rail-item:hover .rail-label{opacity:1;color:#E4002B}
+  #rail.on-dark .rail-item:hover .rail-label{color:#41B6E6}
+  .rail-item.active .rail-label{opacity:1;color:#41B6E6}
+  #rail:not(:hover) .rail-item.active .rail-label{opacity:0}
+
+  .rail-dot{grid-column:2;justify-self:end;position:relative;display:block;width:30px;height:10px}
+  .rail-dot::after{content:'';position:absolute;right:0;top:50%;transform:translateY(-50%);
+    width:9px;height:9px;border-radius:99px;background:#94a3b8;opacity:.45;
+    transition:width .45s cubic-bezier(.16,1,.3,1),background .3s ease,opacity .3s ease}
+  #rail.on-dark .rail-dot::after{background:#e2e8f0;opacity:.35}
+  .rail-item:hover .rail-dot::after{width:22px;opacity:1;background:#E4002B}
+  #rail.on-dark .rail-item:hover .rail-dot::after{background:#41B6E6;opacity:1}
+  .rail-item.active .rail-dot::after{width:30px;opacity:1;background:#41B6E6}
+
+  #railCount{position:absolute;right:calc(100% + .9rem);top:50%;
+    transform:translateY(-50%) translateX(8px);
+    font-family:'Playfair Display',serif;font-size:3rem;font-weight:900;line-height:1;
+    color:rgba(0,43,73,.11);opacity:0;pointer-events:none;
+    transition:opacity .4s ease, transform .45s cubic-bezier(.16,1,.3,1)}
+  #rail:hover #railCount{opacity:1;transform:translateY(-50%) translateX(0)}
+  #rail.on-dark #railCount{color:rgba(255,255,255,.18)}
+
+
+  /* ============ AGENDA ESKER ============ */
+  .esk-tabs{display:grid;gap:.65rem;margin-bottom:1.25rem;
+    grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+  .esk-tab{text-align:left;padding:.9rem 1.1rem;border-radius:1rem;border:1px solid #e2e8f0;
+    background:#fff;color:#334155;cursor:pointer;transition:all .3s cubic-bezier(.16,1,.3,1)}
+  .esk-tab:hover{border-color:#41B6E6;transform:translateY(-2px)}
+  .esk-tab-on{background:#002B49;border-color:#002B49;color:#fff;
+    box-shadow:0 18px 32px -20px rgba(0,43,73,.8)}
+
+  .esk-legend{display:flex;flex-wrap:wrap;align-items:center;gap:.45rem;margin-bottom:1.5rem}
+  .esk-filter{display:inline-flex;align-items:center;font-size:.72rem;font-weight:700;
+    padding:.36rem .8rem;border-radius:99px;border:1px solid #e2e8f0;background:#fff;color:#475569;
+    cursor:pointer;transition:all .25s ease}
+  .esk-filter:hover{border-color:#94a3b8}
+  .esk-filter-on{background:#002B49;border-color:#002B49;color:#fff}
+
+  .esk-slot{font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;
+    color:#94a3b8;padding:1.1rem 0 .45rem}
+  .esk-row{display:grid;grid-template-columns:64px 4px 1fr;gap:.85rem;align-items:start;
+    padding:.85rem .95rem;border-radius:.9rem;border:1px solid #eef2f7;background:#fff;
+    margin-bottom:.4rem;transition:border-color .25s ease, box-shadow .25s ease, transform .25s ease}
+  .esk-row:hover{border-color:#cbd5e1;box-shadow:0 14px 28px -22px rgba(0,43,73,.55);transform:translateX(2px)}
+  .esk-row.esk-hide{display:none}
+  .esk-time{display:flex;flex-direction:column;font-size:.8rem;line-height:1.25;font-variant-numeric:tabular-nums}
+  .esk-bar{display:block;width:4px;border-radius:99px;align-self:stretch;min-height:2.2rem;opacity:.85}
+  .esk-track{display:inline-block;margin-top:.5rem;font-size:.62rem;font-weight:800;
+    letter-spacing:.1em;text-transform:uppercase;padding:.2rem .55rem;border-radius:99px}
+  .esk-pick{display:inline-flex;align-items:center;gap:.3rem;font-size:.6rem;font-weight:800;
+    letter-spacing:.1em;text-transform:uppercase;color:#b45309;background:#fef3c7;
+    padding:.18rem .5rem;border-radius:99px}
+  @media (max-width:520px){
+    .esk-row{grid-template-columns:52px 4px 1fr;gap:.6rem;padding:.7rem}
+    .esk-time{font-size:.72rem}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+    .kicker-line{width:60px;transition:none}
+  }
+
+/* --- Navigation principale --- */
+.nav-link{position:relative;padding:.45rem .6rem;border-radius:.5rem;color:#475569;white-space:nowrap;transition:color .25s ease,background-color .25s ease}
+.nav-link::after{content:"";position:absolute;left:.6rem;right:.6rem;bottom:.18rem;height:2px;border-radius:2px;background:linear-gradient(90deg,#B3DDF2,#C60C30);transform:scaleX(0);transform-origin:left;transition:transform .3s ease}
+.nav-link:hover{color:#0f172a;background:rgba(15,23,42,.04)}
+.nav-link:hover::after,.nav-link.is-active::after{transform:scaleX(1)}
+.nav-link.is-active{color:#C60C30;font-weight:600}
+@media (prefers-reduced-motion:reduce){.nav-link,.nav-link::after{transition:none}}
+
+/* ================= AGENDA GLOBAL ================= */
+.ag-toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem;margin-bottom:1.1rem}
+.ag-seg{display:inline-flex;background:#f1f5f9;border-radius:.75rem;padding:.22rem;gap:.15rem}
+.ag-seg button{border:0;background:transparent;font:600 .78rem/1 'Inter',sans-serif;color:#64748b;
+  padding:.52rem .95rem;border-radius:.6rem;cursor:pointer;transition:all .22s ease;white-space:nowrap}
+.ag-seg button:hover{color:#0f172a}
+.ag-seg button.on{background:#fff;color:#002B49;box-shadow:0 1px 3px rgba(0,43,73,.14)}
+.ag-filter{border:1px solid #e2e8f0;background:#fff;border-radius:999px;padding:.42rem .85rem;cursor:pointer;
+  font:600 .72rem/1 'Inter',sans-serif;color:#475569;display:inline-flex;align-items:center;gap:.42rem;
+  transition:all .22s ease;white-space:nowrap}
+.ag-filter:hover{border-color:#94a3b8;color:#0f172a}
+.ag-filter.on{background:#002B49;border-color:#002B49;color:#fff}
+.ag-filter .dot{width:.55rem;height:.55rem;border-radius:999px;flex:none}
+.ag-arrows{display:none;gap:.3rem;margin-left:auto}
+@media (min-width:900px){.ag-arrows{display:inline-flex}}
+.ag-arrows button{width:2.2rem;height:2.2rem;border-radius:.6rem;border:1px solid #e2e8f0;background:#fff;
+  color:#475569;cursor:pointer;transition:all .2s ease}
+.ag-arrows button:hover{background:#002B49;color:#fff;border-color:#002B49}
+
+.ag-scroll{position:relative;overflow:auto;max-height:min(78vh,860px);border:1px solid #e2e8f0;
+  border-radius:1.1rem;background:#fff;box-shadow:0 22px 50px -34px rgba(0,43,73,.4);
+  overscroll-behavior-x:contain;scrollbar-width:thin}
+.ag-grid{display:grid;grid-template-columns:56px repeat(var(--cols),minmax(172px,1fr));position:relative}
+.ag-corner{position:sticky;top:0;left:0;z-index:9;background:#fff;
+  border-right:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0}
+.ag-hcell{position:sticky;top:0;z-index:7;background:#fff;padding:.62rem .7rem .55rem;
+  border-bottom:1px solid #e2e8f0;border-left:1px solid #eef2f6;text-align:left}
+.ag-hcell.we{background:#FBF9F5}
+.ag-hcell.esk{box-shadow:inset 0 3px 0 #4338ca}
+.ag-hdow{font:800 .62rem/1 'Inter',sans-serif;text-transform:uppercase;letter-spacing:.14em;color:#94a3b8}
+.ag-hnum{font:700 1.5rem/1.05 'Playfair Display',serif;color:#002B49}
+.ag-htag{font:500 .62rem/1.3 'Inter',sans-serif;color:#64748b;margin-top:.2rem;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.ag-adg{position:sticky;left:0;z-index:6;background:#fff;border-right:1px solid #e2e8f0;
+  border-bottom:1px solid #e2e8f0;font:800 .52rem/1 'Inter',sans-serif;color:#94a3b8;
+  text-transform:uppercase;letter-spacing:.1em;display:flex;align-items:center;justify-content:center;text-align:center;padding:.3rem}
+.ag-adcell{border-bottom:1px solid #e2e8f0;border-left:1px solid #eef2f6;padding:.35rem .35rem;
+  display:flex;flex-direction:column;gap:.25rem;min-height:2.4rem}
+.ag-adcell.we{background:#FBF9F5}
+.ag-chip{border:0;text-align:left;font-family:'Inter',sans-serif;border-radius:.45rem;padding:.28rem .45rem;font:600 .64rem/1.25 'Inter',sans-serif;
+  border-left:3px solid;cursor:pointer;transition:transform .18s ease,box-shadow .18s ease;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.ag-chip:hover{transform:translateY(-1px);box-shadow:0 6px 16px -8px rgba(0,43,73,.4)}
+.ag-gutter{position:sticky;left:0;z-index:5;background:#fff;border-right:1px solid #e2e8f0}
+.ag-hourlab{position:absolute;right:.4rem;transform:translateY(-.42rem);
+  font:600 .6rem/1 'Inter',sans-serif;color:#b6c2d1;letter-spacing:.03em}
+.ag-col{position:relative;border-left:1px solid #eef2f6}
+.ag-col.we{background:#FDFCFA}
+.ag-line{position:absolute;left:0;right:0;height:0;border-top:1px solid rgba(15,23,42,.055)}
+.ag-line.half{border-top-style:dotted;border-color:rgba(15,23,42,.035)}
+.ag-ev{position:absolute;border:0;font-family:'Inter',sans-serif;border-radius:.5rem;padding:.26rem .42rem;overflow:hidden;cursor:pointer;
+  border-left:3px solid;text-align:left;
+  transition:box-shadow .2s ease,transform .2s ease,opacity .25s ease,filter .25s ease}
+.ag-ev:hover{transform:translateY(-1px);box-shadow:0 10px 24px -10px rgba(0,43,73,.5);z-index:4}
+.ag-ev:focus-visible{outline:2px solid #002B49;outline-offset:1px}
+.ag-ev.dim{opacity:.13;filter:grayscale(1);pointer-events:none}
+.ag-evt{font:600 .655rem/1.28 'Inter',sans-serif;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.ag-evh{font:700 .565rem/1 'Inter',sans-serif;opacity:.72;letter-spacing:.02em;margin-bottom:.1rem}
+.ag-evl{font:500 .555rem/1.2 'Inter',sans-serif;opacity:.62;margin-top:.1rem;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ag-ev.tiny{padding:.12rem .4rem}
+.ag-ev.tiny .ag-evt{-webkit-line-clamp:1;font-size:.62rem}
+.ag-ev.tiny .ag-evh{display:none}
+.ag-star{font-size:.5rem;vertical-align:.06rem;margin-left:.18rem;opacity:.85}
+.ag-flag{display:inline-block;font:800 .5rem/1 'Inter',sans-serif;text-transform:uppercase;
+  letter-spacing:.07em;padding:.16rem .3rem;border-radius:.25rem;margin-left:.25rem;vertical-align:.05rem}
+
+/* Panneau de détail */
+.ag-detail{margin-top:1.1rem;border:1px solid #e2e8f0;border-radius:1.1rem;background:#fff;
+  padding:1.25rem 1.4rem;box-shadow:0 18px 40px -30px rgba(0,43,73,.45);position:relative;
+  animation:agIn .32s cubic-bezier(.16,1,.3,1)}
+@keyframes agIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.ag-detail .close{position:absolute;top:.7rem;right:.8rem;border:0;background:transparent;color:#94a3b8;
+  cursor:pointer;font-size:1rem;padding:.3rem;line-height:1}
+.ag-detail .close:hover{color:#C60C30}
+
+/* Vue liste */
+.ag-day{border:1px solid #e2e8f0;border-radius:1.1rem;background:#fff;overflow:hidden;margin-bottom:.9rem}
+.ag-dayh{display:flex;align-items:baseline;gap:.7rem;padding:.85rem 1.05rem;background:#FBF9F5;
+  border-bottom:1px solid #eef2f6;flex-wrap:wrap}
+.ag-row{display:grid;grid-template-columns:4.6rem 3px 1fr;gap:.7rem;align-items:start;
+  padding:.68rem 1.05rem;border-top:1px solid #f1f5f9;transition:background .2s ease}
+.ag-row:first-of-type{border-top:0}
+.ag-row:hover{background:#f8fafc}
+.ag-row.dim{display:none}
+.ag-rowbar{border-radius:3px;align-self:stretch;min-height:1.1rem}
+@media (prefers-reduced-motion:reduce){
+  .ag-ev,.ag-chip,.ag-row,.ag-filter,.ag-seg button,.ag-detail{transition:none;animation:none}
+}
+</style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-chicago-red selection:text-white">
+
+<!-- Bandeau d'avertissement local (affiché uniquement si le fichier est ouvert en file:///) -->
+<div id="localWarn" class="hidden bg-amber-400 text-chicago-dark text-sm px-4 py-3 text-center font-medium">
+  <i class="fa-solid fa-circle-info mr-2"></i>
+  Page ouverte depuis le disque dur (<code>file:///</code>) : YouTube interdit la lecture intégrée dans ce cas.
+  Les vidéos s'ouvriront donc dans un nouvel onglet. <strong>Mets la page en ligne (GitHub Pages) et la lecture se fera directement dans la page.</strong>
+</div>
+
+
+<div id="progress"></div>
+<div id="rail" aria-label="Navigation par section"><span id="railCount">00</span></div>
+
+<!-- NAV -->
+<nav class="sticky top-0 w-full z-40 bg-white/90 backdrop-blur-md border-b border-slate-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+    <div class="flex items-center gap-2">
+      <i class="fa-solid fa-wind text-chicago-blue text-2xl"></i>
+      <span class="font-serif font-bold text-xl text-chicago-dark tracking-wide">WindyCity Trip 2026</span>
+      <span id="crumb" class="lg:hidden text-[0.62rem] font-bold uppercase tracking-[0.18em] text-chicago-red border-l border-slate-300 pl-2 ml-1 transition-opacity duration-300"></span>
+    </div>
+    <div id="deskNav" class="hidden lg:flex items-center gap-x-1 text-[0.82rem] font-medium">
+      <a href="#spirit" class="nav-link">L'esprit</a>
+      <a href="#vols" class="nav-link">Vols</a>
+      <a href="#hotels" class="nav-link">Hôtels</a>
+      <a href="#planning" class="nav-link">Planning</a>
+      <a href="#agenda" class="nav-link">Agenda</a>
+      <a href="#travail" class="nav-link">Salon pro</a>
+      <a href="#esker" class="nav-link">Agenda Esker</a>
+      <a href="#shopping" class="nav-link">Shopping</a>
+      <a href="#meteo" class="nav-link">Météo</a>
+      <a href="#pratique" class="nav-link">Pratique</a>
+    </div>
+
+    <!-- Bouton burger (mobile) -->
+    <button id="navToggle" type="button" aria-expanded="false" aria-controls="mobileMenu"
+            class="lg:hidden inline-flex items-center justify-center w-11 h-11 -mr-2 rounded-lg text-chicago-dark hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-chicago-blue">
+      <span class="sr-only">Ouvrir le menu</span>
+      <i id="navIcon" class="fa-solid fa-bars text-xl"></i>
+    </button>
+  </div>
+
+  <!-- Menu mobile -->
+  <div id="mobileMenu" class="hidden lg:hidden border-t border-slate-200 bg-white shadow-lg max-h-96 overflow-y-auto">
+    <nav class="px-5 py-2 flex flex-col text-base font-medium divide-y divide-slate-100">
+      <a href="#spirit" class="py-3.5 text-slate-700 hover:text-chicago-red"><i class="fa-solid fa-compass w-7 text-chicago-blue"></i> L'esprit du voyage</a>
+      <a href="#vols" class="py-3.5 text-slate-700 hover:text-chicago-red"><i class="fa-solid fa-plane w-7 text-chicago-blue"></i> Vols &amp; aéroports</a>
+      <a href="#hotels" class="py-3.5 text-slate-700 hover:text-chicago-red"><i class="fa-solid fa-bed w-7 text-chicago-blue"></i> Hôtels</a>
+      <a href="#planning" class="py-3.5 text-slate-700 hover:text-chicago-red"><i class="fa-regular fa-calendar-days w-7 text-chicago-blue"></i> Planning</a>
+      <a href="#agenda" class="py-3.5 text-slate-700 hover:text-chicago-red"><i class="fa-solid fa-table-columns w-7 text-chicago-blue"></i> Agenda global</a>
+      <a href="#travail" class="py-3.5 text-slate-700 hover:text-chicago-red"><i class="fa-solid fa-briefcase w-7 text-chicago-blue"></i> Salon pro</a>
+      <a href="#esker" class="py-3.5 text-slate-700 hover:text-chicago-red"><i class="fa-solid fa-list-check w-7 text-chicago-blue"></i> Agenda Esker All Access</a>
+      <a href="#shopping" class="py-3.5 text-slate-700 hover:text-chicago-red"><i class="fa-solid fa-bag-shopping w-7 text-chicago-blue"></i> Shopping</a>
+      <a href="#meteo" class="py-3.5 text-slate-700 hover:text-chicago-red"><i class="fa-solid fa-cloud-sun w-7 text-chicago-blue"></i> Météo</a>
+      <a href="#pratique" class="py-3.5 text-slate-700 hover:text-chicago-red"><i class="fa-solid fa-circle-info w-7 text-chicago-blue"></i> Infos pratiques</a>
+    </nav>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero" data-sec="Le voyage" data-num="00" class="hero-pattern pt-16 pb-20">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+    <span class="inline-block py-1 px-3 rounded-full bg-chicago-red/80 text-sm font-semibold tracking-wider mb-6 border border-white/20">
+      <i class="fa-regular fa-calendar mr-2"></i> 4 → 13 septembre 2026
+    </span>
+    <h1 class="text-5xl md:text-7xl font-serif font-black mb-6 leading-tight">
+      CHICAGO<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-chicago-blue to-cyan-300">CITY TRIP</span>
+    </h1>
+    <p class="text-lg md:text-2xl font-light text-slate-200 max-w-3xl mx-auto mb-12">
+      Le programme sur mesure de <strong class="text-white font-medium">Bruno &amp; Névine</strong> et <strong class="text-white font-medium">Christophe &amp; son épouse</strong>.
+      Zéro musée poussiéreux, du grand air, de l'architecture, du lac… et du shopping.
+    </p>
+
+    <!-- VIDÉO PRINCIPALE (FR) -->
+    <div class="max-w-4xl mx-auto">
+      <div class="ratio yt cursor-pointer group" data-yt="pzB-w3NsnLY" data-start="35" data-title="CHICAGO : que visiter ? (en français)">
+        <img src="https://img.youtube.com/vi/pzB-w3NsnLY/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/pzB-w3NsnLY/hqdefault.jpg'" class="object-cover" alt="Chicago : que visiter ?">
+        <div class="flex items-center justify-center bg-black/40 group-hover:bg-black/25 transition">
+          <i class="fa-brands fa-youtube text-7xl md:text-8xl text-white/90 yt-play"></i>
+        </div>
+      </div>
+      <p class="mt-4 text-slate-300 text-sm"><i class="fa-solid fa-language mr-2"></i>« Chicago : que visiter ? » — commentaire en français, pour se mettre dans l'ambiance</p>
+    </div>
+  </div>
+</section>
+
+<div class="sep sep-curtain" style="background:#002B49"><div style="background:#ffffff"></div></div>
+<!-- ESPRIT -->
+<section id="spirit" data-sec="L'esprit" data-num="01" class="py-20 bg-white">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto">
+      <h2 class="text-sm font-bold text-chicago-red uppercase tracking-widest mb-3">Philosophie</h2>
+      <h3 class="text-4xl font-serif font-bold text-chicago-dark mb-8">L'esprit du voyage</h3>
+      <p class="text-xl text-slate-600 leading-relaxed mb-5">
+        On a regardé le <strong>CityPASS (≈125 $/pers.)</strong> : beaucoup de musées, un aquarium, des tours d'observation payantes…
+        Honnêtement, ce n'est pas ce qui nous fait vibrer. L'aquarium ou le musée, on peut le faire dans n'importe quelle ville.
+      </p>
+      <p class="text-lg text-slate-600 leading-relaxed">
+        Le parti pris est donc clair : <strong>vivre Chicago dehors</strong>. Arpenter les rues, se faire raconter la ville par
+        quelqu'un qui y vit, naviguer entre les gratte-ciel, prendre de la hauteur… mais depuis un rooftop, un verre à la main,
+        plutôt qu'en payant une file d'attente.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-10 items-center mt-14">
+      <div>
+        <div class="ratio yt cursor-pointer group" data-yt="ot2O7T7VaPQ" data-title="Chicago en vidéo (français)">
+          <img src="https://img.youtube.com/vi/ot2O7T7VaPQ/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/ot2O7T7VaPQ/hqdefault.jpg'" class="object-cover" alt="Chicago en français">
+          <div class="flex items-center justify-center bg-black/40 group-hover:bg-black/25 transition">
+            <i class="fa-brands fa-youtube text-6xl text-white/90 yt-play"></i>
+          </div>
+        </div>
+        <p class="text-xs text-slate-500 mt-3"><i class="fa-solid fa-language mr-1"></i> Deuxième vidéo de repérage, en français</p>
+      </div>
+      <div class="grid gap-5">
+        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100 card-hover">
+          <i class="fa-solid fa-building text-chicago-blue text-2xl mb-3"></i>
+          <h4 class="text-lg font-bold text-chicago-dark mb-1">Architecture</h4>
+          <p class="text-slate-600 text-sm">Le berceau mondial du gratte-ciel. À voir depuis la rivière, depuis un toit, et en marchant le nez en l'air dans le Loop.</p>
+        </div>
+        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100 card-hover">
+          <i class="fa-solid fa-sailboat text-chicago-blue text-2xl mb-3"></i>
+          <h4 class="text-lg font-bold text-chicago-dark mb-1">Grand air &amp; lac Michigan</h4>
+          <p class="text-slate-600 text-sm">Immense comme une mer. Voilier, Riverwalk, vélo le long du lakefront : c'est là que la ville respire.</p>
+        </div>
+        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100 card-hover">
+          <i class="fa-solid fa-tags text-chicago-blue text-2xl mb-3"></i>
+          <h4 class="text-lg font-bold text-chicago-dark mb-1">Shopping malin</h4>
+          <p class="text-slate-600 text-sm">Levi's, Ralph Lauren, Coach, Michael Kors… à pied depuis l'hôtel près d'O'Hare. Sans Uber, sans perte de temps.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sep sep-band" style="background:#ffffff"><div class="band" style="background:#F5F1EA"><span>Lyon</span><span>&#9992;</span><span>Amsterdam</span><span>&#9992;</span><span>Chicago</span></div></div>
+<!-- VOLS -->
+<section id="vols" data-sec="Vols" data-num="02" class="py-24 bg-white">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-4">
+      <h2 class="text-sm font-bold text-chicago-red uppercase tracking-widest mb-3">Air France · KLM · Itinéraire confirmé</h2>
+      <h3 class="text-4xl md:text-5xl font-serif font-bold text-chicago-dark">Les vols, minute par minute</h3>
+    </div>
+    <p class="text-center text-slate-500 max-w-2xl mx-auto mb-12 text-sm">
+      Deux escales, quatre vols. Rien de compliqué, mais deux correspondances courtes qui demandent d'être attentif.
+      Tout ce qui suit est repris des billets électroniques de Bruno &amp; Névine.
+      <br><span class="text-slate-400">Références de dossier et numéros de billets volontairement absents de cette page : ils sont dans les mails de confirmation.</span>
+    </p>
+
+    <!-- Bandeau récap -->
+    <div class="grid gap-4 mb-14" style="grid-template-columns:repeat(auto-fit,minmax(190px,1fr))">
+      <div class="bg-chicago-sand rounded-2xl p-5">
+        <p class="text-xs uppercase tracking-wider text-slate-500 font-bold mb-1">Transporteurs</p>
+        <p class="text-2xl font-bold text-chicago-dark tracking-wider">AF · KL</p>
+        <p class="text-xs text-slate-500 mt-1">aller opéré par KLM, retour Air France puis HOP</p>
+      </div>
+      <div class="bg-chicago-sand rounded-2xl p-5">
+        <p class="text-xs uppercase tracking-wider text-slate-500 font-bold mb-1">Escales</p>
+        <p class="text-sm font-semibold text-chicago-dark">Amsterdam · 1 h 10</p>
+        <p class="text-sm font-semibold text-chicago-dark">Paris CDG · 1 h 05 (2E → 2F)</p>
+      </div>
+      <div class="bg-chicago-sand rounded-2xl p-5">
+        <p class="text-xs uppercase tracking-wider text-slate-500 font-bold mb-1">Prix payé</p>
+        <p class="text-2xl font-bold text-chicago-dark">707,74 €</p>
+        <p class="text-xs text-slate-500 mt-1">par personne · 1 415,48 € au total</p>
+      </div>
+      <div class="bg-chicago-sand rounded-2xl p-5">
+        <p class="text-xs uppercase tracking-wider text-slate-500 font-bold mb-1">Cabine &amp; bagages</p>
+        <p class="text-lg font-bold text-chicago-dark">Economy · 1 × 23 kg</p>
+        <p class="text-xs text-slate-500 mt-1">en soute par personne, + cabine</p>
+      </div>
+    </div>
+
+    <!-- ALLER -->
+    <div class="mb-16">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-chicago-blue text-white"><i class="fa-solid fa-plane-departure"></i></span>
+        <div>
+          <h4 class="text-2xl font-serif font-bold text-chicago-dark">Aller — samedi 5 septembre</h4>
+          <p class="text-sm text-slate-500">Lyon → Amsterdam → Chicago · 11h20 de trajet, 18h20 en temps réel avec le décalage</p>
+        </div>
+      </div>
+
+      <div class="space-y-4">
+        <!-- Vol 1 -->
+        <div class="border border-slate-200 rounded-2xl p-6 card-hover">
+          <div class="flex flex-wrap items-center justify-between gap-4 mb-4">
+            <div class="flex items-center gap-3">
+              <span class="font-mono font-bold text-chicago-dark bg-slate-100 px-3 py-1 rounded">AF 8320</span>
+              <span class="text-xs bg-sky-100 text-sky-800 px-2 py-1 rounded font-semibold">Opéré par KLM</span>
+            </div>
+            <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Classe L · confirmé</span>
+          </div>
+          <div class="grid gap-6" style="grid-template-columns:repeat(auto-fit,minmax(180px,1fr))">
+            <div>
+              <p class="text-3xl font-bold text-chicago-dark">09:55</p>
+              <p class="font-semibold text-slate-700">Lyon LYS</p>
+              <p class="text-sm text-slate-500">Saint-Exupéry, Terminal 1</p>
+            </div>
+            <div>
+              <p class="text-3xl font-bold text-chicago-dark">11:35</p>
+              <p class="font-semibold text-slate-700">Amsterdam AMS</p>
+              <p class="text-sm text-slate-500">Schiphol</p>
+            </div>
+            <div class="bg-red-50 border border-red-100 rounded-xl p-3">
+              <p class="text-xs uppercase tracking-wider text-chicago-red font-bold mb-1">Fin d'enregistrement</p>
+              <p class="text-2xl font-bold text-chicago-red">09:15</p>
+              <p class="text-xs text-slate-600 mt-1">Dépôt des valises fermé après cette heure. Être à l'aéroport à <strong>07:55</strong>.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Escale -->
+        <div class="flex items-start gap-4 bg-amber-50 border border-amber-200 rounded-2xl p-5">
+          <i class="fa-solid fa-triangle-exclamation text-amber-600 text-xl mt-1"></i>
+          <div>
+            <p class="font-bold text-chicago-dark mb-1">Escale à Amsterdam : 1h10 seulement</p>
+            <p class="text-sm text-slate-700">C'est une correspondance légale (Schiphol en demande 50 minutes au minimum) mais serrée. Trois choses à savoir : les valises sont enregistrées <strong>directement jusqu'à Chicago</strong>, il faut passer un <strong>contrôle des passeports</strong> pour sortir de l'espace Schengen, et les portes non-Schengen (jetées E, F, G) sont à <strong>10 à 15 minutes de marche</strong>. Conclusion : on sort de l'avion et on marche vers la porte, le duty-free attendra. Garder en cabine médicaments, chargeurs et de quoi tenir une journée en cas de retard des bagages.</p>
+          </div>
+        </div>
+
+        <!-- Vol 2 -->
+        <div class="border border-slate-200 rounded-2xl p-6 card-hover">
+          <div class="flex flex-wrap items-center justify-between gap-4 mb-4">
+            <div class="flex items-center gap-3">
+              <span class="font-mono font-bold text-chicago-dark bg-slate-100 px-3 py-1 rounded">AF 3159</span>
+              <span class="text-xs bg-sky-100 text-sky-800 px-2 py-1 rounded font-semibold">Opéré par KLM</span>
+              <span class="text-xs bg-violet-100 text-violet-800 px-2 py-1 rounded font-semibold">Transatlantique · 8h30</span>
+            </div>
+            <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Classe V · confirmé</span>
+          </div>
+          <div class="grid gap-6" style="grid-template-columns:repeat(auto-fit,minmax(180px,1fr))">
+            <div>
+              <p class="text-3xl font-bold text-chicago-dark">12:45</p>
+              <p class="font-semibold text-slate-700">Amsterdam AMS</p>
+              <p class="text-sm text-slate-500">Schiphol</p>
+            </div>
+            <div>
+              <p class="text-3xl font-bold text-chicago-dark">14:15</p>
+              <p class="font-semibold text-slate-700">Chicago ORD</p>
+              <p class="text-sm text-slate-500">O'Hare, <strong>Terminal 5</strong></p>
+            </div>
+            <div class="bg-slate-50 border border-slate-200 rounded-xl p-3">
+              <p class="text-xs uppercase tracking-wider text-slate-500 font-bold mb-1">Fin d'enregistrement</p>
+              <p class="text-2xl font-bold text-slate-700">12:05</p>
+              <p class="text-xs text-slate-600 mt-1">Sans objet si le premier vol est à l'heure.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RETOUR -->
+    <div class="mb-16">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-chicago-dark text-white"><i class="fa-solid fa-plane-arrival"></i></span>
+        <div>
+          <h4 class="text-2xl font-serif font-bold text-chicago-dark">Retour — dimanche 13 &amp; lundi 14 septembre</h4>
+          <p class="text-sm text-slate-500">Chicago → Paris → Lyon · vol de nuit, arrivée à Lyon le lundi en fin de matinée</p>
+        </div>
+      </div>
+
+      <div class="space-y-4">
+        <div class="border border-slate-200 rounded-2xl p-6 card-hover">
+          <div class="flex flex-wrap items-center justify-between gap-4 mb-4">
+            <div class="flex items-center gap-3">
+              <span class="font-mono font-bold text-chicago-dark bg-slate-100 px-3 py-1 rounded">AF 0137</span>
+              <span class="text-xs bg-blue-100 text-blue-900 px-2 py-1 rounded font-semibold">Air France</span>
+              <span class="text-xs bg-indigo-100 text-indigo-900 px-2 py-1 rounded font-semibold">Vol de nuit · 8h05</span>
+            </div>
+            <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Classe V · confirmé</span>
+          </div>
+          <div class="grid gap-6" style="grid-template-columns:repeat(auto-fit,minmax(180px,1fr))">
+            <div>
+              <p class="text-3xl font-bold text-chicago-dark">17:10</p>
+              <p class="font-semibold text-slate-700">Chicago ORD</p>
+              <p class="text-sm text-slate-500">O'Hare, dimanche 13</p>
+            </div>
+            <div>
+              <p class="text-3xl font-bold text-chicago-dark">08:15 <span class="text-sm font-medium text-chicago-red">+1 jour</span></p>
+              <p class="font-semibold text-slate-700">Paris CDG</p>
+              <p class="text-sm text-slate-500">Terminal 2E, lundi 14</p>
+            </div>
+            <div class="bg-red-50 border border-red-100 rounded-xl p-3">
+              <p class="text-xs uppercase tracking-wider text-chicago-red font-bold mb-1">Fin d'enregistrement</p>
+              <p class="text-2xl font-bold text-chicago-red">16:10</p>
+              <p class="text-xs text-slate-600 mt-1">Un dimanche à O'Hare : être sur place à <strong>14:10</strong>.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4 bg-amber-50 border border-amber-200 rounded-2xl p-5">
+          <i class="fa-solid fa-triangle-exclamation text-amber-600 text-xl mt-1"></i>
+          <div>
+            <p class="font-bold text-chicago-dark mb-1">Escale à Paris : 1h05, et un changement de terminal</p>
+            <p class="text-sm text-slate-700">On arrive au <strong>2E</strong> et on repart du <strong>2F</strong>. Les deux sont reliés à pied par une galerie souterraine, 10 à 15 minutes en marchant, sans navette. Il faut passer le <strong>contrôle de police d'entrée dans l'espace Schengen</strong> au 2E, c'est le point qui peut coincer un lundi matin. Les valises, elles, suivent seules jusqu'à Lyon. Si la correspondance est manquée, Air France réacheminera sur le vol suivant : il y a un Paris-Lyon toutes les deux heures environ, donc c'est un contretemps, pas un drame.</p>
+          </div>
+        </div>
+
+        <div class="border border-slate-200 rounded-2xl p-6 card-hover">
+          <div class="flex flex-wrap items-center justify-between gap-4 mb-4">
+            <div class="flex items-center gap-3">
+              <span class="font-mono font-bold text-chicago-dark bg-slate-100 px-3 py-1 rounded">AF 7364</span>
+              <span class="text-xs bg-sky-100 text-sky-800 px-2 py-1 rounded font-semibold">Opéré par HOP!</span>
+            </div>
+            <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Classe L · confirmé</span>
+          </div>
+          <div class="grid gap-6" style="grid-template-columns:repeat(auto-fit,minmax(180px,1fr))">
+            <div>
+              <p class="text-3xl font-bold text-chicago-dark">09:20</p>
+              <p class="font-semibold text-slate-700">Paris CDG</p>
+              <p class="text-sm text-slate-500">Terminal 2F</p>
+            </div>
+            <div>
+              <p class="text-3xl font-bold text-chicago-dark">10:30</p>
+              <p class="font-semibold text-slate-700">Lyon LYS</p>
+              <p class="text-sm text-slate-500">Saint-Exupéry, Terminal 1</p>
+            </div>
+            <div class="bg-slate-50 border border-slate-200 rounded-xl p-3">
+              <p class="text-xs uppercase tracking-wider text-slate-500 font-bold mb-1">Fin d'enregistrement</p>
+              <p class="text-2xl font-bold text-slate-700">08:40</p>
+              <p class="text-xs text-slate-600 mt-1">Déjà enregistré depuis Chicago.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRÉCONISATIONS -->
+    <div class="bg-chicago-dark text-white rounded-3xl p-8 md:p-10">
+      <h4 class="text-2xl font-serif font-bold mb-8"><i class="fa-solid fa-clipboard-check mr-3 text-chicago-blue"></i>Les bonnes dispositions</h4>
+      <div class="grid gap-8" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr))">
+        <div>
+          <h5 class="font-bold text-chicago-blue mb-3 text-sm uppercase tracking-wider">30 heures avant chaque départ</h5>
+          <ul class="text-sm text-slate-300 space-y-2">
+            <li><i class="fa-solid fa-mobile-screen w-5"></i> Enregistrement en ligne sur l'appli Air France dès son ouverture, et choix des sièges à ce moment-là (ensuite c'est payant ou complet).</li>
+            <li><i class="fa-solid fa-qrcode w-5"></i> Cartes d'embarquement des quatre vols téléchargées dans le wallet du téléphone <strong>et</strong> imprimées : les deux premiers vols sont opérés par KLM, un QR code qui ne scanne pas fait perdre dix minutes.</li>
+            <li><i class="fa-solid fa-star w-5"></i> Numéro Flying Blue renseigné sur les deux billets avant l'enregistrement, sinon les miles sont perdus.</li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="font-bold text-chicago-blue mb-3 text-sm uppercase tracking-wider">Dans le sac cabine</h5>
+          <ul class="text-sm text-slate-300 space-y-2">
+            <li><i class="fa-solid fa-passport w-5"></i> Passeports, ESTA imprimé, adresse complète du Sonesta (demandée à l'immigration).</li>
+            <li><i class="fa-solid fa-pills w-5"></i> Médicaments, lunettes, chargeurs, batterie externe : les batteries au lithium sont <strong>interdites en soute</strong>.</li>
+            <li><i class="fa-solid fa-shirt w-5"></i> Un change et une trousse minimale : avec deux escales, une valise peut arriver un jour plus tard.</li>
+            <li><i class="fa-solid fa-plug w-5"></i> Adaptateur de prise américain, et une gourde vide à remplir après les contrôles.</li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="font-bold text-chicago-blue mb-3 text-sm uppercase tracking-wider">Bagages</h5>
+          <ul class="text-sm text-slate-300 space-y-2">
+            <li><i class="fa-solid fa-suitcase-rolling w-5"></i> <strong>1 valise de 23 kg par personne</strong> en soute, plus un bagage cabine et un accessoire.</li>
+            <li><i class="fa-solid fa-weight-hanging w-5"></i> Peser les valises avant de partir <strong>et avant le retour</strong> : le shopping à l'outlet, c'est en général 5 à 8 kg de plus. Le dépassement se paie cher au comptoir.</li>
+            <li><i class="fa-solid fa-tag w-5"></i> Une étiquette avec nom et téléphone à l'intérieur comme à l'extérieur.</li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="font-bold text-chicago-blue mb-3 text-sm uppercase tracking-wider">À l'arrivée à O'Hare</h5>
+          <ul class="text-sm text-slate-300 space-y-2">
+            <li><i class="fa-solid fa-fingerprint w-5"></i> Immigration au <strong>Terminal 5</strong> : compter 45 minutes à 1h15 un samedi après-midi, empreintes et photo comprises.</li>
+            <li><i class="fa-solid fa-apple-whole w-5"></i> Rien de frais dans les bagages — fruits, charcuterie, fromage : l'amende démarre à 300 $.</li>
+            <li><i class="fa-solid fa-taxi w-5"></i> Vers le centre-ville : ligne bleue du CTA depuis le Terminal 2 (~45 min, 5 $) ou taxi / Uber (~45 $, 30 à 50 min). Avec les valises et l'horaire du voilier, le taxi se justifie.</li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="font-bold text-chicago-blue mb-3 text-sm uppercase tracking-wider">Le piège à connaître</h5>
+          <ul class="text-sm text-slate-300 space-y-2">
+            <li><i class="fa-solid fa-ban w-5"></i> Les quatre coupons doivent être utilisés <strong>dans l'ordre</strong>. Sauter un segment — par exemple ne pas prendre le Paris-Lyon et filer en train — entraîne l'annulation de la suite du billet et un supplément de <strong>500 €</strong> sur un vol intercontinental.</li>
+            <li><i class="fa-solid fa-clock-rotate-left w-5"></i> Décalage de 7 heures : le samedi de l'aller fait 31 heures. Prévoir de dormir un peu dans l'avion, car la soirée se termine à 22h15 sur le lac, soit 5h15 du matin en heure française.</li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="font-bold text-chicago-blue mb-3 text-sm uppercase tracking-wider">Numéros utiles</h5>
+          <ul class="text-sm text-slate-300 space-y-2">
+            <li><i class="fa-solid fa-phone w-5"></i> Air France France : <strong>+33 9 69 39 36 54</strong></li>
+            <li><i class="fa-solid fa-phone w-5"></i> Air France États-Unis : <strong>1-800-237-2747</strong></li>
+            <li><i class="fa-solid fa-phone w-5"></i> Lake Shore Sail (voilier) : <strong>+1 872-451-2700</strong></li>
+          </ul>
+          <div class="flex flex-wrap gap-3 mt-5">
+            <a href="https://wwws.airfrance.fr/" target="_blank" rel="noopener" class="px-4 py-2 bg-white text-chicago-dark rounded-lg text-sm font-semibold hover:bg-chicago-blue hover:text-white transition"><i class="fa-solid fa-right-to-bracket mr-2"></i>Gérer ma réservation</a>
+            <a href="https://www.flightaware.com/live/flight/AFR137" target="_blank" rel="noopener" class="px-4 py-2 border border-white/30 rounded-lg text-sm font-semibold hover:border-white transition"><i class="fa-solid fa-satellite-dish mr-2"></i>Suivre le vol</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sep h-12 md:h-20" style="background:#ffffff"><svg viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0,100 L1440,0 L1440,100 Z" fill="#F5F1EA"></path></svg></div>
+<!-- HOTELS -->
+<section id="hotels" data-sec="Hôtels" data-num="03" class="py-20 bg-chicago-sand">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14">
+      <h2 class="text-sm font-bold text-chicago-red uppercase tracking-widest mb-3">Hébergements réservés</h2>
+      <h3 class="text-4xl font-serif font-bold text-chicago-dark">Nos deux camps de base</h3>
+    </div>
+    <div class="grid md:grid-cols-2 gap-10">
+      <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-200 card-hover">
+        <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/597391146.jpg?k=9e38474b6db8dd3e16e7ff6bab914efe054c59d1de15bbf16176b9b5c44227cb&o=" class="w-full h-64 object-cover" alt="Sonesta ES Suites Chicago Downtown">
+        <div class="p-7">
+          <span class="text-xs font-bold uppercase tracking-widest text-chicago-blue">5 → 8 septembre · 3 nuits</span>
+          <h4 class="text-2xl font-serif font-bold text-chicago-dark mt-2 mb-3">Sonesta ES Suites — Downtown / Magnificent Mile</h4>
+          <p class="text-slate-600 mb-6">En plein cœur de la ville, à deux pas de la Michigan Avenue et du Riverwalk. Le point de chute idéal pour les journées « découverte » du samedi au lundi.</p>
+          <a href="https://www.booking.com/hotel/us/sonesta-es-suites-chicago-downtown-magnificient-mile.fr.html" target="_blank" rel="noopener"
+             class="inline-flex items-center px-5 py-3 bg-chicago-dark text-white rounded-lg font-medium hover:bg-chicago-blue transition">
+            <i class="fa-solid fa-bed mr-2"></i> Voir la fiche Booking
+          </a>
+        </div>
+      </div>
+      <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-200 card-hover">
+        <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/548382640.jpg?k=c38cfaa48afc3e6c8149e912c968bbab607b505fe9be3efd544f0e1e7c80f795&o=" class="w-full h-64 object-cover" alt="Hyatt Regency O'Hare">
+        <div class="p-7">
+          <span class="text-xs font-bold uppercase tracking-widest text-chicago-blue">8 → 13 septembre · 5 nuits</span>
+          <h4 class="text-2xl font-serif font-bold text-chicago-dark mt-2 mb-3">Hyatt Regency O'Hare (Rosemont)</h4>
+          <p class="text-slate-600 mb-6">Collé à l'aéroport, au salon professionnel… et surtout à <strong>5 minutes à pied du Fashion Outlets of Chicago</strong>. Zéro transport nécessaire pour le shopping.</p>
+          <a href="https://www.booking.com/hotel/us/hyatt-regency-o-hare.fr.html" target="_blank" rel="noopener"
+             class="inline-flex items-center px-5 py-3 bg-chicago-dark text-white rounded-lg font-medium hover:bg-chicago-blue transition">
+            <i class="fa-solid fa-bed mr-2"></i> Voir la fiche Booking
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sep h-12 md:h-16" style="background:#F5F1EA"><svg viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0,0 L720,78 L1440,0 L1440,100 L0,100 Z" fill="#f8fafc"></path></svg></div>
+<!-- PLANNING -->
+<section id="planning" data-sec="Planning" data-num="04" class="section-pattern py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-20">
+      <h2 class="text-sm font-bold text-chicago-red uppercase tracking-widest mb-3">Le planning</h2>
+      <h3 class="text-4xl md:text-5xl font-serif font-bold text-chicago-dark">Les jours en commun</h3>
+      <p class="text-slate-600 mt-4 max-w-2xl mx-auto">Christophe arrive le <strong>vendredi 4</strong> et repart le <strong>jeudi 10 au soir</strong>. Bruno arrive le <strong>samedi 5 à 14h00</strong>. Les journées vraiment communes : samedi 5, dimanche 6, lundi 7.</p>
+    </div>
+
+    <div class="space-y-28">
+
+      <!-- SAM 5 -->
+      <div class="flex flex-col lg:flex-row items-center gap-14">
+        <div class="w-full lg:w-1/2">
+          <div class="ratio yt cursor-pointer group" data-yt="V4I14EFNbiw" data-title="Feu d'artifice depuis le Tall Ship Windy">
+            <img src="https://img.youtube.com/vi/V4I14EFNbiw/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/V4I14EFNbiw/hqdefault.jpg'" class="object-cover" alt="Tall Ship Windy feu d'artifice">
+            <div class="flex items-center justify-center bg-black/40 group-hover:bg-black/25 transition">
+              <i class="fa-brands fa-youtube text-7xl text-white/90 yt-play"></i>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-4 mt-4">
+            <div class="ratio yt cursor-pointer group" data-yt="zqX-4lWJ0og" data-title="Fireworks à bord du Windy">
+              <img src="https://img.youtube.com/vi/zqX-4lWJ0og/hqdefault.jpg" class="object-cover" alt="Fireworks Windy">
+              <div class="flex items-center justify-center bg-black/45 group-hover:bg-black/25 transition"><i class="fa-brands fa-youtube text-4xl text-white/90 yt-play"></i></div>
+            </div>
+            <div class="ratio yt cursor-pointer group" data-yt="yc9sXdaAWzo" data-title="Navigation sur le lac Michigan à bord du Windy">
+              <img src="https://img.youtube.com/vi/yc9sXdaAWzo/hqdefault.jpg" class="object-cover" alt="Sailing Windy">
+              <div class="flex items-center justify-center bg-black/45 group-hover:bg-black/25 transition"><i class="fa-brands fa-youtube text-4xl text-white/90 yt-play"></i></div>
+            </div>
+          </div>
+        </div>
+        <div class="w-full lg:w-1/2">
+          <span class="inline-block bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3"><i class="fa-solid fa-circle-check mr-1"></i> Réservé &amp; payé</span><br>
+          <span class="text-chicago-blue font-bold tracking-widest uppercase text-sm">Samedi 5 septembre</span>
+          <h3 class="text-3xl font-serif font-bold text-chicago-dark mt-2 mb-6">Arrivée &amp; croisière feu d'artifice</h3>
+          <p class="text-lg text-slate-600 mb-5">Atterrissage à 14h00, transfert vers le <strong>Sonesta ES Suites</strong>, dépôt des valises et première balade tranquille sur le Riverwalk. Dîner tôt, impérativement.</p>
+          <p class="text-lg text-slate-600 mb-5"><strong>Le clou de la soirée :</strong> embarquement sur le <em>Tall Ship Windy</em>, le grand voilier à quatre mâts de Navy Pier, pour la croisière <strong>feu d'artifice</strong> — le dernier de la saison 2026.</p>
+
+          <div class="bg-white rounded-2xl border border-slate-200 p-5 mb-5">
+            <h4 class="font-bold text-chicago-dark mb-3 text-sm uppercase tracking-wider"><i class="fa-solid fa-ticket mr-2 text-chicago-red"></i>Réservation confirmée — Bruno &amp; Névine</h4>
+            <ul class="text-sm text-slate-700 space-y-1.5">
+              <li><strong>Horaire :</strong> 20h45 → 22h15 (embarquement dès 20h00)</li>
+              <li><strong>Lieu :</strong> Navy Pier, <strong>South Dock</strong> — 600 East Grand Avenue, près du Shakespeare Theater, du Billy Goat Tavern et du Bar Sol. Repérer les quatre mâts ou la billetterie.</li>
+              <li><strong>Billets :</strong> 2 adultes + 1 drink ticket chacun — réservation confirmée</li>
+              <li><strong>Total :</strong> 233,98 $ (211,13 €), opérateur <em>Lake Shore Sail Chicago</em></li>
+            </ul>
+          </div>
+
+          <div class="bg-chicago-sand border-l-4 border-chicago-red p-4 rounded-r-lg mb-5">
+            <p class="text-sm text-slate-700"><strong>Règle n°1 du Windy : ne pas être en retard, le bateau part à l'heure.</strong> L'équipage demande d'arriver 30 minutes avant, et plutôt <strong>45 minutes un samedi soir sur une sortie spéciale</strong> — donc <strong>viser 20h00 sur le quai</strong>. Un no-show n'est ni remboursé ni reportable, et toutes les ventes sont fermes (pas d'assurance annulation souscrite). Sortie maintenue par tous les temps.</p>
+          </div>
+          <div class="bg-slate-50 border border-slate-200 p-4 rounded-lg mb-7">
+            <p class="text-sm text-slate-700"><i class="fa-solid fa-shirt mr-2 text-chicago-blue"></i><strong>Pour Christophe, s'il veut réserver :</strong> attention, il faut passer par <strong>lakeshoresail.com</strong> (l'opérateur du voilier) et non par les autres sites de croisières de Navy Pier. Sur la page d'accueil, choisir la vignette <strong>« Chicago Fireworks Cruise »</strong> puis <em>Book Now</em>. Prévoir un coupe-vent : à 21h sur le lac, il fait nettement plus frais qu'en ville.</p>
+          </div>
+          <div class="flex flex-wrap gap-3">
+            <a href="https://lakeshoresail.com/" target="_blank" rel="noopener" class="px-6 py-3 bg-chicago-dark text-white rounded-lg font-medium hover:bg-chicago-blue transition"><i class="fa-solid fa-sailboat mr-2"></i> Réserver sur lakeshoresail.com</a>
+            <a href="https://www.lakeshoresail.com/getting-windy/" target="_blank" rel="noopener" class="px-6 py-3 border-2 border-slate-300 text-chicago-dark rounded-lg font-medium hover:border-chicago-dark transition"><i class="fa-solid fa-location-dot mr-2"></i> Trouver le quai</a>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=600+East+Grand+Avenue%2CChicago%2CIL%2C60611%2CUS" target="_blank" rel="noopener" class="px-6 py-3 border-2 border-slate-300 text-chicago-dark rounded-lg font-medium hover:border-chicago-dark transition"><i class="fa-solid fa-diamond-turn-right mr-2"></i> Itinéraire</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- DIM 6 -->
+      <div class="flex flex-col lg:flex-row-reverse items-center gap-14">
+        <div class="w-full lg:w-1/2 space-y-5">
+          <div class="ratio yt cursor-pointer group" data-yt="Kb5EwlTYcAs" data-title="Chicago Greeter : visites gratuites par des habitants">
+            <img src="https://img.youtube.com/vi/Kb5EwlTYcAs/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/Kb5EwlTYcAs/hqdefault.jpg'" class="object-cover" alt="Chicago Greeter">
+            <div class="flex items-center justify-center bg-black/40 group-hover:bg-black/25 transition"><i class="fa-brands fa-youtube text-6xl text-white/90 yt-play"></i></div>
+          </div>
+          <div class="ratio yt cursor-pointer group" data-yt="hLQvkiCdBmE" data-title="Croisière architecture à bord du First Lady">
+            <img src="https://img.youtube.com/vi/hLQvkiCdBmE/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/hLQvkiCdBmE/hqdefault.jpg'" class="object-cover" alt="Croisière architecture First Lady">
+            <div class="flex items-center justify-center bg-black/40 group-hover:bg-black/25 transition"><i class="fa-brands fa-youtube text-6xl text-white/90 yt-play"></i></div>
+          </div>
+        </div>
+        <div class="w-full lg:w-1/2">
+          <span class="text-chicago-blue font-bold tracking-widest uppercase text-sm">Dimanche 6 septembre</span>
+          <h3 class="text-3xl font-serif font-bold text-chicago-dark mt-2 mb-6">Un local qui raconte, puis la rivière</h3>
+          <p class="text-lg text-slate-600 mb-5"><strong>Matin — Chicago Greeter.</strong> Un habitant bénévole, passionné de sa ville, nous emmène 2 à 4 heures dans les rues, prend le « L » avec nous et raconte le Chicago du quotidien. <strong>C'est gratuit</strong>, sur mesure, et il faut s'inscrire <strong>au moins 3 à 4 semaines avant</strong> (on peut demander un guide francophone, sans garantie).</p>
+          <p class="text-lg text-slate-600 mb-5"><strong>Fin d'après-midi — Croisière architecture <span class="text-emerald-700 font-semibold">(réservée)</span>.</strong> L'incontournable absolu : 90 minutes sur les trois bras de la rivière, commentées par un guide formé par le <em>Chicago Architecture Center</em>, à bord du <em>First Lady</em>.</p>
+
+          <div class="bg-white rounded-2xl border border-slate-200 p-5 mb-5">
+            <h4 class="font-bold text-chicago-dark mb-3 text-sm uppercase tracking-wider"><i class="fa-solid fa-ship mr-2 text-chicago-red"></i>Réservation confirmée — Bruno &amp; Névine</h4>
+            <ul class="text-sm text-slate-700 space-y-1.5">
+              <li><strong>Départ :</strong> 17h30, durée 1h30</li>
+              <li><strong>Quai :</strong> angle <strong>sud-est du Michigan Avenue Bridge</strong>, au niveau de Wacker Drive (Riverside Gardens) — <em>et non Navy Pier</em></li>
+              <li><strong>Billets :</strong> 2 places, total 138,50 $ — commande confirmée</li>
+              <li><strong>Placement libre</strong>, toutes les places sont sur les ponts extérieurs</li>
+            </ul>
+          </div>
+
+          <div class="bg-chicago-sand border-l-4 border-chicago-blue p-4 rounded-r-lg mb-5">
+            <p class="text-sm text-slate-700"><strong>Arriver 20 à 30 minutes avant</strong> : les places ne sont pas attribuées et sur cette croisière, la place compte plus que tout. Viser le pont supérieur, côté extérieur. Le 6 septembre, le soleil se couche vers <strong>19h15</strong> : la seconde moitié de la balade se fera en lumière dorée, avec les façades de verre du Loop qui s'embrasent. Emporter l'appareil photo et une petite laine.</p>
+          </div>
+          <div class="flex flex-wrap gap-3">
+            <a href="https://chicagogreeter.com/" target="_blank" rel="noopener" class="px-6 py-3 bg-chicago-dark text-white rounded-lg font-medium hover:bg-chicago-blue transition"><i class="fa-solid fa-user-group mr-2"></i> S'inscrire — Chicago Greeter</a>
+            <a href="https://www.architecture.org/city-tours/river-cruise" target="_blank" rel="noopener" class="px-6 py-3 border-2 border-slate-300 text-chicago-dark rounded-lg font-medium hover:border-chicago-dark transition"><i class="fa-solid fa-ticket mr-2"></i> Réserver la croisière (Christophe)</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Chicago+Architecture+Center+River+Cruise+dock+Michigan+Avenue+Bridge" target="_blank" rel="noopener" class="px-6 py-3 border-2 border-slate-300 text-chicago-dark rounded-lg font-medium hover:border-chicago-dark transition"><i class="fa-solid fa-diamond-turn-right mr-2"></i> Le quai sur la carte</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- LUN 7 -->
+      <div class="flex flex-col lg:flex-row items-center gap-14">
+        <div class="w-full lg:w-1/2">
+          <div class="ratio yt cursor-pointer group" data-yt="5UhB3H-tvik" data-title="LondonHouse Rooftop, la vue en 4K">
+            <img src="https://img.youtube.com/vi/5UhB3H-tvik/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/5UhB3H-tvik/hqdefault.jpg'" class="object-cover" alt="LondonHouse rooftop">
+            <div class="flex items-center justify-center bg-black/40 group-hover:bg-black/25 transition"><i class="fa-brands fa-youtube text-7xl text-white/90 yt-play"></i></div>
+          </div>
+          <div class="grid grid-cols-2 gap-4 mt-4">
+            <div class="ratio yt cursor-pointer group" data-yt="zcjxwMnvVhU" data-title="LH Rooftop, la revue complète">
+              <img src="https://img.youtube.com/vi/zcjxwMnvVhU/hqdefault.jpg" class="object-cover" alt="LH Rooftop review">
+              <div class="flex items-center justify-center bg-black/45 group-hover:bg-black/25 transition"><i class="fa-brands fa-youtube text-4xl text-white/90 yt-play"></i></div>
+            </div>
+            <div class="ratio yt cursor-pointer group" data-yt="TmhycUigWa4" data-title="Quatre jours à Chicago : quartiers, bars, bonnes adresses">
+              <img src="https://img.youtube.com/vi/TmhycUigWa4/hqdefault.jpg" class="object-cover" alt="Four days in Chicago">
+              <div class="flex items-center justify-center bg-black/45 group-hover:bg-black/25 transition"><i class="fa-brands fa-youtube text-4xl text-white/90 yt-play"></i></div>
+            </div>
+          </div>
+        </div>
+        <div class="w-full lg:w-1/2">
+          <span class="text-chicago-blue font-bold tracking-widest uppercase text-sm">Lundi 7 septembre</span>
+          <h3 class="text-3xl font-serif font-bold text-chicago-dark mt-2 mb-6">Balades, hauteur gratuite &amp; gangsters</h3>
+          <p class="text-lg text-slate-600 mb-5"><strong>Journée :</strong> Millennium Park et le « Bean », le Loop et ses halls Art déco, les vélos Divvy le long du lakefront, et un vrai détour par un quartier vivant (Wicker Park, Fulton Market ou Pilsen) pour sortir du décor à touristes.</p>
+          <p class="text-lg text-slate-600 mb-5"><strong>Fin d'après-midi — la hauteur, version maligne :</strong> plutôt que payer le Skydeck ou le 360, on monte au <strong>LH Rooftop du LondonHouse</strong> (vue plein axe sur la rivière et le Wrigley Building) ou chez <strong>Cindy's</strong> au Chicago Athletic Association, face à Millennium Park. Le prix d'un cocktail remplace le prix du billet, et la vue est meilleure.</p>
+
+          <div class="bg-white rounded-2xl border border-slate-200 p-5 mb-5">
+            <h4 class="font-bold text-chicago-dark mb-3 text-sm uppercase tracking-wider"><i class="fa-solid fa-calendar-check mr-2 text-chicago-red"></i>Faut-il réserver ? Oui, mais pas comme on croit</h4>
+            <p class="text-sm text-slate-700 mb-3"><strong>LH Rooftop (LondonHouse) :</strong> subtilité importante — les réservations en ligne (Tock) ne concernent que le <strong>bar intérieur des 21<sup>e</sup> et 22<sup>e</sup> étages</strong>. La <strong>terrasse extérieure, celle avec la vue, ne se réserve pas</strong> : c'est premier arrivé, premier servi, avec 30 minutes à 1 heure d'attente aux heures de pointe. La bonne stratégie : réserver quand même une table intérieure en filet de sécurité, arriver <strong>avant 17h30</strong> pour attraper la terrasse, et prendre le coucher de soleil sur place. Ouvert de 11h00 à minuit. <strong>Tenue « smart casual » exigée après 18h00</strong> : pas de short, pas de tongs, pas de casquette — chemise ou polo, chaussures fermées.</p>
+            <p class="text-sm text-slate-700"><strong>Cindy's Rooftop :</strong> réservation vivement conseillée, ouverte <strong>14 jours à l'avance seulement</strong> — donc à poser dans l'agenda vers le <strong>24 août</strong>. Les walk-ins sont acceptés selon la capacité, et là encore la terrasse extérieure fonctionne surtout au premier arrivé. Groupes de 10 personnes maximum. Ouvert le lundi de 11h00 à 23h00.</p>
+          </div>
+          <p class="text-lg text-slate-600 mb-7"><strong>Option soirée :</strong> un <em>Mob Tour</em> sur les traces d'Al Capone et de la Prohibition — théâtral, drôle, en anglais.</p>
+          <div class="flex flex-wrap gap-3">
+            <a href="https://londonhousechicago.com/rooftop/" target="_blank" rel="noopener" class="px-6 py-3 bg-chicago-dark text-white rounded-lg font-medium hover:bg-chicago-blue transition"><i class="fa-solid fa-martini-glass-citrus mr-2"></i> LH Rooftop</a>
+            <a href="https://www.exploretock.com/lhrooftop" target="_blank" rel="noopener" class="px-6 py-3 border-2 border-slate-300 text-chicago-dark rounded-lg font-medium hover:border-chicago-dark transition"><i class="fa-regular fa-calendar-check mr-2"></i> Réserver LH</a>
+            <a href="https://www.cindysrooftop.com/" target="_blank" rel="noopener" class="px-6 py-3 border-2 border-slate-300 text-chicago-dark rounded-lg font-medium hover:border-chicago-dark transition"><i class="fa-solid fa-city mr-2"></i> Cindy's Rooftop</a>
+            <a href="https://gangstertour.com/" target="_blank" rel="noopener" class="px-6 py-3 border-2 border-slate-300 text-chicago-dark rounded-lg font-medium hover:border-chicago-dark transition"><i class="fa-solid fa-hat-cowboy mr-2"></i> Untouchable Tours</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- SEPARATEUR planning -> agenda -->
+<div class="sep h-14 md:h-20" style="background:#f8fafc"><svg viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0,100 C300,20 560,20 720,58 C880,96 1140,96 1440,16 L1440,100 Z" fill="#ffffff"></path></svg></div>
+
+<!-- AGENDA GLOBAL -->
+<section id="agenda" data-sec="Agenda" data-num="05" class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-4">
+      <h2 class="text-sm font-bold text-chicago-red uppercase tracking-widest mb-3">Du 4 au 14 septembre</h2>
+      <h3 class="text-4xl md:text-5xl font-serif font-bold text-chicago-dark">L&rsquo;agenda, d&rsquo;un seul coup d&rsquo;&oelig;il</h3>
+    </div>
+    <p class="text-center text-slate-500 max-w-2xl mx-auto mb-10 text-sm leading-relaxed">
+      Onze jours, 85 rendez-vous. Les journ&eacute;es en colonnes, les heures en lignes.
+      Cliquez sur n&rsquo;importe quel bloc pour en voir le d&eacute;tail, l&rsquo;adresse et les points d&rsquo;attention.
+    </p>
+
+    <div class="ag-toolbar">
+      <div class="ag-seg" role="group" aria-label="Choix de la vue">
+        <button type="button" class="ag-view" data-view="week"><i class="fa-solid fa-table-columns mr-2"></i>Vue semaine</button>
+        <button type="button" class="ag-view" data-view="list"><i class="fa-solid fa-list-ul mr-2"></i>Vue liste</button>
+      </div>
+      <button type="button" class="ag-filter on" data-cat="all"><i class="fa-solid fa-layer-group opacity-60"></i>Tout</button>
+        <button type="button" class="ag-filter" data-cat="voyage"><span class="dot" style="background:#0e7490"></span>Transport & hôtels</button>
+        <button type="button" class="ag-filter" data-cat="tourisme"><span class="dot" style="background:#C60C30"></span>Visites & découvertes</button>
+        <button type="button" class="ag-filter" data-cat="esker"><span class="dot" style="background:#4338ca"></span>Salon Esker</button>
+        <button type="button" class="ag-filter" data-cat="shopping"><span class="dot" style="background:#b45309"></span>Shopping</button>
+        <button type="button" class="ag-filter" data-cat="repas"><span class="dot" style="background:#15803d"></span>Repas & soirées</button>
+        <button type="button" class="ag-filter" data-cat="libre"><span class="dot" style="background:#64748b"></span>Temps libre & logistique</button>
+      <div class="ag-arrows">
+        <button type="button" id="agPrev" aria-label="Jours pr&eacute;c&eacute;dents"><i class="fa-solid fa-chevron-left text-xs"></i></button>
+        <button type="button" id="agJump" aria-label="Aller au salon" class="!w-auto px-3 text-[.7rem] font-semibold">Salon</button>
+        <button type="button" id="agNext" aria-label="Jours suivants"><i class="fa-solid fa-chevron-right text-xs"></i></button>
+      </div>
+    </div>
+
+    <div id="agWeek">
+      <div class="ag-scroll" id="agScroll"></div>
+      <p class="text-[.7rem] text-slate-400 mt-2.5 flex flex-wrap gap-x-4 gap-y-1">
+        <span><i class="fa-solid fa-arrows-left-right mr-1.5"></i>Faites d&eacute;filer horizontalement pour parcourir les onze jours</span>
+        <span><i class="fa-solid fa-star mr-1.5"></i>Les temps forts sont &eacute;toil&eacute;s</span>
+        <span><i class="fa-solid fa-globe mr-1.5"></i>Heures locales : Chicago du 5 au 13, Paris les 4 et 14</span>
+      </p>
+    </div>
+    <div id="agList" class="hidden"></div>
+    <div id="agDetail" class="ag-detail hidden"></div>
+
+    <div class="mt-8 grid gap-4 sm:grid-cols-3">
+      <div class="bg-chicago-sand rounded-2xl p-5">
+        <p class="text-xs uppercase tracking-wider text-slate-500 font-bold mb-1">Ensemble</p>
+        <p class="text-lg font-bold text-chicago-dark">Vendredi 4 &rarr; jeudi 10</p>
+        <p class="text-xs text-slate-500 mt-1">La fen&ecirc;tre commune avec Christophe. Le d&icirc;ner &agrave; quatre se joue mardi soir.</p>
+      </div>
+      <div class="bg-chicago-sand rounded-2xl p-5">
+        <p class="text-xs uppercase tracking-wider text-slate-500 font-bold mb-1">&Agrave; r&eacute;server encore</p>
+        <p class="text-lg font-bold text-chicago-dark">Greeter &middot; gangsters &middot; Cindy&rsquo;s</p>
+        <p class="text-xs text-slate-500 mt-1">Le Greeter 7 &agrave; 10 jours avant, Cindy&rsquo;s pile 14 jours avant, soit vers le 24 ao&ucirc;t.</p>
+      </div>
+      <div class="bg-chicago-sand rounded-2xl p-5">
+        <p class="text-xs uppercase tracking-wider text-slate-500 font-bold mb-1">Le point de tension</p>
+        <p class="text-lg font-bold text-chicago-dark">Lundi 14, CDG 2E &rarr; 2F</p>
+        <p class="text-xs text-slate-500 mt-1">1 h 05 d&rsquo;escale avec changement de terminal, apr&egrave;s une nuit en avion.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sep h-16 md:h-24" style="background:#ffffff"><svg viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0,55 C240,115 480,5 720,42 C960,80 1200,8 1440,48 L1440,100 L0,100 Z" fill="#002B49"></path></svg></div>
+<!-- TRAVAIL -->
+<section id="travail" data-sec="Salon pro" data-num="06" class="py-20 bg-chicago-dark text-white">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-sm font-bold text-chicago-blue uppercase tracking-widest mb-3">Mardi 8 → jeudi 10</h2>
+    <h3 class="text-3xl md:text-4xl font-serif font-bold mb-8">Transfert vers O'Hare &amp; salon professionnel</h3>
+    <div class="flex items-center justify-center gap-4 mb-8 text-chicago-blue text-2xl">
+      <i class="fa-solid fa-suitcase-rolling"></i><i class="fa-solid fa-arrow-right-long text-lg"></i><i class="fa-solid fa-hotel"></i><i class="fa-solid fa-arrow-right-long text-lg"></i><i class="fa-solid fa-briefcase"></i>
+    </div>
+    <p class="text-lg text-slate-300 leading-relaxed mb-4">Mardi matin, on quitte le centre-ville pour le <strong class="text-white">Hyatt Regency O'Hare</strong>. Bruno enchaîne ensuite sur <strong class="text-white">Esker All Access 2026</strong>, du mardi 14h00 au jeudi 16h15, au Loews voisin.</p>
+    <p class="text-lg text-slate-300 leading-relaxed mb-8">Christophe et son épouse reprennent l'avion le <strong class="text-white">jeudi 10 au soir</strong> : mercredi soir est donc le dernier créneau possible pour un dîner tous ensemble — sachant que la soirée Esker <em>Amped Up After Hours</em> court jusqu'à 23h00.</p>
+    <a href="#esker" class="inline-flex items-center px-6 py-3 bg-white text-chicago-dark rounded-lg font-semibold hover:bg-chicago-blue hover:text-white transition"><i class="fa-regular fa-calendar-days mr-2"></i>Voir l'agenda complet du salon</a>
+  </div>
+</section>
+
+<div class="sep h-10 md:h-14" style="background:#002B49"><svg viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0,100 L0,45 L120,95 L240,45 L360,95 L480,45 L600,95 L720,45 L840,95 L960,45 L1080,95 L1200,45 L1320,95 L1440,45 L1440,100 Z" fill="#ffffff"></path></svg></div>
+
+<!-- ESKER ALL ACCESS -->
+<section id="esker" data-sec="Esker All Access" data-num="07" class="py-24 bg-white">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-4">
+      <h2 class="text-sm font-bold text-chicago-red uppercase tracking-widest mb-3">8 → 10 septembre · Rosemont</h2>
+      <h3 class="text-4xl md:text-5xl font-serif font-bold text-chicago-dark">Esker All Access 2026</h3>
+    </div>
+    <p class="text-center text-slate-500 max-w-2xl mx-auto mb-12 text-sm">
+      L'agenda complet reconstitué depuis l'application Whova. Les sessions marquées d'une étoile sont mes suggestions
+      pour un profil avant-vente : roadmaps produit, keynotes et sujets Source-to-Pay.
+    </p>
+
+    <div class="grid gap-4 mb-12" style="grid-template-columns:repeat(auto-fit,minmax(210px,1fr))">
+      <div class="bg-chicago-sand rounded-2xl p-5">
+        <p class="text-xs uppercase tracking-wider text-slate-500 font-bold mb-1">Lieu</p>
+        <p class="font-bold text-chicago-dark leading-tight">Loews Chicago O'Hare</p>
+        <p class="text-xs text-slate-500 mt-1">5300 N River Rd, Rosemont IL 60018</p>
+        <a href="https://www.google.com/maps/dir/?api=1&amp;origin=Hyatt+Regency+O%27Hare+Chicago&amp;destination=Loews+Chicago+O%27Hare+Hotel%2C+5300+N+River+Rd%2C+Rosemont%2C+IL+60018&amp;travelmode=walking" target="_blank" rel="noopener" class="text-xs font-semibold text-chicago-blue hover:underline mt-2 inline-block">Depuis le Hyatt <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i></a>
+      </div>
+      <div class="bg-chicago-sand rounded-2xl p-5">
+        <p class="text-xs uppercase tracking-wider text-slate-500 font-bold mb-1">Badge</p>
+        <p class="font-bold text-chicago-dark">Retrait sur place</p>
+        <p class="text-xs text-slate-500 mt-1">General Admission · ID Whova dans le mail de confirmation</p>
+      </div>
+      <div class="bg-chicago-sand rounded-2xl p-5">
+        <p class="text-xs uppercase tracking-wider text-slate-500 font-bold mb-1">Inscription</p>
+        <p class="font-bold text-chicago-dark">Offerte</p>
+        <p class="text-xs text-slate-500 mt-1">Via le code sponsor Esker · 899 $ économisés</p>
+      </div>
+      <div class="bg-chicago-sand rounded-2xl p-5">
+        <p class="text-xs uppercase tracking-wider text-slate-500 font-bold mb-1">Contact</p>
+        <a href="mailto:eaaconference@esker.com" class="font-bold text-chicago-dark hover:text-chicago-red break-all text-sm">eaaconference@esker.com</a>
+        <p class="text-xs text-slate-500 mt-1">Commande du 29 juillet 2026</p>
+      </div>
+    </div>
+
+    <div class="esk-tabs"><button type="button" class="esk-tab esk-tab-on" data-day="mar"><span class="block text-sm font-bold">Mardi 8 septembre</span><span class="block text-xs font-medium opacity-70">Ouverture · 3 sessions</span></button><button type="button" class="esk-tab" data-day="mer"><span class="block text-sm font-bold">Mercredi 9 septembre</span><span class="block text-xs font-medium opacity-70">La grosse journée · 20 sessions</span></button><button type="button" class="esk-tab" data-day="jeu"><span class="block text-sm font-bold">Jeudi 10 septembre</span><span class="block text-xs font-medium opacity-70">Clôture à 16h15 · 30 sessions</span></button></div>
+    <div class="esk-legend"><span class="text-xs font-bold uppercase tracking-wider text-slate-400 mr-1">Filtrer :</span><button type="button" class="esk-filter" data-track="plenary"><span class="w-2.5 h-2.5 rounded-full inline-block mr-2" style="background:#0e7490"></span>Plénière &amp; temps forts</button><button type="button" class="esk-filter" data-track="s2p"><span class="w-2.5 h-2.5 rounded-full inline-block mr-2" style="background:#4338ca"></span>Source-to-Pay / AP</button><button type="button" class="esk-filter" data-track="o2c"><span class="w-2.5 h-2.5 rounded-full inline-block mr-2" style="background:#be123c"></span>Order-to-Cash / AR</button><button type="button" class="esk-filter" data-track="cs"><span class="w-2.5 h-2.5 rounded-full inline-block mr-2" style="background:#b45309"></span>Service client</button><button type="button" class="esk-filter" data-track="partner"><span class="w-2.5 h-2.5 rounded-full inline-block mr-2" style="background:#15803d"></span>Partenaires</button><button type="button" class="esk-filter esk-filter-on" data-track="all">Tout afficher</button></div>
+    <div class="esk-panels"><div class="esk-panel" data-day="mar"><div class="esk-slot">14:00</div><article class="esk-row" data-track="partner"><div class="esk-time"><span class="font-bold text-chicago-dark">14:00</span><span class="text-slate-400">17:00</span></div><span class="esk-bar" style="background:#15803d"></span><div class="min-w-0"><div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1"><h5 class="font-semibold text-chicago-dark leading-snug">Partner Connect 2026: Strengthening Partnerships</h5><span class="esk-pick"><i class="fa-solid fa-star"></i> Suggestion</span></div><div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500"><span><i class="fa-solid fa-location-dot mr-1.5 opacity-60"></i>Guggenheim 1 Room</span><span><i class="fa-solid fa-microphone mr-1.5 opacity-60"></i>Emmanuel Olivier, Ari Widl…</span></div><span class="esk-track" style="color:#15803d;background:#15803d18">Partenaires</span></div></article><div class="esk-slot">17:00</div><article class="esk-row" data-track="plenary"><div class="esk-time"><span class="font-bold text-chicago-dark">17:00</span><span class="text-slate-400">18:30</span></div><span class="esk-bar" style="background:#0e7490"></span><div class="min-w-0"><div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1"><h5 class="font-semibold text-chicago-dark leading-snug">Welcome Happy Hour &amp; Innovation Hub Open Hours</h5><span class="esk-pick"><i class="fa-solid fa-star"></i> Suggestion</span></div><div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500"><span><i class="fa-solid fa-location-dot mr-1.5 opacity-60"></i>Louvre Ballroom</span></div><span class="esk-track" style="color:#0e7490;background:#0e749018">Plénière &amp; temps forts</span></div></article><div class="esk-slot">18:30</div><article class="esk-row" data-track="plenary"><div class="esk-time"><span class="font-bold text-chicago-dark">18:30</span><span class="text-slate-400">22:00</span></div><span class="esk-bar" style="background:#0e7490"></span><div class="min-w-0"><div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1"><h5 class="font-semibold text-chicago-dark leading-snug">Open Evening</h5></div><div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500"></div><span class="esk-track" style="color:#0e7490;background:#0e749018">Plénière &amp; temps forts</span></div></article></div><div class="esk-panel hidden" data-day="mer"><div class="esk-slot">07:00</div><article class="esk-row" data-track="plenary"><div class="esk-time"><span class="font-bold text-chicago-dark">07:00</span><span class="text-slate-400">08:00</span></div><span class="esk-bar" style="background:#0e7490"></span><div class="min-w-0"><div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1"><h5 class="font-semibold text-chicago-dark leading-snug">Breakfast — Network at Breakfast</h5><span class="esk-pick"><i class="fa-solid fa-star"></i> Suggestion</span></div><div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500"><span><i class="fa-solid fa-location-dot mr-1.5 opacity-60"></i>Avedon Ballroom</span></div><span class="esk-track" style="color:#0e7490;background:#0e749018">Plénière &amp; temps forts</span></div></article><div class="esk-slot">08:30</div><article class="esk-row" data-track="plenary"><div class="esk-time"><span class="font-bold text-chicago-dark">08:30</span><span class="text-slate-400">10:30</span></div><span class="esk-bar" style="background:#0e7490"></span><div class="min-w-0"><div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1"><h5 class="font-semibold text-chicago-dark leading-snug">Keynote</h5><span class="esk-pick"><i class="fa-solid fa-star"></i> Suggestion</span></div><div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500"><span><i class="fa-solid fa-location-dot mr-1.5 opacity-60"></i>Cassatt Ballroom</span><span><i class="fa-solid fa-microphone mr-1.5 opacity-60"></i>Emmanuel Olivier, Eric Bus…</span></div><span class="esk-track" style="color:#0e7490;background:#0e749018">Plénière &amp; temps forts</span></div></article><div class="esk-slot">10:30</div><article class="esk-row" data-track="plenary"><div class="esk-time"><span class="font-bold text-chicago-dark">10:30</span><span class="text-slate-400">11:00</span></div><span class="esk-bar" style="background:#0e7490"></span><div class="min-w-0"><div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1"><h5 class="font-semibold text-chicago-dark leading-snug">Networking Break &amp; Innovation Hub Open Hours</h5></div><div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500"><span><i class="fa-solid fa-location-dot mr-1.5 opacity-60"></i>Louve Ballroom</span></div><span class="esk-track" style="color:#0e7490;background:#0e749018">Plénière &amp; temps forts</span></div></article><div class="esk-slot">11:00</div><article class="esk-row" data-track="s2p"><div class="esk-time"><span class="font-bold text-chicago-dark">11:00</span><span class="text-slate-400">12:00</span></div><span class="esk-bar" style="background:#4338ca"></span><div class="min-w-0"><div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1"><h5 class="font-semibold text-chicago-dark leading-snug">What&#x27;s New in Esker Source-to-Pay: AI Innovation</h5><span class="esk-pick"><i class="fa-solid fa-star"></i> Suggestion</span></div><div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500"><span><i class="fa-solid fa-location-dot mr-1.5 opacity-60"></i>Guggenheim 1 Room</span><span><i class="fa-solid fa-microphone mr-1.5 opacity-60"></i>Catherine Dupuy-Holdich,…</span></div><span class="esk-track" style="color:#4338ca;background:#4338ca18">Source-to-Pay / AP</span></div></article><article class="esk-row" data-track="o2c"><div class="esk-time"><span class="font-bold text-chicago-dark">11:00</span><span class="text-slate-400">11:45</span></div><span class="esk-bar" style="background:#be123c"></span><div class="min-w-0"><div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1"><h5 class="font-semibold text-chicago-dark leading-snug">Finance 2030: Redefining the Office of the CFO</h5></div><div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500"><span><i class="fa-solid fa-location-dot mr-1.5 opacity-60"></i>Guggenheim 2 Room</span><span><i class="fa-solid fa-microphone mr-1.5 opacity-60"></i>Bryan DeGraw</span></div><span class="esk-track" style="color:#be123c;background:#be123c18">Order-to-Cash / AR</span></div></article><article class="esk-row" data-track="cs"><div class="esk-time"><span class="font-bold text-chicago-dark">11:00</span><span class="text-slate-400">11:45</span></div><span class="esk-bar" style="background:#b45309"></span><div class="min-w-0"><div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1"><h5 class="font-semibold text-chicago-dark leading-snug">What Are Your Customers Really Asking? Turning Inquiries…</h5></div><div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500"><span><i class="fa-solid fa-location-dot mr-1.5 opacity-60"></i>Guggenheim 3 Room</span><span><i class="fa-solid fa-microphone mr-1.5 opacity-60"></i>Joe Hanousek</span></div><span class="esk-track" style="color:#b45309;background:#b4530918">Service client</span></div></article><div class="esk-slot">12:00</div><article class="esk-row" data-track="plenary"><div class="esk-time"><span class="font-bold text-chicago-dark">12:00</span><span class="text-slate-400">13:30</span></div><span class="esk-bar" style="background:#0e7490"></span><div class="min-w-0"><div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1"><h5 class="font-semibold text-chicago-dark leading-snug">Lunch &amp; Innovation Hub Open Hours</h5></div><div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500"><span><i class="fa-solid fa-location-dot mr-1.5 opacity-60"></i>Avedon Ballroom</span></div><span class="esk-track" style="color:#0e7490;background:#0e749018">Plénière &amp; temps forts</span></div></article><div class="esk-slot">13:30</div><article class="esk-row" data-track="s2p"><div class="esk-time"><span class="font-bold text-chicago-dark">13:30</span><span class="text-slate-400">14:15</span></div><span class="esk-bar" style="background:#4338ca"></span><div class="min-w-0"><div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1"><h5 class="font-semibold text-chicago-dark leading-snug">S2P Success Metrics: Benchmarking Your Way to…</h5><span class="esk-pick"><i class="fa-solid fa-star"></i> Suggestion</span></div><div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500"><span><i class="fa-solid fa-location-dot mr-1.5 opacity-60"></i>Guggenheim 1 Room</span><span><i class="fa-solid fa-microphone mr-1.5 opacity-60"></i>Shelly-Ann Campbell, John…</span></div><span class="esk-track" style="color:#4338ca;background:#4338ca18">Source-to-Pay / AP</span></div></article><article class="esk-row" data-track="o2c"><div class="esk-time"><span class="font-bold text-chicago-dark">13:30</span><span class="text-slate-400">14:15</span></div><span class="esk-bar" style="background:#be123c"></span><div class="min-w-0"><div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1"><h5 class="font-semibold text-chicago-dark leading-snug">Unlocking the Full Value of Order-to-Cash: The Case for…</h5></div><div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500"><span><i class="fa-solid fa-location-dot mr-1.5 opacity-60"></i>Guggenheim 2 Room</span><span><i class="fa-solid fa-microphone mr-1.5 opacity-60"></i>Whitney Thomas, Becky M…</span></div><span class="esk-track" style="color:#be123c;background:#be123c18">Order-to-Cash / AR</span></div></article><article class="esk-row" data-track="cs"><div class="esk-time"><span class="font-bold text-chicago-dark">13:30</span><span class="text-slate-400">14:30</span></div><span class="esk-bar" style="background:#b45309"></span><div class="min-w-0"><div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1"><h5 class="font-semibold text-chicago-dark leading-snug">Product Roadmap: What&#x27;s New with Esker&#x27;s Customer…</h5></div><div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500"><span><i class="fa-solid fa-location-dot mr-1.5 opacity-60"></i>Guggenheim 3 Room</span><span><i class="fa-solid fa-microphone mr-1.5 opacity-60"></i>Aurelien Coq, Stephane Lic…</span></div><span class="esk-track" style="color:#b45309;background:#b4530918">Service client</span></div></article><div class="esk-slot">14:15</div><article class="esk-row" data-track="plenary"><div class="esk-time"><span class="font-bold text-chicago-dark">14:15</span><span class="text-slate-400">14:45</span></div><span class="esk-bar" style="background:#0e7490"></span><div class="min-w-0"><div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1"><h5 class="font-semibold text-chicago-dark leading-snug">Networking Break &amp; Innovation Hub Open Hours</h5></div><div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500"><span><i class="fa-solid fa-location-dot mr-1.5 opacity-60"></i>Louve Ballroom</span></div><span class="esk-track" style="color:#0e7490;background:#0e749018">Plénière &amp; temps forts</span></div></article><div class="esk-slot">14:45</div><article class="esk-row" data-track="s2p"><div class="esk-time"><span class="font-bold text-chicago-dark">14:45</span><span class="text-slate-400">15:30</span></div><span class="esk-bar" style="background:#4338ca"></span><div class="min-w-0"><div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1"><h5 class="font-semibold text-chicago-dark leading-snug">SIM: What It Is, How It Works &amp; Why It Matters</h5><span class="esk-pick"><i class="fa-solid fa-star"></i> Suggestion</span></div><div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500"><span><i class="fa-solid fa-location-dot mr-1.5 opacity-60"></i>Guggenheim 1 Room</span><span><i class="fa-solid fa-microphone mr-1.5 opacity-60"></i>Ryan Rounsefell, Brandon…</span></div><span class="esk-track" style="color:#4338ca;background:#4338ca18">Source-to-Pay / AP</span></div></article><article class="esk-row" data-track="o2c"><div class="esk-time"><span class="font-bold text-chicago-dark">14:45</span><span class="text-slate-400">15:45</span></div><span class="esk-bar" style="background:#be123c"></span><div class="min-w-0"><div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1"><h5 class="font-semibold text-chicago-dark leading-snug">Product Roadmap: What&#x27;s New with Esker&#x27;s Accounts…</h5></div><div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500"><span><i class="fa-solid fa-location-dot mr-1.5 opacity-60"></i>Guggenheim 2 Room</span><span><i class="fa-solid fa-microphone mr-1.5 opacity-60"></i>Maud Berger, Tj Lui</span></div><span class="esk-track" style="color:#be123c;background:#be123c18">Order-to-Cash / AR</span></div></article><article class="esk-row" data-track="cs"><div class="esk-time"><span class="font-bold text-chicago-dark">14:45</span><span class="text-slate-400">15:30</span></div><span class="esk-bar" style="background:#b45309"></span><div class="min-w-0"><div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1"><h5 class="font-semibold text-chicago-dark leading-snug">Leveraging Customer Service Benchmarks &amp; KPIs</h5></div><div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500"><span><i class="fa-solid fa-location-dot mr-1.5 opacity-60"></i>Guggenheim 3 Room</span><span><i class="fa-solid fa-microphone mr-1.5 opacity-60"></i>John Purcell, Mike DeSteff…</span></div><span class="esk-track" style="color:#b45309;background:#b4530918">Service client</span></div></article><div class="esk-slot">15:30</div><article class="esk-row" data-track="plenary"><div class="esk-time"><span class="font-bold text-chicago-dark">15:30</span><span class="text-slate-400">16:00</span></div><span class="esk-bar" style="background:#0e7490"></span><div class="min-w-0"><div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1"><h5 class="font-semibold text-chicago-dark leading-snug">Networking Break &amp; Innovation Hub Open Hours</h5></div><div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500"><span><i class="fa-solid fa-location-dot mr-1.5 opacity-60"></i>Louve Ballroom</span></div><span class="esk-track" style="color:#0e7490;background:#0e749018">Plénière &amp; temps forts</span></div></article><div class="esk-slot">16:00</div><article class="esk-row" data-track="s2p"><div class="esk-time"><span class="font-bold text-chicago-dark">16:00</span><span class="text-slate-400">16:45</span></div><span class="esk-bar" style="background:#4338ca"></span><div class="min-w-0"><div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1"><h5 class="font-semibold text-chicago-dark leading-snug">Connected &amp; Efficient: How Esker&#x27;s S2P Suite Simplifies…</h5><span class="esk-pick"><i class="fa-solid fa-star"></i> Suggestion</span></div><div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500"><span><i class="fa-solid fa-location-dot mr-1.5 opacity-60"></i>Guggenheim 1 Room</span><span><i class="fa-solid fa-microphone mr-1.5 opacity-60"></i>Shelly-Ann Campbell, John…</span></div><span class="esk-track" style="color:#4338ca;background:#4338ca18">Source-to-Pay / AP</span></div></article><article class="esk-row" data-track="o2c"><div class="esk-time"><span class="font-bold text-chicago-dark">16:00</span><span class="text-slate-400">16:45</span></div><span class="esk-bar" style="background:#be123c"></span><div class="min-w-0"><div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1"><h5 class="font-semibold text-chicago-dark leading-snug">Defining Invoice-to-Cash Success: The KPIs That Matter</h5></div><div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500"><span><i class="fa-solid fa-location-dot mr-1.5 opacity-60"></i>Guggenheim 2 Room</span><span><i class="fa-solid fa-microphone mr-1.5 opacity-60"></i>Whitney Thomas</span></div><span class="esk-track" style="color:#be123c;background:#be123c18">Order-to-Cash / AR</span></div></article><article class="esk-row" data-track="cs"><div class="esk-time"><span class="font-bold text-chicago-dark">16:00</span><span class="text-slate-400">16:45</span></div><span class="esk-bar" style="background:#b45309"></span><div class="min-w-0"><div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1"><h5 class="font-semibold text-chicago-dark leading-snug">Breaking Down Silos: The Power of Integrating CIM, O…</h5></div><div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500"><span><i class="fa-solid fa-location-dot mr-1.5 opacity-60"></i>Guggenheim 3 Room</span><span><i class="fa-solid fa-microphone mr-1.5 opacity-60"></i>Mike DeSteffen</span></div><span class="esk-track" style="color:#b45309;background:#b4530918">Service client</span></div></article><div class="esk-slot">17:00</div><article class="esk-row" data-track="plenary"><div class="esk-time"><span class="font-bold text-chicago-dark">17:00</span><span class="text-slate-400">18:00</span></div><span class="esk-bar" style="background:#0e7490"></span><div class="min-w-0"><div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1"><h5 class="font-semibold text-chicago-dark leading-snug">Sponsor Appreciation Happy Hour</h5><span class="esk-pick"><i class="fa-solid fa-star"></i> Suggestion</span></div><div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500"></div><span class="esk-track" style="color:#0e7490;background:#0e749018">Plénière &amp; temps forts</span></div></article><div class="esk-slot">19:00</div><article class="esk-row" data-track="plenary"><div class="esk-time"><span class="font-bold text-chicago-dark">19:00</span><span class="text-slate-400">23:00</span></div><span class="esk-bar" style="background:#0e7490"></span><div class="min-w-0"><div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1"><h5 class="font-semibold text-chicago-dark leading-snug">Evening Event: Amped Up After Hours</h5><span class="esk-pick"><i class="fa-solid fa-star"></i> Suggestion</span></div><div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500"></div><span class="esk-track" style="color:#0e7490;background:#0e749018">Plénière &amp; temps forts</span></div></article></div><div class="esk-panel hidden" data-day="jeu"><div class="esk-slot">07:30</div><article class="esk-row" data-track="plenary"><div class="esk-time"><span class="font-bold text-chicago-dark">07:30</span><span class="text-slate-400">08:30</span></div><span class="esk-bar" style="background:#0e7490"></span><div class="min-w-0"><div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1"><h5 class="font-semibold text-chicago-dark leading-snug">Breakfast — Network at Breakfast</h5><span class="esk-pick"><i class="fa-solid fa-star"></i> Suggestion</span></div><div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500"><span><i class="fa-solid fa-location-dot mr-1.5 opacity-60"></i>Avedon Ballroom</span></div><span class="esk-track" style="color:#0e7490;background:#0e749018">Plénière &amp; temps forts</span></div></article><div class="esk-slot">08:30</div><article class="esk-row" data-track="plenary"><div class="esk-time"><span class="font-bold text-chicago-dark">08:30</span><span class="text-slate-400">10:00</span></div><span class="esk-bar" style="background:#0e7490"></span><div class="min-w-0"><div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1"><h5 class="font-semibold text-chicago-dark leading-snug">Keynote</h5><span class="esk-pick"><i class="fa-solid fa-star"></i> Suggestion</span></div><div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500"><span><i class="fa-solid fa-location-dot mr-1.5 opacity-60"></i>Cassatt Ballroom</span><span><i class="fa-solid fa-microphone mr-1.5 opacity-60"></i>Patrick Reymann, Jean-Jac…</span></div><span class="esk-track" style="color:#0e7490;background:#0e749018">Plénière &amp; temps forts</span></div></article><div class="esk-slot">10:00</div><article class="esk-row" data-track="plenary"><div class="esk-time"><span class="font-bold text-chicago-dark">10:00</span><span class="text-slate-400">10:30</span></div><span class="esk-bar" style="background:#0e7490"></span><div class="min-w-0"><div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1"><h5 class="font-semibold text-chicago-dark leading-snug">Networking Break &amp; Innovation Hub Open Hours</h5></div><div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500"><span><i class="fa-solid fa-location-dot mr-1.5 opacity-60"></i>Louve Ballroom</span></div><span class="esk-track" style="color:#0e7490;background:#0e749018">Plénière &amp; temps forts</span></div></article><div class="esk-slot">10:30</div><article class="esk-row" data-track="s2p"><div class="esk-time"><span class="font-bold text-chicago-dark">10:30</span><span class="text-slate-400">11:15</span></div><span class="esk-bar" style="background:#4338ca"></span><div class="min-w-0"><div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1"><h5 class="font-semibold text-chicago-dark leading-snug">Own Your Solution: Getting the Most from Your Esker A…</h5><span class="esk-pick"><i class="fa-solid fa-star"></i> Suggestion</span></div><div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500"><span><i class="fa-solid fa-location-dot mr-1.5 opacity-60"></i>Teylers Room</span><span><i class="fa-solid fa-microphone mr-1.5 opacity-60"></i>Emily Keip, Kara Hildebrandt</span></div><span class="esk-track" style="color:#4338ca;background:#4338ca18">Source-to-Pay / AP</span></div></article><article class="esk-row" data-track="s2p"><div class="esk-time"><span class="font-bold text-chicago-dark">10:30</span><span class="text-slate-400">11:15</span></div><span class="esk-bar" style="background:#4338ca"></span><div class="min-w-0"><div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1"><h5 class="font-semibold text-chicago-dark leading-snug">Customer Spotlight: Yaskawa America, Inc.</h5></div><div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500"><span><i class="fa-solid fa-location-dot mr-1.5 opacity-60"></i>Guggenheim 1 Room</span></div><span class="esk-track" style="color:#4338ca;background:#4338ca18">Source-to-Pay / AP</span></div></article><article class="esk-row" data-track="o2c"><div class="esk-time"><span class="font-bold text-chicago-dark">10:30</span><span class="text-slate-400">11:15</span></div><span class="esk-bar" style="background:#be123c"></span><div class="min-w-0"><div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1"><h5 class="font-semibold text-chicago-dark leading-snug">Cash Application Masterclass: AI Strategies</h5></div><div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500"><span><i class="fa-solid fa-location-dot mr-1.5 opacity-60"></i>Guggenheim 2 Room</span><span><i class="fa-solid fa-microphone mr-1.5 opacity-60"></i>Kenyon Strobeck, Scott Le…</span></div><span class="esk-track" style="color:#be123c;background:#be123c18">Order-to-Cash / AR</span></div></article><article class="esk-row" data-track="o2c"><div class="esk-time"><span class="font-bold text-chicago-dark">10:30</span><span class="text-slate-400">11:15</span></div><span class="esk-bar" style="background:#be123c"></span><div class="min-w-0"><div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1"><h5 class="font-semibold text-chicago-dark leading-snug">Basic Troubleshooting &amp; Administration: Solving Co…</h5></div><div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500"><span><i class="fa-solid fa-location-dot mr-1.5 opacity-60"></i>Montrose Room</span><span><i class="fa-solid fa-microphone mr-1.5 opacity-60"></i>Kyle Schenk, Annie Browni…</span></div><span class="esk-track" style="color:#be123c;background:#be123c18">Order-to-Cash / AR</span></div></article><article class="esk-row" data-track="cs"><div class="esk-time"><span class="font-bold text-chicago-dark">10:30</span><span class="text-slate-400">11:15</span></div><span class="esk-bar" style="background:#b45309"></span><div class="min-w-0"><div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1"><h5 class="font-semibold text-chicago-dark leading-snug">Optimizing Customer Inquiry Management</h5></div><div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500"><span><i class="fa-solid fa-location-dot mr-1.5 opacity-60"></i>Guggenheim 3 Room</span><span><i class="fa-solid fa-microphone mr-1.5 opacity-60"></i>Amy Thoftne, Madi Vierling</span></div><span class="esk-track" style="color:#b45309;background:#b4530918">Service client</span></div></article><div class="esk-slot">11:15</div><article class="esk-row" data-track="s2p"><div class="esk-time"><span class="font-bold text-chicago-dark">11:15</span><span class="text-slate-400">12:00</span></div><span class="esk-bar" style="background:#4338ca"></span><div class="min-w-0"><div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1"><h5 class="font-semibold text-chicago-dark leading-snug">Small Beginnings, Big Results: Starting Your Digital…</h5><span class="esk-pick"><i class="fa-solid fa-star"></i> Suggestion</span></div><div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500"><span><i class="fa-solid fa-location-dot mr-1.5 opacity-60"></i>Guggenheim 1 Room</span><span><i class="fa-solid fa-microphone mr-1.5 opacity-60"></i>Adam Collins, John Purcell,…</span></div><span class="esk-track" style="color:#4338ca;background:#4338ca18">Source-to-Pay / AP</span></div></article><article class="esk-row" data-track="s2p"><div class="esk-time"><span class="font-bold text-chicago-dark">11:15</span><span class="text-slate-400">12:00</span></div><span class="esk-bar" style="background:#4338ca"></span><div class="min-w-0"><div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1"><h5 class="font-semibold text-chicago-dark leading-snug">Understanding AP Data Tables: What They Are &amp; How…</h5></div><div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500"><span><i class="fa-solid fa-location-dot mr-1.5 opacity-60"></i>Teylers Room</span><span><i class="fa-solid fa-microphone mr-1.5 opacity-60"></i>Jeff Blankenship, Jairus H…</span></div><span class="esk-track" style="color:#4338ca;background:#4338ca18">Source-to-Pay / AP</span></div></article><article class="esk-row" data-track="o2c"><div class="esk-time"><span class="font-bold text-chicago-dark">11:15</span><span class="text-slate-400">12:00</span></div><span class="esk-bar" style="background:#be123c"></span><div class="min-w-0"><div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1"><h5 class="font-semibold text-chicago-dark leading-snug">Customer Panel: Proven Financial Results</h5></div><div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500"><span><i class="fa-solid fa-location-dot mr-1.5 opacity-60"></i>Montrose Room</span><span><i class="fa-solid fa-microphone mr-1.5 opacity-60"></i>Matthew Miranda, Nancy H…</span></div><span class="esk-track" style="color:#be123c;background:#be123c18">Order-to-Cash / AR</span></div></article><article class="esk-row" data-track="o2c"><div class="esk-time"><span class="font-bold text-chicago-dark">11:15</span><span class="text-slate-400">12:00</span></div><span class="esk-bar" style="background:#be123c"></span><div class="min-w-0"><div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1"><h5 class="font-semibold text-chicago-dark leading-snug">From Good to Great: 5 Truths About High-Performing AR</h5></div><div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500"><span><i class="fa-solid fa-location-dot mr-1.5 opacity-60"></i>Guggenheim 2 Room</span><span><i class="fa-solid fa-microphone mr-1.5 opacity-60"></i>Kenyon Strobeck, Maud Be…</span></div><span class="esk-track" style="color:#be123c;background:#be123c18">Order-to-Cash / AR</span></div></article><article class="esk-row" data-track="cs"><div class="esk-time"><span class="font-bold text-chicago-dark">11:15</span><span class="text-slate-400">12:00</span></div><span class="esk-bar" style="background:#b45309"></span><div class="min-w-0"><div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1"><h5 class="font-semibold text-chicago-dark leading-snug">Guiding Customer Self-Service for Common Tr…</h5></div><div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500"><span><i class="fa-solid fa-location-dot mr-1.5 opacity-60"></i>Guggenheim 3 Room</span><span><i class="fa-solid fa-microphone mr-1.5 opacity-60"></i>Erin Cronce, Branavan Yog…</span></div><span class="esk-track" style="color:#b45309;background:#b4530918">Service client</span></div></article><div class="esk-slot">12:00</div><article class="esk-row" data-track="plenary"><div class="esk-time"><span class="font-bold text-chicago-dark">12:00</span><span class="text-slate-400">13:30</span></div><span class="esk-bar" style="background:#0e7490"></span><div class="min-w-0"><div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1"><h5 class="font-semibold text-chicago-dark leading-snug">Lunch &amp; Innovation Hub Open Hours</h5></div><div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500"><span><i class="fa-solid fa-location-dot mr-1.5 opacity-60"></i>Avedon Ballroom</span></div><span class="esk-track" style="color:#0e7490;background:#0e749018">Plénière &amp; temps forts</span></div></article><div class="esk-slot">13:30</div><article class="esk-row" data-track="s2p"><div class="esk-time"><span class="font-bold text-chicago-dark">13:30</span><span class="text-slate-400">14:15</span></div><span class="esk-bar" style="background:#4338ca"></span><div class="min-w-0"><div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1"><h5 class="font-semibold text-chicago-dark leading-snug">Successfully Navigating Global E-Invoicing Compliance</h5><span class="esk-pick"><i class="fa-solid fa-star"></i> Suggestion</span></div><div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500"><span><i class="fa-solid fa-location-dot mr-1.5 opacity-60"></i>Guggenheim 1 Room</span><span><i class="fa-solid fa-microphone mr-1.5 opacity-60"></i>Claire Wegert</span></div><span class="esk-track" style="color:#4338ca;background:#4338ca18">Source-to-Pay / AP</span></div></article><article class="esk-row" data-track="s2p"><div class="esk-time"><span class="font-bold text-chicago-dark">13:30</span><span class="text-slate-400">14:15</span></div><span class="esk-bar" style="background:#4338ca"></span><div class="min-w-0"><div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1"><h5 class="font-semibold text-chicago-dark leading-snug">Esker Administration &amp; Troubleshooting 101</h5></div><div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500"><span><i class="fa-solid fa-location-dot mr-1.5 opacity-60"></i>Teylers Room</span><span><i class="fa-solid fa-microphone mr-1.5 opacity-60"></i>Clint Kosobucki, Mikhaila F…</span></div><span class="esk-track" style="color:#4338ca;background:#4338ca18">Source-to-Pay / AP</span></div></article><article class="esk-row" data-track="o2c"><div class="esk-time"><span class="font-bold text-chicago-dark">13:30</span><span class="text-slate-400">14:15</span></div><span class="esk-bar" style="background:#be123c"></span><div class="min-w-0"><div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1"><h5 class="font-semibold text-chicago-dark leading-snug">Customer Spotlight: Covetrus</h5></div><div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500"><span><i class="fa-solid fa-location-dot mr-1.5 opacity-60"></i>Guggenheim 2 Room</span><span><i class="fa-solid fa-microphone mr-1.5 opacity-60"></i>Jacob Snodgrass, Sunny B…</span></div><span class="esk-track" style="color:#be123c;background:#be123c18">Order-to-Cash / AR</span></div></article><article class="esk-row" data-track="o2c"><div class="esk-time"><span class="font-bold text-chicago-dark">13:30</span><span class="text-slate-400">14:15</span></div><span class="esk-bar" style="background:#be123c"></span><div class="min-w-0"><div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1"><h5 class="font-semibold text-chicago-dark leading-snug">Beyond Straight-Through Processing: Leveraging Ne…</h5></div><div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500"><span><i class="fa-solid fa-location-dot mr-1.5 opacity-60"></i>Montrose Room</span><span><i class="fa-solid fa-microphone mr-1.5 opacity-60"></i>Emily Grobelny, Kayla Conn…</span></div><span class="esk-track" style="color:#be123c;background:#be123c18">Order-to-Cash / AR</span></div></article><article class="esk-row" data-track="cs"><div class="esk-time"><span class="font-bold text-chicago-dark">13:30</span><span class="text-slate-400">14:15</span></div><span class="esk-bar" style="background:#b45309"></span><div class="min-w-0"><div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1"><h5 class="font-semibold text-chicago-dark leading-snug">Customer Panel</h5></div><div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500"><span><i class="fa-solid fa-location-dot mr-1.5 opacity-60"></i>Guggenheim 3 Room</span></div><span class="esk-track" style="color:#b45309;background:#b4530918">Service client</span></div></article><div class="esk-slot">14:15</div><article class="esk-row" data-track="s2p"><div class="esk-time"><span class="font-bold text-chicago-dark">14:15</span><span class="text-slate-400">15:00</span></div><span class="esk-bar" style="background:#4338ca"></span><div class="min-w-0"><div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1"><h5 class="font-semibold text-chicago-dark leading-snug">Change Management: The Key to Long-Term Success</h5><span class="esk-pick"><i class="fa-solid fa-star"></i> Suggestion</span></div><div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500"><span><i class="fa-solid fa-location-dot mr-1.5 opacity-60"></i>Guggenheim 1 Room</span><span><i class="fa-solid fa-microphone mr-1.5 opacity-60"></i>Karina Di Giovanni</span></div><span class="esk-track" style="color:#4338ca;background:#4338ca18">Source-to-Pay / AP</span></div></article><article class="esk-row" data-track="s2p"><div class="esk-time"><span class="font-bold text-chicago-dark">14:15</span><span class="text-slate-400">15:00</span></div><span class="esk-bar" style="background:#4338ca"></span><div class="min-w-0"><div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1"><h5 class="font-semibold text-chicago-dark leading-snug">Making Sense of Your AP Data: Reporting Best Practices</h5></div><div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500"><span><i class="fa-solid fa-location-dot mr-1.5 opacity-60"></i>Teylers Room</span><span><i class="fa-solid fa-microphone mr-1.5 opacity-60"></i>Brandon Teal, Al Lusis</span></div><span class="esk-track" style="color:#4338ca;background:#4338ca18">Source-to-Pay / AP</span></div></article><article class="esk-row" data-track="o2c"><div class="esk-time"><span class="font-bold text-chicago-dark">14:15</span><span class="text-slate-400">15:00</span></div><span class="esk-bar" style="background:#be123c"></span><div class="min-w-0"><div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1"><h5 class="font-semibold text-chicago-dark leading-snug">Proactive Accounts Receivable: Using Data to A…</h5></div><div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500"><span><i class="fa-solid fa-location-dot mr-1.5 opacity-60"></i>Guggenheim 2 Room</span><span><i class="fa-solid fa-microphone mr-1.5 opacity-60"></i>Whitney Thomas, Emily Gr…</span></div><span class="esk-track" style="color:#be123c;background:#be123c18">Order-to-Cash / AR</span></div></article><article class="esk-row" data-track="o2c"><div class="esk-time"><span class="font-bold text-chicago-dark">14:15</span><span class="text-slate-400">15:00</span></div><span class="esk-bar" style="background:#be123c"></span><div class="min-w-0"><div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1"><h5 class="font-semibold text-chicago-dark leading-snug">Smarter Collections: Crafting an Effective Strategy</h5></div><div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500"><span><i class="fa-solid fa-location-dot mr-1.5 opacity-60"></i>Montrose Room</span><span><i class="fa-solid fa-microphone mr-1.5 opacity-60"></i>Becky Mender, Nicole Leach</span></div><span class="esk-track" style="color:#be123c;background:#be123c18">Order-to-Cash / AR</span></div></article><article class="esk-row" data-track="cs"><div class="esk-time"><span class="font-bold text-chicago-dark">14:15</span><span class="text-slate-400">15:00</span></div><span class="esk-bar" style="background:#b45309"></span><div class="min-w-0"><div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1"><h5 class="font-semibold text-chicago-dark leading-snug">The End of Guesswork: Measuring Customer Experience</h5></div><div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500"><span><i class="fa-solid fa-location-dot mr-1.5 opacity-60"></i>Guggenheim 3 Room</span><span><i class="fa-solid fa-microphone mr-1.5 opacity-60"></i>Jim Tincher</span></div><span class="esk-track" style="color:#b45309;background:#b4530918">Service client</span></div></article><div class="esk-slot">15:00</div><article class="esk-row" data-track="plenary"><div class="esk-time"><span class="font-bold text-chicago-dark">15:00</span><span class="text-slate-400">15:30</span></div><span class="esk-bar" style="background:#0e7490"></span><div class="min-w-0"><div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1"><h5 class="font-semibold text-chicago-dark leading-snug">Networking Break &amp; Innovation Hub Open Hours</h5></div><div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500"><span><i class="fa-solid fa-location-dot mr-1.5 opacity-60"></i>Louve Ballroom</span></div><span class="esk-track" style="color:#0e7490;background:#0e749018">Plénière &amp; temps forts</span></div></article><div class="esk-slot">15:30</div><article class="esk-row" data-track="s2p"><div class="esk-time"><span class="font-bold text-chicago-dark">15:30</span><span class="text-slate-400">16:15</span></div><span class="esk-bar" style="background:#4338ca"></span><div class="min-w-0"><div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1"><h5 class="font-semibold text-chicago-dark leading-snug">Stopping Fraud Before It Starts with AI-Powered Sup…</h5><span class="esk-pick"><i class="fa-solid fa-star"></i> Suggestion</span></div><div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500"><span><i class="fa-solid fa-location-dot mr-1.5 opacity-60"></i>Guggenheim 1 Room</span><span><i class="fa-solid fa-microphone mr-1.5 opacity-60"></i>Shelly-Ann Campbell, Cind…</span></div><span class="esk-track" style="color:#4338ca;background:#4338ca18">Source-to-Pay / AP</span></div></article><article class="esk-row" data-track="s2p"><div class="esk-time"><span class="font-bold text-chicago-dark">15:30</span><span class="text-slate-400">16:15</span></div><span class="esk-bar" style="background:#4338ca"></span><div class="min-w-0"><div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1"><h5 class="font-semibold text-chicago-dark leading-snug">Invoice Reconciliation Do&#x27;s &amp; Don&#x27;ts</h5></div><div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500"><span><i class="fa-solid fa-location-dot mr-1.5 opacity-60"></i>Teylers Room</span><span><i class="fa-solid fa-microphone mr-1.5 opacity-60"></i>Kyle Schenk, Nick Volkmann</span></div><span class="esk-track" style="color:#4338ca;background:#4338ca18">Source-to-Pay / AP</span></div></article><article class="esk-row" data-track="o2c"><div class="esk-time"><span class="font-bold text-chicago-dark">15:30</span><span class="text-slate-400">16:15</span></div><span class="esk-bar" style="background:#be123c"></span><div class="min-w-0"><div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1"><h5 class="font-semibold text-chicago-dark leading-snug">Stop Absorbing Credit Card Fees: A Smarter Approach</h5></div><div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500"><span><i class="fa-solid fa-location-dot mr-1.5 opacity-60"></i>Guggenheim 2 Room</span><span><i class="fa-solid fa-microphone mr-1.5 opacity-60"></i>Nagendra Jayanty</span></div><span class="esk-track" style="color:#be123c;background:#be123c18">Order-to-Cash / AR</span></div></article><article class="esk-row" data-track="o2c"><div class="esk-time"><span class="font-bold text-chicago-dark">15:30</span><span class="text-slate-400">16:15</span></div><span class="esk-bar" style="background:#be123c"></span><div class="min-w-0"><div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1"><h5 class="font-semibold text-chicago-dark leading-snug">Getting More Out of Cash Application: Teaching Tech…</h5></div><div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500"><span><i class="fa-solid fa-location-dot mr-1.5 opacity-60"></i>Montrose Room</span><span><i class="fa-solid fa-microphone mr-1.5 opacity-60"></i>Scott Leahy, Branavan Yog…</span></div><span class="esk-track" style="color:#be123c;background:#be123c18">Order-to-Cash / AR</span></div></article><article class="esk-row" data-track="cs"><div class="esk-time"><span class="font-bold text-chicago-dark">15:30</span><span class="text-slate-400">16:15</span></div><span class="esk-bar" style="background:#b45309"></span><div class="min-w-0"><div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1"><h5 class="font-semibold text-chicago-dark leading-snug">Unlocking Insights in Claims Management</h5></div><div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500"><span><i class="fa-solid fa-location-dot mr-1.5 opacity-60"></i>Guggenheim 3 Room</span><span><i class="fa-solid fa-microphone mr-1.5 opacity-60"></i>Madi Vierling, Shyla Jones</span></div><span class="esk-track" style="color:#b45309;background:#b4530918">Service client</span></div></article></div></div>
+
+    <div class="mt-12 grid gap-6" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
+      <div class="border-l-4 border-chicago-red bg-chicago-sand p-5 rounded-r-xl">
+        <h4 class="font-bold text-chicago-dark mb-2"><i class="fa-solid fa-triangle-exclamation mr-2 text-chicago-red"></i>Attention au lieu</h4>
+        <p class="text-sm text-slate-700">Le salon se tient au <strong>Loews</strong>, alors que la chambre est au <strong>Hyatt Regency O'Hare</strong>. Les deux sont à Rosemont, à une dizaine de minutes à pied, mais ce ne sont pas les mêmes bâtiments. À vérifier le mardi avant la première session de 14h00.</p>
+      </div>
+      <div class="border-l-4 border-chicago-blue bg-slate-50 p-5 rounded-r-xl">
+        <h4 class="font-bold text-chicago-dark mb-2"><i class="fa-solid fa-clock mr-2 text-chicago-blue"></i>Ce que ça implique pour Névine</h4>
+        <p class="text-sm text-slate-700">Les journées sont pleines : mercredi de 7h00 à 23h00 avec la soirée <em>Amped Up After Hours</em>, jeudi de 7h30 à 16h15. Névine a donc mercredi et jeudi en solo — le Fashion Outlets est à quelques minutes à pied du Hyatt, et la ligne bleue rejoint le centre-ville en 25 minutes.</p>
+      </div>
+      <div class="border-l-4 border-emerald-500 bg-slate-50 p-5 rounded-r-xl">
+        <h4 class="font-bold text-chicago-dark mb-2"><i class="fa-solid fa-mobile-screen mr-2 text-emerald-600"></i>Avant de partir</h4>
+        <p class="text-sm text-slate-700">Compléter le profil Whova (l'affiliation Fluxym est déjà renseignée), repérer les participants intéressants dans l'onglet <em>Participants</em>, et ajouter les sessions choisies à <em>Mon Agenda</em> — les salles Guggenheim se remplissent vite.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sep sep-medallion" style="background:#ffffff"><span class="rule"></span><span class="badge"><i class="fa-solid fa-bag-shopping"></i></span></div>
+<!-- SHOPPING -->
+<section id="shopping" data-sec="Shopping" data-num="08" class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-sm font-bold text-chicago-red uppercase tracking-widest mb-3">Vendredi 11 &amp; samedi 12</h2>
+      <h3 class="text-4xl md:text-5xl font-serif font-bold text-chicago-dark">Opération Fashion Outlets</h3>
+    </div>
+    <div class="grid lg:grid-cols-2 gap-14 items-center">
+      <div class="space-y-5">
+        <div class="ratio yt cursor-pointer group" data-yt="XlJx5G3o5so" data-title="Fashion Outlets of Chicago : la visite complète">
+          <img src="https://img.youtube.com/vi/XlJx5G3o5so/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/XlJx5G3o5so/hqdefault.jpg'" class="object-cover" alt="Fashion Outlets of Chicago">
+          <div class="flex items-center justify-center bg-black/40 group-hover:bg-black/25 transition"><i class="fa-brands fa-youtube text-7xl text-white/90 yt-play"></i></div>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="ratio yt cursor-pointer group" data-yt="eOuSTi6MpAc" data-title="Fashion Outlets : tour des boutiques">
+            <img src="https://img.youtube.com/vi/eOuSTi6MpAc/hqdefault.jpg" class="object-cover" alt="Fashion Outlets tour">
+            <div class="flex items-center justify-center bg-black/45 group-hover:bg-black/25 transition"><i class="fa-brands fa-youtube text-4xl text-white/90 yt-play"></i></div>
+          </div>
+          <div class="ratio yt cursor-pointer group" data-yt="tC2YkL4X3Eg" data-title="Vlog shopping outlet à Rosemont">
+            <img src="https://img.youtube.com/vi/tC2YkL4X3Eg/hqdefault.jpg" class="object-cover" alt="Outlet shopping vlog">
+            <div class="flex items-center justify-center bg-black/45 group-hover:bg-black/25 transition"><i class="fa-brands fa-youtube text-4xl text-white/90 yt-play"></i></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p class="text-lg text-slate-600 mb-5">Le <strong>Fashion Outlets of Chicago</strong> est à quelques minutes à pied du Hyatt : couvert, sur deux niveaux, plus de 130 boutiques. Toutes les marques visées y sont : <strong>Levi's, Polo Ralph Lauren, Coach, Michael Kors</strong>, plus Nike, Adidas, Tommy, Guess, et un étage entier de luxe (Gucci, Prada, Burberry).</p>
+        <div class="bg-chicago-sand border-l-4 border-chicago-blue p-5 rounded-r-xl mb-6">
+          <h4 class="font-bold text-chicago-dark mb-2"><i class="fa-solid fa-lightbulb mr-2 text-chicago-blue"></i>Le réflexe à ne pas oublier</h4>
+          <p class="text-slate-700 text-sm">Passer d'abord au <strong>Guest Services</strong> avec le passeport : les touristes internationaux repartent en général avec un <em>Visitor Savings Pass</em>, un carnet de remises <strong>cumulables</strong> avec les promos déjà en cours en boutique.</p>
+        </div>
+        <div class="bg-slate-50 border border-slate-200 p-5 rounded-xl mb-8">
+          <h4 class="font-bold text-chicago-dark mb-2"><i class="fa-solid fa-circle-xmark mr-2 text-chicago-red"></i>Pourquoi on ne va PAS à Aurora</h4>
+          <p class="text-slate-700 text-sm">Le <em>Chicago Premium Outlets</em> d'Aurora est à 45–60 min de route, en plein air, et sans voiture l'aller-retour en Uber coûte 120–160 $. Les remises des factory stores sont fixées au niveau national : <strong>les prix y seraient les mêmes</strong>. Le trajet mangerait les économies.</p>
+        </div>
+        <div class="flex flex-wrap gap-3">
+          <a href="https://www.fashionoutletsofchicago.com/" target="_blank" rel="noopener" class="px-6 py-3 bg-chicago-dark text-white rounded-lg font-medium hover:bg-chicago-blue transition"><i class="fa-solid fa-bag-shopping mr-2"></i> Fashion Outlets of Chicago</a>
+          <a href="https://www.fashionoutletsofchicago.com/en/stores.html" target="_blank" rel="noopener" class="px-6 py-3 border-2 border-slate-300 text-chicago-dark rounded-lg font-medium hover:border-chicago-dark transition"><i class="fa-solid fa-list mr-2"></i> Liste des boutiques</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-16 bg-chicago-sand rounded-3xl p-8 md:p-10">
+      <h4 class="text-2xl font-serif font-bold text-chicago-dark mb-4"><i class="fa-solid fa-flag-checkered mr-2 text-chicago-red"></i>Samedi 12 &amp; dimanche 13 : la dernière ligne droite</h4>
+      <p class="text-slate-700 mb-3"><strong>Samedi 12 :</strong> journée libre. Deux options : un retour au centre-ville en <strong>ligne bleue du CTA</strong> depuis Rosemont (~25 min, direct, quelques dollars) pour ce qu'on n'aura pas eu le temps de faire… ou une deuxième session shopping à l'outlet pour finir les valises.</p>
+      <p class="text-slate-700"><strong>Dimanche 13 :</strong> vol retour à 17h00, arrivée à Lyon le lundi 14. Avec les bagages en soute et les contrôles d'O'Hare, être à l'aéroport 3 heures avant — c'est-à-dire vers 14h00.</p>
+    </div>
+  </div>
+</section>
+
+<div class="sep h-20 md:h-28" style="background:#ffffff"><svg viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0,60 C280,10 560,95 820,55 C1060,18 1240,70 1440,40 L1440,100 L0,100 Z" fill="#002B49" opacity=".35"></path><path d="M0,75 C260,35 520,110 780,72 C1040,35 1230,88 1440,62 L1440,100 L0,100 Z" fill="#002B49"></path></svg></div>
+<!-- METEO -->
+<section id="meteo" data-sec="Météo" data-num="09" class="py-24 bg-chicago-dark text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-4">
+      <h2 class="text-sm font-bold text-chicago-blue uppercase tracking-widest mb-3">Du 4 au 13 septembre</h2>
+      <h3 class="text-4xl md:text-5xl font-serif font-bold">Quel temps fera-t-il ?</h3>
+    </div>
+    <p class="text-center text-slate-400 text-sm max-w-2xl mx-auto mb-12">
+      Les prévisions réelles n'existent pas encore à cette échéance. Voici les <strong class="text-slate-200">normales saisonnières jour par jour</strong>
+      relevées à la station d'O'Hare sur la période 1991-2020 : c'est la meilleure estimation possible aujourd'hui, et elle est très stable d'une année sur l'autre.
+    </p>
+
+    <div class="grid gap-3 mb-10" style="grid-template-columns:repeat(auto-fit,minmax(120px,1fr))">
+      <!-- 4 -->
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-4 text-center backdrop-blur-sm">
+        <p class="text-xs uppercase tracking-wider text-chicago-blue font-bold">Ven 4</p>
+        <i class="fa-solid fa-sun text-3xl text-amber-300 my-3"></i>
+        <p class="text-2xl font-bold">26°</p>
+        <p class="text-sm text-slate-400">16° la nuit</p>
+        <p class="text-xs text-slate-500 mt-3 leading-snug">Arrivée de Christophe</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-4 text-center backdrop-blur-sm">
+        <p class="text-xs uppercase tracking-wider text-chicago-blue font-bold">Sam 5</p>
+        <i class="fa-solid fa-sun text-3xl text-amber-300 my-3"></i>
+        <p class="text-2xl font-bold">26°</p>
+        <p class="text-sm text-slate-400">16° la nuit</p>
+        <p class="text-xs text-amber-300 mt-3 leading-snug font-medium">Voilier 20h45 : ~17° ressenti sur l'eau</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-4 text-center backdrop-blur-sm">
+        <p class="text-xs uppercase tracking-wider text-chicago-blue font-bold">Dim 6</p>
+        <i class="fa-solid fa-sun text-3xl text-amber-300 my-3"></i>
+        <p class="text-2xl font-bold">26°</p>
+        <p class="text-sm text-slate-400">16° la nuit</p>
+        <p class="text-xs text-amber-300 mt-3 leading-snug font-medium">Croisière 17h30 : idéal</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-4 text-center backdrop-blur-sm">
+        <p class="text-xs uppercase tracking-wider text-chicago-blue font-bold">Lun 7</p>
+        <i class="fa-solid fa-sun text-3xl text-amber-300 my-3"></i>
+        <p class="text-2xl font-bold">26°</p>
+        <p class="text-sm text-slate-400">16° la nuit</p>
+        <p class="text-xs text-slate-500 mt-3 leading-snug">Journée à pied</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-4 text-center backdrop-blur-sm">
+        <p class="text-xs uppercase tracking-wider text-chicago-blue font-bold">Mar 8</p>
+        <i class="fa-solid fa-cloud-sun text-3xl text-slate-300 my-3"></i>
+        <p class="text-2xl font-bold">26°</p>
+        <p class="text-sm text-slate-400">16° la nuit</p>
+        <p class="text-xs text-slate-500 mt-3 leading-snug">Transfert O'Hare</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-4 text-center backdrop-blur-sm">
+        <p class="text-xs uppercase tracking-wider text-chicago-blue font-bold">Mer 9</p>
+        <i class="fa-solid fa-cloud-sun text-3xl text-slate-300 my-3"></i>
+        <p class="text-2xl font-bold">26°</p>
+        <p class="text-sm text-slate-400">15° la nuit</p>
+        <p class="text-xs text-slate-500 mt-3 leading-snug">Salon</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-4 text-center backdrop-blur-sm">
+        <p class="text-xs uppercase tracking-wider text-chicago-blue font-bold">Jeu 10</p>
+        <i class="fa-solid fa-cloud-sun text-3xl text-slate-300 my-3"></i>
+        <p class="text-2xl font-bold">25°</p>
+        <p class="text-sm text-slate-400">15° la nuit</p>
+        <p class="text-xs text-slate-500 mt-3 leading-snug">Départ de Christophe</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-4 text-center backdrop-blur-sm">
+        <p class="text-xs uppercase tracking-wider text-chicago-blue font-bold">Ven 11</p>
+        <i class="fa-solid fa-sun text-3xl text-amber-300 my-3"></i>
+        <p class="text-2xl font-bold">25°</p>
+        <p class="text-sm text-slate-400">15° la nuit</p>
+        <p class="text-xs text-slate-500 mt-3 leading-snug">Outlets (couvert)</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-4 text-center backdrop-blur-sm">
+        <p class="text-xs uppercase tracking-wider text-chicago-blue font-bold">Sam 12</p>
+        <i class="fa-solid fa-sun text-3xl text-amber-300 my-3"></i>
+        <p class="text-2xl font-bold">25°</p>
+        <p class="text-sm text-slate-400">15° la nuit</p>
+        <p class="text-xs text-slate-500 mt-3 leading-snug">Journée libre</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-4 text-center backdrop-blur-sm">
+        <p class="text-xs uppercase tracking-wider text-chicago-blue font-bold">Dim 13</p>
+        <i class="fa-solid fa-plane-departure text-3xl text-chicago-blue my-3"></i>
+        <p class="text-2xl font-bold">25°</p>
+        <p class="text-sm text-slate-400">15° la nuit</p>
+        <p class="text-xs text-slate-500 mt-3 leading-snug">Vol retour 17h00</p>
+      </div>
+    </div>
+
+    <div class="grid gap-6" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr))">
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
+        <i class="fa-solid fa-temperature-half text-chicago-blue text-2xl mb-3"></i>
+        <h4 class="font-bold mb-2">Un été qui s'étire</h4>
+        <p class="text-sm text-slate-400">Début septembre reste chaud : 25 à 26 °C l'après-midi, avec une baisse très progressive d'un degré sur la durée du séjour. Les nuits descendent à 15-16 °C. Il peut encore faire 30 °C sur un coup de chaud, comme il peut faire 20 °C sur un coup de vent du nord.</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
+        <i class="fa-solid fa-wind text-chicago-blue text-2xl mb-3"></i>
+        <h4 class="font-bold mb-2">L'effet lac, à ne pas sous-estimer</h4>
+        <p class="text-sm text-slate-400">Au bord de l'eau et surtout <strong class="text-slate-200">sur l'eau</strong>, il fait 3 à 5 °C de moins qu'en ville, et le vent ne s'arrête jamais — on ne l'appelle pas <em>Windy City</em> pour rien. Sur le voilier à 21h, prévoir un vrai coupe-vent : le ressenti tourne autour de 15 °C.</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
+        <i class="fa-solid fa-cloud-rain text-chicago-blue text-2xl mb-3"></i>
+        <h4 class="font-bold mb-2">La pluie</h4>
+        <p class="text-sm text-slate-400">Environ 90 mm sur le mois, répartis sur une dizaine de jours : statistiquement, <strong class="text-slate-200">2 à 3 jours de notre séjour verront de la pluie</strong>, souvent sous forme d'averse orageuse courte plutôt que de crachin. Un petit parapluie suffit, pas besoin de K-way.</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
+        <i class="fa-solid fa-suitcase text-chicago-blue text-2xl mb-3"></i>
+        <h4 class="font-bold mb-2">Dans la valise</h4>
+        <p class="text-sm text-slate-400">Le principe de la superposition : tee-shirts pour la journée, un pull léger et un coupe-vent pour les soirées et les deux croisières. Une tenue un peu habillée pour les rooftops (tenue correcte exigée après 18h). Et de très bonnes chaussures : on marche énormément.</p>
+      </div>
+    </div>
+
+    <p class="text-center text-xs text-slate-500 mt-10">
+      Source : normales climatiques 1991-2020, National Weather Service (station Chicago O'Hare).
+      <a href="https://forecast.weather.gov/MapClick.php?lat=41.8843&lon=-87.6324" target="_blank" rel="noopener" class="text-chicago-blue hover:underline ml-1">Voir les vraies prévisions <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i></a>
+      — disponibles à partir de fin août.
+    </p>
+  </div>
+</section>
+
+<div class="sep h-16 md:h-24" style="background:#002B49"><svg viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0,100 C420,0 1020,0 1440,100 Z" fill="#f8fafc"></path></svg></div>
+<!-- PRATIQUE -->
+<section id="pratique" data-sec="Pratique" data-num="10" class="section-pattern py-24">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14">
+      <h2 class="text-sm font-bold text-chicago-red uppercase tracking-widest mb-3">À ne pas oublier</h2>
+      <h3 class="text-4xl font-serif font-bold text-chicago-dark">Infos pratiques &amp; bons plans</h3>
+    </div>
+    <div class="grid md:grid-cols-3 gap-7">
+      <div class="bg-white p-7 rounded-2xl border border-slate-200 card-hover">
+        <i class="fa-solid fa-passport text-chicago-blue text-2xl mb-4"></i>
+        <h4 class="font-bold text-chicago-dark mb-2">ESTA &amp; nom sur le billet</h4>
+        <p class="text-slate-600 text-sm">L'ESTA est obligatoire (à faire au moins 72 h avant). Le nom sur le billet et sur l'ESTA doit correspondre <strong>exactement</strong> à la bande optique du passeport, en bas de page — donc le nom de naissance, sans mention « épouse ».</p>
+        <a href="https://esta.cbp.dhs.gov/" target="_blank" rel="noopener" class="text-chicago-blue text-sm font-semibold mt-3 inline-block hover:underline">Site officiel ESTA <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-xs"></i></a>
+      </div>
+      <div class="bg-white p-7 rounded-2xl border border-slate-200 card-hover">
+        <i class="fa-solid fa-train-subway text-chicago-blue text-2xl mb-4"></i>
+        <h4 class="font-bold text-chicago-dark mb-2">Se déplacer</h4>
+        <p class="text-slate-600 text-sm">La <strong>ligne bleue du CTA</strong> relie O'Hare/Rosemont au Loop sans changement. En ville, tout se fait à pied ou avec le « L ». Une <em>Ventra Card</em> (ou la carte bancaire sans contact) suffit.</p>
+        <a href="https://www.transitchicago.com/" target="_blank" rel="noopener" class="text-chicago-blue text-sm font-semibold mt-3 inline-block hover:underline">CTA <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-xs"></i></a>
+      </div>
+      <div class="bg-white p-7 rounded-2xl border border-slate-200 card-hover">
+        <i class="fa-solid fa-clock text-chicago-blue text-2xl mb-4"></i>
+        <h4 class="font-bold text-chicago-dark mb-2">Décalage horaire</h4>
+        <p class="text-slate-600 text-sm">7 heures de moins qu'en France : quand il est 20h00 à Lyon, il est 13h00 à Chicago. Le sens le plus facile à l'aller — la première soirée paraît juste très longue. Pour la météo, voir la section dédiée.</p>
+      </div>
+      <div class="bg-white p-7 rounded-2xl border border-slate-200 card-hover">
+        <i class="fa-solid fa-pizza-slice text-chicago-blue text-2xl mb-4"></i>
+        <h4 class="font-bold text-chicago-dark mb-2">Les deux plats obligatoires</h4>
+        <p class="text-slate-600 text-sm">La <strong>deep dish pizza</strong> (Lou Malnati's, Pequod's — la meilleure croûte caramélisée) et le <strong>Chicago dog</strong>. À prévoir sur un midi, pas avant une croisière.</p>
+      </div>
+      <div class="bg-white p-7 rounded-2xl border border-slate-200 card-hover">
+        <i class="fa-solid fa-money-bill-wave text-chicago-blue text-2xl mb-4"></i>
+        <h4 class="font-bold text-chicago-dark mb-2">Pourboires &amp; taxes</h4>
+        <p class="text-slate-600 text-sm">18 à 20 % au restaurant et au bar, 1–2 $ par verre au comptoir. Les prix affichés sont hors taxes : compter environ +10,25 % à Chicago.</p>
+      </div>
+      <div class="bg-white p-7 rounded-2xl border border-slate-200 card-hover">
+        <i class="fa-solid fa-calendar-check text-chicago-blue text-2xl mb-4"></i>
+        <h4 class="font-bold text-chicago-dark mb-2">État des réservations</h4>
+        <ul class="text-slate-600 text-sm space-y-1.5">
+          <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2"></i>Vols Air France &amp; les deux hôtels</li>
+          <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2"></i>Tall Ship Windy — feu d'artifice du 5</li>
+          <li><i class="fa-solid fa-circle-check text-emerald-600 mr-2"></i>Croisière architecture du 6 à 17h30</li>
+          <li><i class="fa-regular fa-circle text-amber-500 mr-2"></i>Chicago Greeter — à demander 3 à 4 semaines avant</li>
+          <li><i class="fa-regular fa-circle text-amber-500 mr-2"></i>Table au rooftop au coucher du soleil</li>
+          <li><i class="fa-regular fa-circle text-amber-500 mr-2"></i>ESTA pour les quatre voyageurs</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sep h-12 md:h-20" style="background:#f8fafc"><svg viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0,0 L1440,100 L0,100 Z" fill="#002B49"></path></svg></div>
+<footer id="fin" data-sec="Bon voyage" data-num="11" class="bg-chicago-dark text-slate-400 py-12 text-center">
+  <i class="fa-solid fa-wind text-chicago-blue text-3xl mb-4"></i>
+  <p class="font-serif text-xl text-white mb-2">Chicago, septembre 2026</p>
+  <p class="text-sm">Bruno &amp; Névine · Christophe &amp; son épouse — bon voyage !</p>
+</footer>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" class="hidden fixed inset-0 z-50 bg-black/90 items-center justify-center p-4">
+  <button id="lbClose" class="absolute top-5 right-6 text-white/80 hover:text-white text-3xl" aria-label="Fermer"><i class="fa-solid fa-xmark"></i></button>
+  <div class="w-full max-w-5xl">
+    <div class="ratio" id="lbFrame"></div>
+    <p id="lbTitle" class="text-slate-300 text-center mt-4 text-sm"></p>
+    <p class="text-center mt-2"><a id="lbYt" href="#" target="_blank" rel="noopener" class="text-chicago-blue text-xs hover:underline"><i class="fa-brands fa-youtube mr-1"></i> Ouvrir sur YouTube</a></p>
+  </div>
+</div>
+
+<script>
+(function(){
+  // Menu mobile
+  var btn = document.getElementById('navToggle'),
+      menu = document.getElementById('mobileMenu'),
+      icon = document.getElementById('navIcon');
+  if (btn && menu) {
+    var setOpen = function(open){
+      menu.classList.toggle('hidden', !open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      icon.className = open ? 'fa-solid fa-xmark text-xl' : 'fa-solid fa-bars text-xl';
+    };
+    btn.addEventListener('click', function(){ setOpen(menu.classList.contains('hidden')); });
+    menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ setOpen(false); }); });
+    window.addEventListener('resize', function(){ if (window.innerWidth >= 768) setOpen(false); });
+  }
+})();
+
+(function(){
+  var isLocal = location.protocol === 'file:';
+  if (isLocal) document.getElementById('localWarn').classList.remove('hidden');
+
+  var lb = document.getElementById('lightbox'),
+      lbFrame = document.getElementById('lbFrame'),
+      lbTitle = document.getElementById('lbTitle'),
+      lbYt = document.getElementById('lbYt');
+
+  function closeLb(){
+    lb.classList.add('hidden'); lb.classList.remove('flex');
+    lbFrame.innerHTML = '';
+  }
+  document.getElementById('lbClose').addEventListener('click', closeLb);
+  lb.addEventListener('click', function(e){ if(e.target === lb) closeLb(); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeLb(); });
+
+  document.querySelectorAll('.yt').forEach(function(el){
+    var id = el.getAttribute('data-yt');
+    var start = el.getAttribute('data-start');
+    var title = el.getAttribute('data-title') || '';
+    var watch = 'https://www.youtube.com/watch?v=' + id + (start ? '&t=' + start + 's' : '');
+
+    el.addEventListener('click', function(){
+      // Ouvert en local (file:///) : YouTube refuse la lecture intégrée -> nouvel onglet.
+      if (isLocal) { window.open(watch, '_blank', 'noopener'); return; }
+
+      // Servi en http(s) : lecture directement dans la page.
+      var src = 'https://www.youtube-nocookie.com/embed/' + id +
+                '?autoplay=1&rel=0&modestbranding=1&playsinline=1' +
+                (start ? '&start=' + start : '');
+      lbFrame.innerHTML = '<iframe src="' + src + '" title="' + title.replace(/"/g,'') +
+        '" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+      lbTitle.textContent = title;
+      lbYt.href = watch;
+      lb.classList.remove('hidden'); lb.classList.add('flex');
+    });
+  });
+})();
+</script>
+
+<script>
+/* ================= RYTHME VISUEL : rail, progression, révélations ================= */
+(function(){
+  var DARK_SECTIONS = ['hero','travail','meteo','fin'];
+  var secs = [].slice.call(document.querySelectorAll('[data-sec]'));
+
+  /* ---- Numéro fantôme + trait sous le sur-titre ---- */
+  secs.forEach(function(sec){
+    var dark = DARK_SECTIONS.indexOf(sec.id) > -1;
+    if (sec.id !== 'hero') {
+      var g = document.createElement('span');
+      g.className = 'ghost' + (dark ? ' ghost-light' : '');
+      g.setAttribute('aria-hidden','true');
+      g.textContent = sec.getAttribute('data-num');
+      sec.insertBefore(g, sec.firstChild);
+      [].slice.call(sec.children).forEach(function(c){
+        if (c !== g && c.nodeType === 1) c.classList.add('sec-inner');
+      });
+    }
+    var kicker = sec.querySelector('h2.text-sm');
+    if (kicker && !kicker.querySelector('.kicker-line')) {
+      var line = document.createElement('span');
+      line.className = 'kicker-line';
+      var centered = kicker.closest('.text-center');
+      if (!centered) line.classList.add('left');
+      if (dark) line.style.background = '#41B6E6';
+      kicker.appendChild(line);
+    }
+  });
+
+  /* ---- Révélation progressive au défilement ---- */
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+
+  function mark(el, delay){
+    if (!el || el.nodeType !== 1 || el.classList.contains('reveal')) return;
+    el.classList.add('reveal');
+    if (delay) el.style.transitionDelay = delay + 's';
+    io.observe(el);
+  }
+  function isList(el){
+    return el.children.length > 1 &&
+      (el.classList.contains('grid') || el.classList.contains('space-y-4') ||
+       el.classList.contains('space-y-5') || el.classList.contains('space-y-28'));
+  }
+  secs.forEach(function(sec){
+    var container = sec.querySelector(':scope > div') || sec;
+    [].slice.call(container.children).forEach(function(block, i){
+      if (isList(block)) {
+        [].slice.call(block.children).forEach(function(item, k){ mark(item, Math.min(k,4) * 0.08); });
+      } else {
+        mark(block, Math.min(i,3) * 0.07);
+      }
+    });
+  });
+
+  /* ---- Barre de progression ---- */
+  var bar = document.getElementById('progress');
+  function progress(){
+    var h = document.documentElement;
+    var p = h.scrollTop / ((h.scrollHeight - h.clientHeight) || 1);
+    bar.style.width = (Math.max(0, Math.min(1, p)) * 100) + '%';
+  }
+  window.addEventListener('scroll', progress, { passive:true }); progress();
+
+  /* ---- Rail latéral ---- */
+  var rail = document.getElementById('rail');
+  var count = document.getElementById('railCount');
+  secs.forEach(function(sec){
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'rail-item';
+    b.setAttribute('aria-label', 'Aller à ' + sec.getAttribute('data-sec'));
+    b.innerHTML = '<span class="rail-label">' + sec.getAttribute('data-sec') + '</span><span class="rail-dot"></span>';
+    b.addEventListener('click', function(){ sec.scrollIntoView({ behavior:'smooth', block:'start' }); });
+    b.addEventListener('mouseenter', function(){ count.textContent = sec.getAttribute('data-num'); });
+    rail.appendChild(b);
+  });
+  var items = [].slice.call(rail.querySelectorAll('.rail-item'));
+  var current = -1;
+  function activate(i){
+    if (i === current) return;
+    current = i;
+    items.forEach(function(b,k){ b.classList.toggle('active', k === i); });
+    count.textContent = secs[i].getAttribute('data-num');
+    rail.classList.toggle('on-dark', DARK_SECTIONS.indexOf(secs[i].id) > -1);
+    var id = secs[i].id;
+    document.querySelectorAll('#deskNav .nav-link').forEach(function(a){
+      a.classList.toggle('is-active', a.getAttribute('href') === '#' + id);
+    });
+    var crumb = document.getElementById('crumb');
+    if (crumb) {
+      crumb.style.opacity = 0;
+      setTimeout(function(){ crumb.textContent = secs[i].getAttribute('data-sec'); crumb.style.opacity = 1; }, 150);
+    }
+  }
+  function pick(){
+    var probe = window.innerHeight * 0.38, best = 0, bestTop = -Infinity;
+    secs.forEach(function(sec, i){
+      var t = sec.getBoundingClientRect().top;
+      if (t <= probe && t > bestTop) { bestTop = t; best = i; }
+    });
+    activate(best);
+  }
+  window.addEventListener('scroll', pick, { passive:true });
+  window.addEventListener('resize', pick); pick();
+})();
+</script>
+
+<script>
+/* ================= AGENDA ESKER : onglets + filtres ================= */
+(function(){
+  var root = document.getElementById('esker');
+  if (!root) return;
+  var tabs = [].slice.call(root.querySelectorAll('.esk-tab'));
+  var panels = [].slice.call(root.querySelectorAll('.esk-panel'));
+  var filters = [].slice.call(root.querySelectorAll('.esk-filter'));
+  var track = 'all';
+
+  function applyFilter(){
+    root.querySelectorAll('.esk-row').forEach(function(r){
+      r.classList.toggle('esk-hide', track !== 'all' && r.getAttribute('data-track') !== track);
+    });
+    panels.forEach(function(pn){
+      pn.querySelectorAll('.esk-slot').forEach(function(sl){
+        var n = sl.nextElementSibling, visible = false;
+        while (n && n.classList.contains('esk-row')) {
+          if (!n.classList.contains('esk-hide')) { visible = true; break; }
+          n = n.nextElementSibling;
+        }
+        sl.style.display = visible ? '' : 'none';
+      });
+    });
+  }
+  tabs.forEach(function(t){
+    t.addEventListener('click', function(){
+      tabs.forEach(function(x){ x.classList.toggle('esk-tab-on', x === t); });
+      panels.forEach(function(pn){ pn.classList.toggle('hidden', pn.getAttribute('data-day') !== t.getAttribute('data-day')); });
+      applyFilter();
+    });
+  });
+  filters.forEach(function(f){
+    f.addEventListener('click', function(){
+      track = f.getAttribute('data-track');
+      filters.forEach(function(x){ x.classList.toggle('esk-filter-on', x === f); });
+      applyFilter();
+    });
+  });
+})();
+</script>
+
+<script>
+/* ================= AGENDA GLOBAL : rendu dynamique ================= */
+(function(){
+  var DAYS = [{"k": "ven4", "dow": "Ven", "num": "04", "tag": "Christophe arrive", "tz": "Paris", "we": false, "esker": false}, {"k": "sam5", "dow": "Sam", "num": "05", "tag": "Arrivée + feu d’artifice", "tz": "Chicago", "we": true, "esker": false}, {"k": "dim6", "dow": "Dim", "num": "06", "tag": "Greeter + croisière", "tz": "Chicago", "we": true, "esker": false}, {"k": "lun7", "dow": "Lun", "num": "07", "tag": "Loop, gangsters, rooftop", "tz": "Chicago", "we": false, "esker": false}, {"k": "mar8", "dow": "Mar", "num": "08", "tag": "Changement d’hôtel + salon", "tz": "Chicago", "we": false, "esker": true}, {"k": "mer9", "dow": "Mer", "num": "09", "tag": "Grosse journée salon", "tz": "Chicago", "we": false, "esker": true}, {"k": "jeu10", "dow": "Jeu", "num": "10", "tag": "Fin du salon 16h15", "tz": "Chicago", "we": false, "esker": true}, {"k": "ven11", "dow": "Ven", "num": "11", "tag": "Outlets Rosemont", "tz": "Chicago", "we": false, "esker": false}, {"k": "sam12", "dow": "Sam", "num": "12", "tag": "Outlets Aurora", "tz": "Chicago", "we": true, "esker": false}, {"k": "dim13", "dow": "Dim", "num": "13", "tag": "Retour, décollage 17h10", "tz": "Chicago", "we": true, "esker": false}, {"k": "lun14", "dow": "Lun", "num": "14", "tag": "CDG puis Lyon", "tz": "Paris", "we": false, "esker": false}];
+  var CATS = [{"k": "voyage", "label": "Transport & hôtels", "color": "#0e7490"}, {"k": "tourisme", "label": "Visites & découvertes", "color": "#C60C30"}, {"k": "esker", "label": "Salon Esker", "color": "#4338ca"}, {"k": "shopping", "label": "Shopping", "color": "#b45309"}, {"k": "repas", "label": "Repas & soirées", "color": "#15803d"}, {"k": "libre", "label": "Temps libre & logistique", "color": "#64748b"}];
+  var EV   = [{"d": "ven4", "allday": true, "t": "✈ Christophe & sa femme : Lyon → Chicago", "cat": "voyage", "note": "Horaires non encore communiqués. Une fiche détaillée sera ajoutée dès réception des billets.", "resa": "", "who": "Christophe"}, {"d": "ven4", "allday": true, "t": "Veille de départ : valises, ESTA, impression des billets", "cat": "libre", "note": "Vérifier que le nom sur le billet de Névine correspond exactement à la bande optique du passeport.", "resa": "", "who": ""}, {"d": "sam5", "allday": true, "t": "✈ Lyon 09:55 → Amsterdam → Chicago 14:15", "cat": "voyage", "note": "AF8320 (opéré KLM) LYS 09:55 → AMS 11:35, fin d’enregistrement 09:15. Escale 1 h 10. AF3159 (opéré KLM) AMS 12:45 → ORD 14:15, fin d’enregistrement 12:05. Environ 12 h 20 de trajet porte à porte. Les horaires ci-dessous reprennent à l’atterrissage, en heure de Chicago.", "resa": "ok", "who": ""}, {"d": "sam5", "s": "14:15", "e": "15:45", "t": "Atterrissage O’Hare, immigration & bagages", "cat": "voyage", "loc": "ORD Terminal 5", "note": "Compter 45 min à 1 h 30 au contrôle CBP selon l’affluence. Terminal 5, puis navette ATS si besoin.", "resa": "", "star": false, "who": ""}, {"d": "sam5", "s": "15:45", "e": "16:45", "t": "Transfert vers Downtown", "cat": "voyage", "loc": "Blue Line ou taxi", "note": "Blue Line jusqu’à Grand/State : ~45 min pour 5 $. Taxi ou VTC : 40 à 55 $ selon le trafic.", "resa": "", "star": false, "who": ""}, {"d": "sam5", "s": "16:45", "e": "17:30", "t": "Check-in Sonesta ES Suites", "cat": "voyage", "loc": "Magnificent Mile", "note": "", "resa": "ok", "star": false, "who": ""}, {"d": "sam5", "s": "17:30", "e": "19:00", "t": "Première respiration — Magnificent Mile & Riverwalk", "cat": "tourisme", "loc": "", "note": "Balade lente, sans objectif. Le but est de tenir éveillé jusqu’au soir et de caler le rythme.", "resa": "", "star": false, "who": ""}, {"d": "sam5", "s": "19:00", "e": "19:45", "t": "Dîner tôt — impératif", "cat": "repas", "loc": "", "note": "Le bateau part à l’heure, il n’y a aucun rattrapage possible. Ne pas se lancer dans un restaurant avec attente.", "resa": "", "star": false, "who": ""}, {"d": "sam5", "s": "20:00", "e": "20:45", "t": "Sur le quai — Navy Pier South Dock", "cat": "tourisme", "loc": "600 E Grand Avenue", "note": "Arriver 45 min avant un samedi soir. Repérer les quatre mâts, près du Shakespeare Theater et du Billy Goat Tavern.", "resa": "", "star": false, "who": ""}, {"d": "sam5", "s": "20:45", "e": "22:15", "t": "Croisière feu d’artifice — Tall Ship Windy", "cat": "tourisme", "loc": "Navy Pier South Dock", "note": "Le dernier feu d’artifice de la saison 2026, vu depuis le pont d’un quatre-mâts. Prévoir un coupe-vent : à 21 h sur le lac, il fait nettement plus frais qu’en ville.", "resa": "ok", "star": true, "who": ""}, {"d": "sam5", "s": "22:15", "e": "23:00", "t": "Retour à l’hôtel — ne pas prolonger", "cat": "libre", "loc": "", "note": "7 heures de décalage. Dormir tôt le premier soir fait gagner deux jours d’acclimatation.", "resa": "", "star": false, "who": ""}, {"d": "dim6", "s": "09:00", "e": "10:00", "t": "Petit-déjeuner tranquille", "cat": "repas", "loc": "", "note": "", "resa": "", "star": false, "who": ""}, {"d": "dim6", "s": "10:00", "e": "12:30", "t": "Chicago Greeter — un habitant raconte sa ville", "cat": "tourisme", "loc": "", "note": "Gratuit, sur inscription 7 à 10 jours à l’avance. 2 à 4 h de balade avec un bénévole passionné, sur les thèmes de votre choix. Exactement le format que tu cherches : quelqu’un qui raconte, pas un musée.", "resa": "todo", "star": true, "who": ""}, {"d": "dim6", "s": "12:30", "e": "13:45", "t": "Déjeuner", "cat": "repas", "loc": "", "note": "", "resa": "", "star": false, "who": ""}, {"d": "dim6", "s": "14:00", "e": "16:30", "t": "Millennium Park, Cloud Gate & Riverwalk", "cat": "tourisme", "loc": "", "note": "", "resa": "idea", "star": false, "who": ""}, {"d": "dim6", "s": "17:00", "e": "17:30", "t": "Rejoindre le quai — Michigan Avenue Bridge", "cat": "tourisme", "loc": "Angle sud-est, niveau Wacker Drive", "note": "Riverside Gardens, et surtout PAS Navy Pier. Placement libre : arriver 20 à 30 min avant pour avoir le pont supérieur côté extérieur.", "resa": "", "star": false, "who": ""}, {"d": "dim6", "s": "17:30", "e": "19:00", "t": "Croisière architecture — First Lady", "cat": "tourisme", "loc": "Chicago Architecture Center", "note": "90 minutes sur les trois bras de la rivière, commentées par un guide formé par le Chicago Architecture Center. Le soleil se couche vers 19h15 : la seconde moitié se fera en lumière dorée.", "resa": "ok", "star": true, "who": ""}, {"d": "dim6", "s": "19:30", "e": "21:00", "t": "Dîner dans le Loop", "cat": "repas", "loc": "", "note": "", "resa": "", "star": false, "who": ""}, {"d": "dim6", "s": "21:00", "e": "22:30", "t": "Optionnel — un premier rooftop", "cat": "tourisme", "loc": "", "note": "Cindy’s Rooftop se réserve 14 jours à l’avance seulement : poser la réservation vers le 24 août.", "resa": "idea", "star": false, "who": ""}, {"d": "lun7", "s": "09:30", "e": "12:00", "t": "Balade architecture dans le Loop", "cat": "tourisme", "loc": "", "note": "Le Chicago que tu aimes : la ville comme livre d’architecture, à pied et le nez en l’air.", "resa": "", "star": true, "who": ""}, {"d": "lun7", "s": "12:00", "e": "13:00", "t": "Déjeuner", "cat": "repas", "loc": "", "note": "", "resa": "", "star": false, "who": ""}, {"d": "lun7", "s": "13:30", "e": "15:30", "t": "Gangster tour — le Chicago d’Al Capone", "cat": "tourisme", "loc": "", "note": "Van ou bus commenté, guide conteur. Réservation conseillée quelques jours avant.", "resa": "todo", "star": true, "who": ""}, {"d": "lun7", "s": "16:00", "e": "17:00", "t": "Retour hôtel, pause", "cat": "libre", "loc": "", "note": "", "resa": "", "star": false, "who": ""}, {"d": "lun7", "s": "17:00", "e": "19:00", "t": "LH Rooftop — LondonHouse, 22e étage", "cat": "tourisme", "loc": "", "note": "La plus belle vue sur le coude de la rivière, gratuite hors consommation. Attention : la terrasse extérieure ne se réserve pas, premier arrivé premier servi, 30 min à 1 h d’attente. Arriver AVANT 17h30. Tenue smart casual exigée après 18h00.", "resa": "idea", "star": true, "who": ""}, {"d": "lun7", "s": "19:30", "e": "21:00", "t": "Deep dish ou Italian beef — le plat obligatoire", "cat": "repas", "loc": "", "note": "", "resa": "", "star": false, "who": ""}, {"d": "mar8", "allday": true, "t": "Névine — installation et repérage de Rosemont", "cat": "libre", "note": "", "resa": "", "who": "Névine"}, {"d": "mar8", "s": "09:00", "e": "10:00", "t": "Check-out Sonesta", "cat": "voyage", "loc": "", "note": "", "resa": "", "star": false, "who": ""}, {"d": "mar8", "s": "10:00", "e": "11:00", "t": "Transfert Downtown → Rosemont", "cat": "voyage", "loc": "", "note": "Blue Line jusqu’à Rosemont, environ 45 min.", "resa": "", "star": false, "who": ""}, {"d": "mar8", "s": "11:00", "e": "12:00", "t": "Check-in Hyatt Regency O’Hare", "cat": "voyage", "loc": "", "note": "", "resa": "ok", "star": false, "who": ""}, {"d": "mar8", "s": "12:00", "e": "13:30", "t": "Déjeuner à Rosemont", "cat": "repas", "loc": "", "note": "", "resa": "", "star": false, "who": ""}, {"d": "mar8", "s": "13:30", "e": "14:00", "t": "Rejoindre le Loews à pied", "cat": "esker", "loc": "5300 N River Rd", "note": "Le salon se tient au Loews Chicago O’Hare, PAS au Hyatt où tu dors. Environ 10 minutes à pied.", "resa": "", "star": false, "who": ""}, {"d": "mar8", "s": "14:00", "e": "17:00", "t": "Partner Connect 2026", "cat": "esker", "loc": "Guggenheim 1", "note": "Emmanuel Olivier, Ari Widl et l’équipe partenaires.", "resa": "", "star": true, "who": ""}, {"d": "mar8", "s": "17:00", "e": "18:30", "t": "Welcome Happy Hour & Innovation Hub", "cat": "esker", "loc": "Louvre Ballroom", "note": "", "resa": "", "star": true, "who": ""}, {"d": "mar8", "s": "18:30", "e": "22:00", "t": "Open Evening — dîner avec Christophe", "cat": "repas", "loc": "", "note": "C’est LE créneau à saisir pour dîner tous ensemble : mercredi soir est bloqué jusqu’à 23 h par la soirée officielle du salon, et Christophe repart jeudi soir.", "resa": "", "star": true, "who": ""}, {"d": "mer9", "allday": true, "t": "Névine — journée libre à Downtown", "cat": "libre", "note": "Bruno est au salon de 7 h à 23 h. Prévoir de quoi occuper la journée et la soirée.", "resa": "", "who": "Névine"}, {"d": "mer9", "s": "07:00", "e": "08:00", "t": "Breakfast & networking", "cat": "esker", "loc": "Avedon Ballroom", "note": "", "resa": "", "star": false, "who": ""}, {"d": "mer9", "s": "08:30", "e": "10:30", "t": "Keynote d’ouverture", "cat": "esker", "loc": "Cassatt Ballroom", "note": "Emmanuel Olivier, Eric Bussy et les dirigeants Esker.", "resa": "", "star": true, "who": ""}, {"d": "mer9", "s": "10:30", "e": "11:00", "t": "Pause networking", "cat": "esker", "loc": "Louve Ballroom", "note": "", "resa": "", "star": false, "who": ""}, {"d": "mer9", "s": "11:00", "e": "12:00", "t": "What’s New in Esker Source-to-Pay : AI Innovation", "cat": "esker", "loc": "Guggenheim 1", "note": "", "resa": "", "star": true, "who": ""}, {"d": "mer9", "s": "12:00", "e": "13:30", "t": "Lunch & Innovation Hub", "cat": "esker", "loc": "Avedon Ballroom", "note": "", "resa": "", "star": false, "who": ""}, {"d": "mer9", "s": "13:30", "e": "14:15", "t": "S2P Success Metrics : Benchmarking", "cat": "esker", "loc": "Guggenheim 1", "note": "", "resa": "", "star": true, "who": ""}, {"d": "mer9", "s": "14:15", "e": "14:45", "t": "Pause", "cat": "esker", "loc": "", "note": "", "resa": "", "star": false, "who": ""}, {"d": "mer9", "s": "14:45", "e": "15:30", "t": "SIM : What It Is, How It Works & Why It Matters", "cat": "esker", "loc": "Guggenheim 1", "note": "", "resa": "", "star": true, "who": ""}, {"d": "mer9", "s": "15:30", "e": "16:00", "t": "Pause", "cat": "esker", "loc": "", "note": "", "resa": "", "star": false, "who": ""}, {"d": "mer9", "s": "16:00", "e": "16:45", "t": "Connected & Efficient : la suite S2P", "cat": "esker", "loc": "Guggenheim 1", "note": "", "resa": "", "star": true, "who": ""}, {"d": "mer9", "s": "17:00", "e": "18:00", "t": "Sponsor Appreciation Happy Hour", "cat": "esker", "loc": "", "note": "", "resa": "", "star": true, "who": ""}, {"d": "mer9", "s": "19:00", "e": "23:00", "t": "Evening Event — Amped Up After Hours", "cat": "esker", "loc": "", "note": "Soirée officielle du salon, jusqu’à 23 h. À annoncer à Névine en amont.", "resa": "", "star": true, "who": ""}, {"d": "jeu10", "allday": true, "t": "Névine — deuxième journée libre", "cat": "libre", "note": "", "resa": "", "who": "Névine"}, {"d": "jeu10", "allday": true, "t": "✈ Christophe & sa femme repartent (vol du soir)", "cat": "voyage", "note": "Dernière occasion de se voir : le déjeuner du jeudi ou une pause café pendant le salon.", "resa": "", "who": "Christophe"}, {"d": "jeu10", "s": "07:30", "e": "08:30", "t": "Breakfast & networking", "cat": "esker", "loc": "Avedon Ballroom", "note": "", "resa": "", "star": false, "who": ""}, {"d": "jeu10", "s": "08:30", "e": "10:00", "t": "Keynote", "cat": "esker", "loc": "Cassatt Ballroom", "note": "Patrick Reymann, Jean-Jacques Bérard.", "resa": "", "star": true, "who": ""}, {"d": "jeu10", "s": "10:00", "e": "10:30", "t": "Pause", "cat": "esker", "loc": "Louve Ballroom", "note": "", "resa": "", "star": false, "who": ""}, {"d": "jeu10", "s": "10:30", "e": "11:15", "t": "Own Your Solution : tirer le maximum de son compte Esker", "cat": "esker", "loc": "Teylers Room", "note": "", "resa": "", "star": true, "who": ""}, {"d": "jeu10", "s": "11:15", "e": "12:00", "t": "Small Beginnings, Big Results", "cat": "esker", "loc": "Guggenheim 1", "note": "", "resa": "", "star": true, "who": ""}, {"d": "jeu10", "s": "12:00", "e": "13:30", "t": "Lunch", "cat": "esker", "loc": "Avedon Ballroom", "note": "", "resa": "", "star": false, "who": ""}, {"d": "jeu10", "s": "13:30", "e": "14:15", "t": "Global E-Invoicing Compliance", "cat": "esker", "loc": "Guggenheim 1", "note": "", "resa": "", "star": true, "who": ""}, {"d": "jeu10", "s": "14:15", "e": "15:00", "t": "Change Management : la clé du succès durable", "cat": "esker", "loc": "Guggenheim 1", "note": "", "resa": "", "star": true, "who": ""}, {"d": "jeu10", "s": "15:00", "e": "15:30", "t": "Pause", "cat": "esker", "loc": "Louve Ballroom", "note": "", "resa": "", "star": false, "who": ""}, {"d": "jeu10", "s": "15:30", "e": "16:15", "t": "Stopping Fraud Before It Starts", "cat": "esker", "loc": "Guggenheim 1", "note": "", "resa": "", "star": true, "who": ""}, {"d": "jeu10", "s": "16:15", "e": "16:30", "t": "Clôture du salon", "cat": "esker", "loc": "", "note": "Fin officielle de Esker All Access 2026.", "resa": "", "star": false, "who": ""}, {"d": "jeu10", "s": "19:00", "e": "21:00", "t": "Dîner en tête à tête", "cat": "repas", "loc": "", "note": "", "resa": "", "star": false, "who": ""}, {"d": "ven11", "s": "09:30", "e": "10:00", "t": "Trajet vers Fashion Outlets of Chicago", "cat": "shopping", "loc": "", "note": "10 minutes depuis le Hyatt. Navette gratuite depuis plusieurs hôtels de Rosemont, sinon VTC à moins de 10 $.", "resa": "", "star": false, "who": ""}, {"d": "ven11", "s": "10:00", "e": "13:00", "t": "Fashion Outlets of Chicago", "cat": "shopping", "loc": "Rosemont", "note": "130 boutiques sous un même toit et climatisées. Levi’s, Coach, Michael Kors, Polo Ralph Lauren. Premier réflexe : passer au comptoir d’accueil chercher le Visitor Savings Pass.", "resa": "", "star": true, "who": ""}, {"d": "ven11", "s": "13:00", "e": "14:00", "t": "Déjeuner sur place", "cat": "repas", "loc": "", "note": "", "resa": "", "star": false, "who": ""}, {"d": "ven11", "s": "14:00", "e": "16:30", "t": "Suite du shopping", "cat": "shopping", "loc": "", "note": "", "resa": "", "star": false, "who": ""}, {"d": "ven11", "s": "17:00", "e": "18:00", "t": "Retour hôtel, tri des achats", "cat": "libre", "loc": "", "note": "", "resa": "", "star": false, "who": ""}, {"d": "ven11", "s": "19:30", "e": "21:00", "t": "Dîner à Rosemont", "cat": "repas", "loc": "", "note": "", "resa": "", "star": false, "who": ""}, {"d": "sam12", "s": "09:30", "e": "10:45", "t": "Route vers Aurora", "cat": "shopping", "loc": "", "note": "Environ 1 h depuis Rosemont, en voiture de location ou en Metra puis navette.", "resa": "", "star": false, "who": ""}, {"d": "sam12", "s": "11:00", "e": "16:00", "t": "Chicago Premium Outlets — Aurora", "cat": "shopping", "loc": "Aurora", "note": "170 boutiques en plein air. Sélection Ralph Lauren et Coach plus large qu’à Rosemont, mais 1 h de trajet et aucun abri : à décider selon la météo du jour.", "resa": "", "star": true, "who": ""}, {"d": "sam12", "s": "13:00", "e": "13:45", "t": "Déjeuner sur place", "cat": "repas", "loc": "", "note": "", "resa": "", "star": false, "who": ""}, {"d": "sam12", "s": "16:00", "e": "17:15", "t": "Retour vers Rosemont", "cat": "shopping", "loc": "", "note": "", "resa": "", "star": false, "who": ""}, {"d": "sam12", "s": "19:30", "e": "21:30", "t": "Dernier dîner américain", "cat": "repas", "loc": "", "note": "", "resa": "", "star": false, "who": ""}, {"d": "sam12", "s": "21:30", "e": "23:00", "t": "Valises et pesée des bagages", "cat": "libre", "loc": "", "note": "23 kg par personne en soute. Les outlets ont une fâcheuse tendance à faire dépasser la limite.", "resa": "", "star": false, "who": ""}, {"d": "dim13", "allday": true, "t": "✈ Chicago 17:10 → Paris CDG 08:15 (lundi matin)", "cat": "voyage", "note": "AF0137, Air France. Fin d’enregistrement à 16:10.", "resa": "ok", "who": ""}, {"d": "dim13", "s": "09:00", "e": "11:00", "t": "Matinée libre, dernières emplettes", "cat": "libre", "loc": "", "note": "", "resa": "", "star": false, "who": ""}, {"d": "dim13", "s": "11:00", "e": "11:30", "t": "Check-out Hyatt", "cat": "voyage", "loc": "", "note": "", "resa": "", "star": false, "who": ""}, {"d": "dim13", "s": "11:30", "e": "13:00", "t": "Déjeuner près de l’hôtel", "cat": "repas", "loc": "", "note": "", "resa": "", "star": false, "who": ""}, {"d": "dim13", "s": "13:00", "e": "13:30", "t": "Navette hôtel → O’Hare", "cat": "voyage", "loc": "", "note": "Le Hyatt Regency O’Hare est à 5 minutes de l’aéroport, navette gratuite et fréquente.", "resa": "", "star": false, "who": ""}, {"d": "dim13", "s": "13:30", "e": "16:10", "t": "Enregistrement, bagages & sécurité", "cat": "voyage", "loc": "", "note": "Fin d’enregistrement à 16:10 précises. Prévoir large : O’Hare un dimanche soir en fin d’été, c’est dense.", "resa": "", "star": false, "who": ""}, {"d": "dim13", "s": "16:10", "e": "17:10", "t": "Embarquement", "cat": "voyage", "loc": "", "note": "", "resa": "", "star": false, "who": ""}, {"d": "dim13", "s": "17:10", "e": "24:00", "t": "AF0137 — vol de nuit vers Paris", "cat": "voyage", "loc": "", "note": "Décollage 17:10 heure de Chicago, atterrissage 08:15 à CDG le lundi matin. Environ 8 h de vol. Dormir dès le repas servi.", "resa": "ok", "star": false, "who": ""}, {"d": "lun14", "allday": true, "t": "✈ CDG 08:15 — correspondance 2E → 2F — Lyon 10:30", "cat": "voyage", "note": "AF7364 opéré par HOP, fin d’enregistrement 08:40. Le changement de terminal 2E vers 2F avec 1 h 05 d’escale est le seul vrai point de tension du retour.", "resa": "ok", "who": ""}, {"d": "lun14", "s": "08:15", "e": "09:20", "t": "Atterrissage CDG 2E & transfert vers 2F", "cat": "voyage", "loc": "", "note": "Liaison piétonne ou navette entre les terminaux. Avec 1 h 05 d’escale seulement, sortir de l’avion sans traîner et suivre les panneaux 2F dès la passerelle.", "resa": "", "star": false, "who": ""}, {"d": "lun14", "s": "09:20", "e": "10:30", "t": "AF7364 — Paris CDG → Lyon", "cat": "voyage", "loc": "", "note": "", "resa": "ok", "star": false, "who": ""}, {"d": "lun14", "s": "10:30", "e": "11:00", "t": "Arrivée Lyon T1, récupération des bagages", "cat": "voyage", "loc": "", "note": "Et voilà. Neuf jours plus tard.", "resa": "", "star": false, "who": ""}];
+
+  var root = document.getElementById('agenda');
+  if (!root) return;
+
+  var START = 7 * 60, END = 24 * 60, PPM = 1.0;
+  var BODY_H = (END - START) * PPM;
+
+  var CMAP = {};
+  CATS.forEach(function(c){ CMAP[c.k] = c; });
+
+  function toMin(t){ var p = t.split(':'); return (+p[0]) * 60 + (+p[1]); }
+  function hhmm(t){ return t.replace(':', 'h'); }
+  function dur(a, b){
+    var m = toMin(b) - toMin(a), h = Math.floor(m / 60), r = m % 60;
+    return (h ? h + ' h' : '') + (r ? (h ? ' ' : '') + r + ' min' : '');
+  }
+  function esc(s){
+    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+  var RESA = {
+    ok:   { t:'Réservé',      bg:'#dcfce7', fg:'#15803d' },
+    todo: { t:'À réserver',   bg:'#fef3c7', fg:'#b45309' },
+    idea: { t:'Suggestion',   bg:'#e0e7ff', fg:'#4338ca' }
+  };
+
+  /* ---- index des évènements ---- */
+  var timed = {}, allday = {};
+  DAYS.forEach(function(d){ timed[d.k] = []; allday[d.k] = []; });
+  EV.forEach(function(e, i){
+    e._i = i;
+    (e.allday ? allday : timed)[e.d].push(e);
+  });
+  DAYS.forEach(function(d){
+    timed[d.k].sort(function(a, b){ return toMin(a.s) - toMin(b.s); });
+  });
+
+  /* ---- répartition en couloirs pour les chevauchements ---- */
+  function lanes(list){
+    var i, j, cluster = [], out = [];
+    function flush(){
+      if (!cluster.length) return;
+      var ln = [];
+      cluster.forEach(function(e){
+        var placed = false;
+        for (j = 0; j < ln.length; j++){
+          if (toMin(e.s) >= ln[j]) { e._lane = j; ln[j] = toMin(e.e); placed = true; break; }
+        }
+        if (!placed) { e._lane = ln.length; ln.push(toMin(e.e)); }
+      });
+      cluster.forEach(function(e){ e._lanes = ln.length; });
+      cluster = [];
+    }
+    var maxEnd = -1;
+    for (i = 0; i < list.length; i++){
+      if (cluster.length && toMin(list[i].s) >= maxEnd) { flush(); maxEnd = -1; }
+      cluster.push(list[i]);
+      maxEnd = Math.max(maxEnd, toMin(list[i].e));
+    }
+    flush();
+    return out;
+  }
+  DAYS.forEach(function(d){ lanes(timed[d.k]); });
+
+  /* ---- construction de la grille semaine ---- */
+  var g = ['<div class="ag-grid" style="--cols:' + DAYS.length + '">'];
+  g.push('<div class="ag-corner"></div>');
+  DAYS.forEach(function(d){
+    g.push('<div class="ag-hcell' + (d.we ? ' we' : '') + (d.esker ? ' esk' : '') + '">' +
+      '<div class="ag-hdow">' + d.dow + '</div>' +
+      '<div class="ag-hnum">' + d.num + '</div>' +
+      '<div class="ag-htag">' + esc(d.tag) + '</div></div>');
+  });
+  g.push('<div class="ag-adg">Journée</div>');
+  DAYS.forEach(function(d){
+    var c = ['<div class="ag-adcell' + (d.we ? ' we' : '') + '">'];
+    allday[d.k].forEach(function(e){
+      var col = CMAP[e.cat].color;
+      c.push('<button type="button" class="ag-chip" data-i="' + e._i + '" data-cat="' + e.cat + '" ' +
+        'style="border-left-color:' + col + ';background:' + col + '14;color:' + col + '">' + esc(e.t) + '</button>');
+    });
+    c.push('</div>');
+    g.push(c.join(''));
+  });
+  var gut = ['<div class="ag-gutter" style="height:' + BODY_H + 'px">'];
+  for (var h = START / 60; h <= END / 60; h++){
+    gut.push('<span class="ag-hourlab" style="top:' + ((h * 60 - START) * PPM) + 'px">' +
+      (h === 24 ? '00' : (h < 10 ? '0' + h : h)) + ':00</span>');
+  }
+  gut.push('</div>');
+  g.push(gut.join(''));
+  DAYS.forEach(function(d){
+    var c = ['<div class="ag-col' + (d.we ? ' we' : '') + '" style="height:' + BODY_H + 'px">'];
+    for (var h = START / 60; h <= END / 60; h++){
+      c.push('<span class="ag-line" style="top:' + ((h * 60 - START) * PPM) + 'px"></span>');
+      if (h < END / 60) c.push('<span class="ag-line half" style="top:' + ((h * 60 + 30 - START) * PPM) + 'px"></span>');
+    }
+    timed[d.k].forEach(function(e){
+      var col = CMAP[e.cat].color,
+          top = (toMin(e.s) - START) * PPM,
+          hgt = Math.max((toMin(e.e) - toMin(e.s)) * PPM - 2, 17),
+          w   = 100 / (e._lanes || 1),
+          left = w * (e._lane || 0);
+      c.push('<button type="button" class="ag-ev' + (hgt < 34 ? ' tiny' : '') + '" data-i="' + e._i + '" data-cat="' + e.cat + '" ' +
+        'style="top:' + top + 'px;height:' + hgt + 'px;left:calc(' + left + '% + 3px);width:calc(' + w + '% - 6px);' +
+        'border-left-color:' + col + ';background:' + col + '13;color:' + col + '">' +
+        '<div class="ag-evh">' + hhmm(e.s) + '</div>' +
+        '<div class="ag-evt">' + esc(e.t) + (e.star ? '<i class="fa-solid fa-star ag-star"></i>' : '') + '</div>' +
+        (e.loc && hgt > 52 ? '<div class="ag-evl"><i class="fa-solid fa-location-dot"></i> ' + esc(e.loc) + '</div>' : '') +
+        '</button>');
+    });
+    c.push('</div>');
+    g.push(c.join(''));
+  });
+  g.push('</div>');
+  document.getElementById('agScroll').innerHTML = g.join('');
+
+  /* ---- construction de la vue liste ---- */
+  var L = [];
+  DAYS.forEach(function(d){
+    L.push('<div class="ag-day"><div class="ag-dayh">' +
+      '<span class="font-serif font-bold text-2xl text-chicago-dark">' + d.dow + ' ' + d.num + '</span>' +
+      '<span class="text-xs font-semibold uppercase tracking-widest text-slate-400">septembre</span>' +
+      '<span class="text-xs text-slate-500 ml-auto">' + esc(d.tag) + ' · heure de ' + d.tz + '</span></div>');
+    allday[d.k].forEach(function(e){
+      var col = CMAP[e.cat].color;
+      L.push('<div class="ag-row" data-i="' + e._i + '" data-cat="' + e.cat + '">' +
+        '<div class="text-[.6rem] font-bold uppercase tracking-wider text-slate-400 pt-1">Journée</div>' +
+        '<div class="ag-rowbar" style="background:' + col + '"></div>' +
+        '<div><div class="font-semibold text-sm text-chicago-dark">' + esc(e.t) +
+        (e.who ? '<span class="ag-flag" style="background:' + col + '18;color:' + col + '">' + esc(e.who) + '</span>' : '') + '</div>' +
+        (e.note ? '<div class="text-xs text-slate-500 mt-1 leading-relaxed">' + esc(e.note) + '</div>' : '') +
+        '</div></div>');
+    });
+    timed[d.k].forEach(function(e){
+      var col = CMAP[e.cat].color;
+      L.push('<div class="ag-row" data-i="' + e._i + '" data-cat="' + e.cat + '">' +
+        '<div class="pt-0.5"><div class="text-xs font-bold text-chicago-dark">' + hhmm(e.s) + '</div>' +
+        '<div class="text-[.62rem] text-slate-400">' + (e.e === '24:00' ? '→ J+1' : hhmm(e.e)) + '</div></div>' +
+        '<div class="ag-rowbar" style="background:' + col + '"></div>' +
+        '<div><div class="font-semibold text-sm text-chicago-dark">' + esc(e.t) +
+        (e.star ? ' <i class="fa-solid fa-star text-[.55rem] text-amber-500"></i>' : '') +
+        (e.resa ? '<span class="ag-flag" style="background:' + RESA[e.resa].bg + ';color:' + RESA[e.resa].fg + '">' + RESA[e.resa].t + '</span>' : '') + '</div>' +
+        (e.loc ? '<div class="text-[.68rem] text-slate-500 mt-0.5"><i class="fa-solid fa-location-dot mr-1 opacity-60"></i>' + esc(e.loc) + '</div>' : '') +
+        (e.note ? '<div class="text-xs text-slate-500 mt-1 leading-relaxed">' + esc(e.note) + '</div>' : '') +
+        '</div></div>');
+    });
+    L.push('</div>');
+  });
+  document.getElementById('agList').innerHTML = L.join('');
+
+  /* ---- panneau de détail ---- */
+  var det = document.getElementById('agDetail');
+  function showDetail(i){
+    var e = EV[i], c = CMAP[e.cat], d = null;
+    DAYS.forEach(function(x){ if (x.k === e.d) d = x; });
+    det.innerHTML = '<button type="button" class="close" aria-label="Fermer"><i class="fa-solid fa-xmark"></i></button>' +
+      '<div class="flex flex-wrap items-center gap-2 mb-2">' +
+        '<span class="text-[.6rem] font-bold uppercase tracking-[.14em] px-2 py-1 rounded" style="background:' + c.color + '16;color:' + c.color + '">' + c.label + '</span>' +
+        (e.resa ? '<span class="text-[.6rem] font-bold uppercase tracking-[.1em] px-2 py-1 rounded" style="background:' + RESA[e.resa].bg + ';color:' + RESA[e.resa].fg + '">' + RESA[e.resa].t + '</span>' : '') +
+        (e.who ? '<span class="text-[.6rem] font-bold uppercase tracking-[.1em] px-2 py-1 rounded bg-slate-100 text-slate-500">' + esc(e.who) + '</span>' : '') +
+        (e.star ? '<span class="text-[.6rem] font-bold uppercase tracking-[.1em] px-2 py-1 rounded bg-amber-100 text-amber-700"><i class="fa-solid fa-star mr-1"></i>Temps fort</span>' : '') +
+      '</div>' +
+      '<h4 class="font-serif font-bold text-xl md:text-2xl text-chicago-dark leading-snug pr-8 mb-2">' + esc(e.t) + '</h4>' +
+      '<div class="flex flex-wrap gap-x-5 gap-y-1 text-sm text-slate-600 mb-3">' +
+        '<span><i class="fa-regular fa-calendar mr-2 opacity-60"></i>' + d.dow + ' ' + d.num + ' septembre</span>' +
+        (e.allday ? '<span><i class="fa-regular fa-clock mr-2 opacity-60"></i>Sur la journée</span>'
+                  : '<span><i class="fa-regular fa-clock mr-2 opacity-60"></i>' + hhmm(e.s) + ' → ' + (e.e === '24:00' ? 'nuit complète, arrivée le lendemain' : hhmm(e.e) + ' · ' + dur(e.s, e.e)) + '</span>') +
+        (e.loc ? '<span><i class="fa-solid fa-location-dot mr-2 opacity-60"></i>' + esc(e.loc) + '</span>' : '') +
+        '<span class="text-slate-400"><i class="fa-solid fa-globe mr-2 opacity-60"></i>heure de ' + d.tz + '</span>' +
+      '</div>' +
+      (e.note ? '<p class="text-slate-600 leading-relaxed text-sm border-l-2 pl-4" style="border-color:' + c.color + '55">' + esc(e.note) + '</p>' : '');
+    det.classList.remove('hidden');
+  }
+  det.addEventListener('click', function(ev){
+    if (ev.target.closest('.close')) det.classList.add('hidden');
+  });
+  root.addEventListener('click', function(ev){
+    var el = ev.target.closest('.ag-ev,.ag-chip,.ag-row');
+    if (!el) return;
+    showDetail(+el.getAttribute('data-i'));
+    if (window.innerWidth < 900) det.scrollIntoView({ behavior:'smooth', block:'center' });
+  });
+
+  /* ---- filtres ---- */
+  var cur = 'all';
+  function applyFilter(){
+    root.querySelectorAll('.ag-ev,.ag-chip,.ag-row').forEach(function(el){
+      el.classList.toggle('dim', cur !== 'all' && el.getAttribute('data-cat') !== cur);
+    });
+    root.querySelectorAll('.ag-day').forEach(function(d){
+      var vis = d.querySelectorAll('.ag-row:not(.dim)').length;
+      d.style.display = vis ? '' : 'none';
+    });
+  }
+  root.querySelectorAll('.ag-filter').forEach(function(b){
+    b.addEventListener('click', function(){
+      cur = b.getAttribute('data-cat');
+      root.querySelectorAll('.ag-filter').forEach(function(x){ x.classList.toggle('on', x === b); });
+      applyFilter();
+    });
+  });
+
+  /* ---- bascule de vue ---- */
+  var week = document.getElementById('agWeek'), list = document.getElementById('agList');
+  function setView(v){
+    week.classList.toggle('hidden', v !== 'week');
+    list.classList.toggle('hidden', v !== 'list');
+    root.querySelectorAll('.ag-view').forEach(function(b){ b.classList.toggle('on', b.getAttribute('data-view') === v); });
+  }
+  root.querySelectorAll('.ag-view').forEach(function(b){
+    b.addEventListener('click', function(){ setView(b.getAttribute('data-view')); });
+  });
+  setView(window.innerWidth < 900 ? 'list' : 'week');
+
+  /* ---- flèches de défilement ---- */
+  var sc = document.getElementById('agScroll');
+  function step(dir){
+    var col = sc.querySelector('.ag-col');
+    sc.scrollBy({ left: dir * ((col ? col.offsetWidth : 180) * 2), behavior:'smooth' });
+  }
+  document.getElementById('agPrev').addEventListener('click', function(){ step(-1); });
+  document.getElementById('agNext').addEventListener('click', function(){ step(1); });
+  document.getElementById('agJump').addEventListener('click', function(){
+    var cols = sc.querySelectorAll('.ag-col');
+    if (cols[4]) sc.scrollTo({ left: cols[4].offsetLeft - 56 - sc.clientWidth * 0, behavior:'smooth' });
+  });
+  sc.scrollTop = Math.max((9 * 60 - START) * PPM - 20, 0);
+})();
+
+</script>
+
+</body>
+</html>

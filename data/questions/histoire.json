@@ -1,0 +1,231 @@
+{
+  "category": "histoire",
+  "label": "Histoire & Grandes dates",
+  "version": 1,
+  "questions": [
+    {
+      "id": "his-0001",
+      "type": "estimation",
+      "difficulty": 2,
+      "minAge": 9,
+      "q": "En quelle année a eu lieu la prise de la Bastille ?",
+      "answer": 1789,
+      "unit": "",
+      "tol": { "exact": true },
+      "fun": "Il n'y avait que sept prisonniers à l'intérieur ce jour-là.",
+      "tags": ["france", "révolution"]
+    },
+    {
+      "id": "his-0002",
+      "type": "estimation",
+      "difficulty": 2,
+      "minAge": 9,
+      "q": "En quelle année un homme a-t-il marché sur la Lune pour la première fois ?",
+      "answer": 1969,
+      "unit": "",
+      "tol": { "exact": true },
+      "fun": "L'ordinateur de bord d'Apollo 11 avait moins de puissance qu'une calculatrice de collège.",
+      "tags": ["espace", "xxe siècle"]
+    },
+    {
+      "id": "his-0003",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 9,
+      "q": "Quel empereur français a été vaincu à Waterloo ?",
+      "choices": ["Louis XVI", "Charlemagne", "Napoléon Ier", "Napoléon III"],
+      "answer": 2,
+      "fun": "La bataille a duré une seule journée. Elle a mis fin à vingt ans de guerres en Europe.",
+      "tags": ["france", "batailles"]
+    },
+    {
+      "id": "his-0004",
+      "type": "libre",
+      "difficulty": 2,
+      "minAge": 9,
+      "q": "Quel navigateur a atteint l'Amérique en 1492 pour le compte de l'Espagne ?",
+      "answer": "Christophe Colomb",
+      "accept": ["christophe colomb", "colomb", "colombo", "columbus"],
+      "fun": "Il est mort persuadé d'avoir atteint l'Asie.",
+      "tags": ["explorations"]
+    },
+    {
+      "id": "his-0005",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 10,
+      "q": "Quel roi de France a fait construire le château de Versailles ?",
+      "choices": ["François Ier", "Louis XIV", "Henri IV", "Louis XVI"],
+      "answer": 1,
+      "fun": "Le château n'avait quasiment aucune salle de bain. La cour se parfumait pour compenser.",
+      "tags": ["france", "royauté"]
+    },
+    {
+      "id": "his-0006",
+      "type": "estimation",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "En quelle année le mur de Berlin est-il tombé ?",
+      "answer": 1989,
+      "unit": "",
+      "tol": { "exact": true },
+      "fun": "Il était debout depuis 28 ans. Il est tombé en une nuit, en partie à cause d'une conférence de presse mal préparée.",
+      "tags": ["xxe siècle"]
+    },
+    {
+      "id": "his-0007",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Quelle civilisation a construit la cité du Machu Picchu ?",
+      "choices": ["Les Aztèques", "Les Mayas", "Les Incas", "Les Olmèques"],
+      "answer": 2,
+      "fun": "Elle a été bâtie sans roue, sans fer et sans mortier. Les pierres sont ajustées au millimètre.",
+      "tags": ["civilisations"]
+    },
+    {
+      "id": "his-0008",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Quel pays a offert la statue de la Liberté aux États-Unis ?",
+      "choices": ["Le Royaume-Uni", "La France", "L'Espagne", "Les Pays-Bas"],
+      "answer": 1,
+      "fun": "Sa charpente intérieure a été conçue par Gustave Eiffel, avant sa tour.",
+      "tags": ["monuments"]
+    },
+    {
+      "id": "his-0009",
+      "type": "estimation",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "En quelle année a commencé la Première Guerre mondiale ?",
+      "answer": 1914,
+      "unit": "",
+      "tol": { "exact": true },
+      "fun": "Tout le monde pensait qu'elle serait terminée avant Noël. Elle a duré quatre ans et trois mois.",
+      "tags": ["guerres"]
+    },
+    {
+      "id": "his-0010",
+      "type": "vraifaux",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "La Première Guerre mondiale s'est achevée un 11 novembre.",
+      "answer": true,
+      "fun": "L'armistice a été signé à 5 h 15 du matin et est entré en vigueur à 11 h. Des soldats sont morts pendant ces six heures.",
+      "tags": ["guerres"]
+    },
+    {
+      "id": "his-0011",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Qui fut la première femme à recevoir un prix Nobel ?",
+      "choices": ["Rosalind Franklin", "Marie Curie", "Ada Lovelace", "Simone de Beauvoir"],
+      "answer": 1,
+      "fun": "Elle en a même reçu deux, dans deux disciplines différentes : physique puis chimie. Personne d'autre n'a fait ça.",
+      "tags": ["sciences", "femmes"]
+    },
+    {
+      "id": "his-0012",
+      "type": "vraifaux",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Cléopâtre était d'origine grecque, et non égyptienne.",
+      "answer": true,
+      "fun": "Elle descendait d'un général macédonien d'Alexandre le Grand. Elle fut la première de sa dynastie à apprendre l'égyptien.",
+      "tags": ["antiquité"]
+    },
+    {
+      "id": "his-0013",
+      "type": "libre",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Quel général carthaginois a traversé les Alpes avec des éléphants pour attaquer Rome ?",
+      "answer": "Hannibal",
+      "accept": ["hannibal", "hannibal barca", "annibal"],
+      "fun": "Il est parti avec 37 éléphants. Un seul a survécu à la traversée.",
+      "tags": ["antiquité"]
+    },
+    {
+      "id": "his-0014",
+      "type": "estimation",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Combien d'années a réellement duré la guerre de Cent Ans ?",
+      "answer": 116,
+      "unit": "ans",
+      "tol": { "pct": 10 },
+      "fun": "De 1337 à 1453. Le nom a été inventé bien plus tard par des historiens.",
+      "tags": ["france", "piège"]
+    },
+    {
+      "id": "his-0015",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Quelle bataille de 1066 a fait de Guillaume le Conquérant le roi d'Angleterre ?",
+      "choices": ["Azincourt", "Hastings", "Bouvines", "Crécy"],
+      "answer": 1,
+      "fun": "C'est pour cette raison que l'anglais est truffé de mots français : cette conquête a duré des siècles dans la langue.",
+      "tags": ["batailles", "moyen âge"]
+    },
+    {
+      "id": "his-0016",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 12,
+      "q": "Quel traité met officiellement fin à la Première Guerre mondiale en 1919 ?",
+      "choices": ["Le traité de Rome", "Le traité de Versailles", "Le traité de Vienne", "Le traité de Westphalie"],
+      "answer": 1,
+      "fun": "Signé dans la galerie des Glaces, précisément là où l'Empire allemand avait été proclamé en 1871. Le choix n'était pas innocent.",
+      "tags": ["guerres", "traités"]
+    },
+    {
+      "id": "his-0017",
+      "type": "estimation",
+      "difficulty": 5,
+      "minAge": 12,
+      "q": "En quelle année Jeanne d'Arc a-t-elle été brûlée à Rouen ?",
+      "answer": 1431,
+      "unit": "",
+      "tol": { "pct": 1 },
+      "fun": "Elle avait 19 ans. Elle a été réhabilitée 25 ans plus tard, puis canonisée en 1920.",
+      "tags": ["france", "moyen âge"]
+    },
+    {
+      "id": "his-0018",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Quelle invention Gutenberg met-il au point vers 1450 ?",
+      "choices": ["La boussole", "L'imprimerie à caractères mobiles", "Le télescope", "Le papier"],
+      "answer": 1,
+      "fun": "En cinquante ans, l'Europe est passée de quelques milliers de livres à plus de vingt millions.",
+      "tags": ["inventions"]
+    },
+    {
+      "id": "his-0019",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "En quelle année l'Empire romain d'Occident s'effondre-t-il définitivement ?",
+      "choices": ["En 313", "En 410", "En 476", "En 622"],
+      "answer": 2,
+      "fun": "Date de convention : le dernier empereur, Romulus Augustule, est déposé sans même être tué. Il avait 16 ans.",
+      "tags": ["antiquité"]
+    },
+    {
+      "id": "his-0020",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Quel peuple a construit les pyramides de Gizeh ?",
+      "choices": ["Les Sumériens", "Les Égyptiens", "Les Perses", "Les Phéniciens"],
+      "answer": 1,
+      "fun": "La pyramide de Khéops est restée la plus haute construction humaine pendant près de 4 000 ans.",
+      "tags": ["antiquité", "monuments"]
+    }
+  ]
+}

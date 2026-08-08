@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Banc de test · Front ↔ Back · Quiz Famille</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: { extend: {
+    fontFamily: { sans: ['Inter','sans-serif'], serif: ['Playfair Display','serif'] },
+    colors: { q: { blue:'#41B6E6', dark:'#002B49', red:'#E4002B', sand:'#F5F1EA', green:'#22c55e' } }
+  }}
+}
+</script>
+<style>
+  body{background:#0b1a26}
+  .hero-pattern{background-color:#002B49;
+    background-image:radial-gradient(circle at 20% 10%,rgba(65,182,230,.22),transparent 45%),
+                     radial-gradient(circle at 85% 70%,rgba(228,0,43,.18),transparent 50%)}
+  .card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);
+    border-radius:1.25rem;backdrop-filter:blur(8px)}
+  .card-hover{transition:transform .3s ease, border-color .3s ease}
+  .card-hover:hover{transform:translateY(-3px);border-color:rgba(65,182,230,.45)}
+  .kicker{font-size:.68rem;font-weight:800;letter-spacing:.26em;text-transform:uppercase}
+  .kicker-line{display:block;height:3px;width:60px;background:#E4002B;margin:.55rem 0 0;border-radius:2px}
+  .btn{display:inline-flex;align-items:center;gap:.55rem;padding:.7rem 1.15rem;border-radius:.8rem;
+    font-size:.82rem;font-weight:700;letter-spacing:.02em;cursor:pointer;border:1px solid transparent;
+    transition:all .25s cubic-bezier(.16,1,.3,1)}
+  .btn:disabled{opacity:.45;cursor:not-allowed}
+  .btn-primary{background:#41B6E6;color:#002B49}
+  .btn-primary:hover:not(:disabled){background:#6cc9ee;transform:translateY(-2px);
+    box-shadow:0 16px 30px -18px rgba(65,182,230,.9)}
+  .btn-ghost{background:rgba(255,255,255,.06);color:#e2e8f0;border-color:rgba(255,255,255,.14)}
+  .btn-ghost:hover:not(:disabled){background:rgba(255,255,255,.12);transform:translateY(-2px)}
+  .btn-red{background:#E4002B;color:#fff}
+  .btn-red:hover:not(:disabled){background:#ff1f4a;transform:translateY(-2px)}
+  .inp{width:100%;background:rgba(0,0,0,.32);border:1px solid rgba(255,255,255,.13);border-radius:.7rem;
+    padding:.7rem .9rem;color:#f1f5f9;font-size:.85rem;transition:border-color .25s ease}
+  .inp:focus{outline:none;border-color:#41B6E6;box-shadow:0 0 0 3px rgba(65,182,230,.14)}
+  .lbl{font-size:.68rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#7e93a6;
+    display:block;margin-bottom:.4rem}
+  .mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+  #log{max-height:30rem;overflow-y:auto;scrollbar-width:thin}
+  .entry{border-left:3px solid rgba(255,255,255,.14);padding:.55rem 0 .55rem .85rem;margin-bottom:.55rem;
+    font-size:.74rem;line-height:1.55;animation:pop .35s cubic-bezier(.16,1,.3,1)}
+  .entry.ok{border-left-color:#22c55e}
+  .entry.err{border-left-color:#E4002B}
+  .entry.req{border-left-color:#41B6E6}
+  @keyframes pop{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  .pill{display:inline-block;font-size:.6rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+    padding:.15rem .5rem;border-radius:99px;margin-right:.5rem}
+  .dot{width:9px;height:9px;border-radius:99px;display:inline-block;background:#64748b}
+  .dot.on{background:#22c55e;box-shadow:0 0 0 4px rgba(34,197,94,.18)}
+  .dot.off{background:#E4002B;box-shadow:0 0 0 4px rgba(228,0,43,.18)}
+  table{width:100%;border-collapse:collapse;font-size:.78rem}
+  th{text-align:left;font-size:.62rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+    color:#7e93a6;padding:.5rem .6rem;border-bottom:1px solid rgba(255,255,255,.1)}
+  td{padding:.55rem .6rem;border-bottom:1px solid rgba(255,255,255,.055);color:#cbd5e1}
+  tbody tr{transition:background .2s ease}
+  tbody tr:hover{background:rgba(65,182,230,.07)}
+</style>
+</head>
+<body class="font-sans text-slate-200 antialiased">
+
+<!-- ============ HERO ============ -->
+<header class="hero-pattern border-b border-white/10">
+  <div class="max-w-5xl mx-auto px-5 py-12 md:py-16">
+    <p class="kicker text-q-blue">Étape 0 · Plomberie</p>
+    <span class="kicker-line"></span>
+    <h1 class="font-serif text-4xl md:text-5xl font-black text-white mt-5 leading-tight">
+      Banc de test<br><span class="text-q-blue">Front ↔ Back</span>
+    </h1>
+    <p class="mt-4 text-slate-300 max-w-2xl text-sm md:text-base leading-relaxed">
+      Cette page ne fait rien d'autre que <strong class="text-white">parler à ta base de données</strong>
+      en HTTP, et te montrer chaque requête telle qu'elle part et telle qu'elle revient.
+      Une fois que les 3 voyants sont verts, la partie difficile est derrière toi.
+    </p>
+    <div class="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-slate-400">
+      <span><i class="fa-solid fa-lock text-q-blue mr-2"></i>Aucune donnée ne sort d'ici sauf vers ton projet</span>
+      <span><i class="fa-brands fa-github text-q-blue mr-2"></i>100 % statique, hébergeable sur GitHub Pages</span>
+    </div>
+  </div>
+</header>
+
+<main class="max-w-5xl mx-auto px-5 py-10 space-y-8">
+
+  <!-- ============ 1. CONFIG ============ -->
+  <section class="card p-6 md:p-7">
+    <div class="flex items-start justify-between gap-4 flex-wrap">
+      <div>
+        <p class="kicker text-q-blue">1 · Connexion</p>
+        <h2 class="font-serif text-2xl font-bold text-white mt-2">Tes deux clés</h2>
+      </div>
+      <div class="flex items-center gap-2 text-xs text-slate-400">
+        <span id="dot" class="dot"></span><span id="dotTxt">non configuré</span>
+      </div>
+    </div>
+
+    <p class="text-sm text-slate-400 mt-3 leading-relaxed">
+      Dans Supabase&nbsp;: <strong class="text-slate-200">Settings → API Keys</strong>.
+      Récupère le <em>Project URL</em> et la clé <em>anon public</em>.
+      Elles sont enregistrées <strong class="text-slate-200">uniquement dans ce navigateur</strong> (localStorage).
+    </p>
+
+    <div class="grid md:grid-cols-2 gap-4 mt-5">
+      <div>
+        <label class="lbl" for="url">Project URL</label>
+        <input id="url" class="inp mono" placeholder="https://abcdefgh.supabase.co" autocomplete="off">
+      </div>
+      <div>
+        <label class="lbl" for="key">Clé anon public</label>
+        <input id="key" class="inp mono" placeholder="eyJhbGciOiJI..." autocomplete="off">
+      </div>
+    </div>
+
+    <div class="flex flex-wrap gap-3 mt-5">
+      <button id="bSave"  class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i>Enregistrer</button>
+      <button id="bPing"  class="btn btn-ghost"><i class="fa-solid fa-satellite-dish"></i>Tester la connexion</button>
+      <button id="bClear" class="btn btn-ghost"><i class="fa-solid fa-eraser"></i>Oublier mes clés</button>
+    </div>
+  </section>
+
+  <!-- ============ 2. ÉCRITURE ============ -->
+  <section class="card card-hover p-6 md:p-7">
+    <p class="kicker text-q-red">2 · Écriture</p>
+    <h2 class="font-serif text-2xl font-bold text-white mt-2">Envoyer un score</h2>
+    <p class="text-sm text-slate-400 mt-2 leading-relaxed">
+      Un <span class="mono text-q-blue">POST</span> vers
+      <span class="mono text-slate-300">/rest/v1/scores</span> avec un objet JSON dans le corps.
+      C'est littéralement tout ce qu'est « écrire en base » depuis le front.
+    </p>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 mt-5">
+      <div class="lg:col-span-2">
+        <label class="lbl" for="joueur">Joueur</label>
+        <input id="joueur" class="inp" value="Bruno">
+      </div>
+      <div>
+        <label class="lbl" for="mode">Mode</label>
+        <input id="mode" class="inp" value="braquage">
+      </div>
+      <div>
+        <label class="lbl" for="score">Score</label>
+        <input id="score" class="inp" type="number" value="120">
+      </div>
+      <div>
+        <label class="lbl" for="bonnes">Bonnes / Posées</label>
+        <div class="flex gap-2">
+          <input id="bonnes" class="inp" type="number" value="8">
+          <input id="posees" class="inp" type="number" value="12">
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-wrap gap-3 mt-5">
+      <button id="bPost" class="btn btn-red"><i class="fa-solid fa-paper-plane"></i>Enregistrer ce score</button>
+      <button id="bSeed" class="btn btn-ghost"><i class="fa-solid fa-dice"></i>Injecter 5 scores au hasard</button>
+    </div>
+  </section>
+
+  <!-- ============ 3. LECTURE ============ -->
+  <section class="card card-hover p-6 md:p-7">
+    <p class="kicker text-q-blue">3 · Lecture</p>
+    <h2 class="font-serif text-2xl font-bold text-white mt-2">Relire &amp; agréger</h2>
+    <p class="text-sm text-slate-400 mt-2 leading-relaxed">
+      Un <span class="mono text-q-blue">GET</span> avec des filtres directement dans l'URL.
+      Le classement ci-dessous est calculé en JS, mais Supabase sait aussi le faire côté serveur —
+      c'est tout l'intérêt d'avoir du vrai SQL derrière.
+    </p>
+
+    <div class="flex flex-wrap gap-3 mt-5">
+      <button id="bGet"  class="btn btn-primary"><i class="fa-solid fa-list"></i>Dernières parties</button>
+      <button id="bStat" class="btn btn-ghost"><i class="fa-solid fa-trophy"></i>Classement des joueurs</button>
+    </div>
+
+    <div id="tableWrap" class="mt-6 overflow-x-auto hidden">
+      <table id="tbl"><thead></thead><tbody></tbody></table>
+    </div>
+    <p id="empty" class="hidden mt-6 text-sm text-slate-500 italic">
+      <i class="fa-solid fa-inbox mr-2"></i>Aucune ligne. Si tu viens d'en écrire une, c'est très probablement
+      une policy RLS manquante (revois l'étape 2 du tuto).
+    </p>
+  </section>
+
+  <!-- ============ JOURNAL ============ -->
+  <section class="card p-6 md:p-7">
+    <div class="flex items-center justify-between gap-4 flex-wrap">
+      <div>
+        <p class="kicker text-q-blue">Sous le capot</p>
+        <h2 class="font-serif text-2xl font-bold text-white mt-2">Journal HTTP</h2>
+      </div>
+      <button id="bWipe" class="btn btn-ghost"><i class="fa-solid fa-broom"></i>Vider</button>
+    </div>
+    <p class="text-sm text-slate-400 mt-2">
+      C'est ici que ça se joue. Regarde la requête partir, et la réponse revenir.
+      Il n'y a rien d'autre entre ton front et ton back.
+    </p>
+    <div id="log" class="mt-5 mono"></div>
+  </section>
+
+  <footer class="text-center text-xs text-slate-600 py-8">
+    Quiz Famille · banc de test · rien de tout ceci ne finira dans le jeu final
+  </footer>
+</main>
+
+<script>
+/* =====================================================================
+   Toute la logique front↔back tient dans ce fichier, volontairement.
+   La seule fonction qui parle au backend est api() ci-dessous.
+   ===================================================================== */
+
+const $ = s => document.querySelector(s);
+const LS = 'quiz.supabase.cfg';
+
+/* ---------- config ---------- */
+function cfg(){ try { return JSON.parse(localStorage.getItem(LS)) || {}; } catch(e){ return {}; } }
+function setCfg(c){ localStorage.setItem(LS, JSON.stringify(c)); paintDot(); }
+
+function paintDot(){
+  const c = cfg(), ok = c.url && c.key;
+  $('#dot').className = 'dot ' + (ok ? 'on' : '');
+  $('#dotTxt').textContent = ok ? 'clés enregistrées' : 'non configuré';
+}
+
+(function boot(){
+  const c = cfg();
+  if (c.url) $('#url').value = c.url;
+  if (c.key) $('#key').value = c.key;
+  paintDot();
+  log('req', 'PRÊT', "Renseigne tes clés, puis clique « Tester la connexion ».");
+})();
+
+/* ---------- journal ---------- */
+function esc(s){ return String(s).replace(/[&<>]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[m])); }
+
+function log(kind, title, body){
+  const colors = { req:['#41B6E6','rgba(65,182,230,.14)'],
+                   ok :['#22c55e','rgba(34,197,94,.14)'],
+                   err:['#E4002B','rgba(228,0,43,.14)'] };
+  const [fg,bg] = colors[kind] || colors.req;
+  const el = document.createElement('div');
+  el.className = 'entry ' + kind;
+  el.innerHTML = `<span class="pill" style="color:${fg};background:${bg}">${esc(title)}</span>
+    <span class="text-slate-500">${new Date().toLocaleTimeString('fr-FR')}</span>
+    <pre class="whitespace-pre-wrap text-slate-300 mt-1.5">${esc(body)}</pre>`;
+  $('#log').prepend(el);
+}
+
+/* =====================================================================
+   api() — LE point de contact unique entre le front et le back.
+   Retiens ce schéma : méthode + URL + en-têtes + corps JSON. C'est tout.
+   ===================================================================== */
+async function api(method, path, body){
+  const c = cfg();
+  if (!c.url || !c.key) { log('err','CONFIG','Clés manquantes. Renseigne-les dans la section 1.'); return null; }
+
+  const url = c.url.replace(/\/+$/,'') + '/rest/v1' + path;
+
+  const headers = {
+    'apikey'        : c.key,                    // qui je suis (projet)
+    'Authorization' : 'Bearer ' + c.key,        // mon jeton (ici : anonyme)
+    'Content-Type'  : 'application/json',
+    'Prefer'        : 'return=representation'   // renvoie-moi la ligne créée
+  };
+
+  log('req', method, url + '\n\nen-têtes :\n' +
+    JSON.stringify({...headers, apikey:'eyJ…(masquée)', Authorization:'Bearer eyJ…(masquée)'}, null, 2) +
+    (body ? '\n\ncorps :\n' + JSON.stringify(body, null, 2) : ''));
+
+  const t0 = performance.now();
+  try {
+    const res  = await fetch(url, { method, headers, body: body ? JSON.stringify(body) : undefined });
+    const ms   = Math.round(performance.now() - t0);
+    const text = await res.text();
+    let data = null; try { data = text ? JSON.parse(text) : null; } catch(e){ data = text; }
+
+    if (!res.ok) {
+      log('err', res.status + ' ' + res.statusText,
+        `${ms} ms\n\n${JSON.stringify(data, null, 2)}\n\n${hint(res.status, data)}`);
+      return null;
+    }
+    log('ok', res.status + ' OK', `${ms} ms\n\n${JSON.stringify(data, null, 2)}`);
+    return data;
+  } catch (e) {
+    log('err','RÉSEAU', e.message +
+      "\n\nCauses classiques : URL du projet erronée, projet en pause (Supabase met en veille après inactivité), ou pas de connexion.");
+    return null;
+  }
+}
+
+/* Aide au diagnostic : les 4 erreurs que tu vas forcément rencontrer. */
+function hint(status, data){
+  const msg = JSON.stringify(data || '');
+  if (status === 401) return "→ 401 : clé anon absente ou invalide. Recopie-la entièrement (elle est longue).";
+  if (status === 404 || /does not exist|relation/i.test(msg))
+    return "→ La table n'existe pas. As-tu bien exécuté le script SQL de création ?";
+  if (status === 403 || /row-level security|policy/i.test(msg))
+    return "→ RLS : la table est protégée et aucune policy ne t'autorise. C'est l'erreur n°1 sur Supabase.";
+  if (status === 400) return "→ Un champ envoyé ne correspond pas aux colonnes de la table (nom ou type).";
+  return "→ Regarde le message ci-dessus, il est généralement explicite.";
+}
+
+/* ---------- boutons config ---------- */
+$('#bSave').onclick = () => {
+  const url = $('#url').value.trim(), key = $('#key').value.trim();
+  if (!/^https:\/\/.+\.supabase\.co\/?$/.test(url))
+    return log('err','FORMAT', "L'URL doit ressembler à https://abcdefgh.supabase.co");
+  if (key.length < 40)
+    return log('err','FORMAT', "La clé anon semble tronquée : elle fait plusieurs centaines de caractères.");
+  setCfg({url, key});
+  log('ok','ENREGISTRÉ','Clés stockées dans le localStorage de ce navigateur.');
+};
+
+$('#bClear').onclick = () => {
+  localStorage.removeItem(LS);
+  $('#url').value = ''; $('#key').value = '';
+  paintDot(); log('ok','EFFACÉ','Clés supprimées de ce navigateur.');
+};
+
+$('#bPing').onclick = async () => {
+  const r = await api('GET', '/scores?select=id&limit=1');
+  if (r) {
+    $('#dot').className = 'dot on'; $('#dotTxt').textContent = 'connecté';
+    log('ok','CONNEXION ÉTABLIE',
+      "Le front parle au back. Table « scores » accessible en lecture.\nTu peux passer à l'écriture.");
+  } else {
+    $('#dot').className = 'dot off'; $('#dotTxt').textContent = 'échec';
+  }
+};
+
+/* ---------- écriture ---------- */
+function formRow(){
+  return {
+    joueur : $('#joueur').value.trim() || 'Anonyme',
+    mode   : $('#mode').value.trim() || null,
+    score  : parseInt($('#score').value, 10)  || 0,
+    bonnes : parseInt($('#bonnes').value, 10) || 0,
+    posees : parseInt($('#posees').value, 10) || 0
+  };
+}
+
+$('#bPost').onclick = async () => {
+  const r = await api('POST', '/scores', formRow());
+  if (r) log('ok','LIGNE CRÉÉE', "id = " + (r[0] && r[0].id) + "\nElle est visible dans Table Editor sur Supabase.");
+};
+
+$('#bSeed').onclick = async () => {
+  const noms = ['Bruno','Christophe','Léa','Tom','Manon','Sophie'];
+  const modes = ['braquage','camembert','chrono'];
+  const rows = Array.from({length:5}, () => {
+    const posees = 8 + Math.floor(Math.random()*10);
+    const bonnes = Math.floor(Math.random()*(posees+1));
+    return { joueur: noms[Math.floor(Math.random()*noms.length)],
+             mode  : modes[Math.floor(Math.random()*modes.length)],
+             score : bonnes*10 + Math.floor(Math.random()*30),
+             bonnes, posees };
+  });
+  const r = await api('POST', '/scores', rows);   // un tableau => insertion en lot
+  if (r) log('ok','LOT INSÉRÉ', r.length + " lignes créées en une seule requête.");
+};
+
+/* ---------- lecture ---------- */
+function render(cols, rows){
+  const thead = $('#tbl thead'), tbody = $('#tbl tbody');
+  thead.innerHTML = '<tr>' + cols.map(c => `<th>${esc(c.label)}</th>`).join('') + '</tr>';
+  tbody.innerHTML = rows.map((r,i) => '<tr>' + cols.map(c =>
+      `<td>${c.render ? c.render(r,i) : esc(r[c.key] ?? '—')}</td>`).join('') + '</tr>').join('');
+  $('#tableWrap').classList.toggle('hidden', rows.length === 0);
+  $('#empty').classList.toggle('hidden', rows.length > 0);
+}
+
+$('#bGet').onclick = async () => {
+  const rows = await api('GET', '/scores?select=*&order=created_at.desc&limit=20');
+  if (!rows) return;
+  render([
+    { label:'Joueur', key:'joueur', render:r => `<span class="text-white font-semibold">${esc(r.joueur)}</span>` },
+    { label:'Mode',   key:'mode' },
+    { label:'Score',  key:'score', render:r => `<span class="text-q-blue font-bold">${r.score}</span>` },
+    { label:'Réussite', key:'x', render:r => r.posees ? Math.round(100*r.bonnes/r.posees)+' %' : '—' },
+    { label:'Quand',  key:'y', render:r => new Date(r.created_at).toLocaleString('fr-FR') }
+  ], rows);
+  log('ok','AFFICHÉ', rows.length + ' lignes rendues dans le tableau.');
+};
+
+$('#bStat').onclick = async () => {
+  const rows = await api('GET', '/scores?select=joueur,score,bonnes,posees');
+  if (!rows) return;
+  const agg = {};
+  rows.forEach(r => {
+    const a = agg[r.joueur] ||= { joueur:r.joueur, parties:0, total:0, bonnes:0, posees:0, best:0 };
+    a.parties++; a.total += r.score; a.bonnes += r.bonnes; a.posees += r.posees;
+    a.best = Math.max(a.best, r.score);
+  });
+  const list = Object.values(agg).sort((a,b) => (b.total/b.parties) - (a.total/a.parties));
+  render([
+    { label:'#', key:'r', render:(r,i) => ['🥇','🥈','🥉'][i] || (i+1) },
+    { label:'Joueur', key:'joueur', render:r => `<span class="text-white font-semibold">${esc(r.joueur)}</span>` },
+    { label:'Parties', key:'parties' },
+    { label:'Moy. / partie', key:'m', render:r => `<span class="text-q-blue font-bold">${Math.round(r.total/r.parties)}</span>` },
+    { label:'Record', key:'best' },
+    { label:'Réussite', key:'p', render:r => r.posees ? Math.round(100*r.bonnes/r.posees)+' %' : '—' }
+  ], list);
+  log('ok','CLASSEMENT', list.length + " joueurs agrégés côté navigateur.\n" +
+    "Note : en SQL, une vue ferait ce calcul côté serveur en une requête.");
+};
+
+$('#bWipe').onclick = () => { $('#log').innerHTML = ''; };
+</script>
+</body>
+</html>

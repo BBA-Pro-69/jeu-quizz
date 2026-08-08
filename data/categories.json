@@ -1,0 +1,143 @@
+{
+  "version": 1,
+  "updated": "2026-08-08",
+  "types": {
+    "qcm":       "Question à choix multiples (4 propositions)",
+    "libre":     "Réponse libre, validée par le meneur ou les autres joueurs",
+    "vraifaux":  "Vrai ou faux",
+    "estimation":"Réponse numérique — le plus proche gagne (le grand égalisateur entre âges)",
+    "defi":      "Mime, dessin, imitation : aucune connaissance requise"
+  },
+  "difficulty": {
+    "1": "Tout le monde sait",
+    "2": "Facile",
+    "3": "Il faut réfléchir",
+    "4": "Costaud",
+    "5": "Pour les spécialistes"
+  },
+  "categories": [
+    {
+      "key": "nature-animaux",
+      "label": "Nature & Animaux",
+      "short": "Nature",
+      "icon": "fa-solid fa-paw",
+      "color": "#22c55e",
+      "file": "questions/nature-animaux.json",
+      "minAge": 4,
+      "blurb": "Bestioles, records du vivant, plantes qui font peur."
+    },
+    {
+      "key": "cinema-series",
+      "label": "Cinéma & Séries",
+      "short": "Écrans",
+      "icon": "fa-solid fa-clapperboard",
+      "color": "#E4002B",
+      "file": "questions/cinema-series.json",
+      "minAge": 6,
+      "blurb": "Des dessins animés aux films culte."
+    },
+    {
+      "key": "musique",
+      "label": "Musique & Chansons",
+      "short": "Musique",
+      "icon": "fa-solid fa-music",
+      "color": "#a855f7",
+      "file": "questions/musique.json",
+      "minAge": 6,
+      "blurb": "Paroles, artistes, refrains à compléter."
+    },
+    {
+      "key": "geo-voyages",
+      "label": "Géo & Voyages",
+      "short": "Géo",
+      "icon": "fa-solid fa-earth-europe",
+      "color": "#41B6E6",
+      "file": "questions/geo-voyages.json",
+      "minAge": 7,
+      "blurb": "Capitales, drapeaux, monuments, lieux improbables."
+    },
+    {
+      "key": "histoire",
+      "label": "Histoire & Grandes dates",
+      "short": "Histoire",
+      "icon": "fa-solid fa-landmark",
+      "color": "#b45309",
+      "file": "questions/histoire.json",
+      "minAge": 9,
+      "blurb": "Des pharaons à la chute du Mur."
+    },
+    {
+      "key": "sciences",
+      "label": "Sciences & Corps humain",
+      "short": "Sciences",
+      "icon": "fa-solid fa-flask",
+      "color": "#0ea5e9",
+      "file": "questions/sciences.json",
+      "minAge": 7,
+      "blurb": "Espace, chimie, et ce qui se passe sous ta peau."
+    },
+    {
+      "key": "sport",
+      "label": "Sport",
+      "short": "Sport",
+      "icon": "fa-solid fa-futbol",
+      "color": "#16a34a",
+      "file": "questions/sport.json",
+      "minAge": 7,
+      "blurb": "Règles, exploits, champions."
+    },
+    {
+      "key": "geek",
+      "label": "Jeux vidéo, BD & Manga",
+      "short": "Geek",
+      "icon": "fa-solid fa-gamepad",
+      "color": "#f43f5e",
+      "file": "questions/geek.json",
+      "minAge": 6,
+      "blurb": "Le terrain de jeu des plus jeunes — et leur revanche."
+    },
+    {
+      "key": "gastronomie",
+      "label": "Bouffe & Boissons",
+      "short": "Bouffe",
+      "icon": "fa-solid fa-utensils",
+      "color": "#f59e0b",
+      "file": "questions/gastronomie.json",
+      "minAge": 6,
+      "blurb": "Recettes, origines, fromages qui puent."
+    },
+    {
+      "key": "insolite",
+      "label": "Insolite & Records",
+      "short": "Insolite",
+      "icon": "fa-solid fa-wand-magic-sparkles",
+      "color": "#eab308",
+      "file": "questions/insolite.json",
+      "minAge": 6,
+      "blurb": "Beaucoup d'estimations : personne ne sait, tout le monde peut gagner."
+    },
+    {
+      "key": "defis",
+      "label": "Défis & Mimes",
+      "short": "Défis",
+      "icon": "fa-solid fa-masks-theater",
+      "color": "#ec4899",
+      "file": "questions/defis.json",
+      "minAge": 4,
+      "blurb": "Zéro connaissance, 100 % ridicule. La catégorie qui sauve les soirées."
+    },
+    {
+      "key": "entre-nous",
+      "label": "Entre nous",
+      "short": "Nous",
+      "icon": "fa-solid fa-people-roof",
+      "color": "#002B49",
+      "file": "questions/entre-nous.json",
+      "minAge": 4,
+      "custom": true,
+      "extension": true,
+      "enabled": false,
+      "blurb": "EXTENSION FUTURE — questions personnalisées sur les joueurs présents. À n'activer que dans un cercle proche."
+    }
+  ]
+}

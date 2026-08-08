@@ -1,0 +1,216 @@
+{
+  "category": "defis",
+  "label": "Défis & Mimes",
+  "version": 1,
+  "note": "Aucune connaissance requise. scoring 'individuel' = le joueur réussit ou non. scoring 'collectif' = l'équipe marque si elle devine. 'vote' = les autres joueurs votent si c'est validé.",
+  "questions": [
+    {
+      "id": "def-0001",
+      "type": "defi",
+      "difficulty": 1,
+      "minAge": 4,
+      "q": "Mime un métier, sans un bruit. Les autres devinent.",
+      "duration": 30,
+      "scoring": "collectif",
+      "fun": "Interdis les bruits de bouche : c'est dix fois plus drôle.",
+      "tags": ["mime"]
+    },
+    {
+      "id": "def-0002",
+      "type": "defi",
+      "difficulty": 2,
+      "minAge": 5,
+      "q": "Cite 5 marques de voiture en 15 secondes.",
+      "duration": 15,
+      "scoring": "individuel",
+      "tags": ["rapidité"]
+    },
+    {
+      "id": "def-0003",
+      "type": "defi",
+      "difficulty": 3,
+      "minAge": 7,
+      "q": "Dis trois fois de suite, sans te tromper : « Les chaussettes de l'archiduchesse sont-elles sèches ou archi-sèches ? »",
+      "duration": 25,
+      "scoring": "vote",
+      "fun": "Le record du monde de virelangue tient plus de la respiration que de la langue.",
+      "tags": ["langue"]
+    },
+    {
+      "id": "def-0004",
+      "type": "defi",
+      "difficulty": 2,
+      "minAge": 5,
+      "q": "Dessine une girafe en 20 secondes... les yeux fermés. Les autres doivent la reconnaître.",
+      "duration": 20,
+      "scoring": "collectif",
+      "tags": ["dessin"]
+    },
+    {
+      "id": "def-0005",
+      "type": "defi",
+      "difficulty": 3,
+      "minAge": 8,
+      "q": "Récite l'alphabet à l'envers, de Z à A, en moins de 30 secondes.",
+      "duration": 30,
+      "scoring": "individuel",
+      "fun": "C'est un test utilisé pour évaluer la charge mentale. Presque personne n'y arrive du premier coup.",
+      "tags": ["mémoire"]
+    },
+    {
+      "id": "def-0006",
+      "type": "defi",
+      "difficulty": 2,
+      "minAge": 6,
+      "q": "Tiens en équilibre sur un pied, les yeux fermés, pendant 30 secondes.",
+      "duration": 30,
+      "scoring": "individuel",
+      "fun": "Sans la vue, l'oreille interne se retrouve seule aux commandes. Après 40 ans, ça se complique nettement.",
+      "tags": ["adresse"]
+    },
+    {
+      "id": "def-0007",
+      "type": "defi",
+      "difficulty": 2,
+      "minAge": 6,
+      "q": "Chante le refrain d'une chanson choisie par tes adversaires. Faux, mais en entier.",
+      "duration": 30,
+      "scoring": "vote",
+      "tags": ["chant"]
+    },
+    {
+      "id": "def-0008",
+      "type": "defi",
+      "difficulty": 3,
+      "minAge": 9,
+      "q": "Cite 8 pays d'Afrique en 30 secondes.",
+      "duration": 30,
+      "scoring": "individuel",
+      "tags": ["rapidité", "géo"]
+    },
+    {
+      "id": "def-0009",
+      "type": "defi",
+      "difficulty": 2,
+      "minAge": 7,
+      "q": "Mime un film culte. Titre uniquement, pas de mots, pas de bruits.",
+      "duration": 45,
+      "scoring": "collectif",
+      "tags": ["mime", "cinéma"]
+    },
+    {
+      "id": "def-0010",
+      "type": "defi",
+      "difficulty": 3,
+      "minAge": 7,
+      "q": "Fais rire un adversaire de ton choix en 20 secondes. Sans le toucher.",
+      "duration": 20,
+      "scoring": "vote",
+      "fun": "Le défi le plus rentable du jeu : ça marche presque toujours, mais rarement comme prévu.",
+      "tags": ["ambiance"]
+    },
+    {
+      "id": "def-0011",
+      "type": "defi",
+      "difficulty": 4,
+      "minAge": 10,
+      "q": "Raconte ta journée d'hier pendant 30 secondes, sans jamais dire « je ».",
+      "duration": 30,
+      "scoring": "vote",
+      "tags": ["langue"]
+    },
+    {
+      "id": "def-0012",
+      "type": "defi",
+      "difficulty": 3,
+      "minAge": 8,
+      "q": "Compte à rebours de 100 à 85, à voix haute, en moins de 15 secondes.",
+      "duration": 15,
+      "scoring": "individuel",
+      "tags": ["calcul"]
+    },
+    {
+      "id": "def-0013",
+      "type": "defi",
+      "difficulty": 3,
+      "minAge": 6,
+      "q": "Un adversaire aligne 7 objets de la table. Tu les regardes 10 secondes, il les cache, tu les cites tous.",
+      "duration": 40,
+      "scoring": "individuel",
+      "fun": "Sept, c'est justement la limite classique de la mémoire de travail humaine.",
+      "tags": ["mémoire"]
+    },
+    {
+      "id": "def-0014",
+      "type": "defi",
+      "difficulty": 2,
+      "minAge": 5,
+      "q": "Empile 5 objets de la table sans que ça s'écroule. Ça doit tenir 3 secondes.",
+      "duration": 45,
+      "scoring": "individuel",
+      "tags": ["adresse"]
+    },
+    {
+      "id": "def-0015",
+      "type": "defi",
+      "difficulty": 4,
+      "minAge": 9,
+      "q": "Parle pendant 30 secondes de la pomme de terre. Sans t'arrêter, sans répéter, sans dire « euh ».",
+      "duration": 30,
+      "scoring": "vote",
+      "fun": "C'est le principe de l'émission radio britannique « Just a Minute », à l'antenne depuis 1967.",
+      "tags": ["ambiance"]
+    },
+    {
+      "id": "def-0016",
+      "type": "defi",
+      "difficulty": 3,
+      "minAge": 8,
+      "q": "Fais deviner le mot « anniversaire » sans utiliser les mots : gâteau, âge, bougie, cadeau.",
+      "duration": 45,
+      "scoring": "collectif",
+      "tags": ["tabou"]
+    },
+    {
+      "id": "def-0017",
+      "type": "defi",
+      "difficulty": 1,
+      "minAge": 4,
+      "q": "Imite le cri de 3 animaux différents. Les autres devinent lesquels.",
+      "duration": 30,
+      "scoring": "collectif",
+      "tags": ["mime", "animaux"]
+    },
+    {
+      "id": "def-0018",
+      "type": "defi",
+      "difficulty": 2,
+      "minAge": 7,
+      "q": "Dis « bonjour » dans 4 langues différentes.",
+      "duration": 20,
+      "scoring": "individuel",
+      "tags": ["langues"]
+    },
+    {
+      "id": "def-0019",
+      "type": "defi",
+      "difficulty": 2,
+      "minAge": 5,
+      "q": "Un adversaire tape un rythme sur la table. Danse dessus pendant 15 secondes.",
+      "duration": 15,
+      "scoring": "vote",
+      "tags": ["ambiance"]
+    },
+    {
+      "id": "def-0020",
+      "type": "defi",
+      "difficulty": 2,
+      "minAge": 5,
+      "q": "Mime une émotion forte, uniquement avec le visage. Les autres devinent laquelle.",
+      "duration": 25,
+      "scoring": "collectif",
+      "fun": "Six émotions sont reconnues universellement, sur tous les continents : joie, tristesse, colère, peur, dégoût, surprise.",
+      "tags": ["mime"]
+    }
+  ]
+}

@@ -1,0 +1,229 @@
+{
+  "category": "cinema-series",
+  "label": "Cinéma & Séries",
+  "version": 1,
+  "questions": [
+    {
+      "id": "cin-0001",
+      "type": "qcm",
+      "difficulty": 1,
+      "minAge": 5,
+      "q": "Dans Le Roi Lion, comment s'appelle le père de Simba ?",
+      "choices": ["Scar", "Mufasa", "Rafiki", "Zazu"],
+      "answer": 1,
+      "fun": "En swahili, Mufasa signifie « roi ». Simba veut simplement dire « lion ».",
+      "tags": ["animation", "disney"]
+    },
+    {
+      "id": "cin-0002",
+      "type": "libre",
+      "difficulty": 1,
+      "minAge": 5,
+      "q": "Comment s'appelle le petit poisson-clown perdu du film Pixar ?",
+      "answer": "Nemo",
+      "accept": ["nemo", "némo"],
+      "fun": "« Nemo » signifie « personne » en latin.",
+      "tags": ["animation", "pixar"]
+    },
+    {
+      "id": "cin-0003",
+      "type": "libre",
+      "difficulty": 1,
+      "minAge": 5,
+      "q": "Comment s'appelle l'ogre vert des studios DreamWorks ?",
+      "answer": "Shrek",
+      "accept": ["shrek"],
+      "fun": "« Schreck » veut dire « effroi » en allemand.",
+      "tags": ["animation"]
+    },
+    {
+      "id": "cin-0004",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 6,
+      "q": "Dans Star Wars, quelle est la couleur du sabre laser de Dark Vador ?",
+      "choices": ["Bleue", "Verte", "Rouge", "Violette"],
+      "answer": 2,
+      "fun": "Le rouge est réservé au côté obscur : leurs cristaux sont « saignés », forcés à changer de couleur.",
+      "tags": ["star wars"]
+    },
+    {
+      "id": "cin-0005",
+      "type": "qcm",
+      "difficulty": 1,
+      "minAge": 5,
+      "q": "Comment s'appelle le maître Jedi vert, petit et aux longues oreilles ?",
+      "choices": ["Obi-Wan", "Yoda", "Mace Windu", "Qui-Gon"],
+      "answer": 1,
+      "fun": "Il a 900 ans dans Le Retour du Jedi. Son espèce n'a jamais été nommée officiellement.",
+      "tags": ["star wars"]
+    },
+    {
+      "id": "cin-0006",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 6,
+      "q": "Quel dessin animé Pixar met en scène un rat qui devient cuisinier à Paris ?",
+      "choices": ["Ratatouille", "Rango", "Bee Movie", "Chicken Run"],
+      "answer": 0,
+      "fun": "Les animateurs ont vécu plusieurs semaines à Paris et travaillé avec le chef Thomas Keller.",
+      "tags": ["animation", "pixar"]
+    },
+    {
+      "id": "cin-0007",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 6,
+      "q": "Dans Kung Fu Panda, comment s'appelle le panda héros ?",
+      "choices": ["Shifu", "Po", "Tai Lung", "Oogway"],
+      "answer": 1,
+      "fun": "Son nom complet est Po Ping. Son père adoptif est une oie.",
+      "tags": ["animation"]
+    },
+    {
+      "id": "cin-0008",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 7,
+      "q": "Qui joue Jack dans le film Titanic ?",
+      "choices": ["Brad Pitt", "Leonardo DiCaprio", "Johnny Depp", "Matt Damon"],
+      "answer": 1,
+      "fun": "Il a attendu 2016 pour obtenir son premier Oscar — pour un tout autre film.",
+      "tags": ["acteurs"]
+    },
+    {
+      "id": "cin-0009",
+      "type": "libre",
+      "difficulty": 2,
+      "minAge": 7,
+      "q": "Quel acteur incarne Harry Potter dans les films ?",
+      "answer": "Daniel Radcliffe",
+      "accept": ["daniel radcliffe", "radcliffe"],
+      "fun": "Il avait 11 ans au premier film et 21 au dernier. Dix ans de sa vie.",
+      "tags": ["acteurs"]
+    },
+    {
+      "id": "cin-0010",
+      "type": "estimation",
+      "difficulty": 2,
+      "minAge": 7,
+      "q": "Combien de films compte la trilogie originale du Seigneur des Anneaux ?",
+      "answer": 3,
+      "unit": "films",
+      "tol": { "exact": true },
+      "fun": "Tournés tous les trois en même temps, en 438 jours de tournage en Nouvelle-Zélande.",
+      "tags": ["fantasy"]
+    },
+    {
+      "id": "cin-0011",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 8,
+      "q": "Qui a réalisé Jurassic Park ?",
+      "choices": ["James Cameron", "Steven Spielberg", "George Lucas", "Ridley Scott"],
+      "answer": 1,
+      "fun": "Le fameux rugissement du T-Rex est un mélange de bébé éléphant, d'alligator et de tigre.",
+      "tags": ["réalisateurs"]
+    },
+    {
+      "id": "cin-0012",
+      "type": "estimation",
+      "difficulty": 3,
+      "minAge": 9,
+      "q": "En quelle année est sorti le premier Toy Story ?",
+      "answer": 1995,
+      "unit": "",
+      "tol": { "exact": true },
+      "fun": "Premier long-métrage entièrement en images de synthèse de l'histoire du cinéma.",
+      "tags": ["animation", "pixar"]
+    },
+    {
+      "id": "cin-0013",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 9,
+      "q": "Dans quel film entend-on la réplique « Je suis ton père » ?",
+      "choices": ["Un nouvel espoir", "L'Empire contre-attaque", "Le Retour du Jedi", "La Menace fantôme"],
+      "answer": 1,
+      "fun": "La vraie réplique est « Non, je suis ton père ». Presque tout le monde la cite mal.",
+      "tags": ["star wars", "répliques"]
+    },
+    {
+      "id": "cin-0014",
+      "type": "estimation",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Combien de saisons compte la série Friends ?",
+      "answer": 10,
+      "unit": "saisons",
+      "tol": { "exact": true },
+      "fun": "236 épisodes. Les six acteurs ont fini par négocier leur salaire ensemble, en bloc.",
+      "tags": ["séries"]
+    },
+    {
+      "id": "cin-0015",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Dans quel quartier de Paris se déroule Le Fabuleux Destin d'Amélie Poulain ?",
+      "choices": ["Le Marais", "Montmartre", "Belleville", "Saint-Germain"],
+      "answer": 1,
+      "fun": "Le café des Deux Moulins existe vraiment, rue Lepic. Il est devenu un lieu de pèlerinage touristique.",
+      "tags": ["cinéma français"]
+    },
+    {
+      "id": "cin-0016",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Quel acteur incarne Jacquouille dans Les Visiteurs ?",
+      "choices": ["Jean Reno", "Christian Clavier", "Gérard Jugnot", "Thierry Lhermitte"],
+      "answer": 1,
+      "fun": "Il est aussi coscénariste du film. Et il a joué Astérix.",
+      "tags": ["cinéma français"]
+    },
+    {
+      "id": "cin-0017",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Quelle série raconte l'histoire d'un professeur de chimie devenu fabricant de drogue ?",
+      "choices": ["Dexter", "Breaking Bad", "The Wire", "Ozark"],
+      "answer": 1,
+      "fun": "Le créateur avait prévu de tuer le personnage de Jesse dès la première saison. Une grève des scénaristes l'a sauvé.",
+      "tags": ["séries"]
+    },
+    {
+      "id": "cin-0018",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Dans Game of Thrones, quelle maison a un loup pour emblème ?",
+      "choices": ["Lannister", "Targaryen", "Stark", "Baratheon"],
+      "answer": 2,
+      "fun": "Un loup-garou, plus précisément. Les Lannister ont un lion, les Targaryen un dragon à trois têtes.",
+      "tags": ["séries"]
+    },
+    {
+      "id": "cin-0019",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 6,
+      "q": "Quel film d'animation Disney raconte l'histoire de deux sœurs dans un royaume pris par les glaces ?",
+      "choices": ["Raiponce", "La Reine des Neiges", "Vaiana", "Rebelle"],
+      "answer": 1,
+      "fun": "La chanson « Libérée, délivrée » a été traduite dans plus de 40 langues.",
+      "tags": ["animation", "disney"]
+    },
+    {
+      "id": "cin-0020",
+      "type": "defi",
+      "difficulty": 2,
+      "minAge": 7,
+      "q": "Mime une scène culte de cinéma. Les autres doivent citer le film.",
+      "duration": 45,
+      "scoring": "collectif",
+      "tags": ["mime"]
+    }
+  ]
+}

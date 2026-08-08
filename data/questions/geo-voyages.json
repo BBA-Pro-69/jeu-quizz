@@ -1,0 +1,350 @@
+{
+  "category": "geo-voyages",
+  "label": "Géo & Voyages",
+  "version": 1,
+  "questions": [
+    {
+      "id": "geo-0001",
+      "type": "qcm",
+      "difficulty": 1,
+      "minAge": 6,
+      "q": "Quelle est la capitale de l'Italie ?",
+      "choices": [
+        "Milan",
+        "Venise",
+        "Rome",
+        "Naples"
+      ],
+      "answer": 2,
+      "fun": "Rome contient un autre pays à l'intérieur d'elle-même : le Vatican.",
+      "tags": [
+        "capitales"
+      ]
+    },
+    {
+      "id": "geo-0002",
+      "type": "qcm",
+      "difficulty": 1,
+      "minAge": 6,
+      "q": "Quel océan borde la côte ouest de la France ?",
+      "choices": [
+        "Le Pacifique",
+        "L'Atlantique",
+        "L'océan Indien",
+        "L'Arctique"
+      ],
+      "answer": 1,
+      "fun": "Son nom vient d'Atlas, le titan condamné à porter la voûte du ciel.",
+      "tags": [
+        "océans"
+      ]
+    },
+    {
+      "id": "geo-0003",
+      "type": "libre",
+      "difficulty": 1,
+      "minAge": 7,
+      "q": "Dans quel pays se trouve la tour penchée de Pise ?",
+      "answer": "L'Italie",
+      "accept": [
+        "italie",
+        "l'italie"
+      ],
+      "fun": "Elle penche depuis sa construction : le sol était trop meuble. On a réussi à la redresser un peu en 2001.",
+      "tags": [
+        "monuments"
+      ]
+    },
+    {
+      "id": "geo-0004",
+      "type": "libre",
+      "difficulty": 2,
+      "minAge": 7,
+      "q": "Quel immense désert couvre le nord de l'Afrique ?",
+      "answer": "Le Sahara",
+      "accept": [
+        "sahara",
+        "le sahara"
+      ],
+      "fun": "Il est presque aussi grand que les États-Unis. Et il y a 6 000 ans, c'était une savane verte.",
+      "tags": [
+        "déserts"
+      ]
+    },
+    {
+      "id": "geo-0005",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 8,
+      "q": "Quel est le plus grand pays du monde par sa superficie ?",
+      "choices": [
+        "Le Canada",
+        "La Chine",
+        "La Russie",
+        "Les États-Unis"
+      ],
+      "answer": 2,
+      "fun": "Elle représente à elle seule un neuvième des terres émergées de la planète.",
+      "tags": [
+        "records"
+      ]
+    },
+    {
+      "id": "geo-0006",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 8,
+      "q": "Quelle mer sépare l'Europe de l'Afrique ?",
+      "choices": [
+        "La mer Rouge",
+        "La Méditerranée",
+        "La mer Noire",
+        "La mer Baltique"
+      ],
+      "answer": 1,
+      "fun": "Son nom vient du latin « au milieu des terres ».",
+      "tags": [
+        "mers"
+      ]
+    },
+    {
+      "id": "geo-0007",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 8,
+      "q": "Quel fleuve traverse la ville du Caire ?",
+      "choices": [
+        "Le Congo",
+        "Le Niger",
+        "Le Nil",
+        "L'Euphrate"
+      ],
+      "answer": 2,
+      "fun": "95 % des Égyptiens vivent à moins de 20 km de ses rives.",
+      "tags": [
+        "fleuves"
+      ]
+    },
+    {
+      "id": "geo-0008",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 9,
+      "q": "Quelle est la capitale de l'Australie ?",
+      "choices": [
+        "Sydney",
+        "Melbourne",
+        "Canberra",
+        "Brisbane"
+      ],
+      "answer": 2,
+      "fun": "Elle a été construite de toutes pièces pour départager Sydney et Melbourne, qui se disputaient le titre.",
+      "tags": [
+        "capitales",
+        "piège"
+      ]
+    },
+    {
+      "id": "geo-0009",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 9,
+      "q": "Quelle est la capitale du Canada ?",
+      "choices": [
+        "Toronto",
+        "Montréal",
+        "Vancouver",
+        "Ottawa"
+      ],
+      "answer": 3,
+      "fun": "Choisie parce qu'elle était à la frontière entre le Canada anglophone et francophone.",
+      "tags": [
+        "capitales",
+        "piège"
+      ]
+    },
+    {
+      "id": "geo-0010",
+      "type": "estimation",
+      "difficulty": 3,
+      "minAge": 9,
+      "q": "Combien de pays composent aujourd'hui l'Union européenne ?",
+      "answer": 27,
+      "unit": "pays",
+      "tol": {
+        "pct": 8
+      },
+      "fun": "28 avant le départ du Royaume-Uni en 2020.",
+      "tags": [
+        "europe"
+      ]
+    },
+    {
+      "id": "geo-0011",
+      "type": "estimation",
+      "difficulty": 2,
+      "minAge": 9,
+      "q": "Combien d'États composent les États-Unis ?",
+      "answer": 50,
+      "unit": "États",
+      "tol": {
+        "pct": 6
+      },
+      "fun": "Les 50 étoiles du drapeau. Les 13 bandes représentent les colonies d'origine.",
+      "tags": [
+        "amérique"
+      ]
+    },
+    {
+      "id": "geo-0012",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 10,
+      "q": "Quelle est la capitale du Brésil ?",
+      "choices": [
+        "Rio de Janeiro",
+        "São Paulo",
+        "Brasília",
+        "Salvador"
+      ],
+      "answer": 2,
+      "fun": "Construite en 1 000 jours au milieu de nulle part, dans les années 50. Vue du ciel, elle a la forme d'un avion.",
+      "tags": [
+        "capitales",
+        "piège"
+      ]
+    },
+    {
+      "id": "geo-0013",
+      "type": "vraifaux",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "L'Islande ne possède pas d'armée.",
+      "answer": true,
+      "fun": "Aucune armée permanente depuis 1869. Elle a en revanche des garde-côtes très actifs.",
+      "tags": [
+        "europe",
+        "insolite"
+      ]
+    },
+    {
+      "id": "geo-0014",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Quel pays compte le plus d'habitants au monde ?",
+      "choices": [
+        "La Chine",
+        "L'Inde",
+        "Les États-Unis",
+        "L'Indonésie"
+      ],
+      "answer": 1,
+      "fun": "L'Inde a dépassé la Chine en 2023. C'est très récent, et beaucoup de gens répondent encore Chine.",
+      "tags": [
+        "démographie"
+      ]
+    },
+    {
+      "id": "geo-0015",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Quel détroit sépare l'Europe de l'Asie à Istanbul ?",
+      "choices": [
+        "Le Bosphore",
+        "Gibraltar",
+        "Le Pas de Calais",
+        "Le détroit de Malacca"
+      ],
+      "answer": 0,
+      "fun": "Istanbul est la seule grande ville au monde à cheval sur deux continents.",
+      "tags": [
+        "détroits"
+      ]
+    },
+    {
+      "id": "geo-0016",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Quelle est la capitale de la Turquie ?",
+      "choices": [
+        "Istanbul",
+        "Ankara",
+        "Izmir",
+        "Antalya"
+      ],
+      "answer": 1,
+      "fun": "Istanbul est bien plus grande et plus célèbre, mais elle n'est plus capitale depuis 1923.",
+      "tags": [
+        "capitales",
+        "piège"
+      ]
+    },
+    {
+      "id": "geo-0017",
+      "type": "libre",
+      "difficulty": 5,
+      "minAge": 11,
+      "q": "Quelle est la capitale de la Mongolie ?",
+      "answer": "Oulan-Bator",
+      "accept": [
+        "oulan bator",
+        "oulan-bator",
+        "ulaanbaatar",
+        "ulan bator"
+      ],
+      "fun": "C'est la capitale la plus froide du monde : -25 °C de moyenne en janvier.",
+      "tags": [
+        "capitales"
+      ]
+    },
+    {
+      "id": "geo-0018",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Quel pays possède le plus de lacs au monde ?",
+      "choices": [
+        "La Finlande",
+        "La Russie",
+        "Le Canada",
+        "La Suède"
+      ],
+      "answer": 2,
+      "fun": "Plus de deux millions. À lui seul, il concentre environ 20 % de l'eau douce de surface de la planète.",
+      "tags": [
+        "records"
+      ]
+    },
+    {
+      "id": "geo-0019",
+      "type": "vraifaux",
+      "difficulty": 5,
+      "minAge": 12,
+      "q": "À leur point le plus proche, la Russie et les États-Unis sont séparés de moins de 5 kilomètres.",
+      "answer": true,
+      "fun": "Les deux îles Diomède, dans le détroit de Béring, sont à 3,8 km l'une de l'autre. Et la ligne de changement de date passe entre elles : il y a 21 heures d'écart.",
+      "tags": [
+        "insolite"
+      ]
+    },
+    {
+      "id": "geo-0020",
+      "type": "estimation",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Combien de kilomètres fait le tour de la Terre à l'équateur ?",
+      "answer": 40075,
+      "unit": "km",
+      "tol": {
+        "pct": 12
+      },
+      "fun": "Le mètre a justement été défini pour que ce chiffre tombe rond : 40 000 km à l'origine.",
+      "tags": [
+        "planète"
+      ]
+    }
+  ]
+}

@@ -145,7 +145,7 @@
       "q": "Combien de secondes a duré le premier vol motorisé des frères Wright, en 1903 ?",
       "answer": 12,
       "unit": "secondes",
-      "tol": { "pct": 30 },
+      "tol": { "exact": true },
       "fun": "12 secondes et 36 mètres. Soit moins que la longueur de la cabine d'un A380.",
       "tags": ["histoire", "records"]
     },
@@ -191,7 +191,7 @@
       "q": "Quel est le record du monde d'apnée statique, en minutes ?",
       "answer": 11,
       "unit": "minutes",
-      "tol": { "pct": 30 },
+      "tol": { "exact": true },
       "fun": "Plus de 11 minutes sous l'eau sans respirer. La plupart des gens tiennent moins d'une minute.",
       "tags": ["sport", "records"]
     },

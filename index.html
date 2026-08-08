@@ -1,110 +1,182 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Quiz Famille</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <script>
-tailwind.config = { theme: { extend: {
-  fontFamily: { sans:['Inter','sans-serif'], serif:['Playfair Display','serif'] },
-  colors: { q:{ blue:'#41B6E6', dark:'#002B49', red:'#E4002B', sand:'#F5F1EA' } }
-}}}
+tailwind.config = {
+  theme: { extend: {
+    fontFamily: { sans: ['Inter','sans-serif'], serif: ['Playfair Display','serif'] },
+    colors: { q: { blue:'#41B6E6', dark:'#002B49', red:'#E4002B', sand:'#F5F1EA' } }
+  }}
+}
 </script>
 <style>
-  body{background:#0b1a26;min-height:100vh}
-  .hero{background-color:#002B49;
-    background-image:radial-gradient(circle at 18% 12%,rgba(65,182,230,.24),transparent 46%),
-                     radial-gradient(circle at 86% 78%,rgba(228,0,43,.18),transparent 52%)}
-  .card{background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.09);
-    border-radius:1.25rem;backdrop-filter:blur(8px);transition:transform .3s cubic-bezier(.16,1,.3,1),border-color .3s ease}
-  .card:hover{transform:translateY(-3px);border-color:rgba(65,182,230,.45)}
+  body{background:#0b1a26}
+  .hero-pattern{background-color:#002B49;
+    background-image:radial-gradient(circle at 20% 10%,rgba(65,182,230,.22),transparent 45%),
+                     radial-gradient(circle at 85% 70%,rgba(228,0,43,.18),transparent 50%)}
+  .card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);
+    border-radius:1.25rem;backdrop-filter:blur(8px)}
   .kicker{font-size:.68rem;font-weight:800;letter-spacing:.26em;text-transform:uppercase}
   .kicker-line{display:block;height:3px;width:60px;background:#E4002B;margin:.55rem 0 0;border-radius:2px}
-  .btn{display:inline-flex;align-items:center;gap:.55rem;padding:.75rem 1.2rem;border-radius:.8rem;
-    font-size:.82rem;font-weight:700;transition:all .25s cubic-bezier(.16,1,.3,1)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;
+    padding:.85rem 1.3rem;border-radius:.8rem;font-size:.9rem;font-weight:700;cursor:pointer;
+    border:1px solid transparent;transition:all .25s cubic-bezier(.16,1,.3,1);min-height:48px}
+  .btn:disabled{opacity:.4;cursor:not-allowed}
   .btn-primary{background:#41B6E6;color:#002B49}
-  .btn-primary:hover{background:#6cc9ee;transform:translateY(-2px);box-shadow:0 16px 30px -18px rgba(65,182,230,.9)}
-  .btn-ghost{background:rgba(255,255,255,.06);color:#e2e8f0;border:1px solid rgba(255,255,255,.14)}
-  .btn-ghost:hover{background:rgba(255,255,255,.12);transform:translateY(-2px)}
-  .chip{font-size:.7rem;font-weight:600;padding:.3rem .7rem;border-radius:99px;
-    border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);color:#cbd5e1}
+  .btn-primary:hover:not(:disabled){background:#6cc9ee;transform:translateY(-2px)}
+  .btn-ghost{background:rgba(255,255,255,.06);color:#e2e8f0;border-color:rgba(255,255,255,.14)}
+  .btn-ghost:hover:not(:disabled){background:rgba(255,255,255,.12);transform:translateY(-2px)}
+  .btn-red{background:#E4002B;color:#fff}
+  .btn-red:hover:not(:disabled){background:#ff1f4a;transform:translateY(-2px)}
+  .inp{width:100%;background:rgba(0,0,0,.32);border:1px solid rgba(255,255,255,.13);
+    border-radius:.7rem;padding:.7rem .9rem;color:#f1f5f9;font-size:.95rem;min-height:46px}
+  .inp:focus{outline:none;border-color:#41B6E6;box-shadow:0 0 0 3px rgba(65,182,230,.14)}
+  .lbl{font-size:.66rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+    color:#7e93a6;display:block;margin-bottom:.35rem}
+  .cat-tuile{position:relative;text-align:left;padding:1rem;border-radius:1rem;
+    background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.09);color:#94a3b8;
+    transition:all .25s cubic-bezier(.16,1,.3,1);cursor:pointer;min-height:112px}
+  .cat-tuile:hover{transform:translateY(-2px)}
+  .cat-tuile i{font-size:1.3rem;color:var(--c)}
+  .cat-nom{display:block;font-weight:700;color:#e2e8f0;margin-top:.5rem;font-size:.95rem}
+  .cat-blurb{display:block;font-size:.72rem;line-height:1.4;margin-top:.25rem;color:#64748b}
+  .cat-age{display:block;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;
+    margin-top:.45rem;color:#475569}
+  .cat-tuile.on{background:color-mix(in srgb, var(--c) 14%, transparent);border-color:var(--c)}
+  .cat-tuile.on .cat-nom{color:#fff}
+  .cat-tuile.on::after{content:"\f00c";font-family:"Font Awesome 6 Free";font-weight:900;
+    position:absolute;top:.8rem;right:.9rem;color:var(--c);font-size:.8rem}
+  .prop{background:rgba(0,0,0,.28);border:1px solid rgba(255,255,255,.08);border-radius:.7rem;
+    padding:.85rem 1rem;font-size:1rem;color:#e2e8f0}
+  table{width:100%;border-collapse:collapse;font-size:.85rem}
+  th{text-align:left;font-size:.62rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+    color:#7e93a6;padding:.5rem .6rem;border-bottom:1px solid rgba(255,255,255,.1)}
+  td{padding:.55rem .6rem;border-bottom:1px solid rgba(255,255,255,.055);color:#cbd5e1}
+  input[type=range]{accent-color:#41B6E6}
 </style>
 </head>
 <body class="font-sans text-slate-200 antialiased">
 
-<header class="hero border-b border-white/10">
-  <div class="max-w-4xl mx-auto px-5 py-16 md:py-24 text-center">
-    <p class="kicker text-q-blue">Bientôt</p>
-    <span class="kicker-line mx-auto"></span>
-    <h1 class="font-serif text-5xl md:text-7xl font-black text-white mt-6 leading-none">
-      Quiz<span class="text-q-blue">&nbsp;Famille</span>
-    </h1>
-    <p class="mt-6 text-slate-300 max-w-xl mx-auto leading-relaxed">
-      Un quiz qui s'adapte à l'âge de chaque joueur, pour qu'un enfant de sept ans
-      et son grand-père puissent jouer la même partie sans que l'un s'ennuie
-      ni que l'autre s'écrase.
-    </p>
-    <div class="mt-8 flex flex-wrap justify-center gap-2">
-      <span class="chip"><i class="fa-solid fa-layer-group text-q-blue mr-1.5"></i>11 catégories</span>
-      <span class="chip"><i class="fa-solid fa-circle-question text-q-blue mr-1.5"></i>218 questions</span>
-      <span class="chip"><i class="fa-solid fa-children text-q-blue mr-1.5"></i>dès 4 ans</span>
-      <span class="chip"><i class="fa-solid fa-wifi-slash text-q-blue mr-1.5"></i>jouable hors ligne</span>
+<!-- ============ ACCUEIL ============ -->
+<section id="ecran-accueil" class="ecran">
+  <header class="hero-pattern border-b border-white/10">
+    <div class="max-w-4xl mx-auto px-5 py-16 md:py-24 text-center">
+      <p class="kicker text-q-blue">Jeu de société · maison</p>
+      <span class="kicker-line mx-auto"></span>
+      <h1 class="font-serif text-5xl md:text-7xl font-black text-white mt-6 leading-none">
+        Quiz<br><span class="text-q-blue">Famille</span>
+      </h1>
+      <p class="mt-6 text-slate-300 max-w-xl mx-auto leading-relaxed">
+        Chacun joue à son niveau. Le petit de 7 ans a ses questions,
+        son grand-père a les siennes, et personne ne s'ennuie.
+      </p>
+      <div class="mt-9 flex flex-col sm:flex-row gap-3 justify-center">
+        <button id="btnJouer" class="btn btn-primary text-base px-8">
+          <i class="fa-solid fa-play"></i>Nouvelle partie</button>
+        <a href="tools/test-backend.html" class="btn btn-ghost">
+          <i class="fa-solid fa-plug"></i>Banc de test</a>
+      </div>
+      <p id="chargement" class="mt-8 text-xs text-slate-500">Chargement des questions…</p>
+    </div>
+  </header>
+</section>
+
+<!-- ============ CONFIGURATION ============ -->
+<section id="ecran-config" class="ecran hidden">
+  <div class="max-w-4xl mx-auto px-5 py-10 space-y-7">
+
+    <div>
+      <p class="kicker text-q-blue">Avant de commencer</p>
+      <span class="kicker-line"></span>
+      <h2 class="font-serif text-3xl md:text-4xl font-black text-white mt-4">Qui joue&nbsp;?</h2>
+      <p class="text-sm text-slate-400 mt-2">
+        L'âge sert à choisir les questions. Le handicap, à équilibrer les estimations.
+      </p>
+    </div>
+
+    <div id="joueurs" class="space-y-3"></div>
+    <button id="btnAjouter" class="btn btn-ghost w-full sm:w-auto">
+      <i class="fa-solid fa-user-plus"></i>Ajouter un joueur</button>
+
+    <div class="pt-4">
+      <p class="kicker text-q-red">Le contenu</p>
+      <span class="kicker-line"></span>
+      <h2 class="font-serif text-2xl font-bold text-white mt-3 mb-4">Catégories</h2>
+      <div id="categories" class="grid grid-cols-2 md:grid-cols-3 gap-3"></div>
+    </div>
+
+    <div class="card p-5 space-y-5">
+      <div>
+        <label class="lbl" for="diff">Difficulté maximale · <span id="diffTxt">5</span></label>
+        <input id="diff" type="range" min="1" max="5" step="1" class="w-full">
+        <p class="text-xs text-slate-500 mt-1">
+          1 tout le monde sait · 3 il faut réfléchir · 5 pour les spécialistes
+        </p>
+      </div>
+      <label class="flex items-start gap-3 cursor-pointer">
+        <input id="alcool" type="checkbox" class="mt-1 w-5 h-5 accent-q-blue">
+        <span class="text-sm text-slate-300">Écarter les questions sur l'alcool
+          <span class="block text-xs text-slate-500">Forcé automatiquement si un joueur a moins de 13 ans.</span>
+        </span>
+      </label>
+    </div>
+
+    <div class="card p-5">
+      <p class="kicker text-q-blue mb-3">Ce qui reste à jouer</p>
+      <div id="dispo"></div>
+      <button id="btnOublier" class="btn btn-ghost mt-4 text-xs">
+        <i class="fa-solid fa-rotate-left"></i>Oublier les questions déjà posées</button>
+    </div>
+
+    <div class="flex flex-col sm:flex-row gap-3 pb-10">
+      <button id="btnPiocher" class="btn btn-primary flex-1" disabled>
+        <i class="fa-solid fa-dice"></i>Tester la pioche</button>
+      <button id="btnRetour" class="btn btn-ghost"><i class="fa-solid fa-arrow-left"></i>Retour</button>
     </div>
   </div>
-</header>
+</section>
 
-<main class="max-w-4xl mx-auto px-5 py-12 space-y-6">
+<!-- ============ PIOCHE (banc d'essai) ============ -->
+<section id="ecran-pioche" class="ecran hidden">
+  <div class="max-w-3xl mx-auto px-5 py-10 space-y-6">
 
-  <section class="card p-7">
-    <p class="kicker text-q-blue">Chantier en cours</p>
-    <h2 class="font-serif text-2xl font-bold text-white mt-2">Le jeu arrive</h2>
-    <p class="text-sm text-slate-400 mt-3 leading-relaxed">
-      Les bibliothèques de questions sont écrites et validées. Restent l'écran de
-      configuration des joueurs, le moteur de pioche et les modes de jeu.
-    </p>
-    <ul class="mt-5 space-y-2.5 text-sm">
-      <li><i class="fa-solid fa-circle-check text-emerald-400 w-5"></i> 11 bibliothèques de questions, 218 questions</li>
-      <li><i class="fa-solid fa-circle-check text-emerald-400 w-5"></i> Liaison backend éprouvée</li>
-      <li><i class="fa-regular fa-circle text-slate-600 w-5"></i> Écran de configuration : joueurs, âges, catégories</li>
-      <li><i class="fa-regular fa-circle text-slate-600 w-5"></i> Moteur de pioche anti-répétition</li>
-      <li><i class="fa-regular fa-circle text-slate-600 w-5"></i> Modes de jeu</li>
-    </ul>
-    <div class="mt-7 flex flex-wrap gap-3">
-      <a href="tools/test-backend.html" class="btn btn-primary"><i class="fa-solid fa-flask-vial"></i>Banc de test backend</a>
-      <a href="data/categories.json" class="btn btn-ghost"><i class="fa-solid fa-code"></i>Voir les catégories</a>
+    <div class="flex flex-wrap items-end gap-3">
+      <div class="flex-1 min-w-[12rem]">
+        <label class="lbl" for="qPour">Question tirée pour</label>
+        <select id="qPour" class="inp"></select>
+      </div>
+      <button id="btnConfig" class="btn btn-ghost"><i class="fa-solid fa-sliders"></i>Réglages</button>
     </div>
-  </section>
 
-  <section class="card p-7">
-    <p class="kicker text-q-red">Le principe</p>
-    <h2 class="font-serif text-2xl font-bold text-white mt-2">L'équité entre les âges</h2>
-    <p class="text-sm text-slate-400 mt-3 leading-relaxed">
-      Filtrer les questions par âge ne suffit pas : le plus jeune aurait des questions
-      faciles et finirait quand même dernier. Trois mécanismes s'en occupent vraiment.
-    </p>
-    <div class="grid sm:grid-cols-3 gap-4 mt-6">
-      <div>
-        <p class="text-q-blue font-bold text-sm">Handicap par joueur</p>
-        <p class="text-xs text-slate-400 mt-1.5 leading-relaxed">Sur une estimation, la marge d'erreur acceptée s'élargit selon le niveau. Même question, chance égale.</p>
-      </div>
-      <div>
-        <p class="text-q-blue font-bold text-sm">Manches égalisatrices</p>
-        <p class="text-xs text-slate-400 mt-1.5 leading-relaxed">Estimations, mimes, défis : l'expérience n'y sert à rien. Un enfant peut y battre un adulte.</p>
-      </div>
-      <div>
-        <p class="text-q-blue font-bold text-sm">Catégories dédiées</p>
-        <p class="text-xs text-slate-400 mt-1.5 leading-relaxed">Jeux vidéo, BD et manga : volontairement calibrée en faveur des plus jeunes.</p>
+    <div class="card p-6 md:p-8">
+      <p id="qCat" class="kicker">—</p>
+      <span class="kicker-line"></span>
+      <p id="qMeta" class="text-xs text-slate-500 mt-3"></p>
+      <p id="qEnonce" class="font-serif text-2xl md:text-3xl font-bold text-white mt-4 leading-snug"></p>
+      <div id="qChoix" class="mt-6 space-y-2.5"></div>
+
+      <div id="qReponse" class="hidden mt-7 pt-6 border-t border-white/10">
+        <p class="kicker text-emerald-400">Réponse</p>
+        <p id="qBonne" class="text-lg text-white mt-2 font-semibold"></p>
+        <p id="qFun" class="hidden text-sm text-slate-400 mt-3 leading-relaxed italic"></p>
       </div>
     </div>
-  </section>
 
-  <footer class="text-center text-xs text-slate-600 py-8">
-    Page provisoire — remplacée par le jeu dès que le moteur sera prêt.
-  </footer>
-</main>
+    <div class="flex flex-col sm:flex-row gap-3">
+      <button id="btnReveler" class="btn btn-red flex-1"><i class="fa-solid fa-eye"></i>Révéler</button>
+      <button id="btnSuivante" class="btn btn-primary flex-1"><i class="fa-solid fa-forward"></i>Suivante</button>
+    </div>
+    <p id="qRestantes" class="text-center text-xs text-slate-500 pb-10"></p>
+  </div>
+</section>
+
+<script src="js/drawer.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>

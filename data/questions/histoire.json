@@ -190,7 +190,7 @@
       "q": "En quelle année Jeanne d'Arc a-t-elle été brûlée à Rouen ?",
       "answer": 1431,
       "unit": "",
-      "tol": { "pct": 1 },
+      "tol": { "exact": true },
       "fun": "Elle avait 19 ans. Elle a été réhabilitée 25 ans plus tard, puis canonisée en 1920.",
       "tags": ["france", "moyen âge"]
     },

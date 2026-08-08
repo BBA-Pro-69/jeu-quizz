@@ -9,7 +9,206 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <script>
 tailwind.config = {
-  theme: { extend: {
+  theme: { extend: {<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Quiz Famille</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<script>
+tailwind.config = { theme: { extend: {
+  fontFamily: { sans:['Inter','sans-serif'], serif:['Playfair Display','serif'] },
+  colors: { q: { blue:'#41B6E6', dark:'#002B49', red:'#E4002B', sand:'#F5F1EA' } }
+}}}
+</script>
+<style>
+  body{background:#0b1a26}
+  .hero-pattern{background-color:#002B49;
+    background-image:radial-gradient(circle at 20% 10%,rgba(65,182,230,.22),transparent 45%),
+                     radial-gradient(circle at 85% 70%,rgba(228,0,43,.18),transparent 50%)}
+  .card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);
+    border-radius:1.25rem;backdrop-filter:blur(8px)}
+  .kicker{font-size:.68rem;font-weight:800;letter-spacing:.26em;text-transform:uppercase}
+  .kicker-line{display:block;height:3px;width:60px;background:#E4002B;margin:.55rem 0 0;border-radius:2px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;
+    padding:.85rem 1.3rem;border-radius:.8rem;font-size:.9rem;font-weight:700;cursor:pointer;
+    border:1px solid transparent;transition:all .25s cubic-bezier(.16,1,.3,1);min-height:48px}
+  .btn:disabled{opacity:.4;cursor:not-allowed}
+  .btn-primary{background:#41B6E6;color:#002B49}
+  .btn-primary:hover:not(:disabled){background:#6cc9ee;transform:translateY(-2px)}
+  .btn-ghost{background:rgba(255,255,255,.06);color:#e2e8f0;border-color:rgba(255,255,255,.14)}
+  .btn-ghost:hover:not(:disabled){background:rgba(255,255,255,.12);transform:translateY(-2px)}
+  .inp{width:100%;background:rgba(0,0,0,.32);border:1px solid rgba(255,255,255,.13);
+    border-radius:.7rem;padding:.7rem .9rem;color:#f1f5f9;font-size:.95rem;min-height:46px}
+  .inp:focus{outline:none;border-color:#41B6E6;box-shadow:0 0 0 3px rgba(65,182,230,.14)}
+  .lbl{font-size:.66rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+    color:#7e93a6;display:block;margin-bottom:.35rem}
+  .cat-tuile{position:relative;text-align:left;padding:1rem;border-radius:1rem;
+    background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.09);color:#94a3b8;
+    transition:all .25s cubic-bezier(.16,1,.3,1);cursor:pointer;min-height:112px}
+  .cat-tuile:hover{transform:translateY(-2px)}
+  .cat-tuile i{font-size:1.3rem;color:var(--c)}
+  .cat-nom{display:block;font-weight:700;color:#e2e8f0;margin-top:.5rem;font-size:.95rem}
+  .cat-blurb{display:block;font-size:.72rem;line-height:1.4;margin-top:.25rem;color:#64748b}
+  .cat-age{display:block;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;
+    margin-top:.45rem;color:#475569}
+  .cat-tuile.on{background:color-mix(in srgb, var(--c) 14%, transparent);border-color:var(--c)}
+  .cat-tuile.on .cat-nom{color:#fff}
+  .cat-tuile.on::after{content:"\f00c";font-family:"Font Awesome 6 Free";font-weight:900;
+    position:absolute;top:.8rem;right:.9rem;color:var(--c);font-size:.8rem}
+  .prop{display:block;width:100%;text-align:left;background:rgba(0,0,0,.28);
+    border:1px solid rgba(255,255,255,.08);border-radius:.9rem;padding:1rem 1.15rem;
+    font-size:1.05rem;color:#e2e8f0;min-height:60px}
+  .prop-btn{cursor:pointer;transition:all .25s cubic-bezier(.16,1,.3,1)}
+  .prop-btn:hover:not(:disabled){border-color:#41B6E6;background:rgba(65,182,230,.1);transform:translateY(-2px)}
+  .prop-btn:disabled{opacity:.55;cursor:default}
+  .lettre{display:inline-block;width:1.6rem;font-weight:800;color:#41B6E6}
+  .verdict-bon{border-color:rgba(52,211,153,.45)!important;background:rgba(52,211,153,.07)!important}
+  .verdict-faux{border-color:rgba(228,0,43,.45)!important;background:rgba(228,0,43,.07)!important}
+  table{width:100%;border-collapse:collapse;font-size:.85rem}
+  th{text-align:left;font-size:.62rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+    color:#7e93a6;padding:.5rem .6rem;border-bottom:1px solid rgba(255,255,255,.1)}
+  td{padding:.6rem .6rem;border-bottom:1px solid rgba(255,255,255,.055);color:#cbd5e1}
+  input[type=range]{accent-color:#41B6E6}
+</style>
+</head>
+<body class="font-sans text-slate-200 antialiased">
+
+<!-- ============ ACCUEIL ============ -->
+<section id="ecran-accueil" class="ecran">
+  <header class="hero-pattern border-b border-white/10">
+    <div class="max-w-4xl mx-auto px-5 py-16 md:py-24 text-center">
+      <p class="kicker text-q-blue">Jeu de société · maison</p>
+      <span class="kicker-line mx-auto"></span>
+      <h1 class="font-serif text-5xl md:text-7xl font-black text-white mt-6 leading-none">
+        Quiz<br><span class="text-q-blue">Famille</span></h1>
+      <p class="mt-6 text-slate-300 max-w-xl mx-auto leading-relaxed">
+        Chacun joue à son niveau. Le petit de 7 ans a ses questions,
+        son grand-père a les siennes, et personne ne s'ennuie.</p>
+      <div class="mt-9 flex flex-col sm:flex-row gap-3 justify-center">
+        <button id="btnJouer" class="btn btn-primary text-base px-8">
+          <i class="fa-solid fa-play"></i>Nouvelle partie</button>
+        <a href="tools/test-backend.html" class="btn btn-ghost">
+          <i class="fa-solid fa-plug"></i>Banc de test</a>
+      </div>
+      <p id="chargement" class="mt-8 text-xs text-slate-500">Chargement des questions…</p>
+    </div>
+  </header>
+</section>
+
+<!-- ============ CONFIGURATION ============ -->
+<section id="ecran-config" class="ecran hidden">
+  <div class="max-w-4xl mx-auto px-5 py-10 space-y-7">
+    <div>
+      <p class="kicker text-q-blue">Avant de commencer</p><span class="kicker-line"></span>
+      <h2 class="font-serif text-3xl md:text-4xl font-black text-white mt-4">Qui joue&nbsp;?</h2>
+      <p class="text-sm text-slate-400 mt-2">
+        L'âge choisit les questions. Le handicap équilibre les estimations.</p>
+    </div>
+
+    <div id="joueurs" class="space-y-3"></div>
+    <button id="btnAjouter" class="btn btn-ghost w-full sm:w-auto">
+      <i class="fa-solid fa-user-plus"></i>Ajouter un joueur</button>
+
+    <div class="pt-4">
+      <p class="kicker text-q-red">Le contenu</p><span class="kicker-line"></span>
+      <h2 class="font-serif text-2xl font-bold text-white mt-3 mb-4">Catégories</h2>
+      <div id="categories" class="grid grid-cols-2 md:grid-cols-3 gap-3"></div>
+    </div>
+
+    <div class="card p-5 space-y-5">
+      <div>
+        <label class="lbl" for="diff">Difficulté maximale · <span id="diffTxt">5</span></label>
+        <input id="diff" type="range" min="1" max="5" step="1" class="w-full">
+        <p class="text-xs text-slate-500 mt-1">1 tout le monde sait · 3 il faut réfléchir · 5 pour les spécialistes</p>
+      </div>
+      <div class="w-40">
+        <label class="lbl" for="nbq">Questions par joueur</label>
+        <input id="nbq" class="inp" type="number" min="1" max="30" value="5">
+      </div>
+      <label class="flex items-start gap-3 cursor-pointer">
+        <input id="alcool" type="checkbox" class="mt-1 w-5 h-5 accent-q-blue">
+        <span class="text-sm text-slate-300">Écarter les questions sur l'alcool
+          <span class="block text-xs text-slate-500">Forcé si un joueur a moins de 13 ans.</span></span>
+      </label>
+    </div>
+
+    <div class="card p-5">
+      <p class="kicker text-q-blue mb-3">Ce qui reste à jouer</p>
+      <div id="dispo"></div>
+      <button id="btnOublier" class="btn btn-ghost mt-4 text-xs">
+        <i class="fa-solid fa-rotate-left"></i>Oublier les questions déjà posées</button>
+    </div>
+
+    <div class="flex flex-col sm:flex-row gap-3 pb-10">
+      <button id="btnJouerPartie" class="btn btn-primary flex-1 text-base" disabled>
+        <i class="fa-solid fa-dice"></i>Commencer la partie</button>
+      <button id="btnRetour" class="btn btn-ghost"><i class="fa-solid fa-arrow-left"></i>Retour</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ JEU ============ -->
+<section id="ecran-jeu" class="ecran hidden">
+  <div class="max-w-3xl mx-auto px-5 py-8">
+
+    <div class="flex items-center justify-between mb-5">
+      <div>
+        <p id="jTour" class="kicker text-slate-500">Manche 1</p>
+        <p id="jJoueur" class="font-serif text-3xl font-black text-white leading-tight">—</p>
+      </div>
+      <div class="text-right">
+        <p class="kicker text-slate-500">Score</p>
+        <p id="jScore" class="font-serif text-3xl font-black text-q-blue">0 pts</p>
+      </div>
+    </div>
+
+    <div class="card p-6 md:p-8">
+      <p id="qCat" class="kicker">—</p><span class="kicker-line"></span>
+      <p id="qMeta" class="text-xs text-slate-500 mt-3"></p>
+      <p id="qEnonce" class="font-serif text-2xl md:text-3xl font-bold text-white mt-4 leading-snug"></p>
+      <div id="zoneReponse" class="mt-6 space-y-3"></div>
+    </div>
+
+    <div id="feedback" class="hidden"></div>
+
+    <div class="flex gap-3 mt-6 pb-10">
+      <button id="btnAbandon" class="btn btn-ghost"><i class="fa-solid fa-xmark"></i>Arrêter</button>
+      <button id="btnSuivant" class="btn btn-primary flex-1 hidden">
+        Question suivante<i class="fa-solid fa-arrow-right"></i></button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FIN ============ -->
+<section id="ecran-fin" class="ecran hidden">
+  <div class="max-w-2xl mx-auto px-5 py-12">
+    <p class="kicker text-q-blue">Terminé</p><span class="kicker-line"></span>
+    <h2 class="font-serif text-4xl font-black text-white mt-4 mb-7">Le classement</h2>
+
+    <div class="card p-5">
+      <table><tbody id="podium"></tbody></table>
+    </div>
+
+    <div class="flex flex-col sm:flex-row gap-3 mt-7">
+      <button id="btnEnvoyer" class="btn btn-primary flex-1">
+        <i class="fa-solid fa-cloud-arrow-up"></i>Enregistrer les scores</button>
+      <button id="btnRejouer" class="btn btn-ghost flex-1">
+        <i class="fa-solid fa-rotate-right"></i>Rejouer</button>
+    </div>
+    <p id="envoiEtat" class="text-sm text-center mt-4"></p>
+  </div>
+</section>
+
+<script src="js/drawer.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/api.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
     fontFamily: { sans: ['Inter','sans-serif'], serif: ['Playfair Display','serif'] },
     colors: { q: { blue:'#41B6E6', dark:'#002B49', red:'#E4002B', sand:'#F5F1EA' } }
   }}

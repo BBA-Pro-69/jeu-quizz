@@ -417,6 +417,14 @@ async function demarrer() {
   $('#btnAbandon').onclick     = function () { arreterChrono(); montrer('ecran-config'); };
   $('#btnEnvoyer').onclick     = envoyerResultats;
   $('#btnRejouer').onclick     = function () { montrer('ecran-config'); };
+
+  // Point d'accroche des modes de jeu. Chaque mode vit dans son fichier
+  // et se branche ici : app.js n'a jamais besoin de les connaître.
+  Quiz.app = {
+    pioche: pioche, cfg: cfg, handi: handi,
+    montrer: montrer, critereJoueur: critereJoueur, sauver: sauver
+  };
+  document.dispatchEvent(new CustomEvent('quiz:pret'));
 }
 
 document.addEventListener('DOMContentLoaded', demarrer);

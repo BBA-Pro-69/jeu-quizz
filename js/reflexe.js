@@ -355,8 +355,12 @@ function cloturer() {
          proche : le petit de 6 ans ne se bat pas à armes égales. */
       dp = Math.max(DELTA_MIN, r.delta || 0) / poids(handicapPour(j.age));
       if (ok) {
+        /* Socle garanti à 50 %, prime de vitesse pour l'autre moitié :
+           répondre du tac au tac vaut 150 % de la mise, répondre à la
+           dernière seconde en vaut encore 50. Juste et lent reste
+           toujours meilleur que rapide et faux. */
         var reste = Math.max(0, 1 - dp / FENETRE);
-        pts = base + Math.round(base * 0.5 * reste);   // jusqu'à +50 % pour la vitesse
+        pts = Math.round(base * (0.5 + reste));
         j.bonnes++;
       } else {
         pts = -Math.round(base / 2);                   // − difficulté × 5, vitesse indifférente
@@ -428,8 +432,9 @@ function ouvrirReponses() {
   M.t0 = performance.now();
 
   $('#rEnonce').textContent = M.q.q;
-  $('#rMeta').textContent = 'difficulté ' + M.q.difficulty +
-    ' · ' + (M.q.difficulty * 10) + ' pts · erreur −' + (M.q.difficulty * 5);
+  var mise = M.q.difficulty * 10;
+  $('#rMeta').textContent = 'de ' + Math.round(mise * 0.5) + ' à ' + Math.round(mise * 1.5) +
+    ' pts selon ta vitesse · erreur −' + Math.round(mise / 2);
 
   var z = $('#rZone');
   z.innerHTML = '';
@@ -466,10 +471,11 @@ function repondre(choix) {
   if (tic) { clearInterval(tic); tic = null; }
 
   var delta = M.t0 ? Math.max(DELTA_MIN, performance.now() - M.t0) : M.fenetre;
-  var msg = { manche: M.manche, choix: choix, delta: Math.round(delta) };
-  if (hote) encaisser({ de: canal.id, manche: msg.manche, choix: msg.choix, delta: msg.delta });
-  else canal.envoyer('rep', msg);
 
+  /* L'écran d'attente AVANT de transmettre, et ce n'est pas cosmétique :
+     chez l'hôte, encaisser() clôture la manche en synchrone quand il
+     répond en dernier. Dans l'autre ordre, ce vue('vAttente') repassait
+     par-dessus l'écran de résultat et figeait la partie pour tout le monde. */
   vue('vAttente');
   if (choix === null || choix === undefined) {
     $('#aTemps').textContent = 'Tu passes.';
@@ -478,11 +484,19 @@ function repondre(choix) {
     $('#aTemps').textContent = sec(delta);
     $('#aInfo').textContent  = 'Réponse envoyée. On attend les autres.';
   }
+
+  var msg = { manche: M.manche, choix: choix, delta: Math.round(delta) };
+  if (hote) encaisser({ de: canal.id, manche: msg.manche, choix: msg.choix, delta: msg.delta });
+  else canal.envoyer('rep', msg);
 }
 
 function afficherResultat(res) {
   tousStop();
   vue('vResultat');
+  function afficherResultat(res) {
+  tousStop();
+  vue('vResultat');
+  if (M) M.envoye = true;        // plus aucune bascule d'écran pour cette manche
   $('#resBonne').textContent = res.bonne;
   $('#resFun').textContent   = res.fun || '';
 

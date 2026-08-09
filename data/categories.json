@@ -1,26 +1,57 @@
 {
-  "version": 2,
-  "updated": "2026-08-08",
+  "version": 3,
+  "updated": "2026-08-09",
   "types": {
-    "qcm":       "Question à choix multiples (4 propositions)",
-    "libre":     "Réponse libre, validée par le meneur ou les autres joueurs",
-    "vraifaux":  "Vrai ou faux",
-    "estimation":"Réponse numérique — le plus proche gagne (le grand égalisateur entre âges)",
-    "defi":      "Mime, dessin, imitation : aucune connaissance requise"
+    "qcm": "Question à choix multiples (4 propositions)",
+    "libre": "Réponse libre, validée par le meneur ou les autres joueurs",
+    "vraifaux": "Vrai ou faux",
+    "estimation": "Réponse numérique — le plus proche gagne (le grand égalisateur entre âges)",
+    "defi": "Mime, dessin, imitation : aucune connaissance requise"
   },
   "difficulty": {
-    "1": "Tout le monde sait",
-    "2": "Facile",
-    "3": "Il faut réfléchir",
-    "4": "Costaud",
-    "5": "Pour les spécialistes"
+    "_note": "Échelle étalonnée sur un ADULTE MOYEN, quel que soit l'âge minimum de la question. Un 4 en catégorie geek reste un 4 même si tous les enfants le trouvent.",
+    "1": "Un enfant de six ans répond",
+    "2": "Aucun adulte ne se trompe",
+    "3": "Culture générale ordinaire : l'adulte moyen trouve la plupart du temps",
+    "4": "Il faut s'y être intéressé : l'adulte cultivé hésite",
+    "5": "Pointu : un connaisseur du domaine, ou un coup de chance"
   },
   "handicaps": {
-    "expert":     { "label": "Expert",     "pct": 0,  "plusMoins": 0, "weight": 1.00, "hint": "Aucune marge. Assume." },
-    "confirme":   { "label": "Confirmé",   "pct": 5,  "plusMoins": 0, "weight": 1.05, "hint": "Un cheveu de tolérance." },
-    "normal":     { "label": "Normal",     "pct": 12, "plusMoins": 0, "weight": 1.12, "hint": "Le réglage par défaut." },
-    "decouverte": { "label": "Découverte", "pct": 25, "plusMoins": 1, "weight": 1.25, "hint": "Pour qui débute, ou revient de loin." },
-    "enfant":     { "label": "Enfant",     "pct": 45, "plusMoins": 1, "weight": 1.45, "hint": "Large marge sur les estimations." }
+    "expert": {
+      "label": "Expert",
+      "pct": 0,
+      "plusMoins": 0,
+      "weight": 1.0,
+      "hint": "Aucune marge. Assume."
+    },
+    "confirme": {
+      "label": "Confirmé",
+      "pct": 5,
+      "plusMoins": 0,
+      "weight": 1.05,
+      "hint": "Un cheveu de tolérance."
+    },
+    "normal": {
+      "label": "Normal",
+      "pct": 12,
+      "plusMoins": 0,
+      "weight": 1.12,
+      "hint": "Le réglage par défaut."
+    },
+    "decouverte": {
+      "label": "Découverte",
+      "pct": 25,
+      "plusMoins": 1,
+      "weight": 1.25,
+      "hint": "Pour qui débute, ou revient de loin."
+    },
+    "enfant": {
+      "label": "Enfant",
+      "pct": 45,
+      "plusMoins": 1,
+      "weight": 1.45,
+      "hint": "Large marge sur les estimations."
+    }
   },
   "categories": [
     {
@@ -146,5 +177,6 @@
       "enabled": false,
       "blurb": "EXTENSION FUTURE — questions personnalisées sur les joueurs présents. À n'activer que dans un cercle proche."
     }
-  ]
+  ],
+  "difficultyDefis": "Dans la catégorie defis, la difficulté ne mesure pas une connaissance mais l'exigence du défi : 1 = tout le monde peut, 5 = il faut oser."
 }

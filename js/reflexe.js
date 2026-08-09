@@ -641,26 +641,163 @@ function afficherResultat(res) {
 }
 
 /* ===================================================================
-   Fin de partie
+   Fin de partie — le podium
+
+   L'ancien tableau donnait le résultat, mais personne ne le regardait :
+   quatre lignes de texte pour clore une partie, c'est plat. Ici les
+   marches montent une par une, de la troisième à la première, et le
+   score défile pendant qu'elles montent. Rien de tout ça n'est piloté
+   par le réseau : chaque téléphone rejoue la même séquence en local à
+   partir du même classement, donc aucun risque de désynchronisation.
+
+   Trois précautions :
+   - les ex aequo partagent rang, médaille ET hauteur de marche ;
+   - à deux joueurs il n'y a que deux marches, à un joueur une seule ;
+   - les minuteurs passent par planifier(), donc quitterTable() les tue.
+
    L'hôte a deux sorties : enchaîner tout de suite avec les mêmes
    réglages, ou revenir au salon pour les changer. Les invités n'ont
    rien à faire dans le premier cas — la question suivante arrive
    toute seule — mais encore faut-il le leur écrire.
    =================================================================== */
+var TEINTES = ['#3FA9C9','#C8372D','#D8A94B','#4FA96B','#8E6BB8','#E08A3C'];
+
+function teinte(nom) {
+  var n = 0, s = String(nom || '');
+  for (var i = 0; i < s.length; i++) n = (n * 31 + s.charCodeAt(i)) % 9973;
+  return TEINTES[n % TEINTES.length];
+}
+function initiale(nom) { return String(nom || '?').trim().charAt(0).toUpperCase() || '?'; }
+
+function sobre() {
+  return !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+}
+
+/* Rangs avec ex aequo : deux scores égaux donnent le même rang, et le
+   suivant saute (1, 1, 3). Le classement arrive déjà trié. */
+function rangs(cl) {
+  var out = [], prec = null, rg = 0;
+  cl.forEach(function (g, i) {
+    if (prec === null || g.score !== prec) { rg = i + 1; prec = g.score; }
+    out.push(rg);
+  });
+  return out;
+}
+
+/* Le score monte de 0 jusqu'à sa valeur. Fonctionne aussi en négatif :
+   on interpole, on ne compte pas. */
+function defiler(el, cible) {
+  if (!el) return;
+  if (sobre()) { el.textContent = cible; return; }
+  var t0 = null, duree = 750;
+  function pas(t) {
+    if (t0 === null) t0 = t;
+    var k = Math.min(1, (t - t0) / duree);
+    k = 1 - Math.pow(1 - k, 3);
+    el.textContent = Math.round(cible * k);
+    if (k < 1) requestAnimationFrame(pas);
+  }
+  requestAnimationFrame(pas);
+}
+
+/* Vingt-six petits rectangles qui tombent une fois. Pas de bibliothèque,
+   pas de canvas, et le DOM est vidé au bout de trois secondes. */
+function paillettes() {
+  var z = $('#finPaillettes');
+  if (!z || sobre()) return;
+  var html = '';
+  for (var i = 0; i < 26; i++) {
+    html += '<span style="left:' + (Math.random() * 100).toFixed(1) + '%;' +
+            'background:' + TEINTES[i % TEINTES.length] + ';' +
+            'animation-delay:' + (Math.random() * .5).toFixed(2) + 's;' +
+            'animation-duration:' + (1.5 + Math.random() * .8).toFixed(2) + 's"></span>';
+  }
+  z.innerHTML = html;
+  planifier(function () { z.innerHTML = ''; }, 3000);
+}
+
 function afficherFin(classement) {
   tousStop();
   M = null;
   vue('vFin');
 
-  $('#finTable').innerHTML =
-    '<table><thead><tr><th></th><th>Joueur</th><th>Bonnes</th><th>Score</th></tr></thead><tbody>' +
-    classement.map(function (g, i) {
-      return '<tr><td class="text-slate-500">' + (i + 1) + '</td>' +
-             '<td class="font-bold ' + (g.de === canal.id ? 'text-q-blue' : 'text-white') + '">' +
-             esc(g.nom) + '</td>' +
-             '<td class="text-xs text-slate-500">' + g.bonnes + ' / ' + g.posees + '</td>' +
-             '<td class="font-bold text-white">' + g.score + '</td></tr>';
-    }).join('') + '</tbody></table>';
+  var moiId  = canal ? canal.id : null;
+  var rg     = rangs(classement);
+  var top    = classement.slice(0, 3);
+  /* Ordre d'affichage : 2 - 1 - 3, comme un vrai podium. */
+  var ordre  = top.length >= 3 ? [1, 0, 2] : (top.length === 2 ? [1, 0] : [0]);
+  var HAUT   = { 1:'108px', 2:'80px', 3:'60px' };
+  var METAL  = { 1:'or',    2:'argent', 3:'bronze' };
+
+  var pod = $('#finPodium');
+  if (pod) {
+    pod.innerHTML = ordre.map(function (i) {
+      var g = top[i], r = rg[i], m = METAL[r] || 'bronze';
+      return '<div class="marche" data-i="' + i + '" style="--h:' + (HAUT[r] || '60px') + '">' +
+             '<div class="pion">' +
+               '<span class="jeton" style="--c:' + teinte(g.nom) + '">' + esc(initiale(g.nom)) + '</span>' +
+               '<i class="fa-solid fa-medal medaille ' + m + '"></i>' +
+             '</div>' +
+             '<p class="pnom' + (moiId && g.de === moiId ? ' moi' : '') + '">' + esc(g.nom) + '</p>' +
+             '<p class="pscore" data-score="' + g.score + '">0</p>' +
+             '<p class="pdetail">' + g.bonnes + '/' + g.posees + '</p>' +
+             '<div class="bloc ' + m + '"><span class="rang">' + r + '</span></div>' +
+             '</div>';
+    }).join('');
+  }
+
+  /* Les places 4 et suivantes, en tableau sobre. */
+  var reste = classement.slice(3);
+  var zr = $('#finReste');
+  if (zr) {
+    if (!reste.length) { zr.classList.add('hidden'); zr.innerHTML = ''; }
+    else {
+      zr.classList.remove('hidden');
+      zr.innerHTML = '<table><tbody>' + reste.map(function (g, i) {
+        return '<tr><td class="text-slate-500" style="width:2.2rem">' + rg[i + 3] + '</td>' +
+               '<td class="font-bold ' + (moiId && g.de === moiId ? 'text-q-blue' : 'text-white') + '">' +
+               esc(g.nom) + '</td>' +
+               '<td class="text-xs text-slate-500">' + g.bonnes + ' / ' + g.posees + '</td>' +
+               '<td class="font-bold text-white" style="text-align:right">' + g.score + '</td></tr>';
+      }).join('') + '</tbody></table>';
+    }
+  }
+
+  /* Séquence : la marche la plus basse d'abord. */
+  var marches = pod ? Array.prototype.slice.call(pod.querySelectorAll('.marche')) : [];
+  var ordreApparition = marches.slice().sort(function (a, b) {
+    return rg[+b.getAttribute('data-i')] - rg[+a.getAttribute('data-i')];
+  });
+  var PAS = sobre() ? 0 : 520;
+
+  ordreApparition.forEach(function (el, k) {
+    planifier(function () {
+      el.classList.add('on');
+      var s = el.querySelector('.pscore');
+      defiler(s, parseInt(s.getAttribute('data-score'), 10) || 0);
+      if (rg[+el.getAttribute('data-i')] === 1) {
+        el.classList.add('vainqueur');
+        paillettes();
+        vibrer([0, 22, 60, 22]);
+      }
+    }, 200 + k * PAS);
+  });
+
+  var fini = 200 + Math.max(0, ordreApparition.length - 1) * PAS;
+
+  var champion = classement[0] || null;
+  var partage  = champion ? classement.filter(function (g) { return g.score === champion.score; }).length > 1 : false;
+  planifier(function () {
+    poser_('#finSous', !champion ? '' :
+      partage ? 'Égalité en tête. Personne ne lâche rien.' :
+      (moiId && champion.de === moiId ? 'Tu gagnes cette partie.' : champion.nom + ' remporte la partie.'));
+    var s = $('#finSous'); if (s) s.classList.add('on');
+  }, fini);
+
+  planifier(function () {
+    var a = $('#finActions'); if (a) a.classList.add('on');
+    var r = $('#finReste');   if (r) r.classList.add('on');
+  }, fini + 450);
 
   cacher_('#bRemettre', !hote);
   cacher_('#bReglages', !hote);

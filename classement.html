@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Classement · Quiz Famille</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<link rel="stylesheet" href="css/table.css">
+<style>
+  .enveloppe { max-width:720px; margin:0 auto; padding:1.5rem 1.1rem 4rem; }
+  .filtres { display:flex; gap:.5rem; flex-wrap:wrap; margin-bottom:1.4rem; }
+  .filtre {
+    padding:.6rem 1rem; border:0; border-radius:var(--r-full); cursor:pointer;
+    font-family:inherit; font-size:.85rem; font-weight:600;
+    background:rgba(0,0,0,.22); color:rgba(244,234,213,.6); transition:var(--glisse);
+  }
+  .filtre.actif { background:rgba(216,169,75,.18); color:var(--laiton); box-shadow:inset 0 0 0 1px rgba(216,169,75,.45); }
+  .rang {
+    display:flex; align-items:center; gap:.9rem; padding:.9rem 1rem;
+    border-radius:var(--r-md); background:rgba(0,0,0,.16); margin-bottom:.6rem;
+    transition:var(--glisse);
+  }
+  .rang.podium { background:rgba(216,169,75,.1); box-shadow:inset 0 0 0 1px rgba(216,169,75,.28); }
+  .place {
+    width:32px; flex:none; text-align:center;
+    font-family:'Playfair Display',serif; font-size:1.3rem; color:rgba(244,234,213,.45);
+  }
+  .rang.podium .place { color:var(--laiton); }
+  .nom { flex:1; min-width:0; }
+  .nom b { display:block; font-size:1.05rem; font-weight:600; }
+  .nom small { font-size:.75rem; color:rgba(244,234,213,.5); }
+  .score { text-align:right; flex:none; }
+  .score b { display:block; font-family:'Playfair Display',serif; font-size:1.4rem; color:var(--laiton); line-height:1.1; }
+  .score small { font-size:.68rem; letter-spacing:.1em; text-transform:uppercase; color:rgba(244,234,213,.45); }
+</style>
+</head>
+<body>
+
+<div class="enveloppe">
+
+  <a href="index.html" class="lien" style="font-size:.85rem"><i class="fa-solid fa-arrow-left"></i> Retour au jeu</a>
+
+  <p class="kicker" style="margin-top:1.4rem">Tableau d'honneur</p>
+  <div class="kicker-line"></div>
+  <h1 style="font-size:2rem;margin:0 0 .6rem">Classement</h1>
+  <p style="margin:0 0 1.6rem;font-size:.9rem;color:rgba(244,234,213,.6);line-height:1.6">
+    On classe sur les <b style="color:var(--laiton)">points par question</b>, pas sur le total :
+    sinon celui qui joue le plus gagne toujours. Il faut au moins 20 questions
+    répondues pour apparaître.
+  </p>
+
+  <div class="filtres">
+    <button class="filtre actif" data-jours="30">30 jours</button>
+    <button class="filtre" data-jours="90">3 mois</button>
+    <button class="filtre" data-jours="365">1 an</button>
+    <button class="filtre" data-jours="3650">Depuis toujours</button>
+  </div>
+
+  <div class="filtres" style="margin-bottom:1.6rem">
+    <button class="filtre actif" data-tri="indice">Points / question</button>
+    <button class="filtre" data-tri="reussite">Réussite</button>
+    <button class="filtre" data-tri="points">Total</button>
+  </div>
+
+  <div id="liste"><p style="color:rgba(244,234,213,.5)">Chargement…</p></div>
+
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/profil.js"></script>
+<script>
+(function () {
+'use strict';
+var jours = 30, tri = 'indice', donnees = [];
+
+function $(id) { return document.getElementById(id); }
+
+function unite() {
+  return tri === 'indice' ? 'pts / question' : tri === 'reussite' ? 'de réussite' : 'points';
+}
+function valeur(l) {
+  return tri === 'indice' ? l.indice : tri === 'reussite' ? l.reussite + '%' : l.points;
+}
+
+function peindre() {
+  if (!donnees.length) {
+    $('liste').innerHTML = '<div class="carte-papier"><p style="margin:0">' +
+      'Personne au classement pour l\'instant. Il faut 20 questions répondues ' +
+      'pour y figurer — autant dire une partie ou deux.</p></div>';
+    return;
+  }
+  var l = donnees.slice().sort(function (a, b) {
+    return Number(b[tri]) - Number(a[tri]);
+  });
+  $('liste').innerHTML = l.map(function (j, i) {
+    var av = j.avatar
+      ? '<img src="' + j.avatar + '" alt="">'
+      : j.prenom.charAt(0).toUpperCase();
+    return '<div class="rang' + (i < 3 ? ' podium' : '') + '">' +
+      '<div class="place">' + (i + 1) + '</div>' +
+      '<div class="pastille" style="width:44px;height:44px;flex:none;font-size:1.1rem;background:' + j.couleur + '">' + av + '</div>' +
+      '<div class="nom"><b>' + j.prenom + '</b><small>' +
+        j.parties + ' partie' + (j.parties > 1 ? 's' : '') + ' · ' +
+        j.bonnes + '/' + j.posees + ' bonnes</small></div>' +
+      '<div class="score"><b>' + valeur(j) + '</b><small>' + unite() + '</small></div>' +
+    '</div>';
+  }).join('');
+}
+
+async function charger() {
+  $('liste').innerHTML = '<p style="color:rgba(244,234,213,.5)">Chargement…</p>';
+  try {
+    donnees = await Quiz.Profil.classement(jours, 20) || [];
+    peindre();
+  } catch (e) {
+    $('liste').innerHTML = '<div class="message erreur">Classement injoignable : ' +
+      Quiz.Auth.dire(e) + '</div>';
+  }
+}
+
+document.querySelectorAll('[data-jours]').forEach(function (b) {
+  b.onclick = function () {
+    jours = Number(b.dataset.jours);
+    document.querySelectorAll('[data-jours]').forEach(function (x) { x.classList.toggle('actif', x === b); });
+    charger();
+  };
+});
+document.querySelectorAll('[data-tri]').forEach(function (b) {
+  b.onclick = function () {
+    tri = b.dataset.tri;
+    document.querySelectorAll('[data-tri]').forEach(function (x) { x.classList.toggle('actif', x === b); });
+    peindre();
+  };
+});
+
+charger();
+})();
+</script>
+</body>
+</html>

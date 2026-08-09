@@ -1,7 +1,7 @@
 {
   "category": "gastronomie",
   "label": "Bouffe & Boissons",
-  "version": 1,
+  "version": 2,
   "note": "Les questions impliquant de l'alcool sont marquées minAge 13 et plus, et taguées 'alcool' pour pouvoir être filtrées entièrement si besoin.",
   "questions": [
     {
@@ -10,10 +10,17 @@
       "difficulty": 1,
       "minAge": 5,
       "q": "Quel légume fait pleurer quand on le coupe ?",
-      "choices": ["La carotte", "L'oignon", "Le poireau", "Le navet"],
+      "choices": [
+        "La carotte",
+        "L'oignon",
+        "Le poireau",
+        "Le navet"
+      ],
       "answer": 1,
       "fun": "Il libère un gaz soufré qui, au contact des larmes, forme un peu d'acide sulfurique. L'œil rince aussitôt.",
-      "tags": ["légumes"]
+      "tags": [
+        "légumes"
+      ]
     },
     {
       "id": "gas-0002",
@@ -22,9 +29,14 @@
       "minAge": 5,
       "q": "De quel pays la pizza est-elle originaire ?",
       "answer": "L'Italie",
-      "accept": ["italie", "l'italie"],
+      "accept": [
+        "italie",
+        "l'italie"
+      ],
       "fun": "La margherita a été créée en 1889 à Naples, aux couleurs du drapeau italien : basilic, mozzarella, tomate.",
-      "tags": ["origines"]
+      "tags": [
+        "origines"
+      ]
     },
     {
       "id": "gas-0003",
@@ -32,10 +44,17 @@
       "difficulty": 2,
       "minAge": 6,
       "q": "Quel est l'ingrédient principal du guacamole ?",
-      "choices": ["La courgette", "L'avocat", "Le concombre", "Le petit pois"],
+      "choices": [
+        "La courgette",
+        "L'avocat",
+        "Le concombre",
+        "Le petit pois"
+      ],
       "answer": 1,
       "fun": "Le mot vient du nahuatl « ahuacamolli », littéralement « sauce d'avocat ».",
-      "tags": ["recettes"]
+      "tags": [
+        "recettes"
+      ]
     },
     {
       "id": "gas-0004",
@@ -45,9 +64,13 @@
       "q": "Combien de minutes faut-il pour cuire un œuf à la coque ?",
       "answer": 3,
       "unit": "minutes",
-      "tol": { "exact": true },
+      "tol": {
+        "exact": true
+      },
       "fun": "3 minutes pour la coque, 6 pour mollet, 10 pour dur. Le blanc coagule avant le jaune, tout est là.",
-      "tags": ["cuisson"]
+      "tags": [
+        "cuisson"
+      ]
     },
     {
       "id": "gas-0005",
@@ -55,10 +78,17 @@
       "difficulty": 2,
       "minAge": 7,
       "q": "De quel arbre provient le chocolat ?",
-      "choices": ["Le caféier", "Le cacaoyer", "Le baobab", "Le palmier"],
+      "choices": [
+        "Le caféier",
+        "Le cacaoyer",
+        "Le baobab",
+        "Le palmier"
+      ],
       "answer": 1,
       "fun": "Les fèves poussent dans des cabosses directement sur le tronc. Crues, elles sont amères et immangeables.",
-      "tags": ["origines"]
+      "tags": [
+        "origines"
+      ]
     },
     {
       "id": "gas-0006",
@@ -66,31 +96,48 @@
       "difficulty": 2,
       "minAge": 7,
       "q": "Avec le lait de quel animal fabrique-t-on le roquefort ?",
-      "choices": ["La vache", "La chèvre", "La brebis", "La bufflonne"],
+      "choices": [
+        "La vache",
+        "La chèvre",
+        "La brebis",
+        "La bufflonne"
+      ],
       "answer": 2,
       "fun": "Il est affiné dans les caves naturelles de Roquefort-sur-Soulzon, et nulle part ailleurs.",
-      "tags": ["fromages"]
+      "tags": [
+        "fromages"
+      ]
     },
     {
       "id": "gas-0007",
       "type": "vraifaux",
-      "difficulty": 3,
+      "difficulty": 2,
       "minAge": 8,
       "q": "D'un point de vue botanique, la tomate est un fruit.",
       "answer": true,
       "fun": "Comme le concombre, l'aubergine et le poivron. Un fruit est ce qui contient les graines : le reste est affaire de cuisine.",
-      "tags": ["botanique", "piège"]
+      "tags": [
+        "botanique",
+        "piège"
+      ]
     },
     {
       "id": "gas-0008",
       "type": "qcm",
-      "difficulty": 3,
+      "difficulty": 2,
       "minAge": 8,
       "q": "Quel pays est le premier producteur mondial de café ?",
-      "choices": ["La Colombie", "L'Éthiopie", "Le Brésil", "Le Vietnam"],
+      "choices": [
+        "La Colombie",
+        "L'Éthiopie",
+        "Le Brésil",
+        "Le Vietnam"
+      ],
       "answer": 2,
       "fun": "Environ un tiers de la production mondiale. L'Éthiopie, elle, est le berceau historique du caféier.",
-      "tags": ["boissons"]
+      "tags": [
+        "boissons"
+      ]
     },
     {
       "id": "gas-0009",
@@ -100,7 +147,10 @@
       "q": "Les premières carottes cultivées étaient violettes, pas orange.",
       "answer": true,
       "fun": "Violettes ou jaunes. L'orange est une sélection tardive, popularisée aux Pays-Bas au XVIIe siècle.",
-      "tags": ["légumes", "histoire"]
+      "tags": [
+        "légumes",
+        "histoire"
+      ]
     },
     {
       "id": "gas-0010",
@@ -108,32 +158,52 @@
       "difficulty": 2,
       "minAge": 8,
       "q": "De quel pays le sushi est-il originaire ?",
-      "choices": ["La Chine", "Le Japon", "La Corée", "Le Vietnam"],
+      "choices": [
+        "La Chine",
+        "Le Japon",
+        "La Corée",
+        "Le Vietnam"
+      ],
       "answer": 1,
       "fun": "À l'origine, le riz servait uniquement à conserver le poisson par fermentation : on le jetait avant de manger.",
-      "tags": ["origines"]
+      "tags": [
+        "origines"
+      ]
     },
     {
       "id": "gas-0011",
       "type": "libre",
-      "difficulty": 3,
+      "difficulty": 2,
       "minAge": 9,
       "q": "Quelle épice est la plus chère au monde au poids ?",
       "answer": "Le safran",
-      "accept": ["safran", "le safran"],
+      "accept": [
+        "safran",
+        "le safran"
+      ],
       "fun": "Il faut environ 150 000 fleurs de crocus, cueillies à la main, pour obtenir un kilo.",
-      "tags": ["épices", "records"]
+      "tags": [
+        "épices",
+        "records"
+      ]
     },
     {
       "id": "gas-0012",
       "type": "qcm",
-      "difficulty": 3,
+      "difficulty": 2,
       "minAge": 9,
       "q": "Quel est l'ingrédient de base du houmous ?",
-      "choices": ["La lentille", "Le pois chiche", "Le haricot blanc", "La fève"],
+      "choices": [
+        "La lentille",
+        "Le pois chiche",
+        "Le haricot blanc",
+        "La fève"
+      ],
       "answer": 1,
       "fun": "« Houmous » veut simplement dire « pois chiche » en arabe. Le nom complet est « houmous bi tahini ».",
-      "tags": ["recettes"]
+      "tags": [
+        "recettes"
+      ]
     },
     {
       "id": "gas-0013",
@@ -143,53 +213,78 @@
       "q": "Combien de grammes de sucre contient environ une canette de soda de 33 cl ?",
       "answer": 35,
       "unit": "g",
-      "tol": { "pct": 25 },
+      "tol": {
+        "pct": 25
+      },
       "fun": "Soit à peu près sept morceaux de sucre. Personne n'en mettrait autant dans son café.",
-      "tags": ["boissons", "santé"]
+      "tags": [
+        "boissons",
+        "santé"
+      ]
     },
     {
       "id": "gas-0014",
       "type": "vraifaux",
-      "difficulty": 4,
+      "difficulty": 3,
       "minAge": 10,
       "q": "Le wasabi servi dans la plupart des restaurants n'est pas du vrai wasabi.",
       "answer": true,
       "fun": "C'est généralement du raifort coloré en vert. Le vrai wasabi est difficile à cultiver et se dégrade en quelques minutes après avoir été râpé.",
-      "tags": ["insolite"]
+      "tags": [
+        "insolite"
+      ]
     },
     {
       "id": "gas-0015",
       "type": "qcm",
-      "difficulty": 3,
+      "difficulty": 2,
       "minAge": 10,
       "q": "De quel pays le fromage feta est-il originaire ?",
-      "choices": ["La Turquie", "La Grèce", "Chypre", "La Bulgarie"],
+      "choices": [
+        "La Turquie",
+        "La Grèce",
+        "Chypre",
+        "La Bulgarie"
+      ],
       "answer": 1,
       "fun": "L'appellation est protégée depuis 2002 : seule la Grèce peut appeler son fromage « feta ».",
-      "tags": ["fromages"]
+      "tags": [
+        "fromages"
+      ]
     },
     {
       "id": "gas-0016",
       "type": "libre",
-      "difficulty": 3,
+      "difficulty": 2,
       "minAge": 10,
       "q": "Comment appelle-t-on le plat japonais composé de nouilles servies dans un bouillon chaud ?",
       "answer": "Le ramen",
-      "accept": ["ramen", "le ramen", "ramens"],
+      "accept": [
+        "ramen",
+        "le ramen",
+        "ramens"
+      ],
       "fun": "Le bouillon tonkotsu mijote parfois plus de douze heures.",
-      "tags": ["plats"]
+      "tags": [
+        "plats"
+      ]
     },
     {
       "id": "gas-0017",
       "type": "estimation",
-      "difficulty": 4,
+      "difficulty": 3,
       "minAge": 11,
       "q": "Combien de calories contient environ un croissant au beurre ?",
       "answer": 250,
       "unit": "kcal",
-      "tol": { "pct": 30 },
+      "tol": {
+        "pct": 30
+      },
       "fun": "Environ un tiers de son poids est du beurre. C'est précisément ce qui le rend feuilleté.",
-      "tags": ["santé", "boulangerie"]
+      "tags": [
+        "santé",
+        "boulangerie"
+      ]
     },
     {
       "id": "gas-0018",
@@ -197,21 +292,36 @@
       "difficulty": 4,
       "minAge": 11,
       "q": "Quel champignon atteint les prix les plus élevés au monde ?",
-      "choices": ["Le cèpe", "La morille", "La truffe blanche d'Alba", "Le shiitake"],
+      "choices": [
+        "Le cèpe",
+        "La morille",
+        "La truffe blanche d'Alba",
+        "Le shiitake"
+      ],
       "answer": 2,
       "fun": "Plusieurs milliers d'euros le kilo. On ne sait toujours pas la cultiver : il faut la trouver.",
-      "tags": ["records"]
+      "tags": [
+        "records"
+      ]
     },
     {
       "id": "gas-0019",
       "type": "qcm",
-      "difficulty": 4,
+      "difficulty": 3,
       "minAge": 13,
       "q": "De quelle plante la tequila est-elle issue ?",
-      "choices": ["La canne à sucre", "L'agave bleue", "Le maïs", "Le cactus"],
+      "choices": [
+        "La canne à sucre",
+        "L'agave bleue",
+        "Le maïs",
+        "Le cactus"
+      ],
       "answer": 1,
       "fun": "Une agave met six à huit ans à mûrir avant d'être récoltée. Et elle ne fleurit qu'une seule fois dans sa vie.",
-      "tags": ["boissons", "alcool"]
+      "tags": [
+        "boissons",
+        "alcool"
+      ]
     },
     {
       "id": "gas-0020",
@@ -221,7 +331,10 @@
       "q": "Cite 6 fromages différents en 20 secondes.",
       "duration": 20,
       "scoring": "individuel",
-      "tags": ["rapidité", "fromages"]
+      "tags": [
+        "rapidité",
+        "fromages"
+      ]
     }
   ]
 }

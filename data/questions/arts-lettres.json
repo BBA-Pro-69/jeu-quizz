@@ -1,0 +1,1757 @@
+{
+  "category": "arts-lettres",
+  "label": "Arts & Lettres",
+  "version": 1,
+  "questions": [
+    {
+      "id": "art-0001",
+      "type": "qcm",
+      "difficulty": 1,
+      "minAge": 5,
+      "q": "Dans Hansel et Gretel, en quoi est faite la maison de la sorcière ?",
+      "choices": [
+        "En pain d'épice et en sucreries",
+        "En pierres grises",
+        "En paille",
+        "En glace"
+      ],
+      "answer": 0,
+      "fun": "Chez les frères Grimm, la gourmandise se paie cher : les deux enfants finissent en cage.",
+      "tags": [
+        "conte",
+        "enfants"
+      ]
+    },
+    {
+      "id": "art-0002",
+      "type": "qcm",
+      "difficulty": 1,
+      "minAge": 5,
+      "q": "Qu'est-ce qui s'allonge chez Pinocchio quand il ment ?",
+      "choices": [
+        "Son nez",
+        "Ses oreilles",
+        "Ses bras",
+        "Ses cheveux"
+      ],
+      "answer": 0,
+      "fun": "Le roman de Collodi est bien plus noir que le dessin animé : Pinocchio y écrase le grillon parlant d'un coup de marteau.",
+      "tags": [
+        "conte",
+        "enfants"
+      ]
+    },
+    {
+      "id": "art-0003",
+      "type": "estimation",
+      "difficulty": 1,
+      "minAge": 5,
+      "q": "Combien de petits cochons dans le conte ?",
+      "answer": 3,
+      "unit": "",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Dans la version anglaise d'origine, le loup mange les deux premiers avant de se casser les dents sur la maison de briques.",
+      "tags": [
+        "conte",
+        "enfants"
+      ]
+    },
+    {
+      "id": "art-0004",
+      "type": "qcm",
+      "difficulty": 1,
+      "minAge": 5,
+      "q": "Que perd Cendrillon en quittant le bal ?",
+      "choices": [
+        "Une pantoufle",
+        "Sa couronne",
+        "Son collier",
+        "Son éventail"
+      ],
+      "answer": 0,
+      "fun": "La pantoufle « de vair » est une invention tardive : Perrault a bien écrit « verre ».",
+      "tags": [
+        "conte",
+        "enfants"
+      ]
+    },
+    {
+      "id": "art-0005",
+      "type": "qcm",
+      "difficulty": 1,
+      "minAge": 5,
+      "q": "Quelle héroïne de conte laisse pousser ses cheveux pour qu'on grimpe jusqu'à sa tour ?",
+      "choices": [
+        "Raiponce",
+        "Blanche-Neige",
+        "La Belle au bois dormant",
+        "Boucle d'or"
+      ],
+      "answer": 0,
+      "fun": "Raiponce est le nom d'une salade : la mère de l'héroïne en avait volé dans le jardin de la sorcière.",
+      "tags": [
+        "conte",
+        "enfants"
+      ]
+    },
+    {
+      "id": "art-0006",
+      "type": "libre",
+      "difficulty": 2,
+      "minAge": 7,
+      "q": "Qui a écrit Le Petit Prince ?",
+      "answer": "Antoine de Saint-Exupéry",
+      "accept": [
+        "saint exupery",
+        "antoine de saint exupery",
+        "saint-exupery",
+        "st exupery",
+        "exupery"
+      ],
+      "fun": "Les aquarelles du livre sont de sa main : il s'excusait presque de ne pas savoir dessiner.",
+      "tags": [
+        "litterature"
+      ]
+    },
+    {
+      "id": "art-0007",
+      "type": "libre",
+      "difficulty": 2,
+      "minAge": 7,
+      "q": "Qui a peint la Joconde ?",
+      "answer": "Léonard de Vinci",
+      "fun": "Elle n'a ni cils ni sourcils. L'hypothèse la plus solide : ils ont disparu au fil des nettoyages.",
+      "tags": [
+        "peinture"
+      ],
+      "accept": [
+        "leonard de vinci",
+        "de vinci",
+        "vinci",
+        "leonard"
+      ]
+    },
+    {
+      "id": "art-0008",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 8,
+      "q": "Qui a écrit Les Misérables ?",
+      "choices": [
+        "Victor Hugo",
+        "Émile Zola",
+        "Honoré de Balzac",
+        "Guy de Maupassant"
+      ],
+      "answer": 0,
+      "fun": "Hugo y case un chapitre entier sur les égouts de Paris, qu'il avait visités pour de vrai.",
+      "tags": [
+        "litterature"
+      ]
+    },
+    {
+      "id": "art-0009",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 9,
+      "q": "Qui a écrit Roméo et Juliette ?",
+      "choices": [
+        "William Shakespeare",
+        "Molière",
+        "Oscar Wilde",
+        "Charles Dickens"
+      ],
+      "answer": 0,
+      "fun": "Le fameux balcon de Vérone a été ajouté au XXe siècle, pour les touristes.",
+      "tags": [
+        "theatre"
+      ]
+    },
+    {
+      "id": "art-0010",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 7,
+      "q": "Qui a écrit la fable qui commence par « Maître Corbeau, sur un arbre perché » ?",
+      "choices": [
+        "Jean de La Fontaine",
+        "Charles Perrault",
+        "Victor Hugo",
+        "Molière"
+      ],
+      "answer": 0,
+      "fun": "La Fontaine n'a rien inventé : il reprend Ésope, vingt-cinq siècles plus tôt.",
+      "tags": [
+        "litterature",
+        "poesie"
+      ]
+    },
+    {
+      "id": "art-0011",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 6,
+      "q": "Qui a écrit les romans Harry Potter ?",
+      "choices": [
+        "J. K. Rowling",
+        "Roald Dahl",
+        "Stephenie Meyer",
+        "Philip Pullman"
+      ],
+      "answer": 0,
+      "fun": "Une douzaine d'éditeurs ont refusé le manuscrit avant que Bloomsbury ne le prenne.",
+      "tags": [
+        "litterature",
+        "jeunesse"
+      ]
+    },
+    {
+      "id": "art-0012",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 7,
+      "q": "Qui a écrit Vingt Mille Lieues sous les mers ?",
+      "choices": [
+        "Jules Verne",
+        "H. G. Wells",
+        "Alexandre Dumas",
+        "Jack London"
+      ],
+      "answer": 0,
+      "fun": "Le Nautilus tient son nom d'un vrai sous-marin, construit par Robert Fulton en 1800.",
+      "tags": [
+        "litterature"
+      ]
+    },
+    {
+      "id": "art-0013",
+      "type": "vraifaux",
+      "difficulty": 2,
+      "minAge": 10,
+      "q": "Les Demoiselles d'Avignon est l'œuvre d'un peintre français.",
+      "answer": false,
+      "fun": "Picasso est espagnol, et le titre renvoie à une rue de Barcelone, pas à la ville d'Avignon.",
+      "tags": [
+        "peinture",
+        "piège"
+      ]
+    },
+    {
+      "id": "art-0014",
+      "type": "libre",
+      "difficulty": 2,
+      "minAge": 8,
+      "q": "Qui a sculpté Le Penseur ?",
+      "answer": "Auguste Rodin",
+      "fun": "Il devait surplomber La Porte de l'Enfer et représenter Dante contemplant ses damnés.",
+      "tags": [
+        "sculpture"
+      ],
+      "accept": [
+        "rodin",
+        "auguste rodin"
+      ]
+    },
+    {
+      "id": "art-0015",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 7,
+      "q": "Qui a écrit Alice au pays des merveilles ?",
+      "choices": [
+        "Lewis Carroll",
+        "J. M. Barrie",
+        "Rudyard Kipling",
+        "Roald Dahl"
+      ],
+      "answer": 0,
+      "fun": "Derrière le pseudonyme, Charles Dodgson, professeur de mathématiques à Oxford.",
+      "tags": [
+        "litterature",
+        "jeunesse"
+      ]
+    },
+    {
+      "id": "art-0016",
+      "type": "libre",
+      "difficulty": 2,
+      "minAge": 10,
+      "q": "Sous quel nom le personnage d'Alexandre Dumas Edmond Dantès est-il mieux connu ?",
+      "answer": "Le comte de Monte-Cristo",
+      "accept": [
+        "monte cristo",
+        "le comte de monte cristo",
+        "comte de monte cristo",
+        "monte-cristo"
+      ],
+      "fun": "Dumas s'est fait construire un château baptisé Monte-Cristo avec les droits du roman.",
+      "tags": [
+        "litterature"
+      ]
+    },
+    {
+      "id": "art-0017",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 8,
+      "q": "Contre quoi Don Quichotte part-il en guerre, croyant affronter des géants ?",
+      "choices": [
+        "Des moulins à vent",
+        "Des rochers",
+        "Des arbres",
+        "Des nuages"
+      ],
+      "answer": 0,
+      "fun": "Cervantès avait perdu l'usage de sa main gauche à la bataille de Lépante. On le surnommait le manchot.",
+      "tags": [
+        "litterature"
+      ]
+    },
+    {
+      "id": "art-0018",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 10,
+      "q": "Qui a peint Guernica ?",
+      "choices": [
+        "Pablo Picasso",
+        "Salvador Dalí",
+        "Joan Miró",
+        "Francisco Goya"
+      ],
+      "answer": 0,
+      "fun": "La toile n'est revenue en Espagne qu'en 1981, une fois Franco mort et la démocratie installée.",
+      "tags": [
+        "peinture"
+      ]
+    },
+    {
+      "id": "art-0019",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 8,
+      "q": "Qui a écrit les contes Cendrillon, Le Chat botté et Le Petit Poucet ?",
+      "choices": [
+        "Charles Perrault",
+        "Hans Christian Andersen",
+        "Jean de La Fontaine",
+        "Les frères Grimm"
+      ],
+      "answer": 0,
+      "fun": "Perrault a publié ses contes sous le nom de son fils. Un académicien ne s'abaissait pas à écrire pour les enfants.",
+      "tags": [
+        "conte"
+      ]
+    },
+    {
+      "id": "art-0020",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 7,
+      "q": "Blanche-Neige, Hansel et Gretel, Le Vaillant Petit Tailleur : qui a recueilli ces contes ?",
+      "choices": [
+        "Les frères Grimm",
+        "Charles Perrault",
+        "Andersen",
+        "La Comtesse de Ségur"
+      ],
+      "answer": 0,
+      "fun": "Ils étaient linguistes avant tout : leur dictionnaire de l'allemand a mis plus d'un siècle à être terminé.",
+      "tags": [
+        "conte"
+      ]
+    },
+    {
+      "id": "art-0021",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 9,
+      "q": "Quel écrivain a créé Sherlock Holmes ?",
+      "choices": [
+        "Arthur Conan Doyle",
+        "Agatha Christie",
+        "Edgar Allan Poe",
+        "Maurice Leblanc"
+      ],
+      "answer": 0,
+      "fun": "Il a tué son détective dans une chute, puis l'a ressuscité sous la pression furieuse des lecteurs.",
+      "tags": [
+        "litterature"
+      ]
+    },
+    {
+      "id": "art-0022",
+      "type": "estimation",
+      "difficulty": 2,
+      "minAge": 8,
+      "q": "Combien de jours annonce le titre du roman de Jules Verne, Le Tour du monde en… ?",
+      "answer": 80,
+      "unit": "jours",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Phileas Fogg gagne une journée sans le savoir en voyageant vers l'est. C'est ce qui lui fait gagner son pari.",
+      "tags": [
+        "litterature"
+      ]
+    },
+    {
+      "id": "art-0023",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 8,
+      "q": "Dans quel musée peut-on voir la Joconde ?",
+      "choices": [
+        "Le Louvre",
+        "Le musée d'Orsay",
+        "Le Prado",
+        "La National Gallery"
+      ],
+      "answer": 0,
+      "fun": "Elle est derrière une vitre blindée depuis 1956 : cette année-là, elle a reçu de l'acide, puis une pierre.",
+      "tags": [
+        "peinture",
+        "musee"
+      ]
+    },
+    {
+      "id": "art-0024",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 8,
+      "q": "Dans quel roman de Victor Hugo trouve-t-on Quasimodo et Esmeralda ?",
+      "choices": [
+        "Notre-Dame de Paris",
+        "Les Misérables",
+        "Les Travailleurs de la mer",
+        "L'Homme qui rit"
+      ],
+      "answer": 0,
+      "fun": "Le succès du roman a sauvé la cathédrale, alors à moitié en ruine : c'est lui qui a lancé sa restauration.",
+      "tags": [
+        "litterature"
+      ]
+    },
+    {
+      "id": "art-0025",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 9,
+      "q": "Qui a écrit Les Trois Mousquetaires ?",
+      "choices": [
+        "Alexandre Dumas",
+        "Victor Hugo",
+        "Stendhal",
+        "Jules Verne"
+      ],
+      "answer": 0,
+      "fun": "Dumas travaillait avec des collaborateurs, dont Auguste Maquet, qui a réclamé sa part au tribunal.",
+      "tags": [
+        "litterature"
+      ]
+    },
+    {
+      "id": "art-0026",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Qui a peint La Nuit étoilée, ce ciel bleu qui tourbillonne au-dessus d'un village ?",
+      "choices": [
+        "Vincent van Gogh",
+        "Claude Monet",
+        "Paul Cézanne",
+        "Edvard Munch"
+      ],
+      "answer": 0,
+      "fun": "Il l'a peinte depuis sa chambre d'asile à Saint-Rémy-de-Provence, de mémoire, le matin.",
+      "tags": [
+        "peinture"
+      ]
+    },
+    {
+      "id": "art-0027",
+      "type": "vraifaux",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "La Nuit étoilée de Van Gogh est exposée au Louvre.",
+      "answer": false,
+      "fun": "Elle est au MoMA, à New York. Le Louvre s'arrête globalement au milieu du XIXe siècle.",
+      "tags": [
+        "peinture",
+        "piège"
+      ]
+    },
+    {
+      "id": "art-0028",
+      "type": "vraifaux",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Dans le roman de Dumas, les mousquetaires sont trois.",
+      "answer": false,
+      "fun": "Athos, Porthos, Aramis, plus d'Artagnan : ils sont quatre. Le titre ne compte pas le héros.",
+      "tags": [
+        "litterature",
+        "piège"
+      ]
+    },
+    {
+      "id": "art-0029",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 12,
+      "q": "Qui a écrit Madame Bovary ?",
+      "choices": [
+        "Gustave Flaubert",
+        "Émile Zola",
+        "Guy de Maupassant",
+        "Stendhal"
+      ],
+      "answer": 0,
+      "fun": "Le roman lui a valu un procès pour outrage aux bonnes mœurs. Il a été acquitté, et le procès a fait la publicité.",
+      "tags": [
+        "litterature"
+      ]
+    },
+    {
+      "id": "art-0030",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 12,
+      "q": "Quel écrivain a raconté la mine et les grèves dans Germinal ?",
+      "choices": [
+        "Émile Zola",
+        "Victor Hugo",
+        "Honoré de Balzac",
+        "Alphonse Daudet"
+      ],
+      "answer": 0,
+      "fun": "Zola est descendu au fond d'une fosse d'Anzin pour écrire le livre. Il prenait des notes partout.",
+      "tags": [
+        "litterature"
+      ]
+    },
+    {
+      "id": "art-0031",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 13,
+      "q": "« Aujourd'hui, maman est morte. » Quel roman s'ouvre sur cette phrase ?",
+      "choices": [
+        "L'Étranger",
+        "La Peste",
+        "Voyage au bout de la nuit",
+        "La Nausée"
+      ],
+      "answer": 0,
+      "fun": "Camus a reçu le Nobel à 44 ans. Il a dit qu'il l'aurait donné à Malraux.",
+      "tags": [
+        "litterature"
+      ]
+    },
+    {
+      "id": "art-0032",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 12,
+      "q": "Qui a écrit 1984, le roman de Big Brother ?",
+      "choices": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "H. G. Wells"
+      ],
+      "answer": 0,
+      "fun": "Le titre viendrait d'une inversion de 1948, l'année où il a terminé le livre.",
+      "tags": [
+        "litterature"
+      ]
+    },
+    {
+      "id": "art-0033",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Qui a peint Le Cri, ce personnage qui se tient le visage sur un pont ?",
+      "choices": [
+        "Edvard Munch",
+        "Egon Schiele",
+        "James Ensor",
+        "Francis Bacon"
+      ],
+      "answer": 0,
+      "fun": "Munch en a fait plusieurs versions. Deux ont été volées, et retrouvées.",
+      "tags": [
+        "peinture"
+      ]
+    },
+    {
+      "id": "art-0034",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 12,
+      "q": "Le cubisme, c'est d'abord l'affaire de deux peintres : Picasso et…",
+      "choices": [
+        "Georges Braque",
+        "Henri Matisse",
+        "Marc Chagall",
+        "Fernand Léger"
+      ],
+      "answer": 0,
+      "fun": "Braque disait qu'ils étaient « comme deux alpinistes encordés ». Leurs toiles de 1911 sont presque indiscernables.",
+      "tags": [
+        "peinture"
+      ]
+    },
+    {
+      "id": "art-0035",
+      "type": "libre",
+      "difficulty": 3,
+      "minAge": 12,
+      "q": "Quel peintre a couvert le plafond de la chapelle Sixtine ?",
+      "answer": "Michel-Ange",
+      "fun": "Il se considérait sculpteur, pas peintre, et a accepté le chantier de mauvaise grâce.",
+      "tags": [
+        "peinture"
+      ],
+      "accept": [
+        "michel ange",
+        "michel-ange",
+        "michelange"
+      ]
+    },
+    {
+      "id": "art-0036",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Quelle statue grecque du Louvre est célèbre pour ses bras manquants ?",
+      "choices": [
+        "La Vénus de Milo",
+        "La Victoire de Samothrace",
+        "Le Discobole",
+        "La Dame d'Auxerre"
+      ],
+      "answer": 0,
+      "fun": "Un paysan l'a déterrée sur l'île de Milos en 1820. Personne ne sait ce que ses bras faisaient.",
+      "tags": [
+        "sculpture",
+        "musee"
+      ]
+    },
+    {
+      "id": "art-0037",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Quel tableau de Delacroix montre une femme brandissant un drapeau tricolore au-dessus des barricades ?",
+      "choices": [
+        "La Liberté guidant le peuple",
+        "Le Radeau de la Méduse",
+        "Le Sacre de Napoléon",
+        "La Bataille de Taillebourg"
+      ],
+      "answer": 0,
+      "fun": "Il célèbre les Trois Glorieuses de 1830, pas la Révolution de 1789. Erreur classique.",
+      "tags": [
+        "peinture",
+        "piège"
+      ]
+    },
+    {
+      "id": "art-0038",
+      "type": "libre",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Quel est le vrai nom de Molière ?",
+      "answer": "Jean-Baptiste Poquelin",
+      "fun": "Il a pris un nom de scène pour épargner sa famille : son père était tapissier du roi, le théâtre n'était pas un métier respectable.",
+      "tags": [
+        "theatre"
+      ],
+      "accept": [
+        "jean baptiste poquelin",
+        "jean-baptiste poquelin",
+        "poquelin"
+      ]
+    },
+    {
+      "id": "art-0039",
+      "type": "vraifaux",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Molière est mort sur scène, en plein spectacle.",
+      "answer": false,
+      "fun": "Il a fini la représentation du Malade imaginaire, puis est mort chez lui quelques heures plus tard.",
+      "tags": [
+        "theatre",
+        "piège"
+      ]
+    },
+    {
+      "id": "art-0040",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Comment surnomme-t-on la Comédie-Française ?",
+      "choices": [
+        "La maison de Molière",
+        "Le temple des muses",
+        "La grande scène",
+        "La maison du roi"
+      ],
+      "answer": 0,
+      "fun": "La troupe est née sept ans après la mort de Molière, de la fusion de plusieurs compagnies.",
+      "tags": [
+        "theatre"
+      ]
+    },
+    {
+      "id": "art-0041",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 12,
+      "q": "Quel personnage de théâtre écrit des lettres d'amour pour un autre, à cause de son nez ?",
+      "choices": [
+        "Cyrano de Bergerac",
+        "Ruy Blas",
+        "Figaro",
+        "Tartuffe"
+      ],
+      "answer": 0,
+      "fun": "Cyrano a existé : écrivain et bretteur du XVIIe siècle, il avait déjà écrit un voyage dans la Lune.",
+      "tags": [
+        "theatre"
+      ]
+    },
+    {
+      "id": "art-0042",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 12,
+      "q": "Combien de syllabes compte un alexandrin ?",
+      "choices": [
+        "Douze",
+        "Huit",
+        "Dix",
+        "Quatorze"
+      ],
+      "answer": 0,
+      "fun": "Le nom vient du Roman d'Alexandre, un texte du XIIe siècle écrit dans ce mètre.",
+      "tags": [
+        "poesie"
+      ]
+    },
+    {
+      "id": "art-0043",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 12,
+      "q": "Qui a écrit le recueil de poèmes Les Fleurs du mal ?",
+      "choices": [
+        "Charles Baudelaire",
+        "Arthur Rimbaud",
+        "Paul Verlaine",
+        "Alfred de Musset"
+      ],
+      "answer": 0,
+      "fun": "Six poèmes du recueil ont été interdits en 1857. La condamnation n'a été annulée qu'en 1949.",
+      "tags": [
+        "poesie"
+      ]
+    },
+    {
+      "id": "art-0044",
+      "type": "libre",
+      "difficulty": 3,
+      "minAge": 12,
+      "q": "Quel écrivain a créé le commissaire Maigret ?",
+      "answer": "Georges Simenon",
+      "fun": "Simenon écrivait un roman en une dizaine de jours, enfermé, sans relire.",
+      "tags": [
+        "litterature"
+      ],
+      "accept": [
+        "simenon",
+        "georges simenon"
+      ]
+    },
+    {
+      "id": "art-0045",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 12,
+      "q": "Quel roman de Stephen King tient en un seul pronom ?",
+      "choices": [
+        "Ça",
+        "Lui",
+        "Eux",
+        "Nous"
+      ],
+      "answer": 0,
+      "fun": "Le clown Grippe-Sou n'est qu'une des formes de la chose. Le roman fait plus de mille pages.",
+      "tags": [
+        "litterature"
+      ]
+    },
+    {
+      "id": "art-0046",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 12,
+      "q": "Qui a écrit Le Seigneur des anneaux ?",
+      "choices": [
+        "J. R. R. Tolkien",
+        "C. S. Lewis",
+        "George R. R. Martin",
+        "Terry Pratchett"
+      ],
+      "answer": 0,
+      "fun": "Tolkien était professeur de langues anciennes. Il a inventé les langues elfiques avant l'histoire.",
+      "tags": [
+        "litterature"
+      ]
+    },
+    {
+      "id": "art-0047",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 12,
+      "q": "Dans le roman de Mary Shelley, comment s'appelle la créature de Frankenstein ?",
+      "choices": [
+        "Elle n'a pas de nom",
+        "Frankenstein",
+        "Igor",
+        "Adam"
+      ],
+      "answer": 0,
+      "fun": "Frankenstein, c'est le savant. La créature réclame justement un nom, et n'en obtient jamais.",
+      "tags": [
+        "litterature",
+        "piège"
+      ]
+    },
+    {
+      "id": "art-0048",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 13,
+      "q": "Dans La Métamorphose de Kafka, en quoi Gregor Samsa se réveille-t-il transformé ?",
+      "choices": [
+        "En insecte",
+        "En rat",
+        "En oiseau",
+        "En statue"
+      ],
+      "answer": 0,
+      "fun": "Kafka a exigé qu'aucune illustration ne montre la bête. Le texte reste volontairement flou.",
+      "tags": [
+        "litterature"
+      ]
+    },
+    {
+      "id": "art-0049",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Quel peintre japonais a gravé La Grande Vague de Kanagawa ?",
+      "choices": [
+        "Hokusai",
+        "Hiroshige",
+        "Utamaro",
+        "Sesshū"
+      ],
+      "answer": 0,
+      "fun": "Ce n'est pas un tsunami mais une vague de haute mer, et le mont Fuji se cache derrière.",
+      "tags": [
+        "peinture"
+      ]
+    },
+    {
+      "id": "art-0050",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Quelle peintre mexicaine s'est représentée des dizaines de fois, sourcils joints et fleurs dans les cheveux ?",
+      "choices": [
+        "Frida Kahlo",
+        "Remedios Varo",
+        "Tamara de Lempicka",
+        "Georgia O'Keeffe"
+      ],
+      "answer": 0,
+      "fun": "Un accident de bus à 18 ans l'a clouée au lit des mois. Elle a commencé à peindre avec un miroir au-dessus d'elle.",
+      "tags": [
+        "peinture"
+      ]
+    },
+    {
+      "id": "art-0051",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 12,
+      "q": "Chez Salvador Dalí, quel objet fond mollement sur une branche ?",
+      "choices": [
+        "Une montre",
+        "Un téléphone",
+        "Un chapeau",
+        "Un violon"
+      ],
+      "answer": 0,
+      "fun": "Dalí disait s'être inspiré d'un camembert qui coulait au soleil.",
+      "tags": [
+        "peinture"
+      ]
+    },
+    {
+      "id": "art-0052",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "À quoi servent les gargouilles d'une cathédrale ?",
+      "choices": [
+        "À évacuer l'eau de pluie",
+        "À effrayer les voleurs",
+        "À soutenir la voûte",
+        "À marquer les heures"
+      ],
+      "answer": 0,
+      "fun": "Une gargouille sans tuyau n'est pas une gargouille : c'est une chimère, purement décorative.",
+      "tags": [
+        "architecture"
+      ]
+    },
+    {
+      "id": "art-0053",
+      "type": "libre",
+      "difficulty": 3,
+      "minAge": 12,
+      "q": "Quel architecte a conçu la Sagrada Família ?",
+      "answer": "Antoni Gaudí",
+      "fun": "Gaudí est mort renversé par un tramway en 1926, et le chantier n'est toujours pas terminé.",
+      "tags": [
+        "architecture"
+      ],
+      "accept": [
+        "gaudi",
+        "antoni gaudi",
+        "antonio gaudi"
+      ]
+    },
+    {
+      "id": "art-0054",
+      "type": "estimation",
+      "difficulty": 3,
+      "minAge": 12,
+      "q": "Combien de membres compte l'Académie française quand tous les fauteuils sont occupés ?",
+      "answer": 40,
+      "unit": "membres",
+      "tol": {
+        "exact": true
+      },
+      "fun": "On les appelle les Immortels à cause de la devise du sceau, « À l'immortalité », pas à cause de leur santé.",
+      "tags": [
+        "litterature"
+      ]
+    },
+    {
+      "id": "art-0055",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 12,
+      "q": "Quel est le plus prestigieux prix littéraire français, décerné chaque automne ?",
+      "choices": [
+        "Le Goncourt",
+        "Le Pulitzer",
+        "Le Booker",
+        "Le Médicis"
+      ],
+      "answer": 0,
+      "fun": "Il rapporte dix euros. Tout le bénéfice est dans les ventes qui suivent.",
+      "tags": [
+        "litterature"
+      ]
+    },
+    {
+      "id": "art-0056",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 12,
+      "q": "Quel écrivain a signé L'Écume des jours, avec son nénuphar qui pousse dans un poumon ?",
+      "choices": [
+        "Boris Vian",
+        "Raymond Queneau",
+        "Albert Cohen",
+        "Romain Gary"
+      ],
+      "answer": 0,
+      "fun": "Vian était aussi trompettiste, traducteur de polars et inventeur breveté.",
+      "tags": [
+        "litterature"
+      ]
+    },
+    {
+      "id": "art-0057",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 12,
+      "q": "Quelle pâtisserie déclenche les souvenirs du narrateur chez Marcel Proust ?",
+      "choices": [
+        "Une madeleine",
+        "Un macaron",
+        "Un baba",
+        "Une brioche"
+      ],
+      "answer": 0,
+      "fun": "Dans un premier brouillon, ce n'était pas une madeleine mais du pain grillé.",
+      "tags": [
+        "litterature"
+      ]
+    },
+    {
+      "id": "art-0058",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 12,
+      "q": "Sous quel nom de plume écrivait Aurore Dupin, romancière du XIXe siècle qui portait le pantalon ?",
+      "choices": [
+        "George Sand",
+        "Colette",
+        "Anaïs Nin",
+        "Delphine de Girardin"
+      ],
+      "answer": 0,
+      "fun": "Le pantalon lui demandait une autorisation préfectorale : à Paris, il était interdit aux femmes sans permis.",
+      "tags": [
+        "litterature"
+      ]
+    },
+    {
+      "id": "art-0059",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Dans quelle ville se trouve le musée du Prado ?",
+      "choices": [
+        "Madrid",
+        "Barcelone",
+        "Lisbonne",
+        "Séville"
+      ],
+      "answer": 0,
+      "fun": "On y voit Les Ménines de Vélasquez, un tableau où le peintre s'est peint en train de peindre.",
+      "tags": [
+        "musee"
+      ]
+    },
+    {
+      "id": "art-0060",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 12,
+      "q": "Comment appelle-t-on une peinture réalisée sur un enduit encore frais, qui sèche avec le mur ?",
+      "choices": [
+        "Une fresque",
+        "Une gouache",
+        "Un pastel",
+        "Une sanguine"
+      ],
+      "answer": 0,
+      "fun": "Aucune retouche possible : une fois l'enduit sec, il faut recommencer la journée entière.",
+      "tags": [
+        "peinture",
+        "technique"
+      ]
+    },
+    {
+      "id": "art-0061",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Quel port Monet a-t-il peint dans Impression, soleil levant, le tableau qui a donné son nom à l'impressionnisme ?",
+      "choices": [
+        "Le Havre",
+        "Cherbourg",
+        "La Rochelle",
+        "Honfleur"
+      ],
+      "answer": 0,
+      "fun": "Le mot vient d'un critique qui se moquait. Les peintres l'ont ramassé et en ont fait leur enseigne.",
+      "tags": [
+        "peinture"
+      ]
+    },
+    {
+      "id": "art-0062",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Qui a peint Le Déjeuner sur l'herbe, cette femme nue attablée entre deux hommes habillés ?",
+      "choices": [
+        "Édouard Manet",
+        "Claude Monet",
+        "Auguste Renoir",
+        "Edgar Degas"
+      ],
+      "answer": 0,
+      "fun": "Manet et Monet, deux peintres différents, amis, et confondus depuis cent cinquante ans.",
+      "tags": [
+        "peinture",
+        "piège"
+      ]
+    },
+    {
+      "id": "art-0063",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Dans quel musée parisien les grands Nymphéas de Monet occupent-ils deux salles ovales ?",
+      "choices": [
+        "Le musée de l'Orangerie",
+        "Le musée d'Orsay",
+        "Le Petit Palais",
+        "Le musée Marmottan"
+      ],
+      "answer": 0,
+      "fun": "Monet a offert ces panneaux à l'État au lendemain de l'armistice de 1918, comme un monument à la paix.",
+      "tags": [
+        "peinture",
+        "musee"
+      ]
+    },
+    {
+      "id": "art-0064",
+      "type": "libre",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Qui a peint La Jeune Fille à la perle ?",
+      "answer": "Johannes Vermeer",
+      "fun": "On ne connaît qu'une trentaine de tableaux de Vermeer. Il peignait très lentement, et tenait une auberge pour vivre.",
+      "tags": [
+        "peinture"
+      ],
+      "accept": [
+        "vermeer",
+        "johannes vermeer",
+        "jan vermeer"
+      ]
+    },
+    {
+      "id": "art-0065",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Qui a peint La Ronde de nuit, immense portrait de groupe d'une milice d'Amsterdam ?",
+      "choices": [
+        "Rembrandt",
+        "Vermeer",
+        "Rubens",
+        "Van Dyck"
+      ],
+      "answer": 0,
+      "fun": "La scène se passe en plein jour. Le vernis noirci a fait croire à une scène nocturne, et le titre est resté.",
+      "tags": [
+        "peinture",
+        "piège"
+      ]
+    },
+    {
+      "id": "art-0066",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Qui a peint Le Radeau de la Méduse ?",
+      "choices": [
+        "Théodore Géricault",
+        "Eugène Delacroix",
+        "Jacques-Louis David",
+        "Gustave Courbet"
+      ],
+      "answer": 0,
+      "fun": "Géricault a fait construire un radeau dans son atelier et interrogé les survivants du naufrage.",
+      "tags": [
+        "peinture"
+      ]
+    },
+    {
+      "id": "art-0067",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Quel peintre a écrit « Ceci n'est pas une pipe » sous une pipe parfaitement reconnaissable ?",
+      "choices": [
+        "René Magritte",
+        "Salvador Dalí",
+        "Marcel Duchamp",
+        "Max Ernst"
+      ],
+      "answer": 0,
+      "fun": "Il avait raison : ce n'est pas une pipe, c'est l'image d'une pipe. Essayez de la bourrer.",
+      "tags": [
+        "peinture"
+      ]
+    },
+    {
+      "id": "art-0068",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Chez Magritte, qu'est-ce qui flotte devant le visage de l'homme au chapeau melon ?",
+      "choices": [
+        "Une pomme verte",
+        "Une colombe",
+        "Un nuage",
+        "Un miroir"
+      ],
+      "answer": 0,
+      "fun": "Le tableau s'appelle Le Fils de l'homme, et c'est un autoportrait.",
+      "tags": [
+        "peinture"
+      ]
+    },
+    {
+      "id": "art-0069",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Quel produit du supermarché Andy Warhol a-t-il sérigraphié en trente-deux toiles ?",
+      "choices": [
+        "Des boîtes de soupe Campbell",
+        "Des paquets de céréales",
+        "Des bouteilles de lait",
+        "Des boîtes de thon"
+      ],
+      "answer": 0,
+      "fun": "Trente-deux toiles pour les trente-deux parfums vendus à l'époque. Warhol disait en déjeuner tous les jours depuis vingt ans.",
+      "tags": [
+        "peinture"
+      ]
+    },
+    {
+      "id": "art-0070",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Quelle technique consiste à juxtaposer de minuscules points de couleur pure, que l'œil mélange à distance ?",
+      "choices": [
+        "Le pointillisme",
+        "Le fauvisme",
+        "Le tachisme",
+        "Le sfumato"
+      ],
+      "answer": 0,
+      "fun": "Seurat a mis deux ans sur Un dimanche après-midi à l'île de la Grande Jatte. Il est mort à 31 ans.",
+      "tags": [
+        "peinture",
+        "technique"
+      ]
+    },
+    {
+      "id": "art-0071",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Quel peintre viennois a couvert d'or Le Baiser ?",
+      "choices": [
+        "Gustav Klimt",
+        "Egon Schiele",
+        "Oskar Kokoschka",
+        "Otto Wagner"
+      ],
+      "answer": 0,
+      "fun": "Son père était graveur sur or. Klimt collait de vraies feuilles d'or sur ses toiles.",
+      "tags": [
+        "peinture"
+      ]
+    },
+    {
+      "id": "art-0072",
+      "type": "vraifaux",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Le musée d'Orsay est installé dans une ancienne gare.",
+      "answer": true,
+      "fun": "Gare d'Orsay, construite pour l'Exposition de 1900, devenue trop courte pour les trains modernes, sauvée de la démolition dans les années 1970.",
+      "tags": [
+        "musee",
+        "architecture"
+      ]
+    },
+    {
+      "id": "art-0073",
+      "type": "estimation",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Combien de vers compte un sonnet ?",
+      "answer": 14,
+      "unit": "vers",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Deux quatrains puis deux tercets. La forme vient d'Italie, et Ronsard l'a acclimatée en français.",
+      "tags": [
+        "poesie"
+      ]
+    },
+    {
+      "id": "art-0074",
+      "type": "estimation",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Combien de syllabes compte traditionnellement un haïku japonais ?",
+      "answer": 17,
+      "unit": "syllabes",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Réparties en 5, 7, 5. En japonais on ne compte pas vraiment des syllabes mais des mores, ce qui rend la traduction impossible à respecter.",
+      "tags": [
+        "poesie"
+      ]
+    },
+    {
+      "id": "art-0075",
+      "type": "estimation",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "En combien de volumes se déploie À la recherche du temps perdu de Marcel Proust ?",
+      "answer": 7,
+      "unit": "volumes",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Les trois derniers ont été publiés après sa mort. Il corrigeait encore ses épreuves quelques jours avant.",
+      "tags": [
+        "litterature"
+      ]
+    },
+    {
+      "id": "art-0076",
+      "type": "vraifaux",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Un écrivain a déjà refusé le prix Nobel de littérature.",
+      "answer": true,
+      "fun": "Jean-Paul Sartre, en 1964. Il refusait toute distinction officielle, disant qu'un écrivain ne doit pas se laisser institutionnaliser.",
+      "tags": [
+        "litterature"
+      ]
+    },
+    {
+      "id": "art-0077",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Quel est le vrai nom de Voltaire ?",
+      "choices": [
+        "François-Marie Arouet",
+        "Denis Diderot",
+        "Jean-Jacques Rousseau",
+        "Nicolas de Condorcet"
+      ],
+      "answer": 0,
+      "fun": "Personne ne sait d'où vient le pseudonyme. L'anagramme d'Arouet le jeune reste l'hypothèse la plus jolie.",
+      "tags": [
+        "litterature"
+      ]
+    },
+    {
+      "id": "art-0078",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Quel détective privé Raymond Chandler met-il en scène dans ses romans ?",
+      "choices": [
+        "Philip Marlowe",
+        "Nestor Burma",
+        "Hercule Poirot",
+        "Sam Spade"
+      ],
+      "answer": 0,
+      "fun": "Chandler a commencé à écrire à 44 ans, après avoir été viré d'une compagnie pétrolière.",
+      "tags": [
+        "litterature"
+      ]
+    },
+    {
+      "id": "art-0079",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Quel accessoire vestimentaire est devenu la signature d'Amélie Nothomb ?",
+      "choices": [
+        "Un grand chapeau noir",
+        "Des lunettes rouges",
+        "Une écharpe blanche",
+        "Des gants de dentelle"
+      ],
+      "answer": 0,
+      "fun": "Elle publie un roman par an depuis 1992, et dit en écrire trois pour n'en sortir qu'un.",
+      "tags": [
+        "litterature"
+      ]
+    },
+    {
+      "id": "art-0080",
+      "type": "libre",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Selon le titre du roman de Muriel Barbery, quel animal est élégant ?",
+      "answer": "Le hérisson",
+      "accept": [
+        "herisson",
+        "le herisson",
+        "un herisson"
+      ],
+      "fun": "L'Élégance du hérisson s'est vendu à plus d'un million d'exemplaires en France, pour un livre qui parle de Kant et de Tolstoï.",
+      "tags": [
+        "litterature"
+      ]
+    },
+    {
+      "id": "art-0081",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Quel album de Maurice Sendak envoie un garçon en costume de loup chez les monstres ?",
+      "choices": [
+        "Max et les Maximonstres",
+        "Le Géant de fer",
+        "Le Petit Prince",
+        "Fifi Brindacier"
+      ],
+      "answer": 0,
+      "fun": "Le livre a été jugé trop effrayant à sa sortie en 1963. Les enfants n'ont pas été de cet avis.",
+      "tags": [
+        "litterature",
+        "jeunesse"
+      ]
+    },
+    {
+      "id": "art-0082",
+      "type": "vraifaux",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Oscar Wilde n'a écrit qu'un seul roman.",
+      "answer": true,
+      "fun": "Le Portrait de Dorian Gray. Tout le reste est théâtre, contes, poèmes et bons mots.",
+      "tags": [
+        "litterature"
+      ]
+    },
+    {
+      "id": "art-0083",
+      "type": "vraifaux",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "C'est Robert Ludlum qui a écrit la trilogie Jason Bourne.",
+      "answer": true,
+      "fun": "Le Bourne des romans, publiés à partir de 1980, ne ressemble pas beaucoup à celui des films.",
+      "tags": [
+        "litterature"
+      ]
+    },
+    {
+      "id": "art-0084",
+      "type": "vraifaux",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Le Grevisse est un dictionnaire latin-français.",
+      "answer": false,
+      "fun": "C'est Le Bon Usage, la grammaire française de référence, signée du Belge Maurice Grevisse.",
+      "tags": [
+        "litterature",
+        "piège"
+      ]
+    },
+    {
+      "id": "art-0085",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Que se souhaitent les comédiens avant d'entrer en scène ?",
+      "choices": [
+        "Merde",
+        "Bonne chance",
+        "Bon vent",
+        "Beau jeu"
+      ],
+      "answer": 0,
+      "fun": "Du temps des calèches, plus il y avait de crottin devant le théâtre, plus la salle était pleine.",
+      "tags": [
+        "theatre"
+      ]
+    },
+    {
+      "id": "art-0086",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Qu'entend-on juste avant le lever du rideau, au théâtre ?",
+      "choices": [
+        "Les trois coups",
+        "Un coup de cloche",
+        "Un roulement de tambour",
+        "Un coup de sifflet"
+      ],
+      "answer": 0,
+      "fun": "Dans le théâtre classique, le régisseur martelait d'abord douze coups rapides pour prévenir les machinistes. Seuls les trois derniers, ceux du public, sont restés.",
+      "tags": [
+        "theatre"
+      ]
+    },
+    {
+      "id": "art-0087",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Qu'est-ce qui distingue d'abord une église gothique d'une église romane ?",
+      "choices": [
+        "L'arc brisé au lieu du plein cintre",
+        "La pierre au lieu du bois",
+        "La forme en croix",
+        "L'absence de clocher"
+      ],
+      "answer": 0,
+      "fun": "L'arc brisé pousse moins vers l'extérieur. C'est ce qui permet de monter haut et de percer les murs de vitraux.",
+      "tags": [
+        "architecture"
+      ]
+    },
+    {
+      "id": "art-0088",
+      "type": "libre",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Quelle adaptation radiophonique d'Orson Welles a affolé une partie des auditeurs américains en 1938 ?",
+      "answer": "La Guerre des mondes",
+      "accept": [
+        "la guerre des mondes",
+        "guerre des mondes",
+        "the war of the worlds"
+      ],
+      "fun": "La panique générale est surtout une légende, montée en épingle par les journaux qui détestaient la radio.",
+      "tags": [
+        "litterature",
+        "piège"
+      ]
+    },
+    {
+      "id": "art-0089",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Quelle sculptrice, élève et amante de Rodin, a signé La Valse et L'Âge mûr ?",
+      "choices": [
+        "Camille Claudel",
+        "Berthe Morisot",
+        "Suzanne Valadon",
+        "Sarah Bernhardt"
+      ],
+      "answer": 0,
+      "fun": "Son frère Paul, l'écrivain, l'a fait interner trente ans. Elle n'a plus jamais sculpté.",
+      "tags": [
+        "sculpture"
+      ]
+    },
+    {
+      "id": "art-0090",
+      "type": "estimation",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "En quelle année la Joconde a-t-elle été volée au Louvre ?",
+      "answer": 1911,
+      "unit": "",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Un vitrier italien l'a emportée sous sa blouse. Deux ans d'absence, et c'est ce vol qui l'a rendue mondialement célèbre.",
+      "tags": [
+        "peinture",
+        "musee"
+      ]
+    },
+    {
+      "id": "art-0091",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Quel écrivain a écrit dans un cahier d'écolier : « Je veux être Chateaubriand ou rien » ?",
+      "choices": [
+        "Victor Hugo",
+        "Alfred de Vigny",
+        "Stendhal",
+        "Alphonse de Lamartine"
+      ],
+      "answer": 0,
+      "fun": "Il avait quatorze ans. Il a tenu parole.",
+      "tags": [
+        "litterature"
+      ]
+    },
+    {
+      "id": "art-0092",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Lequel de ces peintres Rubens n'a-t-il pas pu rencontrer ?",
+      "choices": [
+        "Léonard de Vinci",
+        "Le Caravage",
+        "Rembrandt",
+        "Vélasquez"
+      ],
+      "answer": 0,
+      "fun": "Vinci est mort en 1519, près de soixante ans avant la naissance de Rubens.",
+      "tags": [
+        "peinture",
+        "piège"
+      ]
+    },
+    {
+      "id": "art-0093",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Quelle romancière française a créé le commissaire Jean-Baptiste Adamsberg ?",
+      "choices": [
+        "Fred Vargas",
+        "Andrea H. Japp",
+        "Dominique Manotti",
+        "Brigitte Aubert"
+      ],
+      "answer": 0,
+      "fun": "Fred Vargas est archéozoologue de métier : elle étudie les os d'animaux des fouilles, et écrit des polars en vacances.",
+      "tags": [
+        "litterature"
+      ]
+    },
+    {
+      "id": "art-0094",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Quel est le titre du troisième volet de la saga Millénium de Stieg Larsson ?",
+      "choices": [
+        "La Reine dans le palais des courants d'air",
+        "Les Hommes qui n'aimaient pas les femmes",
+        "La Fille qui rêvait d'un bidon d'essence",
+        "Ce qui ne me tue pas"
+      ],
+      "answer": 0,
+      "fun": "Larsson est mort avant la publication du premier tome. Il n'a rien vu du succès.",
+      "tags": [
+        "litterature"
+      ]
+    },
+    {
+      "id": "art-0095",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Comment s'appellent les parents de Gargantua, chez Rabelais ?",
+      "choices": [
+        "Grandgousier et Gargamelle",
+        "Pantagruel et Badebec",
+        "Panurge et Bacbuc",
+        "Picrochole et Gargamelle"
+      ],
+      "answer": 0,
+      "fun": "Gargantua naît par l'oreille de sa mère, après qu'elle a mangé trop de tripes.",
+      "tags": [
+        "litterature"
+      ]
+    },
+    {
+      "id": "art-0096",
+      "type": "libre",
+      "difficulty": 5,
+      "minAge": 12,
+      "q": "Dans Sans famille d'Hector Malot, comment s'appelle le vieux musicien ambulant à qui Rémi est vendu ?",
+      "answer": "Vitalis",
+      "accept": [
+        "vitalis",
+        "le signor vitalis",
+        "signor vitalis"
+      ],
+      "fun": "Vitalis traîne avec lui un singe et trois chiens, dont Capi, qui fait la quête avec une sébile.",
+      "tags": [
+        "litterature"
+      ]
+    },
+    {
+      "id": "art-0097",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Quel poème de Rimbaud commence par « Je m'en allais, les poings dans mes poches crevées » ?",
+      "choices": [
+        "Ma Bohème",
+        "Le Dormeur du val",
+        "Le Bateau ivre",
+        "Voyelles"
+      ],
+      "answer": 0,
+      "fun": "Il avait seize ans et fuguait à pied vers Paris. Le poème est un sonnet, en bonne et due forme.",
+      "tags": [
+        "poesie"
+      ]
+    },
+    {
+      "id": "art-0098",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Quel architecte a dessiné le musée Guggenheim de Bilbao, avec ses coques de titane ?",
+      "choices": [
+        "Frank Gehry",
+        "Renzo Piano",
+        "Zaha Hadid",
+        "Norman Foster"
+      ],
+      "answer": 0,
+      "fun": "Le musée a relancé toute une ville industrielle en déclin. Les urbanistes parlent depuis d'« effet Bilbao ».",
+      "tags": [
+        "architecture",
+        "musee"
+      ]
+    },
+    {
+      "id": "art-0099",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Qui a peint Le Jardin des délices, ce triptyque grouillant de créatures et de supplices ?",
+      "choices": [
+        "Jérôme Bosch",
+        "Pieter Bruegel l'Ancien",
+        "Matthias Grünewald",
+        "Lucas Cranach"
+      ],
+      "answer": 0,
+      "fun": "Sur le panneau de l'enfer, un damné a une partition tatouée sur les fesses. Des musiciens l'ont enregistrée.",
+      "tags": [
+        "peinture"
+      ]
+    },
+    {
+      "id": "art-0100",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Qui a reçu le tout premier prix Nobel de littérature, en 1901 ?",
+      "choices": [
+        "Sully Prudhomme",
+        "Rudyard Kipling",
+        "Léon Tolstoï",
+        "Anatole France"
+      ],
+      "answer": 0,
+      "fun": "Le choix a fait scandale : beaucoup attendaient Tolstoï, qui n'a jamais eu le prix.",
+      "tags": [
+        "litterature"
+      ]
+    }
+  ]
+}

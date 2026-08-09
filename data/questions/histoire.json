@@ -1,7 +1,7 @@
 {
   "category": "histoire",
   "label": "Histoire & Grandes dates",
-  "version": 1,
+  "version": 3,
   "questions": [
     {
       "id": "his-0001",
@@ -11,9 +11,14 @@
       "q": "En quelle année a eu lieu la prise de la Bastille ?",
       "answer": 1789,
       "unit": "",
-      "tol": { "exact": true },
+      "tol": {
+        "exact": true
+      },
       "fun": "Il n'y avait que sept prisonniers à l'intérieur ce jour-là.",
-      "tags": ["france", "révolution"]
+      "tags": [
+        "france",
+        "révolution"
+      ]
     },
     {
       "id": "his-0002",
@@ -23,9 +28,14 @@
       "q": "En quelle année un homme a-t-il marché sur la Lune pour la première fois ?",
       "answer": 1969,
       "unit": "",
-      "tol": { "exact": true },
+      "tol": {
+        "exact": true
+      },
       "fun": "L'ordinateur de bord d'Apollo 11 avait moins de puissance qu'une calculatrice de collège.",
-      "tags": ["espace", "xxe siècle"]
+      "tags": [
+        "espace",
+        "xxe siècle"
+      ]
     },
     {
       "id": "his-0003",
@@ -33,10 +43,18 @@
       "difficulty": 2,
       "minAge": 9,
       "q": "Quel empereur français a été vaincu à Waterloo ?",
-      "choices": ["Louis XVI", "Charlemagne", "Napoléon Ier", "Napoléon III"],
+      "choices": [
+        "Louis XVI",
+        "Charlemagne",
+        "Napoléon Ier",
+        "Napoléon III"
+      ],
       "answer": 2,
       "fun": "La bataille a duré une seule journée. Elle a mis fin à vingt ans de guerres en Europe.",
-      "tags": ["france", "batailles"]
+      "tags": [
+        "france",
+        "batailles"
+      ]
     },
     {
       "id": "his-0004",
@@ -45,9 +63,16 @@
       "minAge": 9,
       "q": "Quel navigateur a atteint l'Amérique en 1492 pour le compte de l'Espagne ?",
       "answer": "Christophe Colomb",
-      "accept": ["christophe colomb", "colomb", "colombo", "columbus"],
+      "accept": [
+        "christophe colomb",
+        "colomb",
+        "colombo",
+        "columbus"
+      ],
       "fun": "Il est mort persuadé d'avoir atteint l'Asie.",
-      "tags": ["explorations"]
+      "tags": [
+        "explorations"
+      ]
     },
     {
       "id": "his-0005",
@@ -55,77 +80,117 @@
       "difficulty": 2,
       "minAge": 10,
       "q": "Quel roi de France a fait construire le château de Versailles ?",
-      "choices": ["François Ier", "Louis XIV", "Henri IV", "Louis XVI"],
+      "choices": [
+        "François Ier",
+        "Louis XIV",
+        "Henri IV",
+        "Louis XVI"
+      ],
       "answer": 1,
       "fun": "Le château n'avait quasiment aucune salle de bain. La cour se parfumait pour compenser.",
-      "tags": ["france", "royauté"]
+      "tags": [
+        "france",
+        "royauté"
+      ]
     },
     {
       "id": "his-0006",
       "type": "estimation",
-      "difficulty": 3,
+      "difficulty": 2,
       "minAge": 10,
       "q": "En quelle année le mur de Berlin est-il tombé ?",
       "answer": 1989,
       "unit": "",
-      "tol": { "exact": true },
+      "tol": {
+        "exact": true
+      },
       "fun": "Il était debout depuis 28 ans. Il est tombé en une nuit, en partie à cause d'une conférence de presse mal préparée.",
-      "tags": ["xxe siècle"]
+      "tags": [
+        "xxe siècle"
+      ]
     },
     {
       "id": "his-0007",
       "type": "qcm",
-      "difficulty": 3,
+      "difficulty": 2,
       "minAge": 10,
       "q": "Quelle civilisation a construit la cité du Machu Picchu ?",
-      "choices": ["Les Aztèques", "Les Mayas", "Les Incas", "Les Olmèques"],
+      "choices": [
+        "Les Aztèques",
+        "Les Mayas",
+        "Les Incas",
+        "Les Olmèques"
+      ],
       "answer": 2,
       "fun": "Elle a été bâtie sans roue, sans fer et sans mortier. Les pierres sont ajustées au millimètre.",
-      "tags": ["civilisations"]
+      "tags": [
+        "civilisations"
+      ]
     },
     {
       "id": "his-0008",
       "type": "qcm",
-      "difficulty": 3,
+      "difficulty": 2,
       "minAge": 10,
       "q": "Quel pays a offert la statue de la Liberté aux États-Unis ?",
-      "choices": ["Le Royaume-Uni", "La France", "L'Espagne", "Les Pays-Bas"],
+      "choices": [
+        "Le Royaume-Uni",
+        "La France",
+        "L'Espagne",
+        "Les Pays-Bas"
+      ],
       "answer": 1,
       "fun": "Sa charpente intérieure a été conçue par Gustave Eiffel, avant sa tour.",
-      "tags": ["monuments"]
+      "tags": [
+        "monuments"
+      ]
     },
     {
       "id": "his-0009",
       "type": "estimation",
-      "difficulty": 3,
+      "difficulty": 2,
       "minAge": 11,
       "q": "En quelle année a commencé la Première Guerre mondiale ?",
       "answer": 1914,
       "unit": "",
-      "tol": { "exact": true },
+      "tol": {
+        "exact": true
+      },
       "fun": "Tout le monde pensait qu'elle serait terminée avant Noël. Elle a duré quatre ans et trois mois.",
-      "tags": ["guerres"]
+      "tags": [
+        "guerres"
+      ]
     },
     {
       "id": "his-0010",
       "type": "vraifaux",
-      "difficulty": 3,
+      "difficulty": 2,
       "minAge": 11,
       "q": "La Première Guerre mondiale s'est achevée un 11 novembre.",
       "answer": true,
       "fun": "L'armistice a été signé à 5 h 15 du matin et est entré en vigueur à 11 h. Des soldats sont morts pendant ces six heures.",
-      "tags": ["guerres"]
+      "tags": [
+        "guerres"
+      ]
     },
     {
       "id": "his-0011",
       "type": "qcm",
-      "difficulty": 4,
+      "difficulty": 3,
       "minAge": 11,
       "q": "Qui fut la première femme à recevoir un prix Nobel ?",
-      "choices": ["Rosalind Franklin", "Marie Curie", "Ada Lovelace", "Simone de Beauvoir"],
+      "choices": [
+        "Rosalind Franklin",
+        "Marie Curie",
+        "Ada Lovelace",
+        "Simone de Beauvoir"
+      ],
       "answer": 1,
       "fun": "Elle en a même reçu deux, dans deux disciplines différentes : physique puis chimie. Personne d'autre n'a fait ça.",
-      "tags": ["sciences", "femmes"]
+      "tags": [
+        "sciences",
+        "femmes"
+      ]
     },
     {
       "id": "his-0012",
@@ -135,18 +200,26 @@
       "q": "Cléopâtre était d'origine grecque, et non égyptienne.",
       "answer": true,
       "fun": "Elle descendait d'un général macédonien d'Alexandre le Grand. Elle fut la première de sa dynastie à apprendre l'égyptien.",
-      "tags": ["antiquité"]
+      "tags": [
+        "antiquité"
+      ]
     },
     {
       "id": "his-0013",
       "type": "libre",
-      "difficulty": 4,
+      "difficulty": 3,
       "minAge": 12,
       "q": "Quel général carthaginois a traversé les Alpes avec des éléphants pour attaquer Rome ?",
       "answer": "Hannibal",
-      "accept": ["hannibal", "hannibal barca", "annibal"],
+      "accept": [
+        "hannibal",
+        "hannibal barca",
+        "annibal"
+      ],
       "fun": "Il est parti avec 37 éléphants. Un seul a survécu à la traversée.",
-      "tags": ["antiquité"]
+      "tags": [
+        "antiquité"
+      ]
     },
     {
       "id": "his-0014",
@@ -156,9 +229,14 @@
       "q": "Combien d'années a réellement duré la guerre de Cent Ans ?",
       "answer": 116,
       "unit": "ans",
-      "tol": { "pct": 10 },
+      "tol": {
+        "exact": true
+      },
       "fun": "De 1337 à 1453. Le nom a été inventé bien plus tard par des historiens.",
-      "tags": ["france", "piège"]
+      "tags": [
+        "france",
+        "piège"
+      ]
     },
     {
       "id": "his-0015",
@@ -166,66 +244,449 @@
       "difficulty": 4,
       "minAge": 12,
       "q": "Quelle bataille de 1066 a fait de Guillaume le Conquérant le roi d'Angleterre ?",
-      "choices": ["Azincourt", "Hastings", "Bouvines", "Crécy"],
+      "choices": [
+        "Azincourt",
+        "Hastings",
+        "Bouvines",
+        "Crécy"
+      ],
       "answer": 1,
       "fun": "C'est pour cette raison que l'anglais est truffé de mots français : cette conquête a duré des siècles dans la langue.",
-      "tags": ["batailles", "moyen âge"]
+      "tags": [
+        "batailles",
+        "moyen âge"
+      ]
     },
     {
       "id": "his-0016",
       "type": "qcm",
-      "difficulty": 5,
+      "difficulty": 3,
       "minAge": 12,
       "q": "Quel traité met officiellement fin à la Première Guerre mondiale en 1919 ?",
-      "choices": ["Le traité de Rome", "Le traité de Versailles", "Le traité de Vienne", "Le traité de Westphalie"],
+      "choices": [
+        "Le traité de Rome",
+        "Le traité de Versailles",
+        "Le traité de Vienne",
+        "Le traité de Westphalie"
+      ],
       "answer": 1,
       "fun": "Signé dans la galerie des Glaces, précisément là où l'Empire allemand avait été proclamé en 1871. Le choix n'était pas innocent.",
-      "tags": ["guerres", "traités"]
+      "tags": [
+        "guerres",
+        "traités"
+      ]
     },
     {
       "id": "his-0017",
       "type": "estimation",
-      "difficulty": 5,
+      "difficulty": 4,
       "minAge": 12,
       "q": "En quelle année Jeanne d'Arc a-t-elle été brûlée à Rouen ?",
       "answer": 1431,
       "unit": "",
-      "tol": { "exact": true },
+      "tol": {
+        "exact": true
+      },
       "fun": "Elle avait 19 ans. Elle a été réhabilitée 25 ans plus tard, puis canonisée en 1920.",
-      "tags": ["france", "moyen âge"]
+      "tags": [
+        "france",
+        "moyen âge"
+      ]
     },
     {
       "id": "his-0018",
       "type": "qcm",
-      "difficulty": 5,
+      "difficulty": 2,
       "minAge": 13,
       "q": "Quelle invention Gutenberg met-il au point vers 1450 ?",
-      "choices": ["La boussole", "L'imprimerie à caractères mobiles", "Le télescope", "Le papier"],
+      "choices": [
+        "La boussole",
+        "L'imprimerie à caractères mobiles",
+        "Le télescope",
+        "Le papier"
+      ],
       "answer": 1,
       "fun": "En cinquante ans, l'Europe est passée de quelques milliers de livres à plus de vingt millions.",
-      "tags": ["inventions"]
+      "tags": [
+        "inventions"
+      ]
     },
     {
       "id": "his-0019",
       "type": "qcm",
-      "difficulty": 5,
+      "difficulty": 4,
       "minAge": 13,
       "q": "En quelle année l'Empire romain d'Occident s'effondre-t-il définitivement ?",
-      "choices": ["En 313", "En 410", "En 476", "En 622"],
+      "choices": [
+        "En 313",
+        "En 410",
+        "En 476",
+        "En 622"
+      ],
       "answer": 2,
       "fun": "Date de convention : le dernier empereur, Romulus Augustule, est déposé sans même être tué. Il avait 16 ans.",
-      "tags": ["antiquité"]
+      "tags": [
+        "antiquité"
+      ]
     },
     {
       "id": "his-0020",
       "type": "qcm",
-      "difficulty": 3,
+      "difficulty": 1,
       "minAge": 10,
       "q": "Quel peuple a construit les pyramides de Gizeh ?",
-      "choices": ["Les Sumériens", "Les Égyptiens", "Les Perses", "Les Phéniciens"],
+      "choices": [
+        "Les Sumériens",
+        "Les Égyptiens",
+        "Les Perses",
+        "Les Phéniciens"
+      ],
       "answer": 1,
       "fun": "La pyramide de Khéops est restée la plus haute construction humaine pendant près de 4 000 ans.",
-      "tags": ["antiquité", "monuments"]
+      "tags": [
+        "antiquité",
+        "monuments"
+      ]
+    },
+    {
+      "id": "his-0021",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Quel traité met fin à la guerre de Trente Ans en 1648 ?",
+      "choices": [
+        "Le traité d'Utrecht",
+        "Les traités de Westphalie",
+        "Le traité de Vienne",
+        "Le traité de Tordesillas"
+      ],
+      "answer": 1,
+      "fun": "On y a inventé la façon moderne de faire la paix : des États qui négocient en égaux, sans personne au-dessus d'eux.",
+      "tags": [
+        "europe",
+        "diplomatie"
+      ]
+    },
+    {
+      "id": "his-0022",
+      "type": "libre",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Qui a tiré sur l'archiduc François-Ferdinand à Sarajevo en 1914 ?",
+      "answer": "Gavrilo Princip",
+      "accept": [
+        "gavrilo princip",
+        "princip"
+      ],
+      "fun": "Il avait 19 ans. Sa tentative du matin avait échoué ; le chauffeur de l'archiduc s'est trompé de rue et s'est arrêté juste devant lui.",
+      "tags": [
+        "piège"
+      ]
+    },
+    {
+      "id": "his-0023",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 12,
+      "q": "Quel roi de France signe l'édit de Nantes en 1598 ?",
+      "choices": [
+        "François Ier",
+        "Henri IV",
+        "Louis XIII",
+        "Charles IX"
+      ],
+      "answer": 1,
+      "fun": "Louis XIV l'a révoqué 87 ans plus tard. Des centaines de milliers de protestants ont quitté le royaume, avec leurs métiers.",
+      "tags": [
+        "france"
+      ]
+    },
+    {
+      "id": "his-0024",
+      "type": "libre",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Quel révolutionnaire français Charlotte Corday a-t-elle tué dans sa baignoire en 1793 ?",
+      "answer": "Jean-Paul Marat",
+      "accept": [
+        "marat",
+        "jean paul marat",
+        "jean-paul marat"
+      ],
+      "fun": "Une maladie de peau l'obligeait à travailler dans l'eau. David en a tiré son tableau le plus connu.",
+      "tags": [
+        "france"
+      ]
+    },
+    {
+      "id": "his-0025",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Sous quelle dynastie la Cité interdite de Pékin a-t-elle été bâtie ?",
+      "choices": [
+        "Les Han",
+        "Les Tang",
+        "Les Ming",
+        "Les Qing"
+      ],
+      "answer": 2,
+      "fun": "Quatorze ans de chantier, terminé en 1420. Les Qing, arrivés deux siècles plus tard, n'ont eu qu'à emménager.",
+      "tags": [
+        "asie"
+      ]
+    },
+    {
+      "id": "his-0026",
+      "type": "estimation",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Combien d'années Louis XIV a-t-il régné ?",
+      "answer": 72,
+      "unit": "ans",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Roi à 4 ans, mort à 76. Il a enterré son fils, son petit-fils et son arrière-petit-fils aîné.",
+      "tags": [
+        "france",
+        "records"
+      ]
+    },
+    {
+      "id": "his-0027",
+      "type": "estimation",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "En quelle année les Suissesses ont-elles obtenu le droit de vote au niveau fédéral ?",
+      "answer": 1971,
+      "unit": "",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Et un canton a résisté jusqu'en 1990, où le Tribunal fédéral a dû l'y contraindre.",
+      "tags": [
+        "europe",
+        "piège"
+      ]
+    },
+    {
+      "id": "his-0028",
+      "type": "estimation",
+      "difficulty": 3,
+      "minAge": 12,
+      "q": "En quelle année les Françaises obtiennent-elles le droit de vote ?",
+      "answer": 1944,
+      "unit": "",
+      "tol": {
+        "exact": true
+      },
+      "fun": "L'ordonnance date d'avril 1944 ; le premier bulletin dans l'urne, d'avril 1945, aux municipales.",
+      "tags": [
+        "france"
+      ]
+    },
+    {
+      "id": "his-0029",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 12,
+      "q": "Qui fut le premier empereur romain ?",
+      "choices": [
+        "Jules César",
+        "Auguste",
+        "Néron",
+        "Trajan"
+      ],
+      "answer": 1,
+      "fun": "César n'a jamais été empereur : il est mort dictateur. C'est son fils adoptif qui a inventé la fonction.",
+      "tags": [
+        "piège",
+        "antiquité"
+      ]
+    },
+    {
+      "id": "his-0030",
+      "type": "vraifaux",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Magellan a bouclé lui-même le premier tour du monde.",
+      "answer": false,
+      "fun": "Tué aux Philippines en 1521. C'est Elcano qui a ramené la Victoria à Séville, avec une poignée de survivants.",
+      "tags": [
+        "piège"
+      ]
+    },
+    {
+      "id": "his-0031",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 12,
+      "q": "Quel chancelier a réalisé l'unification allemande en 1871 ?",
+      "choices": [
+        "Metternich",
+        "Bismarck",
+        "Adenauer",
+        "Hindenburg"
+      ],
+      "answer": 1,
+      "fun": "C'est lui qui a inventé la retraite d'État, en 1889, pour couper l'herbe sous le pied des socialistes.",
+      "tags": [
+        "europe"
+      ]
+    },
+    {
+      "id": "his-0032",
+      "type": "estimation",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Combien de jours a duré la Commune de Paris, en 1871 ?",
+      "answer": 72,
+      "unit": "jours",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Du 18 mars au 28 mai. Soixante-douze jours qui alimentent les débats depuis un siècle et demi.",
+      "tags": [
+        "france"
+      ]
+    },
+    {
+      "id": "his-0033",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Quelle ville abrite la plus ancienne université d'Europe encore en activité ?",
+      "choices": [
+        "Oxford",
+        "Bologne",
+        "Paris",
+        "Salamanque"
+      ],
+      "answer": 1,
+      "fun": "Fondée en 1088. À ses débuts, ce sont les étudiants qui recrutaient les professeurs et fixaient leur paie.",
+      "tags": [
+        "europe"
+      ]
+    },
+    {
+      "id": "his-0034",
+      "type": "libre",
+      "difficulty": 3,
+      "minAge": 12,
+      "q": "Quel pharaon a vu sa tombe découverte presque intacte en 1922 ?",
+      "answer": "Toutânkhamon",
+      "accept": [
+        "toutankhamon",
+        "toutânkhamon",
+        "tout ankh amon",
+        "toutankamon"
+      ],
+      "fun": "Un roi mineur, mort vers 19 ans. Il doit sa célébrité au fait que les pilleurs l'avaient oublié.",
+      "tags": [
+        "antiquité"
+      ]
+    },
+    {
+      "id": "his-0035",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 12,
+      "q": "Quelle épidémie a emporté environ un tiers des Européens au XIVe siècle ?",
+      "choices": [
+        "La variole",
+        "La peste noire",
+        "Le choléra",
+        "La grippe espagnole"
+      ],
+      "answer": 1,
+      "fun": "Arrivée par bateau en 1347. Il a fallu près de deux siècles à l'Europe pour retrouver sa population.",
+      "tags": [
+        "europe"
+      ]
+    },
+    {
+      "id": "his-0036",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Quel roi d'Angleterre a rompu avec Rome pour créer l'Église anglicane ?",
+      "choices": [
+        "Richard Cœur de Lion",
+        "Henri VIII",
+        "Jacques Ier",
+        "Charles Ier"
+      ],
+      "answer": 1,
+      "fun": "Il voulait divorcer, le pape refusait. Il s'est nommé chef de l'Église, puis a divorcé.",
+      "tags": [
+        "europe"
+      ]
+    },
+    {
+      "id": "his-0037",
+      "type": "libre",
+      "difficulty": 4,
+      "minAge": 14,
+      "q": "Quel sultan ottoman du XVIe siècle les Européens ont-ils surnommé « le Magnifique » ?",
+      "answer": "Soliman",
+      "accept": [
+        "soliman",
+        "soliman le magnifique",
+        "souleiman",
+        "suleiman",
+        "süleyman"
+      ],
+      "fun": "En Turquie, on l'appelle « le Législateur ». Le « Magnifique », c'est nous qui l'avons inventé.",
+      "tags": [
+        "piège"
+      ]
+    },
+    {
+      "id": "his-0038",
+      "type": "vraifaux",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "La Seconde Guerre mondiale s'est terminée le même jour en Europe et en Asie.",
+      "answer": false,
+      "fun": "Le 8 mai 1945 en Europe, le 2 septembre en Asie. Près de quatre mois d'écart.",
+      "tags": [
+        "piège"
+      ]
+    },
+    {
+      "id": "his-0039",
+      "type": "libre",
+      "difficulty": 3,
+      "minAge": 13,
+      "q": "Quelle ville fut la capitale de l'Empire byzantin ?",
+      "answer": "Constantinople",
+      "accept": [
+        "constantinople",
+        "byzance"
+      ],
+      "fun": "Devenue Istanbul, un nom rendu officiel seulement en 1930.",
+      "tags": [
+        "antiquité"
+      ]
+    },
+    {
+      "id": "his-0040",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Quel pays a mené deux guerres contre la Chine au XIXe siècle pour protéger un commerce très rentable ?",
+      "choices": [
+        "Le Portugal",
+        "Le Royaume-Uni",
+        "La Russie",
+        "Les Pays-Bas"
+      ],
+      "answer": 1,
+      "fun": "Hong Kong lui est passé entre les mains à l'issue de la première, en 1842, et n'est revenu à la Chine qu'en 1997.",
+      "tags": [
+        "asie"
+      ]
     }
   ]
 }

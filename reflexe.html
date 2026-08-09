@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<title>Quiz Famille · Réflexe</title>
+<meta name="theme-color" content="#02141f">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<script>
+tailwind.config = { theme: { extend: {
+  fontFamily: { sans:['Inter','sans-serif'], serif:['Playfair Display','serif'] },
+  colors: { q: { blue:'#41B6E6', dark:'#002B49', red:'#E4002B', sand:'#F5F1EA' } }
+}}}
+</script>
+<style>
+  *{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+  body{background:#02141f;color:#e2e8f0;font-family:Inter,sans-serif;
+       min-height:100dvh;overscroll-behavior:none}
+  .card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);
+        border-radius:1.25rem;backdrop-filter:blur(12px)}
+  .kicker{font-size:.68rem;letter-spacing:.26em;text-transform:uppercase;font-weight:800}
+  .kicker-line{display:block;height:3px;width:60px;background:#E4002B;margin:.55rem 0 0;border-radius:2px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+       padding:1rem 1.2rem;border-radius:.8rem;font-weight:700;cursor:pointer;font-size:1rem;
+       border:1px solid transparent;transition:all .25s cubic-bezier(.16,1,.3,1)}
+  .btn:active:not(:disabled){transform:scale(.98)}
+  .btn:disabled{opacity:.35;cursor:not-allowed}
+  .btn-primary{background:#41B6E6;color:#002B49}
+  .btn-ghost{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.14);color:#e2e8f0}
+  .btn-red{background:#E4002B;color:#fff}
+  .inp{width:100%;padding:.9rem 1rem;border-radius:.8rem;background:rgba(255,255,255,.05);
+       border:1px solid rgba(255,255,255,.14);color:#fff;font-size:1.05rem}
+  .inp:focus{outline:none;border-color:#41B6E6}
+  .lbl{font-size:.64rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+       color:#7e93a6;display:block;margin-bottom:.35rem}
+  .prop{width:100%;text-align:left;padding:1.15rem 1.2rem;border-radius:.8rem;font-size:1.05rem;
+        background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);color:#fff;
+        transition:all .2s cubic-bezier(.16,1,.3,1);margin-bottom:.7rem;display:block}
+  .prop:active{transform:scale(.99);border-color:#41B6E6}
+  .lettre{display:inline-flex;width:1.9rem;height:1.9rem;border-radius:.5rem;margin-right:.7rem;
+          align-items:center;justify-content:center;background:rgba(65,182,230,.16);color:#41B6E6;
+          font-weight:800;font-size:.9rem}
+  .chip{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem .8rem;border-radius:.7rem;
+        font-size:.8rem;font-weight:600;cursor:pointer;margin:0 .4rem .4rem 0;
+        background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);color:#94a3b8;
+        transition:all .2s cubic-bezier(.16,1,.3,1)}
+  .chip.on{color:#fff;border-color:var(--c);background:color-mix(in srgb,var(--c) 16%,transparent)}
+  .gros-chiffre{font-family:'Playfair Display',serif;font-weight:900;font-size:4.5rem;line-height:1}
+  table{width:100%;border-collapse:collapse;font-size:.85rem}
+  th{text-align:left;font-size:.6rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+     color:#7e93a6;padding:.45rem .5rem;border-bottom:1px solid rgba(255,255,255,.1)}
+  td{padding:.55rem .5rem;border-bottom:1px solid rgba(255,255,255,.055);color:#cbd5e1}
+  .vue{display:none} .vue.on{display:block}
+  input[type=range]{accent-color:#41B6E6;width:100%}
+</style>
+</head>
+<body>
+<div class="max-w-md mx-auto px-5 py-8">
+
+  <!-- ================= accueil ================= -->
+  <div id="vAccueil" class="vue on">
+    <p class="kicker text-q-blue">Quiz Famille</p><span class="kicker-line"></span>
+    <h1 class="font-serif text-5xl font-black text-white mt-4">Réflexe</h1>
+    <p class="text-sm text-slate-400 mt-3 leading-relaxed">
+      Tout le monde voit la même question en même temps, sur son propre téléphone.
+      Le temps compte, mais seulement si la réponse est juste.
+      Se tromper coûte des points&nbsp;: quand tu ne sais pas, passe.
+    </p>
+
+    <div class="card p-5 mt-6 space-y-4">
+      <div><label class="lbl" for="inNom">Ton prénom</label>
+        <input id="inNom" class="inp" placeholder="Bruno" autocomplete="given-name"></div>
+      <div><label class="lbl" for="inAge">Ton âge</label>
+        <input id="inAge" class="inp" type="number" min="3" max="110" placeholder="40">
+        <p class="text-xs text-slate-600 mt-2">
+          Il sert à choisir les questions et à te laisser plus de temps de lecture si tu es jeune.</p></div>
+      <button id="bCreer" class="btn btn-primary w-full">
+        <i class="fa-solid fa-plus"></i>Créer une partie</button>
+    </div>
+
+    <p class="text-center text-xs text-slate-600 my-4">ou rejoins celle d'un copain</p>
+
+    <div class="card p-5 space-y-3">
+      <input id="inCode" class="inp uppercase tracking-[.35em] text-center font-black text-2xl"
+             placeholder="CODE" maxlength="4" autocomplete="off" autocapitalize="characters">
+      <button id="bRejoindre" class="btn btn-ghost w-full">
+        <i class="fa-solid fa-right-to-bracket"></i>Rejoindre</button>
+    </div>
+    <p id="erreur" class="text-sm mt-4 text-center text-red-300"></p>
+  </div>
+
+  <!-- ================= salon ================= -->
+  <div id="vSalon" class="vue">
+    <p class="kicker text-q-blue">Réflexe</p><span class="kicker-line"></span>
+    <div class="card p-6 mt-5 text-center">
+      <p class="kicker text-slate-500">Code de la partie</p>
+      <p id="sCode" class="gros-chiffre text-white tracking-[.15em] my-3">····</p>
+      <button id="bInviter" class="btn btn-primary w-full">
+        <i class="fa-solid fa-share-nodes"></i>Inviter des joueurs</button>
+      <p id="sEtat" class="text-xs text-slate-500 mt-3"></p>
+      <p id="sHorloge" class="text-[.65rem] text-slate-600 mt-1"></p>
+    </div>
+
+    <div class="card p-5 mt-5">
+      <p class="kicker text-slate-500 mb-3">Autour de la table</p>
+      <div id="sJoueurs"></div>
+    </div>
+
+    <div id="sReglages" class="mt-5"></div>
+
+    <div class="flex flex-col gap-3 mt-6 pb-10">
+      <button id="bLancer" class="btn btn-primary hidden" disabled>
+        <i class="fa-solid fa-play"></i>Lancer la partie</button>
+      <p id="sAttente" class="text-sm text-slate-400 text-center"></p>
+      <button id="bQuitter" class="btn btn-ghost">
+        <i class="fa-solid fa-arrow-left"></i>Quitter</button>
+    </div>
+  </div>
+
+  <!-- ================= lecture ================= -->
+  <div id="vLecture" class="vue text-center">
+    <div class="flex items-center justify-between text-xs">
+      <span id="lManche" class="text-slate-500"></span>
+      <span id="lCat" class="kicker"></span>
+    </div>
+    <p id="lEnonce" class="font-serif text-2xl font-bold text-white mt-8 leading-snug text-left"></p>
+    <p id="lCompte" class="gros-chiffre text-q-blue mt-10"></p>
+    <p class="text-sm text-slate-500 mt-4">Lis bien. Les réponses arrivent.</p>
+  </div>
+
+  <!-- ================= réponse ================= -->
+  <div id="vRep" class="vue">
+    <div class="flex items-center justify-between text-xs mb-4">
+      <span id="rChrono" class="font-bold text-q-blue"></span>
+      <span id="rMeta" class="text-slate-500"></span>
+    </div>
+    <p id="rEnonce" class="text-base font-semibold text-white leading-snug mb-5"></p>
+    <div id="rZone"></div>
+    <button id="bPasse" class="btn btn-ghost w-full mt-2 mb-10">
+      <i class="fa-solid fa-forward"></i>Je passe · 0 point</button>
+  </div>
+
+  <!-- ================= attente ================= -->
+  <div id="vAttente" class="vue text-center py-16">
+    <i class="fa-solid fa-hourglass-half text-4xl text-slate-600"></i>
+    <p id="aTemps" class="font-serif text-3xl font-black text-white mt-6"></p>
+    <p id="aInfo" class="text-sm text-slate-400 mt-3"></p>
+  </div>
+
+  <!-- ================= résultat ================= -->
+  <div id="vResultat" class="vue">
+    <p class="kicker text-q-blue">La réponse</p><span class="kicker-line"></span>
+    <p id="resBonne" class="font-serif text-2xl font-black text-white mt-4"></p>
+    <p id="resFun" class="text-sm text-slate-400 mt-3 leading-relaxed"></p>
+    <div class="card p-4 mt-6"><div id="resTable"></div></div>
+    <button id="bSuite" class="btn btn-primary w-full mt-6 hidden">
+      Question suivante<i class="fa-solid fa-arrow-right"></i></button>
+    <p id="resAttente" class="text-sm text-slate-500 text-center mt-6 mb-10"></p>
+  </div>
+
+  <!-- ================= fin ================= -->
+  <div id="vFin" class="vue">
+    <p class="kicker text-q-red">Terminé</p><span class="kicker-line"></span>
+    <h2 class="font-serif text-4xl font-black text-white mt-4">Classement</h2>
+    <div class="card p-4 mt-6"><div id="finTable"></div></div>
+    <button id="bRejouer" class="btn btn-primary w-full mt-6 mb-10">
+      <i class="fa-solid fa-rotate-right"></i>Retour au salon</button>
+  </div>
+
+</div>
+
+<script src="js/transport.js"></script>
+<script src="js/drawer.js"></script>
+<script src="js/reflexe.js"></script>
+</body>
+</html>

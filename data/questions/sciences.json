@@ -1,7 +1,7 @@
 {
   "category": "sciences",
   "label": "Sciences & Corps humain",
-  "version": 1,
+  "version": 2,
   "questions": [
     {
       "id": "sci-0001",
@@ -9,10 +9,17 @@
       "difficulty": 1,
       "minAge": 6,
       "q": "Quel organe pompe le sang dans tout le corps ?",
-      "choices": ["Le foie", "Le cœur", "Les poumons", "L'estomac"],
+      "choices": [
+        "Le foie",
+        "Le cœur",
+        "Les poumons",
+        "L'estomac"
+      ],
       "answer": 1,
       "fun": "Il bat environ 100 000 fois par jour, sans jamais faire de pause.",
-      "tags": ["corps humain"]
+      "tags": [
+        "corps humain"
+      ]
     },
     {
       "id": "sci-0002",
@@ -20,10 +27,17 @@
       "difficulty": 1,
       "minAge": 7,
       "q": "Quelle planète est surnommée « la planète rouge » ?",
-      "choices": ["Vénus", "Jupiter", "Mars", "Saturne"],
+      "choices": [
+        "Vénus",
+        "Jupiter",
+        "Mars",
+        "Saturne"
+      ],
       "answer": 2,
       "fun": "Sa couleur vient de l'oxyde de fer : c'est littéralement de la rouille.",
-      "tags": ["espace"]
+      "tags": [
+        "espace"
+      ]
     },
     {
       "id": "sci-0003",
@@ -33,9 +47,13 @@
       "q": "Combien de dents compte un adulte, dents de sagesse incluses ?",
       "answer": 32,
       "unit": "dents",
-      "tol": { "pct": 8 },
+      "tol": {
+        "exact": true
+      },
       "fun": "Les enfants n'en ont que 20. Et de plus en plus d'adultes n'ont jamais de dents de sagesse.",
-      "tags": ["corps humain"]
+      "tags": [
+        "corps humain"
+      ]
     },
     {
       "id": "sci-0004",
@@ -43,10 +61,17 @@
       "difficulty": 2,
       "minAge": 7,
       "q": "Quelle planète est la plus proche du Soleil ?",
-      "choices": ["Vénus", "Mercure", "La Terre", "Mars"],
+      "choices": [
+        "Vénus",
+        "Mercure",
+        "La Terre",
+        "Mars"
+      ],
       "answer": 1,
       "fun": "Une année sur Mercure dure 88 jours terrestres. Mais une de ses journées dure 176 jours.",
-      "tags": ["espace"]
+      "tags": [
+        "espace"
+      ]
     },
     {
       "id": "sci-0005",
@@ -56,7 +81,9 @@
       "q": "Au niveau de la mer, l'eau bout à 100 °C.",
       "answer": true,
       "fun": "En altitude, la pression baisse et elle bout plus tôt : à 90 °C au sommet du mont Blanc. Les pâtes y sont mauvaises.",
-      "tags": ["physique"]
+      "tags": [
+        "physique"
+      ]
     },
     {
       "id": "sci-0006",
@@ -66,9 +93,13 @@
       "q": "Combien d'os compte le squelette d'un adulte ?",
       "answer": 206,
       "unit": "os",
-      "tol": { "pct": 10 },
+      "tol": {
+        "pct": 10
+      },
       "fun": "Un bébé en a environ 270 : certains fusionnent en grandissant.",
-      "tags": ["corps humain"]
+      "tags": [
+        "corps humain"
+      ]
     },
     {
       "id": "sci-0007",
@@ -78,31 +109,50 @@
       "q": "Combien de planètes compte le système solaire ?",
       "answer": 8,
       "unit": "planètes",
-      "tol": { "exact": true },
+      "tol": {
+        "exact": true
+      },
       "fun": "Neuf jusqu'en 2006, année où Pluton a été rétrogradée en « planète naine ».",
-      "tags": ["espace"]
+      "tags": [
+        "espace"
+      ]
     },
     {
       "id": "sci-0008",
       "type": "qcm",
-      "difficulty": 3,
+      "difficulty": 2,
       "minAge": 9,
       "q": "Quel est le plus grand organe du corps humain ?",
-      "choices": ["Le foie", "Les poumons", "La peau", "L'intestin"],
+      "choices": [
+        "Le foie",
+        "Les poumons",
+        "La peau",
+        "L'intestin"
+      ],
       "answer": 2,
       "fun": "Environ 2 m² et 4 kg chez un adulte. C'est bien un organe, à part entière.",
-      "tags": ["corps humain"]
+      "tags": [
+        "corps humain"
+      ]
     },
     {
       "id": "sci-0009",
       "type": "qcm",
-      "difficulty": 4,
+      "difficulty": 3,
       "minAge": 9,
       "q": "Quel gaz est le plus abondant dans l'air que nous respirons ?",
-      "choices": ["L'oxygène", "L'azote", "Le dioxyde de carbone", "L'hydrogène"],
+      "choices": [
+        "L'oxygène",
+        "L'azote",
+        "Le dioxyde de carbone",
+        "L'hydrogène"
+      ],
       "answer": 1,
       "fun": "78 % d'azote, 21 % d'oxygène. On respire donc surtout un gaz dont notre corps ne fait rien.",
-      "tags": ["chimie", "piège"]
+      "tags": [
+        "chimie",
+        "piège"
+      ]
     },
     {
       "id": "sci-0010",
@@ -111,9 +161,15 @@
       "minAge": 9,
       "q": "Quel organe, au nombre de deux, filtre le sang et fabrique l'urine ?",
       "answer": "Les reins",
-      "accept": ["rein", "les reins", "reins"],
+      "accept": [
+        "rein",
+        "les reins",
+        "reins"
+      ],
       "fun": "Ils filtrent environ 180 litres de sang par jour, pour n'en garder qu'un litre et demi d'urine.",
-      "tags": ["corps humain"]
+      "tags": [
+        "corps humain"
+      ]
     },
     {
       "id": "sci-0011",
@@ -121,10 +177,17 @@
       "difficulty": 2,
       "minAge": 10,
       "q": "Quelle est la formule chimique de l'eau ?",
-      "choices": ["CO2", "H2O", "O2", "NaCl"],
+      "choices": [
+        "CO2",
+        "H2O",
+        "O2",
+        "NaCl"
+      ],
       "answer": 1,
       "fun": "Deux atomes d'hydrogène, un d'oxygène. Et une molécule bizarrement coudée, ce qui explique presque toutes ses propriétés.",
-      "tags": ["chimie"]
+      "tags": [
+        "chimie"
+      ]
     },
     {
       "id": "sci-0012",
@@ -134,9 +197,13 @@
       "q": "Quelle est la température moyenne du corps humain, en degrés Celsius ?",
       "answer": 37,
       "unit": "°C",
-      "tol": { "pct": 5 },
+      "tol": {
+        "exact": true
+      },
       "fun": "En réalité plutôt 36,6 °C, et elle a légèrement baissé depuis deux siècles selon les études récentes.",
-      "tags": ["corps humain"]
+      "tags": [
+        "corps humain"
+      ]
     },
     {
       "id": "sci-0013",
@@ -146,85 +213,124 @@
       "q": "Le cœur d'un nouveau-né bat plus vite que celui d'un adulte.",
       "answer": true,
       "fun": "Environ 130 battements par minute contre 70. Plus l'animal est petit, plus son cœur s'emballe : la souris est à 600.",
-      "tags": ["corps humain"]
+      "tags": [
+        "corps humain"
+      ]
     },
     {
       "id": "sci-0014",
       "type": "qcm",
-      "difficulty": 3,
+      "difficulty": 1,
       "minAge": 11,
       "q": "Qui a formulé la théorie de la relativité ?",
-      "choices": ["Isaac Newton", "Albert Einstein", "Galilée", "Niels Bohr"],
+      "choices": [
+        "Isaac Newton",
+        "Albert Einstein",
+        "Galilée",
+        "Niels Bohr"
+      ],
       "answer": 1,
       "fun": "Il a reçu le prix Nobel, mais pas pour la relativité : pour ses travaux sur l'effet photoélectrique.",
-      "tags": ["physique"]
+      "tags": [
+        "physique"
+      ]
     },
     {
       "id": "sci-0015",
       "type": "libre",
-      "difficulty": 3,
+      "difficulty": 2,
       "minAge": 11,
       "q": "Quel savant anglais a énoncé la loi de la gravitation universelle ?",
       "answer": "Isaac Newton",
-      "accept": ["newton", "isaac newton"],
+      "accept": [
+        "newton",
+        "isaac newton"
+      ],
       "fun": "L'histoire de la pomme vient de lui-même, racontée des décennies plus tard. Personne ne sait si c'est vrai.",
-      "tags": ["physique"]
+      "tags": [
+        "physique"
+      ]
     },
     {
       "id": "sci-0016",
       "type": "estimation",
-      "difficulty": 4,
+      "difficulty": 3,
       "minAge": 11,
       "q": "Combien de chromosomes compte une cellule humaine ?",
       "answer": 46,
       "unit": "chromosomes",
-      "tol": { "pct": 8 },
+      "tol": {
+        "exact": true
+      },
       "fun": "23 paires. Le petit pois en a 14, la fougère langue-de-serpent plus de 1 200.",
-      "tags": ["biologie"]
+      "tags": [
+        "biologie"
+      ]
     },
     {
       "id": "sci-0017",
       "type": "qcm",
-      "difficulty": 4,
+      "difficulty": 3,
       "minAge": 11,
       "q": "Quel est l'élément chimique le plus abondant dans l'univers ?",
-      "choices": ["L'oxygène", "Le carbone", "L'hydrogène", "Le fer"],
+      "choices": [
+        "L'oxygène",
+        "Le carbone",
+        "L'hydrogène",
+        "Le fer"
+      ],
       "answer": 2,
       "fun": "Environ 75 % de la matière ordinaire. C'est le carburant de toutes les étoiles.",
-      "tags": ["chimie", "espace"]
+      "tags": [
+        "chimie",
+        "espace"
+      ]
     },
     {
       "id": "sci-0018",
       "type": "vraifaux",
-      "difficulty": 4,
+      "difficulty": 3,
       "minAge": 12,
       "q": "Le diamant et la mine de crayon sont faits du même élément chimique.",
       "answer": true,
       "fun": "Du carbone pur dans les deux cas. Seule l'organisation des atomes change — et avec elle, le prix.",
-      "tags": ["chimie"]
+      "tags": [
+        "chimie"
+      ]
     },
     {
       "id": "sci-0019",
       "type": "estimation",
-      "difficulty": 4,
+      "difficulty": 2,
       "minAge": 12,
       "q": "Quelle est la vitesse de la lumière, en kilomètres par seconde ?",
       "answer": 300000,
       "unit": "km/s",
-      "tol": { "pct": 10 },
+      "tol": {
+        "pct": 10
+      },
       "fun": "Exactement 299 792,458 km/s. Cette valeur n'est plus mesurée : c'est elle qui définit le mètre.",
-      "tags": ["physique"]
+      "tags": [
+        "physique"
+      ]
     },
     {
       "id": "sci-0020",
       "type": "qcm",
-      "difficulty": 5,
+      "difficulty": 3,
       "minAge": 12,
       "q": "Quelle partie du cerveau coordonne l'équilibre et les mouvements précis ?",
-      "choices": ["Le cortex frontal", "Le cervelet", "L'hypothalamus", "Le bulbe rachidien"],
+      "choices": [
+        "Le cortex frontal",
+        "Le cervelet",
+        "L'hypothalamus",
+        "Le bulbe rachidien"
+      ],
       "answer": 1,
       "fun": "Il ne représente que 10 % du volume du cerveau, mais contient plus de la moitié de ses neurones.",
-      "tags": ["corps humain"]
+      "tags": [
+        "corps humain"
+      ]
     }
   ]
 }

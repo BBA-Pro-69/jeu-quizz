@@ -174,6 +174,79 @@ tr:last-child td{border-bottom:none}
   transform-origin:left;animation:fondre linear forwards}
 @keyframes fondre{from{transform:scaleX(1)}to{transform:scaleX(0)}}
 
+/* =========================================================
+   PODIUM DE FIN
+   Les marches poussent depuis le sol, de la troisième à la
+   première. Tout est piloté par js/reflexe.js, qui pose la
+   classe .on marche par marche : le CSS ne fait qu'exécuter.
+   La hauteur vient de la variable --h, posée en ligne selon
+   le rang — deux ex aequo obtiennent donc la même marche.
+   ========================================================= */
+.scene{position:relative;margin-top:1.5rem}
+#finPaillettes{position:absolute;top:0;left:0;right:0;height:1px;pointer-events:none;overflow:visible;z-index:3}
+#finPaillettes span{position:absolute;top:0;width:6px;height:10px;border-radius:1px;opacity:0;
+  animation:tomber 1.9s cubic-bezier(.3,.7,.4,1) forwards}
+@keyframes tomber{
+  0%  {opacity:0;   transform:translateY(-14px) rotate(0deg)}
+  12% {opacity:.95}
+  100%{opacity:0;   transform:translateY(250px) rotate(420deg)}
+}
+
+.podium{display:flex;align-items:flex-end;justify-content:center;gap:.55rem;min-height:238px}
+.marche{flex:1 1 0;max-width:9rem;display:flex;flex-direction:column;align-items:center;
+  opacity:0;transform:translateY(12px);
+  transition:opacity .4s cubic-bezier(.16,1,.3,1), transform .4s cubic-bezier(.16,1,.3,1)}
+.marche.on{opacity:1;transform:none}
+
+.pion{position:relative;margin-bottom:.5rem}
+.jeton{display:flex;width:2.9rem;height:2.9rem;border-radius:50%;align-items:center;justify-content:center;
+  font-family:'Playfair Display',serif;font-weight:900;font-size:1.25rem;color:#fff;
+  background:radial-gradient(circle at 32% 26%, color-mix(in srgb,var(--c) 55%,#fff), var(--c));
+  border:2px solid rgba(244,234,213,.32);box-shadow:0 6px 16px rgba(0,0,0,.32)}
+.medaille{position:absolute;right:-.4rem;bottom:-.3rem;font-size:1.1rem;
+  filter:drop-shadow(0 2px 4px rgba(0,0,0,.5))}
+.medaille.or     {color:#F0C978}
+.medaille.argent {color:#DCE3E7}
+.medaille.bronze {color:#D08E56}
+
+.pnom{font-weight:800;font-size:.9rem;color:#fff;text-align:center;line-height:1.15;
+  max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pnom.moi{color:var(--laiton-clair)}
+.pscore{font-family:'Playfair Display',serif;font-weight:900;font-size:1.5rem;
+  color:var(--creme);line-height:1.15;font-variant-numeric:tabular-nums}
+.pdetail{font-size:.6rem;letter-spacing:.08em;color:rgba(244,234,213,.42);margin-bottom:.45rem}
+
+.bloc{width:100%;height:0;border-radius:12px 12px 4px 4px;position:relative;overflow:hidden;
+  display:flex;align-items:flex-start;justify-content:center;
+  transition:height .6s cubic-bezier(.16,1,.3,1)}
+.marche.on .bloc{height:var(--h)}
+.bloc .rang{font-family:'Playfair Display',serif;font-weight:900;font-size:1.4rem;
+  margin-top:.3rem;color:rgba(0,0,0,.32)}
+.bloc.or    {background:linear-gradient(170deg,#F0C978,#C79733);box-shadow:0 12px 28px rgba(216,169,75,.3)}
+.bloc.argent{background:linear-gradient(170deg,#E8EDF0,#A9B4BB)}
+.bloc.bronze{background:linear-gradient(170deg,#E0A26B,#A96C3C)}
+/* Un seul passage de lumière sur la marche du vainqueur. Pas de boucle :
+   une brillance qui clignote en continu fatigue au bout de dix secondes. */
+.marche.vainqueur .bloc::after{content:"";position:absolute;top:0;left:-60%;width:55%;height:100%;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.5),transparent);
+  animation:reflet 1.4s cubic-bezier(.16,1,.3,1) .4s 1}
+@keyframes reflet{to{left:125%}}
+
+#finSous{opacity:0;transition:opacity .45s ease}
+#finSous.on{opacity:1}
+#finReste,#finActions{opacity:0;transform:translateY(8px);
+  transition:opacity .45s cubic-bezier(.16,1,.3,1), transform .45s cubic-bezier(.16,1,.3,1)}
+#finReste.on,#finActions.on{opacity:1;transform:none}
+
+/* Certains jouent avec les animations coupées au niveau du système.
+   On leur donne le classement d'un bloc, sans rien casser. */
+@media (prefers-reduced-motion: reduce){
+  .marche,#finSous,#finReste,#finActions{opacity:1!important;transform:none!important}
+  .bloc{transition:none}
+  .marche.vainqueur .bloc::after{display:none}
+  #finPaillettes{display:none}
+}
+
 .vue{display:none} .vue.on{display:block;animation:entree .35s cubic-bezier(.16,1,.3,1)}
 @keyframes entree{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 input[type=range]{accent-color:var(--laiton);width:100%}
@@ -322,17 +395,26 @@ input[type=range]{accent-color:var(--laiton);width:100%}
   </div>
 
   <!-- ================= fin =================
-       Quatre boutons, mais jamais quatre à la fois : le script montre
-       les deux premiers à l'hôte, le troisième aux invités. -->
+       Podium en trois marches, remplies par afficherFin(). Le HTML ne
+       contient aucune marche en dur : à deux joueurs il n'y en a que
+       deux, à un joueur une seule, et le tableau des places 4 et
+       suivantes ne s'affiche que s'il y a du monde dedans. -->
   <div id="vFin" class="vue">
     <div class="relative">
       <span class="parts" style="top:-4rem;opacity:.22"></span>
       <p class="kicker" style="color:var(--cerise)">Fin de partie</p><span class="kicker-line"></span>
       <h2 class="titre titre-l mt-4">Le classement</h2>
+      <p id="finSous" class="text-sm creme opacity-80 mt-1"></p>
     </div>
-    <div class="card p-4 mt-6"><div id="finTable"></div></div>
 
-    <div class="flex flex-col gap-3 mt-6">
+    <div class="scene">
+      <div id="finPaillettes"></div>
+      <div id="finPodium" class="podium"></div>
+    </div>
+
+    <div id="finReste" class="card p-3 mt-5 hidden"></div>
+
+    <div id="finActions" class="flex flex-col gap-3 mt-6">
       <button id="bRemettre" class="btn btn-primary hidden">
         <i class="fa-solid fa-rotate-right"></i>Remettre ça</button>
       <button id="bReglages" class="btn btn-ghost hidden">

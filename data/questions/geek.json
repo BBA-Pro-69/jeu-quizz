@@ -1,7 +1,7 @@
 {
   "category": "geek",
   "label": "Jeux vidéo, BD & Manga",
-  "version": 1,
+  "version": 2,
   "note": "Catégorie 'revanche des enfants' : volontairement calibrée pour que les plus jeunes battent les adultes.",
   "questions": [
     {
@@ -120,7 +120,7 @@
       "answer": 151,
       "unit": "Pokémon",
       "tol": {
-        "pct": 5
+        "exact": true
       },
       "fun": "« Attrapez-les tous » était donc un objectif à 151. On en est aujourd'hui à plus de mille.",
       "tags": [
@@ -198,7 +198,7 @@
     {
       "id": "gek-0012",
       "type": "qcm",
-      "difficulty": 3,
+      "difficulty": 2,
       "minAge": 8,
       "q": "Dans quelle région vivent Astérix et Obélix ?",
       "choices": [
@@ -217,7 +217,7 @@
     {
       "id": "gek-0013",
       "type": "libre",
-      "difficulty": 3,
+      "difficulty": 4,
       "minAge": 9,
       "q": "Qui a créé le manga Dragon Ball ?",
       "answer": "Akira Toriyama",
@@ -311,7 +311,7 @@
     {
       "id": "gek-0019",
       "type": "qcm",
-      "difficulty": 3,
+      "difficulty": 2,
       "minAge": 8,
       "q": "Quelle est la particularité physique du personnage de BD Titeuf ?",
       "choices": [
@@ -329,7 +329,7 @@
     {
       "id": "gek-0020",
       "type": "qcm",
-      "difficulty": 4,
+      "difficulty": 3,
       "minAge": 10,
       "q": "Quel jeu vidéo est le plus vendu de toute l'histoire ?",
       "choices": [

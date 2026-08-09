@@ -37,10 +37,20 @@ function esc(s) {
     return { '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;' }[c];
   });
 }
+/* Les écrans nouvellement ajoutés peuvent manquer si le HTML n'est pas
+   encore à jour. On ne veut pas qu'une page à moitié déployée casse la
+   partie, donc tout accès à un élément optionnel passe par ces deux-là. */
+function poser_(s, t)  { var e = $(s); if (e) e.textContent = t; }
+function cacher_(s, v) { var e = $(s); if (e) e.classList.toggle('hidden', !!v); }
+
 function vue(id) {
   ['vAccueil','vSalon','vLecture','vRep','vAttente','vResultat','vFin'].forEach(function (v) {
-    $('#' + v).classList.toggle('on', v === id);
+    var e = $('#' + v); if (e) e.classList.toggle('on', v === id);
   });
+  /* La sortie n'a de sens qu'une fois assis à une table. Sur l'écran de
+     fin, elle figure déjà dans la liste des boutons. */
+  var q = $('#bQuitter');
+  if (q) q.classList.toggle('on', id !== 'vAccueil' && id !== 'vFin');
   window.scrollTo({ top: 0 });
 }
 function sec(ms) { return (ms / 1000).toFixed(2).replace('.', ',') + ' s'; }
@@ -71,7 +81,7 @@ async function garderAllume() {
   try { veille = await navigator.wakeLock.request('screen'); } catch (e) {}
 }
 document.addEventListener('visibilitychange', function () {
-  if (document.visibilityState === 'visible' && !veille) garderAllume();
+  if (document.visibilityState === 'visible' && !veille && canal) garderAllume();
 });
 
 /* ===================================================================
@@ -90,9 +100,11 @@ function init() {
 
   $('#bCreer').onclick     = function () { if (lireMoi()) creerPartie(); };
   $('#bRejoindre').onclick = function () { if (lireMoi()) rejoindre($('#inCode').value.trim().toUpperCase()); };
-  $('#bQuitter').onclick   = function () { if (canal) canal.fermer(); location.reload(); };
   $('#bInviter').onclick   = inviter;
   $('#bPasse').onclick     = function () { repondre(null); };
+
+  var bq = $('#bQuitter');
+  if (bq) bq.onclick = function () { quitterTable(false); };
 }
 
 function lireMoi() {
@@ -134,6 +146,51 @@ function pepin(e) {
 }
 
 /* ===================================================================
+   Quitter la table
+   Un broadcast ne se stocke pas : celui qui part sans prévenir n'est
+   jamais oublié par les autres. L'hôte continuerait d'attendre sa
+   réponse à chaque manche jusqu'à l'expiration du minuteur — la partie
+   avancerait au ralenti sans que personne comprenne pourquoi.
+   D'où le 'bye' de l'invité et le 'ferme' de l'hôte, émis AVANT de
+   couper le canal.
+   =================================================================== */
+function quitterTable(subi) {
+  if (!subi && canal && !confirm(hote
+        ? 'Fermer la table ? Tout le monde sera renvoyé à l\'accueil.'
+        : 'Quitter la table ?')) return;
+
+  tousStop();
+
+  var c = canal;
+  if (c) {
+    try {
+      if (!subi) c.envoyer(hote ? 'ferme' : 'bye', {});
+      /* 150 ms pour laisser le message partir : fermer le WebSocket
+         dans la foulée l'avalerait silencieusement. */
+      setTimeout(function () { try { c.fermer(); } catch (e) {} }, subi ? 0 : 150);
+    } catch (e) {}
+  }
+
+  if (veille) { try { veille.release(); } catch (e) {} veille = null; }
+
+  canal = null; G = null; M = null; hote = false;
+  pioche = null; cats = []; choisies = [];
+
+  /* On remet le salon dans l'état où creerPartie() / rejoindre()
+     s'attendent à le trouver, sinon la table suivante hérite des
+     boutons de la précédente. */
+  cacher_('#bLancer', true);
+  cacher_('#bInviter', false);
+  poser_('#sEtat', '');
+  poser_('#sAttente', '');
+  poser_('#sHorloge', '');
+  var r = $('#sReglages'); if (r) r.innerHTML = '';
+
+  vue('vAccueil');
+  poser_('#erreur', subi ? 'L\'hôte a fermé la table.' : '');
+}
+
+/* ===================================================================
    Créer une partie — ce téléphone devient l'hôte, et joue quand même
    =================================================================== */
 function creerPartie() {
@@ -161,11 +218,29 @@ function creerPartie() {
   });
   canal.sur('rep', function (d) { encaisser(d); });
 
+  /* Quelqu'un s'en va proprement : on l'enlève de la table. Si la
+     manche n'attendait plus que lui, on la clôt tout de suite au lieu
+     de patienter jusqu'au bout du minuteur. */
+  canal.sur('bye', function (d) {
+    if (!G || !G.joueurs[d.de]) return;
+    var parti = G.joueurs[d.de].nom;
+    delete G.joueurs[d.de];
+    delete G.reps[d.de];
+    diffuserSalle();
+    if (G.phase === 'salon') {
+      rendreSalon();
+      poser_('#sEtat', parti + ' a quitté la table.');
+    } else if (G.Q && Object.keys(G.reps).length >= liste().length) {
+      tousStop(); cloturer();
+    }
+  });
+
   G.joueurs[canal.id] = { de: canal.id, nom: moi.nom, age: moi.age,
                           score: 0, bonnes: 0, posees: 0, moi: true, delai: 0 };
 
   $('#sCode').textContent = code;
   $('#bLancer').classList.remove('hidden');
+  $('#bInviter').classList.remove('hidden');
   vue('vSalon'); rendreSalon(); garderAllume();
 
   canal.connecter().then(chargerBanque).catch(pepin);
@@ -305,6 +380,15 @@ function rejoindre(code) {
   canal.sur('resultat', function (d) { afficherResultat(d); });
   canal.sur('fin',      function (d) { afficherFin(d.classement); });
 
+  /* L'hôte veut retoucher les réglages : tout le monde revient au salon. */
+  canal.sur('relance', function () {
+    tousStop();
+    M = null;
+    vue('vSalon');
+    poser_('#sAttente', 'L\'hôte prépare une nouvelle partie…');
+  });
+  canal.sur('ferme', function () { quitterTable(true); });
+
   vue('vSalon'); rendreSalonInvite([]); garderAllume();
 
   canal.connecter()
@@ -419,6 +503,7 @@ function cloturer() {
 }
 
 function terminer() {
+  G.phase = 'fin';
   var classement = liste().map(function (j) {
     return { de: j.de, nom: j.nom, score: j.score, bonnes: j.bonnes, posees: j.posees };
   }).sort(function (a, b) { return b.score - a.score; });
@@ -555,9 +640,18 @@ function afficherResultat(res) {
   }
 }
 
+/* ===================================================================
+   Fin de partie
+   L'hôte a deux sorties : enchaîner tout de suite avec les mêmes
+   réglages, ou revenir au salon pour les changer. Les invités n'ont
+   rien à faire dans le premier cas — la question suivante arrive
+   toute seule — mais encore faut-il le leur écrire.
+   =================================================================== */
 function afficherFin(classement) {
   tousStop();
+  M = null;
   vue('vFin');
+
   $('#finTable').innerHTML =
     '<table><thead><tr><th></th><th>Joueur</th><th>Bonnes</th><th>Score</th></tr></thead><tbody>' +
     classement.map(function (g, i) {
@@ -568,10 +662,36 @@ function afficherFin(classement) {
              '<td class="font-bold text-white">' + g.score + '</td></tr>';
     }).join('') + '</tbody></table>';
 
-  $('#bRejouer').onclick = function () {
+  cacher_('#bRemettre', !hote);
+  cacher_('#bReglages', !hote);
+  cacher_('#bRejouer',   hote);
+  poser_('#finAttente', hote
+    ? ''
+    : 'Reste là : si l\'hôte relance, la première question arrivera toute seule.');
+
+  var remettre = $('#bRemettre');
+  if (remettre) remettre.onclick = function () { if (hote) lancer(); };
+
+  var reglages = $('#bReglages');
+  if (reglages) reglages.onclick = function () {
+    if (!hote) return;
+    canal.envoyer('relance', {});
+    G.phase = 'salon';
+    vue('vSalon');
+    rendreSalon();
+  };
+
+  /* Bouton historique : il existe encore dans l'ancien HTML, où il est
+     seul. On lui garde un comportement sensé dans les deux cas. */
+  var rejouer = $('#bRejouer');
+  if (rejouer) rejouer.onclick = function () {
     vue('vSalon');
     if (hote) { G.phase = 'salon'; rendreSalon(); }
+    else poser_('#sAttente', 'En attente de l\'hôte.');
   };
+
+  var partir = $('#bPartir');
+  if (partir) partir.onclick = function () { quitterTable(false); };
 }
 
 init();

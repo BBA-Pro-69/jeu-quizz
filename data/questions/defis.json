@@ -1,8 +1,7 @@
 {
   "category": "defis",
   "label": "Défis & Mimes",
-  "version": 1,
-  "note": "Aucune connaissance requise. scoring 'individuel' = le joueur réussit ou non. scoring 'collectif' = l'équipe marque si elle devine. 'vote' = les autres joueurs votent si c'est validé.",
+  "version": 2,
   "questions": [
     {
       "id": "def-0001",
@@ -13,7 +12,9 @@
       "duration": 30,
       "scoring": "collectif",
       "fun": "Interdis les bruits de bouche : c'est dix fois plus drôle.",
-      "tags": ["mime"]
+      "tags": [
+        "mime"
+      ]
     },
     {
       "id": "def-0002",
@@ -23,7 +24,9 @@
       "q": "Cite 5 marques de voiture en 15 secondes.",
       "duration": 15,
       "scoring": "individuel",
-      "tags": ["rapidité"]
+      "tags": [
+        "rapidité"
+      ]
     },
     {
       "id": "def-0003",
@@ -34,7 +37,9 @@
       "duration": 25,
       "scoring": "vote",
       "fun": "Le record du monde de virelangue tient plus de la respiration que de la langue.",
-      "tags": ["langue"]
+      "tags": [
+        "langue"
+      ]
     },
     {
       "id": "def-0004",
@@ -44,7 +49,9 @@
       "q": "Dessine une girafe en 20 secondes... les yeux fermés. Les autres doivent la reconnaître.",
       "duration": 20,
       "scoring": "collectif",
-      "tags": ["dessin"]
+      "tags": [
+        "dessin"
+      ]
     },
     {
       "id": "def-0005",
@@ -55,7 +62,9 @@
       "duration": 30,
       "scoring": "individuel",
       "fun": "C'est un test utilisé pour évaluer la charge mentale. Presque personne n'y arrive du premier coup.",
-      "tags": ["mémoire"]
+      "tags": [
+        "mémoire"
+      ]
     },
     {
       "id": "def-0006",
@@ -66,7 +75,9 @@
       "duration": 30,
       "scoring": "individuel",
       "fun": "Sans la vue, l'oreille interne se retrouve seule aux commandes. Après 40 ans, ça se complique nettement.",
-      "tags": ["adresse"]
+      "tags": [
+        "adresse"
+      ]
     },
     {
       "id": "def-0007",
@@ -76,7 +87,9 @@
       "q": "Chante le refrain d'une chanson choisie par tes adversaires. Faux, mais en entier.",
       "duration": 30,
       "scoring": "vote",
-      "tags": ["chant"]
+      "tags": [
+        "chant"
+      ]
     },
     {
       "id": "def-0008",
@@ -86,7 +99,10 @@
       "q": "Cite 8 pays d'Afrique en 30 secondes.",
       "duration": 30,
       "scoring": "individuel",
-      "tags": ["rapidité", "géo"]
+      "tags": [
+        "rapidité",
+        "géo"
+      ]
     },
     {
       "id": "def-0009",
@@ -96,7 +112,10 @@
       "q": "Mime un film culte. Titre uniquement, pas de mots, pas de bruits.",
       "duration": 45,
       "scoring": "collectif",
-      "tags": ["mime", "cinéma"]
+      "tags": [
+        "mime",
+        "cinéma"
+      ]
     },
     {
       "id": "def-0010",
@@ -107,7 +126,9 @@
       "duration": 20,
       "scoring": "vote",
       "fun": "Le défi le plus rentable du jeu : ça marche presque toujours, mais rarement comme prévu.",
-      "tags": ["ambiance"]
+      "tags": [
+        "ambiance"
+      ]
     },
     {
       "id": "def-0011",
@@ -117,7 +138,9 @@
       "q": "Raconte ta journée d'hier pendant 30 secondes, sans jamais dire « je ».",
       "duration": 30,
       "scoring": "vote",
-      "tags": ["langue"]
+      "tags": [
+        "langue"
+      ]
     },
     {
       "id": "def-0012",
@@ -127,7 +150,9 @@
       "q": "Compte à rebours de 100 à 85, à voix haute, en moins de 15 secondes.",
       "duration": 15,
       "scoring": "individuel",
-      "tags": ["calcul"]
+      "tags": [
+        "calcul"
+      ]
     },
     {
       "id": "def-0013",
@@ -138,7 +163,9 @@
       "duration": 40,
       "scoring": "individuel",
       "fun": "Sept, c'est justement la limite classique de la mémoire de travail humaine.",
-      "tags": ["mémoire"]
+      "tags": [
+        "mémoire"
+      ]
     },
     {
       "id": "def-0014",
@@ -148,7 +175,9 @@
       "q": "Empile 5 objets de la table sans que ça s'écroule. Ça doit tenir 3 secondes.",
       "duration": 45,
       "scoring": "individuel",
-      "tags": ["adresse"]
+      "tags": [
+        "adresse"
+      ]
     },
     {
       "id": "def-0015",
@@ -159,7 +188,9 @@
       "duration": 30,
       "scoring": "vote",
       "fun": "C'est le principe de l'émission radio britannique « Just a Minute », à l'antenne depuis 1967.",
-      "tags": ["ambiance"]
+      "tags": [
+        "ambiance"
+      ]
     },
     {
       "id": "def-0016",
@@ -169,7 +200,9 @@
       "q": "Fais deviner le mot « anniversaire » sans utiliser les mots : gâteau, âge, bougie, cadeau.",
       "duration": 45,
       "scoring": "collectif",
-      "tags": ["tabou"]
+      "tags": [
+        "tabou"
+      ]
     },
     {
       "id": "def-0017",
@@ -179,7 +212,10 @@
       "q": "Imite le cri de 3 animaux différents. Les autres devinent lesquels.",
       "duration": 30,
       "scoring": "collectif",
-      "tags": ["mime", "animaux"]
+      "tags": [
+        "mime",
+        "animaux"
+      ]
     },
     {
       "id": "def-0018",
@@ -189,7 +225,9 @@
       "q": "Dis « bonjour » dans 4 langues différentes.",
       "duration": 20,
       "scoring": "individuel",
-      "tags": ["langues"]
+      "tags": [
+        "langues"
+      ]
     },
     {
       "id": "def-0019",
@@ -199,7 +237,9 @@
       "q": "Un adversaire tape un rythme sur la table. Danse dessus pendant 15 secondes.",
       "duration": 15,
       "scoring": "vote",
-      "tags": ["ambiance"]
+      "tags": [
+        "ambiance"
+      ]
     },
     {
       "id": "def-0020",
@@ -210,7 +250,1010 @@
       "duration": 25,
       "scoring": "collectif",
       "fun": "Six émotions sont reconnues universellement, sur tous les continents : joie, tristesse, colère, peur, dégoût, surprise.",
-      "tags": ["mime"]
+      "tags": [
+        "mime"
+      ]
+    },
+    {
+      "id": "def-0021",
+      "type": "defi",
+      "difficulty": 1,
+      "minAge": 4,
+      "q": "Compte jusqu'à 10 le plus vite possible, à voix haute.",
+      "duration": 15,
+      "scoring": "individuel",
+      "tags": [
+        "rapidité"
+      ]
+    },
+    {
+      "id": "def-0022",
+      "type": "defi",
+      "difficulty": 1,
+      "minAge": 4,
+      "q": "Fais trois grimaces différentes. Les autres notent.",
+      "duration": 20,
+      "scoring": "vote",
+      "fun": "La grimace la plus efficace est presque toujours celle qu'on n'avait pas prévue.",
+      "tags": [
+        "ambiance"
+      ]
+    },
+    {
+      "id": "def-0023",
+      "type": "defi",
+      "difficulty": 1,
+      "minAge": 5,
+      "q": "Traverse la pièce en marchant comme un robot, et reviens.",
+      "duration": 25,
+      "scoring": "vote",
+      "tags": [
+        "ambiance"
+      ]
+    },
+    {
+      "id": "def-0024",
+      "type": "defi",
+      "difficulty": 1,
+      "minAge": 4,
+      "q": "Fais semblant de dormir profondément. Ronflement obligatoire.",
+      "duration": 15,
+      "scoring": "vote",
+      "tags": [
+        "ambiance"
+      ]
+    },
+    {
+      "id": "def-0025",
+      "type": "defi",
+      "difficulty": 2,
+      "minAge": 5,
+      "q": "Cite 5 fruits en 15 secondes.",
+      "duration": 15,
+      "scoring": "individuel",
+      "tags": [
+        "rapidité"
+      ]
+    },
+    {
+      "id": "def-0026",
+      "type": "defi",
+      "difficulty": 2,
+      "minAge": 5,
+      "q": "Mime un animal de la ferme. Les autres devinent lequel.",
+      "duration": 25,
+      "scoring": "collectif",
+      "tags": [
+        "mime",
+        "animaux"
+      ]
+    },
+    {
+      "id": "def-0027",
+      "type": "defi",
+      "difficulty": 2,
+      "minAge": 6,
+      "q": "Dessine une maison de la main avec laquelle tu n'écris jamais.",
+      "duration": 30,
+      "scoring": "collectif",
+      "tags": [
+        "dessin"
+      ]
+    },
+    {
+      "id": "def-0028",
+      "type": "defi",
+      "difficulty": 2,
+      "minAge": 6,
+      "q": "Pose un objet de la table sur ta tête et fais trois pas sans le faire tomber.",
+      "duration": 30,
+      "scoring": "individuel",
+      "tags": [
+        "adresse"
+      ]
+    },
+    {
+      "id": "def-0029",
+      "type": "defi",
+      "difficulty": 2,
+      "minAge": 6,
+      "q": "Fais le bruitage d'un orage complet : le vent, la pluie, puis le tonnerre.",
+      "duration": 25,
+      "scoring": "vote",
+      "tags": [
+        "ambiance"
+      ]
+    },
+    {
+      "id": "def-0030",
+      "type": "defi",
+      "difficulty": 2,
+      "minAge": 5,
+      "q": "Cite 6 couleurs en 15 secondes.",
+      "duration": 15,
+      "scoring": "individuel",
+      "tags": [
+        "rapidité"
+      ]
+    },
+    {
+      "id": "def-0031",
+      "type": "defi",
+      "difficulty": 2,
+      "minAge": 6,
+      "q": "Sans un mot et sans un bruit, montre aux autres qu'il fait glacial, puis qu'il fait une chaleur écrasante.",
+      "duration": 30,
+      "scoring": "collectif",
+      "tags": [
+        "mime"
+      ]
+    },
+    {
+      "id": "def-0032",
+      "type": "defi",
+      "difficulty": 2,
+      "minAge": 7,
+      "q": "Récite l'alphabet en entier sans reprendre ton souffle.",
+      "duration": 25,
+      "scoring": "individuel",
+      "fun": "Vingt-six lettres sur une seule expiration : c'est faisable, mais il faut partir doucement.",
+      "tags": [
+        "langue"
+      ]
+    },
+    {
+      "id": "def-0033",
+      "type": "defi",
+      "difficulty": 2,
+      "minAge": 6,
+      "q": "Fais deviner le mot « chat » sans dire : animal, miaou, souris, poils.",
+      "duration": 40,
+      "scoring": "collectif",
+      "tags": [
+        "tabou"
+      ]
+    },
+    {
+      "id": "def-0034",
+      "type": "defi",
+      "difficulty": 2,
+      "minAge": 7,
+      "q": "Imite quelqu'un autour de la table. Les autres devinent qui.",
+      "duration": 25,
+      "scoring": "collectif",
+      "tags": [
+        "mime",
+        "ambiance"
+      ]
+    },
+    {
+      "id": "def-0035",
+      "type": "defi",
+      "difficulty": 2,
+      "minAge": 7,
+      "q": "Cite 5 pays d'Europe en 15 secondes.",
+      "duration": 15,
+      "scoring": "individuel",
+      "tags": [
+        "rapidité",
+        "géo"
+      ]
+    },
+    {
+      "id": "def-0036",
+      "type": "defi",
+      "difficulty": 2,
+      "minAge": 6,
+      "q": "Un adversaire tape un rythme sur la table. Reproduis-le à l'identique.",
+      "duration": 30,
+      "scoring": "individuel",
+      "tags": [
+        "mémoire"
+      ]
+    },
+    {
+      "id": "def-0037",
+      "type": "defi",
+      "difficulty": 2,
+      "minAge": 6,
+      "q": "Marche cinq pas avec un livre en équilibre sur la tête.",
+      "duration": 30,
+      "scoring": "individuel",
+      "tags": [
+        "adresse"
+      ]
+    },
+    {
+      "id": "def-0038",
+      "type": "defi",
+      "difficulty": 2,
+      "minAge": 8,
+      "q": "Raconte une blague. Si personne ne rit, c'est raté.",
+      "duration": 30,
+      "scoring": "vote",
+      "fun": "Les meilleures durent moins de quinze secondes. Au-delà, l'attente coûte plus cher que la chute ne rapporte.",
+      "tags": [
+        "ambiance"
+      ]
+    },
+    {
+      "id": "def-0039",
+      "type": "defi",
+      "difficulty": 2,
+      "minAge": 6,
+      "q": "Mime un instrument de musique. Les autres devinent lequel.",
+      "duration": 25,
+      "scoring": "collectif",
+      "tags": [
+        "mime",
+        "musique"
+      ]
+    },
+    {
+      "id": "def-0040",
+      "type": "defi",
+      "difficulty": 3,
+      "minAge": 8,
+      "q": "Cite 10 marques de gâteaux, de céréales ou de chocolats en 30 secondes.",
+      "duration": 30,
+      "scoring": "individuel",
+      "tags": [
+        "rapidité"
+      ]
+    },
+    {
+      "id": "def-0041",
+      "type": "defi",
+      "difficulty": 3,
+      "minAge": 8,
+      "q": "Dis trois fois de suite : « Un chasseur sachant chasser doit savoir chasser sans son chien. »",
+      "duration": 25,
+      "scoring": "individuel",
+      "tags": [
+        "langue"
+      ]
+    },
+    {
+      "id": "def-0042",
+      "type": "defi",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Récite les douze mois de l'année dans l'ordre alphabétique.",
+      "duration": 45,
+      "scoring": "individuel",
+      "fun": "Avril arrive en premier, septembre en dernier. Le piège, c'est juin et juillet.",
+      "tags": [
+        "langue",
+        "mémoire"
+      ]
+    },
+    {
+      "id": "def-0043",
+      "type": "defi",
+      "difficulty": 3,
+      "minAge": 8,
+      "q": "Cite 8 métiers en 20 secondes, sans jamais répéter.",
+      "duration": 20,
+      "scoring": "individuel",
+      "tags": [
+        "rapidité"
+      ]
+    },
+    {
+      "id": "def-0044",
+      "type": "defi",
+      "difficulty": 3,
+      "minAge": 9,
+      "q": "Fais deviner un personnage célèbre en trois indices maximum.",
+      "duration": 45,
+      "scoring": "collectif",
+      "tags": [
+        "tabou"
+      ]
+    },
+    {
+      "id": "def-0045",
+      "type": "defi",
+      "difficulty": 3,
+      "minAge": 9,
+      "q": "Dessine le plan de ton logement en 30 secondes. Les autres jugent si c'est lisible.",
+      "duration": 30,
+      "scoring": "vote",
+      "tags": [
+        "dessin"
+      ]
+    },
+    {
+      "id": "def-0046",
+      "type": "defi",
+      "difficulty": 3,
+      "minAge": 8,
+      "q": "Compte de 3 en 3 jusqu'à 60, à voix haute.",
+      "duration": 30,
+      "scoring": "individuel",
+      "tags": [
+        "calcul"
+      ]
+    },
+    {
+      "id": "def-0047",
+      "type": "defi",
+      "difficulty": 3,
+      "minAge": 9,
+      "q": "Cite 7 parties du corps en anglais.",
+      "duration": 25,
+      "scoring": "individuel",
+      "tags": [
+        "langues"
+      ]
+    },
+    {
+      "id": "def-0048",
+      "type": "defi",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Raconte la fin d'un film que tout le monde connaît, sans dire le titre ni le nom d'un personnage.",
+      "duration": 45,
+      "scoring": "collectif",
+      "tags": [
+        "tabou",
+        "cinéma"
+      ]
+    },
+    {
+      "id": "def-0049",
+      "type": "defi",
+      "difficulty": 3,
+      "minAge": 8,
+      "q": "Fais le tour de la table en marchant à reculons, sans rien toucher.",
+      "duration": 30,
+      "scoring": "individuel",
+      "tags": [
+        "adresse"
+      ],
+      "fun": "Marcher à reculons mobilise l'équilibre bien plus que la marche normale. Certains kinés s'en servent en rééducation."
+    },
+    {
+      "id": "def-0050",
+      "type": "defi",
+      "difficulty": 3,
+      "minAge": 8,
+      "q": "Mime un voyage en avion du début à la fin : la valise, le contrôle, le décollage.",
+      "duration": 45,
+      "scoring": "collectif",
+      "tags": [
+        "mime"
+      ]
+    },
+    {
+      "id": "def-0051",
+      "type": "defi",
+      "difficulty": 3,
+      "minAge": 8,
+      "q": "Cite 10 prénoms commençant par la lettre M en 30 secondes.",
+      "duration": 30,
+      "scoring": "individuel",
+      "tags": [
+        "rapidité"
+      ]
+    },
+    {
+      "id": "def-0052",
+      "type": "defi",
+      "difficulty": 3,
+      "minAge": 7,
+      "q": "Chante une chanson connue en remplaçant toutes les paroles par « la ». Les autres devinent laquelle.",
+      "duration": 40,
+      "scoring": "collectif",
+      "tags": [
+        "chant"
+      ]
+    },
+    {
+      "id": "def-0053",
+      "type": "defi",
+      "difficulty": 3,
+      "minAge": 9,
+      "q": "Ferme les yeux et cite dix détails de la pièce où tu te trouves.",
+      "duration": 45,
+      "scoring": "collectif",
+      "tags": [
+        "mémoire"
+      ]
+    },
+    {
+      "id": "def-0054",
+      "type": "defi",
+      "difficulty": 3,
+      "minAge": 8,
+      "q": "Trouve 5 mots qui riment avec « bateau » en 20 secondes.",
+      "duration": 20,
+      "scoring": "individuel",
+      "tags": [
+        "langue"
+      ]
+    },
+    {
+      "id": "def-0055",
+      "type": "defi",
+      "difficulty": 3,
+      "minAge": 9,
+      "q": "Fais deviner le mot « téléphone » sans dire : appel, portable, sonner, écran.",
+      "duration": 45,
+      "scoring": "collectif",
+      "tags": [
+        "tabou"
+      ]
+    },
+    {
+      "id": "def-0056",
+      "type": "defi",
+      "difficulty": 3,
+      "minAge": 7,
+      "q": "Tiens 30 secondes sans cligner des yeux.",
+      "duration": 30,
+      "scoring": "individuel",
+      "fun": "On cligne environ quinze fois par minute sans y penser. Dès qu'on y pense, ça devient insupportable.",
+      "tags": [
+        "adresse"
+      ]
+    },
+    {
+      "id": "def-0057",
+      "type": "defi",
+      "difficulty": 3,
+      "minAge": 8,
+      "q": "Récite les jours de la semaine à l'envers, trois fois de suite.",
+      "duration": 30,
+      "scoring": "individuel",
+      "tags": [
+        "mémoire"
+      ],
+      "fun": "À l'endroit, c'est automatique ; à l'envers, il faut réfléchir à chaque mot. Le cerveau doit désactiver une habitude."
+    },
+    {
+      "id": "def-0058",
+      "type": "defi",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Dis la même phrase avec trois accents différents.",
+      "duration": 40,
+      "scoring": "vote",
+      "tags": [
+        "ambiance"
+      ]
+    },
+    {
+      "id": "def-0059",
+      "type": "defi",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Cite 5 films dont le titre contient un chiffre.",
+      "duration": 30,
+      "scoring": "individuel",
+      "tags": [
+        "cinéma",
+        "rapidité"
+      ]
+    },
+    {
+      "id": "def-0060",
+      "type": "defi",
+      "difficulty": 3,
+      "minAge": 9,
+      "q": "Fais un discours de 20 secondes pour remercier l'Académie. Émotion exigée.",
+      "duration": 20,
+      "scoring": "vote",
+      "tags": [
+        "ambiance"
+      ]
+    },
+    {
+      "id": "def-0061",
+      "type": "defi",
+      "difficulty": 3,
+      "minAge": 8,
+      "q": "Dessine le portrait de ton voisin en 30 secondes. Il doit se reconnaître.",
+      "duration": 30,
+      "scoring": "vote",
+      "tags": [
+        "dessin"
+      ]
+    },
+    {
+      "id": "def-0062",
+      "type": "defi",
+      "difficulty": 3,
+      "minAge": 7,
+      "q": "Cite 10 objets qu'on trouve dans une cuisine, en 20 secondes.",
+      "duration": 20,
+      "scoring": "individuel",
+      "tags": [
+        "rapidité"
+      ]
+    },
+    {
+      "id": "def-0063",
+      "type": "defi",
+      "difficulty": 3,
+      "minAge": 8,
+      "q": "Traverse la pièce trois fois : d'abord terrorisé, puis très fier, puis mort de honte.",
+      "duration": 40,
+      "scoring": "collectif",
+      "tags": [
+        "mime"
+      ],
+      "fun": "On reconnaît une émotion à la démarche seule, même quand le visage est masqué. C'est mesuré en laboratoire."
+    },
+    {
+      "id": "def-0064",
+      "type": "defi",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Épelle « anticonstitutionnellement » sans hésiter.",
+      "duration": 30,
+      "scoring": "individuel",
+      "fun": "Vingt-cinq lettres. Ce n'est pas le plus long mot du français, mais c'est le plus long qu'on emploie vraiment.",
+      "tags": [
+        "langue"
+      ]
+    },
+    {
+      "id": "def-0065",
+      "type": "defi",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Trouve 6 mots contenant la lettre W.",
+      "duration": 30,
+      "scoring": "individuel",
+      "tags": [
+        "langue"
+      ]
+    },
+    {
+      "id": "def-0066",
+      "type": "defi",
+      "difficulty": 3,
+      "minAge": 9,
+      "q": "Fais la publicité d'un objet posé sur la table, en 20 secondes.",
+      "duration": 20,
+      "scoring": "vote",
+      "tags": [
+        "ambiance"
+      ]
+    },
+    {
+      "id": "def-0067",
+      "type": "defi",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Cite 8 capitales en 25 secondes.",
+      "duration": 25,
+      "scoring": "individuel",
+      "tags": [
+        "rapidité",
+        "géo"
+      ]
+    },
+    {
+      "id": "def-0068",
+      "type": "defi",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Décris ton petit-déjeuner pendant 30 secondes, sans jamais prononcer la lettre E.",
+      "duration": 30,
+      "scoring": "vote",
+      "fun": "Georges Perec a tenu trois cents pages comme ça, dans « La Disparition ». Trente secondes, c'est déjà beaucoup.",
+      "tags": [
+        "langue"
+      ]
+    },
+    {
+      "id": "def-0069",
+      "type": "defi",
+      "difficulty": 4,
+      "minAge": 10,
+      "q": "Cite 12 pays d'Europe en 30 secondes.",
+      "duration": 30,
+      "scoring": "individuel",
+      "tags": [
+        "rapidité",
+        "géo"
+      ]
+    },
+    {
+      "id": "def-0070",
+      "type": "defi",
+      "difficulty": 4,
+      "minAge": 10,
+      "q": "Fais deviner trois mots d'affilée sans parler, en 60 secondes.",
+      "duration": 60,
+      "scoring": "collectif",
+      "tags": [
+        "mime"
+      ]
+    },
+    {
+      "id": "def-0071",
+      "type": "defi",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Récite l'alphabet en alternant : A, Z, B, Y, C, X... jusqu'à te rejoindre au milieu.",
+      "duration": 45,
+      "scoring": "individuel",
+      "tags": [
+        "mémoire",
+        "langue"
+      ],
+      "fun": "Le milieu se trouve entre M et N. Presque tout le monde se perd vers la lettre H."
+    },
+    {
+      "id": "def-0072",
+      "type": "defi",
+      "difficulty": 4,
+      "minAge": 10,
+      "q": "Prends l'air de « Frère Jacques » et chante dessus les paroles d'une autre chanson.",
+      "duration": 40,
+      "scoring": "vote",
+      "tags": [
+        "chant"
+      ]
+    },
+    {
+      "id": "def-0073",
+      "type": "defi",
+      "difficulty": 4,
+      "minAge": 9,
+      "q": "Cite 10 animaux qui pondent des œufs, en 25 secondes.",
+      "duration": 25,
+      "scoring": "individuel",
+      "tags": [
+        "rapidité",
+        "animaux"
+      ]
+    },
+    {
+      "id": "def-0074",
+      "type": "defi",
+      "difficulty": 4,
+      "minAge": 10,
+      "q": "En une seule saynète muette, fais deviner un métier, un lieu et un objet, dans cet ordre.",
+      "duration": 60,
+      "scoring": "collectif",
+      "tags": [
+        "mime"
+      ]
+    },
+    {
+      "id": "def-0075",
+      "type": "defi",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Compte à rebours de 100 à 2, de 7 en 7, à voix haute.",
+      "duration": 60,
+      "scoring": "individuel",
+      "fun": "C'est un test utilisé en neurologie. Il mobilise le calcul et la mémoire de travail en même temps, d'où la difficulté.",
+      "tags": [
+        "calcul"
+      ]
+    },
+    {
+      "id": "def-0076",
+      "type": "defi",
+      "difficulty": 4,
+      "minAge": 9,
+      "q": "Improvise 20 secondes de journal télévisé dans une langue qui n'existe pas. Le ton doit être parfait.",
+      "duration": 20,
+      "scoring": "vote",
+      "tags": [
+        "ambiance"
+      ]
+    },
+    {
+      "id": "def-0077",
+      "type": "defi",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Cite 8 films sortis avant ta naissance.",
+      "duration": 30,
+      "scoring": "individuel",
+      "tags": [
+        "cinéma"
+      ]
+    },
+    {
+      "id": "def-0078",
+      "type": "defi",
+      "difficulty": 4,
+      "minAge": 9,
+      "q": "Récite un poème appris à l'école. N'importe lequel, mais en entier.",
+      "duration": 45,
+      "scoring": "vote",
+      "tags": [
+        "mémoire"
+      ]
+    },
+    {
+      "id": "def-0079",
+      "type": "defi",
+      "difficulty": 4,
+      "minAge": 10,
+      "q": "Décris un objet de la pièce sans jamais dire à quoi il sert. Les autres devinent lequel.",
+      "duration": 45,
+      "scoring": "collectif",
+      "tags": [
+        "tabou"
+      ]
+    },
+    {
+      "id": "def-0080",
+      "type": "defi",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Trouve 5 mots d'au moins 8 lettres commençant par P, en 30 secondes.",
+      "duration": 30,
+      "scoring": "individuel",
+      "tags": [
+        "langue"
+      ]
+    },
+    {
+      "id": "def-0081",
+      "type": "defi",
+      "difficulty": 4,
+      "minAge": 10,
+      "q": "Fais rire toute la table sans un mot et sans un bruit.",
+      "duration": 30,
+      "scoring": "vote",
+      "tags": [
+        "ambiance"
+      ]
+    },
+    {
+      "id": "def-0082",
+      "type": "defi",
+      "difficulty": 4,
+      "minAge": 10,
+      "q": "Dis quatre fois « il fait beau aujourd'hui » : en colère, amoureux, terrorisé, puis mortellement ennuyé.",
+      "duration": 45,
+      "scoring": "vote",
+      "tags": [
+        "mime",
+        "ambiance"
+      ],
+      "fun": "C'est l'exercice de base des cours de théâtre : les « variations de ton ». Même texte, six intentions."
+    },
+    {
+      "id": "def-0083",
+      "type": "defi",
+      "difficulty": 4,
+      "minAge": 10,
+      "q": "Cite les mois de l'année en anglais, dans l'ordre.",
+      "duration": 30,
+      "scoring": "individuel",
+      "tags": [
+        "langues"
+      ]
+    },
+    {
+      "id": "def-0084",
+      "type": "defi",
+      "difficulty": 4,
+      "minAge": 10,
+      "q": "Dessine trois objets reconnaissables sans jamais lever le crayon.",
+      "duration": 45,
+      "scoring": "collectif",
+      "tags": [
+        "dessin"
+      ]
+    },
+    {
+      "id": "def-0085",
+      "type": "defi",
+      "difficulty": 4,
+      "minAge": 10,
+      "q": "Choisis un adversaire et rejouez ensemble une scène de film culte.",
+      "duration": 60,
+      "scoring": "collectif",
+      "tags": [
+        "mime",
+        "cinéma"
+      ]
+    },
+    {
+      "id": "def-0086",
+      "type": "defi",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Invente 10 mots qui n'existent pas mais qui sonnent parfaitement français, en 30 secondes.",
+      "duration": 30,
+      "scoring": "vote",
+      "tags": [
+        "langue"
+      ]
+    },
+    {
+      "id": "def-0087",
+      "type": "defi",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Raconte une histoire dont chaque phrase commence par la lettre suivante de l'alphabet. Va le plus loin possible.",
+      "duration": 45,
+      "scoring": "vote",
+      "tags": [
+        "langue"
+      ]
+    },
+    {
+      "id": "def-0088",
+      "type": "defi",
+      "difficulty": 4,
+      "minAge": 9,
+      "q": "Compte de 1 à 20 en remplaçant tous les multiples de 3 par « boum ».",
+      "duration": 45,
+      "scoring": "individuel",
+      "tags": [
+        "calcul"
+      ]
+    },
+    {
+      "id": "def-0089",
+      "type": "defi",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Explique à un adversaire comment faire un nœud de lacet. Il exécute à la lettre, sans rien deviner.",
+      "duration": 60,
+      "scoring": "collectif",
+      "fun": "Personne n'y arrive du premier coup. On sait faire le geste, on ne sait pas le dire.",
+      "tags": [
+        "langue"
+      ]
+    },
+    {
+      "id": "def-0090",
+      "type": "defi",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Cite 8 personnages réels, vivants ou morts, dont le nom de famille commence par B.",
+      "duration": 30,
+      "scoring": "individuel",
+      "tags": [
+        "rapidité"
+      ]
+    },
+    {
+      "id": "def-0091",
+      "type": "defi",
+      "difficulty": 5,
+      "minAge": 12,
+      "q": "Résume un film en exactement dix mots. Ni neuf, ni onze. Les autres comptent.",
+      "duration": 40,
+      "scoring": "vote",
+      "tags": [
+        "langue",
+        "cinéma"
+      ]
+    },
+    {
+      "id": "def-0092",
+      "type": "defi",
+      "difficulty": 5,
+      "minAge": 12,
+      "q": "Cite 20 pays en 45 secondes, sans répétition ni blanc.",
+      "duration": 45,
+      "scoring": "individuel",
+      "tags": [
+        "rapidité",
+        "géo"
+      ],
+      "fun": "Il y en a 193 à l'ONU. Vingt en quarante-cinq secondes, c'est un pays toutes les deux secondes et demie."
+    },
+    {
+      "id": "def-0093",
+      "type": "defi",
+      "difficulty": 5,
+      "minAge": 12,
+      "q": "Récite les 15 premières décimales de pi.",
+      "duration": 30,
+      "scoring": "individuel",
+      "fun": "Le record officiel dépasse les 70 000 décimales. Quinze suffisent à calculer la circonférence de la Terre au millimètre près.",
+      "tags": [
+        "mémoire"
+      ]
+    },
+    {
+      "id": "def-0094",
+      "type": "defi",
+      "difficulty": 5,
+      "minAge": 12,
+      "q": "Mime l'intrigue complète d'un film en 60 secondes, sans un bruit. Les autres doivent donner le titre.",
+      "duration": 60,
+      "scoring": "collectif",
+      "tags": [
+        "mime",
+        "cinéma"
+      ],
+      "fun": "Le record du monde de mime d'un film tient en une trentaine de secondes. Le tout est de commencer par la fin."
+    },
+    {
+      "id": "def-0095",
+      "type": "defi",
+      "difficulty": 5,
+      "minAge": 11,
+      "q": "Compte de 1 à 30 en alternant français et anglais, un nombre sur deux.",
+      "duration": 45,
+      "scoring": "individuel",
+      "tags": [
+        "langues",
+        "calcul"
+      ]
+    },
+    {
+      "id": "def-0096",
+      "type": "defi",
+      "difficulty": 5,
+      "minAge": 12,
+      "q": "Improvise 30 secondes de rap sur un mot tiré au sort par tes adversaires. Les rimes sont obligatoires.",
+      "duration": 30,
+      "scoring": "vote",
+      "tags": [
+        "ambiance",
+        "chant"
+      ],
+      "fun": "Les rappeurs appellent ça le « freestyle ». La règle non écrite : ne jamais s'arrêter, même quand la rime est mauvaise."
+    },
+    {
+      "id": "def-0097",
+      "type": "defi",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Cite les présidents de la Ve République dans l'ordre.",
+      "duration": 45,
+      "scoring": "individuel",
+      "tags": [
+        "mémoire",
+        "histoire"
+      ],
+      "fun": "Ils sont huit depuis 1958. Le piège, c'est de bien commencer par de Gaulle et de ne pas oublier Pompidou."
+    },
+    {
+      "id": "def-0098",
+      "type": "defi",
+      "difficulty": 5,
+      "minAge": 11,
+      "q": "Écris ton prénom à l'envers, de la main avec laquelle tu n'écris pas. Il faut que ce soit lisible.",
+      "duration": 20,
+      "scoring": "vote",
+      "tags": [
+        "adresse"
+      ]
+    },
+    {
+      "id": "def-0099",
+      "type": "defi",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Tiens une conversation de 45 secondes avec un adversaire en ne posant que des questions. Le premier qui affirme quelque chose a perdu.",
+      "duration": 45,
+      "scoring": "collectif",
+      "fun": "C'est un exercice classique des cours d'improvisation. On tient rarement plus de vingt secondes.",
+      "tags": [
+        "langue",
+        "ambiance"
+      ]
+    },
+    {
+      "id": "def-0100",
+      "type": "defi",
+      "difficulty": 5,
+      "minAge": 12,
+      "q": "Fais deviner cinq mots d'affilée en 60 secondes, avec un seul mot d'indice pour chacun.",
+      "duration": 60,
+      "scoring": "collectif",
+      "tags": [
+        "tabou"
+      ],
+      "fun": "C'est le principe du Time's Up dans sa dernière manche. Un mot d'indice, et tout repose sur ce que l'autre a retenu."
     }
   ]
 }

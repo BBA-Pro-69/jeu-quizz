@@ -1,7 +1,7 @@
 {
   "category": "geo-voyages",
   "label": "Géo & Voyages",
-  "version": 1,
+  "version": 2,
   "questions": [
     {
       "id": "geo-0001",
@@ -110,7 +110,7 @@
     {
       "id": "geo-0007",
       "type": "qcm",
-      "difficulty": 3,
+      "difficulty": 2,
       "minAge": 8,
       "q": "Quel fleuve traverse la ville du Caire ?",
       "choices": [
@@ -172,7 +172,7 @@
       "answer": 27,
       "unit": "pays",
       "tol": {
-        "pct": 8
+        "exact": true
       },
       "fun": "28 avant le départ du Royaume-Uni en 2020.",
       "tags": [
@@ -188,7 +188,7 @@
       "answer": 50,
       "unit": "États",
       "tol": {
-        "pct": 6
+        "exact": true
       },
       "fun": "Les 50 étoiles du drapeau. Les 13 bandes représentent les colonies d'origine.",
       "tags": [
@@ -198,7 +198,7 @@
     {
       "id": "geo-0012",
       "type": "qcm",
-      "difficulty": 4,
+      "difficulty": 3,
       "minAge": 10,
       "q": "Quelle est la capitale du Brésil ?",
       "choices": [
@@ -230,7 +230,7 @@
     {
       "id": "geo-0014",
       "type": "qcm",
-      "difficulty": 4,
+      "difficulty": 3,
       "minAge": 11,
       "q": "Quel pays compte le plus d'habitants au monde ?",
       "choices": [
@@ -248,7 +248,7 @@
     {
       "id": "geo-0015",
       "type": "qcm",
-      "difficulty": 4,
+      "difficulty": 3,
       "minAge": 11,
       "q": "Quel détroit sépare l'Europe de l'Asie à Istanbul ?",
       "choices": [
@@ -266,7 +266,7 @@
     {
       "id": "geo-0016",
       "type": "qcm",
-      "difficulty": 4,
+      "difficulty": 3,
       "minAge": 11,
       "q": "Quelle est la capitale de la Turquie ?",
       "choices": [
@@ -285,7 +285,7 @@
     {
       "id": "geo-0017",
       "type": "libre",
-      "difficulty": 5,
+      "difficulty": 4,
       "minAge": 11,
       "q": "Quelle est la capitale de la Mongolie ?",
       "answer": "Oulan-Bator",
@@ -321,7 +321,7 @@
     {
       "id": "geo-0019",
       "type": "vraifaux",
-      "difficulty": 5,
+      "difficulty": 4,
       "minAge": 12,
       "q": "À leur point le plus proche, la Russie et les États-Unis sont séparés de moins de 5 kilomètres.",
       "answer": true,
@@ -333,7 +333,7 @@
     {
       "id": "geo-0020",
       "type": "estimation",
-      "difficulty": 4,
+      "difficulty": 3,
       "minAge": 12,
       "q": "Combien de kilomètres fait le tour de la Terre à l'équateur ?",
       "answer": 40075,

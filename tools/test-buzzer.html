@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Quiz Famille · banc d'essai du buzzer</title>
+<meta name="robots" content="noindex">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<script>
+tailwind.config = { theme: { extend: {
+  colors: { q: { blue: '#41B6E6', dark: '#002B49', red: '#E4002B', sand: '#F5F1EA' } },
+  fontFamily: { serif: ['"Playfair Display"', 'serif'], sans: ['Inter', 'sans-serif'] }
+} } };
+</script>
+<style>
+  body { background:#02141f; color:#e2e8f0; font-family:Inter,sans-serif; }
+  .card { background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.09);
+          border-radius:1.25rem; backdrop-filter:blur(12px); }
+  .kicker { font-size:.68rem; letter-spacing:.26em; text-transform:uppercase; font-weight:800; }
+  .kicker-line { display:block; width:60px; height:3px; background:#E4002B; margin-top:.5rem; }
+  .btn { display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
+         padding:.8rem 1.2rem; border-radius:.8rem; font-weight:700; cursor:pointer;
+         transition:all .25s cubic-bezier(.16,1,.3,1); border:1px solid transparent; }
+  .btn:hover:not(:disabled) { transform:translateY(-2px); }
+  .btn:disabled { opacity:.4; cursor:not-allowed; }
+  .btn-primary { background:#41B6E6; color:#002B49; }
+  .btn-ghost { background:rgba(255,255,255,.05); border-color:rgba(255,255,255,.14); color:#e2e8f0; }
+  .inp { width:100%; padding:.75rem 1rem; border-radius:.8rem; background:rgba(255,255,255,.05);
+         border:1px solid rgba(255,255,255,.14); color:#fff; }
+  .inp:focus { outline:none; border-color:#41B6E6; }
+  #journal { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.7rem; line-height:1.5;
+             max-height:340px; overflow:auto; }
+  .env { color:#41B6E6; } .rec { color:#86efac; } .err { color:#fca5a5; } .inf { color:#94a3b8; }
+  #buzz { width:min(78vw,320px); height:min(78vw,320px); border-radius:9999px; font-size:2.6rem;
+          font-weight:900; font-family:'Playfair Display',serif; }
+</style>
+</head>
+<body class="min-h-screen">
+<div class="max-w-3xl mx-auto px-5 py-8">
+
+  <p class="kicker text-q-blue">Quiz Famille · outil interne</p><span class="kicker-line"></span>
+  <h1 class="font-serif text-4xl font-black text-white mt-4">Banc d'essai du buzzer</h1>
+  <p class="text-sm text-slate-400 mt-3 leading-relaxed">
+    On vérifie ici une seule chose, mais sérieusement : quand cinq téléphones appuient
+    presque en même temps, est-ce que le classement est juste ? Ouvre cette page sur la
+    tablette en mode hôte, sur les téléphones en mode joueur, et regarde les chiffres.
+  </p>
+
+  <!-- ============ réglages ============ -->
+  <div class="card p-5 mt-7">
+    <p class="kicker text-slate-500 mb-3">Connexion</p>
+    <label class="block text-xs text-slate-500 mb-1">Project URL</label>
+    <input id="cfgUrl" class="inp text-sm mb-3">
+    <label class="block text-xs text-slate-500 mb-1">Clé publiable</label>
+    <input id="cfgKey" class="inp text-sm">
+    <p class="text-xs text-slate-600 mt-2">
+      Stockées en localStorage sur cet appareil. La clé publiable est faite pour être publique.
+    </p>
+  </div>
+
+  <!-- ============ choix du rôle ============ -->
+  <div id="zoneRole" class="card p-5 mt-5">
+    <p class="kicker text-slate-500 mb-4">Cet appareil est…</p>
+    <div class="flex flex-col sm:flex-row gap-3">
+      <button id="bHote" class="btn btn-primary flex-1"><i class="fa-solid fa-tablet-screen-button"></i>La tablette (hôte)</button>
+      <button id="bJoueur" class="btn btn-ghost flex-1"><i class="fa-solid fa-mobile-screen"></i>Un téléphone (joueur)</button>
+    </div>
+    <div id="zoneRejoindre" class="hidden mt-4 grid gap-3 sm:grid-cols-3">
+      <input id="inCode" class="inp uppercase tracking-widest text-center font-bold" placeholder="CODE" maxlength="4">
+      <input id="inNom" class="inp" placeholder="Ton prénom">
+      <button id="bGo" class="btn btn-primary">Rejoindre</button>
+    </div>
+  </div>
+
+  <!-- ============ hôte ============ -->
+  <div id="vueHote" class="hidden">
+    <div class="card p-6 mt-5 text-center">
+      <p class="kicker text-slate-500">Code du salon</p>
+      <p id="hCode" class="font-serif text-6xl font-black text-white tracking-[.2em] my-3">----</p>
+      <p class="text-xs text-slate-500 break-all" id="hLien"></p>
+    </div>
+
+    <div class="card p-5 mt-5">
+      <div class="flex items-center justify-between mb-3">
+        <p class="kicker text-slate-500">Joueurs connectés</p>
+        <span id="hEtat" class="text-xs text-slate-500"></span>
+      </div>
+      <div id="hListe" class="text-sm text-slate-500">Personne pour l'instant.</div>
+    </div>
+
+    <div class="card p-5 mt-5">
+      <p class="kicker text-slate-500 mb-3">Fenêtre d'équité</p>
+      <div class="flex items-center gap-4">
+        <input id="hFen" type="range" min="300" max="3000" step="100" value="1500" class="flex-1">
+        <span id="hFenV" class="font-serif text-2xl font-black text-white w-24 text-right">1500 ms</span>
+      </div>
+      <p class="text-xs text-slate-500 mt-2 leading-relaxed">
+        Au premier buzz reçu, l'hôte se tait pendant ce temps-là, ramasse tout ce qui arrive,
+        puis classe sur les horodatages corrigés. C'est ce délai qui rend le résultat juste
+        plutôt que rapide.
+      </p>
+    </div>
+
+    <div class="flex flex-col sm:flex-row gap-3 mt-5">
+      <button id="hArmer" class="btn btn-primary flex-1"><i class="fa-solid fa-bolt"></i>Ouvrir les buzzers</button>
+      <button id="hTest" class="btn btn-ghost flex-1"><i class="fa-solid fa-crosshairs"></i>Test de synchro</button>
+    </div>
+
+    <div id="hResultat" class="mt-5"></div>
+  </div>
+
+  <!-- ============ joueur ============ -->
+  <div id="vueJoueur" class="hidden text-center">
+    <div class="card p-5 mt-5">
+      <p id="jEtat" class="text-slate-400 text-sm">Connexion…</p>
+      <p id="jHorloge" class="text-xs text-slate-600 mt-1"></p>
+    </div>
+    <div class="my-10 flex justify-center">
+      <button id="buzz" class="btn btn-primary" disabled>ATTENDS</button>
+    </div>
+    <p id="jInfo" class="text-sm text-slate-400"></p>
+  </div>
+
+  <!-- ============ journal ============ -->
+  <div class="card p-5 mt-8 mb-16">
+    <div class="flex items-center justify-between mb-3">
+      <p class="kicker text-slate-500">Journal des trames</p>
+      <button id="vider" class="btn btn-ghost text-xs py-1 px-3">Vider</button>
+    </div>
+    <div id="journal" class="text-slate-400">En attente.</div>
+  </div>
+</div>
+
+<script src="../js/transport.js"></script>
+<script>
+(function () {
+'use strict';
+
+var $ = function (s) { return document.querySelector(s); };
+var T = window.Quiz.Transport;
+var CLE = 'quiz.buzz.cfg';
+
+/* ---------- réglages ---------- */
+var cfg = {};
+try { cfg = JSON.parse(localStorage.getItem(CLE) || '{}'); } catch (e) {}
+$('#cfgUrl').value = cfg.url || T.URL_DEFAUT;
+$('#cfgKey').value = cfg.key || T.KEY_DEFAUT;
+function sauverCfg() {
+  localStorage.setItem(CLE, JSON.stringify({ url: $('#cfgUrl').value.trim(), key: $('#cfgKey').value.trim() }));
+}
+
+/* ---------- journal ---------- */
+var lignes = [];
+function jr(classe, texte) {
+  var t = new Date();
+  var h = t.toTimeString().slice(0, 8) + '.' + String(t.getMilliseconds()).padStart(3, '0');
+  lignes.push('<div class="' + classe + '">' + h + '  ' + texte
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;') + '</div>');
+  if (lignes.length > 300) lignes.shift();
+  var j = $('#journal');
+  j.innerHTML = lignes.join('');
+  j.scrollTop = j.scrollHeight;
+}
+$('#vider').onclick = function () { lignes = []; $('#journal').innerHTML = 'Vidé.'; };
+
+function trame(sens, m) {
+  var ev = m.event;
+  if (ev === 'heartbeat' || (ev === 'phx_reply' && m.topic === 'phoenix')) return;  // trop bavard
+  var det = '';
+  if (ev === 'broadcast' && m.payload) det = ' ' + m.payload.event + ' ' + JSON.stringify(m.payload.payload);
+  else det = ' ' + JSON.stringify(m.payload || {}).slice(0, 200);
+  jr(sens === '→' ? 'env' : 'rec', sens + ' ' + ev + det);
+}
+
+function etatVersTexte(e, d) {
+  return { connexion: 'connexion…', ouvert: 'salon rejoint', ferme: 'fermé (' + d + ')',
+           coupe: 'coupé', erreur: 'erreur : ' + d, relance: 'nouvelle tentative dans ' + d + ' ms' }[e] || e;
+}
+
+function diagnostic(msg) {
+  jr('err', '✗ ' + msg);
+  if (/token|apikey|401|unauthor/i.test(msg)) {
+    jr('inf', 'Piste : Realtime a refusé la clé. Les clés sb_publishable_ sont récentes et');
+    jr('inf', 'certains projets ne les acceptent pas encore sur la WebSocket. Essaie la clé');
+    jr('inf', 'legacy anon (celle qui commence par eyJ, dans Settings → API Keys → Legacy).');
+  }
+  if (/1006|websocket/i.test(msg)) {
+    jr('inf', 'Piste : la WebSocket n\'a même pas pu s\'ouvrir. Vérifie l\'URL du projet, et');
+    jr('inf', 'que le projet Supabase n\'est pas en pause (7 jours sans activité sur le plan gratuit).');
+  }
+}
+
+/* ================================================================
+   HÔTE
+   ================================================================ */
+var canal = null, joueurs = {}, manche = 0, buzzs = [], minuteur = null, autotest = null;
+
+$('#hFen').oninput = function () { $('#hFenV').textContent = this.value + ' ms'; };
+
+$('#bHote').onclick = function () {
+  sauverCfg();
+  var code = T.codeSalon(4);
+  $('#zoneRole').classList.add('hidden');
+  $('#vueHote').classList.remove('hidden');
+  $('#hCode').textContent = code;
+  $('#hLien').textContent = location.href.split('?')[0] + '?c=' + code;
+
+  canal = T.creer({
+    url: $('#cfgUrl').value.trim(), key: $('#cfgKey').value.trim(),
+    salon: code, role: 'hote', nom: 'tablette',
+    onTrame: trame,
+    onEtat: function (e, d) {
+      $('#hEtat').textContent = etatVersTexte(e, d);
+      if (e === 'erreur' || e === 'ferme') diagnostic(etatVersTexte(e, d));
+    }
+  });
+
+  canal.sur('hello', function (d) {
+    joueurs[d.de] = joueurs[d.de] || { id: d.de, nom: d.nom || 'sans nom', delai: null };
+    joueurs[d.de].nom = d.nom || joueurs[d.de].nom;
+    canal.envoyer('bienvenue', { salon: code }, d.de);
+    jr('inf', '+ ' + joueurs[d.de].nom + ' rejoint');
+    listeJoueurs();
+  });
+
+  canal.sur('horloge', function (d) {
+    if (!joueurs[d.de]) return;
+    joueurs[d.de].delai  = d.delai;
+    joueurs[d.de].offset = d.offset;
+    listeJoueurs();
+  });
+
+  canal.sur('buzz', function (d) { encaisser(d, false); });
+  canal.sur('autobuzz', function (d) { encaisser(d, true); });
+
+  canal.connecter()
+    .then(function () { jr('inf', 'Salon ' + code + ' ouvert. Les téléphones peuvent entrer le code.'); })
+    .catch(function (e) { diagnostic(e.message); });
+};
+
+function listeJoueurs() {
+  var l = Object.keys(joueurs);
+  if (!l.length) { $('#hListe').innerHTML = 'Personne pour l\'instant.'; return; }
+  $('#hListe').innerHTML = '<table class="w-full text-sm"><tbody>' + l.map(function (k) {
+    var j = joueurs[k];
+    var q = j.delai == null ? '<span class="text-slate-600">sync…</span>'
+      : (j.delai < 120 ? '<span class="text-emerald-400">' : j.delai < 300 ? '<span class="text-amber-400">' : '<span class="text-q-red">') +
+        'aller-retour ' + j.delai + ' ms · décalage ' + Math.round(j.offset) + ' ms</span>';
+    return '<tr><td class="py-1 font-bold text-white">' + j.nom + '</td><td class="text-right text-xs">' + q + '</td></tr>';
+  }).join('') + '</tbody></table>';
+}
+
+/* --- ouverture des buzzers --- */
+$('#hArmer').onclick = function () {
+  manche++; buzzs = []; autotest = null;
+  clearTimeout(minuteur); minuteur = null;
+  $('#hResultat').innerHTML = '<div class="card p-6 text-center"><p class="font-serif text-3xl font-black text-white">Buzzers ouverts</p><p class="text-sm text-slate-400 mt-2">On attend le premier appui.</p></div>';
+  canal.envoyer('armer', { manche: manche, ouvertA: Date.now() });
+  jr('inf', 'manche ' + manche + ' · buzzers ouverts');
+};
+
+/* --- test de synchro : tout le monde buzze automatiquement au même
+       instant, en temps hôte. Les écarts mesurés sont l'erreur réelle
+       de synchronisation, pas les réflexes des joueurs. --- */
+$('#hTest').onclick = function () {
+  manche++; buzzs = []; clearTimeout(minuteur); minuteur = null;
+  var cible = Date.now() + 3000;
+  autotest = cible;
+  $('#hResultat').innerHTML = '<div class="card p-6 text-center"><p class="font-serif text-3xl font-black text-white">Test de synchro</p><p class="text-sm text-slate-400 mt-2">Tous les téléphones vont buzzer tout seuls dans 3 secondes. Ne touche à rien.</p></div>';
+  canal.envoyer('autotest', { manche: manche, cible: cible });
+  jr('inf', 'test de synchro · cible ' + cible);
+};
+
+function encaisser(d, auto) {
+  if (d.manche !== manche) return;
+  if (buzzs.some(function (b) { return b.de === d.de; })) return;
+  var j = joueurs[d.de] || { nom: d.nom || '?', delai: null };
+  buzzs.push({ de: d.de, nom: j.nom, t: d.t, delai: j.delai, auto: auto });
+  jr('rec', '⚡ ' + j.nom + ' · t=' + d.t);
+
+  if (!minuteur) {
+    var fen = auto ? 2500 : parseInt($('#hFen').value, 10);
+    minuteur = setTimeout(classer, fen);
+  }
+}
+
+function classer() {
+  minuteur = null;
+  buzzs.sort(function (a, b) { return a.t - b.t; });
+  var t0 = buzzs.length ? buzzs[0].t : 0;
+
+  var rangs = buzzs.map(function (b, i) {
+    var ecart = b.t - t0;
+    var inc   = b.delai == null ? null : Math.round(b.delai / 2);
+    var vsCible = autotest ? (b.t - autotest) : null;
+    return '<tr class="border-t border-white/5">' +
+      '<td class="py-2 text-xl">' + (['🥇','🥈','🥉'][i] || (i + 1)) + '</td>' +
+      '<td class="font-bold text-white">' + b.nom + '</td>' +
+      '<td class="text-right font-serif text-xl font-black text-white">' +
+        (i === 0 ? '—' : '+' + ecart + ' ms') + '</td>' +
+      '<td class="text-right text-xs text-slate-500">' +
+        (vsCible !== null ? (vsCible >= 0 ? '+' : '') + vsCible + ' ms / cible' :
+         inc !== null ? '± ' + inc + ' ms' : '') + '</td></tr>';
+  }).join('');
+
+  var alerte = '';
+  if (autotest) {
+    var pires = buzzs.map(function (b) { return Math.abs(b.t - autotest); });
+    var pire  = pires.length ? Math.max.apply(null, pires) : 0;
+    alerte = '<p class="text-sm mt-4 ' + (pire < 60 ? 'text-emerald-400' : pire < 150 ? 'text-amber-400' : 'text-q-red') + '">' +
+      'Erreur de synchro maximale : ' + pire + ' ms. ' +
+      (pire < 60 ? 'On peut départager sereinement.' :
+       pire < 150 ? 'Correct, mais un écart plus petit que ça n\'est pas fiable.' :
+       'Trop haut : relance une synchro, ou méfie-toi du wifi.') + '</p>';
+  } else if (buzzs.length > 1) {
+    var e1 = buzzs[1].t - buzzs[0].t;
+    var i1 = (buzzs[0].delai || 0) / 2 + (buzzs[1].delai || 0) / 2;
+    alerte = '<p class="text-sm mt-4 ' + (e1 > i1 ? 'text-emerald-400' : 'text-amber-400') + '">' +
+      (e1 > i1 ? 'Écart net entre les deux premiers, le classement tient.'
+               : 'Les deux premiers sont dans l\'incertitude de mesure. À ce niveau, c\'est pile ou face.') + '</p>';
+  }
+
+  $('#hResultat').innerHTML = '<div class="card p-5">' +
+    '<p class="kicker text-slate-500 mb-3">' + (autotest ? 'Test de synchro' : 'Classement · manche ' + manche) + '</p>' +
+    (buzzs.length ? '<table class="w-full"><tbody>' + rangs + '</tbody></table>' + alerte
+                  : '<p class="text-slate-500 text-sm">Personne n\'a buzzé.</p>') + '</div>';
+
+  canal.envoyer('verdict', {
+    manche: manche,
+    classement: buzzs.map(function (b, i) { return { de: b.de, nom: b.nom, rang: i + 1, ecart: b.t - t0 }; })
+  });
+}
+
+/* ================================================================
+   JOUEUR
+   ================================================================ */
+$('#bJoueur').onclick = function () { $('#zoneRejoindre').classList.remove('hidden'); $('#inCode').focus(); };
+
+/* Un lien ?c=CODE ouvre directement le formulaire, code déjà rempli.
+   C'est ce lien que portera le QR code du vrai mode de jeu. */
+var codeUrl = (location.search.match(/[?&]c=([A-Za-z0-9]{3,6})/) || [])[1];
+if (codeUrl) {
+  $('#inCode').value = codeUrl.toUpperCase();
+  $('#zoneRejoindre').classList.remove('hidden');
+  $('#inNom').focus();
+}
+
+$('#bGo').onclick = function () {
+  sauverCfg();
+  var code = $('#inCode').value.trim().toUpperCase();
+  var nom  = $('#inNom').value.trim() || 'Joueur';
+  if (code.length < 3) { alert('Il manque le code du salon.'); return; }
+
+  $('#zoneRole').classList.add('hidden');
+  $('#vueJoueur').classList.remove('hidden');
+
+  canal = T.creer({
+    url: $('#cfgUrl').value.trim(), key: $('#cfgKey').value.trim(),
+    salon: code, role: 'joueur', nom: nom,
+    onTrame: trame,
+    onEtat: function (e, d) {
+      $('#jEtat').textContent = etatVersTexte(e, d);
+      if (e === 'erreur' || e === 'ferme') diagnostic(etatVersTexte(e, d));
+    }
+  });
+
+  var mancheEnCours = 0, arme = false;
+
+  canal.sur('bienvenue', function () {
+    $('#jEtat').textContent = 'Dans le salon ' + code + '. Synchronisation…';
+    synchro();
+  });
+
+  canal.sur('armer', function (d) {
+    mancheEnCours = d.manche; arme = true;
+    var b = $('#buzz');
+    b.disabled = false; b.textContent = 'BUZZ';
+    b.className = 'btn btn-primary';
+    if (navigator.vibrate) navigator.vibrate(30);
+  });
+
+  canal.sur('autotest', function (d) {
+    mancheEnCours = d.manche;
+    var dans = d.cible - canal.maintenant();      // en temps hôte
+    $('#jInfo').textContent = 'Test automatique dans ' + Math.round(dans) + ' ms.';
+    setTimeout(function () {
+      canal.envoyer('autobuzz', { manche: d.manche, t: canal.maintenant(), vise: d.cible });
+      $('#jInfo').textContent = 'Buzz automatique envoyé.';
+    }, Math.max(0, dans));
+  });
+
+  canal.sur('verdict', function (d) {
+    var moi = d.classement.filter(function (c) { return c.de === canal.id; })[0];
+    $('#jInfo').textContent = moi
+      ? (moi.rang === 1 ? 'Premier ! ' : 'Rang ' + moi.rang + ' · +' + moi.ecart + ' ms')
+      : 'Manche terminée.';
+    desarmer();
+  });
+
+  function desarmer() {
+    arme = false;
+    var b = $('#buzz');
+    b.disabled = true; b.textContent = 'ATTENDS';
+    b.className = 'btn btn-ghost';
+  }
+
+  function synchro() {
+    canal.synchroniser(6).then(function (h) {
+      $('#jHorloge').textContent = 'horloge calée à ' + Math.round(h.offset) +
+        ' ms près · aller-retour ' + h.delai + ' ms';
+      $('#jEtat').textContent = 'Prêt.';
+      canal.envoyer('horloge', { offset: h.offset, delai: h.delai });
+    });
+  }
+
+  /* pointerdown, pas click : on gagne les ~50 ms que le navigateur
+     mobile passe à se demander si c'est un double-tap. */
+  $('#buzz').addEventListener('pointerdown', function () {
+    if (!arme) return;
+    canal.envoyer('buzz', { manche: mancheEnCours, t: canal.maintenant() });
+    if (navigator.vibrate) navigator.vibrate(60);
+    $('#jInfo').textContent = 'Buzz envoyé. On attend le verdict.';
+    desarmer();
+  });
+
+  canal.connecter()
+    .then(function () { canal.envoyer('hello', {}); })
+    .catch(function (e) { diagnostic(e.message); });
+};
+
+})();
+</script>
+</body>
+</html>

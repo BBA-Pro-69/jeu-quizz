@@ -1,7 +1,7 @@
 {
   "category": "nature-animaux",
   "label": "Nature & Animaux",
-  "version": 2,
+  "version": 3,
   "questions": [
     {
       "id": "nat-0001",
@@ -298,6 +298,1419 @@
       "fun": "Le plus jeune de la table a droit à 20 secondes.",
       "tags": [
         "rapidité"
+      ]
+    },
+    {
+      "id": "nat-0019",
+      "type": "qcm",
+      "difficulty": 1,
+      "minAge": 5,
+      "q": "De quoi le panda géant se nourrit-il presque exclusivement ?",
+      "choices": [
+        "De bambou",
+        "De poisson",
+        "De fruits",
+        "De feuilles d'eucalyptus"
+      ],
+      "answer": 0,
+      "fun": "Il en mange jusqu'à 14 heures par jour. Son estomac de carnivore digère très mal ça, alors il compense en quantité.",
+      "tags": [
+        "mammifères"
+      ]
+    },
+    {
+      "id": "nat-0020",
+      "type": "qcm",
+      "difficulty": 1,
+      "minAge": 5,
+      "q": "Combien de bosses a un dromadaire ?",
+      "choices": [
+        "Aucune",
+        "Une",
+        "Deux",
+        "Trois"
+      ],
+      "answer": 1,
+      "fun": "Deux bosses, c'est le chameau. Moyen mnémotechnique : couche le D et le C sur le dos, tu comptes les bosses.",
+      "tags": [
+        "mammifères",
+        "bases"
+      ]
+    },
+    {
+      "id": "nat-0021",
+      "type": "libre",
+      "difficulty": 1,
+      "minAge": 5,
+      "q": "Comment appelle-t-on la femelle du cheval ?",
+      "answer": "La jument",
+      "accept": [
+        "jument",
+        "la jument"
+      ],
+      "fun": "Son petit s'appelle un poulain, et une pouliche si c'est une femelle.",
+      "tags": [
+        "ferme",
+        "mots"
+      ]
+    },
+    {
+      "id": "nat-0022",
+      "type": "qcm",
+      "difficulty": 1,
+      "minAge": 6,
+      "q": "Quel arbre produit les glands ?",
+      "choices": [
+        "Le hêtre",
+        "Le chêne",
+        "Le châtaignier",
+        "Le bouleau"
+      ],
+      "answer": 1,
+      "fun": "Un chêne peut en lâcher des dizaines de milliers en une saison, et il vit facilement cinq cents ans.",
+      "tags": [
+        "arbres"
+      ]
+    },
+    {
+      "id": "nat-0023",
+      "type": "qcm",
+      "difficulty": 1,
+      "minAge": 5,
+      "q": "Quel animal vit dans une ruche ?",
+      "choices": [
+        "La guêpe",
+        "L'abeille",
+        "La fourmi",
+        "Le bourdon"
+      ],
+      "answer": 1,
+      "fun": "Une ruche, c'est jusqu'à 60 000 habitants l'été. Une petite ville, avec une seule mère pour tout le monde.",
+      "tags": [
+        "insectes"
+      ]
+    },
+    {
+      "id": "nat-0024",
+      "type": "vraifaux",
+      "difficulty": 2,
+      "minAge": 6,
+      "q": "La baleine est un poisson.",
+      "answer": false,
+      "fun": "C'est un mammifère : elle respire de l'air, allaite son petit et a le sang chaud.",
+      "tags": [
+        "mer",
+        "piège"
+      ]
+    },
+    {
+      "id": "nat-0025",
+      "type": "vraifaux",
+      "difficulty": 2,
+      "minAge": 7,
+      "q": "Dans la nature, un ours polaire ne croisera jamais un manchot.",
+      "answer": true,
+      "fun": "L'un est au pôle Nord, l'autre au pôle Sud. Les images qui les montrent ensemble sont toutes fausses.",
+      "tags": [
+        "piège",
+        "géo"
+      ]
+    },
+    {
+      "id": "nat-0026",
+      "type": "estimation",
+      "difficulty": 2,
+      "minAge": 7,
+      "q": "Combien de jours une poule couve-t-elle ses œufs avant l'éclosion ?",
+      "answer": 21,
+      "unit": "jours",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Trois semaines pile. Le poussin perce la coquille avec une petite pointe sur le bec, qui tombe ensuite.",
+      "tags": [
+        "ferme",
+        "oiseaux"
+      ]
+    },
+    {
+      "id": "nat-0027",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 7,
+      "q": "Lequel de ces animaux hiberne vraiment tout l'hiver ?",
+      "choices": [
+        "Le renard",
+        "La marmotte",
+        "Le cerf",
+        "Le sanglier"
+      ],
+      "answer": 1,
+      "fun": "Son cœur descend à cinq battements par minute et sa température frôle les 5 °C. L'ours, lui, somnole seulement.",
+      "tags": [
+        "mammifères"
+      ]
+    },
+    {
+      "id": "nat-0028",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 7,
+      "q": "Quel oiseau est le symbole universel de la paix ?",
+      "choices": [
+        "La colombe",
+        "La cigogne",
+        "Le rossignol",
+        "Le cygne"
+      ],
+      "answer": 0,
+      "fun": "Elle vient de l'arche de Noé : c'est elle qui rapporte le rameau d'olivier annonçant la fin du déluge.",
+      "tags": [
+        "oiseaux",
+        "culture"
+      ]
+    },
+    {
+      "id": "nat-0029",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 7,
+      "q": "Comment appelle-t-on un groupe de loups ?",
+      "choices": [
+        "Une horde",
+        "Une meute",
+        "Une bande",
+        "Une troupe"
+      ],
+      "answer": 1,
+      "fun": "Une meute, c'est en général une famille : un couple et ses petits des deux dernières années.",
+      "tags": [
+        "mots",
+        "mammifères"
+      ]
+    },
+    {
+      "id": "nat-0030",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 8,
+      "q": "Quel animal produit la soie ?",
+      "choices": [
+        "L'araignée d'Asie",
+        "Le ver à soie",
+        "La chenille processionnaire",
+        "Le scarabée"
+      ],
+      "answer": 1,
+      "fun": "C'est la chenille d'un papillon. Elle file un seul fil continu pour son cocon, long de près d'un kilomètre.",
+      "tags": [
+        "insectes"
+      ]
+    },
+    {
+      "id": "nat-0031",
+      "type": "vraifaux",
+      "difficulty": 2,
+      "minAge": 7,
+      "q": "Une fourmi peut porter plusieurs fois son propre poids.",
+      "answer": true,
+      "fun": "Jusqu'à 10 à 50 fois selon l'espèce. Plus un animal est petit, plus ses muscles sont puissants par rapport à sa masse.",
+      "tags": [
+        "insectes"
+      ]
+    },
+    {
+      "id": "nat-0032",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 6,
+      "q": "Quel est le plus grand oiseau du monde ?",
+      "choices": [
+        "L'aigle royal",
+        "Le condor",
+        "L'autruche",
+        "L'albatros"
+      ],
+      "answer": 2,
+      "fun": "Deux mètres cinquante, 150 kg, incapable de voler mais capable de tenir 70 km/h.",
+      "tags": [
+        "oiseaux",
+        "records"
+      ]
+    },
+    {
+      "id": "nat-0033",
+      "type": "libre",
+      "difficulty": 2,
+      "minAge": 8,
+      "q": "Comment appelle-t-on un animal qui ne mange que des plantes ?",
+      "answer": "Un herbivore",
+      "accept": [
+        "herbivore",
+        "un herbivore",
+        "herbivores"
+      ],
+      "fun": "Celui qui mange de tout est omnivore, comme nous, le cochon et le corbeau.",
+      "tags": [
+        "mots",
+        "bases"
+      ]
+    },
+    {
+      "id": "nat-0034",
+      "type": "vraifaux",
+      "difficulty": 2,
+      "minAge": 7,
+      "q": "Un hérisson sait nager.",
+      "answer": true,
+      "fun": "Il nage très bien, mais il se noie souvent dans les piscines faute de pouvoir remonter par la paroi. Une planche flottante suffit à le sauver.",
+      "tags": [
+        "mammifères"
+      ]
+    },
+    {
+      "id": "nat-0035",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 8,
+      "q": "Quel est le plus gros rongeur du monde ?",
+      "choices": [
+        "Le ragondin",
+        "Le capybara",
+        "L'agouti",
+        "Le castor"
+      ],
+      "answer": 1,
+      "fun": "Jusqu'à 65 kg. Il vit en Amérique du Sud, dans l'eau, et supporte à peu près n'importe quel animal sur son dos.",
+      "tags": [
+        "mammifères",
+        "records"
+      ]
+    },
+    {
+      "id": "nat-0036",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 8,
+      "q": "Quelle est la particularité des yeux du caméléon ?",
+      "choices": [
+        "Ils changent de couleur",
+        "Ils bougent indépendamment",
+        "Ils voient dans le noir",
+        "Ils n'ont pas de paupières"
+      ],
+      "answer": 1,
+      "fun": "Chaque œil balaie son côté tout seul. Il peut surveiller une proie devant et un prédateur derrière en même temps.",
+      "tags": [
+        "reptiles"
+      ]
+    },
+    {
+      "id": "nat-0037",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 9,
+      "q": "Lequel de ces animaux n'a pas de cerveau ?",
+      "choices": [
+        "Le papillon",
+        "La morue",
+        "L'étoile de mer",
+        "La souris"
+      ],
+      "answer": 2,
+      "fun": "Elle fonctionne avec un anneau nerveux et un nerf par bras. Aucun chef d'orchestre, et ça marche très bien.",
+      "tags": [
+        "mer",
+        "bizarre"
+      ]
+    },
+    {
+      "id": "nat-0038",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 8,
+      "q": "À quelle famille le panda géant appartient-il ?",
+      "choices": [
+        "Les ours",
+        "Les ratons laveurs",
+        "Les félins",
+        "Les marsupiaux"
+      ],
+      "answer": 0,
+      "fun": "C'est bien un ours. Le panda roux, lui, est seul dans sa famille, il n'est cousin d'aucun des deux.",
+      "tags": [
+        "mammifères",
+        "piège"
+      ]
+    },
+    {
+      "id": "nat-0039",
+      "type": "libre",
+      "difficulty": 3,
+      "minAge": 9,
+      "q": "Quel mot rassemble les aigles, les faucons, les buses et les chouettes ?",
+      "answer": "Les rapaces",
+      "accept": [
+        "rapaces",
+        "les rapaces",
+        "rapace",
+        "oiseaux de proie"
+      ],
+      "fun": "Du latin « rapere », saisir. Les chouettes et hiboux sont les rapaces nocturnes.",
+      "tags": [
+        "oiseaux",
+        "mots"
+      ]
+    },
+    {
+      "id": "nat-0040",
+      "type": "libre",
+      "difficulty": 3,
+      "minAge": 9,
+      "q": "Quel est l'autre nom de l'orque ?",
+      "answer": "L'épaulard",
+      "accept": [
+        "epaulard",
+        "l epaulard",
+        "orque epaulard"
+      ],
+      "fun": "Malgré son surnom de baleine tueuse, c'est le plus grand des dauphins.",
+      "tags": [
+        "mer",
+        "mots"
+      ]
+    },
+    {
+      "id": "nat-0041",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 8,
+      "q": "Dans Le Roi lion, quel animal est Timon ?",
+      "choices": [
+        "Un suricate",
+        "Une mangouste",
+        "Un phacochère",
+        "Un lémurien"
+      ],
+      "answer": 0,
+      "fun": "Un suricate, animal qui vit vraiment en colonie dans le désert du Kalahari, avec une sentinelle debout en permanence.",
+      "tags": [
+        "cinéma",
+        "mammifères"
+      ]
+    },
+    {
+      "id": "nat-0042",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 9,
+      "q": "Quel insecte venu d'Asie, arrivé en France dans les années 2000, s'attaque aux abeilles ?",
+      "choices": [
+        "Le moustique tigre",
+        "Le frelon asiatique",
+        "La punaise diabolique",
+        "La coccinelle asiatique"
+      ],
+      "answer": 1,
+      "fun": "Il serait arrivé dans un lot de poteries importées. Il chasse les butineuses en vol stationnaire devant les ruches.",
+      "tags": [
+        "insectes",
+        "france"
+      ]
+    },
+    {
+      "id": "nat-0043",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 8,
+      "q": "L'éléphant d'Asie se distingue de l'éléphant d'Afrique par…",
+      "choices": [
+        "Ses oreilles plus petites",
+        "Sa trompe plus longue",
+        "Sa peau plus claire",
+        "Ses quatre défenses"
+      ],
+      "answer": 0,
+      "fun": "Les grandes oreilles africaines servent de radiateur. Il fait plus chaud en Afrique, elles sont plus grandes.",
+      "tags": [
+        "mammifères"
+      ]
+    },
+    {
+      "id": "nat-0044",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 9,
+      "q": "Quel mammifère pond des œufs ?",
+      "choices": [
+        "Le pangolin",
+        "L'ornithorynque",
+        "Le paresseux",
+        "Le tatou"
+      ],
+      "answer": 1,
+      "fun": "Avec l'échidné, c'est l'un des rares. Il pond, puis allaite : le lait suinte par la peau, il n'a pas de mamelles.",
+      "tags": [
+        "mammifères",
+        "bizarre"
+      ]
+    },
+    {
+      "id": "nat-0045",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 9,
+      "q": "Quel animal figure sur la queue des avions de la compagnie Qantas ?",
+      "choices": [
+        "Un koala",
+        "Un kangourou",
+        "Un émeu",
+        "Un crocodile"
+      ],
+      "answer": 1,
+      "fun": "Le kangourou bondissant est peint dessus depuis les années 1940. Qantas est australienne, forcément.",
+      "tags": [
+        "culture"
+      ]
+    },
+    {
+      "id": "nat-0046",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 9,
+      "q": "Lequel de ces animaux ne figure pas dans le zodiaque chinois ?",
+      "choices": [
+        "Le coq",
+        "Le cheval",
+        "L'âne",
+        "Le rat"
+      ],
+      "answer": 2,
+      "fun": "Douze animaux, et le rat est premier : la légende dit qu'il a fait le trajet sur le dos du bœuf avant de sauter devant lui.",
+      "tags": [
+        "culture"
+      ]
+    },
+    {
+      "id": "nat-0047",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 9,
+      "q": "Quelle est la plus grande espèce de tigre ?",
+      "choices": [
+        "Le tigre du Bengale",
+        "Le tigre de Sibérie",
+        "Le tigre de Sumatra",
+        "Le tigre de Malaisie"
+      ],
+      "answer": 1,
+      "fun": "Plus de 300 kg. Il vit dans des forêts où il descend à -30 °C, d'où sa fourrure épaisse et sa taille.",
+      "tags": [
+        "mammifères",
+        "records"
+      ]
+    },
+    {
+      "id": "nat-0048",
+      "type": "vraifaux",
+      "difficulty": 3,
+      "minAge": 8,
+      "q": "Seules les moustiques femelles piquent.",
+      "answer": true,
+      "fun": "Elles ont besoin du fer et des protéines du sang pour leurs œufs. Les mâles se contentent de nectar.",
+      "tags": [
+        "insectes"
+      ]
+    },
+    {
+      "id": "nat-0049",
+      "type": "estimation",
+      "difficulty": 3,
+      "minAge": 9,
+      "q": "Combien de compartiments compte l'estomac d'une vache ?",
+      "answer": 4,
+      "unit": "compartiments",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Panse, bonnet, feuillet, caillette. L'herbe fait plusieurs allers-retours par la bouche avant d'être digérée.",
+      "tags": [
+        "ferme"
+      ]
+    },
+    {
+      "id": "nat-0050",
+      "type": "vraifaux",
+      "difficulty": 3,
+      "minAge": 9,
+      "q": "Un kangourou est incapable de reculer.",
+      "answer": true,
+      "fun": "Ses grands pieds et sa queue épaisse l'en empêchent. C'est aussi pour ça qu'il figure sur les armoiries australiennes : un pays qui n'avance jamais à reculons.",
+      "tags": [
+        "mammifères",
+        "bizarre"
+      ]
+    },
+    {
+      "id": "nat-0051",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 9,
+      "q": "D'où vient la couleur rose du flamant ?",
+      "choices": [
+        "De son alimentation",
+        "De son sang",
+        "Du soleil",
+        "De sa graisse"
+      ],
+      "answer": 0,
+      "fun": "Des pigments des petites crevettes et algues qu'il filtre. En captivité, sans ce régime, il blanchit.",
+      "tags": [
+        "oiseaux"
+      ]
+    },
+    {
+      "id": "nat-0052",
+      "type": "vraifaux",
+      "difficulty": 3,
+      "minAge": 9,
+      "q": "Le corail est un animal.",
+      "answer": true,
+      "fun": "Des colonies de minuscules polypes qui fabriquent un squelette calcaire. Les couleurs viennent d'algues qui vivent dans leurs tissus.",
+      "tags": [
+        "mer",
+        "piège"
+      ]
+    },
+    {
+      "id": "nat-0053",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Quel est le seul mammifère couvert d'écailles ?",
+      "choices": [
+        "Le tatou",
+        "Le pangolin",
+        "L'armadille",
+        "Le fourmilier"
+      ],
+      "answer": 1,
+      "fun": "Des écailles de kératine, la même matière que nos ongles. C'est aussi le mammifère le plus braconné au monde.",
+      "tags": [
+        "mammifères"
+      ]
+    },
+    {
+      "id": "nat-0054",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 9,
+      "q": "Sur quelle île vivait le dodo, disparu au XVIIe siècle ?",
+      "choices": [
+        "Madagascar",
+        "L'île Maurice",
+        "Les Galápagos",
+        "La Réunion"
+      ],
+      "answer": 1,
+      "fun": "Il ne craignait rien, donc il ne fuyait pas. Moins d'un siècle après l'arrivée des marins, il n'en restait aucun.",
+      "tags": [
+        "oiseaux",
+        "disparition"
+      ]
+    },
+    {
+      "id": "nat-0055",
+      "type": "vraifaux",
+      "difficulty": 3,
+      "minAge": 9,
+      "q": "L'abeille meurt après avoir piqué, la guêpe non.",
+      "answer": true,
+      "fun": "Le dard de l'abeille est crocheté : il reste planté et lui arrache l'abdomen. Celui de la guêpe est lisse, elle peut recommencer.",
+      "tags": [
+        "insectes"
+      ]
+    },
+    {
+      "id": "nat-0056",
+      "type": "vraifaux",
+      "difficulty": 3,
+      "minAge": 9,
+      "q": "Les chauves-souris sont aveugles.",
+      "answer": false,
+      "fun": "Elles voient toutes, certaines très bien. L'écholocation sert à chasser dans le noir, pas à remplacer les yeux.",
+      "tags": [
+        "mammifères",
+        "piège"
+      ]
+    },
+    {
+      "id": "nat-0057",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 8,
+      "q": "Pourquoi les écureuils participent-ils à la plantation des forêts ?",
+      "choices": [
+        "Ils transportent les graines dans leur fourrure",
+        "Ils oublient une partie de leurs cachettes",
+        "Ils sèment volontairement",
+        "Ils digèrent mal les glands"
+      ],
+      "answer": 1,
+      "fun": "Ils enterrent des milliers de graines et en oublient une bonne part. Chaque oubli est un arbre possible.",
+      "tags": [
+        "mammifères",
+        "arbres"
+      ]
+    },
+    {
+      "id": "nat-0058",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 9,
+      "q": "Quel oiseau est capable de voler en marche arrière ?",
+      "choices": [
+        "Le martinet",
+        "Le colibri",
+        "La mésange",
+        "Le pic-vert"
+      ],
+      "answer": 1,
+      "fun": "Ses ailes font un huit dans l'air, comme celles d'un insecte. C'est le seul oiseau à savoir faire ça.",
+      "tags": [
+        "oiseaux",
+        "records"
+      ]
+    },
+    {
+      "id": "nat-0059",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 9,
+      "q": "De quoi est faite la corne du rhinocéros ?",
+      "choices": [
+        "D'os",
+        "De kératine",
+        "D'ivoire",
+        "De cartilage"
+      ],
+      "answer": 1,
+      "fun": "La même matière que nos ongles et nos cheveux. Aucun effet médicinal, ce qui n'empêche pas le braconnage.",
+      "tags": [
+        "mammifères"
+      ]
+    },
+    {
+      "id": "nat-0060",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 8,
+      "q": "Combien d'heures par jour un koala dort-il ?",
+      "choices": [
+        "8 heures",
+        "12 heures",
+        "16 heures",
+        "20 heures"
+      ],
+      "answer": 3,
+      "fun": "Les feuilles d'eucalyptus sont pauvres en énergie et légèrement toxiques : dormir est sa seule stratégie.",
+      "tags": [
+        "mammifères"
+      ]
+    },
+    {
+      "id": "nat-0061",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 9,
+      "q": "Quel est l'animal le plus rapide du monde, en piqué ?",
+      "choices": [
+        "Le guépard",
+        "Le faucon pèlerin",
+        "L'espadon",
+        "Le martinet"
+      ],
+      "answer": 1,
+      "fun": "Plus de 300 km/h en piqué. Il a des cloisons dans les narines pour ne pas exploser ses poumons à cette vitesse.",
+      "tags": [
+        "oiseaux",
+        "records"
+      ]
+    },
+    {
+      "id": "nat-0062",
+      "type": "libre",
+      "difficulty": 3,
+      "minAge": 9,
+      "q": "Comment appelle-t-on la femelle du sanglier ?",
+      "answer": "La laie",
+      "accept": [
+        "laie",
+        "la laie"
+      ],
+      "fun": "Les petits rayés s'appellent des marcassins, et ils perdent leurs rayures vers six mois.",
+      "tags": [
+        "mots",
+        "mammifères"
+      ]
+    },
+    {
+      "id": "nat-0063",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Quel est le seul marsupial vivant naturellement en Amérique du Nord ?",
+      "choices": [
+        "Le raton laveur",
+        "L'opossum",
+        "Le tamandua",
+        "Le coati"
+      ],
+      "answer": 1,
+      "fun": "Menacé, il simule la mort pendant des heures, odeur comprise. Ce n'est même pas volontaire, c'est un réflexe.",
+      "tags": [
+        "mammifères"
+      ]
+    },
+    {
+      "id": "nat-0064",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Qu'étudie un myrmécologue ?",
+      "choices": [
+        "Les fourmis",
+        "Les coléoptères",
+        "Les mille-pattes",
+        "Les champignons"
+      ],
+      "answer": 0,
+      "fun": "Il y aurait autant de fourmis sur Terre, en masse, que d'êtres humains. Elles cultivent, élèvent et font la guerre.",
+      "tags": [
+        "mots",
+        "insectes"
+      ]
+    },
+    {
+      "id": "nat-0065",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Contre quel animal l'Australie a-t-elle construit une clôture de 5 000 km ?",
+      "choices": [
+        "Le lapin",
+        "Le dingo",
+        "Le kangourou",
+        "Le chameau"
+      ],
+      "answer": 1,
+      "fun": "Elle traverse tout le sud-est du pays pour protéger les élevages de moutons. C'est la plus longue clôture du monde.",
+      "tags": [
+        "mammifères",
+        "géo"
+      ]
+    },
+    {
+      "id": "nat-0066",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Quel pays évoque l'origine la plus souvent retenue du mot « hermine » ?",
+      "choices": [
+        "L'Arménie",
+        "L'Allemagne",
+        "L'Écosse",
+        "La Hongrie"
+      ],
+      "answer": 0,
+      "fun": "Du latin « mus armenius », le rat d'Arménie, où on la croyait originaire. D'autres linguistes penchent pour une racine germanique.",
+      "tags": [
+        "mots",
+        "mammifères"
+      ]
+    },
+    {
+      "id": "nat-0067",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "De quel pays est originaire le West Highland White Terrier ?",
+      "choices": [
+        "L'Irlande",
+        "L'Écosse",
+        "Le pays de Galles",
+        "L'Angleterre"
+      ],
+      "answer": 1,
+      "fun": "Sa robe blanche a été sélectionnée pour une raison pratique : ne pas le confondre avec un renard pendant la chasse.",
+      "tags": [
+        "chiens"
+      ]
+    },
+    {
+      "id": "nat-0068",
+      "type": "vraifaux",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Contrairement à la plupart des poissons, le requin n'a pas de vessie natatoire.",
+      "answer": true,
+      "fun": "Il compense avec un foie énorme et gorgé d'huile. S'il s'arrête complètement, il coule doucement.",
+      "tags": [
+        "mer"
+      ]
+    },
+    {
+      "id": "nat-0069",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Que détectent les ampoules de Lorenzini, chez le requin ?",
+      "choices": [
+        "Les odeurs",
+        "Les champs électriques",
+        "Les ultrasons",
+        "La lumière"
+      ],
+      "answer": 1,
+      "fun": "De petits pores sur le museau qui captent l'électricité des muscles d'une proie. Un poisson caché sous le sable ne lui échappe pas.",
+      "tags": [
+        "mer",
+        "science"
+      ]
+    },
+    {
+      "id": "nat-0070",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Lequel de ces requins ne se nourrit PAS de plancton ?",
+      "choices": [
+        "Le requin-baleine",
+        "Le requin-pèlerin",
+        "Le requin-citron",
+        "Le requin à grande bouche"
+      ],
+      "answer": 2,
+      "fun": "Les deux plus gros requins du monde sont des filtreurs paisibles. Le requin-citron, lui, chasse.",
+      "tags": [
+        "mer",
+        "piège"
+      ]
+    },
+    {
+      "id": "nat-0071",
+      "type": "vraifaux",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Le caméléon change de couleur d'abord pour se camoufler.",
+      "answer": false,
+      "fun": "Il change surtout selon sa température, son humeur et pour parler aux autres caméléons. Le camouflage n'est qu'un effet secondaire.",
+      "tags": [
+        "reptiles",
+        "piège"
+      ]
+    },
+    {
+      "id": "nat-0072",
+      "type": "vraifaux",
+      "difficulty": 4,
+      "minAge": 10,
+      "q": "Le poisson rouge a une mémoire de trois secondes.",
+      "answer": false,
+      "fun": "Il retient des parcours et des signaux pendant des mois. On l'a même entraîné à passer dans des cerceaux.",
+      "tags": [
+        "piège"
+      ]
+    },
+    {
+      "id": "nat-0073",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "À quoi sert la « danse en huit » d'une abeille au retour à la ruche ?",
+      "choices": [
+        "À indiquer où butiner",
+        "À demander à manger",
+        "À désigner une nouvelle reine",
+        "À signaler un intrus"
+      ],
+      "answer": 0,
+      "fun": "L'angle de la danse donne la direction par rapport au soleil, sa durée donne la distance. Une carte dansée.",
+      "tags": [
+        "insectes",
+        "science"
+      ]
+    },
+    {
+      "id": "nat-0074",
+      "type": "vraifaux",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Le crocodile ne peut pas tirer la langue.",
+      "answer": true,
+      "fun": "Sa langue est soudée au fond de sa gueule par une membrane. C'est ce qui l'empêche d'avaler de l'eau en attrapant une proie.",
+      "tags": [
+        "reptiles",
+        "bizarre"
+      ]
+    },
+    {
+      "id": "nat-0075",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Comment reconnaît-on une vipère d'une couleuvre, en France ?",
+      "choices": [
+        "À sa pupille verticale",
+        "À sa langue fourchue",
+        "À ses écailles lisses",
+        "À sa queue pointue"
+      ],
+      "answer": 0,
+      "fun": "Pupille en fente chez la vipère, ronde chez la couleuvre. Cela dit, à cette distance, mieux vaut simplement reculer.",
+      "tags": [
+        "reptiles",
+        "france"
+      ]
+    },
+    {
+      "id": "nat-0076",
+      "type": "vraifaux",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Une année de chien équivaut à sept années humaines.",
+      "answer": false,
+      "fun": "Un chien d'un an est déjà adolescent. Le vieillissement est très rapide au début, puis ralentit, et dépend beaucoup de la taille.",
+      "tags": [
+        "chiens",
+        "piège"
+      ]
+    },
+    {
+      "id": "nat-0077",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Quelle est la différence entre les bois d'un cerf et les cornes d'un bouquetin ?",
+      "choices": [
+        "Les bois tombent chaque année",
+        "Les cornes sont creuses",
+        "Les bois sont en kératine",
+        "Les cornes repoussent chaque année"
+      ],
+      "answer": 0,
+      "fun": "Le cerf refait toute sa ramure chaque printemps, en quelques mois. C'est la croissance osseuse la plus rapide connue chez un mammifère.",
+      "tags": [
+        "mammifères",
+        "vocabulaire"
+      ]
+    },
+    {
+      "id": "nat-0078",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Qu'est-ce que la « corne » du narval ?",
+      "choices": [
+        "Une dent",
+        "Un os du crâne",
+        "Une nageoire modifiée",
+        "De la kératine"
+      ],
+      "answer": 0,
+      "fun": "Une canine gauche qui pousse en spirale à travers la lèvre, jusqu'à trois mètres. Elle est truffée de terminaisons nerveuses.",
+      "tags": [
+        "mer",
+        "bizarre"
+      ]
+    },
+    {
+      "id": "nat-0079",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Quel animal minuscule a survécu à une exposition directe au vide spatial ?",
+      "choices": [
+        "Le tardigrade",
+        "L'acarien",
+        "Le collembole",
+        "Le rotifère"
+      ],
+      "answer": 0,
+      "fun": "Il se déshydrate complètement et met sa vie en pause. Des tardigrades ont passé dix jours accrochés à l'extérieur d'un satellite.",
+      "tags": [
+        "science",
+        "bizarre"
+      ]
+    },
+    {
+      "id": "nat-0080",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Quelle est la particularité de l'axolotl ?",
+      "choices": [
+        "Il régénère ses membres",
+        "Il vit 200 ans",
+        "Il change de sexe",
+        "Il respire par la peau uniquement"
+      ],
+      "answer": 0,
+      "fun": "Patte, queue, morceaux de cœur et même de cerveau : il repousse tout. Il garde aussi ses branchies toute sa vie, comme un têtard qui ne grandirait pas.",
+      "tags": [
+        "science",
+        "bizarre"
+      ]
+    },
+    {
+      "id": "nat-0081",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Quelle est la particularité du gui ?",
+      "choices": [
+        "C'est une plante parasite",
+        "Il ne fleurit jamais",
+        "Il pousse sous terre",
+        "Ses baies sont comestibles"
+      ],
+      "answer": 0,
+      "fun": "Il puise la sève de l'arbre qui le porte. Ses graines collantes voyagent sur le bec des oiseaux, d'une branche à l'autre.",
+      "tags": [
+        "plantes"
+      ]
+    },
+    {
+      "id": "nat-0082",
+      "type": "vraifaux",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Un champ de tournesols en fleur suit le soleil toute la journée.",
+      "answer": false,
+      "fun": "Seuls les jeunes plants suivent le soleil. Une fois la fleur ouverte, elle se fige, tournée vers l'est.",
+      "tags": [
+        "plantes",
+        "piège"
+      ]
+    },
+    {
+      "id": "nat-0083",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Par quoi passent les échanges de nutriments et de signaux entre arbres d'une même forêt ?",
+      "choices": [
+        "Les racines soudées",
+        "Des champignons souterrains",
+        "Les feuilles mortes",
+        "Les insectes"
+      ],
+      "answer": 1,
+      "fun": "Les mycorhizes relient les racines sur des hectares. Les grands arbres alimentent parfois les jeunes à l'ombre.",
+      "tags": [
+        "arbres",
+        "science"
+      ]
+    },
+    {
+      "id": "nat-0084",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Quelle espèce détient le record de hauteur pour un arbre ?",
+      "choices": [
+        "Le séquoia à feuilles d'if",
+        "L'eucalyptus royal",
+        "Le douglas",
+        "Le baobab"
+      ],
+      "answer": 0,
+      "fun": "Le plus haut individu connu dépasse 115 mètres, en Californie. Sa position exacte est tenue secrète.",
+      "tags": [
+        "arbres",
+        "records"
+      ]
+    },
+    {
+      "id": "nat-0085",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "De quel animal l'okapi est-il le plus proche parent ?",
+      "choices": [
+        "Du zèbre",
+        "De la girafe",
+        "De l'antilope",
+        "Du tapir"
+      ],
+      "answer": 1,
+      "fun": "Rayé comme un zèbre, mais c'est bien un cousin de la girafe, avec la même langue bleue démesurée.",
+      "tags": [
+        "mammifères"
+      ]
+    },
+    {
+      "id": "nat-0086",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Quel animal, aussi appelé thylacine, a disparu au XXe siècle ?",
+      "choices": [
+        "Le loup de Tasmanie",
+        "Le tigre de Java",
+        "Le quagga",
+        "Le grand pingouin"
+      ],
+      "answer": 0,
+      "fun": "Un marsupial carnivore rayé. Le dernier connu est mort en captivité en 1936, filmé quelques mois plus tôt.",
+      "tags": [
+        "disparition",
+        "mammifères"
+      ]
+    },
+    {
+      "id": "nat-0087",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Quel mammifère plonge le plus profond ?",
+      "choices": [
+        "Le cachalot",
+        "L'orque",
+        "Le phoque de Weddell",
+        "Le dauphin"
+      ],
+      "answer": 0,
+      "fun": "Au-delà de 2 000 mètres, dans le noir complet, pour y chasser des calmars géants. Ses apnées dépassent l'heure.",
+      "tags": [
+        "mer",
+        "records"
+      ]
+    },
+    {
+      "id": "nat-0088",
+      "type": "vraifaux",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Un escargot possède plusieurs milliers de dents.",
+      "answer": true,
+      "fun": "Elles tapissent une langue râpeuse, la radula, qui use la nourriture comme du papier de verre.",
+      "tags": [
+        "bizarre"
+      ]
+    },
+    {
+      "id": "nat-0089",
+      "type": "vraifaux",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "L'éponge de mer est un animal.",
+      "answer": true,
+      "fun": "Sans organes, sans nerfs, sans muscles, mais bien un animal. Passée au tamis, elle est capable de se reconstituer.",
+      "tags": [
+        "mer",
+        "piège"
+      ]
+    },
+    {
+      "id": "nat-0090",
+      "type": "estimation",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Combien d'espèces d'insectes les scientifiques ont-ils décrites à ce jour ?",
+      "answer": 1000000,
+      "unit": "espèces",
+      "tol": {
+        "pct": 30
+      },
+      "fun": "Environ un million nommées, et sans doute plusieurs millions encore inconnues. Un animal sur deux décrit sur Terre est un insecte.",
+      "tags": [
+        "insectes",
+        "science"
+      ]
+    },
+    {
+      "id": "nat-0091",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 12,
+      "q": "Quel vertébré détient le record connu de longévité ?",
+      "choices": [
+        "La tortue des Galápagos",
+        "Le requin du Groenland",
+        "La baleine boréale",
+        "La carpe koï"
+      ],
+      "answer": 1,
+      "fun": "Estimé à près de 400 ans. Il n'est adulte qu'à 150 ans : certains individus vivants aujourd'hui sont nés avant la Révolution française.",
+      "tags": [
+        "mer",
+        "records"
+      ]
+    },
+    {
+      "id": "nat-0092",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 12,
+      "q": "Pourquoi surnomme-t-on Turritopsis dohrnii la « méduse immortelle » ?",
+      "choices": [
+        "Elle ne vieillit pas",
+        "Elle revient à son stade juvénile",
+        "Elle se clone en mourant",
+        "Elle survit congelée"
+      ],
+      "answer": 1,
+      "fun": "Blessée ou affamée, elle se reconvertit en polype et recommence son cycle. En théorie, indéfiniment.",
+      "tags": [
+        "mer",
+        "science"
+      ]
+    },
+    {
+      "id": "nat-0093",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 12,
+      "q": "Le blob, ce fameux organisme jaune sans cerveau, est…",
+      "choices": [
+        "Un champignon",
+        "Ni animal, ni plante, ni champignon",
+        "Une plante",
+        "Une colonie de bactéries"
+      ],
+      "answer": 1,
+      "fun": "Une seule cellule géante, à des milliers de noyaux, capable d'apprendre et de transmettre ce qu'elle a appris à une autre. Elle a même voyagé jusqu'à l'ISS.",
+      "tags": [
+        "science",
+        "bizarre"
+      ]
+    },
+    {
+      "id": "nat-0094",
+      "type": "vraifaux",
+      "difficulty": 5,
+      "minAge": 12,
+      "q": "Les champignons sont génétiquement plus proches des animaux que des plantes.",
+      "answer": true,
+      "fun": "Ils ne font pas de photosynthèse, digèrent leur nourriture et stockent du glycogène, comme nous.",
+      "tags": [
+        "science",
+        "piège"
+      ]
+    },
+    {
+      "id": "nat-0095",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 12,
+      "q": "Quel poisson, cru éteint depuis 65 millions d'années, a été repêché vivant en 1938 ?",
+      "choices": [
+        "Le cœlacanthe",
+        "Le poisson-lune",
+        "L'esturgeon",
+        "La lamproie"
+      ],
+      "answer": 0,
+      "fun": "Une conservatrice de musée sud-africaine l'a repéré sur un étal de pêcheurs. On en connaît aujourd'hui deux espèces vivantes.",
+      "tags": [
+        "mer",
+        "science"
+      ]
+    },
+    {
+      "id": "nat-0096",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 12,
+      "q": "Combien de tentacules possède un poulpe ?",
+      "choices": [
+        "Huit",
+        "Deux",
+        "Aucun",
+        "Dix"
+      ],
+      "answer": 2,
+      "fun": "Il a huit bras, et pas un seul tentacule : les tentacules sont plus longs, à ventouses uniquement au bout. Le calmar, lui, a huit bras et deux tentacules.",
+      "tags": [
+        "mer",
+        "piège",
+        "vocabulaire"
+      ]
+    },
+    {
+      "id": "nat-0097",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Pourquoi le sang bleu du limule est-il si précieux pour l'industrie pharmaceutique ?",
+      "choices": [
+        "Il détecte les contaminations bactériennes",
+        "Il sert d'anticoagulant",
+        "Il remplace le plasma",
+        "Il conserve les vaccins"
+      ],
+      "answer": 0,
+      "fun": "Il coagule au contact de la moindre bactérie : on s'en sert pour tester la stérilité des vaccins et du matériel médical.",
+      "tags": [
+        "mer",
+        "science"
+      ]
+    },
+    {
+      "id": "nat-0098",
+      "type": "estimation",
+      "difficulty": 5,
+      "minAge": 12,
+      "q": "Combien d'yeux possède une abeille ?",
+      "answer": 5,
+      "unit": "yeux",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Deux gros yeux composés, plus trois petits yeux simples sur le dessus du crâne qui mesurent la lumière.",
+      "tags": [
+        "insectes",
+        "bizarre"
+      ]
+    },
+    {
+      "id": "nat-0099",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 12,
+      "q": "Quelle espèce de manchot vit dans l'hémisphère nord ?",
+      "choices": [
+        "Le manchot du Cap",
+        "Le manchot des Galápagos",
+        "Le manchot pygmée",
+        "Aucune"
+      ],
+      "answer": 1,
+      "fun": "Les Galápagos sont à cheval sur l'équateur : c'est le seul manchot qu'on peut croiser au nord de la ligne.",
+      "tags": [
+        "oiseaux",
+        "géo",
+        "piège"
+      ]
+    },
+    {
+      "id": "nat-0100",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 12,
+      "q": "Quel arbre détient le record de longévité pour un individu unique ?",
+      "choices": [
+        "Le pin de Bristlecone",
+        "Le séquoia géant",
+        "L'if commun",
+        "Le baobab"
+      ],
+      "answer": 0,
+      "fun": "Un spécimen des montagnes californiennes dépasse les 4 800 ans. Il germait pendant qu'on bâtissait les premières pyramides.",
+      "tags": [
+        "arbres",
+        "records"
       ]
     }
   ]

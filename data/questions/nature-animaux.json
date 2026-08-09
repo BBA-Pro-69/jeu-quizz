@@ -1,7 +1,7 @@
 {
   "category": "nature-animaux",
   "label": "Nature & Animaux",
-  "version": 1,
+  "version": 2,
   "questions": [
     {
       "id": "nat-0001",
@@ -9,10 +9,18 @@
       "difficulty": 1,
       "minAge": 4,
       "q": "Combien de pattes a une araignée ?",
-      "choices": ["6", "8", "10", "12"],
+      "choices": [
+        "6",
+        "8",
+        "10",
+        "12"
+      ],
       "answer": 1,
       "fun": "Les insectes en ont 6. L'araignée n'est donc pas un insecte, mais un arachnide.",
-      "tags": ["insectes", "bases"]
+      "tags": [
+        "insectes",
+        "bases"
+      ]
     },
     {
       "id": "nat-0002",
@@ -20,10 +28,18 @@
       "difficulty": 1,
       "minAge": 5,
       "q": "Quel est le plus grand animal de la planète ?",
-      "choices": ["L'éléphant d'Afrique", "Le requin-baleine", "La baleine bleue", "Le brachiosaure"],
+      "choices": [
+        "L'éléphant d'Afrique",
+        "Le requin-baleine",
+        "La baleine bleue",
+        "Le brachiosaure"
+      ],
       "answer": 2,
       "fun": "Sa langue pèse à elle seule autant qu'un éléphant.",
-      "tags": ["records", "mer"]
+      "tags": [
+        "records",
+        "mer"
+      ]
     },
     {
       "id": "nat-0003",
@@ -31,10 +47,17 @@
       "difficulty": 2,
       "minAge": 5,
       "q": "Comment appelle-t-on le petit du kangourou ?",
-      "choices": ["Un joey", "Un roo", "Un cangou", "Un poucet"],
+      "choices": [
+        "Un joey",
+        "Un roo",
+        "Un cangou",
+        "Un poucet"
+      ],
       "answer": 0,
       "fun": "À la naissance, il mesure 2 cm et grimpe seul jusqu'à la poche de sa mère.",
-      "tags": ["mammifères"]
+      "tags": [
+        "mammifères"
+      ]
     },
     {
       "id": "nat-0004",
@@ -42,10 +65,17 @@
       "difficulty": 1,
       "minAge": 5,
       "q": "Lequel de ces oiseaux est incapable de voler ?",
-      "choices": ["Le colibri", "Le manchot", "Le héron", "La mouette"],
+      "choices": [
+        "Le colibri",
+        "Le manchot",
+        "Le héron",
+        "La mouette"
+      ],
       "answer": 1,
       "fun": "Ses ailes sont devenues des nageoires : il « vole » sous l'eau à 30 km/h.",
-      "tags": ["oiseaux"]
+      "tags": [
+        "oiseaux"
+      ]
     },
     {
       "id": "nat-0005",
@@ -55,7 +85,10 @@
       "q": "Le poulpe a le sang bleu.",
       "answer": true,
       "fun": "Son sang transporte l'oxygène avec du cuivre, pas du fer. D'où la couleur.",
-      "tags": ["mer", "bizarre"]
+      "tags": [
+        "mer",
+        "bizarre"
+      ]
     },
     {
       "id": "nat-0006",
@@ -63,10 +96,18 @@
       "difficulty": 3,
       "minAge": 7,
       "q": "Quel animal est incapable de sauter ?",
-      "choices": ["Le rhinocéros", "L'éléphant", "L'hippopotame", "La girafe"],
+      "choices": [
+        "Le rhinocéros",
+        "L'éléphant",
+        "L'hippopotame",
+        "La girafe"
+      ],
       "answer": 1,
       "fun": "Ses os de pattes et son poids ne le permettent pas : il garde toujours un pied au sol.",
-      "tags": ["mammifères", "bizarre"]
+      "tags": [
+        "mammifères",
+        "bizarre"
+      ]
     },
     {
       "id": "nat-0007",
@@ -76,9 +117,13 @@
       "q": "Quelle est la vitesse de pointe du guépard, en km/h ?",
       "answer": 115,
       "unit": "km/h",
-      "tol": { "pct": 12 },
+      "tol": {
+        "pct": 12
+      },
       "fun": "Il ne la tient que 20 à 30 secondes, sinon il risque l'hyperthermie.",
-      "tags": ["records"]
+      "tags": [
+        "records"
+      ]
     },
     {
       "id": "nat-0008",
@@ -88,20 +133,31 @@
       "q": "Combien de cœurs possède une pieuvre ?",
       "answer": 3,
       "unit": "cœurs",
-      "tol": { "exact": true },
+      "tol": {
+        "exact": true
+      },
       "fun": "Deux pour les branchies, un pour le reste du corps. Ce dernier s'arrête quand elle nage — c'est pour ça qu'elle préfère marcher.",
-      "tags": ["mer", "bizarre"]
+      "tags": [
+        "mer",
+        "bizarre"
+      ]
     },
     {
       "id": "nat-0009",
       "type": "libre",
-      "difficulty": 3,
+      "difficulty": 2,
       "minAge": 8,
       "q": "Quel est le seul mammifère capable de vol battu, c'est-à-dire de voler vraiment ?",
       "answer": "La chauve-souris",
-      "accept": ["chauve-souris", "chauve souris", "chiroptère"],
+      "accept": [
+        "chauve-souris",
+        "chauve souris",
+        "chiroptère"
+      ],
       "fun": "L'écureuil volant, lui, ne fait que planer.",
-      "tags": ["mammifères"]
+      "tags": [
+        "mammifères"
+      ]
     },
     {
       "id": "nat-0010",
@@ -111,29 +167,39 @@
       "q": "Les dauphins dorment avec un œil ouvert.",
       "answer": true,
       "fun": "Ils mettent la moitié de leur cerveau en veille à la fois : l'autre continue à surveiller et à respirer.",
-      "tags": ["mer"]
+      "tags": [
+        "mer"
+      ]
     },
     {
       "id": "nat-0011",
       "type": "estimation",
-      "difficulty": 4,
+      "difficulty": 3,
       "minAge": 9,
       "q": "Combien de vertèbres compte le cou d'une girafe ?",
       "answer": 7,
       "unit": "vertèbres",
-      "tol": { "exact": true },
+      "tol": {
+        "exact": true
+      },
       "fun": "Exactement autant que toi. Elles sont juste énormes.",
-      "tags": ["mammifères", "piège"]
+      "tags": [
+        "mammifères",
+        "piège"
+      ]
     },
     {
       "id": "nat-0012",
       "type": "vraifaux",
-      "difficulty": 4,
+      "difficulty": 3,
       "minAge": 10,
       "q": "Un poisson-clown peut changer de sexe au cours de sa vie.",
       "answer": true,
       "fun": "Quand la femelle dominante meurt, le mâle devient femelle. Nemo mériterait un remake.",
-      "tags": ["mer", "bizarre"]
+      "tags": [
+        "mer",
+        "bizarre"
+      ]
     },
     {
       "id": "nat-0013",
@@ -141,10 +207,18 @@
       "difficulty": 4,
       "minAge": 11,
       "q": "L'ambre gris, matière première historique de la parfumerie, provient de quel animal ?",
-      "choices": ["Le cachalot", "Le castor", "La civette", "Le requin pèlerin"],
+      "choices": [
+        "Le cachalot",
+        "Le castor",
+        "La civette",
+        "Le requin pèlerin"
+      ],
       "answer": 0,
       "fun": "C'est une concrétion produite dans ses intestins. On en a retrouvé des blocs valant plusieurs dizaines de milliers d'euros sur des plages.",
-      "tags": ["mer", "insolite"]
+      "tags": [
+        "mer",
+        "insolite"
+      ]
     },
     {
       "id": "nat-0014",
@@ -154,9 +228,14 @@
       "q": "Combien de mois dure la gestation d'une éléphante ?",
       "answer": 22,
       "unit": "mois",
-      "tol": { "pct": 15 },
+      "tol": {
+        "exact": true
+      },
       "fun": "Presque deux ans. Le petit pèse déjà 100 kg à la naissance.",
-      "tags": ["mammifères", "records"]
+      "tags": [
+        "mammifères",
+        "records"
+      ]
     },
     {
       "id": "nat-0015",
@@ -164,10 +243,18 @@
       "difficulty": 3,
       "minAge": 10,
       "q": "Sur quel continent ne trouve-t-on aucun serpent ?",
-      "choices": ["L'Antarctique", "L'Australie", "L'Europe", "L'Amérique du Sud"],
+      "choices": [
+        "L'Antarctique",
+        "L'Australie",
+        "L'Europe",
+        "L'Amérique du Sud"
+      ],
       "answer": 0,
       "fun": "Trop froid : les reptiles ne peuvent pas y réguler leur température.",
-      "tags": ["reptiles", "géo"]
+      "tags": [
+        "reptiles",
+        "géo"
+      ]
     },
     {
       "id": "nat-0016",
@@ -176,9 +263,14 @@
       "minAge": 8,
       "q": "Comment appelle-t-on la peur des araignées ?",
       "answer": "L'arachnophobie",
-      "accept": ["arachnophobie"],
+      "accept": [
+        "arachnophobie"
+      ],
       "fun": "Elle touche environ une personne sur dix, bien plus souvent les femmes.",
-      "tags": ["insectes", "mots"]
+      "tags": [
+        "insectes",
+        "mots"
+      ]
     },
     {
       "id": "nat-0017",
@@ -190,7 +282,9 @@
       "duration": 30,
       "scoring": "collectif",
       "fun": "Astuce de meneur : interdis les bruits, c'est dix fois plus drôle.",
-      "tags": ["mime"]
+      "tags": [
+        "mime"
+      ]
     },
     {
       "id": "nat-0018",
@@ -202,7 +296,9 @@
       "duration": 15,
       "scoring": "individuel",
       "fun": "Le plus jeune de la table a droit à 20 secondes.",
-      "tags": ["rapidité"]
+      "tags": [
+        "rapidité"
+      ]
     }
   ]
 }

@@ -1,7 +1,7 @@
 {
   "category": "geo-voyages",
   "label": "Géo & Voyages",
-  "version": 2,
+  "version": 3,
   "questions": [
     {
       "id": "geo-0001",
@@ -344,6 +344,1415 @@
       "fun": "Le mètre a justement été défini pour que ce chiffre tombe rond : 40 000 km à l'origine.",
       "tags": [
         "planète"
+      ]
+    },
+    {
+      "id": "geo-0021",
+      "type": "libre",
+      "difficulty": 1,
+      "minAge": 6,
+      "q": "Quel fleuve traverse Paris ?",
+      "answer": "La Seine",
+      "accept": [
+        "seine",
+        "la seine"
+      ],
+      "fun": "Elle ne fait que 777 km, ce qui en fait un petit fleuve. Le Rhin en fait 1 230.",
+      "tags": [
+        "france",
+        "fleuves"
+      ]
+    },
+    {
+      "id": "geo-0022",
+      "type": "qcm",
+      "difficulty": 1,
+      "minAge": 6,
+      "q": "Quelle est la capitale de l'Espagne ?",
+      "choices": [
+        "Barcelone",
+        "Madrid",
+        "Séville",
+        "Valence"
+      ],
+      "answer": 1,
+      "fun": "Madrid est presque pile au centre géographique du pays. C'était l'argument de Philippe II pour y installer la cour.",
+      "tags": [
+        "capitales"
+      ]
+    },
+    {
+      "id": "geo-0023",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 7,
+      "q": "Quel est le plus grand océan du monde ?",
+      "choices": [
+        "L'Atlantique",
+        "L'océan Indien",
+        "Le Pacifique",
+        "L'Arctique"
+      ],
+      "answer": 2,
+      "fun": "À lui seul, il couvre un tiers de la surface de la planète. On pourrait y ranger tous les continents.",
+      "tags": [
+        "océans"
+      ]
+    },
+    {
+      "id": "geo-0024",
+      "type": "libre",
+      "difficulty": 2,
+      "minAge": 8,
+      "q": "Quel fleuve traverse Londres ?",
+      "answer": "La Tamise",
+      "accept": [
+        "tamise",
+        "la tamise",
+        "thames"
+      ],
+      "fun": "Elle est soumise aux marées jusqu'à Teddington : le niveau y monte et descend deux fois par jour.",
+      "tags": [
+        "fleuves",
+        "europe"
+      ]
+    },
+    {
+      "id": "geo-0025",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 8,
+      "q": "Quel est le plus long fleuve de France ?",
+      "choices": [
+        "La Seine",
+        "Le Rhône",
+        "La Garonne",
+        "La Loire"
+      ],
+      "answer": 3,
+      "fun": "1 006 km. C'est aussi le dernier grand fleuve européen sans barrage sur son cours principal.",
+      "tags": [
+        "france",
+        "fleuves"
+      ]
+    },
+    {
+      "id": "geo-0026",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 7,
+      "q": "Dans quel pays se trouve le mont Fuji ?",
+      "choices": [
+        "La Chine",
+        "Le Japon",
+        "La Corée du Sud",
+        "Le Népal"
+      ],
+      "answer": 1,
+      "fun": "C'est un volcan, et il est toujours actif. Sa dernière éruption date de 1707.",
+      "tags": [
+        "montagnes",
+        "asie"
+      ]
+    },
+    {
+      "id": "geo-0027",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 8,
+      "q": "Quel est le plus petit pays du monde ?",
+      "choices": [
+        "Monaco",
+        "Saint-Marin",
+        "Le Vatican",
+        "Le Liechtenstein"
+      ],
+      "answer": 2,
+      "fun": "0,44 km². On en fait le tour à pied en une demi-heure.",
+      "tags": [
+        "records"
+      ]
+    },
+    {
+      "id": "geo-0028",
+      "type": "libre",
+      "difficulty": 2,
+      "minAge": 9,
+      "q": "Dans quel pays se trouve le Machu Picchu ?",
+      "answer": "Le Pérou",
+      "accept": [
+        "perou",
+        "le perou",
+        "pérou",
+        "le pérou"
+      ],
+      "fun": "Le site n'a jamais été trouvé par les Espagnols. Il est resté oublié du monde extérieur jusqu'en 1911.",
+      "tags": [
+        "monuments",
+        "amérique"
+      ]
+    },
+    {
+      "id": "geo-0029",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 10,
+      "q": "Quel canal relie la Méditerranée à la mer Rouge ?",
+      "choices": [
+        "Le canal de Panama",
+        "Le canal de Suez",
+        "Le canal de Corinthe",
+        "Le canal de Kiel"
+      ],
+      "answer": 1,
+      "fun": "Il évite le tour de l'Afrique, soit 7 000 km de moins entre l'Europe et l'Asie.",
+      "tags": [
+        "mers"
+      ]
+    },
+    {
+      "id": "geo-0030",
+      "type": "vraifaux",
+      "difficulty": 2,
+      "minAge": 9,
+      "q": "Le canal de Panama relie l'océan Atlantique à l'océan Pacifique.",
+      "answer": true,
+      "fun": "Curiosité : à cause de la forme du pays, on le traverse d'ouest en est pour aller de l'Atlantique au Pacifique.",
+      "tags": [
+        "amérique"
+      ]
+    },
+    {
+      "id": "geo-0031",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 8,
+      "q": "Quelle monnaie utilise-t-on au Japon ?",
+      "choices": [
+        "Le won",
+        "Le yuan",
+        "Le yen",
+        "Le baht"
+      ],
+      "answer": 2,
+      "fun": "Il n'y a pas de centimes : le yen ne se divise pas. Le prix le plus courant s'écrit à quatre chiffres.",
+      "tags": [
+        "voyage",
+        "asie"
+      ]
+    },
+    {
+      "id": "geo-0032",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 9,
+      "q": "Quel détroit sépare la France de l'Angleterre ?",
+      "choices": [
+        "Le pas de Calais",
+        "Le Bosphore",
+        "Le détroit de Messine",
+        "Le Sund"
+      ],
+      "answer": 0,
+      "fun": "34 km au plus étroit. Le record de traversée à la nage tourne autour de 7 heures.",
+      "tags": [
+        "détroits",
+        "europe"
+      ]
+    },
+    {
+      "id": "geo-0033",
+      "type": "libre",
+      "difficulty": 2,
+      "minAge": 9,
+      "q": "Quel est le seul pays voisin du Portugal ?",
+      "answer": "L'Espagne",
+      "accept": [
+        "espagne",
+        "l'espagne"
+      ],
+      "fun": "Cette frontière est l'une des plus anciennes du monde encore en place : son tracé date pour l'essentiel de 1297.",
+      "tags": [
+        "europe",
+        "frontières"
+      ]
+    },
+    {
+      "id": "geo-0034",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 9,
+      "q": "À quelle altitude culmine le mont Blanc ?",
+      "choices": [
+        "Environ 2 800 m",
+        "Environ 3 800 m",
+        "Environ 4 800 m",
+        "Environ 5 800 m"
+      ],
+      "answer": 2,
+      "fun": "Le chiffre exact bouge chaque année de quelques dizaines de centimètres : le sommet est une calotte de neige, pas du rocher.",
+      "tags": [
+        "montagnes",
+        "france"
+      ]
+    },
+    {
+      "id": "geo-0035",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 8,
+      "q": "Quel est le plus grand pays d'Amérique du Sud ?",
+      "choices": [
+        "L'Argentine",
+        "Le Pérou",
+        "La Colombie",
+        "Le Brésil"
+      ],
+      "answer": 3,
+      "fun": "Il touche dix des douze pays du continent. Seuls le Chili et l'Équateur y échappent.",
+      "tags": [
+        "amérique"
+      ]
+    },
+    {
+      "id": "geo-0036",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 9,
+      "q": "Quelle mer borde la Bretagne au nord ?",
+      "choices": [
+        "La mer du Nord",
+        "La Manche",
+        "La mer d'Irlande",
+        "La mer Celtique"
+      ],
+      "answer": 1,
+      "fun": "Les Anglais l'appellent simplement « the Channel ». Personne des deux côtés n'a voulu du nom de l'autre.",
+      "tags": [
+        "france",
+        "mers"
+      ]
+    },
+    {
+      "id": "geo-0037",
+      "type": "libre",
+      "difficulty": 2,
+      "minAge": 8,
+      "q": "Dans quel pays se trouve le Taj Mahal ?",
+      "answer": "L'Inde",
+      "accept": [
+        "inde",
+        "l'inde"
+      ],
+      "fun": "Le marbre change de teinte selon l'heure : rosé le matin, blanc à midi, doré au clair de lune.",
+      "tags": [
+        "monuments",
+        "asie"
+      ]
+    },
+    {
+      "id": "geo-0038",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Quelle est la capitale de la Suisse ?",
+      "choices": [
+        "Zurich",
+        "Genève",
+        "Berne",
+        "Bâle"
+      ],
+      "answer": 2,
+      "fun": "Officiellement, la Suisse n'a pas de capitale : Berne est « ville fédérale ». Une nuance très suisse.",
+      "tags": [
+        "capitales",
+        "piège"
+      ]
+    },
+    {
+      "id": "geo-0039",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Quelle est la capitale de la Nouvelle-Zélande ?",
+      "choices": [
+        "Auckland",
+        "Wellington",
+        "Christchurch",
+        "Dunedin"
+      ],
+      "answer": 1,
+      "fun": "C'est la capitale la plus au sud du monde, et sans doute la plus venteuse : les rafales y dépassent 100 km/h une trentaine de jours par an.",
+      "tags": [
+        "capitales",
+        "piège"
+      ]
+    },
+    {
+      "id": "geo-0040",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Quelle est la capitale du Maroc ?",
+      "choices": [
+        "Casablanca",
+        "Marrakech",
+        "Fès",
+        "Rabat"
+      ],
+      "answer": 3,
+      "fun": "Casablanca est trois fois plus peuplée, mais c'est Rabat qui abrite le palais royal et les ministères.",
+      "tags": [
+        "capitales",
+        "piège"
+      ]
+    },
+    {
+      "id": "geo-0041",
+      "type": "libre",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Quelle est la capitale de l'Écosse ?",
+      "answer": "Édimbourg",
+      "accept": [
+        "edimbourg",
+        "édimbourg",
+        "edinburgh"
+      ],
+      "fun": "Glasgow est plus grande. Édimbourg, elle, est bâtie sur un volcan éteint : le château est posé dessus.",
+      "tags": [
+        "capitales",
+        "europe"
+      ]
+    },
+    {
+      "id": "geo-0042",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Quelle est la plus grande île du monde ?",
+      "choices": [
+        "L'Australie",
+        "Le Groenland",
+        "Bornéo",
+        "Madagascar"
+      ],
+      "answer": 1,
+      "fun": "L'Australie est plus vaste, mais on la classe comme continent. Question de convention, pas de taille.",
+      "tags": [
+        "records",
+        "piège"
+      ]
+    },
+    {
+      "id": "geo-0043",
+      "type": "vraifaux",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Le Portugal et l'Espagne sont à la même heure.",
+      "answer": false,
+      "fun": "Il y a une heure de décalage. De Badajoz à Elvas, dix minutes de route, et on remonte sa montre.",
+      "tags": [
+        "europe",
+        "voyage",
+        "piège"
+      ]
+    },
+    {
+      "id": "geo-0044",
+      "type": "estimation",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Combien d'océans compte-t-on aujourd'hui sur Terre ?",
+      "answer": 5,
+      "unit": "océans",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Cinq depuis 2000 : l'océan Austral, autour de l'Antarctique, a été reconnu il n'y a pas si longtemps. Beaucoup de gens en comptent encore quatre.",
+      "tags": [
+        "océans",
+        "piège"
+      ]
+    },
+    {
+      "id": "geo-0045",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Quel est l'endroit le plus profond des océans ?",
+      "choices": [
+        "La fosse des Mariannes",
+        "La fosse du Japon",
+        "La fosse de Porto Rico",
+        "La fosse des Tonga"
+      ],
+      "answer": 0,
+      "fun": "Près de 11 000 m. On y a envoyé plus de gens sur la Lune que dans ce trou.",
+      "tags": [
+        "océans",
+        "records"
+      ]
+    },
+    {
+      "id": "geo-0046",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Quel est le plus petit océan du monde ?",
+      "choices": [
+        "L'océan Indien",
+        "L'Arctique",
+        "L'Atlantique",
+        "L'océan Austral"
+      ],
+      "answer": 1,
+      "fun": "Il est aussi le moins profond, et une bonne partie n'est pas de l'eau libre mais de la banquise.",
+      "tags": [
+        "océans"
+      ]
+    },
+    {
+      "id": "geo-0047",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Quelle est la plus grande étendue d'eau fermée du monde ?",
+      "choices": [
+        "Le lac Supérieur",
+        "La mer Caspienne",
+        "Le lac Baïkal",
+        "La mer d'Aral"
+      ],
+      "answer": 1,
+      "fun": "On l'appelle mer, mais c'est un lac : aucune sortie vers l'océan. Cinq pays se partagent ses rives.",
+      "tags": [
+        "records",
+        "piège"
+      ]
+    },
+    {
+      "id": "geo-0048",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Quelle chaîne de montagnes sert de frontière entre l'Europe et l'Asie ?",
+      "choices": [
+        "Le Caucase",
+        "Les Carpates",
+        "L'Oural",
+        "L'Altaï"
+      ],
+      "answer": 2,
+      "fun": "Une frontière décidée par un géographe suédois en 1730, pas par la nature : les sommets y dépassent à peine 1 900 m.",
+      "tags": [
+        "montagnes",
+        "europe"
+      ]
+    },
+    {
+      "id": "geo-0049",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Quel fleuve arrose Vienne, Budapest et Belgrade ?",
+      "choices": [
+        "Le Rhin",
+        "L'Elbe",
+        "Le Danube",
+        "La Vistule"
+      ],
+      "answer": 2,
+      "fun": "Trois capitales sur un seul fleuve, et une quatrième avec Bratislava. Aucun autre cours d'eau n'en fait autant.",
+      "tags": [
+        "fleuves",
+        "europe"
+      ]
+    },
+    {
+      "id": "geo-0050",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Quel fleuve déverse le plus d'eau dans l'océan ?",
+      "choices": [
+        "Le Nil",
+        "Le Congo",
+        "Le Yangtsé",
+        "L'Amazone"
+      ],
+      "answer": 3,
+      "fun": "Il représente à lui seul un cinquième de l'eau douce déversée dans les océans du globe. On repère son eau à 200 km au large.",
+      "tags": [
+        "fleuves",
+        "records"
+      ]
+    },
+    {
+      "id": "geo-0051",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Quelle est la plus grande île de la mer Méditerranée ?",
+      "choices": [
+        "La Sardaigne",
+        "La Sicile",
+        "Chypre",
+        "La Crète"
+      ],
+      "answer": 1,
+      "fun": "Elle abrite l'Etna, le volcan le plus actif d'Europe, qui grandit et rétrécit au fil des éruptions.",
+      "tags": [
+        "îles",
+        "europe"
+      ]
+    },
+    {
+      "id": "geo-0052",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Quel est le pays le plus peuplé d'Afrique ?",
+      "choices": [
+        "L'Égypte",
+        "L'Afrique du Sud",
+        "Le Nigeria",
+        "L'Éthiopie"
+      ],
+      "answer": 2,
+      "fun": "Plus de 200 millions d'habitants, et une industrie du cinéma, Nollywood, qui produit davantage de films que Hollywood.",
+      "tags": [
+        "démographie",
+        "afrique"
+      ]
+    },
+    {
+      "id": "geo-0053",
+      "type": "vraifaux",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "La France est le pays qui reçoit le plus de touristes étrangers au monde.",
+      "answer": true,
+      "fun": "Elle tient la première place depuis les années 1980. En revanche, elle n'est pas première pour les recettes : les visiteurs y restent moins longtemps qu'en Espagne.",
+      "tags": [
+        "voyage",
+        "france"
+      ]
+    },
+    {
+      "id": "geo-0054",
+      "type": "estimation",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Combien d'étoiles compte le drapeau européen ?",
+      "answer": 12,
+      "unit": "étoiles",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Douze, et ce chiffre ne bougera jamais : il ne représente pas le nombre de pays membres, mais la perfection.",
+      "tags": [
+        "europe",
+        "piège"
+      ]
+    },
+    {
+      "id": "geo-0055",
+      "type": "estimation",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Combien de nations composent le Royaume-Uni ?",
+      "answer": 4,
+      "unit": "nations",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Angleterre, Écosse, pays de Galles, Irlande du Nord. La Grande-Bretagne, elle, n'en compte que trois : c'est l'île.",
+      "tags": [
+        "europe",
+        "piège"
+      ]
+    },
+    {
+      "id": "geo-0056",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Dans quelle ville se trouve le siège de l'ONU ?",
+      "choices": [
+        "Genève",
+        "Bruxelles",
+        "New York",
+        "La Haye"
+      ],
+      "answer": 2,
+      "fun": "Le terrain a été offert par John Rockefeller Jr. en 1946. Techniquement, ce n'est plus le sol américain.",
+      "tags": [
+        "villes"
+      ]
+    },
+    {
+      "id": "geo-0057",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Dans quelle ville le Parlement européen tient-il ses sessions plénières ?",
+      "choices": [
+        "Bruxelles",
+        "Strasbourg",
+        "Luxembourg",
+        "Francfort"
+      ],
+      "answer": 1,
+      "fun": "Les députés font l'aller-retour depuis Bruxelles douze fois par an, avec les malles de dossiers. Personne n'aime ça, mais il faudrait l'unanimité pour changer.",
+      "tags": [
+        "europe",
+        "france"
+      ]
+    },
+    {
+      "id": "geo-0058",
+      "type": "vraifaux",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "La mer Morte n'est pas une mer mais un lac.",
+      "answer": true,
+      "fun": "Un lac salé sans aucune sortie. Il est neuf fois plus salé que l'océan, d'où l'impossibilité de couler.",
+      "tags": [
+        "mers",
+        "piège"
+      ]
+    },
+    {
+      "id": "geo-0059",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Dans quel pays se trouve le Kilimandjaro ?",
+      "choices": [
+        "Le Kenya",
+        "L'Éthiopie",
+        "La Tanzanie",
+        "L'Ouganda"
+      ],
+      "answer": 2,
+      "fun": "5 895 m, à trois degrés de l'équateur, et pourtant de la glace au sommet. Elle fond vite.",
+      "tags": [
+        "montagnes",
+        "afrique"
+      ]
+    },
+    {
+      "id": "geo-0060",
+      "type": "libre",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Quelle grande île est séparée du continent africain par le canal du Mozambique ?",
+      "answer": "Madagascar",
+      "accept": [
+        "madagascar"
+      ],
+      "fun": "Elle s'est détachée il y a 88 millions d'années. Résultat : les trois quarts de ses espèces n'existent nulle part ailleurs.",
+      "tags": [
+        "îles",
+        "afrique"
+      ]
+    },
+    {
+      "id": "geo-0061",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Quel pays partage l'île d'Hispaniola avec la République dominicaine ?",
+      "choices": [
+        "Cuba",
+        "Haïti",
+        "La Jamaïque",
+        "Porto Rico"
+      ],
+      "answer": 1,
+      "fun": "La frontière se voit depuis l'espace : d'un côté la forêt, de l'autre des collines pelées par la coupe du bois.",
+      "tags": [
+        "îles",
+        "amérique"
+      ]
+    },
+    {
+      "id": "geo-0062",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Quel est le plus vaste État des États-Unis ?",
+      "choices": [
+        "Le Texas",
+        "La Californie",
+        "L'Alaska",
+        "Le Montana"
+      ],
+      "answer": 2,
+      "fun": "Deux fois et demie le Texas. Il a été acheté à la Russie en 1867 pour 7,2 millions de dollars, une affaire jugée ridicule à l'époque.",
+      "tags": [
+        "amérique"
+      ]
+    },
+    {
+      "id": "geo-0063",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Dans quel pays se trouve le temple d'Angkor Vat ?",
+      "choices": [
+        "La Thaïlande",
+        "Le Cambodge",
+        "Le Vietnam",
+        "Le Laos"
+      ],
+      "answer": 1,
+      "fun": "C'est le plus grand monument religieux du monde, et le seul bâtiment à figurer sur un drapeau national.",
+      "tags": [
+        "monuments",
+        "asie"
+      ]
+    },
+    {
+      "id": "geo-0064",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Quel pays a la plus faible densité de population au monde ?",
+      "choices": [
+        "Le Canada",
+        "La Mongolie",
+        "L'Australie",
+        "L'Islande"
+      ],
+      "answer": 1,
+      "fun": "Environ deux habitants au kilomètre carré. Un tiers de la population y vit encore sous la yourte, au moins une partie de l'année.",
+      "tags": [
+        "démographie",
+        "records",
+        "asie"
+      ]
+    },
+    {
+      "id": "geo-0065",
+      "type": "vraifaux",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Le gouvernement des Pays-Bas siège à Amsterdam.",
+      "answer": false,
+      "fun": "Amsterdam est la capitale, mais le gouvernement, le parlement et le roi sont à La Haye. Un partage unique en Europe.",
+      "tags": [
+        "europe",
+        "piège"
+      ]
+    },
+    {
+      "id": "geo-0066",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Quelle est la capitale du Nigeria ?",
+      "choices": [
+        "Lagos",
+        "Kano",
+        "Abuja",
+        "Ibadan"
+      ],
+      "answer": 2,
+      "fun": "Construite de toutes pièces dans les années 1980, en plein centre du pays, pour ne favoriser aucune ethnie.",
+      "tags": [
+        "capitales",
+        "afrique",
+        "piège"
+      ]
+    },
+    {
+      "id": "geo-0067",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Quelle ville est la capitale administrative de l'Afrique du Sud ?",
+      "choices": [
+        "Le Cap",
+        "Johannesburg",
+        "Durban",
+        "Pretoria"
+      ],
+      "answer": 3,
+      "fun": "Le pays en a trois : Pretoria pour le gouvernement, Le Cap pour le parlement, Bloemfontein pour la justice. Un compromis de 1910 jamais défait.",
+      "tags": [
+        "capitales",
+        "afrique"
+      ]
+    },
+    {
+      "id": "geo-0068",
+      "type": "libre",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Quelle est la capitale de la Slovénie ?",
+      "answer": "Ljubljana",
+      "accept": [
+        "ljubljana",
+        "lubliana",
+        "ljubliana"
+      ],
+      "fun": "Son nom viendrait de « aimée ». Un dragon en est l'emblème et trône sur son pont le plus célèbre.",
+      "tags": [
+        "capitales",
+        "europe"
+      ]
+    },
+    {
+      "id": "geo-0069",
+      "type": "vraifaux",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Le Lesotho est un pays entièrement entouré par l'Afrique du Sud.",
+      "answer": true,
+      "fun": "Et son point le plus bas est à 1 400 m d'altitude : aucun autre pays au monde n'a un plancher aussi haut.",
+      "tags": [
+        "afrique",
+        "frontières"
+      ]
+    },
+    {
+      "id": "geo-0070",
+      "type": "libre",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Quel État minuscule est entièrement entouré par l'Italie, hors le Vatican ?",
+      "answer": "Saint-Marin",
+      "accept": [
+        "saint marin",
+        "saint-marin",
+        "san marino"
+      ],
+      "fun": "Il se dit la plus vieille république du monde encore debout : fondée en 301, selon la tradition.",
+      "tags": [
+        "europe",
+        "frontières"
+      ]
+    },
+    {
+      "id": "geo-0071",
+      "type": "vraifaux",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "C'est la Russie qui possède le plus long littoral du monde.",
+      "answer": false,
+      "fun": "C'est le Canada : plus de 200 000 km avec les îles de l'Arctique, soit cinq fois le tour de la Terre.",
+      "tags": [
+        "records",
+        "amérique"
+      ]
+    },
+    {
+      "id": "geo-0072",
+      "type": "estimation",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Combien de pays compte le continent africain ?",
+      "answer": 54,
+      "unit": "pays",
+      "tol": {
+        "exact": true
+      },
+      "fun": "54 reconnus par l'ONU. C'est le continent qui en compte le plus, loin devant l'Europe.",
+      "tags": [
+        "afrique"
+      ]
+    },
+    {
+      "id": "geo-0073",
+      "type": "estimation",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Combien de pays la France métropolitaine a-t-elle pour voisins ?",
+      "answer": 8,
+      "unit": "pays",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Belgique, Luxembourg, Allemagne, Suisse, Italie, Monaco, Espagne, Andorre. On oublie presque toujours les deux plus petits.",
+      "tags": [
+        "france",
+        "frontières",
+        "piège"
+      ]
+    },
+    {
+      "id": "geo-0074",
+      "type": "estimation",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Combien de kilomètres séparent Paris de New York à vol d'oiseau ?",
+      "answer": 5837,
+      "unit": "km",
+      "tol": {
+        "pct": 12
+      },
+      "fun": "Les avions ne suivent pas cette ligne : ils remontent vers le Groenland à l'aller et redescendent au retour, poussés par le jet-stream.",
+      "tags": [
+        "voyage",
+        "distances"
+      ]
+    },
+    {
+      "id": "geo-0075",
+      "type": "vraifaux",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "L'Everest est le point de la surface terrestre le plus éloigné du centre de la Terre.",
+      "answer": false,
+      "fun": "C'est le Chimborazo, en Équateur, qui pointe pourtant à 6 263 m. La Terre est renflée à l'équateur : il y gagne deux kilomètres d'avance.",
+      "tags": [
+        "montagnes",
+        "piège",
+        "records"
+      ]
+    },
+    {
+      "id": "geo-0076",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Quel pays compte le plus de sites inscrits au patrimoine mondial de l'UNESCO ?",
+      "choices": [
+        "La France",
+        "La Chine",
+        "L'Espagne",
+        "L'Italie"
+      ],
+      "answer": 3,
+      "fun": "Elle et la Chine se disputent la tête à un ou deux sites près, à chaque session du comité.",
+      "tags": [
+        "monuments",
+        "europe"
+      ]
+    },
+    {
+      "id": "geo-0077",
+      "type": "vraifaux",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Le Népal est le seul pays au monde dont le drapeau n'est pas rectangulaire.",
+      "answer": true,
+      "fun": "Deux fanions triangulaires superposés. Sa construction géométrique exacte est inscrite dans la Constitution du pays.",
+      "tags": [
+        "drapeaux",
+        "insolite"
+      ]
+    },
+    {
+      "id": "geo-0078",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Quel est le point le plus bas de la terre ferme ?",
+      "choices": [
+        "La vallée de la Mort",
+        "Les rives de la mer Morte",
+        "La dépression de Danakil",
+        "Le lac Assal"
+      ],
+      "answer": 1,
+      "fun": "Environ 430 m sous le niveau de la mer, et ça descend encore : le lac s'évapore plus vite qu'il ne se remplit.",
+      "tags": [
+        "records"
+      ]
+    },
+    {
+      "id": "geo-0079",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Quelle mer d'Asie centrale a perdu la quasi-totalité de sa surface en cinquante ans ?",
+      "choices": [
+        "La mer Caspienne",
+        "La mer d'Aral",
+        "Le lac Balkhach",
+        "La mer Noire"
+      ],
+      "answer": 1,
+      "fun": "On a détourné ses deux fleuves pour irriguer du coton. Il reste des bateaux rouillés posés en plein désert.",
+      "tags": [
+        "mers",
+        "asie"
+      ]
+    },
+    {
+      "id": "geo-0080",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Quel lac contient le plus grand volume d'eau douce du monde ?",
+      "choices": [
+        "Le lac Supérieur",
+        "Le lac Victoria",
+        "Le lac Baïkal",
+        "Le lac Tanganyika"
+      ],
+      "answer": 2,
+      "fun": "1 642 m de fond, et environ un cinquième de l'eau douce liquide de la planète. Il gèle assez pour qu'on y roule en camion.",
+      "tags": [
+        "records",
+        "asie"
+      ]
+    },
+    {
+      "id": "geo-0081",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Quel est le plus long fleuve d'Europe ?",
+      "choices": [
+        "Le Danube",
+        "Le Rhin",
+        "La Volga",
+        "Le Dniepr"
+      ],
+      "answer": 2,
+      "fun": "3 530 km, entièrement en Russie, et elle ne rejoint aucun océan : elle finit dans la mer Caspienne.",
+      "tags": [
+        "fleuves",
+        "europe"
+      ]
+    },
+    {
+      "id": "geo-0082",
+      "type": "vraifaux",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "La plus haute chute d'eau du monde se trouve au Venezuela.",
+      "answer": true,
+      "fun": "Le Salto Ángel tombe de 979 m. À la saison sèche, l'eau se pulvérise en brouillard avant même de toucher le sol.",
+      "tags": [
+        "records",
+        "amérique"
+      ]
+    },
+    {
+      "id": "geo-0083",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Les chutes d'Iguaçu marquent la frontière entre quels pays ?",
+      "choices": [
+        "Le Brésil et l'Argentine",
+        "Le Chili et la Bolivie",
+        "Le Pérou et l'Équateur",
+        "Le Paraguay et l'Uruguay"
+      ],
+      "answer": 0,
+      "fun": "Près de 275 cascades sur près de 3 km. Devant, Eleanor Roosevelt aurait lâché : « Pauvre Niagara. »",
+      "tags": [
+        "amérique"
+      ]
+    },
+    {
+      "id": "geo-0084",
+      "type": "vraifaux",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "L'Australie est plus vaste que l'Europe.",
+      "answer": false,
+      "fun": "7,7 millions de km² contre un peu plus de 10 pour l'Europe. Elle paraît énorme surtout à cause des cartes, qui étirent les hautes latitudes.",
+      "tags": [
+        "records",
+        "piège"
+      ]
+    },
+    {
+      "id": "geo-0085",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Quel pays s'étire sur plus de 4 000 km du nord au sud pour moins de 200 km de large en moyenne ?",
+      "choices": [
+        "Le Chili",
+        "La Norvège",
+        "Le Vietnam",
+        "La Suède"
+      ],
+      "answer": 0,
+      "fun": "Du désert le plus sec du monde aux glaciers de Patagonie, sans jamais s'éloigner beaucoup de la côte.",
+      "tags": [
+        "amérique",
+        "records"
+      ]
+    },
+    {
+      "id": "geo-0086",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Quel désert est réputé être l'endroit le plus sec du monde ?",
+      "choices": [
+        "Le désert de Gobi",
+        "Le désert d'Atacama",
+        "Le Kalahari",
+        "Le désert de Mojave"
+      ],
+      "answer": 1,
+      "fun": "Certaines de ses stations météo n'ont jamais enregistré la moindre pluie. La NASA y teste ses robots martiens.",
+      "tags": [
+        "déserts",
+        "amérique"
+      ]
+    },
+    {
+      "id": "geo-0087",
+      "type": "libre",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Quel pays s'appelait Ceylan jusqu'en 1972 ?",
+      "answer": "Le Sri Lanka",
+      "accept": [
+        "sri lanka",
+        "le sri lanka",
+        "srilanka"
+      ],
+      "fun": "Le nom Ceylan est resté sur les boîtes de thé, bien après avoir disparu des cartes.",
+      "tags": [
+        "asie",
+        "noms"
+      ]
+    },
+    {
+      "id": "geo-0088",
+      "type": "libre",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Quel nom de pays signifie « le pays des hommes intègres » ?",
+      "answer": "Le Burkina Faso",
+      "accept": [
+        "burkina faso",
+        "le burkina faso",
+        "burkina"
+      ],
+      "fun": "Thomas Sankara l'a rebaptisé ainsi en 1984. Le nom mélange deux langues du pays, le mooré et le dioula.",
+      "tags": [
+        "afrique",
+        "noms"
+      ]
+    },
+    {
+      "id": "geo-0089",
+      "type": "vraifaux",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Le Japon est surnommé « le pays du Matin calme ».",
+      "answer": false,
+      "fun": "Le Japon, c'est le Soleil-Levant. Le Matin calme, c'est la Corée. Les deux se confondent souvent.",
+      "tags": [
+        "asie",
+        "piège"
+      ]
+    },
+    {
+      "id": "geo-0090",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Quel est le pays le plus densément peuplé du monde ?",
+      "choices": [
+        "Singapour",
+        "Le Bangladesh",
+        "Malte",
+        "Monaco"
+      ],
+      "answer": 3,
+      "fun": "Environ 19 000 habitants au km². On traverse le pays à pied en une heure, en montant beaucoup.",
+      "tags": [
+        "démographie",
+        "records"
+      ]
+    },
+    {
+      "id": "geo-0091",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Dans quelle ville siège le gouvernement bolivien ?",
+      "choices": [
+        "Sucre",
+        "Santa Cruz",
+        "La Paz",
+        "Cochabamba"
+      ],
+      "answer": 2,
+      "fun": "Sucre reste la capitale constitutionnelle, mais tout se décide à La Paz, à 3 600 m : le siège de gouvernement le plus haut du monde.",
+      "tags": [
+        "capitales",
+        "amérique",
+        "piège"
+      ]
+    },
+    {
+      "id": "geo-0092",
+      "type": "libre",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Quelle est la capitale du Myanmar, l'ancienne Birmanie ?",
+      "answer": "Naypyidaw",
+      "accept": [
+        "naypyidaw",
+        "nay pyi taw",
+        "naypyitaw"
+      ],
+      "fun": "Sortie de terre en secret en 2005 pour remplacer Rangoun. Elle a des avenues à vingt voies, presque toujours vides.",
+      "tags": [
+        "capitales",
+        "asie"
+      ]
+    },
+    {
+      "id": "geo-0093",
+      "type": "libre",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Quelle est la capitale du Kazakhstan ?",
+      "answer": "Astana",
+      "accept": [
+        "astana",
+        "noursoultan",
+        "nur-sultan",
+        "nursultan"
+      ],
+      "fun": "Elle s'est appelée Noursoultan de 2019 à 2022, en l'honneur du président sortant. Puis on lui a rendu son nom.",
+      "tags": [
+        "capitales",
+        "asie"
+      ]
+    },
+    {
+      "id": "geo-0094",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Avec quel pays la France partage-t-elle sa plus longue frontière terrestre ?",
+      "choices": [
+        "L'Espagne",
+        "Le Brésil",
+        "L'Allemagne",
+        "La Belgique"
+      ],
+      "answer": 1,
+      "fun": "730 km entre la Guyane et l'Amapá, contre 623 avec l'Espagne. La France est un pays sud-américain, techniquement.",
+      "tags": [
+        "france",
+        "frontières",
+        "piège"
+      ]
+    },
+    {
+      "id": "geo-0095",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Quelle est la plus grande île française ?",
+      "choices": [
+        "La Corse",
+        "La Réunion",
+        "La Grande Terre de Nouvelle-Calédonie",
+        "La Guadeloupe"
+      ],
+      "answer": 2,
+      "fun": "16 372 km², soit près de deux Corses. Elle est bordée par le deuxième plus grand récif corallien du monde.",
+      "tags": [
+        "france",
+        "îles",
+        "piège"
+      ]
+    },
+    {
+      "id": "geo-0096",
+      "type": "estimation",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Combien de pays le Danube traverse-t-il ou borde-t-il ?",
+      "answer": 10,
+      "unit": "pays",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Dix, un record mondial pour un fleuve. Il naît en Forêt-Noire et finit en delta sur la mer Noire.",
+      "tags": [
+        "fleuves",
+        "europe",
+        "records"
+      ]
+    },
+    {
+      "id": "geo-0097",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Quel pays d'Amérique du Sud a l'anglais pour seule langue officielle ?",
+      "choices": [
+        "Le Suriname",
+        "Le Guyana",
+        "Le Belize",
+        "Le Paraguay"
+      ],
+      "answer": 1,
+      "fun": "Le Suriname, juste à côté, parle néerlandais. Trois anciennes Guyanes, trois langues européennes différentes.",
+      "tags": [
+        "amérique",
+        "langues"
+      ]
+    },
+    {
+      "id": "geo-0098",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Quel pays abrite la plus grande surface de forêt au monde ?",
+      "choices": [
+        "Le Brésil",
+        "Le Canada",
+        "La Russie",
+        "La République démocratique du Congo"
+      ],
+      "answer": 2,
+      "fun": "La taïga sibérienne couvre à elle seule plus de huit millions de km². On pense toujours à l'Amazonie, qui arrive deuxième.",
+      "tags": [
+        "records",
+        "piège"
+      ]
+    },
+    {
+      "id": "geo-0099",
+      "type": "vraifaux",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "New York est la capitale de l'État de New York.",
+      "answer": false,
+      "fun": "C'est Albany. Une constante américaine : la capitale d'un État est rarement sa plus grande ville. Sacramento, Springfield, Tallahassee, même logique.",
+      "tags": [
+        "amérique",
+        "piège"
+      ]
+    },
+    {
+      "id": "geo-0100",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 14,
+      "q": "Combien existe-t-il de pays doublement enclavés, c'est-à-dire entourés uniquement de pays sans accès à la mer ?",
+      "choices": [
+        "Aucun",
+        "Un seul",
+        "Deux",
+        "Cinq"
+      ],
+      "answer": 2,
+      "fun": "Le Liechtenstein et l'Ouzbékistan. Pour atteindre l'océan depuis chez eux, il faut traverser au moins deux frontières.",
+      "tags": [
+        "frontières",
+        "insolite"
       ]
     }
   ]

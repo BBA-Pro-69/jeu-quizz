@@ -1,7 +1,7 @@
 {
   "category": "musique",
   "label": "Musique & Chansons",
-  "version": 1,
+  "version": 2,
   "questions": [
     {
       "id": "mus-0001",
@@ -11,9 +11,13 @@
       "q": "Combien de cordes a une guitare classique ?",
       "answer": 6,
       "unit": "cordes",
-      "tol": { "exact": true },
+      "tol": {
+        "exact": true
+      },
       "fun": "La basse n'en a que 4, et le ukulélé aussi.",
-      "tags": ["instruments"]
+      "tags": [
+        "instruments"
+      ]
     },
     {
       "id": "mus-0002",
@@ -21,10 +25,17 @@
       "difficulty": 1,
       "minAge": 5,
       "q": "Quel instrument joue-t-on avec un archet ?",
-      "choices": ["La flûte", "Le violon", "Le tambour", "L'accordéon"],
+      "choices": [
+        "La flûte",
+        "Le violon",
+        "Le tambour",
+        "L'accordéon"
+      ],
       "answer": 1,
       "fun": "Un archet de violon compte environ 150 crins de queue de cheval.",
-      "tags": ["instruments"]
+      "tags": [
+        "instruments"
+      ]
     },
     {
       "id": "mus-0003",
@@ -33,9 +44,14 @@
       "minAge": 5,
       "q": "Complète : « Frère Jacques, frère Jacques, dormez-vous ? Dormez-vous ? ... »",
       "answer": "Sonnez les matines",
-      "accept": ["sonnez les matines", "sonnez les matines sonnez les matines"],
+      "accept": [
+        "sonnez les matines",
+        "sonnez les matines sonnez les matines"
+      ],
       "fun": "Les matines sont les cloches de la prière du matin. La comptine se moque d'un moine qui rate son réveil.",
-      "tags": ["comptines"]
+      "tags": [
+        "comptines"
+      ]
     },
     {
       "id": "mus-0004",
@@ -45,9 +61,13 @@
       "q": "Combien de notes compte la gamme de do : do, ré, mi, fa, sol, la, si ?",
       "answer": 7,
       "unit": "notes",
-      "tol": { "exact": true },
+      "tol": {
+        "exact": true
+      },
       "fun": "Dans les pays anglo-saxons, on les appelle par des lettres : C, D, E, F, G, A, B.",
-      "tags": ["théorie"]
+      "tags": [
+        "théorie"
+      ]
     },
     {
       "id": "mus-0005",
@@ -55,10 +75,17 @@
       "difficulty": 2,
       "minAge": 7,
       "q": "Quel groupe britannique réunissait John, Paul, George et Ringo ?",
-      "choices": ["The Rolling Stones", "The Beatles", "The Who", "Pink Floyd"],
+      "choices": [
+        "The Rolling Stones",
+        "The Beatles",
+        "The Who",
+        "Pink Floyd"
+      ],
       "answer": 1,
       "fun": "Ils ont arrêté les concerts en 1966, alors qu'ils ont continué à sortir des albums jusqu'en 1970.",
-      "tags": ["groupes"]
+      "tags": [
+        "groupes"
+      ]
     },
     {
       "id": "mus-0006",
@@ -68,9 +95,13 @@
       "q": "Combien de musiciens compte un quatuor ?",
       "answer": 4,
       "unit": "musiciens",
-      "tol": { "exact": true },
+      "tol": {
+        "exact": true
+      },
       "fun": "Le quatuor à cordes classique : deux violons, un alto, un violoncelle.",
-      "tags": ["théorie"]
+      "tags": [
+        "théorie"
+      ]
     },
     {
       "id": "mus-0007",
@@ -78,31 +109,47 @@
       "difficulty": 2,
       "minAge": 8,
       "q": "Qui chante « Thriller » ?",
-      "choices": ["Prince", "Michael Jackson", "Stevie Wonder", "James Brown"],
+      "choices": [
+        "Prince",
+        "Michael Jackson",
+        "Stevie Wonder",
+        "James Brown"
+      ],
       "answer": 1,
       "fun": "Le clip dure 14 minutes et a coûté à l'époque le prix d'un petit film.",
-      "tags": ["pop"]
+      "tags": [
+        "pop"
+      ]
     },
     {
       "id": "mus-0008",
       "type": "qcm",
-      "difficulty": 3,
+      "difficulty": 2,
       "minAge": 8,
       "q": "Dans quel pays le reggae est-il né ?",
-      "choices": ["Le Brésil", "Cuba", "La Jamaïque", "Le Sénégal"],
+      "choices": [
+        "Le Brésil",
+        "Cuba",
+        "La Jamaïque",
+        "Le Sénégal"
+      ],
       "answer": 2,
       "fun": "Le mot viendrait de « streggae », l'argot jamaïcain pour désigner une fille des rues.",
-      "tags": ["styles"]
+      "tags": [
+        "styles"
+      ]
     },
     {
       "id": "mus-0009",
       "type": "vraifaux",
-      "difficulty": 3,
+      "difficulty": 2,
       "minAge": 9,
       "q": "Mozart a composé sa première œuvre avant l'âge de 6 ans.",
       "answer": true,
       "fun": "À 5 ans. Son père notait les partitions à sa place, il ne savait pas encore bien écrire.",
-      "tags": ["classique"]
+      "tags": [
+        "classique"
+      ]
     },
     {
       "id": "mus-0010",
@@ -110,110 +157,168 @@
       "difficulty": 3,
       "minAge": 9,
       "q": "Quel est l'instrument à vent le plus grave d'un orchestre ?",
-      "choices": ["Le trombone", "Le tuba", "Le cor", "La clarinette"],
+      "choices": [
+        "Le trombone",
+        "Le tuba",
+        "Le cor",
+        "La clarinette"
+      ],
       "answer": 1,
       "fun": "Déroulé, son tube mesure environ 5 mètres.",
-      "tags": ["instruments", "classique"]
+      "tags": [
+        "instruments",
+        "classique"
+      ]
     },
     {
       "id": "mus-0011",
       "type": "libre",
-      "difficulty": 3,
+      "difficulty": 2,
       "minAge": 10,
       "q": "Quel groupe a enregistré « Bohemian Rhapsody » ?",
       "answer": "Queen",
-      "accept": ["queen"],
+      "accept": [
+        "queen"
+      ],
       "fun": "6 minutes sans refrain, avec un passage d'opéra. Leur maison de disques était persuadée que c'était un suicide commercial.",
-      "tags": ["rock"]
+      "tags": [
+        "rock"
+      ]
     },
     {
       "id": "mus-0012",
       "type": "qcm",
-      "difficulty": 3,
+      "difficulty": 2,
       "minAge": 10,
       "q": "Quelle chanteuse française a interprété « Non, je ne regrette rien » ?",
-      "choices": ["Dalida", "Édith Piaf", "Barbara", "Juliette Gréco"],
+      "choices": [
+        "Dalida",
+        "Édith Piaf",
+        "Barbara",
+        "Juliette Gréco"
+      ],
       "answer": 1,
       "fun": "Elle mesurait 1,47 m. D'où son surnom : la Môme.",
-      "tags": ["chanson française"]
+      "tags": [
+        "chanson française"
+      ]
     },
     {
       "id": "mus-0013",
       "type": "qcm",
-      "difficulty": 3,
+      "difficulty": 2,
       "minAge": 10,
       "q": "Dans quelle ville américaine le jazz est-il né ?",
-      "choices": ["Chicago", "New York", "La Nouvelle-Orléans", "Detroit"],
+      "choices": [
+        "Chicago",
+        "New York",
+        "La Nouvelle-Orléans",
+        "Detroit"
+      ],
       "answer": 2,
       "fun": "Au carrefour des traditions africaines, européennes et créoles. Chicago n'est venu qu'après.",
-      "tags": ["styles"]
+      "tags": [
+        "styles"
+      ]
     },
     {
       "id": "mus-0014",
       "type": "libre",
-      "difficulty": 3,
+      "difficulty": 2,
       "minAge": 11,
       "q": "Mick Jagger est le chanteur de quel groupe ?",
       "answer": "The Rolling Stones",
-      "accept": ["rolling stones", "the rolling stones", "les rolling stones", "stones"],
+      "accept": [
+        "rolling stones",
+        "the rolling stones",
+        "les rolling stones",
+        "stones"
+      ],
       "fun": "Le groupe tourne encore. Il s'est formé en 1962.",
-      "tags": ["rock"]
+      "tags": [
+        "rock"
+      ]
     },
     {
       "id": "mus-0015",
       "type": "qcm",
-      "difficulty": 4,
+      "difficulty": 2,
       "minAge": 11,
       "q": "Quel compositeur, devenu sourd, a écrit la Neuvième Symphonie ?",
-      "choices": ["Bach", "Beethoven", "Mozart", "Brahms"],
+      "choices": [
+        "Bach",
+        "Beethoven",
+        "Mozart",
+        "Brahms"
+      ],
       "answer": 1,
       "fun": "À la première représentation, il n'a pas entendu les applaudissements : il a fallu le retourner vers le public.",
-      "tags": ["classique"]
+      "tags": [
+        "classique"
+      ]
     },
     {
       "id": "mus-0016",
       "type": "estimation",
-      "difficulty": 4,
+      "difficulty": 3,
       "minAge": 11,
       "q": "Combien de symphonies Beethoven a-t-il composées ?",
       "answer": 9,
       "unit": "symphonies",
-      "tol": { "exact": true },
+      "tol": {
+        "exact": true
+      },
       "fun": "Neuf, contre plus de cent pour Haydn. Il les travaillait des années.",
-      "tags": ["classique"]
+      "tags": [
+        "classique"
+      ]
     },
     {
       "id": "mus-0017",
       "type": "estimation",
-      "difficulty": 4,
+      "difficulty": 3,
       "minAge": 12,
       "q": "En quelle année les Beatles se sont-ils séparés ?",
       "answer": 1970,
       "unit": "",
-      "tol": { "exact": true },
+      "tol": {
+        "exact": true
+      },
       "fun": "Dix ans de carrière, treize albums. Un rythme impensable aujourd'hui.",
-      "tags": ["groupes"]
+      "tags": [
+        "groupes"
+      ]
     },
     {
       "id": "mus-0018",
       "type": "qcm",
-      "difficulty": 4,
+      "difficulty": 2,
       "minAge": 12,
       "q": "Quel instrument Jimi Hendrix a-t-il révolutionné ?",
-      "choices": ["La batterie", "La guitare électrique", "Le saxophone", "L'orgue"],
+      "choices": [
+        "La batterie",
+        "La guitare électrique",
+        "Le saxophone",
+        "L'orgue"
+      ],
       "answer": 1,
       "fun": "Il était gaucher et jouait sur une guitare de droitier retournée, cordes inversées.",
-      "tags": ["rock", "instruments"]
+      "tags": [
+        "rock",
+        "instruments"
+      ]
     },
     {
       "id": "mus-0019",
       "type": "vraifaux",
-      "difficulty": 4,
+      "difficulty": 3,
       "minAge": 12,
       "q": "Depuis quelques années, le vinyle rapporte plus d'argent que le CD aux États-Unis.",
       "answer": true,
       "fun": "Le CD avait tué le vinyle dans les années 90. Le vinyle lui a survécu.",
-      "tags": ["industrie"]
+      "tags": [
+        "industrie"
+      ]
     },
     {
       "id": "mus-0020",
@@ -223,7 +328,9 @@
       "q": "Chante « Joyeux anniversaire » en entier, à la manière d'un chanteur d'opéra.",
       "duration": 30,
       "scoring": "vote",
-      "tags": ["chant"]
+      "tags": [
+        "chant"
+      ]
     }
   ]
 }

@@ -98,7 +98,7 @@ function init() {
 function lireMoi() {
   var nom = $('#inNom').value.trim();
   var age = parseInt($('#inAge').value, 10);
-  if (!nom)                      { $('#erreur').textContent = 'Il me faut ton prénom.'; return false; }
+  if (!nom)                         { $('#erreur').textContent = 'Il me faut ton prénom.'; return false; }
   if (!age || age < 3 || age > 110) { $('#erreur').textContent = 'Et ton âge, en chiffres.'; return false; }
   moi.nom = nom; moi.age = age;
   try { localStorage.setItem(LS, JSON.stringify(moi)); } catch (e) {}
@@ -144,15 +144,15 @@ function creerPartie() {
   canal = T.creer({ salon: code, role: 'hote', nom: moi.nom, onEtat: function (e, d) {
     etat(e, d);
     /* Je viens de me reconnecter : les bonjours émis pendant que ce
-       téléphone dormait sont perdus. Je redis qui est là, et ceux qui
-       attendent encore continuent de crier de leur côté. */
+       téléphone dormait sont perdus, un broadcast ne se stocke pas.
+       Je redis qui est là ; ceux qui attendent encore crient de leur côté. */
     if (e === 'ouvert' && G) setTimeout(function () { diffuserSalle(); }, 300);
   }});
 
   canal.sur('hello', function (d) {
     G.joueurs[d.de] = G.joueurs[d.de] ||
       { de: d.de, nom: d.nom || 'Invité', age: d.age || 10, score: 0, bonnes: 0, posees: 0 };
-    canal.envoyer('bienvenue', {}, d.de);
+    canal.envoyer('bienvenue', {}, d.de);   // répété tant qu'il insiste, c'est voulu
     diffuserSalle();
     if (G.phase === 'salon') rendreSalon();
   });
@@ -271,11 +271,10 @@ function rejoindre(code) {
 
   var salut = null, tentatives = 0, accueilli = false;
 
-  /* Un broadcast Realtime ne se stocke pas : si l'hôte a l'application
-     en arrière-plan au moment où j'arrive — typiquement parce qu'il
-     vient de partager le code sur WhatsApp — mon bonjour tombe dans le
-     vide et personne ne le saura jamais. Donc je le répète jusqu'à ce
-     qu'on me réponde. */
+  /* Un broadcast Realtime ne se stocke pas : si l'hôte a son navigateur
+     en arrière-plan quand j'arrive — typiquement parce qu'il vient de
+     partager le code sur WhatsApp — mon bonjour tombe dans le vide et
+     personne ne le saura jamais. Donc je le répète jusqu'à réponse. */
   function crier() {
     tentatives++;
     canal.envoyer('hello', { age: moi.age });
@@ -315,10 +314,15 @@ function rejoindre(code) {
       $('#erreur').textContent = 'Connexion impossible. ' + e.message;
     });
 }
+
 /* ===================================================================
    Une manche — côté hôte
    =================================================================== */
-function lancer() { G.manche = 0; G.phase = 'jeu'; liste().forEach(function (j) { j.score = 0; j.bonnes = 0; j.posees = 0; }); poser(); }
+function lancer() {
+  G.manche = 0; G.phase = 'jeu';
+  liste().forEach(function (j) { j.score = 0; j.bonnes = 0; j.posees = 0; });
+  poser();
+}
 
 function poser() {
   if (G.manche >= G.total) return terminer();
@@ -392,7 +396,7 @@ function cloturer() {
         pts = Math.round(base * (0.5 + reste));
         j.bonnes++;
       } else {
-        pts = -Math.round(base / 2);                   // − difficulté × 5, vitesse indifférente
+        pts = -Math.round(base / 2);             // − difficulté × 5, vitesse indifférente
       }
     }
     j.score += pts;
@@ -522,10 +526,8 @@ function repondre(choix) {
 function afficherResultat(res) {
   tousStop();
   vue('vResultat');
-  function afficherResultat(res) {
-  tousStop();
-  vue('vResultat');
-  if (M) M.envoye = true;        // plus aucune bascule d'écran pour cette manche
+  if (M) M.envoye = true;          // plus aucune bascule d'écran pour cette manche
+
   $('#resBonne').textContent = res.bonne;
   $('#resFun').textContent   = res.fun || '';
 

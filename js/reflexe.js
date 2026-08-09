@@ -141,7 +141,13 @@ function creerPartie() {
   var code = T.codeSalon(4);
   G = { code: code, total: 10, maxDiff: 5, manche: 0, Q: null, joueurs: {}, reps: {}, phase: 'salon' };
 
-  canal = T.creer({ salon: code, role: 'hote', nom: moi.nom, onEtat: etat });
+  canal = T.creer({ salon: code, role: 'hote', nom: moi.nom, onEtat: function (e, d) {
+    etat(e, d);
+    /* Je viens de me reconnecter : les bonjours émis pendant que ce
+       téléphone dormait sont perdus. Je redis qui est là, et ceux qui
+       attendent encore continuent de crier de leur côté. */
+    if (e === 'ouvert' && G) setTimeout(function () { diffuserSalle(); }, 300);
+  }});
 
   canal.sur('hello', function (d) {
     G.joueurs[d.de] = G.joueurs[d.de] ||
@@ -263,7 +269,31 @@ function rejoindre(code) {
   hote = false;
   canal = T.creer({ salon: code, role: 'joueur', nom: moi.nom, onEtat: etat });
 
+  var salut = null, tentatives = 0, accueilli = false;
+
+  /* Un broadcast Realtime ne se stocke pas : si l'hôte a l'application
+     en arrière-plan au moment où j'arrive — typiquement parce qu'il
+     vient de partager le code sur WhatsApp — mon bonjour tombe dans le
+     vide et personne ne le saura jamais. Donc je le répète jusqu'à ce
+     qu'on me réponde. */
+  function crier() {
+    tentatives++;
+    canal.envoyer('hello', { age: moi.age });
+    if (tentatives > 60) {                       // 90 secondes
+      clearInterval(salut); salut = null;
+      $('#sAttente').innerHTML = '<span class="text-red-300">Personne ne répond sur le code ' +
+        esc(code) + '. Vérifie le code, ou demande à l\'hôte de revenir sur sa page.</span>';
+      return;
+    }
+    $('#sAttente').textContent = tentatives < 5
+      ? 'On cherche la partie ' + code + '…'
+      : 'Toujours rien (' + tentatives + ' essais). L\'hôte doit avoir sa page ouverte à l\'écran.';
+  }
+
   canal.sur('bienvenue', function () {
+    if (accueilli) return;                       // l'hôte répond à chaque bonjour
+    accueilli = true;
+    if (salut) { clearInterval(salut); salut = null; }
     $('#sAttente').textContent = 'Bien arrivé. On cale les horloges…';
     canal.synchroniser(6).then(function (h) {
       canal.envoyer('horloge', { offset: h.offset, delai: h.delai });
@@ -279,13 +309,12 @@ function rejoindre(code) {
   vue('vSalon'); rendreSalonInvite([]); garderAllume();
 
   canal.connecter()
-    .then(function () { canal.envoyer('hello', { age: moi.age }); })
+    .then(function () { crier(); salut = setInterval(crier, 1500); })
     .catch(function (e) {
       vue('vAccueil');
-      $('#erreur').textContent = 'Partie introuvable ou réseau coupé. ' + e.message;
+      $('#erreur').textContent = 'Connexion impossible. ' + e.message;
     });
 }
-
 /* ===================================================================
    Une manche — côté hôte
    =================================================================== */

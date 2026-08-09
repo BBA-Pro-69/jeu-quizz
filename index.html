@@ -63,6 +63,7 @@ tailwind.config = { theme: { extend: {
     color:#7e93a6;padding:.5rem .6rem;border-bottom:1px solid rgba(255,255,255,.1)}
   td{padding:.6rem .6rem;border-bottom:1px solid rgba(255,255,255,.055);color:#cbd5e1}
   input[type=range]{accent-color:#41B6E6}
+
   /* .btn-red manquait : braquage.js s'en sert, ses boutons étaient transparents */
   .btn-red{background:#E4002B;color:#fff}
   .btn-red:hover:not(:disabled){background:#ff2549;transform:translateY(-2px)}
@@ -99,8 +100,8 @@ tailwind.config = { theme: { extend: {
   #btnChrono::after{content:"Soixante secondes en relais. On enchaîne, on ne réfléchit pas."}
   #btnCamembert{--c:#22c55e}
   #btnCamembert::after{content:"Le dé, les parts à remplir, la question du centre pour finir."}
-  #btnBuzzshow{--c:#fbbf24}
-  #btnBuzzshow::after{content:"Chacun son téléphone en buzzer. Le premier qui appuie répond."}
+  #btnReflexe{--c:#fbbf24}
+  #btnReflexe::after{content:"Chacun sur son téléphone, la même question au même instant. Sans tablette au milieu."}
 </style>
 </head>
 <body class="font-sans text-slate-200 antialiased">
@@ -119,10 +120,12 @@ tailwind.config = { theme: { extend: {
       <div class="mt-9 flex flex-col sm:flex-row gap-3 justify-center">
         <button id="btnJouer" class="btn btn-primary text-base px-8">
           <i class="fa-solid fa-play"></i>Nouvelle partie</button>
-        <a href="tools/test-backend.html" class="btn btn-ghost">
-          <i class="fa-solid fa-plug"></i>Banc de test</a>
+        <a href="reflexe.html" class="btn btn-ghost">
+          <i class="fa-solid fa-bolt"></i>Réflexe · sur les téléphones</a>
       </div>
       <p id="chargement" class="mt-8 text-xs text-slate-500">Chargement des questions…</p>
+      <p class="mt-3 text-[.65rem] text-slate-600">
+        <a href="tools/test-backend.html" class="hover:text-slate-400">banc de test réseau</a></p>
     </div>
   </header>
 </section>
@@ -171,15 +174,18 @@ tailwind.config = { theme: { extend: {
         <i class="fa-solid fa-rotate-left"></i>Oublier les questions déjà posées</button>
     </div>
 
-  <div class="pt-2">
+    <div class="pt-2">
       <p class="kicker text-q-blue">Comment on joue</p><span class="kicker-line"></span>
       <h2 class="font-serif text-2xl font-bold text-white mt-3 mb-4">Le mode de jeu</h2>
       <div id="modes">
         <button id="btnJouerPartie" disabled>
           <i class="fa-solid fa-dice"></i>Partie libre</button>
+        <button id="btnReflexe" onclick="location.href='reflexe.html'">
+          <i class="fa-solid fa-bolt"></i>Réflexe · sur les téléphones</button>
       </div>
       <p class="text-xs text-slate-600 mt-3">
-        Le Buzz Show demande un téléphone par joueur, sur le même wifi ou en 4G, peu importe.</p>
+        Réflexe se joue sur les téléphones, un par joueur, et n'a pas besoin de cet écran-ci&nbsp;:
+        les joueurs se retrouvent avec un code de partie. Les cinq autres modes se jouent ici, tous ensemble.</p>
     </div>
 
     <div class="pb-10">
@@ -249,7 +255,5 @@ tailwind.config = { theme: { extend: {
 <script src="js/modes/solo.js"></script>
 <script src="js/modes/chrono.js"></script>
 <script src="js/modes/camembert.js"></script>
-<script src="js/transport.js"></script>
-<script src="js/modes/buzzshow.js"></script>  
 </body>
 </html>

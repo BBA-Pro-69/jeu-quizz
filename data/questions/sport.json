@@ -1,7 +1,7 @@
 {
   "category": "sport",
   "label": "Sport",
-  "version": 2,
+  "version": 3,
   "questions": [
     {
       "id": "spo-0001",
@@ -334,6 +334,1441 @@
       "scoring": "collectif",
       "tags": [
         "mime"
+      ]
+    },
+    {
+      "id": "spo-0021",
+      "type": "qcm",
+      "difficulty": 1,
+      "minAge": 6,
+      "q": "Dans quel sport joue-t-on avec un ballon ovale ?",
+      "choices": [
+        "Le football",
+        "Le rugby",
+        "Le handball",
+        "Le volley"
+      ],
+      "answer": 1,
+      "fun": "La forme vient des premières vessies de porc gonflées, qui n'étaient jamais tout à fait rondes.",
+      "tags": [
+        "rugby"
+      ]
+    },
+    {
+      "id": "spo-0022",
+      "type": "qcm",
+      "difficulty": 1,
+      "minAge": 6,
+      "q": "Quel sport se pratique dans une piscine ?",
+      "choices": [
+        "L'aviron",
+        "La natation",
+        "La voile",
+        "Le surf"
+      ],
+      "answer": 1,
+      "fun": "Une piscine olympique fait 50 mètres. Les lignes d'eau flottantes ne sont pas décoratives : elles cassent les vagues des voisins.",
+      "tags": [
+        "natation"
+      ]
+    },
+    {
+      "id": "spo-0023",
+      "type": "estimation",
+      "difficulty": 2,
+      "minAge": 7,
+      "q": "Combien de joueurs une équipe de basket compte-t-elle sur le terrain ?",
+      "answer": 5,
+      "unit": "joueurs",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Le sport a été inventé en une nuit par un professeur de gym à qui on demandait une activité d'intérieur pour l'hiver.",
+      "tags": [
+        "basket"
+      ]
+    },
+    {
+      "id": "spo-0024",
+      "type": "libre",
+      "difficulty": 2,
+      "minAge": 7,
+      "q": "Sous quel autre nom connaît-on le tennis de table ?",
+      "answer": "Le ping-pong",
+      "accept": [
+        "ping pong",
+        "le ping pong",
+        "pingpong"
+      ],
+      "fun": "Le nom imite le bruit de la balle. Il a d'abord été déposé comme marque commerciale.",
+      "tags": [
+        "tennis de table"
+      ]
+    },
+    {
+      "id": "spo-0025",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 8,
+      "q": "Dans quel sport les joueurs utilisent-ils une crosse sur la glace ?",
+      "choices": [
+        "Le curling",
+        "Le hockey sur glace",
+        "Le patinage",
+        "Le bobsleigh"
+      ],
+      "answer": 1,
+      "fun": "Le palet peut dépasser 160 km/h. Les gardiens ont longtemps joué sans masque, jusqu'aux années 1960.",
+      "tags": [
+        "hockey"
+      ]
+    },
+    {
+      "id": "spo-0026",
+      "type": "estimation",
+      "difficulty": 2,
+      "minAge": 8,
+      "q": "Combien de côtés a un ring de boxe ?",
+      "answer": 4,
+      "unit": "côtés",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Il est carré, alors que « ring » veut dire anneau : les premiers combats se tenaient dans un cercle tracé au sol autour des boxeurs.",
+      "tags": [
+        "boxe",
+        "piège"
+      ]
+    },
+    {
+      "id": "spo-0027",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 8,
+      "q": "Quel sport enchaîne natation, vélo et course à pied ?",
+      "choices": [
+        "Le pentathlon",
+        "Le triathlon",
+        "Le décathlon",
+        "Le biathlon"
+      ],
+      "answer": 1,
+      "fun": "Le format le plus dur, l'Ironman, additionne 3,8 km de nage, 180 km de vélo et un marathon complet. Dans cet ordre.",
+      "tags": [
+        "triathlon"
+      ]
+    },
+    {
+      "id": "spo-0028",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 9,
+      "q": "Quelle couleur de maillot porte le leader du Tour de France ?",
+      "choices": [
+        "Le vert",
+        "Le jaune",
+        "Le blanc",
+        "Le rouge"
+      ],
+      "answer": 1,
+      "fun": "Jaune comme le papier du journal qui organisait la course. Le choix était purement publicitaire.",
+      "tags": [
+        "cyclisme"
+      ]
+    },
+    {
+      "id": "spo-0029",
+      "type": "estimation",
+      "difficulty": 2,
+      "minAge": 8,
+      "q": "Combien de joueurs une équipe de volley compte-t-elle sur le terrain ?",
+      "answer": 6,
+      "unit": "joueurs",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Ils tournent d'un cran à chaque point gagné sur le service adverse. C'est ce qui oblige tout le monde à savoir tout faire.",
+      "tags": [
+        "volley"
+      ]
+    },
+    {
+      "id": "spo-0030",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 9,
+      "q": "Que signifie un carton rouge au football ?",
+      "choices": [
+        "Un avertissement",
+        "L'exclusion du joueur",
+        "Un penalty",
+        "Un arrêt de jeu"
+      ],
+      "answer": 1,
+      "fun": "L'équipe finit le match à dix : le joueur exclu n'est pas remplacé. C'est la seule sanction qui punit tout le monde.",
+      "tags": [
+        "football"
+      ]
+    },
+    {
+      "id": "spo-0031",
+      "type": "estimation",
+      "difficulty": 2,
+      "minAge": 9,
+      "q": "Combien de minutes dure un match de football, temps additionnel exclu ?",
+      "answer": 90,
+      "unit": "minutes",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Deux fois quarante-cinq. La durée a été fixée au XIXe siècle par des clubs anglais qui voulaient un chiffre rond.",
+      "tags": [
+        "football"
+      ]
+    },
+    {
+      "id": "spo-0032",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Sur quelle surface se joue Roland-Garros ?",
+      "choices": [
+        "Le gazon",
+        "La terre battue",
+        "Le dur",
+        "La moquette"
+      ],
+      "answer": 1,
+      "fun": "Ce n'est pas de la terre mais de la brique pilée, étalée en couche de deux millimètres sur du calcaire.",
+      "tags": [
+        "tennis"
+      ]
+    },
+    {
+      "id": "spo-0033",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Sur quelle surface se joue Wimbledon ?",
+      "choices": [
+        "La terre battue",
+        "Le gazon",
+        "Le dur",
+        "Le synthétique"
+      ],
+      "answer": 1,
+      "fun": "La pelouse est tondue à huit millimètres pile pendant le tournoi, et on la laisse repousser le reste de l'année.",
+      "tags": [
+        "tennis"
+      ]
+    },
+    {
+      "id": "spo-0034",
+      "type": "estimation",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Combien de tournois composent le Grand Chelem de tennis ?",
+      "answer": 4,
+      "unit": "tournois",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Melbourne, Paris, Londres, New York. Réussir les quatre la même année n'est arrivé qu'à une poignée de joueurs.",
+      "tags": [
+        "tennis"
+      ]
+    },
+    {
+      "id": "spo-0035",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Au tennis, que veut dire le score « 40-0 » côté serveur ?",
+      "choices": [
+        "Trois balles de jeu",
+        "Une balle de set",
+        "Un jeu décisif",
+        "Un avantage"
+      ],
+      "answer": 0,
+      "fun": "Le comptage 15-30-40 viendrait d'un cadran d'horloge où le troisième point s'arrêtait à 45, raccourci à 40 à l'usage.",
+      "tags": [
+        "tennis"
+      ]
+    },
+    {
+      "id": "spo-0036",
+      "type": "estimation",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Combien de points vaut un essai au rugby à XV ?",
+      "answer": 5,
+      "unit": "points",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Il n'en valait que trois jusqu'aux années 1970. On les a montés pour décourager le jeu au pied et récompenser l'attaque.",
+      "tags": [
+        "rugby"
+      ]
+    },
+    {
+      "id": "spo-0037",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Que récompense le maillot à pois du Tour de France ?",
+      "choices": [
+        "Le meilleur sprinteur",
+        "Le meilleur grimpeur",
+        "Le plus jeune",
+        "Le plus combatif"
+      ],
+      "answer": 1,
+      "fun": "Les pois rouges viennent de l'emballage d'une marque de chocolat qui sponsorisait le classement.",
+      "tags": [
+        "cyclisme"
+      ]
+    },
+    {
+      "id": "spo-0038",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Que récompense le maillot vert du Tour de France ?",
+      "choices": [
+        "Le meilleur grimpeur",
+        "Le meilleur sprinteur",
+        "Le meilleur jeune",
+        "Le meilleur équipier"
+      ],
+      "answer": 1,
+      "fun": "Il se gagne aux points, distribués à l'arrivée et lors des sprints intermédiaires. Un coureur peut le remporter sans gagner une seule étape.",
+      "tags": [
+        "cyclisme"
+      ]
+    },
+    {
+      "id": "spo-0039",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "De quelle couleur est le maillot du leader du Tour d'Italie ?",
+      "choices": [
+        "Rose",
+        "Jaune",
+        "Rouge",
+        "Bleu"
+      ],
+      "answer": 0,
+      "fun": "Rose comme le papier du quotidien sportif italien qui l'organise. Même logique qu'en France, autre couleur d'imprimerie.",
+      "tags": [
+        "cyclisme"
+      ]
+    },
+    {
+      "id": "spo-0040",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Que récompense le Ballon d'or ?",
+      "choices": [
+        "Le meilleur footballeur de l'année",
+        "Le meilleur club",
+        "Le meilleur buteur",
+        "Le meilleur gardien"
+      ],
+      "answer": 0,
+      "fun": "Il a été créé par un magazine français en 1956 et n'a longtemps été ouvert qu'aux joueurs européens.",
+      "tags": [
+        "football"
+      ]
+    },
+    {
+      "id": "spo-0041",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Qu'est-ce qu'un hors-jeu au football ?",
+      "choices": [
+        "Une faute de main",
+        "Une position illicite à la passe",
+        "Une sortie de terrain",
+        "Un tacle par-derrière"
+      ],
+      "answer": 1,
+      "fun": "La règle existe pour empêcher un attaquant de camper devant le but adverse. C'est aussi la plus discutée de tous les sports.",
+      "tags": [
+        "football"
+      ]
+    },
+    {
+      "id": "spo-0042",
+      "type": "estimation",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "En combien de quart-temps se joue un match de NBA ?",
+      "answer": 4,
+      "unit": "quart-temps",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Quatre fois douze minutes. En Europe, les quart-temps ne durent que dix minutes, ce qui change complètement les fins de match.",
+      "tags": [
+        "basket"
+      ]
+    },
+    {
+      "id": "spo-0043",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "D'où vient le nom de la course appelée « marathon » ?",
+      "choices": [
+        "D'un dieu grec",
+        "D'une ville grecque",
+        "D'un empereur romain",
+        "D'un mot latin"
+      ],
+      "answer": 1,
+      "fun": "Un messager aurait couru de Marathon à Athènes pour annoncer la victoire, puis serait mort en arrivant. L'histoire est belle et probablement inventée.",
+      "tags": [
+        "athlétisme",
+        "histoire"
+      ]
+    },
+    {
+      "id": "spo-0044",
+      "type": "estimation",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Combien d'épreuves compte le décathlon ?",
+      "answer": 10,
+      "unit": "épreuves",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Sur deux jours, du 100 mètres au 1 500 mètres. Le vainqueur reçoit traditionnellement le titre officieux de « meilleur athlète du monde ».",
+      "tags": [
+        "athlétisme"
+      ]
+    },
+    {
+      "id": "spo-0045",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Quel sport de combat est considéré comme le sport national du Japon ?",
+      "choices": [
+        "Le karaté",
+        "Le sumo",
+        "L'aïkido",
+        "Le kendo"
+      ],
+      "answer": 1,
+      "fun": "Les combats durent souvent moins de dix secondes, après plusieurs minutes de rituel. Le rituel compte autant que la lutte.",
+      "tags": [
+        "arts martiaux"
+      ]
+    },
+    {
+      "id": "spo-0046",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "De quel pays vient le taekwondo ?",
+      "choices": [
+        "Du Japon",
+        "De Corée",
+        "De Chine",
+        "De Thaïlande"
+      ],
+      "answer": 1,
+      "fun": "Il privilégie les coups de pied hauts, jusqu'au-dessus de la tête. La souplesse y compte plus que la force.",
+      "tags": [
+        "arts martiaux"
+      ]
+    },
+    {
+      "id": "spo-0047",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "De quel pays la capoeira est-elle originaire ?",
+      "choices": [
+        "Du Brésil",
+        "De Cuba",
+        "Du Portugal",
+        "De l'Angola"
+      ],
+      "answer": 0,
+      "fun": "Née chez les esclaves, elle se déguisait en danse pour échapper à l'interdiction des pratiques de combat.",
+      "tags": [
+        "arts martiaux"
+      ]
+    },
+    {
+      "id": "spo-0048",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Dans quel pays le cricket est-il le sport le plus populaire ?",
+      "choices": [
+        "En Afrique du Sud",
+        "En Inde",
+        "En Australie",
+        "En Nouvelle-Zélande"
+      ],
+      "answer": 1,
+      "fun": "Les finales y sont suivies par des centaines de millions de spectateurs. Le sport est arrivé avec la colonisation britannique.",
+      "tags": [
+        "cricket"
+      ]
+    },
+    {
+      "id": "spo-0049",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Au base-ball, qu'est-ce qu'un « home run » ?",
+      "choices": [
+        "Un tour complet des bases",
+        "Une élimination",
+        "Un changement de lanceur",
+        "Une balle ratée"
+      ],
+      "answer": 0,
+      "fun": "Le plus souvent, la balle sort carrément du stade. Le frappeur peut alors faire son tour au pas.",
+      "tags": [
+        "base-ball"
+      ]
+    },
+    {
+      "id": "spo-0050",
+      "type": "estimation",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Combien de points vaut un touchdown au football américain ?",
+      "answer": 6,
+      "unit": "points",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Six points, plus une transformation au pied qui en vaut un. C'est pour ça que les scores sont presque toujours en 7 et en 3.",
+      "tags": [
+        "football américain"
+      ]
+    },
+    {
+      "id": "spo-0051",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Quelle finale sportive est le programme télévisé le plus regardé chaque année aux États-Unis ?",
+      "choices": [
+        "Les finales NBA",
+        "Le Super Bowl",
+        "Les World Series",
+        "Le Daytona 500"
+      ],
+      "answer": 1,
+      "fun": "Les spots publicitaires y coûtent des millions les trente secondes, et certains spectateurs regardent surtout pour eux.",
+      "tags": [
+        "football américain"
+      ]
+    },
+    {
+      "id": "spo-0052",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Quel drapeau annonce la fin d'une course automobile ?",
+      "choices": [
+        "Le drapeau rouge",
+        "Le damier",
+        "Le drapeau vert",
+        "Le drapeau bleu"
+      ],
+      "answer": 1,
+      "fun": "On raconte qu'il vient des courses américaines où un damier signalait le repas, servi à la fin de l'épreuve. L'origine reste discutée.",
+      "tags": [
+        "automobile"
+      ]
+    },
+    {
+      "id": "spo-0053",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Que signifie un drapeau jaune agité en Formule 1 ?",
+      "choices": [
+        "Danger, dépassement interdit",
+        "Course terminée",
+        "Voiture plus rapide derrière",
+        "Pluie annoncée"
+      ],
+      "answer": 0,
+      "fun": "Deux drapeaux jaunes agités ensemble, et il faut être prêt à s'arrêter. Ignorer un jaune coûte plus cher qu'un accrochage.",
+      "tags": [
+        "automobile"
+      ]
+    },
+    {
+      "id": "spo-0054",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Combien de temps dure la plus célèbre course d'endurance du Mans ?",
+      "choices": [
+        "12 heures",
+        "24 heures",
+        "36 heures",
+        "48 heures"
+      ],
+      "answer": 1,
+      "fun": "Trois pilotes se relaient par voiture, jour et nuit. Le vainqueur parcourt l'équivalent d'un Paris-Pékin.",
+      "tags": [
+        "automobile"
+      ]
+    },
+    {
+      "id": "spo-0055",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Quelles deux disciplines composent le biathlon ?",
+      "choices": [
+        "Ski de fond et tir",
+        "Ski alpin et saut",
+        "Patinage et tir",
+        "Ski de fond et saut"
+      ],
+      "answer": 0,
+      "fun": "Il faut faire redescendre son cœur de 180 à 140 battements en arrivant au pas de tir. Toute la difficulté est là.",
+      "tags": [
+        "sports d'hiver"
+      ]
+    },
+    {
+      "id": "spo-0056",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Que signifie la devise olympique « Citius, Altius, Fortius » ?",
+      "choices": [
+        "Plus vite, plus haut, plus fort",
+        "Un pour tous, tous pour un",
+        "L'important est de participer",
+        "Force et honneur"
+      ],
+      "answer": 0,
+      "fun": "Elle vient d'un prêtre français, ami de Coubertin, qui l'employait pour son collège. Un mot a été ajouté en 2021 : « ensemble ».",
+      "tags": [
+        "jo"
+      ]
+    },
+    {
+      "id": "spo-0057",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Quelle compétition oppose les meilleurs clubs de football d'Europe ?",
+      "choices": [
+        "La Ligue des champions",
+        "La Coupe des nations",
+        "L'Euro",
+        "La Supercoupe"
+      ],
+      "answer": 0,
+      "fun": "Son hymne est une réécriture d'un morceau de Haendel, commandée exprès et chantée en trois langues.",
+      "tags": [
+        "football"
+      ]
+    },
+    {
+      "id": "spo-0058",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Combien de joueurs compte une équipe de handball sur le terrain ?",
+      "choices": [
+        "Six",
+        "Sept",
+        "Huit",
+        "Neuf"
+      ],
+      "answer": 1,
+      "fun": "Six joueurs de champ et un gardien. Le gardien peut sortir de sa zone, mais il perd alors tous ses privilèges.",
+      "tags": [
+        "handball"
+      ]
+    },
+    {
+      "id": "spo-0059",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Dans quel sport marque-t-on un « ippon » ?",
+      "choices": [
+        "Le karaté",
+        "Le judo",
+        "L'escrime",
+        "La lutte"
+      ],
+      "answer": 1,
+      "fun": "L'ippon met fin au combat immédiatement. C'est le seul sport de combat où l'on peut gagner en trois secondes.",
+      "tags": [
+        "arts martiaux"
+      ]
+    },
+    {
+      "id": "spo-0060",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Quel équipement caractérise le curling ?",
+      "choices": [
+        "Le balai",
+        "La crosse",
+        "Le filet",
+        "La raquette"
+      ],
+      "answer": 0,
+      "fun": "Frotter la glace la fait fondre très légèrement et la pierre glisse plus loin. Les balayeurs modifient la trajectoire sans jamais toucher la pierre.",
+      "tags": [
+        "sports d'hiver"
+      ]
+    },
+    {
+      "id": "spo-0061",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Quelles sont les trois armes de l'escrime ?",
+      "choices": [
+        "Fleuret, épée, sabre",
+        "Épée, dague, sabre",
+        "Fleuret, rapière, épée",
+        "Sabre, katana, épée"
+      ],
+      "answer": 0,
+      "fun": "Chacune a ses zones valables : le tronc au fleuret, tout le corps à l'épée, tout ce qui est au-dessus de la taille au sabre.",
+      "tags": [
+        "escrime"
+      ]
+    },
+    {
+      "id": "spo-0062",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Comment appelle-t-on le dernier du classement général du Tour de France ?",
+      "choices": [
+        "La lanterne rouge",
+        "Le porteur d'eau",
+        "Le poinçonné",
+        "Le dernier wagon"
+      ],
+      "answer": 0,
+      "fun": "Le nom vient du feu accroché au dernier wagon d'un train. Certains coureurs se sont battus pour l'être : ça payait en critériums.",
+      "tags": [
+        "cyclisme",
+        "mots"
+      ]
+    },
+    {
+      "id": "spo-0063",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Comment appelle-t-on une étape de cyclisme courue seul contre le chronomètre ?",
+      "choices": [
+        "Une échappée",
+        "Un contre-la-montre",
+        "Un prologue de côte",
+        "Un sprint massif"
+      ],
+      "answer": 1,
+      "fun": "On l'appelle aussi « la course de vérité » : ni abri, ni équipier, ni tactique. Juste le moteur.",
+      "tags": [
+        "cyclisme"
+      ]
+    },
+    {
+      "id": "spo-0064",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Quel pays a rejoint le Tournoi des Cinq Nations pour en faire le Tournoi des Six Nations ?",
+      "choices": [
+        "L'Italie",
+        "L'Espagne",
+        "La Roumanie",
+        "L'Argentine"
+      ],
+      "answer": 0,
+      "fun": "Elle est entrée en 2000 et a gagné son premier match d'entrée, contre l'Écosse. Elle a beaucoup moins souri depuis.",
+      "tags": [
+        "rugby"
+      ]
+    },
+    {
+      "id": "spo-0065",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Qu'est-ce qui a inspiré les cartons jaune et rouge au football ?",
+      "choices": [
+        "Les feux tricolores",
+        "Les cartes à jouer",
+        "Les drapeaux de marine",
+        "Les uniformes militaires"
+      ],
+      "answer": 0,
+      "fun": "Un arbitre anglais y a pensé en s'arrêtant à un feu, après un match où personne n'avait compris ses avertissements. Ils sont apparus aux JO de 1970.",
+      "tags": [
+        "football",
+        "histoire"
+      ]
+    },
+    {
+      "id": "spo-0066",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Quand le relais de la flamme olympique a-t-il été inventé ?",
+      "choices": [
+        "Dans l'Antiquité",
+        "Aux Jeux de 1936",
+        "Aux Jeux de 1896",
+        "Aux Jeux de 1968"
+      ],
+      "answer": 1,
+      "fun": "Il n'a rien d'antique : il a été mis en scène pour les Jeux de Berlin, avec l'appui du régime en place. Le rituel a survécu à ceux qui l'ont inventé.",
+      "tags": [
+        "jo",
+        "histoire",
+        "piège"
+      ]
+    },
+    {
+      "id": "spo-0067",
+      "type": "libre",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Quel baron français est à l'origine des Jeux olympiques modernes ?",
+      "answer": "Pierre de Coubertin",
+      "accept": [
+        "coubertin",
+        "pierre de coubertin",
+        "de coubertin"
+      ],
+      "fun": "Il était opposé à la participation des femmes, qu'il jugeait « inintéressante ». Elles ont concouru dès la deuxième édition, sans lui demander son avis.",
+      "tags": [
+        "jo",
+        "histoire"
+      ]
+    },
+    {
+      "id": "spo-0068",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Dans quelle discipline parle-t-on du « Fosbury flop » ?",
+      "choices": [
+        "Le saut en hauteur",
+        "Le plongeon",
+        "La gymnastique",
+        "Le saut à la perche"
+      ],
+      "answer": 0,
+      "fun": "Franchir la barre sur le dos passait pour ridicule jusqu'à ce que son inventeur gagne les Jeux de 1968. Plus personne ne saute autrement.",
+      "tags": [
+        "athlétisme",
+        "histoire"
+      ]
+    },
+    {
+      "id": "spo-0069",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Au rugby, qu'appelle-t-on un « Grand Chelem » dans le Tournoi ?",
+      "choices": [
+        "Gagner tous ses matchs",
+        "Marquer quatre essais",
+        "Gagner trois années de suite",
+        "Battre les trois pays britanniques"
+      ],
+      "answer": 0,
+      "fun": "Battre les cinq autres nations la même année. Ne battre que l'Angleterre, l'Écosse, le pays de Galles et l'Irlande, c'est la « Triple Couronne », et elle ne concerne qu'eux.",
+      "tags": [
+        "rugby",
+        "vocabulaire"
+      ]
+    },
+    {
+      "id": "spo-0070",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Quelle équipe nationale de rugby exécute un haka avant ses matchs ?",
+      "choices": [
+        "L'Australie",
+        "La Nouvelle-Zélande",
+        "Les Fidji",
+        "L'Afrique du Sud"
+      ],
+      "answer": 1,
+      "fun": "Les Fidji, les Tonga et les Samoa ont chacun leur propre danse. Ce n'est donc pas une exclusivité néo-zélandaise.",
+      "tags": [
+        "rugby",
+        "piège"
+      ]
+    },
+    {
+      "id": "spo-0071",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "De qui la Coupe du monde de rugby porte-t-elle le nom ?",
+      "choices": [
+        "William Webb Ellis",
+        "Thomas Arnold",
+        "Jules Rimet",
+        "Pierre de Coubertin"
+      ],
+      "answer": 0,
+      "fun": "La légende raconte qu'il aurait pris le ballon à la main pendant un match de football, dans son collège de Rugby. Aucun document ne le confirme.",
+      "tags": [
+        "rugby",
+        "histoire"
+      ]
+    },
+    {
+      "id": "spo-0072",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Que récompense le maillot blanc du Tour de France ?",
+      "choices": [
+        "Le meilleur jeune",
+        "Le plus combatif",
+        "Le meilleur équipier",
+        "Le meilleur descendeur"
+      ],
+      "answer": 0,
+      "fun": "Réservé aux moins de 26 ans. Plusieurs vainqueurs du Tour l'ont porté avant de gagner le jaune quelques années plus tard.",
+      "tags": [
+        "cyclisme"
+      ]
+    },
+    {
+      "id": "spo-0073",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Quelle course cycliste est surnommée « l'Enfer du Nord » ?",
+      "choices": [
+        "Paris-Roubaix",
+        "Milan-San Remo",
+        "Le Tour des Flandres",
+        "Liège-Bastogne-Liège"
+      ],
+      "answer": 0,
+      "fun": "Le surnom vient d'un reportage d'après-guerre décrivant la région dévastée, pas des pavés. Les pavés ont hérité de l'expression.",
+      "tags": [
+        "cyclisme",
+        "mots"
+      ]
+    },
+    {
+      "id": "spo-0074",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Au golf, que signifie faire un « birdie » ?",
+      "choices": [
+        "Un coup sous le par",
+        "Un coup au-dessus du par",
+        "Un trou en un",
+        "Une balle perdue"
+      ],
+      "answer": 0,
+      "fun": "Deux coups sous le par, c'est un « eagle », trois un « albatros ». Les oiseaux grossissent à mesure que l'exploit grandit.",
+      "tags": [
+        "golf",
+        "vocabulaire"
+      ]
+    },
+    {
+      "id": "spo-0075",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Au golf, que désigne le « par » d'un trou ?",
+      "choices": [
+        "Le nombre de coups de référence",
+        "La longueur du trou",
+        "Le score du meilleur joueur",
+        "Le nombre d'obstacles"
+      ],
+      "answer": 0,
+      "fun": "Il dépend de la distance : par 3, par 4 ou par 5. Un parcours complet tourne autour de 72.",
+      "tags": [
+        "golf",
+        "vocabulaire"
+      ]
+    },
+    {
+      "id": "spo-0076",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Quelle compétition de tennis oppose des pays entiers, et non des joueurs individuels ?",
+      "choices": [
+        "La Coupe Davis",
+        "Le Masters",
+        "La Laver Cup",
+        "L'Open d'Australie"
+      ],
+      "answer": 0,
+      "fun": "Elle existe depuis 1900 et se joue à domicile ou à l'extérieur, avec un public de stade de football. Les joueurs disent que c'est la pression la plus dure du circuit.",
+      "tags": [
+        "tennis"
+      ]
+    },
+    {
+      "id": "spo-0077",
+      "type": "vraifaux",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "À Wimbledon, la tenue des joueurs doit être presque entièrement blanche.",
+      "answer": true,
+      "fun": "Le règlement descend jusqu'aux semelles et aux sous-vêtements visibles. Des joueurs ont été renvoyés se changer avant d'entrer sur le court.",
+      "tags": [
+        "tennis"
+      ]
+    },
+    {
+      "id": "spo-0078",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Que se passe-t-il en sumo si un lutteur pose autre chose que la plante des pieds au sol ?",
+      "choices": [
+        "Il perd immédiatement",
+        "Il perd un point",
+        "Le combat est arrêté",
+        "Rien"
+      ],
+      "answer": 0,
+      "fun": "Sortir du cercle ou toucher le sol d'une main suffit. C'est pour ça que les combats sont si courts et les prises si brutales.",
+      "tags": [
+        "arts martiaux"
+      ]
+    },
+    {
+      "id": "spo-0079",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Dans l'aviron à huit, quel est le rôle du barreur ?",
+      "choices": [
+        "Il rame le plus fort",
+        "Il dirige et donne la cadence",
+        "Il compte les coups",
+        "Il ne sert qu'au départ"
+      ],
+      "answer": 1,
+      "fun": "Il ne rame pas et pèse le moins possible : c'est le seul membre de l'équipage recruté pour sa légèreté et sa voix.",
+      "tags": [
+        "aviron"
+      ]
+    },
+    {
+      "id": "spo-0080",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "En athlétisme, quelle est la distance de chaque relayeur dans un relais 4 × 100 mètres ?",
+      "choices": [
+        "100 mètres",
+        "400 mètres",
+        "25 mètres",
+        "200 mètres"
+      ],
+      "answer": 0,
+      "fun": "Le témoin doit changer de main dans une zone de trente mètres. Beaucoup d'équipes plus rapides ont perdu là.",
+      "tags": [
+        "athlétisme"
+      ]
+    },
+    {
+      "id": "spo-0081",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Au basket, depuis où marque-t-on trois points ?",
+      "choices": [
+        "Derrière une ligne courbe",
+        "Depuis le milieu de terrain",
+        "Sur lancer franc",
+        "Après un rebond offensif"
+      ],
+      "answer": 0,
+      "fun": "La ligne à trois points n'existait pas avant les années 1980 en NBA. Elle a changé la forme des équipes plus que n'importe quelle autre règle.",
+      "tags": [
+        "basket"
+      ]
+    },
+    {
+      "id": "spo-0082",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Quelle épreuve ne fait PAS partie du pentathlon moderne historique ?",
+      "choices": [
+        "L'escrime",
+        "L'équitation",
+        "Le tir",
+        "L'aviron"
+      ],
+      "answer": 3,
+      "fun": "Escrime, natation, équitation, tir et course : les cinq compétences supposées d'un officier de cavalerie du XIXe siècle.",
+      "tags": [
+        "jo",
+        "piège"
+      ]
+    },
+    {
+      "id": "spo-0083",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "En Formule 1, que signale un drapeau bleu à un pilote ?",
+      "choices": [
+        "Il va être doublé",
+        "Il roule trop lentement",
+        "La piste est mouillée",
+        "Il doit rentrer au stand"
+      ],
+      "answer": 0,
+      "fun": "C'est le drapeau des retardataires : il faut laisser passer les leaders. L'ignorer trois fois vaut pénalité.",
+      "tags": [
+        "automobile"
+      ]
+    },
+    {
+      "id": "spo-0084",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Que désigne le « pole position » en course automobile ?",
+      "choices": [
+        "La première place sur la grille",
+        "Le meilleur tour en course",
+        "Le dernier virage",
+        "Un arrêt au stand rapide"
+      ],
+      "answer": 0,
+      "fun": "Le mot vient des courses hippiques, où le meilleur cheval partait le long du poteau intérieur.",
+      "tags": [
+        "automobile",
+        "mots"
+      ]
+    },
+    {
+      "id": "spo-0085",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Dans quel sport peut-on gagner par « tombé » ?",
+      "choices": [
+        "La lutte",
+        "Le judo",
+        "La boxe",
+        "L'escrime"
+      ],
+      "answer": 0,
+      "fun": "Il faut maintenir les deux épaules de l'adversaire au sol. C'est l'un des plus vieux sports olympiques, déjà présent dans l'Antiquité.",
+      "tags": [
+        "lutte"
+      ]
+    },
+    {
+      "id": "spo-0086",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "À quoi sert le « libéro » au volley-ball ?",
+      "choices": [
+        "À la réception et à la défense",
+        "À smasher",
+        "À servir",
+        "À bloquer au filet"
+      ],
+      "answer": 0,
+      "fun": "Il porte un maillot d'une autre couleur et n'a pas le droit d'attaquer. C'est le seul joueur qui peut entrer et sortir sans limite.",
+      "tags": [
+        "volley",
+        "vocabulaire"
+      ]
+    },
+    {
+      "id": "spo-0087",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "En natation, quel est l'ordre des nages dans un quatre nages individuel ?",
+      "choices": [
+        "Papillon, dos, brasse, crawl",
+        "Crawl, dos, brasse, papillon",
+        "Dos, brasse, papillon, crawl",
+        "Brasse, papillon, dos, crawl"
+      ],
+      "answer": 0,
+      "fun": "Le papillon d'abord, quand il reste de la force. En relais, l'ordre change : c'est le dos qui ouvre, à cause du départ dans l'eau.",
+      "tags": [
+        "natation",
+        "piège"
+      ]
+    },
+    {
+      "id": "spo-0088",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Que sanctionne un « faux départ » en athlétisme depuis la règle actuelle ?",
+      "choices": [
+        "La disqualification immédiate",
+        "Un avertissement",
+        "Un handicap de temps",
+        "Un nouveau départ pour tous"
+      ],
+      "answer": 0,
+      "fun": "Un seul faux départ et c'est fini. Les blocs mesurent la pression : réagir en moins d'un dixième de seconde est considéré comme impossible, donc anticipé.",
+      "tags": [
+        "athlétisme"
+      ]
+    },
+    {
+      "id": "spo-0089",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Que remporte le vainqueur du classement par équipes en cyclisme sur route ?",
+      "choices": [
+        "Un classement au temps cumulé",
+        "Une prime uniquement",
+        "Un maillot arc-en-ciel",
+        "Rien d'officiel"
+      ],
+      "answer": 0,
+      "fun": "On additionne les temps des trois meilleurs coureurs de chaque équipe, étape après étape. C'est le classement que le public regarde le moins et que les équipes surveillent le plus.",
+      "tags": [
+        "cyclisme"
+      ]
+    },
+    {
+      "id": "spo-0090",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Que porte le champion du monde de cyclisme sur route pendant un an ?",
+      "choices": [
+        "Un maillot arc-en-ciel",
+        "Un maillot doré",
+        "Un maillot noir",
+        "Un brassard"
+      ],
+      "answer": 0,
+      "fun": "Cinq bandes de couleur, celles des anneaux olympiques. Une superstition tenace veut que le porter attire la malchance.",
+      "tags": [
+        "cyclisme"
+      ]
+    },
+    {
+      "id": "spo-0091",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 12,
+      "q": "De quelle nationalité était le vainqueur du premier marathon olympique, en 1896 ?",
+      "choices": [
+        "Grec",
+        "Français",
+        "Américain",
+        "Britannique"
+      ],
+      "answer": 0,
+      "fun": "Spyridon Louis, un porteur d'eau. Son pays entier attendait cette victoire-là, et il est devenu un héros national du jour au lendemain.",
+      "tags": [
+        "jo",
+        "histoire"
+      ]
+    },
+    {
+      "id": "spo-0092",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 12,
+      "q": "Laquelle de ces disciplines a réellement figuré au programme des Jeux olympiques ?",
+      "choices": [
+        "Le tir à la corde",
+        "Le lancer de tronc",
+        "La course en sac",
+        "Le saut de haie à cheval"
+      ],
+      "answer": 0,
+      "fun": "Il y a eu des épreuves olympiques de tir à la corde jusqu'en 1920. Une équipe de policiers londoniens y a raflé plusieurs médailles.",
+      "tags": [
+        "jo",
+        "insolite"
+      ]
+    },
+    {
+      "id": "spo-0093",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 12,
+      "q": "De quel mot français le mot « tennis » viendrait-il ?",
+      "choices": [
+        "« Tenez »",
+        "« Tendre »",
+        "« Tenir »",
+        "« Tension »"
+      ],
+      "answer": 0,
+      "fun": "Le cri du serveur au jeu de paume, prévenant l'adversaire avant de frapper. Les Anglais l'ont entendu et gardé tel quel.",
+      "tags": [
+        "tennis",
+        "mots"
+      ]
+    },
+    {
+      "id": "spo-0094",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 12,
+      "q": "D'où vient le nom du badminton ?",
+      "choices": [
+        "D'une demeure anglaise",
+        "D'un mot indien",
+        "D'un fabricant de raquettes",
+        "D'un oiseau"
+      ],
+      "answer": 0,
+      "fun": "Badminton House, résidence d'un duc anglais où le jeu, rapporté des Indes, a été mis à la mode.",
+      "tags": [
+        "badminton",
+        "mots"
+      ]
+    },
+    {
+      "id": "spo-0095",
+      "type": "vraifaux",
+      "difficulty": 5,
+      "minAge": 12,
+      "q": "Au hockey sur glace, les palets sont congelés avant le match.",
+      "answer": true,
+      "fun": "Un palet à température ambiante rebondit et devient incontrôlable. Congelé, il glisse droit. On en garde un seau au frais tout au long de la rencontre.",
+      "tags": [
+        "hockey",
+        "technique"
+      ]
+    },
+    {
+      "id": "spo-0096",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Combien de jours peut durer un « test match » de cricket ?",
+      "choices": [
+        "Un jour",
+        "Trois jours",
+        "Cinq jours",
+        "Sept jours"
+      ],
+      "answer": 2,
+      "fun": "Cinq jours, avec des pauses pour le déjeuner et le thé, et le match peut tout de même finir sur un match nul.",
+      "tags": [
+        "cricket",
+        "insolite"
+      ]
+    },
+    {
+      "id": "spo-0097",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Qu'est-ce que le Vendée Globe ?",
+      "choices": [
+        "Un tour du monde à la voile en solitaire",
+        "Une course cycliste par étapes",
+        "Un raid à pied",
+        "Un rallye automobile"
+      ],
+      "answer": 0,
+      "fun": "Sans escale et sans assistance. Les skippers dorment par tranches de vingt minutes pendant deux à trois mois.",
+      "tags": [
+        "voile"
+      ]
+    },
+    {
+      "id": "spo-0098",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 12,
+      "q": "Qui a inventé le pentathlon moderne ?",
+      "choices": [
+        "Pierre de Coubertin",
+        "Jigoro Kano",
+        "James Naismith",
+        "Un général suédois"
+      ],
+      "answer": 0,
+      "fun": "Il voulait résumer en cinq épreuves la journée d'un officier portant un message derrière les lignes ennemies. D'où le cheval, le pistolet et l'épée.",
+      "tags": [
+        "jo",
+        "histoire"
+      ]
+    },
+    {
+      "id": "spo-0099",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 12,
+      "q": "Qui a inventé le basket-ball, à la fin du XIXe siècle ?",
+      "choices": [
+        "Un professeur de gymnastique",
+        "Un militaire",
+        "Un médecin",
+        "Un journaliste"
+      ],
+      "answer": 0,
+      "fun": "James Naismith, à qui l'on demandait un jeu d'intérieur sans contact pour occuper l'hiver. Il l'a écrit en treize règles sur deux pages.",
+      "tags": [
+        "basket",
+        "histoire"
+      ]
+    },
+    {
+      "id": "spo-0100",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 12,
+      "q": "Comment appelle-t-on le véhicule qui ferme la course sur le Tour de France et recueille les abandons ?",
+      "choices": [
+        "La voiture-balai",
+        "La voiture rouge",
+        "Le camion-suiveur",
+        "La voiture noire"
+      ],
+      "answer": 0,
+      "fun": "Un vrai balai y était accroché à l'arrière, autrefois. Aujourd'hui, la plupart des abandons montent plutôt dans la voiture de leur équipe.",
+      "tags": [
+        "cyclisme",
+        "mots"
       ]
     }
   ]

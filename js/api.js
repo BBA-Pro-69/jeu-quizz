@@ -1,10 +1,16 @@
 /* =====================================================================
    Quiz Famille · js/api.js
-   Tout l'accès réseau passe par ici. Rien d'autre ne parle à Supabase.
+   Le seul endroit du jeu qui parle à Supabase.
 
-   La clé est publiable : elle est faite pour vivre dans du code public.
-   C'est le RLS, côté base, qui décide ce qu'on a le droit de faire.
-   La clé secrète (sb_secret_...) n'a rien à faire ici, jamais.
+   La clé publiable est faite pour vivre dans du code public : c'est le
+   RLS qui protège, pas le secret de la clé. La clé secrète (sb_secret_)
+   n'a rien à faire ici, jamais.
+
+   Nouveauté : si un joueur est connecté, on envoie SON jeton dans
+   Authorization à la place de la clé. C'est ce jeton qui alimente
+   auth.uid() côté PostgreSQL, et donc qui décide de ce qu'il peut faire.
+   Un jeton dure une heure ; sur un 401 on le renouvelle et on rejoue la
+   requête une seule fois.
    ===================================================================== */
 (function (global) {
 'use strict';
@@ -12,51 +18,67 @@
 var SUPABASE_URL = 'https://kisjanhyyceimvwxcear.supabase.co';
 var SUPABASE_KEY = 'sb_publishable_rP2MpD8WYGFDPGOjB7Ybmw_MDOz5QC3';
 
-/* Un seul point de passage HTTP.
-   `path` commence par un / et s'ajoute après /rest/v1 */
-async function api(path, options) {
-  var o = options || {};
-  var url = SUPABASE_URL.replace(/\/+$/, '') + '/rest/v1' + path;
+global.Quiz = global.Quiz || {};
+global.Quiz.config = { url: SUPABASE_URL, cle: SUPABASE_KEY };
 
+function jeton() {
+  var A = global.Quiz.Auth;
+  var s = A && A.session && A.session();
+  return (s && s.access_token) || null;
+}
+
+/* Requête brute. `base` vaut '/rest/v1' ou '/auth/v1'.
+   Volontairement sans SDK : tu vois exactement ce qui part sur le fil. */
+async function requete(base, chemin, options, dejaRejoue) {
+  var o = options || {};
+  var url = SUPABASE_URL.replace(/\/+$/, '') + base + chemin;
+
+  var t = o.sansJeton ? null : jeton();
   var headers = {
     'apikey': SUPABASE_KEY,
-    'Authorization': 'Bearer ' + SUPABASE_KEY,
+    'Authorization': 'Bearer ' + (t || SUPABASE_KEY),
     'Content-Type': 'application/json'
   };
   if (o.prefer) headers['Prefer'] = o.prefer;
+  if (o.headers) Object.keys(o.headers).forEach(function (k) { headers[k] = o.headers[k]; });
 
   var res = await fetch(url, {
     method: o.method || 'GET',
     headers: headers,
-    body: o.body ? JSON.stringify(o.body) : undefined
+    body: o.body !== undefined ? JSON.stringify(o.body) : undefined
   });
 
   var texte = await res.text();
   var data = null;
   try { data = texte ? JSON.parse(texte) : null; } catch (e) { data = texte; }
 
+  /* 401 avec un jeton utilisateur = jeton périmé. On le renouvelle et on
+     rejoue UNE fois. Sans ce garde-fou, une partie qui dure plus d'une
+     heure échouerait à l'enregistrement, sans que personne comprenne. */
+  if (res.status === 401 && t && !dejaRejoue && global.Quiz.Auth && global.Quiz.Auth.rafraichir) {
+    try {
+      await global.Quiz.Auth.rafraichir();
+      return requete(base, chemin, options, true);
+    } catch (e) { /* on tombe dans l'erreur normale juste en dessous */ }
+  }
+
   if (!res.ok) {
-    var e2 = new Error((data && data.message) || ('HTTP ' + res.status));
-    e2.status = res.status;
-    e2.corps = data;
-    throw e2;
+    var err = new Error(
+      (data && (data.message || data.error_description || data.msg || data.error)) ||
+      ('HTTP ' + res.status)
+    );
+    err.status = res.status;
+    err.corps = data;
+    throw err;
   }
   return data;
 }
 
-/* Envoi des résultats d'une partie : une seule requête pour tous les joueurs.
-   Le jeu ne dépend jamais de son succès — en cas d'échec, la partie a
-   quand même eu lieu, et les scores sont affichés à l'écran. */
-async function envoyerScores(lignes) {
-  return api('/scores', {
-    method: 'POST',
-    body: lignes,
-    prefer: 'return=representation'
-  });
-}
+function api(chemin, options) { return requete('/rest/v1', chemin, options); }
+function rpc(nom, corps)      { return api('/rpc/' + nom, { method: 'POST', body: corps || {} }); }
 
-global.Quiz = global.Quiz || {};
-global.Quiz.api = api;
-global.Quiz.envoyerScores = envoyerScores;
+global.Quiz.api     = api;
+global.Quiz.rpc     = rpc;
+global.Quiz.requete = requete;
 
 })(window);

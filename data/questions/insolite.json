@@ -1,7 +1,7 @@
 {
   "category": "insolite",
   "label": "Insolite & Records",
-  "version": 1,
+  "version": 2,
   "note": "Catégorie volontairement riche en estimations : personne ne connaît la réponse exacte, donc tous les âges sont à égalité.",
   "questions": [
     {
@@ -10,10 +10,18 @@
       "difficulty": 1,
       "minAge": 6,
       "q": "Quel est le plus petit pays du monde ?",
-      "choices": ["Monaco", "Le Vatican", "Malte", "Le Liechtenstein"],
+      "choices": [
+        "Monaco",
+        "Le Vatican",
+        "Malte",
+        "Le Liechtenstein"
+      ],
       "answer": 1,
       "fun": "0,44 km². On en fait le tour à pied en une demi-heure.",
-      "tags": ["records", "géo"]
+      "tags": [
+        "records",
+        "géo"
+      ]
     },
     {
       "id": "ins-0002",
@@ -23,7 +31,9 @@
       "q": "La Grande Muraille de Chine est visible à l'œil nu depuis la Lune.",
       "answer": false,
       "fun": "Légende tenace. Elle est déjà à peine visible depuis l'orbite basse : elle est longue, mais très étroite.",
-      "tags": ["légendes"]
+      "tags": [
+        "légendes"
+      ]
     },
     {
       "id": "ins-0003",
@@ -33,9 +43,13 @@
       "q": "Combien de minutes met la lumière du Soleil pour atteindre la Terre ?",
       "answer": 8,
       "unit": "minutes",
-      "tol": { "exact": true },
+      "tol": {
+        "exact": true
+      },
       "fun": "Si le Soleil s'éteignait maintenant, tu jouerais encore 8 minutes dans la lumière d'une étoile morte.",
-      "tags": ["espace"]
+      "tags": [
+        "espace"
+      ]
     },
     {
       "id": "ins-0004",
@@ -45,19 +59,26 @@
       "q": "Combien de touches compte un piano classique ?",
       "answer": 88,
       "unit": "touches",
-      "tol": { "pct": 6 },
+      "tol": {
+        "exact": true
+      },
       "fun": "52 blanches et 36 noires.",
-      "tags": ["musique"]
+      "tags": [
+        "musique"
+      ]
     },
     {
       "id": "ins-0005",
       "type": "vraifaux",
-      "difficulty": 3,
+      "difficulty": 2,
       "minAge": 8,
       "q": "Le miel ne se périme jamais.",
       "answer": true,
       "fun": "On a retrouvé dans des tombes égyptiennes du miel vieux de 3 000 ans, encore comestible. Trop sucré et trop acide pour les bactéries.",
-      "tags": ["bouffe", "records"]
+      "tags": [
+        "bouffe",
+        "records"
+      ]
     },
     {
       "id": "ins-0006",
@@ -65,10 +86,18 @@
       "difficulty": 3,
       "minAge": 8,
       "q": "Quel est le plus grand désert du monde ?",
-      "choices": ["Le Sahara", "L'Antarctique", "Le Gobi", "L'Arabie"],
+      "choices": [
+        "Le Sahara",
+        "L'Antarctique",
+        "Le Gobi",
+        "L'Arabie"
+      ],
       "answer": 1,
       "fun": "Un désert se définit par ses précipitations, pas par le sable. L'Antarctique est le plus sec de la planète.",
-      "tags": ["géo", "piège"]
+      "tags": [
+        "géo",
+        "piège"
+      ]
     },
     {
       "id": "ins-0007",
@@ -78,9 +107,14 @@
       "q": "Quelle est l'altitude de l'Everest, en mètres ?",
       "answer": 8849,
       "unit": "m",
-      "tol": { "pct": 6 },
+      "tol": {
+        "pct": 6
+      },
       "fun": "Il grandit d'environ 4 mm par an, poussé par la collision de deux plaques tectoniques.",
-      "tags": ["records", "géo"]
+      "tags": [
+        "records",
+        "géo"
+      ]
     },
     {
       "id": "ins-0008",
@@ -90,18 +124,29 @@
       "q": "Un éclair est plus chaud que la surface du Soleil.",
       "answer": true,
       "fun": "Environ 30 000 °C contre 5 500 °C pour la surface du Soleil. Mais ça ne dure qu'une fraction de seconde.",
-      "tags": ["sciences", "records"]
+      "tags": [
+        "sciences",
+        "records"
+      ]
     },
     {
       "id": "ins-0009",
       "type": "qcm",
-      "difficulty": 3,
+      "difficulty": 4,
       "minAge": 9,
       "q": "Quel pays compte le plus de fuseaux horaires ?",
-      "choices": ["La Russie", "Les États-Unis", "La France", "La Chine"],
+      "choices": [
+        "La Russie",
+        "Les États-Unis",
+        "La France",
+        "La Chine"
+      ],
       "answer": 2,
       "fun": "Douze, grâce à ses territoires d'outre-mer répartis sur tous les océans. La Russie en a onze.",
-      "tags": ["géo", "surprenant"]
+      "tags": [
+        "géo",
+        "surprenant"
+      ]
     },
     {
       "id": "ins-0010",
@@ -111,9 +156,13 @@
       "q": "Combien d'États sont membres de l'ONU ?",
       "answer": 193,
       "unit": "pays",
-      "tol": { "pct": 5 },
+      "tol": {
+        "exact": true
+      },
       "fun": "Le dernier arrivé est le Soudan du Sud, en 2011.",
-      "tags": ["géo"]
+      "tags": [
+        "géo"
+      ]
     },
     {
       "id": "ins-0011",
@@ -123,19 +172,26 @@
       "q": "Combien de secondes compte une journée ?",
       "answer": 86400,
       "unit": "secondes",
-      "tol": { "pct": 5 },
+      "tol": {
+        "pct": 5
+      },
       "fun": "24 × 60 × 60. La seule question du jeu où tu peux tricher avec un stylo.",
-      "tags": ["calcul"]
+      "tags": [
+        "calcul"
+      ]
     },
     {
       "id": "ins-0012",
       "type": "vraifaux",
-      "difficulty": 4,
+      "difficulty": 3,
       "minAge": 10,
       "q": "Les bananes sont légèrement radioactives.",
       "answer": true,
       "fun": "À cause du potassium 40 qu'elles contiennent. Il faudrait en manger environ 10 millions d'un coup pour que ce soit un problème.",
-      "tags": ["sciences", "bouffe"]
+      "tags": [
+        "sciences",
+        "bouffe"
+      ]
     },
     {
       "id": "ins-0013",
@@ -145,9 +201,14 @@
       "q": "Combien de secondes a duré le premier vol motorisé des frères Wright, en 1903 ?",
       "answer": 12,
       "unit": "secondes",
-      "tol": { "exact": true },
+      "tol": {
+        "exact": true
+      },
       "fun": "12 secondes et 36 mètres. Soit moins que la longueur de la cabine d'un A380.",
-      "tags": ["histoire", "records"]
+      "tags": [
+        "histoire",
+        "records"
+      ]
     },
     {
       "id": "ins-0014",
@@ -155,10 +216,18 @@
       "difficulty": 3,
       "minAge": 9,
       "q": "Quel animal possède le plus gros œil du règne animal ?",
-      "choices": ["La baleine bleue", "Le calmar géant", "L'autruche", "L'éléphant"],
+      "choices": [
+        "La baleine bleue",
+        "Le calmar géant",
+        "L'autruche",
+        "L'éléphant"
+      ],
       "answer": 1,
       "fun": "Jusqu'à 27 cm de diamètre, la taille d'une assiette. Utile pour voir dans le noir à 1 000 m de profondeur.",
-      "tags": ["animaux", "records"]
+      "tags": [
+        "animaux",
+        "records"
+      ]
     },
     {
       "id": "ins-0015",
@@ -168,9 +237,13 @@
       "q": "Combien de langues sont parlées dans le monde aujourd'hui ?",
       "answer": 7000,
       "unit": "langues",
-      "tol": { "pct": 25 },
+      "tol": {
+        "pct": 25
+      },
       "fun": "Environ 7 000, et une disparaît toutes les deux semaines.",
-      "tags": ["langues"]
+      "tags": [
+        "langues"
+      ]
     },
     {
       "id": "ins-0016",
@@ -178,10 +251,18 @@
       "difficulty": 2,
       "minAge": 8,
       "q": "Quel est le pays le plus visité au monde par les touristes ?",
-      "choices": ["L'Espagne", "Les États-Unis", "La France", "L'Italie"],
+      "choices": [
+        "L'Espagne",
+        "Les États-Unis",
+        "La France",
+        "L'Italie"
+      ],
       "answer": 2,
       "fun": "Environ 100 millions de visiteurs par an, soit plus que sa propre population.",
-      "tags": ["géo", "records"]
+      "tags": [
+        "géo",
+        "records"
+      ]
     },
     {
       "id": "ins-0017",
@@ -191,19 +272,27 @@
       "q": "Quel est le record du monde d'apnée statique, en minutes ?",
       "answer": 11,
       "unit": "minutes",
-      "tol": { "exact": true },
+      "tol": {
+        "exact": true
+      },
       "fun": "Plus de 11 minutes sous l'eau sans respirer. La plupart des gens tiennent moins d'une minute.",
-      "tags": ["sport", "records"]
+      "tags": [
+        "sport",
+        "records"
+      ]
     },
     {
       "id": "ins-0018",
       "type": "vraifaux",
-      "difficulty": 5,
+      "difficulty": 4,
       "minAge": 12,
       "q": "Les Jeux olympiques ont déjà décerné des médailles pour la poésie.",
       "answer": true,
       "fun": "De 1912 à 1948, on remettait des médailles en peinture, sculpture, musique, architecture et littérature. Pierre de Coubertin y tenait beaucoup.",
-      "tags": ["histoire", "sport"]
+      "tags": [
+        "histoire",
+        "sport"
+      ]
     },
     {
       "id": "ins-0019",
@@ -213,20 +302,31 @@
       "q": "Quelle est la hauteur de la tour Eiffel, antennes comprises, en mètres ?",
       "answer": 330,
       "unit": "m",
-      "tol": { "pct": 10 },
+      "tol": {
+        "pct": 10
+      },
       "fun": "Elle grandit et rétrécit de plusieurs centimètres selon la saison : le métal se dilate à la chaleur.",
-      "tags": ["monuments"]
+      "tags": [
+        "monuments"
+      ]
     },
     {
       "id": "ins-0020",
       "type": "qcm",
-      "difficulty": 4,
+      "difficulty": 2,
       "minAge": 11,
       "q": "À qui appartient le Groenland ?",
-      "choices": ["Au Canada", "À la Norvège", "Au Danemark", "À l'Islande"],
+      "choices": [
+        "Au Canada",
+        "À la Norvège",
+        "Au Danemark",
+        "À l'Islande"
+      ],
       "answer": 2,
       "fun": "C'est un territoire autonome du Royaume de Danemark, alors qu'il est trois fois plus grand que lui... multiplié par cinquante.",
-      "tags": ["géo"]
+      "tags": [
+        "géo"
+      ]
     }
   ]
 }

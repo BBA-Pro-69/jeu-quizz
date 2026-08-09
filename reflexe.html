@@ -4,169 +4,304 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
 <title>Quiz Famille · Réflexe</title>
-<meta name="theme-color" content="#02141f">
+<meta name="theme-color" content="#0A2A24">
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <script>
 tailwind.config = { theme: { extend: {
   fontFamily: { sans:['Inter','sans-serif'], serif:['Playfair Display','serif'] },
-  colors: { q: { blue:'#41B6E6', dark:'#002B49', red:'#E4002B', sand:'#F5F1EA' } }
+  colors: { q: { blue:'#3FA9C9', dark:'#0A2A24', red:'#C8372D', sand:'#F4EAD5', or:'#D8A94B' } }
 }}}
 </script>
 <style>
-  *{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
-  body{background:#02141f;color:#e2e8f0;font-family:Inter,sans-serif;
-       min-height:100dvh;overscroll-behavior:none}
-  .card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);
-        border-radius:1.25rem;backdrop-filter:blur(12px)}
-  .kicker{font-size:.68rem;letter-spacing:.26em;text-transform:uppercase;font-weight:800}
-  .kicker-line{display:block;height:3px;width:60px;background:#E4002B;margin:.55rem 0 0;border-radius:2px}
-  .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
-       padding:1rem 1.2rem;border-radius:.8rem;font-weight:700;cursor:pointer;font-size:1rem;
-       border:1px solid transparent;transition:all .25s cubic-bezier(.16,1,.3,1)}
-  .btn:active:not(:disabled){transform:scale(.98)}
-  .btn:disabled{opacity:.35;cursor:not-allowed}
-  .btn-primary{background:#41B6E6;color:#002B49}
-  .btn-ghost{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.14);color:#e2e8f0}
-  .btn-red{background:#E4002B;color:#fff}
-  .inp{width:100%;padding:.9rem 1rem;border-radius:.8rem;background:rgba(255,255,255,.05);
-       border:1px solid rgba(255,255,255,.14);color:#fff;font-size:1.05rem}
-  .inp:focus{outline:none;border-color:#41B6E6}
-  .lbl{font-size:.64rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
-       color:#7e93a6;display:block;margin-bottom:.35rem}
-  .prop{width:100%;text-align:left;padding:1.15rem 1.2rem;border-radius:.8rem;font-size:1.05rem;
-        background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);color:#fff;
-        transition:all .2s cubic-bezier(.16,1,.3,1);margin-bottom:.7rem;display:block}
-  .prop:active{transform:scale(.99);border-color:#41B6E6}
-  .lettre{display:inline-flex;width:1.9rem;height:1.9rem;border-radius:.5rem;margin-right:.7rem;
-          align-items:center;justify-content:center;background:rgba(65,182,230,.16);color:#41B6E6;
-          font-weight:800;font-size:.9rem}
-  .chip{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem .8rem;border-radius:.7rem;
-        font-size:.8rem;font-weight:600;cursor:pointer;margin:0 .4rem .4rem 0;
-        background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);color:#94a3b8;
-        transition:all .2s cubic-bezier(.16,1,.3,1)}
-  .chip.on{color:#fff;border-color:var(--c);background:color-mix(in srgb,var(--c) 16%,transparent)}
-  .gros-chiffre{font-family:'Playfair Display',serif;font-weight:900;font-size:4.5rem;line-height:1}
-  table{width:100%;border-collapse:collapse;font-size:.85rem}
-  th{text-align:left;font-size:.6rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
-     color:#7e93a6;padding:.45rem .5rem;border-bottom:1px solid rgba(255,255,255,.1)}
-  td{padding:.55rem .5rem;border-bottom:1px solid rgba(255,255,255,.055);color:#cbd5e1}
-  .vue{display:none} .vue.on{display:block}
-  input[type=range]{accent-color:#41B6E6;width:100%}
+/* =========================================================
+   Palette « table de jeu » : feutre, papier, laiton.
+   Tokens à la manière de css/pages.css du site RFE.
+   ========================================================= */
+:root{
+  --feutre:#0E3B32; --feutre-bas:#082019; --feutre-haut:#15564A; --feutre-panneau:#12463C;
+  --creme:#F4EAD5; --creme-ombre:#E2D3B4; --encre:#17241F; --encre-pale:#5C6F66;
+  --laiton:#D8A94B; --laiton-clair:#F0C978; --cerise:#C8372D; --paon:#3FA9C9;
+  --vert-ok:#4FA96B;
+  --r-sm:10px; --r-md:14px; --r-lg:20px; --r-xl:26px; --r-full:999px;
+  --o-douce:0 6px 20px rgba(0,0,0,.22);
+  --o-carte:0 18px 40px rgba(0,0,0,.34), 0 2px 0 rgba(255,255,255,.55) inset;
+  --o-laiton:0 8px 22px rgba(216,169,75,.32);
+  --glisse:all .3s cubic-bezier(.16,1,.3,1);
+}
+*{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+
+body{
+  margin:0;min-height:100dvh;overscroll-behavior:none;
+  font-family:Inter,-apple-system,sans-serif;color:var(--creme);
+  background:
+    radial-gradient(ellipse at 15% -10%, rgba(21,86,74,.85), transparent 55%),
+    radial-gradient(ellipse at 90% 105%, rgba(216,169,75,.10), transparent 50%),
+    linear-gradient(170deg, var(--feutre) 0%, var(--feutre-bas) 100%);
+  background-attachment:fixed;
+}
+/* Grain de feutre : deux trames croisées très pâles, ça suffit à tuer
+   l'effet « aplat numérique » sans peser un octet d'image. */
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;opacity:.5;z-index:0;
+  background-image:
+    repeating-linear-gradient(45deg, rgba(255,255,255,.014) 0 2px, transparent 2px 4px),
+    repeating-linear-gradient(-45deg, rgba(0,0,0,.03) 0 2px, transparent 2px 4px);
+}
+.enveloppe{position:relative;z-index:1;max-width:30rem;margin:0 auto;padding:2rem 1.25rem 3rem}
+
+/* ---------- typographie ---------- */
+.titre{font-family:'Playfair Display',serif;font-weight:900;line-height:1.02;color:#fff}
+.titre-xl{font-size:clamp(3rem,17vw,4.6rem)}
+.titre-l {font-size:clamp(1.8rem,7vw,2.4rem)}
+.creme{color:var(--creme)} .encre{color:var(--encre)}
+.kicker{font-size:.66rem;letter-spacing:.28em;text-transform:uppercase;font-weight:800;color:var(--laiton)}
+.kicker-line{display:block;height:2px;width:52px;margin:.5rem 0 0;border-radius:2px;
+  background:linear-gradient(90deg,var(--laiton),transparent)}
+.mini{font-size:.72rem;color:rgba(244,234,213,.55);line-height:1.55}
+
+/* ---------- le camembert, en fond de titre ---------- */
+.parts{
+  position:absolute;top:-3.2rem;right:-3.5rem;width:15rem;height:15rem;border-radius:50%;
+  opacity:.17;filter:blur(1px);pointer-events:none;
+  background:conic-gradient(#3FA9C9 0 60deg,#C8372D 60deg 120deg,#D8A94B 120deg 180deg,
+                            #4FA96B 180deg 240deg,#8E6BB8 240deg 300deg,#E08A3C 300deg 360deg);
+  -webkit-mask:radial-gradient(circle, transparent 34%, #000 35%);
+          mask:radial-gradient(circle, transparent 34%, #000 35%);
+}
+.pastilles{display:flex;gap:.4rem;margin:1rem 0}
+.pastilles i{width:.55rem;height:.55rem;border-radius:50%;display:block}
+
+/* ---------- panneaux ---------- */
+.card{
+  background:linear-gradient(160deg, var(--feutre-panneau), rgba(8,32,25,.75));
+  border:1px solid rgba(216,169,75,.22);border-radius:var(--r-lg);
+  box-shadow:var(--o-douce);position:relative;overflow:hidden}
+.card::after{content:"";position:absolute;inset:0;border-radius:var(--r-lg);pointer-events:none;
+  border-top:1px solid rgba(255,255,255,.07)}
+
+/* ---------- la carte à jouer, en papier ---------- */
+.carte-papier{
+  background:linear-gradient(168deg,#FBF4E6 0%,var(--creme) 55%,var(--creme-ombre) 100%);
+  color:var(--encre);border-radius:var(--r-xl);padding:1.6rem 1.5rem 1.8rem;
+  box-shadow:var(--o-carte);position:relative;overflow:hidden}
+.carte-papier::before{ /* liseré de tranche, comme une vraie carte */
+  content:"";position:absolute;inset:.45rem;border:1px solid rgba(23,36,31,.13);
+  border-radius:calc(var(--r-xl) - .45rem);pointer-events:none}
+.carte-papier .enonce{font-family:'Playfair Display',serif;font-weight:700;
+  font-size:clamp(1.35rem,5.4vw,1.75rem);line-height:1.28}
+
+/* ---------- boutons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;
+  min-height:54px;padding:.95rem 1.3rem;border-radius:var(--r-full);
+  font-weight:700;font-size:1rem;cursor:pointer;border:1px solid transparent;transition:var(--glisse)}
+.btn:active:not(:disabled){transform:scale(.975)}
+.btn:disabled{opacity:.38;cursor:not-allowed}
+.btn-primary{background:linear-gradient(135deg,var(--laiton-clair),var(--laiton));
+  color:#2A1E06;box-shadow:var(--o-laiton);letter-spacing:.01em}
+.btn-primary:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 12px 28px rgba(216,169,75,.4)}
+.btn-ghost{background:rgba(244,234,213,.05);border-color:rgba(244,234,213,.24);color:var(--creme)}
+.btn-ghost:hover:not(:disabled){background:rgba(244,234,213,.11);transform:translateY(-2px)}
+.btn-rouge{background:var(--cerise);color:#fff}
+
+/* ---------- champs ---------- */
+.inp{width:100%;padding:.95rem 1rem;border-radius:var(--r-md);font-size:1.05rem;
+  background:rgba(8,32,25,.5);border:1px solid rgba(244,234,213,.18);color:#fff;transition:var(--glisse)}
+.inp::placeholder{color:rgba(244,234,213,.3)}
+.inp:focus{outline:none;border-color:var(--laiton);box-shadow:0 0 0 3px rgba(216,169,75,.16)}
+.lbl{display:block;margin-bottom:.4rem;font-size:.62rem;font-weight:800;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--laiton)}
+
+/* ---------- propositions : des cartons crème ---------- */
+.prop{display:block;width:100%;text-align:left;margin-bottom:.7rem;padding:1.1rem 1.15rem;
+  border-radius:var(--r-md);font-size:1.05rem;font-weight:600;cursor:pointer;
+  background:linear-gradient(170deg,#FBF4E6,var(--creme));color:var(--encre);
+  border:1px solid var(--creme-ombre);box-shadow:0 4px 0 rgba(0,0,0,.22);transition:var(--glisse)}
+.prop:hover{transform:translateY(-2px);box-shadow:0 7px 0 rgba(0,0,0,.24)}
+.prop:active{transform:translateY(2px);box-shadow:0 1px 0 rgba(0,0,0,.22)}
+.lettre{display:inline-flex;width:1.9rem;height:1.9rem;margin-right:.7rem;border-radius:50%;
+  align-items:center;justify-content:center;font-weight:900;font-size:.85rem;
+  background:var(--feutre);color:var(--laiton-clair)}
+
+/* ---------- pastilles de catégories ---------- */
+.chip{display:inline-flex;align-items:center;gap:.45rem;margin:0 .4rem .45rem 0;
+  padding:.55rem .85rem;border-radius:var(--r-full);font-size:.79rem;font-weight:600;cursor:pointer;
+  background:rgba(244,234,213,.05);border:1px solid rgba(244,234,213,.14);
+  color:rgba(244,234,213,.6);transition:var(--glisse)}
+.chip.on{color:#fff;border-color:var(--c);background:color-mix(in srgb,var(--c) 26%,transparent);
+  box-shadow:0 0 0 1px color-mix(in srgb,var(--c) 40%,transparent)}
+
+/* ---------- tableaux ---------- */
+table{width:100%;border-collapse:collapse;font-size:.87rem}
+th{text-align:left;padding:.5rem .55rem;font-size:.58rem;font-weight:800;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--laiton);border-bottom:1px solid rgba(216,169,75,.25)}
+td{padding:.62rem .55rem;border-bottom:1px solid rgba(244,234,213,.08);color:rgba(244,234,213,.85)}
+tr:last-child td{border-bottom:none}
+
+/* Le script pose quelques classes Tailwind dans ses tableaux.
+   On les recale sur la palette plutôt que de toucher au JS. */
+.text-white{color:#fff!important}
+.text-slate-500,.text-slate-600{color:rgba(244,234,213,.45)!important}
+.text-slate-400{color:rgba(244,234,213,.62)!important}
+.text-emerald-400{color:var(--vert-ok)!important}
+.text-red-400,.text-red-300{color:#E8836F!important}
+.text-q-blue{color:var(--laiton-clair)!important}
+
+/* ---------- compte à rebours ---------- */
+.compte{font-family:'Playfair Display',serif;font-weight:900;font-size:5.5rem;line-height:1;
+  color:var(--laiton-clair);text-shadow:0 6px 30px rgba(216,169,75,.28)}
+.jauge{height:5px;border-radius:var(--r-full);background:rgba(244,234,213,.12);overflow:hidden}
+.jauge i{display:block;height:100%;width:100%;background:linear-gradient(90deg,var(--laiton),var(--cerise));
+  transform-origin:left;animation:fondre linear forwards}
+@keyframes fondre{from{transform:scaleX(1)}to{transform:scaleX(0)}}
+
+.vue{display:none} .vue.on{display:block;animation:entree .35s cubic-bezier(.16,1,.3,1)}
+@keyframes entree{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+input[type=range]{accent-color:var(--laiton);width:100%}
 </style>
 </head>
 <body>
-<div class="max-w-md mx-auto px-5 py-8">
+<div class="enveloppe">
 
   <!-- ================= accueil ================= -->
   <div id="vAccueil" class="vue on">
-    <p class="kicker text-q-blue">Quiz Famille</p><span class="kicker-line"></span>
-    <h1 class="font-serif text-5xl font-black text-white mt-4">Réflexe</h1>
-    <p class="text-sm text-slate-400 mt-3 leading-relaxed">
-      Tout le monde voit la même question en même temps, sur son propre téléphone.
-      Le temps compte, mais seulement si la réponse est juste.
-      Se tromper coûte des points&nbsp;: quand tu ne sais pas, passe.
-    </p>
+    <div class="relative">
+      <span class="parts"></span>
+      <p class="kicker">Quiz Famille</p><span class="kicker-line"></span>
+      <h1 class="titre titre-xl mt-4">Réflexe</h1>
+      <div class="pastilles">
+        <i style="background:#3FA9C9"></i><i style="background:#C8372D"></i><i style="background:#D8A94B"></i>
+        <i style="background:#4FA96B"></i><i style="background:#8E6BB8"></i><i style="background:#E08A3C"></i>
+      </div>
+      <p class="text-sm creme opacity-80 leading-relaxed">
+        Même question, même seconde, sur le téléphone de chacun.
+        Le temps compte, mais seulement si la réponse est juste.
+        Se tromper coûte des points&nbsp;: quand tu ne sais pas, passe.
+      </p>
+    </div>
 
-    <div class="card p-5 mt-6 space-y-4">
+    <div class="card p-5 mt-7 space-y-4">
       <div><label class="lbl" for="inNom">Ton prénom</label>
         <input id="inNom" class="inp" placeholder="Bruno" autocomplete="given-name"></div>
       <div><label class="lbl" for="inAge">Ton âge</label>
         <input id="inAge" class="inp" type="number" min="3" max="110" placeholder="40">
-        <p class="text-xs text-slate-600 mt-2">
-          Il sert à choisir les questions et à te laisser plus de temps de lecture si tu es jeune.</p></div>
+        <p class="mini mt-2">Il choisit tes questions et t'accorde plus de temps de lecture si tu es jeune.</p></div>
       <button id="bCreer" class="btn btn-primary w-full">
-        <i class="fa-solid fa-plus"></i>Créer une partie</button>
+        <i class="fa-solid fa-dice-five"></i>Ouvrir une table</button>
     </div>
 
-    <p class="text-center text-xs text-slate-600 my-4">ou rejoins celle d'un copain</p>
+    <div class="flex items-center gap-3 my-5">
+      <span class="flex-1 h-px" style="background:rgba(216,169,75,.25)"></span>
+      <span class="kicker">ou</span>
+      <span class="flex-1 h-px" style="background:rgba(216,169,75,.25)"></span>
+    </div>
 
     <div class="card p-5 space-y-3">
-      <input id="inCode" class="inp uppercase tracking-[.35em] text-center font-black text-2xl"
-             placeholder="CODE" maxlength="4" autocomplete="off" autocapitalize="characters">
+      <label class="lbl" for="inCode">Le code qu'on t'a donné</label>
+      <input id="inCode" class="inp text-center uppercase font-black text-3xl tracking-[.4em]"
+             placeholder="····" maxlength="4" autocomplete="off" autocapitalize="characters">
       <button id="bRejoindre" class="btn btn-ghost w-full">
-        <i class="fa-solid fa-right-to-bracket"></i>Rejoindre</button>
+        <i class="fa-solid fa-right-to-bracket"></i>S'asseoir à la table</button>
     </div>
-    <p id="erreur" class="text-sm mt-4 text-center text-red-300"></p>
+    <p id="erreur" class="text-sm mt-4 text-center" style="color:#E8836F"></p>
   </div>
 
   <!-- ================= salon ================= -->
   <div id="vSalon" class="vue">
-    <p class="kicker text-q-blue">Réflexe</p><span class="kicker-line"></span>
-    <div class="card p-6 mt-5 text-center">
-      <p class="kicker text-slate-500">Code de la partie</p>
-      <p id="sCode" class="gros-chiffre text-white tracking-[.15em] my-3">····</p>
+    <p class="kicker">La table</p><span class="kicker-line"></span>
+
+    <div class="carte-papier mt-5 text-center">
+      <p class="text-[.6rem] font-extrabold tracking-[.28em] uppercase" style="color:#8A7A5C">Code de la partie</p>
+      <p id="sCode" class="titre encre my-2" style="font-size:3.6rem;letter-spacing:.16em">····</p>
+      <div class="flex justify-center gap-1 mb-4">
+        <span class="w-1.5 h-1.5 rounded-full" style="background:#3FA9C9"></span>
+        <span class="w-1.5 h-1.5 rounded-full" style="background:#C8372D"></span>
+        <span class="w-1.5 h-1.5 rounded-full" style="background:#D8A94B"></span>
+        <span class="w-1.5 h-1.5 rounded-full" style="background:#4FA96B"></span>
+      </div>
       <button id="bInviter" class="btn btn-primary w-full">
-        <i class="fa-solid fa-share-nodes"></i>Inviter des joueurs</button>
-      <p id="sEtat" class="text-xs text-slate-500 mt-3"></p>
-      <p id="sHorloge" class="text-[.65rem] text-slate-600 mt-1"></p>
+        <i class="fa-solid fa-share-nodes"></i>Passer le code</button>
     </div>
+    <p id="sEtat" class="mini text-center mt-3"></p>
+    <p id="sHorloge" class="mini text-center opacity-60"></p>
 
     <div class="card p-5 mt-5">
-      <p class="kicker text-slate-500 mb-3">Autour de la table</p>
+      <p class="kicker mb-3">Autour de la table</p>
       <div id="sJoueurs"></div>
     </div>
 
     <div id="sReglages" class="mt-5"></div>
 
-    <div class="flex flex-col gap-3 mt-6 pb-10">
+    <div class="flex flex-col gap-3 mt-6">
       <button id="bLancer" class="btn btn-primary hidden" disabled>
-        <i class="fa-solid fa-play"></i>Lancer la partie</button>
-      <p id="sAttente" class="text-sm text-slate-400 text-center"></p>
+        <i class="fa-solid fa-play"></i>Distribuer la première question</button>
+      <p id="sAttente" class="text-sm text-center creme opacity-70"></p>
       <button id="bQuitter" class="btn btn-ghost">
-        <i class="fa-solid fa-arrow-left"></i>Quitter</button>
+        <i class="fa-solid fa-arrow-left"></i>Quitter la table</button>
     </div>
   </div>
 
   <!-- ================= lecture ================= -->
-  <div id="vLecture" class="vue text-center">
-    <div class="flex items-center justify-between text-xs">
-      <span id="lManche" class="text-slate-500"></span>
+  <div id="vLecture" class="vue">
+    <div class="flex items-center justify-between">
+      <span id="lManche" class="kicker" style="color:rgba(244,234,213,.45)"></span>
       <span id="lCat" class="kicker"></span>
     </div>
-    <p id="lEnonce" class="font-serif text-2xl font-bold text-white mt-8 leading-snug text-left"></p>
-    <p id="lCompte" class="gros-chiffre text-q-blue mt-10"></p>
-    <p class="text-sm text-slate-500 mt-4">Lis bien. Les réponses arrivent.</p>
+    <div class="carte-papier mt-4">
+      <p id="lEnonce" class="enonce"></p>
+    </div>
+    <div class="text-center mt-8">
+      <p id="lCompte" class="compte"></p>
+      <p class="mini mt-3">Lis bien. Les réponses arrivent.</p>
+    </div>
   </div>
 
   <!-- ================= réponse ================= -->
   <div id="vRep" class="vue">
-    <div class="flex items-center justify-between text-xs mb-4">
-      <span id="rChrono" class="font-bold text-q-blue"></span>
-      <span id="rMeta" class="text-slate-500"></span>
+    <div class="flex items-baseline justify-between mb-2">
+      <span id="rChrono" class="titre" style="font-size:1.6rem;color:var(--laiton-clair)"></span>
+      <span id="rMeta" class="mini text-right"></span>
     </div>
-    <p id="rEnonce" class="text-base font-semibold text-white leading-snug mb-5"></p>
+    <div class="jauge mb-5"><i style="animation-duration:15s"></i></div>
+    <div class="carte-papier mb-5" style="padding:1.1rem 1.2rem">
+      <p id="rEnonce" class="font-semibold leading-snug" style="font-size:1.02rem"></p>
+    </div>
     <div id="rZone"></div>
-    <button id="bPasse" class="btn btn-ghost w-full mt-2 mb-10">
-      <i class="fa-solid fa-forward"></i>Je passe · 0 point</button>
+    <button id="bPasse" class="btn btn-ghost w-full mt-2">
+      <i class="fa-solid fa-hand"></i>Je passe · 0 point</button>
   </div>
 
   <!-- ================= attente ================= -->
-  <div id="vAttente" class="vue text-center py-16">
-    <i class="fa-solid fa-hourglass-half text-4xl text-slate-600"></i>
-    <p id="aTemps" class="font-serif text-3xl font-black text-white mt-6"></p>
-    <p id="aInfo" class="text-sm text-slate-400 mt-3"></p>
+  <div id="vAttente" class="vue text-center" style="padding:5rem 0">
+    <i class="fa-solid fa-hourglass-half text-4xl" style="color:rgba(216,169,75,.5)"></i>
+    <p id="aTemps" class="titre titre-l mt-6"></p>
+    <p id="aInfo" class="text-sm creme opacity-70 mt-3"></p>
   </div>
 
   <!-- ================= résultat ================= -->
   <div id="vResultat" class="vue">
-    <p class="kicker text-q-blue">La réponse</p><span class="kicker-line"></span>
-    <p id="resBonne" class="font-serif text-2xl font-black text-white mt-4"></p>
-    <p id="resFun" class="text-sm text-slate-400 mt-3 leading-relaxed"></p>
-    <div class="card p-4 mt-6"><div id="resTable"></div></div>
+    <p class="kicker">La réponse</p><span class="kicker-line"></span>
+    <div class="carte-papier mt-4">
+      <p id="resBonne" class="enonce"></p>
+      <p id="resFun" class="text-sm mt-3 leading-relaxed" style="color:#5C6F66"></p>
+    </div>
+    <div class="card p-4 mt-5"><div id="resTable"></div></div>
     <button id="bSuite" class="btn btn-primary w-full mt-6 hidden">
-      Question suivante<i class="fa-solid fa-arrow-right"></i></button>
-    <p id="resAttente" class="text-sm text-slate-500 text-center mt-6 mb-10"></p>
+      Carte suivante<i class="fa-solid fa-arrow-right"></i></button>
+    <p id="resAttente" class="mini text-center mt-6"></p>
   </div>
 
   <!-- ================= fin ================= -->
   <div id="vFin" class="vue">
-    <p class="kicker text-q-red">Terminé</p><span class="kicker-line"></span>
-    <h2 class="font-serif text-4xl font-black text-white mt-4">Classement</h2>
+    <div class="relative">
+      <span class="parts" style="top:-4rem;opacity:.22"></span>
+      <p class="kicker" style="color:var(--cerise)">Fin de partie</p><span class="kicker-line"></span>
+      <h2 class="titre titre-l mt-4">Le classement</h2>
+    </div>
     <div class="card p-4 mt-6"><div id="finTable"></div></div>
-    <button id="bRejouer" class="btn btn-primary w-full mt-6 mb-10">
-      <i class="fa-solid fa-rotate-right"></i>Retour au salon</button>
+    <button id="bRejouer" class="btn btn-primary w-full mt-6">
+      <i class="fa-solid fa-rotate-right"></i>Retour à la table</button>
   </div>
 
 </div>

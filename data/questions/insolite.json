@@ -1,8 +1,7 @@
 {
   "category": "insolite",
   "label": "Insolite & Records",
-  "version": 2,
-  "note": "Catégorie volontairement riche en estimations : personne ne connaît la réponse exacte, donc tous les âges sont à égalité.",
+  "version": 3,
   "questions": [
     {
       "id": "ins-0001",
@@ -326,6 +325,1357 @@
       "fun": "C'est un territoire autonome du Royaume de Danemark, alors qu'il est trois fois plus grand que lui... multiplié par cinquante.",
       "tags": [
         "géo"
+      ]
+    },
+    {
+      "id": "ins-0021",
+      "type": "estimation",
+      "difficulty": 1,
+      "minAge": 6,
+      "q": "Combien de côtés a un hexagone ?",
+      "answer": 6,
+      "unit": "côtés",
+      "tol": {
+        "exact": true
+      },
+      "fun": "C'est la forme que choisissent les abeilles : celle qui remplit l'espace sans le moindre trou, avec le moins de cire possible.",
+      "tags": [
+        "formes",
+        "calcul"
+      ]
+    },
+    {
+      "id": "ins-0022",
+      "type": "estimation",
+      "difficulty": 1,
+      "minAge": 7,
+      "q": "Combien de jours compte une année bissextile ?",
+      "answer": 366,
+      "unit": "jours",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Un jour de plus tous les quatre ans, sauf les années en 00 qui ne sont pas divisibles par 400. 1900 n'a pas été bissextile, 2000 si.",
+      "tags": [
+        "calendrier"
+      ]
+    },
+    {
+      "id": "ins-0023",
+      "type": "qcm",
+      "difficulty": 1,
+      "minAge": 6,
+      "q": "Combien de couleurs compte un arc-en-ciel, dans la liste traditionnelle ?",
+      "choices": [
+        "Cinq",
+        "Six",
+        "Sept",
+        "Neuf"
+      ],
+      "answer": 2,
+      "fun": "Sept, parce que Newton trouvait ça plus élégant. Il a rajouté l'indigo pour tomber sur un chiffre chargé de symbole.",
+      "tags": [
+        "couleurs"
+      ]
+    },
+    {
+      "id": "ins-0024",
+      "type": "estimation",
+      "difficulty": 1,
+      "minAge": 5,
+      "q": "Combien de doigts et d'orteils compte un être humain en tout ?",
+      "answer": 20,
+      "unit": "doigts et orteils",
+      "tol": {
+        "exact": true
+      },
+      "fun": "C'est vraisemblablement pour ça qu'on compte en base dix. Les Mayas, eux, comptaient en base vingt : ils ajoutaient les pieds.",
+      "tags": [
+        "corps"
+      ]
+    },
+    {
+      "id": "ins-0025",
+      "type": "estimation",
+      "difficulty": 2,
+      "minAge": 8,
+      "q": "Combien d'heures compte une semaine ?",
+      "answer": 168,
+      "unit": "heures",
+      "tol": {
+        "exact": true
+      },
+      "fun": "On en dort environ 56 et on en travaille 35. Il reste 77 heures dont personne ne sait vraiment ce qu'il fait.",
+      "tags": [
+        "calcul",
+        "calendrier"
+      ]
+    },
+    {
+      "id": "ins-0026",
+      "type": "estimation",
+      "difficulty": 2,
+      "minAge": 8,
+      "q": "Combien de mois de l'année comptent 31 jours ?",
+      "answer": 7,
+      "unit": "mois",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Sept. L'astuce des jointures du poing marche à tous les coups : sur une bosse, le mois fait 31 jours ; dans un creux, 30 ou moins.",
+      "tags": [
+        "calendrier",
+        "calcul"
+      ]
+    },
+    {
+      "id": "ins-0027",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 9,
+      "q": "Comment écrit-on 500 en chiffres romains ?",
+      "choices": [
+        "C",
+        "D",
+        "L",
+        "M"
+      ],
+      "answer": 1,
+      "fun": "Un moyen mnémotechnique : « Cent Dames Lisent Mille », pour C, D, L, M.",
+      "tags": [
+        "nombres"
+      ]
+    },
+    {
+      "id": "ins-0028",
+      "type": "vraifaux",
+      "difficulty": 2,
+      "minAge": 9,
+      "q": "Zéro est un nombre pair.",
+      "answer": true,
+      "fun": "Il est divisible par deux sans reste. C'est la question qui divise le plus une table à Noël, et la réponse est pourtant nette.",
+      "tags": [
+        "nombres",
+        "piège"
+      ]
+    },
+    {
+      "id": "ins-0029",
+      "type": "vraifaux",
+      "difficulty": 2,
+      "minAge": 7,
+      "q": "Un kilo de plumes pèse moins lourd qu'un kilo de plomb.",
+      "answer": false,
+      "fun": "Un kilo, c'est un kilo. Le piège fonctionne parce que le cerveau entend « plumes » avant d'entendre « kilo ».",
+      "tags": [
+        "piège",
+        "calcul"
+      ]
+    },
+    {
+      "id": "ins-0030",
+      "type": "estimation",
+      "difficulty": 2,
+      "minAge": 8,
+      "q": "Combien de zéros compte le nombre un million ?",
+      "answer": 6,
+      "unit": "zéros",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Un milliard en a neuf, un billion douze. Attention en anglais : leur « billion » vaut notre milliard.",
+      "tags": [
+        "nombres"
+      ]
+    },
+    {
+      "id": "ins-0031",
+      "type": "estimation",
+      "difficulty": 2,
+      "minAge": 9,
+      "q": "Combien de minutes compte une journée ?",
+      "answer": 1440,
+      "unit": "minutes",
+      "tol": {
+        "exact": true
+      },
+      "fun": "1 440 minutes, soit 86 400 secondes. Le découpage en 24, 60 et 60 nous vient des Babyloniens, qui comptaient en base soixante.",
+      "tags": [
+        "calcul",
+        "calendrier"
+      ]
+    },
+    {
+      "id": "ins-0032",
+      "type": "estimation",
+      "difficulty": 2,
+      "minAge": 9,
+      "q": "Combien font, additionnés, les trois angles d'un triangle ?",
+      "answer": 180,
+      "unit": "degrés",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Toujours 180, quel que soit le triangle. Sauf sur une sphère : là, ça dépasse.",
+      "tags": [
+        "calcul"
+      ]
+    },
+    {
+      "id": "ins-0033",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 9,
+      "q": "Que signifient les trois lettres « www » d'une adresse internet ?",
+      "choices": [
+        "World Wide Web",
+        "Web Wide World",
+        "World Web Wide",
+        "Wide World Web"
+      ],
+      "answer": 0,
+      "fun": "Trois syllabes à l'écrit, neuf à l'oral. C'est la seule abréviation plus longue à prononcer que ce qu'elle abrège.",
+      "tags": [
+        "internet",
+        "sigles"
+      ]
+    },
+    {
+      "id": "ins-0034",
+      "type": "vraifaux",
+      "difficulty": 2,
+      "minAge": 9,
+      "q": "Le Velcro a été inventé en observant une plante.",
+      "answer": true,
+      "fun": "Un ingénieur suisse rentre de promenade en 1941, agacé par les fruits de bardane accrochés au poil de son chien. Il les met au microscope.",
+      "tags": [
+        "inventions"
+      ]
+    },
+    {
+      "id": "ins-0035",
+      "type": "vraifaux",
+      "difficulty": 2,
+      "minAge": 9,
+      "q": "La foudre peut frapper deux fois au même endroit.",
+      "answer": true,
+      "fun": "La tour Eiffel se fait toucher plusieurs fois par an. Plus c'est haut et pointu, plus ça attire.",
+      "tags": [
+        "légendes",
+        "sciences"
+      ]
+    },
+    {
+      "id": "ins-0036",
+      "type": "estimation",
+      "difficulty": 2,
+      "minAge": 7,
+      "q": "Combien de lettres compte l'alphabet français ?",
+      "answer": 26,
+      "unit": "lettres",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Le W n'y est entré officiellement qu'au XIXe siècle. Avant, on le considérait comme une lettre étrangère.",
+      "tags": [
+        "langue"
+      ]
+    },
+    {
+      "id": "ins-0037",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 10,
+      "q": "Quel est le seul nombre premier pair ?",
+      "choices": [
+        "Zéro",
+        "Un",
+        "Deux",
+        "Il n'y en a pas"
+      ],
+      "answer": 2,
+      "fun": "Tous les autres nombres pairs sont divisibles par deux, donc éliminés d'office. Le 2 est premier parce qu'il est divisible par lui-même.",
+      "tags": [
+        "nombres"
+      ]
+    },
+    {
+      "id": "ins-0038",
+      "type": "estimation",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Combien font, additionnés, les dix chiffres d'un clavier de téléphone ?",
+      "answer": 45,
+      "unit": "",
+      "tol": {
+        "exact": true
+      },
+      "fun": "De 0 à 9, la somme fait toujours 45. Même chose pour les neuf chiffres d'un pavé numérique, sans le zéro.",
+      "tags": [
+        "calcul"
+      ]
+    },
+    {
+      "id": "ins-0039",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Quelle est la seule année du XXIe siècle qui se lit pareil dans les deux sens ?",
+      "choices": [
+        "2002",
+        "2020",
+        "2112",
+        "2222"
+      ],
+      "answer": 0,
+      "fun": "La précédente était 1991, la prochaine sera 2112. Il faut donc attendre le siècle suivant.",
+      "tags": [
+        "nombres",
+        "calendrier"
+      ]
+    },
+    {
+      "id": "ins-0040",
+      "type": "estimation",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Combien d'êtres humains ont marché sur la Lune ?",
+      "answer": 12,
+      "unit": "personnes",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Douze, tous entre 1969 et 1972, tous américains, tous des hommes. Aucun n'y est retourné depuis.",
+      "tags": [
+        "espace",
+        "records"
+      ]
+    },
+    {
+      "id": "ins-0041",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Quelle part de son cerveau un être humain utilise-t-il ?",
+      "choices": [
+        "10 %",
+        "50 %",
+        "90 %",
+        "La totalité"
+      ],
+      "answer": 3,
+      "fun": "Le mythe des 10 % est increvable, mais l'imagerie médicale montre que toutes les zones s'activent au fil d'une journée. Une région inutilisée s'atrophierait.",
+      "tags": [
+        "légendes",
+        "corps"
+      ]
+    },
+    {
+      "id": "ins-0042",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 9,
+      "q": "Combien de temps un chewing-gum avalé reste-t-il dans l'estomac ?",
+      "choices": [
+        "Quelques jours au plus",
+        "Sept mois",
+        "Sept ans",
+        "Toute la vie"
+      ],
+      "answer": 0,
+      "fun": "Il n'est pas digéré, mais il ne colle nulle part : il traverse et il ressort comme le reste.",
+      "tags": [
+        "légendes",
+        "corps"
+      ]
+    },
+    {
+      "id": "ins-0043",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Quelle partie du corps humain n'est irriguée par aucun vaisseau sanguin ?",
+      "choices": [
+        "La cornée",
+        "Le lobe de l'oreille",
+        "L'ongle",
+        "La rate"
+      ],
+      "answer": 0,
+      "fun": "Elle doit rester parfaitement transparente : le moindre vaisseau gênerait la vue. Elle se nourrit des larmes et du liquide qui remplit l'œil.",
+      "tags": [
+        "corps",
+        "surprenant"
+      ]
+    },
+    {
+      "id": "ins-0044",
+      "type": "vraifaux",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "On mesure environ un centimètre de plus au réveil qu'au coucher.",
+      "answer": true,
+      "fun": "Les disques entre les vertèbres se tassent pendant la journée et reprennent leur épaisseur la nuit. Les astronautes, eux, grandissent de plusieurs centimètres.",
+      "tags": [
+        "corps",
+        "surprenant"
+      ]
+    },
+    {
+      "id": "ins-0045",
+      "type": "libre",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Que signifie le sigle GMT, utilisé pour les fuseaux horaires ?",
+      "answer": "Greenwich Mean Time",
+      "accept": [
+        "greenwich mean time",
+        "temps moyen de greenwich",
+        "greenwich"
+      ],
+      "fun": "L'heure du méridien de Greenwich, un quartier de Londres. On parle plutôt aujourd'hui d'UTC, mais GMT s'accroche.",
+      "tags": [
+        "sigles",
+        "voyage"
+      ]
+    },
+    {
+      "id": "ins-0046",
+      "type": "libre",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Que signifie le sigle IRM, en médecine ?",
+      "answer": "Imagerie par résonance magnétique",
+      "accept": [
+        "imagerie par resonance magnetique",
+        "imagerie par résonance magnétique",
+        "imagerie a resonance magnetique"
+      ],
+      "fun": "Aucun rayon X là-dedans : c'est un énorme aimant qui fait vibrer les atomes d'hydrogène du corps. D'où le bruit de marteau-piqueur.",
+      "tags": [
+        "sigles",
+        "sciences"
+      ]
+    },
+    {
+      "id": "ins-0047",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "« Les chaussettes de l'archiduchesse sont-elles sèches ? » Comment nomme-t-on ce genre de phrase ?",
+      "choices": [
+        "Un contrepet",
+        "Un virelangue",
+        "Un pléonasme",
+        "Un calembour"
+      ],
+      "answer": 1,
+      "fun": "Les Anglais disent « tongue twister », tord-langue. Le leur commence par « she sells seashells on the seashore ».",
+      "tags": [
+        "langue"
+      ]
+    },
+    {
+      "id": "ins-0048",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 9,
+      "q": "En Espagne, que mange-t-on aux douze coups de minuit, le 31 décembre ?",
+      "choices": [
+        "Douze grains de raisin",
+        "Douze olives",
+        "Douze amandes",
+        "Douze figues"
+      ],
+      "answer": 0,
+      "fun": "Un grain par coup d'horloge, et il faut suivre le rythme. La tradition viendrait d'un surplus de récolte écoulé par les producteurs en 1909.",
+      "tags": [
+        "traditions",
+        "europe"
+      ]
+    },
+    {
+      "id": "ins-0049",
+      "type": "estimation",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Combien de fois le cœur d'un adulte bat-il en une journée ?",
+      "answer": 100000,
+      "unit": "battements",
+      "tol": {
+        "pct": 20
+      },
+      "fun": "Environ 100 000 fois par jour, trois milliards dans une vie. Il ne prend jamais de pause, même entre deux battements : il se repose pendant.",
+      "tags": [
+        "corps",
+        "records"
+      ]
+    },
+    {
+      "id": "ins-0050",
+      "type": "vraifaux",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Le Post-it est né d'une colle ratée.",
+      "answer": true,
+      "fun": "Un chimiste de 3M cherchait une super-colle et obtient l'inverse : une colle qui tient à peine et se décolle sans traces. Il faudra six ans pour trouver quoi en faire.",
+      "tags": [
+        "inventions"
+      ]
+    },
+    {
+      "id": "ins-0051",
+      "type": "libre",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Quel appareil de cuisine a été inventé par accident, quand un ingénieur a vu fondre la barre chocolatée qu'il avait en poche ?",
+      "answer": "Le four à micro-ondes",
+      "accept": [
+        "micro-ondes",
+        "le micro-ondes",
+        "four a micro-ondes",
+        "le four a micro-ondes",
+        "micro ondes",
+        "four a micro ondes"
+      ],
+      "fun": "Percy Spencer travaillait sur un radar militaire en 1945. Le deuxième aliment qu'il a testé, c'est du maïs : il a eu du pop-corn.",
+      "tags": [
+        "inventions",
+        "surprenant"
+      ]
+    },
+    {
+      "id": "ins-0052",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 9,
+      "q": "Sur un feu tricolore français, quelle couleur est tout en haut ?",
+      "choices": [
+        "Le vert",
+        "L'orange",
+        "Le rouge",
+        "Ça dépend des villes"
+      ],
+      "answer": 2,
+      "fun": "Toujours le rouge en haut, pour que les daltoniens se repèrent à la position et non à la couleur.",
+      "tags": [
+        "quotidien"
+      ]
+    },
+    {
+      "id": "ins-0053",
+      "type": "estimation",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Combien existe-t-il de groupes sanguins dans le système ABO ?",
+      "answer": 4,
+      "unit": "groupes",
+      "tol": {
+        "exact": true
+      },
+      "fun": "A, B, AB et O. Avec le rhésus positif ou négatif, on arrive à huit combinaisons.",
+      "tags": [
+        "corps",
+        "sciences"
+      ]
+    },
+    {
+      "id": "ins-0054",
+      "type": "vraifaux",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Une année-lumière est une unité de temps.",
+      "answer": false,
+      "fun": "C'est une distance : celle que la lumière parcourt en un an, environ 9 500 milliards de kilomètres.",
+      "tags": [
+        "espace",
+        "piège"
+      ]
+    },
+    {
+      "id": "ins-0055",
+      "type": "estimation",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Combien y avait-il de merveilles dans le monde antique ?",
+      "answer": 7,
+      "unit": "merveilles",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Sept, et une seule tient encore debout : la pyramide de Khéops.",
+      "tags": [
+        "histoire",
+        "monuments"
+      ]
+    },
+    {
+      "id": "ins-0056",
+      "type": "libre",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Comment appelle-t-on la peur du vide et des hauteurs ?",
+      "answer": "L'acrophobie",
+      "accept": [
+        "acrophobie",
+        "l'acrophobie",
+        "acrophobe"
+      ],
+      "fun": "À ne pas confondre avec le vertige, qui est une sensation de rotation et peut arriver assis dans son salon.",
+      "tags": [
+        "langue",
+        "corps"
+      ]
+    },
+    {
+      "id": "ins-0057",
+      "type": "libre",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Comment appelle-t-on un mot qui se lit pareil dans les deux sens, comme « kayak » ?",
+      "answer": "Un palindrome",
+      "accept": [
+        "palindrome",
+        "un palindrome"
+      ],
+      "fun": "Le plus long en français fait quinze lettres : « ressasser ». En phrase, on connaît « Ésope reste ici et se repose ».",
+      "tags": [
+        "langue"
+      ]
+    },
+    {
+      "id": "ins-0058",
+      "type": "vraifaux",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Il est impossible de plier une feuille de papier plus de sept fois.",
+      "answer": false,
+      "fun": "Une lycéenne américaine est montée à douze en 2002, avec un rouleau de papier de plusieurs kilomètres et une bonne dose d'obstination.",
+      "tags": [
+        "légendes"
+      ]
+    },
+    {
+      "id": "ins-0059",
+      "type": "estimation",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Combien de pistons compte une trompette moderne ?",
+      "answer": 3,
+      "unit": "pistons",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Trois pistons, et sept combinaisons possibles. Avant leur invention, au XIXe siècle, une trompette ne pouvait jouer qu'une poignée de notes.",
+      "tags": [
+        "musique"
+      ]
+    },
+    {
+      "id": "ins-0060",
+      "type": "estimation",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Combien de bits compte un octet ?",
+      "answer": 8,
+      "unit": "bits",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Huit, ce qui donne 256 valeurs possibles. En anglais on dit « byte », d'où la confusion permanente entre Mo et Mb, qui varient d'un facteur huit.",
+      "tags": [
+        "informatique"
+      ]
+    },
+    {
+      "id": "ins-0061",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Quel est le seul pays à occuper un continent entier ?",
+      "choices": [
+        "Le Groenland",
+        "L'Australie",
+        "L'Antarctique",
+        "Le Canada"
+      ],
+      "answer": 1,
+      "fun": "Et elle est aussi la seule à être à la fois un pays, un continent et une île.",
+      "tags": [
+        "géo",
+        "records"
+      ]
+    },
+    {
+      "id": "ins-0062",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "D'où vient le mot « salaire » ?",
+      "choices": [
+        "Du sel",
+        "De la solde",
+        "Du soleil",
+        "De la salle"
+      ],
+      "answer": 0,
+      "fun": "Les soldats romains touchaient un « salarium », de quoi acheter du sel. La denrée valait cher : c'était le seul moyen de conserver la viande.",
+      "tags": [
+        "langue",
+        "histoire"
+      ]
+    },
+    {
+      "id": "ins-0063",
+      "type": "estimation",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Combien de cartes compte un jeu de tarot ?",
+      "answer": 78,
+      "unit": "cartes",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Vingt-deux atouts et cinquante-six cartes en quatre couleurs. Le jeu servait au jeu bien avant de servir à prédire l'avenir.",
+      "tags": [
+        "jeux"
+      ]
+    },
+    {
+      "id": "ins-0064",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Comment s'appelle vraiment le symbole # ?",
+      "choices": [
+        "Un dièse",
+        "Un croisillon",
+        "Un carré",
+        "Un hashtag"
+      ],
+      "answer": 1,
+      "fun": "Le dièse de musique, ♯, a deux barres penchées. Le croisillon du téléphone a deux barres horizontales. Ce ne sont pas les mêmes signes.",
+      "tags": [
+        "langue",
+        "piège"
+      ]
+    },
+    {
+      "id": "ins-0065",
+      "type": "libre",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "De quelle langue vient le mot « zéro » ?",
+      "answer": "L'arabe",
+      "accept": [
+        "arabe",
+        "l'arabe",
+        "de l'arabe"
+      ],
+      "fun": "De « sifr », le vide, qui a aussi donné « chiffre ». Le concept est arrivé en Europe par l'Espagne, et il a mis trois siècles à être accepté.",
+      "tags": [
+        "langue",
+        "nombres"
+      ]
+    },
+    {
+      "id": "ins-0066",
+      "type": "estimation",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Combien de phalanges compte un être humain, mains et pieds réunis ?",
+      "answer": 56,
+      "unit": "phalanges",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Quatorze par main, quatorze par pied. Le pouce et le gros orteil n'en ont que deux, tous les autres doigts en ont trois.",
+      "tags": [
+        "corps",
+        "calcul"
+      ]
+    },
+    {
+      "id": "ins-0067",
+      "type": "estimation",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Quel est le plus petit nombre premier à trois chiffres ?",
+      "answer": 101,
+      "unit": "",
+      "tol": {
+        "exact": true
+      },
+      "fun": "100 est pair, et tous les nombres suivants jusqu'à 101 sont divisibles. 101 passe, et en prime c'est un palindrome.",
+      "tags": [
+        "nombres",
+        "calcul"
+      ]
+    },
+    {
+      "id": "ins-0068",
+      "type": "estimation",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "À quelle température les degrés Celsius et les degrés Fahrenheit donnent-ils le même nombre ?",
+      "answer": -40,
+      "unit": "degrés",
+      "tol": {
+        "exact": true
+      },
+      "fun": "-40 °C = -40 °F. Les deux échelles se croisent une seule fois, et c'est à une température où personne n'a envie de vérifier.",
+      "tags": [
+        "sciences",
+        "surprenant"
+      ]
+    },
+    {
+      "id": "ins-0069",
+      "type": "estimation",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Selon la tradition indienne, combien le corps humain compte-t-il de chakras principaux ?",
+      "answer": 7,
+      "unit": "chakras",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Sept, alignés du bas de la colonne au sommet du crâne. Le chiffre sept revient partout : notes, jours, merveilles, péchés.",
+      "tags": [
+        "traditions"
+      ]
+    },
+    {
+      "id": "ins-0070",
+      "type": "estimation",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Combien de membres compte le Conseil de sécurité de l'ONU ?",
+      "answer": 15,
+      "unit": "membres",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Cinq permanents avec droit de veto, dix élus pour deux ans. Un seul veto suffit à tout bloquer.",
+      "tags": [
+        "politique",
+        "géo"
+      ]
+    },
+    {
+      "id": "ins-0071",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "De combien la Lune s'éloigne-t-elle de la Terre chaque année ?",
+      "choices": [
+        "3,8 millimètres",
+        "3,8 centimètres",
+        "38 centimètres",
+        "3,8 mètres"
+      ],
+      "answer": 1,
+      "fun": "On le mesure au laser, grâce aux réflecteurs posés par les missions Apollo. Dans un milliard d'années, il n'y aura plus d'éclipse totale.",
+      "tags": [
+        "espace"
+      ]
+    },
+    {
+      "id": "ins-0072",
+      "type": "libre",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Que signifient les quatre lettres du sigle CMJN, en imprimerie ?",
+      "answer": "Cyan, magenta, jaune, noir",
+      "accept": [
+        "cyan magenta jaune noir",
+        "cyan magenta jaune et noir",
+        "cyan, magenta, jaune, noir"
+      ],
+      "fun": "Le noir est là parce que mélanger les trois autres donne un marron sale, et coûte trois fois plus cher en encre.",
+      "tags": [
+        "sigles",
+        "couleurs"
+      ]
+    },
+    {
+      "id": "ins-0073",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Que signifie le sigle OPEP ?",
+      "choices": [
+        "Office de protection de l'énergie pétrolière",
+        "Organisation des pays exportateurs de pétrole",
+        "Organisation pour l'échange du pétrole",
+        "Organe permanent de l'exportation pétrolière"
+      ],
+      "answer": 1,
+      "fun": "Fondée en 1960 par cinq pays. Elle a fait connaître son pouvoir au monde entier en 1973, en fermant le robinet.",
+      "tags": [
+        "sigles",
+        "économie"
+      ]
+    },
+    {
+      "id": "ins-0074",
+      "type": "libre",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Comment appelle-t-on la peur de se retrouver sans téléphone portable ?",
+      "answer": "La nomophobie",
+      "accept": [
+        "nomophobie",
+        "la nomophobie",
+        "nomophobe"
+      ],
+      "fun": "De l'anglais « no mobile phone phobia ». Le mot date de 2008 et il est déjà dans les dictionnaires.",
+      "tags": [
+        "langue",
+        "quotidien"
+      ]
+    },
+    {
+      "id": "ins-0075",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Que signifient les lettres du signal de détresse SOS ?",
+      "choices": [
+        "Save Our Souls",
+        "Save Our Ship",
+        "Stop Other Signals",
+        "Rien du tout"
+      ],
+      "answer": 3,
+      "fun": "Trois points, trois traits, trois points : la suite la plus simple à taper et à reconnaître en morse. Les phrases ont été inventées après coup.",
+      "tags": [
+        "sigles",
+        "piège"
+      ]
+    },
+    {
+      "id": "ins-0076",
+      "type": "libre",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Comment appelle-t-on un sigle qui se prononce comme un mot ordinaire, tel que « laser » ou « ovni » ?",
+      "answer": "Un acronyme",
+      "accept": [
+        "acronyme",
+        "un acronyme"
+      ],
+      "fun": "Radar, sida, sonar, Unesco : tous des acronymes. Alors que SNCF ou TGV, qu'on épelle, restent de simples sigles.",
+      "tags": [
+        "langue",
+        "sigles"
+      ]
+    },
+    {
+      "id": "ins-0077",
+      "type": "libre",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Comment appelle-t-on le petit embout rigide au bout d'un lacet ?",
+      "answer": "Un ferret",
+      "accept": [
+        "ferret",
+        "un ferret",
+        "aiglet"
+      ],
+      "fun": "Sans lui, le lacet s'effiloche et ne passe plus dans l'œillet. Le mot vient de « fer » : on les faisait autrefois en métal.",
+      "tags": [
+        "langue",
+        "quotidien"
+      ]
+    },
+    {
+      "id": "ins-0078",
+      "type": "libre",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Quel mot désigne à la fois un sucre trempé dans le café, un journal et un oiseau ?",
+      "answer": "Le canard",
+      "accept": [
+        "canard",
+        "le canard"
+      ],
+      "fun": "Et une fausse note, aussi. Le journal vient de l'expression « donner des canards », c'est-à-dire raconter des blagues.",
+      "tags": [
+        "langue"
+      ]
+    },
+    {
+      "id": "ins-0079",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Quelle part du territoire turc se trouve géographiquement en Asie ?",
+      "choices": [
+        "17 %",
+        "47 %",
+        "77 %",
+        "97 %"
+      ],
+      "answer": 3,
+      "fun": "Seule la Thrace orientale, autour d'Istanbul, est en Europe. C'est 3 % du pays, mais un bon quart de sa population.",
+      "tags": [
+        "géo",
+        "piège"
+      ]
+    },
+    {
+      "id": "ins-0080",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Quel chiffre passe pour porter malheur au Japon, en Chine et en Corée ?",
+      "choices": [
+        "Le 4",
+        "Le 7",
+        "Le 9",
+        "Le 13"
+      ],
+      "answer": 0,
+      "fun": "Il se prononce presque comme le mot « mort ». Beaucoup d'immeubles japonais sautent le quatrième étage, comme les nôtres sautent le treizième.",
+      "tags": [
+        "traditions",
+        "asie"
+      ]
+    },
+    {
+      "id": "ins-0081",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Quel pays a une arme à feu représentée sur son drapeau ?",
+      "choices": [
+        "L'Angola",
+        "Le Mozambique",
+        "Cuba",
+        "Le Guatemala"
+      ],
+      "answer": 1,
+      "fun": "Une kalachnikov, croisée avec une houe, sur un livre ouvert. Il y a eu un référendum pour l'enlever : elle est restée.",
+      "tags": [
+        "drapeaux",
+        "géo"
+      ]
+    },
+    {
+      "id": "ins-0082",
+      "type": "vraifaux",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "La Bolivie possède une marine de guerre alors qu'elle n'a aucun accès à la mer.",
+      "answer": true,
+      "fun": "Cinq mille marins, sur le lac Titicaca et les fleuves. Le pays a perdu son littoral face au Chili en 1884 et n'a jamais renoncé à le réclamer.",
+      "tags": [
+        "géo",
+        "surprenant"
+      ]
+    },
+    {
+      "id": "ins-0083",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Combien de temps dure le vol commercial régulier le plus court du monde ?",
+      "choices": [
+        "Environ 90 secondes",
+        "Environ 8 minutes",
+        "Environ 20 minutes",
+        "Environ 35 minutes"
+      ],
+      "answer": 0,
+      "fun": "Entre deux îles des Orcades, en Écosse : 2,7 km. Avec un bon vent arrière, le record est descendu à 53 secondes.",
+      "tags": [
+        "voyage",
+        "records"
+      ]
+    },
+    {
+      "id": "ins-0084",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Qu'est-ce que la boccia ?",
+      "choices": [
+        "Une danse brésilienne",
+        "Un sport paralympique",
+        "Un fromage italien",
+        "Un instrument de musique"
+      ],
+      "answer": 1,
+      "fun": "Une sorte de pétanque de précision, conçue pour les athlètes en fauteuil. Ceux qui ne peuvent pas lancer utilisent une rampe et un assistant qui ne regarde jamais le terrain.",
+      "tags": [
+        "sport"
+      ]
+    },
+    {
+      "id": "ins-0085",
+      "type": "vraifaux",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Les touches F et J d'un clavier ont un petit relief.",
+      "answer": true,
+      "fun": "Une barre en creux sous chaque index, pour retrouver la position de départ sans regarder. Il y en a aussi une sur le 5 du pavé numérique.",
+      "tags": [
+        "quotidien",
+        "informatique"
+      ]
+    },
+    {
+      "id": "ins-0086",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Quelle longueur de trait un stylo à bille classique peut-il écrire, environ ?",
+      "choices": [
+        "200 mètres",
+        "2 kilomètres",
+        "20 kilomètres",
+        "200 kilomètres"
+      ],
+      "answer": 1,
+      "fun": "Environ deux kilomètres pour un Bic Cristal. Soit à peu près trois romans recopiés à la main.",
+      "tags": [
+        "quotidien",
+        "inventions"
+      ]
+    },
+    {
+      "id": "ins-0087",
+      "type": "vraifaux",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "C'est le fruit qui a donné son nom à la couleur orange, et non l'inverse.",
+      "answer": true,
+      "fun": "Avant l'arrivée du fruit en Europe, on n'avait pas de mot pour cette couleur : on disait « jaune-rouge ».",
+      "tags": [
+        "langue",
+        "couleurs",
+        "piège"
+      ]
+    },
+    {
+      "id": "ins-0088",
+      "type": "vraifaux",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "On perd 90 % de sa chaleur corporelle par la tête.",
+      "answer": false,
+      "fun": "Plutôt 7 à 10 %, proportionnellement à sa surface. Le chiffre vient d'une vieille étude militaire où les cobayes étaient habillés partout sauf la tête.",
+      "tags": [
+        "légendes",
+        "corps"
+      ]
+    },
+    {
+      "id": "ins-0089",
+      "type": "estimation",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Combien de dominos compte un jeu double-six ?",
+      "answer": 28,
+      "unit": "dominos",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Toutes les paires possibles de 0 à 6, sans répétition. Un double-neuf en compte 55.",
+      "tags": [
+        "jeux",
+        "calcul"
+      ]
+    },
+    {
+      "id": "ins-0090",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Quel est le record connu de privation volontaire de sommeil ?",
+      "choices": [
+        "3 jours",
+        "6 jours",
+        "11 jours",
+        "22 jours"
+      ],
+      "answer": 2,
+      "fun": "Un lycéen californien, en 1963, pour un concours de sciences. Le Guinness a depuis retiré la catégorie, jugée trop dangereuse.",
+      "tags": [
+        "records",
+        "corps"
+      ]
+    },
+    {
+      "id": "ins-0091",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "De quelles deux lettres l'esperluette « & » est-elle la fusion ?",
+      "choices": [
+        "A et T",
+        "E et T",
+        "O et U",
+        "S et T"
+      ],
+      "answer": 1,
+      "fun": "C'est une ligature du mot latin « et », que les copistes écrivaient à toute vitesse. À force, les deux lettres se sont soudées.",
+      "tags": [
+        "langue",
+        "typographie"
+      ]
+    },
+    {
+      "id": "ins-0092",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Quel corps de métier a inventé l'argot appelé « louchébème » ?",
+      "choices": [
+        "Les bouchers",
+        "Les typographes",
+        "Les marins",
+        "Les couvreurs"
+      ],
+      "answer": 0,
+      "fun": "On remplace la première consonne par un L, et on la renvoie à la fin avec un suffixe. « Boucher » devient « louchébème ». « Fou » a donné « loufoque », resté dans la langue courante.",
+      "tags": [
+        "langue"
+      ]
+    },
+    {
+      "id": "ins-0093",
+      "type": "vraifaux",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Il existe une île qui change de pays tous les six mois.",
+      "answer": true,
+      "fun": "L'île des Faisans, sur la Bidassoa : espagnole de février à juillet, française d'août à janvier. Trois cents mètres de long, personne n'y habite.",
+      "tags": [
+        "géo",
+        "surprenant"
+      ]
+    },
+    {
+      "id": "ins-0094",
+      "type": "vraifaux",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Il existe une ville où l'on n'enterre plus les morts depuis les années 1950.",
+      "answer": true,
+      "fun": "Longyearbyen, dans l'Arctique norvégien : le permafrost empêche les corps de se décomposer. On rapatrie les défunts sur le continent.",
+      "tags": [
+        "géo",
+        "insolite"
+      ]
+    },
+    {
+      "id": "ins-0095",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Combien de temps a duré la guerre la plus longue de l'histoire, entre les Pays-Bas et l'archipel des Sorlingues ?",
+      "choices": [
+        "35 ans",
+        "116 ans",
+        "335 ans",
+        "500 ans"
+      ],
+      "answer": 2,
+      "fun": "De 1651 à 1986, sans un seul coup de feu ni un seul mort : tout le monde avait oublié de signer la paix. Un historien local s'en est aperçu.",
+      "tags": [
+        "histoire",
+        "records"
+      ]
+    },
+    {
+      "id": "ins-0096",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Quelle est la seule province canadienne officiellement bilingue ?",
+      "choices": [
+        "Le Québec",
+        "Le Nouveau-Brunswick",
+        "L'Ontario",
+        "La Nouvelle-Écosse"
+      ],
+      "answer": 1,
+      "fun": "Le Québec, lui, n'a qu'une seule langue officielle : le français. Le bilinguisme officiel est fédéral, pas québécois.",
+      "tags": [
+        "géo",
+        "piège"
+      ]
+    },
+    {
+      "id": "ins-0097",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 14,
+      "q": "Quel type de bâtiment le philosophe Jeremy Bentham a-t-il imaginé à la fin du XVIIIe siècle ?",
+      "choices": [
+        "Le panoptique",
+        "Le phalanstère",
+        "Le familistère",
+        "Le corbusier"
+      ],
+      "answer": 0,
+      "fun": "Une prison circulaire où un seul gardien voit toutes les cellules sans être vu. Bentham y voyait un progrès humaniste ; Foucault en a fait le symbole de la surveillance.",
+      "tags": [
+        "architecture",
+        "histoire"
+      ]
+    },
+    {
+      "id": "ins-0098",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Dans l'expression « à la queue leu leu », que veut dire « leu » ?",
+      "choices": [
+        "Loup",
+        "Long",
+        "Lieu",
+        "Lent"
+      ],
+      "answer": 0,
+      "fun": "De l'ancien français « leu », le loup. Les loups se déplacent en file indienne, chacun dans les traces du précédent.",
+      "tags": [
+        "langue"
+      ]
+    },
+    {
+      "id": "ins-0099",
+      "type": "vraifaux",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Le verre est un liquide qui coule très lentement : c'est pourquoi les vitraux anciens sont plus épais en bas.",
+      "answer": false,
+      "fun": "Ils sont plus épais en bas parce qu'on soufflait le verre à la main et qu'on posait le côté lourd vers le sol. Le verre est un solide.",
+      "tags": [
+        "légendes",
+        "sciences",
+        "piège"
+      ]
+    },
+    {
+      "id": "ins-0100",
+      "type": "libre",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Quelle est la seule lettre de l'alphabet qui n'apparaît dans le nom d'aucun État américain ?",
+      "answer": "Le Q",
+      "accept": [
+        "q",
+        "le q",
+        "la lettre q"
+      ],
+      "fun": "Le Z est dans Arizona, le X dans Texas, le J dans New Jersey. Le Q, nulle part.",
+      "tags": [
+        "langue",
+        "amérique",
+        "piège"
       ]
     }
   ]

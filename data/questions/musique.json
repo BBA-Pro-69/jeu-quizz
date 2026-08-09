@@ -1,7 +1,7 @@
 {
   "category": "musique",
   "label": "Musique & Chansons",
-  "version": 2,
+  "version": 3,
   "questions": [
     {
       "id": "mus-0001",
@@ -330,6 +330,1345 @@
       "scoring": "vote",
       "tags": [
         "chant"
+      ]
+    },
+    {
+      "id": "mus-0021",
+      "type": "qcm",
+      "difficulty": 1,
+      "minAge": 5,
+      "q": "Quel instrument a des touches blanches et des touches noires ?",
+      "choices": [
+        "La harpe",
+        "Le piano",
+        "Le violon",
+        "La trompette"
+      ],
+      "answer": 1,
+      "fun": "Les noires ont été blanches, et l'inverse : sur les clavecins anciens, les couleurs étaient exactement à l'envers.",
+      "tags": [
+        "instruments"
+      ]
+    },
+    {
+      "id": "mus-0022",
+      "type": "estimation",
+      "difficulty": 2,
+      "minAge": 8,
+      "q": "Dans une octave de piano, combien y a-t-il de touches noires ?",
+      "answer": 5,
+      "unit": "touches noires",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Cinq, groupées par deux puis par trois. C'est ce dessin qui permet à un pianiste de se repérer sans regarder ses mains.",
+      "tags": [
+        "instruments",
+        "théorie"
+      ]
+    },
+    {
+      "id": "mus-0023",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 6,
+      "q": "Quel instrument frappe-t-on avec des baguettes ?",
+      "choices": [
+        "La batterie",
+        "Le violon",
+        "La flûte",
+        "La harpe"
+      ],
+      "answer": 0,
+      "fun": "Un batteur de rock frappe environ 3 000 fois pendant un concert d'une heure et demie.",
+      "tags": [
+        "instruments"
+      ]
+    },
+    {
+      "id": "mus-0024",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 6,
+      "q": "Dans quel film d'animation chante-t-on « Libérée, délivrée » ?",
+      "choices": [
+        "Vaiana",
+        "Raiponce",
+        "La Reine des neiges",
+        "Rebelle"
+      ],
+      "answer": 2,
+      "fun": "La chanson a été traduite dans plus de quarante langues, avec à chaque fois une chanteuse différente. Le studio les a toutes fait chanter ensemble une fois.",
+      "tags": [
+        "cinéma"
+      ]
+    },
+    {
+      "id": "mus-0025",
+      "type": "vraifaux",
+      "difficulty": 2,
+      "minAge": 8,
+      "q": "Le violoncelle se joue debout.",
+      "answer": false,
+      "fun": "Assis, l'instrument calé entre les genoux et posé sur une pointe. C'est la contrebasse, sa grande sœur, qui se joue debout.",
+      "tags": [
+        "instruments"
+      ]
+    },
+    {
+      "id": "mus-0026",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 10,
+      "q": "Quel groupe suédois a gagné l'Eurovision avec « Waterloo » ?",
+      "choices": [
+        "Roxette",
+        "ABBA",
+        "Ace of Base",
+        "A-ha"
+      ],
+      "answer": 1,
+      "fun": "En 1974. Ils avaient choisi Waterloo parce que c'était une défaite que tout le monde connaît dans toute l'Europe.",
+      "tags": [
+        "groupes"
+      ]
+    },
+    {
+      "id": "mus-0027",
+      "type": "libre",
+      "difficulty": 2,
+      "minAge": 10,
+      "q": "Quel chanteur français a chanté « Allumer le feu » ?",
+      "answer": "Johnny Hallyday",
+      "accept": [
+        "johnny hallyday",
+        "johnny",
+        "hallyday"
+      ],
+      "fun": "Il a donné plus de 3 000 concerts en cinquante-sept ans de carrière. Le tout dernier était en 2016.",
+      "tags": [
+        "chanson française"
+      ]
+    },
+    {
+      "id": "mus-0028",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 9,
+      "q": "Comment appelle-t-on un chant exécuté sans aucun instrument ?",
+      "choices": [
+        "A tempo",
+        "A cappella",
+        "Al dente",
+        "Ad libitum"
+      ],
+      "answer": 1,
+      "fun": "Littéralement « à la chapelle », en italien : la musique d'église se chantait sans accompagnement.",
+      "tags": [
+        "théorie"
+      ]
+    },
+    {
+      "id": "mus-0029",
+      "type": "estimation",
+      "difficulty": 2,
+      "minAge": 8,
+      "q": "Combien de lignes compte une portée musicale ?",
+      "answer": 5,
+      "unit": "lignes",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Cinq lignes et quatre interlignes. Au Moyen Âge, on en utilisait quatre : le chant grégorien s'en contente encore.",
+      "tags": [
+        "théorie"
+      ]
+    },
+    {
+      "id": "mus-0030",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "De quel instrument Louis Armstrong jouait-il ?",
+      "choices": [
+        "Le saxophone",
+        "La trompette",
+        "Le piano",
+        "La contrebasse"
+      ],
+      "answer": 1,
+      "fun": "Il a aussi inventé le scat, ce chant en syllabes sans paroles, le jour où il aurait perdu sa feuille en plein enregistrement.",
+      "tags": [
+        "jazz",
+        "instruments"
+      ]
+    },
+    {
+      "id": "mus-0031",
+      "type": "libre",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Quel groupe britannique a sorti son premier album sous le titre « Parachutes » ?",
+      "answer": "Coldplay",
+      "accept": [
+        "coldplay"
+      ],
+      "fun": "Le groupe s'est d'abord appelé Pectoralz, puis Starfish. Ils ont racheté le nom Coldplay à un autre groupe qui n'en voulait plus.",
+      "tags": [
+        "rock",
+        "groupes"
+      ]
+    },
+    {
+      "id": "mus-0032",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Quel groupe a enregistré « Stairway to Heaven » ?",
+      "choices": [
+        "Deep Purple",
+        "Led Zeppelin",
+        "Black Sabbath",
+        "The Doors"
+      ],
+      "answer": 1,
+      "fun": "Huit minutes, jamais sortie en single. Elle est pourtant devenue le morceau le plus diffusé des radios rock américaines.",
+      "tags": [
+        "rock"
+      ]
+    },
+    {
+      "id": "mus-0033",
+      "type": "libre",
+      "difficulty": 3,
+      "minAge": 12,
+      "q": "Quel groupe punk américain a sorti « Dookie », « Nimrod » et « American Idiot » ?",
+      "answer": "Green Day",
+      "accept": [
+        "green day",
+        "greenday"
+      ],
+      "fun": "American Idiot est un album entier bâti comme une histoire, avec des personnages. Il a fini adapté à Broadway.",
+      "tags": [
+        "rock",
+        "groupes"
+      ]
+    },
+    {
+      "id": "mus-0034",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Qui a écrit « I Shot the Sheriff », reprise ensuite par Eric Clapton ?",
+      "choices": [
+        "Jimmy Cliff",
+        "Peter Tosh",
+        "Bob Marley",
+        "Toots Hibbert"
+      ],
+      "answer": 2,
+      "fun": "La reprise de Clapton s'est vendue bien mieux que l'original. C'est elle qui a fait connaître le reggae aux États-Unis.",
+      "tags": [
+        "reggae"
+      ]
+    },
+    {
+      "id": "mus-0035",
+      "type": "libre",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Quel groupe irlandais a Bono pour chanteur ?",
+      "answer": "U2",
+      "accept": [
+        "u2",
+        "u 2"
+      ],
+      "fun": "Bono, c'est un surnom d'adolescence pris à une enseigne de magasin d'appareils auditifs : Bonavox.",
+      "tags": [
+        "rock",
+        "groupes"
+      ]
+    },
+    {
+      "id": "mus-0036",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 12,
+      "q": "Quel groupe compte will.i.am et apl.de.ap parmi ses membres ?",
+      "choices": [
+        "Outkast",
+        "The Black Eyed Peas",
+        "N.E.R.D",
+        "Gorillaz"
+      ],
+      "answer": 1,
+      "fun": "Le groupe a existé six ans sans chanteuse avant l'arrivée de Fergie. C'est à ce moment-là que tout a décollé.",
+      "tags": [
+        "rap",
+        "groupes"
+      ]
+    },
+    {
+      "id": "mus-0037",
+      "type": "libre",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Quelle chanteuse américaine appelle ses fans ses « petits monstres » ?",
+      "answer": "Lady Gaga",
+      "accept": [
+        "lady gaga",
+        "gaga",
+        "stefani germanotta"
+      ],
+      "fun": "Elle a fait ses débuts dans les bars de New York au piano, sans costume ni perruque. Personne ne la reconnaîtrait sur les vidéos de l'époque.",
+      "tags": [
+        "pop"
+      ]
+    },
+    {
+      "id": "mus-0038",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 12,
+      "q": "Avec quel rappeur Rihanna a-t-elle chanté « Love The Way You Lie » ?",
+      "choices": [
+        "Jay-Z",
+        "Drake",
+        "Eminem",
+        "Kanye West"
+      ],
+      "answer": 2,
+      "fun": "Il a écrit le morceau en une nuit, après avoir entendu la maquette du refrain. Elle a accepté sans hésiter.",
+      "tags": [
+        "rap"
+      ]
+    },
+    {
+      "id": "mus-0039",
+      "type": "libre",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Quel duo français a composé la bande originale de « Tron : L'Héritage » ?",
+      "answer": "Daft Punk",
+      "accept": [
+        "daft punk",
+        "daftpunk"
+      ],
+      "fun": "Ils ont travaillé avec un orchestre de 85 musiciens, ce qu'on n'attendait pas de deux types en casque de robot.",
+      "tags": [
+        "électro",
+        "cinéma"
+      ]
+    },
+    {
+      "id": "mus-0040",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Comment Stromae a-t-il intitulé son premier album, en hommage aux photos de classe ?",
+      "choices": [
+        "Racine carrée",
+        "Cheese",
+        "Formidable",
+        "Multitude"
+      ],
+      "answer": 1,
+      "fun": "Son nom d'artiste est du verlan : Stromae, c'est « maestro » à l'envers.",
+      "tags": [
+        "chanson française"
+      ]
+    },
+    {
+      "id": "mus-0041",
+      "type": "vraifaux",
+      "difficulty": 3,
+      "minAge": 12,
+      "q": "Elvis Presley n'a jamais donné de concert en dehors de l'Amérique du Nord.",
+      "answer": true,
+      "fun": "Cinq dates au Canada en 1957, et c'est tout. Son manager, hongrois entré illégalement aux États-Unis, n'avait pas de passeport valide.",
+      "tags": [
+        "rock",
+        "surprenant"
+      ]
+    },
+    {
+      "id": "mus-0042",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 12,
+      "q": "Soundgarden, Pearl Jam, Nirvana : de quelle ville américaine viennent-ils tous ?",
+      "choices": [
+        "Portland",
+        "Seattle",
+        "San Francisco",
+        "Minneapolis"
+      ],
+      "answer": 1,
+      "fun": "Une ville pluvieuse, loin des maisons de disques, où les groupes ont eu le temps de se former sans personne pour les regarder.",
+      "tags": [
+        "rock",
+        "styles"
+      ]
+    },
+    {
+      "id": "mus-0043",
+      "type": "estimation",
+      "difficulty": 3,
+      "minAge": 12,
+      "q": "En quelle année a eu lieu le festival de Woodstock ?",
+      "answer": 1969,
+      "unit": "",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Cinq cent mille personnes pour une prairie prévue pour cinquante mille. Les organisateurs ont renoncé aux billets dès le premier jour.",
+      "tags": [
+        "histoire"
+      ]
+    },
+    {
+      "id": "mus-0044",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Dans « Complainte de l'heure de pointe » de Joe Dassin, comment dépasse-t-on les autos et les taxis dans Paris ?",
+      "choices": [
+        "En métro",
+        "À bicyclette",
+        "En courant",
+        "En taxi"
+      ],
+      "answer": 1,
+      "fun": "La chanson date de 1972. Cinquante ans plus tard, l'argument est devenu une politique publique.",
+      "tags": [
+        "chanson française"
+      ]
+    },
+    {
+      "id": "mus-0045",
+      "type": "libre",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Quel chanteur britannique interprète « Grace Kelly » et « Relax, Take It Easy » ?",
+      "answer": "Mika",
+      "accept": [
+        "mika"
+      ],
+      "fun": "Il est né à Beyrouth, a grandi à Paris puis à Londres, et chante en anglais avec un français impeccable.",
+      "tags": [
+        "pop"
+      ]
+    },
+    {
+      "id": "mus-0046",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 12,
+      "q": "À quel crooner Michael Bublé est-il le plus souvent comparé ?",
+      "choices": [
+        "Dean Martin",
+        "Frank Sinatra",
+        "Nat King Cole",
+        "Tony Bennett"
+      ],
+      "answer": 1,
+      "fun": "Il a été repéré en chantant à un mariage. Le père de la mariée était un ancien conseiller du Premier ministre canadien.",
+      "tags": [
+        "jazz"
+      ]
+    },
+    {
+      "id": "mus-0047",
+      "type": "estimation",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Dans une mesure à quatre quarts, sur combien de temps bat-on ?",
+      "answer": 4,
+      "unit": "temps",
+      "tol": {
+        "exact": true
+      },
+      "fun": "C'est la mesure de presque toute la musique populaire. Elle est tellement standard qu'on l'écrit souvent d'un simple C.",
+      "tags": [
+        "théorie"
+      ]
+    },
+    {
+      "id": "mus-0048",
+      "type": "libre",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Quel groupe britannique chante « Wonderwall » ?",
+      "answer": "Oasis",
+      "accept": [
+        "oasis"
+      ],
+      "fun": "Les deux frères Gallagher se sont détestés pendant toute la carrière du groupe. Ils voyageaient dans des voitures séparées.",
+      "tags": [
+        "rock",
+        "groupes"
+      ]
+    },
+    {
+      "id": "mus-0049",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Qui a composé « Les Quatre Saisons » ?",
+      "choices": [
+        "Bach",
+        "Vivaldi",
+        "Haendel",
+        "Corelli"
+      ],
+      "answer": 1,
+      "fun": "Prêtre roux et asthmatique, il enseignait le violon à un orphelinat de filles à Venise. C'est pour elles qu'il a écrit l'essentiel.",
+      "tags": [
+        "classique"
+      ]
+    },
+    {
+      "id": "mus-0050",
+      "type": "vraifaux",
+      "difficulty": 3,
+      "minAge": 12,
+      "q": "Django Reinhardt jouait de la guitare avec deux doigts paralysés à la main gauche.",
+      "answer": true,
+      "fun": "Brûlé dans l'incendie de sa roulotte à 18 ans. Il a réinventé sa technique autour de l'annulaire et de l'auriculaire hors service.",
+      "tags": [
+        "jazz",
+        "instruments"
+      ]
+    },
+    {
+      "id": "mus-0051",
+      "type": "vraifaux",
+      "difficulty": 3,
+      "minAge": 12,
+      "q": "Le saxophone appartient à la famille des bois, alors qu'il est en métal.",
+      "answer": true,
+      "fun": "Ce qui classe un instrument, c'est la manière de produire le son. Le saxophone a une anche en roseau, comme la clarinette : c'est un bois.",
+      "tags": [
+        "instruments",
+        "piège"
+      ]
+    },
+    {
+      "id": "mus-0052",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Quel groupe a pour pochette la plus célèbre un prisme décomposant un rayon de lumière ?",
+      "choices": [
+        "The Who",
+        "Pink Floyd",
+        "Genesis",
+        "Yes"
+      ],
+      "answer": 1,
+      "fun": "Il est resté classé dans les ventes américaines pendant plus de quatorze ans d'affilée. Aucun autre album n'a fait ça.",
+      "tags": [
+        "rock"
+      ]
+    },
+    {
+      "id": "mus-0053",
+      "type": "vraifaux",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Le groupe Nirvana venait de Seattle.",
+      "answer": true,
+      "fun": "De l'État de Washington, plus précisément d'Aberdeen, une petite ville forestière. Kurt Cobain dormait parfois sous un pont.",
+      "tags": [
+        "rock"
+      ]
+    },
+    {
+      "id": "mus-0054",
+      "type": "vraifaux",
+      "difficulty": 3,
+      "minAge": 12,
+      "q": "C'est Dolly Parton qui a écrit « I Will Always Love You », le tube de Whitney Houston.",
+      "answer": true,
+      "fun": "Elle l'avait écrite en 1973 comme une chanson d'adieu à son mentor. Elvis a voulu la reprendre, elle a refusé pour garder ses droits. Bien lui en a pris.",
+      "tags": [
+        "pop",
+        "piège"
+      ]
+    },
+    {
+      "id": "mus-0055",
+      "type": "libre",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Quel chanteur belge a écrit « Ne me quitte pas » ?",
+      "answer": "Jacques Brel",
+      "accept": [
+        "jacques brel",
+        "brel"
+      ],
+      "fun": "Il détestait cette chanson et disait que ce n'était pas une chanson d'amour, mais « un hymne à la lâcheté des hommes ».",
+      "tags": [
+        "chanson française"
+      ]
+    },
+    {
+      "id": "mus-0056",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Quel style musical jamaïcain a précédé le reggae ?",
+      "choices": [
+        "Le ska",
+        "Le calypso",
+        "Le zouk",
+        "Le dub"
+      ],
+      "answer": 0,
+      "fun": "Plus rapide, plus sautillant. En ralentissant le tempo à la fin des années 60, on a obtenu le rocksteady, puis le reggae.",
+      "tags": [
+        "styles"
+      ]
+    },
+    {
+      "id": "mus-0057",
+      "type": "vraifaux",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Le rap est né à New York.",
+      "answer": true,
+      "fun": "Dans le Bronx, au début des années 70, sur des fêtes de quartier où un DJ faisait tourner deux platines pendant qu'un autre parlait au micro.",
+      "tags": [
+        "rap",
+        "histoire"
+      ]
+    },
+    {
+      "id": "mus-0058",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Quel instrument à vent, installé dans les églises, est le plus grand du monde ?",
+      "choices": [
+        "L'orgue",
+        "Le tuba",
+        "Le cor",
+        "La contrebasse"
+      ],
+      "answer": 0,
+      "fun": "Certains ont plus de dix mille tuyaux, du plus grand comme un immeuble au plus petit comme un crayon.",
+      "tags": [
+        "instruments",
+        "classique"
+      ]
+    },
+    {
+      "id": "mus-0059",
+      "type": "estimation",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Combien de cordes a un violon ?",
+      "answer": 4,
+      "unit": "cordes",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Sol, ré, la, mi. Un violon de concert peut coûter le prix d'une maison : ce sont les vernis anciens qu'on ne sait plus reproduire.",
+      "tags": [
+        "instruments"
+      ]
+    },
+    {
+      "id": "mus-0060",
+      "type": "defi",
+      "difficulty": 3,
+      "minAge": 7,
+      "q": "Fredonne le générique d'un dessin animé, bouche fermée. Les autres doivent trouver lequel.",
+      "duration": 30,
+      "scoring": "collectif",
+      "tags": [
+        "chant"
+      ]
+    },
+    {
+      "id": "mus-0061",
+      "type": "libre",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Dans « L'Aigle noir » de Barbara, près de quoi la narratrice s'était-elle endormie ?",
+      "answer": "Près d'un lac",
+      "accept": [
+        "lac",
+        "un lac",
+        "pres d'un lac",
+        "au bord d'un lac"
+      ],
+      "fun": "Barbara a toujours refusé d'expliquer cette chanson. Elle disait l'avoir écrite en une nuit, après un rêve.",
+      "tags": [
+        "chanson française"
+      ]
+    },
+    {
+      "id": "mus-0062",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Quel compositeur a écrit la marche nuptiale la plus jouée dans les mariages ?",
+      "choices": [
+        "Wagner",
+        "Mendelssohn",
+        "Purcell",
+        "Haendel"
+      ],
+      "answer": 1,
+      "fun": "Elle vient de sa musique pour « Le Songe d'une nuit d'été ». Celle de Wagner, elle, sert à l'entrée : deux compositeurs pour une seule cérémonie.",
+      "tags": [
+        "classique"
+      ]
+    },
+    {
+      "id": "mus-0063",
+      "type": "libre",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Qui a composé l'opéra « Les Noces de Figaro » ?",
+      "answer": "Mozart",
+      "accept": [
+        "mozart",
+        "wolfgang amadeus mozart",
+        "w a mozart"
+      ],
+      "fun": "Tiré d'une pièce de Beaumarchais interdite à Vienne. Mozart a fait retirer les passages politiques et gardé tout le reste.",
+      "tags": [
+        "classique",
+        "opéra"
+      ]
+    },
+    {
+      "id": "mus-0064",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Sous quel nom les Beach Boys se sont-ils d'abord produits ?",
+      "choices": [
+        "The Pendletones",
+        "The Surfers",
+        "The Wilsons",
+        "The Beach Combers"
+      ],
+      "answer": 0,
+      "fun": "Une blague sur les chemises Pendleton qu'ils portaient. C'est leur maison de disques qui a changé le nom sans les prévenir.",
+      "tags": [
+        "rock",
+        "groupes"
+      ]
+    },
+    {
+      "id": "mus-0065",
+      "type": "libre",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Quel chanteur français porte un nom qui est l'anagramme exacte de Pablo Picasso ?",
+      "answer": "Pascal Obispo",
+      "accept": [
+        "pascal obispo",
+        "obispo"
+      ],
+      "fun": "Les douze mêmes lettres, dans le désordre. Personne ne l'a fait exprès : c'est un fan qui s'en est aperçu.",
+      "tags": [
+        "chanson française",
+        "insolite"
+      ]
+    },
+    {
+      "id": "mus-0066",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Quelle chanson de Boney M. raconte la vie du mystique conseiller du dernier tsar ?",
+      "choices": [
+        "Daddy Cool",
+        "Rasputin",
+        "Ma Baker",
+        "Sunny"
+      ],
+      "answer": 1,
+      "fun": "Elle est restée interdite en URSS pendant des années. Elle est devenue depuis un classique des mariages russes.",
+      "tags": [
+        "pop",
+        "histoire"
+      ]
+    },
+    {
+      "id": "mus-0067",
+      "type": "libre",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Quelle chanson accompagne la scène de poterie du film « Ghost » ?",
+      "answer": "Unchained Melody",
+      "accept": [
+        "unchained melody",
+        "unchained"
+      ],
+      "fun": "Elle date de 1955 et avait déjà été enregistrée des centaines de fois. Le film l'a renvoyée en tête des ventes trente-cinq ans plus tard.",
+      "tags": [
+        "cinéma",
+        "pop"
+      ]
+    },
+    {
+      "id": "mus-0068",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Quelle chanson de « La Mélodie du bonheur » porte le nom d'une fleur ?",
+      "choices": [
+        "Tulipe",
+        "Edelweiss",
+        "Marguerite",
+        "Gentiane"
+      ],
+      "answer": 1,
+      "fun": "Beaucoup d'Américains la croient hymne national autrichien. Elle a été écrite pour Broadway par deux New-Yorkais.",
+      "tags": [
+        "cinéma",
+        "classique"
+      ]
+    },
+    {
+      "id": "mus-0069",
+      "type": "libre",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Quel groupe d'indie pop français porte le nom d'un oiseau qui renaît de ses cendres ?",
+      "answer": "Phoenix",
+      "accept": [
+        "phoenix",
+        "phenix"
+      ],
+      "fun": "Ils viennent de Versailles, comme Daft Punk et Air. Trois groupes mondialement connus sortis de la même bande de lycéens.",
+      "tags": [
+        "rock",
+        "groupes"
+      ]
+    },
+    {
+      "id": "mus-0070",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Quel rappeur apparaît dans le clip de « California Gurls » de Katy Perry ?",
+      "choices": [
+        "Jay-Z",
+        "Snoop Dogg",
+        "Kanye West",
+        "50 Cent"
+      ],
+      "answer": 1,
+      "fun": "Le morceau répond à « Empire State of Mind », l'hymne à New York sorti l'année d'avant. Une guerre de côtes en chansons.",
+      "tags": [
+        "pop",
+        "rap"
+      ]
+    },
+    {
+      "id": "mus-0071",
+      "type": "libre",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Quelle femme Jacques Brel aimait-il « entre les tours de Bruges et Gand » ?",
+      "answer": "Marieke",
+      "accept": [
+        "marieke",
+        "marike"
+      ],
+      "fun": "La chanson alterne français et néerlandais. Brel, bruxellois, ne parlait pourtant pas couramment le flamand.",
+      "tags": [
+        "chanson française"
+      ]
+    },
+    {
+      "id": "mus-0072",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Dans « Ne me quitte pas », que Brel promet-il d'offrir, venu « d'un pays où il ne pleut pas » ?",
+      "choices": [
+        "Des fleurs de sable",
+        "Des perles de pluie",
+        "Des grains de soleil",
+        "Des larmes d'or"
+      ],
+      "answer": 1,
+      "fun": "Toute la chanson tient sur des promesses impossibles. C'est ce qui la rend désespérée plutôt que romantique.",
+      "tags": [
+        "chanson française"
+      ]
+    },
+    {
+      "id": "mus-0073",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Comment s'appelle l'hymne national belge ?",
+      "choices": [
+        "La Brabançonne",
+        "Le Wilhelmus",
+        "La Flamande",
+        "Le Chant des Ardennes"
+      ],
+      "answer": 0,
+      "fun": "Il en existe une version française, une néerlandaise, une allemande et une quatrième qui mélange les trois pour les cérémonies officielles.",
+      "tags": [
+        "hymnes"
+      ]
+    },
+    {
+      "id": "mus-0074",
+      "type": "vraifaux",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "« Yesterday » des Beatles est la chanson la plus reprise de toute l'histoire.",
+      "answer": true,
+      "fun": "Plus de deux mille versions recensées. Paul McCartney l'a rêvée, et a passé des semaines à demander autour de lui s'il ne l'avait pas plagiée sans le savoir.",
+      "tags": [
+        "groupes",
+        "records"
+      ]
+    },
+    {
+      "id": "mus-0075",
+      "type": "estimation",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "En quelle année a eu lieu le concert Live Aid ?",
+      "answer": 1985,
+      "unit": "",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Deux scènes, Londres et Philadelphie, retransmises dans 150 pays le même jour. Queen y a joué vingt minutes qu'on cite encore.",
+      "tags": [
+        "histoire"
+      ]
+    },
+    {
+      "id": "mus-0076",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Qui a composé le « Boléro » ?",
+      "choices": [
+        "Debussy",
+        "Ravel",
+        "Satie",
+        "Fauré"
+      ],
+      "answer": 1,
+      "fun": "Un seul thème, répété dix-huit fois sans jamais changer de tempo. Il disait lui-même que c'était son morceau sans musique.",
+      "tags": [
+        "classique"
+      ]
+    },
+    {
+      "id": "mus-0077",
+      "type": "libre",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Quel compositeur russe a écrit le ballet « Le Lac des cygnes » ?",
+      "answer": "Piotr Ilitch Tchaïkovski",
+      "accept": [
+        "tchaikovski",
+        "tchaïkovski",
+        "tchaikovsky",
+        "piotr tchaikovski"
+      ],
+      "fun": "La création de 1877 a été un four complet. Le ballet n'est devenu un classique qu'après sa mort.",
+      "tags": [
+        "classique"
+      ]
+    },
+    {
+      "id": "mus-0078",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Quel compositeur italien a écrit « Nabucco » et son chœur des esclaves ?",
+      "choices": [
+        "Puccini",
+        "Rossini",
+        "Verdi",
+        "Bellini"
+      ],
+      "answer": 2,
+      "fun": "Le chœur est devenu un chant de ralliement pour l'unité italienne. À son enterrement, la foule l'a entonné toute seule dans la rue.",
+      "tags": [
+        "classique",
+        "opéra"
+      ]
+    },
+    {
+      "id": "mus-0079",
+      "type": "vraifaux",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Jean-Sébastien Bach a eu vingt enfants.",
+      "answer": true,
+      "fun": "Sept d'un premier mariage, treize du second. Quatre sont devenus des compositeurs connus de leur vivant, plus connus que leur père à l'époque.",
+      "tags": [
+        "classique",
+        "surprenant"
+      ]
+    },
+    {
+      "id": "mus-0080",
+      "type": "estimation",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Dans un grand orchestre symphonique, combien y a-t-il d'instrumentistes sur scène ?",
+      "answer": 80,
+      "unit": "musiciens",
+      "tol": {
+        "pct": 25
+      },
+      "fun": "Entre 80 et 100, dont plus de la moitié rien qu'en cordes. Le chef est le seul à ne produire aucun son.",
+      "tags": [
+        "classique"
+      ]
+    },
+    {
+      "id": "mus-0081",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Que veut dire « allegro » sur une partition ?",
+      "choices": [
+        "Doucement",
+        "Vif et gai",
+        "Très lentement",
+        "En accélérant"
+      ],
+      "answer": 1,
+      "fun": "Tout le vocabulaire du tempo est en italien, partout dans le monde. C'est un héritage direct du XVIIe siècle italien.",
+      "tags": [
+        "théorie"
+      ]
+    },
+    {
+      "id": "mus-0082",
+      "type": "estimation",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "La gamme chromatique rassemble toutes les notes d'une octave. Combien y en a-t-il ?",
+      "answer": 12,
+      "unit": "notes",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Les sept notes plus les cinq altérations : toutes les touches d'un piano, blanches et noires, sur une octave.",
+      "tags": [
+        "théorie"
+      ]
+    },
+    {
+      "id": "mus-0083",
+      "type": "vraifaux",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Le blues est apparu avant le jazz.",
+      "answer": true,
+      "fun": "Le blues naît dans le Sud rural à la fin du XIXe siècle. Le jazz vient après, en ville, et lui emprunte sa grille et ses notes bleues.",
+      "tags": [
+        "styles",
+        "histoire"
+      ]
+    },
+    {
+      "id": "mus-0084",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Quel saxophoniste a enregistré « A Love Supreme » ?",
+      "choices": [
+        "Charlie Parker",
+        "John Coltrane",
+        "Sonny Rollins",
+        "Dexter Gordon"
+      ],
+      "answer": 1,
+      "fun": "Un album en quatre parties, conçu comme une prière. Il ne l'a joué en concert qu'une seule fois.",
+      "tags": [
+        "jazz"
+      ]
+    },
+    {
+      "id": "mus-0085",
+      "type": "libre",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Quel groupe américain chante « you can check out any time you like, but you can never leave » ?",
+      "answer": "The Eagles",
+      "accept": [
+        "eagles",
+        "the eagles",
+        "les eagles"
+      ],
+      "fun": "Le solo final de « Hotel California » a été écrit note à note et répété pendant des mois. Les deux guitaristes le rejouent à l'identique depuis cinquante ans.",
+      "tags": [
+        "rock",
+        "groupes"
+      ]
+    },
+    {
+      "id": "mus-0086",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Qui a enregistré « Purple Rain » ?",
+      "choices": [
+        "Michael Jackson",
+        "Prince",
+        "Lenny Kravitz",
+        "Stevie Wonder"
+      ],
+      "answer": 1,
+      "fun": "Il jouait de vingt-sept instruments et enregistrait ses albums seul, en jouant toutes les pistes lui-même.",
+      "tags": [
+        "pop",
+        "rock"
+      ]
+    },
+    {
+      "id": "mus-0087",
+      "type": "vraifaux",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Adele donne à ses albums le titre de l'âge qu'elle avait en les écrivant.",
+      "answer": true,
+      "fun": "19, 21, 25, 30. Elle a expliqué que chacun est une photo d'un moment de sa vie, et qu'elle ne saurait pas les nommer autrement.",
+      "tags": [
+        "pop"
+      ]
+    },
+    {
+      "id": "mus-0088",
+      "type": "vraifaux",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Le Concours Eurovision de la chanson existe depuis les années 1950.",
+      "answer": true,
+      "fun": "Première édition en 1956, à Lugano, avec sept pays. L'idée était de tester une retransmission télévisée simultanée dans plusieurs pays.",
+      "tags": [
+        "histoire"
+      ]
+    },
+    {
+      "id": "mus-0089",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Quel instrument électronique, inventé en 1920, se joue sans jamais le toucher ?",
+      "choices": [
+        "Le thérémine",
+        "Le synthétiseur",
+        "L'orgue Hammond",
+        "Le vocodeur"
+      ],
+      "answer": 0,
+      "fun": "On bouge les mains autour de deux antennes : l'une règle la hauteur, l'autre le volume. Son inventeur russe travaillait sur des détecteurs de présence.",
+      "tags": [
+        "instruments",
+        "électro"
+      ]
+    },
+    {
+      "id": "mus-0090",
+      "type": "libre",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Quels pionniers allemands de l'électro se produisaient sur scène déguisés en mannequins robots ?",
+      "answer": "Kraftwerk",
+      "accept": [
+        "kraftwerk"
+      ],
+      "fun": "Sans eux, ni techno de Detroit ni hip-hop des débuts : leur morceau « Trans-Europe Express » a été samplé jusqu'à l'usure.",
+      "tags": [
+        "électro",
+        "groupes"
+      ]
+    },
+    {
+      "id": "mus-0091",
+      "type": "libre",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Quelle chanson des Beatles la NASA a-t-elle diffusée vers les étoiles en 2008 ?",
+      "answer": "Across the Universe",
+      "accept": [
+        "across the universe"
+      ],
+      "fun": "Envoyée en direction de l'étoile polaire pour les cinquante ans de l'agence. Elle y arrivera dans quatre siècles environ.",
+      "tags": [
+        "groupes",
+        "espace"
+      ]
+    },
+    {
+      "id": "mus-0092",
+      "type": "estimation",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Combien de cordes compte exactement une harpe de concert ?",
+      "answer": 47,
+      "unit": "cordes",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Quarante-sept cordes et sept pédales, chacune capable de changer la hauteur de toutes les cordes d'une même note. C'est l'instrument le plus mécanique de l'orchestre.",
+      "tags": [
+        "instruments",
+        "classique"
+      ]
+    },
+    {
+      "id": "mus-0093",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 14,
+      "q": "Qu'a de particulier le morceau « 4 minutes 33 » de John Cage ?",
+      "choices": [
+        "Il ne contient aucune note",
+        "Il ne se joue que la nuit",
+        "Il dure en réalité une heure",
+        "Il se joue à l'envers"
+      ],
+      "answer": 0,
+      "fun": "L'interprète reste assis sans jouer. Le morceau, ce sont les bruits de la salle : les toux, les chaises, la pluie sur le toit.",
+      "tags": [
+        "classique",
+        "insolite"
+      ]
+    },
+    {
+      "id": "mus-0094",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "De quelle ville le label Motown tire-t-il son nom ?",
+      "choices": [
+        "Memphis",
+        "Detroit",
+        "Chicago",
+        "Philadelphie"
+      ],
+      "answer": 1,
+      "fun": "« Motor Town », la ville de l'automobile. Le fondateur avait travaillé à la chaîne chez Ford et a organisé son label comme une usine.",
+      "tags": [
+        "styles",
+        "industrie"
+      ]
+    },
+    {
+      "id": "mus-0095",
+      "type": "libre",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Quelle danse et musique argentine est inscrite au patrimoine immatériel de l'UNESCO ?",
+      "answer": "Le tango",
+      "accept": [
+        "tango",
+        "le tango"
+      ],
+      "fun": "Né dans les bas quartiers de Buenos Aires et de Montevideo. Il s'y dansait d'abord entre hommes, faute de partenaires.",
+      "tags": [
+        "styles",
+        "monde"
+      ]
+    },
+    {
+      "id": "mus-0096",
+      "type": "libre",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Comment s'appelait le groupe de Bob Marley ?",
+      "answer": "The Wailers",
+      "accept": [
+        "wailers",
+        "the wailers",
+        "les wailers"
+      ],
+      "fun": "« Ceux qui gémissent ». Peter Tosh et Bunny Wailer, les deux autres fondateurs, ont chacun mené une carrière solo après la séparation.",
+      "tags": [
+        "reggae",
+        "groupes"
+      ]
+    },
+    {
+      "id": "mus-0097",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Quel instrument à vent est le plus aigu de l'orchestre ?",
+      "choices": [
+        "La flûte traversière",
+        "Le piccolo",
+        "Le hautbois",
+        "La clarinette"
+      ],
+      "answer": 1,
+      "fun": "Il s'entend par-dessus les cent autres musiciens réunis. Les chefs le placent souvent au fond pour qu'il ne perce pas les oreilles des voisins.",
+      "tags": [
+        "instruments",
+        "classique"
+      ]
+    },
+    {
+      "id": "mus-0098",
+      "type": "estimation",
+      "difficulty": 5,
+      "minAge": 14,
+      "q": "En quelle année Thomas Edison a-t-il inventé le phonographe ?",
+      "answer": 1877,
+      "unit": "",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Le premier enregistrement de l'histoire est une comptine : « Mary Had a Little Lamb », chantée par Edison lui-même.",
+      "tags": [
+        "histoire",
+        "industrie"
+      ]
+    },
+    {
+      "id": "mus-0099",
+      "type": "vraifaux",
+      "difficulty": 5,
+      "minAge": 14,
+      "q": "Le tout premier disque de jazz de l'histoire a été enregistré par des musiciens blancs.",
+      "answer": true,
+      "fun": "L'Original Dixieland Jass Band, en 1917. Les musiciens noirs qui avaient inventé cette musique n'avaient pas accès aux studios.",
+      "tags": [
+        "jazz",
+        "histoire"
+      ]
+    },
+    {
+      "id": "mus-0100",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 14,
+      "q": "Dans quel opéra de Wagner entend-on la « Chevauchée des Walkyries » ?",
+      "choices": [
+        "Tannhäuser",
+        "La Walkyrie",
+        "Parsifal",
+        "Lohengrin"
+      ],
+      "answer": 1,
+      "fun": "Deuxième volet d'un cycle de quatre opéras qui dure quinze heures. Wagner a fait construire un théâtre entier rien que pour le jouer.",
+      "tags": [
+        "classique",
+        "opéra"
       ]
     }
   ]

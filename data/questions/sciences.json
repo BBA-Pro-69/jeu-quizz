@@ -1,7 +1,7 @@
 {
   "category": "sciences",
   "label": "Sciences & Corps humain",
-  "version": 2,
+  "version": 3,
   "questions": [
     {
       "id": "sci-0001",
@@ -330,6 +330,1331 @@
       "fun": "Il ne représente que 10 % du volume du cerveau, mais contient plus de la moitié de ses neurones.",
       "tags": [
         "corps humain"
+      ]
+    },
+    {
+      "id": "sci-0021",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 8,
+      "q": "Quel gaz les plantes absorbent-elles pour fabriquer leur matière ?",
+      "choices": [
+        "L'oxygène",
+        "Le dioxyde de carbone",
+        "L'azote",
+        "L'hydrogène"
+      ],
+      "answer": 1,
+      "fun": "Un arbre, c'est surtout du carbone pris dans l'air. Le sol ne lui fournit que l'eau et quelques minéraux.",
+      "tags": [
+        "biologie"
+      ]
+    },
+    {
+      "id": "sci-0022",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 8,
+      "q": "Quelle est la plus grosse planète du système solaire ?",
+      "choices": [
+        "Saturne",
+        "Neptune",
+        "Jupiter",
+        "Uranus"
+      ],
+      "answer": 2,
+      "fun": "On y ferait tenir 1 300 Terres. Sa grande tache rouge est une tempête qui tourne depuis au moins trois siècles.",
+      "tags": [
+        "espace"
+      ]
+    },
+    {
+      "id": "sci-0023",
+      "type": "vraifaux",
+      "difficulty": 2,
+      "minAge": 8,
+      "q": "La Lune produit sa propre lumière.",
+      "answer": false,
+      "fun": "Elle ne fait que renvoyer celle du Soleil, et très mal : sa surface est aussi sombre que du bitume.",
+      "tags": [
+        "espace",
+        "piège"
+      ]
+    },
+    {
+      "id": "sci-0024",
+      "type": "estimation",
+      "difficulty": 2,
+      "minAge": 9,
+      "q": "Quel pourcentage du corps d'un adulte est constitué d'eau ?",
+      "answer": 60,
+      "unit": "%",
+      "tol": {
+        "pct": 20
+      },
+      "fun": "Environ 60 %, et jusqu'à 75 % chez un nourrisson. Le cerveau, lui, en contient près de 80 %.",
+      "tags": [
+        "corps humain"
+      ]
+    },
+    {
+      "id": "sci-0025",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 9,
+      "q": "Quel organe fabrique la bile ?",
+      "choices": [
+        "L'estomac",
+        "Le pancréas",
+        "Le foie",
+        "La rate"
+      ],
+      "answer": 2,
+      "fun": "C'est aussi le seul organe humain capable de repousser : on peut en prélever la moitié, il se reforme.",
+      "tags": [
+        "corps humain"
+      ]
+    },
+    {
+      "id": "sci-0026",
+      "type": "vraifaux",
+      "difficulty": 2,
+      "minAge": 9,
+      "q": "Le sang est bleu dans les veines et devient rouge au contact de l'air.",
+      "answer": false,
+      "fun": "Il est rouge partout, plus sombre quand il manque d'oxygène. Les veines paraissent bleues à cause de la façon dont la peau filtre la lumière.",
+      "tags": [
+        "corps humain",
+        "légendes",
+        "piège"
+      ]
+    },
+    {
+      "id": "sci-0027",
+      "type": "estimation",
+      "difficulty": 2,
+      "minAge": 8,
+      "q": "Combien d'heures la Terre met-elle pour faire un tour complet sur elle-même ?",
+      "answer": 24,
+      "unit": "heures",
+      "tol": {
+        "exact": true
+      },
+      "fun": "23 h 56 en réalité, si on se repère sur les étoiles. Les quatre minutes manquantes viennent du fait qu'on avance aussi autour du Soleil.",
+      "tags": [
+        "espace"
+      ]
+    },
+    {
+      "id": "sci-0028",
+      "type": "vraifaux",
+      "difficulty": 2,
+      "minAge": 7,
+      "q": "Le Soleil est une étoile.",
+      "answer": true,
+      "fun": "Une étoile très ordinaire, de taille moyenne. Elle ne paraît énorme que parce qu'elle est 270 000 fois plus proche que la suivante.",
+      "tags": [
+        "espace"
+      ]
+    },
+    {
+      "id": "sci-0029",
+      "type": "libre",
+      "difficulty": 2,
+      "minAge": 10,
+      "q": "Comment appelle-t-on le passage de l'eau de l'état liquide à l'état gazeux ?",
+      "answer": "L'évaporation",
+      "accept": [
+        "evaporation",
+        "l'evaporation",
+        "vaporisation",
+        "la vaporisation"
+      ],
+      "fun": "Elle n'a pas besoin d'ébullition : une flaque disparaît à 15 °C. C'est le désordre des molécules qui fait le travail.",
+      "tags": [
+        "physique"
+      ]
+    },
+    {
+      "id": "sci-0030",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 7,
+      "q": "Quelle force fait tomber les objets vers le sol ?",
+      "choices": [
+        "Le magnétisme",
+        "La gravité",
+        "L'électricité",
+        "La pression"
+      ],
+      "answer": 1,
+      "fun": "Elle ne tire pas que vers le bas : c'est elle qui retient la Lune, et c'est la même qui fait les marées.",
+      "tags": [
+        "physique"
+      ]
+    },
+    {
+      "id": "sci-0031",
+      "type": "vraifaux",
+      "difficulty": 2,
+      "minAge": 10,
+      "q": "Les os sont des tissus vivants qui se renouvellent en permanence.",
+      "answer": true,
+      "fun": "Le squelette se refait presque entièrement tous les dix ans. Un os cassé se ressoude avec du tissu plus solide qu'avant.",
+      "tags": [
+        "corps humain"
+      ]
+    },
+    {
+      "id": "sci-0032",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Quel organe produit l'insuline ?",
+      "choices": [
+        "Le foie",
+        "Le pancréas",
+        "La rate",
+        "Les reins"
+      ],
+      "answer": 1,
+      "fun": "Il en fabrique dès qu'on mange du sucre. Quand il s'arrête ou qu'on n'y répond plus, c'est le diabète.",
+      "tags": [
+        "corps humain"
+      ]
+    },
+    {
+      "id": "sci-0033",
+      "type": "libre",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Quel médecin écossais a découvert la pénicilline en 1928 ?",
+      "answer": "Alexander Fleming",
+      "accept": [
+        "fleming",
+        "alexander fleming"
+      ],
+      "fun": "Il avait laissé traîner des boîtes de culture avant de partir en vacances. Une moisissure s'y était invitée et tuait les bactéries autour d'elle.",
+      "tags": [
+        "histoire des sciences",
+        "médecine"
+      ]
+    },
+    {
+      "id": "sci-0034",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Quel métal porte le symbole chimique Au ?",
+      "choices": [
+        "L'argent",
+        "L'aluminium",
+        "L'or",
+        "Le cuivre"
+      ],
+      "answer": 2,
+      "fun": "De « aurum », le latin. Beaucoup de symboles viennent du latin plutôt que du nom français : Fe pour ferrum, Pb pour plumbum.",
+      "tags": [
+        "chimie"
+      ]
+    },
+    {
+      "id": "sci-0035",
+      "type": "estimation",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Combien de côtes compte un adulte ?",
+      "answer": 24,
+      "unit": "côtes",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Douze paires, autant chez les hommes que chez les femmes. La croyance inverse vient de l'épisode biblique d'Adam.",
+      "tags": [
+        "corps humain",
+        "piège"
+      ]
+    },
+    {
+      "id": "sci-0036",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 9,
+      "q": "Quelle planète est entourée des anneaux les plus visibles ?",
+      "choices": [
+        "Jupiter",
+        "Saturne",
+        "Uranus",
+        "Neptune"
+      ],
+      "answer": 1,
+      "fun": "Ils sont faits de milliards de blocs de glace, et ils ne font que quelques dizaines de mètres d'épaisseur.",
+      "tags": [
+        "espace"
+      ]
+    },
+    {
+      "id": "sci-0037",
+      "type": "estimation",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Combien de muscles compte le corps humain, environ ?",
+      "answer": 600,
+      "unit": "muscles",
+      "tol": {
+        "pct": 20
+      },
+      "fun": "Environ 600, dont une quarantaine rien que pour le visage. Il en faut une douzaine pour sourire, deux fois plus pour froncer les sourcils.",
+      "tags": [
+        "corps humain"
+      ]
+    },
+    {
+      "id": "sci-0038",
+      "type": "libre",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Comment appelle-t-on le passage direct de l'état solide à l'état gazeux ?",
+      "answer": "La sublimation",
+      "accept": [
+        "sublimation",
+        "la sublimation"
+      ],
+      "fun": "C'est ce que fait la neige carbonique, qui fume sans jamais mouiller. Le linge qui sèche dehors par temps de gel, aussi.",
+      "tags": [
+        "physique"
+      ]
+    },
+    {
+      "id": "sci-0039",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Quel est l'organe interne le plus lourd du corps humain ?",
+      "choices": [
+        "Le cerveau",
+        "Le foie",
+        "Les poumons",
+        "Le cœur"
+      ],
+      "answer": 1,
+      "fun": "Environ 1,5 kg. La peau est plus lourde encore, mais elle est à l'extérieur : c'est un piège classique.",
+      "tags": [
+        "corps humain",
+        "piège"
+      ]
+    },
+    {
+      "id": "sci-0040",
+      "type": "vraifaux",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Les cheveux et les ongles continuent de pousser après la mort.",
+      "answer": false,
+      "fun": "C'est la peau qui se rétracte en se déshydratant, ce qui les fait paraître plus longs. Rien ne pousse.",
+      "tags": [
+        "légendes",
+        "corps humain"
+      ]
+    },
+    {
+      "id": "sci-0041",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Quel groupe sanguin est donneur universel ?",
+      "choices": [
+        "A positif",
+        "AB positif",
+        "O négatif",
+        "B négatif"
+      ],
+      "answer": 2,
+      "fun": "Il ne porte aucun marqueur susceptible d'être rejeté. C'est le sang qu'on met dans les ambulances quand on n'a pas le temps d'analyser.",
+      "tags": [
+        "corps humain",
+        "médecine"
+      ]
+    },
+    {
+      "id": "sci-0042",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Combien de litres de sang un adulte a-t-il dans le corps ?",
+      "choices": [
+        "Environ 2 litres",
+        "Environ 5 litres",
+        "Environ 10 litres",
+        "Environ 20 litres"
+      ],
+      "answer": 1,
+      "fun": "Cinq litres qui font le tour du corps en une minute environ. On peut en perdre un sans grand danger : c'est une poche de don.",
+      "tags": [
+        "corps humain"
+      ]
+    },
+    {
+      "id": "sci-0043",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Quelle vitamine notre peau fabrique-t-elle grâce au soleil ?",
+      "choices": [
+        "La vitamine A",
+        "La vitamine C",
+        "La vitamine D",
+        "La vitamine K"
+      ],
+      "answer": 2,
+      "fun": "Quinze minutes d'avant-bras exposés suffisent l'été. L'hiver, sous nos latitudes, le soleil est trop bas pour que ça marche.",
+      "tags": [
+        "corps humain",
+        "médecine"
+      ]
+    },
+    {
+      "id": "sci-0044",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Quel est le plus petit os du corps humain ?",
+      "choices": [
+        "L'étrier",
+        "Le coccyx",
+        "La phalange du petit doigt",
+        "L'os nasal"
+      ],
+      "answer": 0,
+      "fun": "Trois millimètres, au fond de l'oreille. Avec le marteau et l'enclume, il transmet les vibrations du tympan.",
+      "tags": [
+        "corps humain"
+      ]
+    },
+    {
+      "id": "sci-0045",
+      "type": "libre",
+      "difficulty": 3,
+      "minAge": 9,
+      "q": "Comment appelle-t-on la partie colorée de l'œil ?",
+      "answer": "L'iris",
+      "accept": [
+        "iris",
+        "l'iris"
+      ],
+      "fun": "Son dessin est unique, plus encore que les empreintes digitales, et il ne change pas de toute la vie.",
+      "tags": [
+        "corps humain"
+      ]
+    },
+    {
+      "id": "sci-0046",
+      "type": "libre",
+      "difficulty": 3,
+      "minAge": 12,
+      "q": "Quel chimiste russe a mis au point le tableau périodique des éléments ?",
+      "answer": "Dmitri Mendeleïev",
+      "accept": [
+        "mendeleiev",
+        "mendeleïev",
+        "dmitri mendeleiev",
+        "mendeleev"
+      ],
+      "fun": "Il a laissé des cases vides là où il manquait des éléments, en prédisant leurs propriétés. On les a trouvés ensuite, exactement comme annoncé.",
+      "tags": [
+        "chimie",
+        "histoire des sciences"
+      ]
+    },
+    {
+      "id": "sci-0047",
+      "type": "libre",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Quel savant grec aurait crié « Eurêka ! » en sortant de son bain ?",
+      "answer": "Archimède",
+      "accept": [
+        "archimede",
+        "archimède"
+      ],
+      "fun": "Il venait de comprendre comment mesurer le volume d'un objet biscornu. La légende ajoute qu'il a traversé la ville sans se rhabiller.",
+      "tags": [
+        "histoire des sciences",
+        "physique"
+      ]
+    },
+    {
+      "id": "sci-0048",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Que mesure l'échelle de Richter ?",
+      "choices": [
+        "La force du vent",
+        "La magnitude d'un séisme",
+        "L'acidité d'un sol",
+        "La hauteur des vagues"
+      ],
+      "answer": 1,
+      "fun": "Elle est logarithmique : un degré de plus, c'est trente fois plus d'énergie libérée.",
+      "tags": [
+        "sciences de la terre"
+      ]
+    },
+    {
+      "id": "sci-0049",
+      "type": "vraifaux",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Le son se propage plus vite dans l'eau que dans l'air.",
+      "answer": true,
+      "fun": "Quatre fois plus vite. C'est pour ça que les baleines peuvent communiquer sur des centaines de kilomètres.",
+      "tags": [
+        "physique"
+      ]
+    },
+    {
+      "id": "sci-0050",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Pourquoi le ciel est-il bleu ?",
+      "choices": [
+        "L'air est bleu",
+        "L'atmosphère disperse surtout la lumière bleue",
+        "Le ciel reflète les océans",
+        "La couche d'ozone est bleue"
+      ],
+      "answer": 1,
+      "fun": "Les molécules de l'air dévient beaucoup plus les courtes longueurs d'onde. Au couchant, la lumière traverse plus d'air, le bleu est épuisé, il reste le rouge.",
+      "tags": [
+        "physique"
+      ]
+    },
+    {
+      "id": "sci-0051",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 9,
+      "q": "Combien de temps la Lune met-elle pour faire le tour de la Terre ?",
+      "choices": [
+        "Environ 7 jours",
+        "Environ 28 jours",
+        "Environ 3 mois",
+        "Environ 1 an"
+      ],
+      "answer": 1,
+      "fun": "Elle met exactement le même temps à tourner sur elle-même, ce qui fait qu'on lui voit toujours la même face.",
+      "tags": [
+        "espace"
+      ]
+    },
+    {
+      "id": "sci-0052",
+      "type": "libre",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Comment appelle-t-on la science qui étudie les tremblements de terre ?",
+      "answer": "La sismologie",
+      "accept": [
+        "sismologie",
+        "la sismologie",
+        "seismologie"
+      ],
+      "fun": "Le premier détecteur connu est chinois et date de l'an 132 : un vase où une bille tombait de la gueule d'un dragon dans celle d'un crapaud.",
+      "tags": [
+        "sciences de la terre"
+      ]
+    },
+    {
+      "id": "sci-0053",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Quel est le muscle le plus puissant du corps humain, rapporté à sa taille ?",
+      "choices": [
+        "Le mollet",
+        "Le masséter, dans la mâchoire",
+        "Le grand fessier",
+        "Le biceps"
+      ],
+      "answer": 1,
+      "fun": "Il peut développer plusieurs dizaines de kilos de pression sur les molaires. C'est le muscle qui serre la mâchoire.",
+      "tags": [
+        "corps humain"
+      ]
+    },
+    {
+      "id": "sci-0054",
+      "type": "vraifaux",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Le cerveau ne ressent aucune douleur.",
+      "answer": true,
+      "fun": "Il n'a pas de récepteurs de douleur. On peut opérer un patient éveillé et lui demander de parler pendant qu'on lui touche le cerveau.",
+      "tags": [
+        "corps humain",
+        "surprenant"
+      ]
+    },
+    {
+      "id": "sci-0055",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Quelle unité mesure la puissance électrique ?",
+      "choices": [
+        "Le volt",
+        "L'ampère",
+        "Le watt",
+        "L'ohm"
+      ],
+      "answer": 2,
+      "fun": "James Watt n'a pas inventé la machine à vapeur, il l'a rendue efficace. C'est aussi lui qui a inventé le « cheval-vapeur », comme argument de vente.",
+      "tags": [
+        "physique"
+      ]
+    },
+    {
+      "id": "sci-0056",
+      "type": "estimation",
+      "difficulty": 3,
+      "minAge": 9,
+      "q": "Combien d'états de la matière apprend-on classiquement à l'école ?",
+      "answer": 3,
+      "unit": "états",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Solide, liquide, gaz. Il en existe un quatrième, le plasma, et c'est de loin le plus répandu dans l'univers : les étoiles en sont faites.",
+      "tags": [
+        "physique"
+      ]
+    },
+    {
+      "id": "sci-0057",
+      "type": "libre",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Quel naturaliste anglais a formulé la théorie de l'évolution par sélection naturelle ?",
+      "answer": "Charles Darwin",
+      "accept": [
+        "darwin",
+        "charles darwin"
+      ],
+      "fun": "Il a gardé sa théorie dans un tiroir pendant vingt ans. Il ne l'a publiée qu'en apprenant qu'un autre était arrivé aux mêmes conclusions.",
+      "tags": [
+        "biologie",
+        "histoire des sciences"
+      ]
+    },
+    {
+      "id": "sci-0058",
+      "type": "vraifaux",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Un antibiotique permet de soigner une grippe.",
+      "answer": false,
+      "fun": "Les antibiotiques ne touchent que les bactéries. La grippe est un virus : ça ne lui fait rien du tout.",
+      "tags": [
+        "médecine",
+        "piège"
+      ]
+    },
+    {
+      "id": "sci-0059",
+      "type": "libre",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Quel métal porte le symbole chimique Fe ?",
+      "answer": "Le fer",
+      "accept": [
+        "fer",
+        "le fer"
+      ],
+      "fun": "De « ferrum ». C'est l'élément le plus abondant sur Terre si l'on compte le noyau, qui en est presque entièrement fait.",
+      "tags": [
+        "chimie"
+      ]
+    },
+    {
+      "id": "sci-0060",
+      "type": "estimation",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "À quelle vitesse la Terre file-t-elle autour du Soleil, en kilomètres par heure ?",
+      "answer": 107000,
+      "unit": "km/h",
+      "tol": {
+        "pct": 20
+      },
+      "fun": "Environ 30 km par seconde. Personne ne le sent, parce que rien autour n'en dévie.",
+      "tags": [
+        "espace"
+      ]
+    },
+    {
+      "id": "sci-0061",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Quelle est la planète la plus chaude du système solaire ?",
+      "choices": [
+        "Mercure",
+        "Vénus",
+        "Mars",
+        "Jupiter"
+      ],
+      "answer": 1,
+      "fun": "462 °C en surface, plus que Mercure qui est pourtant deux fois plus près du Soleil. Son atmosphère de CO2 fait un effet de serre monstrueux.",
+      "tags": [
+        "espace",
+        "piège"
+      ]
+    },
+    {
+      "id": "sci-0062",
+      "type": "estimation",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Combien de lunes Mars possède-t-elle ?",
+      "answer": 2,
+      "unit": "lunes",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Phobos et Deimos, la peur et la terreur, deux gros cailloux difformes. Phobos se rapproche : il finira par s'écraser ou se disloquer.",
+      "tags": [
+        "espace"
+      ]
+    },
+    {
+      "id": "sci-0063",
+      "type": "libre",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Comment appelle-t-on l'explosion d'une étoile massive en fin de vie ?",
+      "answer": "Une supernova",
+      "accept": [
+        "supernova",
+        "une supernova",
+        "supernovae"
+      ],
+      "fun": "Elle brille quelques semaines autant que toute une galaxie. Tous les atomes plus lourds que le fer, dont l'or de nos bagues, viennent de là.",
+      "tags": [
+        "espace"
+      ]
+    },
+    {
+      "id": "sci-0064",
+      "type": "vraifaux",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Un trou noir supermassif occupe le centre de notre galaxie.",
+      "answer": true,
+      "fun": "Quatre millions de fois la masse du Soleil. On en a obtenu une image en 2022, en combinant des télescopes répartis sur toute la planète.",
+      "tags": [
+        "espace"
+      ]
+    },
+    {
+      "id": "sci-0065",
+      "type": "estimation",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Quelle distance sépare la Terre du Soleil, en millions de kilomètres ?",
+      "answer": 150,
+      "unit": "millions de km",
+      "tol": {
+        "pct": 15
+      },
+      "fun": "Cette distance sert d'unité de mesure aux astronomes : c'est l'unité astronomique.",
+      "tags": [
+        "espace"
+      ]
+    },
+    {
+      "id": "sci-0066",
+      "type": "libre",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Que signifient les trois lettres du sigle ADN ?",
+      "answer": "Acide désoxyribonucléique",
+      "accept": [
+        "acide desoxyribonucleique",
+        "acide désoxyribonucléique",
+        "acide desoxyribo nucleique"
+      ],
+      "fun": "Déroulé bout à bout, celui d'une seule cellule mesure deux mètres. Multiplié par le nombre de cellules d'un corps, on dépasse largement la distance Terre-Soleil.",
+      "tags": [
+        "biologie"
+      ]
+    },
+    {
+      "id": "sci-0067",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Quel élément de la cellule produit son énergie ?",
+      "choices": [
+        "Le noyau",
+        "La mitochondrie",
+        "Le ribosome",
+        "La membrane"
+      ],
+      "answer": 1,
+      "fun": "C'était probablement une bactérie indépendante, avalée il y a deux milliards d'années par une autre cellule. Elle a gardé son propre ADN.",
+      "tags": [
+        "biologie"
+      ]
+    },
+    {
+      "id": "sci-0068",
+      "type": "estimation",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Quel est le pH de l'eau pure ?",
+      "answer": 7,
+      "unit": "",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Sept, la neutralité. En dessous c'est acide, au-dessus c'est basique. L'estomac tourne autour de 2, l'eau de Javel autour de 12.",
+      "tags": [
+        "chimie"
+      ]
+    },
+    {
+      "id": "sci-0069",
+      "type": "libre",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Comment appelle-t-on une substance qui accélère une réaction chimique sans être consommée ?",
+      "answer": "Un catalyseur",
+      "accept": [
+        "catalyseur",
+        "un catalyseur",
+        "catalyse"
+      ],
+      "fun": "Le pot catalytique d'une voiture en est bourré, avec du platine et du palladium. C'est pour ça qu'on les vole.",
+      "tags": [
+        "chimie"
+      ]
+    },
+    {
+      "id": "sci-0070",
+      "type": "libre",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Quel est le seul métal liquide à température ambiante ?",
+      "answer": "Le mercure",
+      "accept": [
+        "mercure",
+        "le mercure"
+      ],
+      "fun": "Le seul nom d'élément partagé avec une planète et un dieu. On l'appelait vif-argent, parce qu'il roule sans se laisser attraper.",
+      "tags": [
+        "chimie"
+      ]
+    },
+    {
+      "id": "sci-0071",
+      "type": "estimation",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Combien d'éléments compte aujourd'hui le tableau périodique ?",
+      "answer": 118,
+      "unit": "éléments",
+      "tol": {
+        "pct": 8
+      },
+      "fun": "Les derniers n'existent qu'une fraction de seconde dans un accélérateur. Le 118, l'oganesson, a été observé quelques atomes à la fois.",
+      "tags": [
+        "chimie"
+      ]
+    },
+    {
+      "id": "sci-0072",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Quelle particule de l'atome porte une charge négative ?",
+      "choices": [
+        "Le proton",
+        "Le neutron",
+        "L'électron",
+        "Le noyau"
+      ],
+      "answer": 2,
+      "fun": "Le courant électrique, c'est leur déplacement. Curiosité : ils circulent en sens inverse du sens conventionnel du courant, choisi avant qu'on les connaisse.",
+      "tags": [
+        "physique"
+      ]
+    },
+    {
+      "id": "sci-0073",
+      "type": "vraifaux",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Un atome est presque entièrement constitué de vide.",
+      "answer": true,
+      "fun": "Si le noyau faisait la taille d'une bille au centre d'un stade, les électrons tourneraient dans les gradins. Tout le reste est vide.",
+      "tags": [
+        "physique",
+        "surprenant"
+      ]
+    },
+    {
+      "id": "sci-0074",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Qui a découvert la radioactivité, en 1896 ?",
+      "choices": [
+        "Marie Curie",
+        "Henri Becquerel",
+        "Ernest Rutherford",
+        "Wilhelm Röntgen"
+      ],
+      "answer": 1,
+      "fun": "Par hasard, en rangeant des sels d'uranium dans un tiroir avec des plaques photographiques. Elles étaient voilées au matin.",
+      "tags": [
+        "histoire des sciences",
+        "piège"
+      ]
+    },
+    {
+      "id": "sci-0075",
+      "type": "estimation",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Quelle est la pression atmosphérique moyenne au niveau de la mer, en hectopascals ?",
+      "answer": 1013,
+      "unit": "hPa",
+      "tol": {
+        "pct": 5
+      },
+      "fun": "En dessous de 1 000, on parle de dépression et on sort le parapluie. Au-dessus de 1 020, c'est l'anticyclone.",
+      "tags": [
+        "météo"
+      ]
+    },
+    {
+      "id": "sci-0076",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Que mesure un anémomètre ?",
+      "choices": [
+        "La pression",
+        "L'humidité",
+        "La vitesse du vent",
+        "La température"
+      ],
+      "answer": 2,
+      "fun": "Les petites coupelles qui tournent au sommet des mâts. Le mot vient d'« anemos », le vent en grec.",
+      "tags": [
+        "météo"
+      ]
+    },
+    {
+      "id": "sci-0077",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Pourquoi la mer est-elle salée ?",
+      "choices": [
+        "Le sel vient des volcans sous-marins",
+        "Les fleuves y apportent le sel arraché aux roches",
+        "Les poissons produisent du sel",
+        "Le sel tombe avec la pluie"
+      ],
+      "answer": 1,
+      "fun": "Les rivières transportent du sel en permanence. L'eau s'évapore, le sel reste : depuis des milliards d'années, ça s'accumule.",
+      "tags": [
+        "sciences de la terre"
+      ]
+    },
+    {
+      "id": "sci-0078",
+      "type": "vraifaux",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "L'empreinte de la langue est unique à chaque personne, comme celle des doigts.",
+      "answer": true,
+      "fun": "Forme et texture varient d'un individu à l'autre. Des chercheurs ont proposé de s'en servir comme mot de passe biométrique. L'idée n'a pas pris.",
+      "tags": [
+        "corps humain",
+        "surprenant"
+      ]
+    },
+    {
+      "id": "sci-0079",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Combien de temps vit un globule rouge ?",
+      "choices": [
+        "Environ 12 heures",
+        "Environ 12 jours",
+        "Environ 120 jours",
+        "Toute la vie"
+      ],
+      "answer": 2,
+      "fun": "Il n'a pas de noyau, donc aucun moyen de se réparer. La rate retire les vieux de la circulation et on en fabrique deux millions par seconde.",
+      "tags": [
+        "corps humain"
+      ]
+    },
+    {
+      "id": "sci-0080",
+      "type": "vraifaux",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Le corps humain héberge à peu près autant de bactéries que de cellules humaines.",
+      "answer": true,
+      "fun": "Le rapport était longtemps donné à dix contre un. Un recomptage de 2016 l'a ramené à peu près à égalité.",
+      "tags": [
+        "biologie",
+        "surprenant"
+      ]
+    },
+    {
+      "id": "sci-0081",
+      "type": "libre",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Où sont fabriqués les globules rouges ?",
+      "answer": "Dans la moelle osseuse",
+      "accept": [
+        "moelle osseuse",
+        "la moelle osseuse",
+        "dans la moelle osseuse",
+        "moelle"
+      ],
+      "fun": "À ne pas confondre avec la moelle épinière, qui est du tissu nerveux. Celle-ci est à l'intérieur des os, surtout ceux du bassin.",
+      "tags": [
+        "corps humain",
+        "piège"
+      ]
+    },
+    {
+      "id": "sci-0082",
+      "type": "libre",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Comment appelle-t-on la déviation d'un rayon lumineux quand il change de milieu ?",
+      "answer": "La réfraction",
+      "accept": [
+        "refraction",
+        "la refraction",
+        "réfraction"
+      ],
+      "fun": "C'est elle qui casse en deux la paille dans un verre d'eau, et elle qui fait tout le travail dans une paire de lunettes.",
+      "tags": [
+        "physique"
+      ]
+    },
+    {
+      "id": "sci-0083",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Un orage éclate à un kilomètre. Combien de secondes s'écoulent entre l'éclair et le tonnerre ?",
+      "choices": [
+        "Environ 1 seconde",
+        "Environ 3 secondes",
+        "Environ 10 secondes",
+        "Environ 30 secondes"
+      ],
+      "answer": 1,
+      "fun": "Le son fait 340 mètres par seconde. On compte les secondes et on divise par trois pour avoir la distance en kilomètres.",
+      "tags": [
+        "météo",
+        "physique"
+      ]
+    },
+    {
+      "id": "sci-0084",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Quelle réaction fournit son énergie au Soleil ?",
+      "choices": [
+        "La combustion de gaz",
+        "La fusion de l'hydrogène en hélium",
+        "La fission de l'uranium",
+        "Le frottement des gaz"
+      ],
+      "answer": 1,
+      "fun": "Il consomme quatre millions de tonnes de matière par seconde, converties en énergie pure. Et il en a encore pour cinq milliards d'années.",
+      "tags": [
+        "espace",
+        "physique"
+      ]
+    },
+    {
+      "id": "sci-0085",
+      "type": "vraifaux",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Le zéro absolu correspond à −273,15 °C.",
+      "answer": true,
+      "fun": "La température où les atomes cessent de s'agiter. On s'en approche au milliardième de degré en laboratoire, sans jamais l'atteindre.",
+      "tags": [
+        "physique"
+      ]
+    },
+    {
+      "id": "sci-0086",
+      "type": "libre",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Quel mot, venu du grec, désigne le constituant de la matière que l'on croyait insécable ?",
+      "answer": "L'atome",
+      "accept": [
+        "atome",
+        "l'atome"
+      ],
+      "fun": "« A-tomos », qu'on ne peut pas couper. Les Grecs avaient l'intuition juste et le mot faux : on a fini par le couper.",
+      "tags": [
+        "physique",
+        "chimie"
+      ]
+    },
+    {
+      "id": "sci-0087",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Quel groupe sanguin est receveur universel ?",
+      "choices": [
+        "O négatif",
+        "A positif",
+        "AB positif",
+        "B positif"
+      ],
+      "answer": 2,
+      "fun": "Il porte tous les marqueurs, donc n'en rejette aucun. C'est l'exact miroir du O négatif, qui peut donner à tout le monde.",
+      "tags": [
+        "corps humain",
+        "médecine"
+      ]
+    },
+    {
+      "id": "sci-0088",
+      "type": "libre",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Quel astronome polonais a placé le Soleil au centre du système, et non la Terre ?",
+      "answer": "Nicolas Copernic",
+      "accept": [
+        "copernic",
+        "nicolas copernic",
+        "kopernik"
+      ],
+      "fun": "Il a attendu d'être mourant pour publier, en 1543. Galilée, qui a défendu la même idée un siècle plus tard, n'a pas eu cette prudence.",
+      "tags": [
+        "espace",
+        "histoire des sciences"
+      ]
+    },
+    {
+      "id": "sci-0089",
+      "type": "vraifaux",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Sur Vénus, une année dure moins longtemps qu'une journée.",
+      "answer": true,
+      "fun": "225 jours terrestres pour faire le tour du Soleil, 243 pour tourner sur elle-même. Et elle tourne à l'envers : le Soleil s'y lève à l'ouest.",
+      "tags": [
+        "espace",
+        "surprenant"
+      ]
+    },
+    {
+      "id": "sci-0090",
+      "type": "vraifaux",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "On hérite ses mitochondries uniquement de sa mère.",
+      "answer": true,
+      "fun": "Elles ont leur propre ADN, transmis par l'ovule seul. C'est ce qui permet de remonter les lignées maternelles sur des milliers de générations.",
+      "tags": [
+        "biologie"
+      ]
+    },
+    {
+      "id": "sci-0091",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Quel organe nous donne le sens de l'équilibre ?",
+      "choices": [
+        "Le cervelet",
+        "Les canaux semi-circulaires de l'oreille interne",
+        "Le nerf optique",
+        "La plante des pieds"
+      ],
+      "answer": 1,
+      "fun": "Trois tubes remplis de liquide, orientés dans les trois directions de l'espace. Quand le liquide continue de tourner après nous, on a la tête qui tourne.",
+      "tags": [
+        "corps humain"
+      ]
+    },
+    {
+      "id": "sci-0092",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Quelle partie du neurone transmet le signal vers les autres cellules ?",
+      "choices": [
+        "Les dendrites",
+        "L'axone",
+        "Le noyau",
+        "La synapse"
+      ],
+      "answer": 1,
+      "fun": "Certains, dans la jambe, mesurent près d'un mètre pour une seule cellule. Le signal y file à plus de 100 mètres par seconde.",
+      "tags": [
+        "corps humain",
+        "biologie"
+      ]
+    },
+    {
+      "id": "sci-0093",
+      "type": "libre",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Comment appelle-t-on la branche de la physique qui décrit l'infiniment petit ?",
+      "answer": "La mécanique quantique",
+      "accept": [
+        "mecanique quantique",
+        "la mecanique quantique",
+        "quantique",
+        "physique quantique"
+      ],
+      "fun": "Elle marche parfaitement, elle a donné le transistor et le laser, et personne ne s'accorde sur ce qu'elle veut dire.",
+      "tags": [
+        "physique"
+      ]
+    },
+    {
+      "id": "sci-0094",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 14,
+      "q": "Quel principe affirme qu'on ne peut pas connaître à la fois précisément la position et la vitesse d'une particule ?",
+      "choices": [
+        "Le principe d'Archimède",
+        "Le principe d'incertitude de Heisenberg",
+        "Le principe de Pauli",
+        "Le paradoxe de Schrödinger"
+      ],
+      "answer": 1,
+      "fun": "Ce n'est pas un problème d'instrument : c'est la nature qui est ainsi faite. Plus on cerne l'un, plus l'autre s'échappe.",
+      "tags": [
+        "physique"
+      ]
+    },
+    {
+      "id": "sci-0095",
+      "type": "libre",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Quelle unité mesure la quantité de matière en chimie ?",
+      "answer": "La mole",
+      "accept": [
+        "mole",
+        "la mole"
+      ],
+      "fun": "Une mole, c'est 602 000 milliards de milliards d'entités. Le chiffre a été fixé une fois pour toutes en 2019.",
+      "tags": [
+        "chimie"
+      ]
+    },
+    {
+      "id": "sci-0096",
+      "type": "estimation",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Combien de paires de nerfs crâniens partent du cerveau ?",
+      "answer": 12,
+      "unit": "paires",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Douze, et elles ne passent pas par la moelle épinière. La dixième, le nerf vague, descend jusqu'à l'estomac.",
+      "tags": [
+        "corps humain"
+      ]
+    },
+    {
+      "id": "sci-0097",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Dans quelle couche de l'atmosphère se trouve la couche d'ozone ?",
+      "choices": [
+        "La troposphère",
+        "La stratosphère",
+        "La mésosphère",
+        "La thermosphère"
+      ],
+      "answer": 1,
+      "fun": "Entre 20 et 35 km d'altitude. Le trou au-dessus de l'Antarctique se referme lentement depuis l'interdiction des CFC en 1987.",
+      "tags": [
+        "météo",
+        "sciences de la terre"
+      ]
+    },
+    {
+      "id": "sci-0098",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 14,
+      "q": "Qui a publié le modèle en double hélice de l'ADN, en 1953 ?",
+      "choices": [
+        "Pasteur et Koch",
+        "Watson et Crick",
+        "Mendel et Morgan",
+        "Fleming et Florey"
+      ],
+      "answer": 1,
+      "fun": "Ils se sont appuyés sur une image aux rayons X obtenue par Rosalind Franklin, sans le lui demander. Elle est morte avant le Nobel, qui ne se donne pas à titre posthume.",
+      "tags": [
+        "biologie",
+        "histoire des sciences"
+      ]
+    },
+    {
+      "id": "sci-0099",
+      "type": "estimation",
+      "difficulty": 5,
+      "minAge": 14,
+      "q": "À quelle température le fer fond-il ?",
+      "answer": 1538,
+      "unit": "°C",
+      "tol": {
+        "pct": 12
+      },
+      "fun": "Un four à bois n'y arrive pas. Il a fallu inventer le soufflet et le haut-fourneau, ce qui explique que l'âge du fer arrive bien après celui du bronze.",
+      "tags": [
+        "chimie",
+        "physique"
+      ]
+    },
+    {
+      "id": "sci-0100",
+      "type": "vraifaux",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "L'astronomie et l'astrologie désignent la même discipline.",
+      "answer": false,
+      "fun": "L'une observe les astres, l'autre prétend y lire l'avenir. Elles se sont séparées au XVIIe siècle — Kepler, lui, pratiquait encore les deux pour payer son loyer.",
+      "tags": [
+        "espace",
+        "piège"
       ]
     }
   ]

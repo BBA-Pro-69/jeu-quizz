@@ -1,7 +1,7 @@
 {
   "category": "cinema-series",
   "label": "Cinéma & Séries",
-  "version": 2,
+  "version": 3,
   "questions": [
     {
       "id": "cin-0001",
@@ -348,6 +348,1431 @@
       "scoring": "collectif",
       "tags": [
         "mime"
+      ]
+    },
+    {
+      "id": "cin-0021",
+      "type": "qcm",
+      "difficulty": 1,
+      "minAge": 5,
+      "q": "Dans Toy Story, quel est le déguisement du jouet Woody ?",
+      "choices": [
+        "Un pompier",
+        "Un cow-boy",
+        "Un astronaute",
+        "Un pirate"
+      ],
+      "answer": 1,
+      "fun": "Au départ, il devait être un ventriloque avec une marionnette. Les essais faisaient peur aux enfants.",
+      "tags": [
+        "animation",
+        "pixar"
+      ]
+    },
+    {
+      "id": "cin-0022",
+      "type": "libre",
+      "difficulty": 1,
+      "minAge": 5,
+      "q": "Dans Aladdin, quel personnage bleu sort de la lampe ?",
+      "answer": "Le Génie",
+      "accept": [
+        "genie",
+        "le genie"
+      ],
+      "fun": "Robin Williams a improvisé tellement de répliques que le film a failli être écarté de l'Oscar du scénario adapté.",
+      "tags": [
+        "animation",
+        "disney"
+      ]
+    },
+    {
+      "id": "cin-0023",
+      "type": "libre",
+      "difficulty": 1,
+      "minAge": 5,
+      "q": "Comment s'appelle le bonhomme de neige de La Reine des neiges ?",
+      "answer": "Olaf",
+      "accept": [
+        "olaf"
+      ],
+      "fun": "Il rêve de l'été sans comprendre ce qui l'attend. C'est la blague la plus triste du film.",
+      "tags": [
+        "animation",
+        "disney"
+      ]
+    },
+    {
+      "id": "cin-0024",
+      "type": "qcm",
+      "difficulty": 1,
+      "minAge": 5,
+      "q": "Quel animal est Dumbo ?",
+      "choices": [
+        "Un éléphant",
+        "Une souris",
+        "Un ours",
+        "Un cerf"
+      ],
+      "answer": 0,
+      "fun": "Le film dure une heure et quatre minutes : Disney voulait rester court après avoir perdu de l'argent sur les précédents.",
+      "tags": [
+        "animation",
+        "disney"
+      ]
+    },
+    {
+      "id": "cin-0025",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 6,
+      "q": "Dans Moi, moche et méchant, comment s'appelle le maître des Minions ?",
+      "choices": [
+        "Vector",
+        "Gru",
+        "Balthazar",
+        "Nefario"
+      ],
+      "answer": 1,
+      "fun": "Le charabia des Minions mélange de l'espagnol, du français, de l'italien et de l'indonésien. Les réalisateurs le doublent eux-mêmes.",
+      "tags": [
+        "animation"
+      ]
+    },
+    {
+      "id": "cin-0026",
+      "type": "libre",
+      "difficulty": 2,
+      "minAge": 7,
+      "q": "Comment s'appelle le sport joué sur des balais volants dans Harry Potter ?",
+      "answer": "Le Quidditch",
+      "accept": [
+        "quidditch",
+        "le quidditch"
+      ],
+      "fun": "Des étudiants y jouent pour de vrai, en courant avec un balai entre les jambes. Il y a même des championnats du monde.",
+      "tags": [
+        "fantasy"
+      ]
+    },
+    {
+      "id": "cin-0027",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 7,
+      "q": "Comment s'appelle le vaisseau de Han Solo ?",
+      "choices": [
+        "Le Faucon Millenium",
+        "L'Étoile Noire",
+        "Le Tantive IV",
+        "Le Slave I"
+      ],
+      "answer": 0,
+      "fun": "Sa silhouette vient d'un hamburger avec une olive plantée sur le côté, de l'aveu même des concepteurs.",
+      "tags": [
+        "star wars"
+      ]
+    },
+    {
+      "id": "cin-0028",
+      "type": "libre",
+      "difficulty": 2,
+      "minAge": 6,
+      "q": "Comment s'appelle l'ours du Livre de la jungle ?",
+      "answer": "Baloo",
+      "accept": [
+        "baloo",
+        "balou"
+      ],
+      "fun": "« Baloo » veut simplement dire « ours » en hindi. Kipling n'a pas cherché plus loin.",
+      "tags": [
+        "animation",
+        "disney"
+      ]
+    },
+    {
+      "id": "cin-0029",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 9,
+      "q": "Qui a réalisé E.T. l'extraterrestre ?",
+      "choices": [
+        "George Lucas",
+        "Steven Spielberg",
+        "Robert Zemeckis",
+        "Ron Howard"
+      ],
+      "answer": 1,
+      "fun": "Les scènes ont été tournées dans l'ordre chronologique, ce qui ne se fait jamais, pour que les émotions des enfants soient vraies.",
+      "tags": [
+        "réalisateurs"
+      ]
+    },
+    {
+      "id": "cin-0030",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Qui a réalisé Titanic et Avatar ?",
+      "choices": [
+        "James Cameron",
+        "Ridley Scott",
+        "Peter Jackson",
+        "Michael Bay"
+      ],
+      "answer": 0,
+      "fun": "Il est descendu lui-même voir l'épave du Titanic, à près de 4 000 mètres, une douzaine de fois.",
+      "tags": [
+        "réalisateurs"
+      ]
+    },
+    {
+      "id": "cin-0031",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 12,
+      "q": "Dans Matrix, quelle pilule Neo doit-il prendre pour connaître la vérité ?",
+      "choices": [
+        "La bleue",
+        "La rouge",
+        "La verte",
+        "La blanche"
+      ],
+      "answer": 1,
+      "fun": "La bleue le renvoyait à sa vie normale. L'image est devenue si connue qu'elle sert aujourd'hui de slogan à tout et n'importe quoi.",
+      "tags": [
+        "science-fiction"
+      ]
+    },
+    {
+      "id": "cin-0032",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 13,
+      "q": "Qui a réalisé Le Parrain ?",
+      "choices": [
+        "Martin Scorsese",
+        "Francis Ford Coppola",
+        "Brian De Palma",
+        "Sidney Lumet"
+      ],
+      "answer": 1,
+      "fun": "Le studio ne voulait pas de Marlon Brando et a failli le renvoyer. Il a passé son essai avec du coton dans les joues.",
+      "tags": [
+        "classiques"
+      ]
+    },
+    {
+      "id": "cin-0033",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 9,
+      "q": "Quelle voiture sert de machine à voyager dans le temps dans Retour vers le futur ?",
+      "choices": [
+        "Une Ford Mustang",
+        "Une DeLorean",
+        "Une Chevrolet",
+        "Une Cadillac"
+      ],
+      "answer": 1,
+      "fun": "Le scénario prévoyait au départ un réfrigérateur. On a craint que des enfants s'enferment dedans pour essayer.",
+      "tags": [
+        "science-fiction"
+      ]
+    },
+    {
+      "id": "cin-0034",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Quel est le sport pratiqué par Rocky Balboa ?",
+      "choices": [
+        "La lutte",
+        "La boxe",
+        "Le catch",
+        "Les arts martiaux"
+      ],
+      "answer": 1,
+      "fun": "Sylvester Stallone a écrit le scénario en trois jours et refusé de le vendre s'il ne jouait pas le rôle. Il n'avait presque plus d'argent.",
+      "tags": [
+        "classiques"
+      ]
+    },
+    {
+      "id": "cin-0035",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Quel est le métier d'Indiana Jones ?",
+      "choices": [
+        "Archéologue",
+        "Géologue",
+        "Explorateur",
+        "Journaliste"
+      ],
+      "answer": 0,
+      "fun": "La scène où il abat un sabreur d'un coup de revolver était prévue comme un long duel. Harrison Ford, malade ce jour-là, a proposé plus court.",
+      "tags": [
+        "aventure"
+      ]
+    },
+    {
+      "id": "cin-0036",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 12,
+      "q": "Dans Forrest Gump, à quoi la vie est-elle comparée ?",
+      "choices": [
+        "À une course",
+        "À une boîte de chocolats",
+        "À une plume",
+        "À un long fleuve"
+      ],
+      "answer": 1,
+      "fun": "La plume du générique est entièrement en images de synthèse, à une époque où ça se voyait encore beaucoup.",
+      "tags": [
+        "classiques",
+        "répliques"
+      ]
+    },
+    {
+      "id": "cin-0037",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Dans quel pays la trilogie du Seigneur des Anneaux a-t-elle été tournée ?",
+      "choices": [
+        "En Irlande",
+        "En Nouvelle-Zélande",
+        "En Écosse",
+        "En Norvège"
+      ],
+      "answer": 1,
+      "fun": "Le pays s'est doté d'un ministre du Seigneur des Anneaux pendant la production. Les décors de la Comté sont toujours visitables.",
+      "tags": [
+        "fantasy"
+      ]
+    },
+    {
+      "id": "cin-0038",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 12,
+      "q": "Quel film marque la première apparition de Daniel Craig en James Bond ?",
+      "choices": [
+        "Skyfall",
+        "Casino Royale",
+        "Quantum of Solace",
+        "Spectre"
+      ],
+      "answer": 1,
+      "fun": "Sa nomination a déclenché une campagne d'insultes en ligne parce qu'il était blond. Le film a été l'un des mieux reçus de la série.",
+      "tags": [
+        "james bond"
+      ]
+    },
+    {
+      "id": "cin-0039",
+      "type": "estimation",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Quel est le matricule de James Bond ?",
+      "answer": 7,
+      "unit": "",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Le double zéro signifie l'autorisation de tuer. Ian Fleming a pris le numéro d'une ligne de bus qu'il empruntait.",
+      "tags": [
+        "james bond"
+      ]
+    },
+    {
+      "id": "cin-0040",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 12,
+      "q": "Quel animal terrorise les baigneurs dans Les Dents de la mer ?",
+      "choices": [
+        "Un requin",
+        "Une orque",
+        "Une pieuvre",
+        "Un crocodile"
+      ],
+      "answer": 0,
+      "fun": "Le requin mécanique tombait tout le temps en panne. On l'a donc peu montré, et le film en est devenu bien plus effrayant.",
+      "tags": [
+        "classiques"
+      ]
+    },
+    {
+      "id": "cin-0041",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 13,
+      "q": "Quel film a pour slogan « Dans l'espace, personne ne vous entend crier » ?",
+      "choices": [
+        "Alien",
+        "Gravity",
+        "Interstellar",
+        "Event Horizon"
+      ],
+      "answer": 0,
+      "fun": "Le studio détestait cette phrase, trouvée par une agence en dernière minute. Elle est restée l'une des plus célèbres du cinéma.",
+      "tags": [
+        "science-fiction"
+      ]
+    },
+    {
+      "id": "cin-0042",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 13,
+      "q": "De quel écrivain Shining est-il adapté ?",
+      "choices": [
+        "Stephen King",
+        "Edgar Allan Poe",
+        "Dean Koontz",
+        "Clive Barker"
+      ],
+      "answer": 0,
+      "fun": "L'auteur déteste le film de Kubrick, qu'il trouve froid. Il en a fait tourner sa propre version télévisée vingt ans plus tard.",
+      "tags": [
+        "adaptations"
+      ]
+    },
+    {
+      "id": "cin-0043",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 13,
+      "q": "Qui a réalisé Pulp Fiction ?",
+      "choices": [
+        "Guy Ritchie",
+        "Quentin Tarantino",
+        "Robert Rodriguez",
+        "Paul Thomas Anderson"
+      ],
+      "answer": 1,
+      "fun": "Il travaillait dans un vidéoclub avant de percer. Il dit y avoir appris le cinéma en conseillant les clients.",
+      "tags": [
+        "réalisateurs"
+      ]
+    },
+    {
+      "id": "cin-0044",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 12,
+      "q": "Dans Men in Black, comment les agents sont-ils nommés ?",
+      "choices": [
+        "Par des lettres",
+        "Par des chiffres",
+        "Par des couleurs",
+        "Par des surnoms"
+      ],
+      "answer": 0,
+      "fun": "J et K. Le vrai gag est que personne ne connaît jamais leur nom, y compris eux.",
+      "tags": [
+        "science-fiction"
+      ]
+    },
+    {
+      "id": "cin-0045",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 13,
+      "q": "Dans quelle ville se déroule Sex and the City ?",
+      "choices": [
+        "Los Angeles",
+        "New York",
+        "Chicago",
+        "Boston"
+      ],
+      "answer": 1,
+      "fun": "La série a fait exploser la fréquentation de certaines pâtisseries de la ville, au point que les riverains ont porté plainte.",
+      "tags": [
+        "séries"
+      ]
+    },
+    {
+      "id": "cin-0046",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "De quel super-héros la série Smallville raconte-t-elle la jeunesse ?",
+      "choices": [
+        "Batman",
+        "Superman",
+        "Flash",
+        "Green Arrow"
+      ],
+      "answer": 1,
+      "fun": "Deux règles imposées aux scénaristes pendant dix saisons : pas de vol, pas de costume.",
+      "tags": [
+        "séries"
+      ]
+    },
+    {
+      "id": "cin-0047",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 13,
+      "q": "Quelle entreprise familiale est au cœur de la série Six Feet Under ?",
+      "choices": [
+        "Un hôtel",
+        "Des pompes funèbres",
+        "Un journal",
+        "Un restaurant"
+      ],
+      "answer": 1,
+      "fun": "Chaque épisode s'ouvre sur une mort différente. La dernière séquence de la série est souvent citée comme la meilleure fin jamais écrite.",
+      "tags": [
+        "séries"
+      ]
+    },
+    {
+      "id": "cin-0048",
+      "type": "vraifaux",
+      "difficulty": 3,
+      "minAge": 12,
+      "q": "L'émission Big Brother, ancêtre de la téléréalité d'enfermement, a été inventée aux Pays-Bas.",
+      "answer": true,
+      "fun": "Le nom vient du roman 1984 de George Orwell. Loft Story en est la version française.",
+      "tags": [
+        "télévision"
+      ]
+    },
+    {
+      "id": "cin-0049",
+      "type": "libre",
+      "difficulty": 3,
+      "minAge": 12,
+      "q": "Comment appelle-t-on une série dérivée d'une autre série ?",
+      "answer": "Un spin-off",
+      "accept": [
+        "spin off",
+        "spin-off",
+        "un spin off",
+        "serie derivee"
+      ],
+      "fun": "Frasier est né d'un personnage secondaire de Cheers, et a tenu onze saisons tout seul.",
+      "tags": [
+        "séries",
+        "mots"
+      ]
+    },
+    {
+      "id": "cin-0050",
+      "type": "libre",
+      "difficulty": 3,
+      "minAge": 8,
+      "q": "Comment s'appelle le vieux sage barbu de la série Il était une fois la vie ?",
+      "answer": "Maestro",
+      "accept": [
+        "maestro",
+        "le maestro"
+      ],
+      "fun": "La série a été traduite dans une trentaine de langues et sert encore de support en cours de biologie.",
+      "tags": [
+        "animation",
+        "télévision"
+      ]
+    },
+    {
+      "id": "cin-0051",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 13,
+      "q": "Quel peintre a inspiré les masques de La Casa de Papel ?",
+      "choices": [
+        "Picasso",
+        "Dalí",
+        "Goya",
+        "Miró"
+      ],
+      "answer": 1,
+      "fun": "La production voulait d'abord des masques de Don Quichotte. Dalí était plus reconnaissable à l'écran, moustache comprise.",
+      "tags": [
+        "séries"
+      ]
+    },
+    {
+      "id": "cin-0052",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 12,
+      "q": "Dans Stranger Things, comment appelle-t-on la dimension parallèle ?",
+      "choices": [
+        "Le Monde à l'envers",
+        "L'Autre Côté",
+        "La Faille",
+        "Le Vide"
+      ],
+      "answer": 0,
+      "fun": "La série se passe dans les années 1980 et cite ouvertement Spielberg, King et Donjons & Dragons à chaque épisode.",
+      "tags": [
+        "séries"
+      ]
+    },
+    {
+      "id": "cin-0053",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 13,
+      "q": "Quelle série britannique tournée comme un documentaire de bureau a été adaptée aux États-Unis avec Steve Carell ?",
+      "choices": [
+        "The IT Crowd",
+        "The Office",
+        "Extras",
+        "Peep Show"
+      ],
+      "answer": 1,
+      "fun": "La version britannique ne compte que douze épisodes et un final. L'américaine en a tenu deux cents.",
+      "tags": [
+        "séries"
+      ]
+    },
+    {
+      "id": "cin-0054",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 12,
+      "q": "Quelle troupe de théâtre est à l'origine des Bronzés et du Père Noël est une ordure ?",
+      "choices": [
+        "Le Splendid",
+        "Le Petit Théâtre de Bouvard",
+        "Les Nuls",
+        "Le Café de la Gare"
+      ],
+      "answer": 0,
+      "fun": "Ils écrivaient et jouaient leurs pièces avant de les porter à l'écran. Les films sont d'abord des spectacles rodés devant du public.",
+      "tags": [
+        "cinéma français"
+      ]
+    },
+    {
+      "id": "cin-0055",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Qui a réalisé et joué dans Bienvenue chez les Ch'tis ?",
+      "choices": [
+        "Dany Boon",
+        "Kad Merad",
+        "Franck Dubosc",
+        "Élie Semoun"
+      ],
+      "answer": 0,
+      "fun": "Il est né dans le Nord et parlait le ch'ti chez lui. Le film a été sous-titré dans certaines salles du sud de la France.",
+      "tags": [
+        "cinéma français"
+      ]
+    },
+    {
+      "id": "cin-0056",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Quel duo d'acteurs joue dans La Grande Vadrouille ?",
+      "choices": [
+        "De Funès et Bourvil",
+        "Belmondo et Delon",
+        "Blier et Ventura",
+        "Gabin et Fernandel"
+      ],
+      "answer": 0,
+      "fun": "Le film est resté pendant plus de trente ans le plus gros succès du cinéma en France, jusqu'à Titanic.",
+      "tags": [
+        "cinéma français",
+        "classiques"
+      ]
+    },
+    {
+      "id": "cin-0057",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 12,
+      "q": "Quel acteur incarne l'espion OSS 117 dans les films de Michel Hazanavicius ?",
+      "choices": [
+        "Jean Dujardin",
+        "Gad Elmaleh",
+        "Guillaume Canet",
+        "José Garcia"
+      ],
+      "answer": 0,
+      "fun": "Le personnage existait bien avant James Bond, dans des romans français des années 1940, et il était pris au sérieux.",
+      "tags": [
+        "cinéma français"
+      ]
+    },
+    {
+      "id": "cin-0058",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 12,
+      "q": "Quel duo d'acteurs porte le film Intouchables ?",
+      "choices": [
+        "Omar Sy et François Cluzet",
+        "Kad Merad et Dany Boon",
+        "Jamel Debbouze et Gérard Jugnot",
+        "Omar Sy et Jean Dujardin"
+      ],
+      "answer": 0,
+      "fun": "Le film est tiré d'une histoire vraie. Les deux hommes dont il s'inspire apparaissent dans les images de la fin.",
+      "tags": [
+        "cinéma français"
+      ]
+    },
+    {
+      "id": "cin-0059",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 13,
+      "q": "Dans Le Dîner de cons, quel est le passe-temps du personnage joué par Jacques Villeret ?",
+      "choices": [
+        "Les maquettes en allumettes",
+        "Les timbres",
+        "Les trains miniatures",
+        "Les papillons"
+      ],
+      "answer": 0,
+      "fun": "Le film se déroule presque entièrement dans un seul appartement. C'était une pièce de théâtre avant d'être un film.",
+      "tags": [
+        "cinéma français"
+      ]
+    },
+    {
+      "id": "cin-0060",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 12,
+      "q": "Dans quelle ville américaine se déroule la série The Wire ?",
+      "choices": [
+        "Baltimore",
+        "Detroit",
+        "Philadelphie",
+        "Newark"
+      ],
+      "answer": 0,
+      "fun": "Son créateur était journaliste faits divers dans cette ville. Plusieurs rôles sont tenus par d'anciens policiers et d'anciens dealers.",
+      "tags": [
+        "séries"
+      ]
+    },
+    {
+      "id": "cin-0061",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Qui a réalisé Le Voyage dans la Lune, en 1902 ?",
+      "choices": [
+        "Georges Méliès",
+        "Louis Lumière",
+        "Émile Reynaud",
+        "Léon Gaumont"
+      ],
+      "answer": 0,
+      "fun": "Illusionniste de métier, il a inventé les trucages en filmant. Il a fini par vendre des jouets dans une gare parisienne.",
+      "tags": [
+        "histoire du cinéma"
+      ]
+    },
+    {
+      "id": "cin-0062",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Quel film de 1927 est considéré comme le premier grand film parlant ?",
+      "choices": [
+        "Metropolis",
+        "Le Chanteur de jazz",
+        "Les Lumières de la ville",
+        "Naissance d'une nation"
+      ],
+      "answer": 1,
+      "fun": "Il ne contient que quelques minutes de dialogue. Cela a suffi à mettre au chômage des milliers de musiciens de salle.",
+      "tags": [
+        "histoire du cinéma"
+      ]
+    },
+    {
+      "id": "cin-0063",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Qui a organisé la première projection payante de cinéma, en 1895 ?",
+      "choices": [
+        "Les frères Lumière",
+        "Thomas Edison",
+        "Georges Méliès",
+        "Eadweard Muybridge"
+      ],
+      "answer": 0,
+      "fun": "Trente-trois spectateurs le premier soir, à Paris. Ils pensaient que l'invention n'avait aucun avenir commercial.",
+      "tags": [
+        "histoire du cinéma"
+      ]
+    },
+    {
+      "id": "cin-0064",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Quelle récompense est remise au festival de Venise ?",
+      "choices": [
+        "L'Ours d'or",
+        "Le Lion d'or",
+        "La Palme d'or",
+        "La Coquille d'or"
+      ],
+      "answer": 1,
+      "fun": "L'Ours d'or est à Berlin, la Palme à Cannes. Venise est le plus ancien festival de cinéma au monde.",
+      "tags": [
+        "récompenses"
+      ]
+    },
+    {
+      "id": "cin-0065",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Dans Psychose, qu'a utilisé Hitchcock pour figurer le sang de la scène de la douche ?",
+      "choices": [
+        "Du sirop de chocolat",
+        "De la peinture rouge",
+        "Du jus de betterave",
+        "Du colorant alimentaire"
+      ],
+      "answer": 0,
+      "fun": "Le film est en noir et blanc : le chocolat coulait mieux et rendait plus vrai à l'écran que le faux sang de l'époque.",
+      "tags": [
+        "classiques",
+        "tournage"
+      ]
+    },
+    {
+      "id": "cin-0066",
+      "type": "libre",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Quel est le dernier mot prononcé au début de Citizen Kane, et qui donne son énigme au film ?",
+      "answer": "Rosebud",
+      "accept": [
+        "rosebud",
+        "rose bud"
+      ],
+      "fun": "Toute l'intrigue tient à retrouver ce que le mot désigne. Le spectateur l'apprend dans le dernier plan, avant les personnages.",
+      "tags": [
+        "classiques"
+      ]
+    },
+    {
+      "id": "cin-0067",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Comment s'appelle l'ordinateur de 2001, l'Odyssée de l'espace ?",
+      "choices": [
+        "HAL 9000",
+        "SAL",
+        "MU-TH-UR",
+        "Skynet"
+      ],
+      "answer": 0,
+      "fun": "Chaque lettre de HAL précède d'un cran celles d'IBM dans l'alphabet. Kubrick a toujours juré que c'était un hasard.",
+      "tags": [
+        "science-fiction"
+      ]
+    },
+    {
+      "id": "cin-0068",
+      "type": "estimation",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Combien d'Oscars Le Seigneur des Anneaux : Le Retour du roi a-t-il remportés ?",
+      "answer": 11,
+      "unit": "Oscars",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Onze nominations, onze statuettes : un sans-faute que seuls Ben-Hur et Titanic égalent, avec onze victoires chacun.",
+      "tags": [
+        "récompenses",
+        "fantasy"
+      ]
+    },
+    {
+      "id": "cin-0069",
+      "type": "libre",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Quel personnage à moustache, canne et chapeau melon Charlie Chaplin a-t-il incarné ?",
+      "answer": "Charlot",
+      "accept": [
+        "charlot",
+        "le vagabond",
+        "the tramp"
+      ],
+      "fun": "Il a continué à faire des films muets bien après l'arrivée du parlant, convaincu que son personnage perdrait tout s'il parlait.",
+      "tags": [
+        "histoire du cinéma"
+      ]
+    },
+    {
+      "id": "cin-0070",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Quel mouvement du cinéma français des années 1960 réunit Godard, Truffaut et Chabrol ?",
+      "choices": [
+        "Le réalisme poétique",
+        "La Nouvelle Vague",
+        "Le cinéma du look",
+        "Le Dogme"
+      ],
+      "answer": 1,
+      "fun": "Ils étaient d'abord critiques dans la même revue. Ils ont tourné dans la rue, en équipe réduite, faute de moyens.",
+      "tags": [
+        "cinéma français",
+        "histoire du cinéma"
+      ]
+    },
+    {
+      "id": "cin-0071",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Qui a réalisé Les Quatre Cents Coups ?",
+      "choices": [
+        "Jean-Luc Godard",
+        "François Truffaut",
+        "Claude Chabrol",
+        "Louis Malle"
+      ],
+      "answer": 1,
+      "fun": "Le film est largement autobiographique. Le plan final, un arrêt sur l'image du garçon face à la mer, a fait école partout.",
+      "tags": [
+        "cinéma français"
+      ]
+    },
+    {
+      "id": "cin-0072",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "De quelle bande dessinée le film La Vie d'Adèle est-il tiré ?",
+      "choices": [
+        "Le bleu est une couleur chaude",
+        "Persepolis",
+        "Aya de Yopougon",
+        "Quai d'Orsay"
+      ],
+      "answer": 0,
+      "fun": "Fait rare, la Palme d'or a été remise au réalisateur et à ses deux actrices ensemble.",
+      "tags": [
+        "cinéma français",
+        "adaptations"
+      ]
+    },
+    {
+      "id": "cin-0073",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 10,
+      "q": "Quel film de Hayao Miyazaki a remporté l'Oscar du meilleur film d'animation ?",
+      "choices": [
+        "Princesse Mononoké",
+        "Le Voyage de Chihiro",
+        "Le Château ambulant",
+        "Porco Rosso"
+      ],
+      "answer": 1,
+      "fun": "Il n'est pas allé chercher la statuette, en désaccord avec la guerre en Irak. Le studio a mis des années à le dire publiquement.",
+      "tags": [
+        "animation",
+        "japon"
+      ]
+    },
+    {
+      "id": "cin-0074",
+      "type": "vraifaux",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Porco Rosso, du studio Ghibli, se déroule au-dessus de la mer Adriatique.",
+      "answer": true,
+      "fun": "Un pilote transformé en cochon, entre les deux guerres. Miyazaki l'avait conçu comme un court-métrage à diffuser dans les avions de ligne.",
+      "tags": [
+        "animation",
+        "japon"
+      ]
+    },
+    {
+      "id": "cin-0075",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Quel réalisateur japonais a tourné Les Sept Samouraïs ?",
+      "choices": [
+        "Akira Kurosawa",
+        "Yasujirō Ozu",
+        "Kenji Mizoguchi",
+        "Takeshi Kitano"
+      ],
+      "answer": 0,
+      "fun": "Le scénario des Sept Mercenaires en est la copie déclarée, transposée dans un western.",
+      "tags": [
+        "classiques"
+      ]
+    },
+    {
+      "id": "cin-0076",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Qui a composé la musique du Bon, la Brute et le Truand ?",
+      "choices": [
+        "Ennio Morricone",
+        "Nino Rota",
+        "John Barry",
+        "Elmer Bernstein"
+      ],
+      "answer": 0,
+      "fun": "Sergio Leone faisait jouer la musique sur le tournage pour que les acteurs se règlent dessus. C'est pour ça que les scènes durent si longtemps.",
+      "tags": [
+        "musique de film"
+      ]
+    },
+    {
+      "id": "cin-0077",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "De quel écrivain Blade Runner est-il adapté ?",
+      "choices": [
+        "Isaac Asimov",
+        "Philip K. Dick",
+        "Arthur C. Clarke",
+        "William Gibson"
+      ],
+      "answer": 1,
+      "fun": "Le titre du roman demande si les androïdes rêvent de moutons électriques. L'auteur est mort quelques mois avant la sortie du film.",
+      "tags": [
+        "science-fiction",
+        "adaptations"
+      ]
+    },
+    {
+      "id": "cin-0078",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Quel film porte le slogan « On ne peut pas avoir 500 millions d'amis sans se faire quelques ennemis » ?",
+      "choices": [
+        "The Social Network",
+        "Steve Jobs",
+        "Le Loup de Wall Street",
+        "The Circle"
+      ],
+      "answer": 0,
+      "fun": "David Fincher a fait tourner jusqu'à quatre-vingt-dix prises de la même scène d'ouverture, dans un bar bruyant.",
+      "tags": [
+        "réalisateurs"
+      ]
+    },
+    {
+      "id": "cin-0079",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Qu'appelle-t-on un « MacGuffin » au cinéma ?",
+      "choices": [
+        "Un prétexte qui lance l'intrigue",
+        "Un plan-séquence",
+        "Un caméo du réalisateur",
+        "Un raccord raté"
+      ],
+      "answer": 0,
+      "fun": "Le mot est d'Hitchcock : peu importe ce que c'est, seuls comptent les personnages qui courent après.",
+      "tags": [
+        "vocabulaire"
+      ]
+    },
+    {
+      "id": "cin-0080",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Quel film de 1999 a lancé la mode du film tourné en fausses images amateur ?",
+      "choices": [
+        "Le Projet Blair Witch",
+        "Paranormal Activity",
+        "REC",
+        "Cloverfield"
+      ],
+      "answer": 0,
+      "fun": "La campagne de lancement laissait croire que les acteurs avaient réellement disparu. Leurs familles ont reçu des messages de condoléances.",
+      "tags": [
+        "histoire du cinéma"
+      ]
+    },
+    {
+      "id": "cin-0081",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Qui a créé la série Twin Peaks ?",
+      "choices": [
+        "David Lynch",
+        "David Cronenberg",
+        "Chris Carter",
+        "Wes Craven"
+      ],
+      "answer": 0,
+      "fun": "Le réseau a exigé qu'on révèle le coupable au milieu de la saison 2. L'audience s'est effondrée juste après.",
+      "tags": [
+        "séries"
+      ]
+    },
+    {
+      "id": "cin-0082",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Dans quel film Jean Dujardin joue-t-il un acteur du muet, sans presque prononcer un mot ?",
+      "choices": [
+        "The Artist",
+        "OSS 117",
+        "Le Bruit des glaçons",
+        "99 francs"
+      ],
+      "answer": 0,
+      "fun": "Il est le premier acteur français à avoir reçu l'Oscar du meilleur acteur, pour un rôle presque entièrement silencieux.",
+      "tags": [
+        "cinéma français",
+        "récompenses"
+      ]
+    },
+    {
+      "id": "cin-0083",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Quel album de Tintin Steven Spielberg a-t-il adapté au cinéma ?",
+      "choices": [
+        "Le Lotus bleu",
+        "Le Secret de La Licorne",
+        "Les Bijoux de la Castafiore",
+        "L'Étoile mystérieuse"
+      ],
+      "answer": 1,
+      "fun": "Il a acheté les droits en 1983, du vivant d'Hergé. Le film est sorti vingt-huit ans plus tard.",
+      "tags": [
+        "adaptations"
+      ]
+    },
+    {
+      "id": "cin-0084",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Quel acteur français a prêté ses traits au Marsupilami dans le film d'Alain Chabat ?",
+      "choices": [
+        "Alain Chabat",
+        "Jamel Debbouze",
+        "Lambert Wilson",
+        "Personne, il est en images de synthèse"
+      ],
+      "answer": 3,
+      "fun": "Chabat joue le journaliste, Jamel Debbouze le guide. Le Marsupilami, lui, est entièrement numérique.",
+      "tags": [
+        "cinéma français",
+        "piège"
+      ]
+    },
+    {
+      "id": "cin-0085",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Quelle série suit une famille de mafieux du New Jersey et son patron en thérapie ?",
+      "choices": [
+        "Les Soprano",
+        "Boardwalk Empire",
+        "Gomorra",
+        "Peaky Blinders"
+      ],
+      "answer": 0,
+      "fun": "Sa dernière scène s'arrête net, en plein milieu d'une chanson. Des spectateurs ont cru à une panne de leur téléviseur.",
+      "tags": [
+        "séries"
+      ]
+    },
+    {
+      "id": "cin-0086",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Qu'est-ce qu'un plan-séquence ?",
+      "choices": [
+        "Un plan sans coupure",
+        "Un plan de coupe",
+        "Un plan tourné de nuit",
+        "Un plan sans dialogue"
+      ],
+      "answer": 0,
+      "fun": "Certains durent plus de dix minutes. Depuis le numérique, on en fabrique aussi en collant plusieurs plans sans que ça se voie.",
+      "tags": [
+        "vocabulaire",
+        "technique"
+      ]
+    },
+    {
+      "id": "cin-0087",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Qui a réalisé Lost in Translation ?",
+      "choices": [
+        "Sofia Coppola",
+        "Kathryn Bigelow",
+        "Greta Gerwig",
+        "Jane Campion"
+      ],
+      "answer": 0,
+      "fun": "Une partie du film a été tournée dans les rues de Tokyo sans autorisation, caméra à l'épaule, pour éviter les démarches.",
+      "tags": [
+        "réalisateurs"
+      ]
+    },
+    {
+      "id": "cin-0088",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Quel réalisateur apparaît en silhouette dans presque tous ses propres films ?",
+      "choices": [
+        "Alfred Hitchcock",
+        "Orson Welles",
+        "Billy Wilder",
+        "John Ford"
+      ],
+      "answer": 0,
+      "fun": "Il plaçait son apparition très tôt dans le film pour que le public arrête de la guetter et suive enfin l'histoire.",
+      "tags": [
+        "réalisateurs"
+      ]
+    },
+    {
+      "id": "cin-0089",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Quel film de Christopher Nolan repose sur des rêves emboîtés les uns dans les autres ?",
+      "choices": [
+        "Interstellar",
+        "Inception",
+        "Memento",
+        "Tenet"
+      ],
+      "answer": 1,
+      "fun": "Le couloir qui tourne sur lui-même est un vrai décor monté sur rotation, pas un effet numérique.",
+      "tags": [
+        "science-fiction"
+      ]
+    },
+    {
+      "id": "cin-0090",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Quelle série médicale a fait connaître Hugh Laurie dans le rôle d'un médecin misanthrope ?",
+      "choices": [
+        "Urgences",
+        "Dr House",
+        "Grey's Anatomy",
+        "Scrubs"
+      ],
+      "answer": 1,
+      "fun": "Les producteurs américains ignoraient qu'il était britannique : il avait passé son essai avec l'accent, dans une salle de bain d'hôtel.",
+      "tags": [
+        "séries"
+      ]
+    },
+    {
+      "id": "cin-0091",
+      "type": "vraifaux",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Alfred Hitchcock n'a jamais reçu l'Oscar du meilleur réalisateur.",
+      "answer": true,
+      "fun": "Cinq nominations, zéro statuette. Il a reçu un prix d'honneur dont il a expédié le discours en un mot : « merci ».",
+      "tags": [
+        "récompenses",
+        "piège"
+      ]
+    },
+    {
+      "id": "cin-0092",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Qui a réalisé Metropolis, en 1927 ?",
+      "choices": [
+        "Fritz Lang",
+        "F. W. Murnau",
+        "Robert Wiene",
+        "Sergueï Eisenstein"
+      ],
+      "answer": 0,
+      "fun": "Des bobines entières manquaient depuis les années 1920. Une copie presque complète a été retrouvée dans un musée de Buenos Aires en 2008.",
+      "tags": [
+        "histoire du cinéma"
+      ]
+    },
+    {
+      "id": "cin-0093",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Quelle séquence du Cuirassé Potemkine est la plus citée de l'histoire du cinéma ?",
+      "choices": [
+        "L'escalier d'Odessa",
+        "La mutinerie",
+        "L'enterrement",
+        "Le repas des marins"
+      ],
+      "answer": 0,
+      "fun": "Le landau qui dévale les marches a été rejoué dans des dizaines de films. L'escalier existe, et il porte aujourd'hui le nom du film.",
+      "tags": [
+        "histoire du cinéma"
+      ]
+    },
+    {
+      "id": "cin-0094",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 11,
+      "q": "Quel est le premier long-métrage d'animation des studios Disney ?",
+      "choices": [
+        "Blanche-Neige et les Sept Nains",
+        "Pinocchio",
+        "Fantasia",
+        "Bambi"
+      ],
+      "answer": 0,
+      "fun": "La profession l'appelait « la folie de Disney » et lui prédisait la faillite. Il a hypothéqué sa maison pour le finir.",
+      "tags": [
+        "animation",
+        "histoire du cinéma"
+      ]
+    },
+    {
+      "id": "cin-0095",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Qu'appelle-t-on l'« effet Rashomon » ?",
+      "choices": [
+        "Un même événement raconté de façons contradictoires",
+        "Un flash-back trompeur",
+        "Un montage en accéléré",
+        "Une fin ouverte"
+      ],
+      "answer": 0,
+      "fun": "Du nom du film de Kurosawa où quatre témoins racontent le même crime, tous sincères, tous incompatibles.",
+      "tags": [
+        "vocabulaire"
+      ]
+    },
+    {
+      "id": "cin-0096",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Que désignait le « code Hays », à Hollywood ?",
+      "choices": [
+        "Un code de censure",
+        "Un syndicat de scénaristes",
+        "Un procédé couleur",
+        "Un format de pellicule"
+      ],
+      "answer": 0,
+      "fun": "Il a interdit pendant trente ans de montrer un couple dans un même lit, même marié. D'où les chambres à deux lits séparés dans les films de l'époque.",
+      "tags": [
+        "histoire du cinéma"
+      ]
+    },
+    {
+      "id": "cin-0097",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "À quel moment du Magicien d'Oz l'image passe-t-elle du sépia à la couleur ?",
+      "choices": [
+        "À l'arrivée au pays d'Oz",
+        "Au générique",
+        "À la rencontre du lion",
+        "Au retour au Kansas"
+      ],
+      "answer": 0,
+      "fun": "La porte s'ouvre et le monde change de nature. En 1939, la moitié des salles n'était même pas équipée pour le voir en couleur.",
+      "tags": [
+        "histoire du cinéma"
+      ]
+    },
+    {
+      "id": "cin-0098",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Depuis quelle décennie la récompense suprême de Cannes s'appelle-t-elle la « Palme d'or » ?",
+      "choices": [
+        "Les années 1940",
+        "Les années 1950",
+        "Les années 1960",
+        "Les années 1970"
+      ],
+      "answer": 1,
+      "fun": "Avant, c'était le Grand Prix du Festival. La palme est un clin d'œil aux armoiries de la ville.",
+      "tags": [
+        "récompenses"
+      ]
+    },
+    {
+      "id": "cin-0099",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Qu'est-ce qu'un « found footage » au cinéma ?",
+      "choices": [
+        "Un film présenté comme des images retrouvées",
+        "Un film sans musique",
+        "Un remontage de chutes",
+        "Un documentaire animalier"
+      ],
+      "answer": 0,
+      "fun": "Le procédé coûte peu et rapporte parfois énormément, ce qui explique qu'il revienne tous les dix ans.",
+      "tags": [
+        "vocabulaire"
+      ]
+    },
+    {
+      "id": "cin-0100",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Quelle actrice détient le record de récompenses d'interprétation aux Oscars ?",
+      "choices": [
+        "Meryl Streep",
+        "Katharine Hepburn",
+        "Ingrid Bergman",
+        "Bette Davis"
+      ],
+      "answer": 1,
+      "fun": "Quatre statuettes de meilleure actrice, sur soixante ans de carrière. Elle n'est jamais venue en chercher une seule.",
+      "tags": [
+        "récompenses"
       ]
     }
   ]

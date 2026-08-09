@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Quiz Famille · Mon profil</title>
+<meta name="theme-color" content="#0A2A24">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --feutre:#0E3B32; --feutre-bas:#082019; --feutre-panneau:#12463C;
+  --creme:#F4EAD5; --creme-ombre:#E2D3B4; --encre:#17241F;
+  --laiton:#D8A94B; --laiton-clair:#F0C978; --cerise:#C8372D; --paon:#3FA9C9; --vert-ok:#4FA96B;
+  --r-md:14px; --r-lg:20px; --r-xl:26px; --r-full:999px;
+  --o-douce:0 6px 20px rgba(0,0,0,.22);
+  --o-carte:0 18px 40px rgba(0,0,0,.34), 0 2px 0 rgba(255,255,255,.55) inset;
+  --glisse:all .3s cubic-bezier(.16,1,.3,1);
+}
+*{-webkit-tap-highlight-color:transparent}
+body{margin:0;min-height:100dvh;font-family:Inter,sans-serif;color:var(--creme);
+  background:radial-gradient(ellipse at 15% -10%, rgba(21,86,74,.85), transparent 55%),
+             linear-gradient(170deg,var(--feutre),var(--feutre-bas));background-attachment:fixed}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.5;
+  background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.014) 0 2px,transparent 2px 4px),
+                   repeating-linear-gradient(-45deg,rgba(0,0,0,.03) 0 2px,transparent 2px 4px)}
+.enveloppe{position:relative;max-width:34rem;margin:0 auto;padding:2rem 1.25rem 3rem}
+.titre{font-family:'Playfair Display',serif;font-weight:900;line-height:1.04;color:#fff}
+.kicker{font-size:.66rem;letter-spacing:.28em;text-transform:uppercase;font-weight:800;color:var(--laiton)}
+.kicker-line{display:block;height:2px;width:52px;margin:.5rem 0 0;border-radius:2px;
+  background:linear-gradient(90deg,var(--laiton),transparent)}
+.mini{font-size:.72rem;color:rgba(244,234,213,.55);line-height:1.55}
+.card{background:linear-gradient(160deg,var(--feutre-panneau),rgba(8,32,25,.75));
+  border:1px solid rgba(216,169,75,.22);border-radius:var(--r-lg);box-shadow:var(--o-douce)}
+.carte-papier{background:linear-gradient(168deg,#FBF4E6,var(--creme) 55%,var(--creme-ombre));
+  color:var(--encre);border-radius:var(--r-xl);padding:1.5rem;box-shadow:var(--o-carte)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;min-height:52px;
+  padding:.9rem 1.3rem;border-radius:var(--r-full);font-weight:700;font-size:.95rem;cursor:pointer;
+  border:1px solid transparent;transition:var(--glisse)}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.btn-primary{background:linear-gradient(135deg,var(--laiton-clair),var(--laiton));color:#2A1E06}
+.btn-primary:hover:not(:disabled){transform:translateY(-2px)}
+.btn-ghost{background:rgba(244,234,213,.05);border-color:rgba(244,234,213,.24);color:var(--creme)}
+.btn-ghost:hover:not(:disabled){background:rgba(244,234,213,.11);transform:translateY(-2px)}
+.btn-mini{min-height:38px;padding:.45rem .9rem;font-size:.75rem;border-radius:var(--r-full)}
+.inp{width:100%;padding:.85rem 1rem;border-radius:var(--r-md);font-size:1rem;
+  background:rgba(8,32,25,.5);border:1px solid rgba(244,234,213,.18);color:#fff}
+.inp:focus{outline:none;border-color:var(--laiton);box-shadow:0 0 0 3px rgba(216,169,75,.16)}
+.lbl{display:block;margin-bottom:.35rem;font-size:.62rem;font-weight:800;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--laiton)}
+.pastille{width:4.5rem;height:4.5rem;border-radius:50%;object-fit:cover;
+  border:2px solid var(--laiton);display:flex;align-items:center;justify-content:center;
+  font-family:'Playfair Display',serif;font-weight:900;font-size:1.8rem;color:#2A1E06;flex:none}
+.chiffre{font-family:'Playfair Display',serif;font-weight:900;font-size:1.9rem;color:#fff;line-height:1}
+.barre{height:8px;border-radius:var(--r-full);background:rgba(244,234,213,.1);overflow:hidden}
+.barre i{display:block;height:100%;border-radius:var(--r-full);background:linear-gradient(90deg,var(--laiton),var(--laiton-clair))}
+.colonnes{display:flex;align-items:flex-end;gap:.35rem;height:120px}
+.colonnes div{flex:1;display:flex;flex-direction:column;justify-content:flex-end;height:100%}
+.colonnes span{display:block;border-radius:4px 4px 0 0;background:linear-gradient(180deg,var(--laiton-clair),var(--laiton));min-height:2px}
+.vue{display:none}.vue.on{display:block}
+table{width:100%;border-collapse:collapse;font-size:.85rem}
+th{text-align:left;padding:.45rem .5rem;font-size:.58rem;font-weight:800;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--laiton);border-bottom:1px solid rgba(216,169,75,.25)}
+td{padding:.55rem .5rem;border-bottom:1px solid rgba(244,234,213,.08);color:rgba(244,234,213,.85)}
+tr:last-child td{border-bottom:none}
+</style>
+</head>
+<body>
+<div class="enveloppe">
+
+  <!-- ============ identification ============ -->
+  <div id="vIdent" class="vue on">
+    <p class="kicker">Ton profil</p><span class="kicker-line"></span>
+    <h1 class="titre mt-4" style="font-size:2.6rem">Qui es-tu&nbsp;?</h1>
+    <p class="mini mt-3">
+      Un surnom que toi seul connais, comme un mot de passe. Les autres joueurs
+      ne verront jamais que ton prénom.</p>
+
+    <div class="card p-5 mt-6 space-y-3">
+      <div><label class="lbl" for="cSurnom">Ton surnom secret</label>
+        <input id="cSurnom" class="inp" placeholder="celui que personne ne devine" autocomplete="off"></div>
+      <button id="bConnexion" class="btn btn-primary w-full">
+        <i class="fa-solid fa-door-open"></i>Entrer</button>
+      <p class="mini text-center">Pas encore de profil&nbsp;?
+        <button id="bVersCreation" class="underline decoration-dotted">En créer un</button></p>
+    </div>
+    <p id="mIdent" class="text-sm text-center mt-4" style="color:#E8836F"></p>
+    <p class="text-center mt-8"><a href="index.html" class="mini underline decoration-dotted">Retour au jeu</a></p>
+  </div>
+
+  <!-- ============ création ============ -->
+  <div id="vCreation" class="vue">
+    <p class="kicker">Nouveau joueur</p><span class="kicker-line"></span>
+    <h1 class="titre mt-4" style="font-size:2.4rem">On te crée un profil</h1>
+
+    <div class="card p-5 mt-6 space-y-4">
+      <div><label class="lbl" for="nSurnom">Ton surnom secret</label>
+        <input id="nSurnom" class="inp" placeholder="tigre-de-feu" autocomplete="off">
+        <p class="mini mt-1">Il te servira à te reconnecter. Ne le donne à personne&nbsp;:
+          qui le connaît peut jouer à ta place.</p></div>
+      <div><label class="lbl" for="nPrenom">Ton prénom</label>
+        <input id="nPrenom" class="inp" placeholder="Bruno"></div>
+      <div><label class="lbl" for="nNaissance">Ta date de naissance</label>
+        <input id="nNaissance" class="inp" type="date">
+        <p class="mini mt-1">On garde la date, pas l'âge&nbsp;: comme ça il se met à jour tout seul.</p></div>
+      <div><label class="lbl" for="nPhoto">Ta photo, si tu veux</label>
+        <input id="nPhoto" class="inp" type="file" accept="image/*" capture="user">
+        <div id="nApercu" class="mt-3"></div></div>
+      <button id="bCreer" class="btn btn-primary w-full">
+        <i class="fa-solid fa-user-plus"></i>Créer mon profil</button>
+      <button id="bVersConnexion" class="btn btn-ghost w-full">J'ai déjà un profil</button>
+    </div>
+    <p id="mCreation" class="text-sm text-center mt-4" style="color:#E8836F"></p>
+  </div>
+
+  <!-- ============ tableau de bord ============ -->
+  <div id="vBord" class="vue">
+    <div class="flex items-center gap-4">
+      <div id="bAvatar" class="pastille" style="background:var(--laiton)"></div>
+      <div class="flex-1">
+        <p class="kicker" id="bKicker">Ton profil</p>
+        <p id="bPrenom" class="titre" style="font-size:2rem">—</p>
+        <p id="bSous" class="mini"></p>
+      </div>
+    </div>
+
+    <div id="bSurnomZone" class="carte-papier mt-5 flex items-center justify-between gap-3">
+      <div><p class="text-[.58rem] font-extrabold tracking-[.24em] uppercase" style="color:#8A7A5C">Ton surnom secret</p>
+        <p id="bSurnom" class="titre" style="color:var(--encre);font-size:1.3rem">••••••</p></div>
+      <button id="bVoir" class="btn btn-ghost btn-mini" style="color:var(--encre);border-color:rgba(23,36,31,.25)">
+        <i class="fa-solid fa-eye"></i>Montrer</button>
+    </div>
+
+    <div class="grid grid-cols-2 gap-3 mt-5">
+      <div class="card p-4"><p class="kicker">Parties</p><p id="gParties" class="chiffre mt-1">—</p></div>
+      <div class="card p-4"><p class="kicker">Questions</p><p id="gPosees" class="chiffre mt-1">—</p></div>
+      <div class="card p-4"><p class="kicker">Réussite</p><p id="gTaux" class="chiffre mt-1">—</p></div>
+      <div class="card p-4"><p class="kicker">Temps médian</p><p id="gMs" class="chiffre mt-1">—</p></div>
+    </div>
+
+    <div class="card p-5 mt-5">
+      <p class="kicker mb-1">Par catégorie</p>
+      <p class="mini mb-4">Là où tu es fort, là où il y a du travail.</p>
+      <div id="gCats"></div>
+    </div>
+
+    <div class="card p-5 mt-5">
+      <p class="kicker mb-4">Par difficulté</p>
+      <div id="gDiff"></div>
+    </div>
+
+    <div class="card p-5 mt-5">
+      <div class="flex items-center justify-between mb-4">
+        <p class="kicker">Progression</p>
+        <div class="flex gap-2">
+          <button class="btn btn-ghost btn-mini grain" data-g="day">Jour</button>
+          <button class="btn btn-primary btn-mini grain" data-g="week">Semaine</button>
+          <button class="btn btn-ghost btn-mini grain" data-g="month">Mois</button>
+        </div>
+      </div>
+      <div id="gTemps"></div>
+    </div>
+
+    <div class="flex flex-col gap-3 mt-6">
+      <a href="index.html" class="btn btn-primary"><i class="fa-solid fa-dice"></i>Jouer</a>
+      <button id="bDeco" class="btn btn-ghost"><i class="fa-solid fa-right-from-bracket"></i>Me déconnecter</button>
+    </div>
+  </div>
+
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/profil.js"></script>
+<script>
+(function () {
+'use strict';
+var P = window.Quiz.Profil;
+var $ = function (s) { return document.querySelector(s); };
+function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+function vue(v){['vIdent','vCreation','vBord'].forEach(function(x){$('#'+x).classList.toggle('on',x===v);});}
+function sec(ms){return ms==null?'—':(ms/1000).toFixed(1).replace('.',',')+' s';}
+
+var photo = null, profil = null, autre = null;
+
+/* ?id=<uuid> : on consulte le profil d'un autre joueur, en fin de partie.
+   Ses stats sont publiques, son surnom n'existe pas pour nous. */
+var vise = (location.search.match(/[?&]id=([0-9a-f-]{36})/) || [])[1];
+
+$('#bVersCreation').onclick = function(){ vue('vCreation'); };
+$('#bVersConnexion').onclick = function(){ vue('vIdent'); };
+$('#bDeco').onclick = function(){ P.oublier(); location.href = 'profil.html'; };
+$('#bVoir').onclick = function(){
+  var z = $('#bSurnom');
+  z.textContent = z.textContent === '••••••' ? (profil.surnom || '(saisi sur un autre appareil)') : '••••••';
+};
+
+$('#nPhoto').onchange = async function () {
+  if (!this.files || !this.files[0]) return;
+  try {
+    photo = await P.photo96(this.files[0]);
+    $('#nApercu').innerHTML = '<img src="' + photo + '" class="pastille" alt="">';
+  } catch (e) { $('#mCreation').textContent = e.message; }
+};
+
+$('#bConnexion').onclick = async function () {
+  var s = $('#cSurnom').value.trim();
+  if (!s) { $('#mIdent').textContent = 'Il me faut ton surnom.'; return; }
+  this.disabled = true; $('#mIdent').textContent = 'On vérifie…';
+  try { profil = await P.connexion(s); $('#mIdent').textContent = ''; bord(); }
+  catch (e) { $('#mIdent').textContent = P.dire(e); }
+  this.disabled = false;
+};
+
+$('#bCreer').onclick = async function () {
+  var s = $('#nSurnom').value.trim(), p = $('#nPrenom').value.trim(), n = $('#nNaissance').value;
+  if (s.length < 3) { $('#mCreation').textContent = 'Un surnom d\'au moins trois lettres.'; return; }
+  if (!p)           { $('#mCreation').textContent = 'Et ton prénom, celui que les autres verront.'; return; }
+  if (!n)           { $('#mCreation').textContent = 'Il me faut ta date de naissance.'; return; }
+  this.disabled = true; $('#mCreation').textContent = 'On crée…';
+  try { profil = await P.creer(s, p, n, photo); $('#mCreation').textContent = ''; bord(); }
+  catch (e) { $('#mCreation').textContent = P.dire(e); }
+  this.disabled = false;
+};
+
+function avatar(el, o) {
+  if (o.avatar) el.outerHTML = '<img id="' + el.id + '" src="' + o.avatar + '" class="pastille" alt="">';
+  else { el.style.background = o.couleur || '#D8A94B'; el.textContent = (o.prenom || '?')[0].toUpperCase(); }
+}
+
+async function bord() {
+  var o = autre || profil;
+  vue('vBord');
+  avatar($('#bAvatar'), o);
+  $('#bPrenom').textContent = o.prenom;
+  var a = o.age != null ? o.age : P.age(o.naissance);
+  $('#bSous').textContent = a + ' ans · handicap ' + P.handicapPour(a);
+  if (autre) {
+    $('#bKicker').textContent = 'Un autre joueur';
+    $('#bSurnomZone').style.display = 'none';
+    $('#bDeco').style.display = 'none';
+  } else {
+    $('#bSurnom').textContent = '••••••';
+  }
+  charger(o.id);
+}
+
+async function charger(id) {
+  try {
+    var g = await P.stats.global(id);
+    $('#gParties').textContent = g.parties || 0;
+    $('#gPosees').textContent  = g.posees  || 0;
+    $('#gTaux').textContent    = (g.taux == null ? '—' : g.taux + ' %');
+    $('#gMs').textContent      = sec(g.ms_median);
+
+    var cats = await P.stats.categories(id);
+    $('#gCats').innerHTML = cats.length ? cats.map(function (c) {
+      return '<div class="mb-4"><div class="flex justify-between text-sm mb-1">' +
+        '<span class="font-semibold">' + esc(c.categorie) + '</span>' +
+        '<span style="color:rgba(244,234,213,.6)">' + (c.taux == null ? '—' : c.taux + ' %') +
+        ' · ' + sec(c.ms_median) + ' · ' + c.posees + ' q.</span></div>' +
+        '<div class="barre"><i style="width:' + (c.taux || 0) + '%"></i></div></div>';
+    }).join('') : '<p class="mini">Rien encore. Joue une partie.</p>';
+
+    var d = await P.stats.difficulte(id);
+    $('#gDiff').innerHTML = d.length ? d.map(function (x) {
+      return '<div class="mb-3"><div class="flex justify-between text-sm mb-1">' +
+        '<span>Niveau ' + x.difficulte + '</span>' +
+        '<span style="color:rgba(244,234,213,.6)">' + (x.taux == null ? '—' : x.taux + ' %') +
+        ' · ' + x.posees + ' q.</span></div>' +
+        '<div class="barre"><i style="width:' + (x.taux || 0) + '%"></i></div></div>';
+    }).join('') : '<p class="mini">Rien encore.</p>';
+
+    temps(id, 'week');
+  } catch (e) {
+    $('#gCats').innerHTML = '<p class="mini" style="color:#E8836F">' + esc(P.dire(e)) + '</p>';
+  }
+}
+
+async function temps(id, grain) {
+  document.querySelectorAll('.grain').forEach(function (b) {
+    b.className = 'btn btn-mini grain ' + (b.dataset.g === grain ? 'btn-primary' : 'btn-ghost');
+    b.onclick = function () { temps(id, b.dataset.g); };
+  });
+  var r = await P.stats.periode(id, grain);
+  if (!r.length) { $('#gTemps').innerHTML = '<p class="mini">Pas encore de quoi tracer une courbe.</p>'; return; }
+  var vus = r.slice(-14);
+  $('#gTemps').innerHTML =
+    '<div class="colonnes">' + vus.map(function (p) {
+      return '<div title="' + p.periode + ' · ' + (p.taux || 0) + ' %"><span style="height:' +
+             Math.max(2, (p.taux || 0)) + '%"></span></div>';
+    }).join('') + '</div>' +
+    '<div class="flex justify-between mini mt-2"><span>' + vus[0].periode + '</span>' +
+    '<span>taux de bonnes réponses</span><span>' + vus[vus.length - 1].periode + '</span></div>';
+}
+
+/* ---- démarrage ---- */
+(async function () {
+  if (vise) {
+    try { autre = await P.publique(vise); if (autre) return bord(); } catch (e) {}
+  }
+  profil = P.courant();
+  if (profil) bord(); else vue('vIdent');
+})();
+})();
+</script>
+</body>
+</html>

@@ -1,7 +1,7 @@
 {
   "category": "gastronomie",
   "label": "Bouffe & Boissons",
-  "version": 2,
+  "version": 3,
   "note": "Les questions impliquant de l'alcool sont marquées minAge 13 et plus, et taguées 'alcool' pour pouvoir être filtrées entièrement si besoin.",
   "questions": [
     {
@@ -334,6 +334,1352 @@
       "tags": [
         "rapidité",
         "fromages"
+      ]
+    },
+    {
+      "id": "gas-0021",
+      "type": "qcm",
+      "difficulty": 1,
+      "minAge": 5,
+      "q": "De quelle céréale vient le pop-corn ?",
+      "choices": [
+        "Le blé",
+        "Le maïs",
+        "Le riz",
+        "L'avoine"
+      ],
+      "answer": 1,
+      "fun": "Le grain contient une goutte d'eau. Vers 180 °C elle se transforme en vapeur, la coque cède, et le grain se retourne comme une chaussette.",
+      "tags": [
+        "céréales"
+      ]
+    },
+    {
+      "id": "gas-0022",
+      "type": "qcm",
+      "difficulty": 1,
+      "minAge": 5,
+      "q": "Avec quel légume fait-on les frites ?",
+      "choices": [
+        "La courgette",
+        "Le navet",
+        "La pomme de terre",
+        "Le panais"
+      ],
+      "answer": 2,
+      "fun": "La pomme de terre vient des Andes. En Europe, on l'a longtemps cultivée pour nourrir les cochons avant d'oser y goûter.",
+      "tags": [
+        "légumes"
+      ]
+    },
+    {
+      "id": "gas-0023",
+      "type": "estimation",
+      "difficulty": 1,
+      "minAge": 6,
+      "q": "À quelle température l'eau bout-elle, au niveau de la mer ?",
+      "answer": 100,
+      "unit": "°C",
+      "tol": {
+        "exact": true
+      },
+      "fun": "En altitude, elle bout plus bas : à 2 000 m c'est environ 93 °C, et les pâtes mettent plus longtemps à cuire.",
+      "tags": [
+        "cuisson"
+      ]
+    },
+    {
+      "id": "gas-0024",
+      "type": "vraifaux",
+      "difficulty": 2,
+      "minAge": 7,
+      "q": "Le miel peut se conserver des milliers d'années sans pourrir.",
+      "answer": true,
+      "fun": "On a retrouvé des pots encore comestibles dans des tombes égyptiennes. Trop acide et trop pauvre en eau pour que les bactéries s'y installent.",
+      "tags": [
+        "conservation",
+        "insolite"
+      ]
+    },
+    {
+      "id": "gas-0025",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 6,
+      "q": "Quel fruit porte ses graines à l'extérieur ?",
+      "choices": [
+        "La pomme",
+        "La fraise",
+        "La pêche",
+        "Le raisin"
+      ],
+      "answer": 1,
+      "fun": "Les petits points jaunes sont les vrais fruits. La partie rouge qu'on mange, c'est le support de la fleur qui a gonflé.",
+      "tags": [
+        "botanique",
+        "piège"
+      ]
+    },
+    {
+      "id": "gas-0026",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 7,
+      "q": "De quel pays vient le gouda ?",
+      "choices": [
+        "L'Allemagne",
+        "Les Pays-Bas",
+        "Le Danemark",
+        "La Belgique"
+      ],
+      "answer": 1,
+      "fun": "Gouda est une ville. On y vendait le fromage sur la place du marché, on n'y en fabriquait pas forcément.",
+      "tags": [
+        "fromages"
+      ]
+    },
+    {
+      "id": "gas-0027",
+      "type": "vraifaux",
+      "difficulty": 2,
+      "minAge": 7,
+      "q": "Le chocolat blanc ne contient pas de cacao.",
+      "answer": false,
+      "fun": "Il contient du beurre de cacao, mais pas de pâte de cacao : d'où sa couleur claire et son goût de lait.",
+      "tags": [
+        "chocolat",
+        "piège"
+      ]
+    },
+    {
+      "id": "gas-0028",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 6,
+      "q": "De quel pays le kebab est-il originaire ?",
+      "choices": [
+        "La Grèce",
+        "Le Liban",
+        "La Turquie",
+        "Le Maroc"
+      ],
+      "answer": 2,
+      "fun": "« Döner kebab » veut dire « grillade qui tourne ». Le sandwich tel qu'on le connaît est né à Berlin, chez des immigrés turcs.",
+      "tags": [
+        "origines"
+      ]
+    },
+    {
+      "id": "gas-0029",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 8,
+      "q": "Avec quoi fabrique-t-on le tofu ?",
+      "choices": [
+        "Du soja",
+        "Du riz",
+        "Du blé",
+        "Du lait de chèvre"
+      ],
+      "answer": 0,
+      "fun": "On caille du lait de soja, exactement comme on caille du lait de vache pour faire du fromage.",
+      "tags": [
+        "végétal"
+      ]
+    },
+    {
+      "id": "gas-0030",
+      "type": "vraifaux",
+      "difficulty": 2,
+      "minAge": 8,
+      "q": "Le pain perdu se prépare avec du pain rassis.",
+      "answer": true,
+      "fun": "D'où son nom : on récupère le pain qu'on aurait jeté. Les Anglais l'appellent « French toast ».",
+      "tags": [
+        "recettes"
+      ]
+    },
+    {
+      "id": "gas-0031",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 7,
+      "q": "De quel pays la paella est-elle originaire ?",
+      "choices": [
+        "Le Portugal",
+        "L'Italie",
+        "Le Mexique",
+        "L'Espagne"
+      ],
+      "answer": 3,
+      "fun": "De Valence, précisément. La recette d'origine ne contient pas de fruits de mer mais du lapin et du poulet.",
+      "tags": [
+        "origines"
+      ]
+    },
+    {
+      "id": "gas-0032",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 8,
+      "q": "Quel légume est à la base du kimchi coréen ?",
+      "choices": [
+        "Le chou",
+        "L'aubergine",
+        "Le concombre",
+        "Le radis noir"
+      ],
+      "answer": 0,
+      "fun": "Il fermente plusieurs semaines dans une saumure pimentée. Beaucoup de familles coréennes ont un réfrigérateur réservé à ça.",
+      "tags": [
+        "plats",
+        "fermentation"
+      ]
+    },
+    {
+      "id": "gas-0033",
+      "type": "libre",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Comment appelle-t-on la purée de piments et d'épices d'Afrique du Nord ?",
+      "answer": "La harissa",
+      "accept": [
+        "harissa",
+        "la harissa"
+      ],
+      "fun": "En Tunisie, on la sert souvent à part, avec un filet d'huile d'olive. Personne ne dose pareil.",
+      "tags": [
+        "condiments"
+      ]
+    },
+    {
+      "id": "gas-0034",
+      "type": "vraifaux",
+      "difficulty": 3,
+      "minAge": 9,
+      "q": "Le kiwi est un fruit originaire de Nouvelle-Zélande.",
+      "answer": false,
+      "fun": "Il vient de Chine. Les Néo-Zélandais l'ont rebaptisé du nom de leur oiseau national pour mieux le vendre à l'export.",
+      "tags": [
+        "fruits",
+        "piège"
+      ]
+    },
+    {
+      "id": "gas-0035",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 9,
+      "q": "De quelle fleur récolte-t-on le safran ?",
+      "choices": [
+        "Le crocus",
+        "La tulipe",
+        "Le tournesol",
+        "Le lys"
+      ],
+      "answer": 0,
+      "fun": "On ne récolte que les trois pistils rouges de chaque fleur, à la main, au petit matin.",
+      "tags": [
+        "épices"
+      ]
+    },
+    {
+      "id": "gas-0036",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 9,
+      "q": "Qu'est-ce que le nori, la feuille qui enveloppe les makis ?",
+      "choices": [
+        "Une algue",
+        "Une pâte de riz",
+        "Une feuille de soja",
+        "Une crêpe de blé"
+      ],
+      "answer": 0,
+      "fun": "On la fabrique comme du papier : l'algue est broyée, étalée en fine couche, puis séchée.",
+      "tags": [
+        "japon"
+      ]
+    },
+    {
+      "id": "gas-0037",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "De quelle partie du porc le bacon est-il tiré ?",
+      "choices": [
+        "La cuisse",
+        "L'épaule",
+        "Le ventre",
+        "Le cou"
+      ],
+      "answer": 2,
+      "fun": "La poitrine, donc le même morceau que le lard. Les tranches alternent gras et maigre pour cette raison.",
+      "tags": [
+        "viande"
+      ]
+    },
+    {
+      "id": "gas-0038",
+      "type": "vraifaux",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "La fondue bourguignonne est un plat de fromage fondu.",
+      "answer": false,
+      "fun": "C'est de la viande cuite dans un caquelon d'huile bouillante. Celle au fromage, c'est la savoyarde.",
+      "tags": [
+        "piège",
+        "plats"
+      ]
+    },
+    {
+      "id": "gas-0039",
+      "type": "libre",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Comment appelle-t-on, en Provence, la sauce à base de basilic, d'ail et d'huile d'olive ?",
+      "answer": "Le pistou",
+      "accept": [
+        "pistou",
+        "le pistou"
+      ],
+      "fun": "Le pesto génois, c'est le même principe avec des pignons et du parmesan en plus.",
+      "tags": [
+        "sauces"
+      ]
+    },
+    {
+      "id": "gas-0040",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 9,
+      "q": "De quelle plante la vanille est-elle le fruit ?",
+      "choices": [
+        "Un cactus",
+        "Une orchidée",
+        "Un palmier",
+        "Une fougère"
+      ],
+      "answer": 1,
+      "fun": "Hors du Mexique, la fleur doit être fécondée à la main, fleur par fleur : son insecte pollinisateur n'a pas suivi.",
+      "tags": [
+        "épices"
+      ]
+    },
+    {
+      "id": "gas-0041",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Quel fromage entre dans la recette du tiramisu ?",
+      "choices": [
+        "La ricotta",
+        "Le mascarpone",
+        "La mozzarella",
+        "Le parmesan"
+      ],
+      "answer": 1,
+      "fun": "« Tirami sù » veut dire « remonte-moi ». Entre le café et le sucre, le nom est mérité.",
+      "tags": [
+        "desserts"
+      ]
+    },
+    {
+      "id": "gas-0042",
+      "type": "vraifaux",
+      "difficulty": 3,
+      "minAge": 9,
+      "q": "Les feuilles de rhubarbe sont toxiques.",
+      "answer": true,
+      "fun": "Elles sont bourrées d'acide oxalique. On ne mange que les tiges, et on jette le reste.",
+      "tags": [
+        "santé",
+        "botanique"
+      ]
+    },
+    {
+      "id": "gas-0043",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 9,
+      "q": "Quelle substance du chocolat est dangereuse pour les chiens ?",
+      "choices": [
+        "Le lactose",
+        "La théobromine",
+        "La caféine",
+        "Le sucre"
+      ],
+      "answer": 1,
+      "fun": "Nous l'éliminons en quelques heures, le chien met beaucoup plus longtemps. Plus le chocolat est noir, plus il en contient.",
+      "tags": [
+        "animaux",
+        "santé"
+      ]
+    },
+    {
+      "id": "gas-0044",
+      "type": "estimation",
+      "difficulty": 3,
+      "minAge": 8,
+      "q": "Quel pourcentage d'eau contient un concombre ?",
+      "answer": 96,
+      "unit": "%",
+      "tol": {
+        "pct": 8
+      },
+      "fun": "Presque rien d'autre. C'est aussi pour ça qu'il ne cale personne.",
+      "tags": [
+        "légumes"
+      ]
+    },
+    {
+      "id": "gas-0045",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "De quoi la semoule du couscous est-elle faite ?",
+      "choices": [
+        "De blé dur",
+        "De riz",
+        "De maïs",
+        "D'orge"
+      ],
+      "answer": 0,
+      "fun": "Rouler la semoule à la main, grain par grain, était un savoir-faire transmis entre femmes au Maghreb.",
+      "tags": [
+        "céréales"
+      ]
+    },
+    {
+      "id": "gas-0046",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Comment sert-on traditionnellement le gaspacho ?",
+      "choices": [
+        "Brûlant",
+        "Froid",
+        "Tiède",
+        "Glacé en granité"
+      ],
+      "answer": 1,
+      "fun": "Une soupe de tomates crues, née en Andalousie pour survivre aux étés à 40 °C.",
+      "tags": [
+        "plats"
+      ]
+    },
+    {
+      "id": "gas-0047",
+      "type": "vraifaux",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Le gruyère suisse est un fromage à trous.",
+      "answer": false,
+      "fun": "Le gruyère AOP n'a pas de trous. Celui qu'on imagine avec des trous, c'est l'emmental.",
+      "tags": [
+        "fromages",
+        "piège"
+      ]
+    },
+    {
+      "id": "gas-0048",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Quel pays produit la grande majorité du sirop d'érable mondial ?",
+      "choices": [
+        "Les États-Unis",
+        "La Suède",
+        "Le Canada",
+        "La Russie"
+      ],
+      "answer": 2,
+      "fun": "Le Québec à lui seul en fait environ les trois quarts, et l'État conserve une réserve stratégique de sirop.",
+      "tags": [
+        "origines"
+      ]
+    },
+    {
+      "id": "gas-0049",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "De quelle ville le gâteau au chocolat Sachertorte est-il originaire ?",
+      "choices": [
+        "Berlin",
+        "Vienne",
+        "Genève",
+        "Prague"
+      ],
+      "answer": 1,
+      "fun": "Deux maisons viennoises se sont disputées la recette pendant sept ans devant les tribunaux.",
+      "tags": [
+        "desserts"
+      ]
+    },
+    {
+      "id": "gas-0050",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Que sont les câpres ?",
+      "choices": [
+        "Des boutons de fleur",
+        "Des petites olives",
+        "Des graines",
+        "Des baies séchées"
+      ],
+      "answer": 0,
+      "fun": "On les cueille avant l'ouverture de la fleur, puis on les conserve dans le sel ou le vinaigre. Crues, elles sont immangeables.",
+      "tags": [
+        "condiments"
+      ]
+    },
+    {
+      "id": "gas-0051",
+      "type": "vraifaux",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Le guide Michelin a été créé par un fabricant de pneus.",
+      "answer": true,
+      "fun": "L'idée était simple : donner envie de prendre la route, donc d'user des pneus. Il était distribué gratuitement au début.",
+      "tags": [
+        "culture"
+      ]
+    },
+    {
+      "id": "gas-0052",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Le paprika est obtenu en broyant quel légume séché ?",
+      "choices": [
+        "La tomate",
+        "Le poivron",
+        "La betterave",
+        "La carotte"
+      ],
+      "answer": 1,
+      "fun": "La Hongrie en a fait son emblème national, alors que le piment vient d'Amérique.",
+      "tags": [
+        "épices"
+      ]
+    },
+    {
+      "id": "gas-0053",
+      "type": "vraifaux",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Le surimi ne contient pas de crabe.",
+      "answer": true,
+      "fun": "C'est de la chair de poisson blanc broyée, aromatisée. Le goût de crabe est ajouté, la couleur rose aussi.",
+      "tags": [
+        "piège"
+      ]
+    },
+    {
+      "id": "gas-0054",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 13,
+      "q": "Quel ingrédient donne son amertume à la bière ?",
+      "choices": [
+        "L'orge",
+        "Le houblon",
+        "La levure",
+        "Le malt"
+      ],
+      "answer": 1,
+      "fun": "Le houblon sert aussi de conservateur : les bières très houblonnées étaient celles qui survivaient au voyage vers les Indes.",
+      "tags": [
+        "alcool",
+        "boissons"
+      ]
+    },
+    {
+      "id": "gas-0055",
+      "type": "estimation",
+      "difficulty": 3,
+      "minAge": 13,
+      "q": "Combien de degrés d'alcool titre une vodka classique ?",
+      "answer": 40,
+      "unit": "%",
+      "tol": {
+        "pct": 10
+      },
+      "fun": "Le seuil de 40 % vient d'une vieille règle fiscale russe. En dessous, ça ne s'appelle plus vraiment de la vodka.",
+      "tags": [
+        "alcool"
+      ]
+    },
+    {
+      "id": "gas-0056",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "D'où vient le mot « sandwich » ?",
+      "choices": [
+        "D'un village anglais",
+        "D'un comte anglais",
+        "D'un boulanger allemand",
+        "Du néerlandais"
+      ],
+      "answer": 1,
+      "fun": "John Montagu, quatrième comte de Sandwich, se faisait servir sa viande entre deux tranches pour ne pas quitter sa table.",
+      "tags": [
+        "étymologie"
+      ]
+    },
+    {
+      "id": "gas-0057",
+      "type": "vraifaux",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "La cacahuète n'est pas un fruit à coque mais une légumineuse.",
+      "answer": true,
+      "fun": "Elle est cousine du pois et du haricot, et elle mûrit sous la terre.",
+      "tags": [
+        "botanique",
+        "piège"
+      ]
+    },
+    {
+      "id": "gas-0058",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Pour préparer quel poisson faut-il un permis spécial au Japon ?",
+      "choices": [
+        "Le poisson-chat",
+        "Le poisson-globe",
+        "Le poisson-clown",
+        "Le poisson-lune"
+      ],
+      "answer": 1,
+      "fun": "Le fugu. Son foie contient un poison contre lequel il n'existe pas d'antidote : la formation du cuisinier dure des années.",
+      "tags": [
+        "japon",
+        "insolite"
+      ]
+    },
+    {
+      "id": "gas-0059",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "En cuisine, que trouve-t-on toujours dans un plat « à la florentine » ?",
+      "choices": [
+        "Des épinards",
+        "Des tomates",
+        "Des artichauts",
+        "Du basilic"
+      ],
+      "answer": 0,
+      "fun": "On dit que Catherine de Médicis, florentine, en raffolait et en fit servir partout à la cour de France.",
+      "tags": [
+        "vocabulaire"
+      ]
+    },
+    {
+      "id": "gas-0060",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 13,
+      "q": "Lequel de ces ingrédients n'entre pas dans un mojito ?",
+      "choices": [
+        "La menthe",
+        "Le citron vert",
+        "La vodka",
+        "Le rhum"
+      ],
+      "answer": 2,
+      "fun": "Le mojito est cubain et se fait au rhum. Avec de la vodka, ça s'appelle autrement, et pas en bien.",
+      "tags": [
+        "alcool",
+        "cocktails"
+      ]
+    },
+    {
+      "id": "gas-0061",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Quel ingrédient n'a rien à faire dans une flammekueche traditionnelle ?",
+      "choices": [
+        "Les oignons",
+        "La crème",
+        "Les champignons",
+        "Les lardons"
+      ],
+      "answer": 2,
+      "fun": "La tarte flambée alsacienne cuisait dans le four à pain, le temps qu'il redescende en température. Trois minutes suffisent.",
+      "tags": [
+        "plats"
+      ]
+    },
+    {
+      "id": "gas-0062",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Avec le lait de quel animal fabrique-t-on la mozzarella di bufala campana AOP ?",
+      "choices": [
+        "La vache",
+        "La bufflonne",
+        "La brebis",
+        "La chèvre"
+      ],
+      "answer": 1,
+      "fun": "Celle des supermarchés est au lait de vache. L'AOP campanienne, elle, n'accepte que la bufflonne.",
+      "tags": [
+        "fromages"
+      ]
+    },
+    {
+      "id": "gas-0063",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Le carpaccio doit son nom à…",
+      "choices": [
+        "Un peintre",
+        "Un chef milanais",
+        "Un port italien",
+        "Un cardinal"
+      ],
+      "answer": 0,
+      "fun": "Inventé au Harry's Bar de Venise, baptisé d'après Vittore Carpaccio pour les rouges de ses tableaux, exposés en ville cette année-là.",
+      "tags": [
+        "étymologie",
+        "art"
+      ]
+    },
+    {
+      "id": "gas-0064",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Quelle molécule est responsable du goût umami ?",
+      "choices": [
+        "Le fructose",
+        "Le glutamate",
+        "La caséine",
+        "La capsaïcine"
+      ],
+      "answer": 1,
+      "fun": "Un chimiste japonais l'a isolée à partir d'une algue et a donné un nom à cette cinquième saveur que tout le monde sentait sans savoir la nommer.",
+      "tags": [
+        "science",
+        "goût"
+      ]
+    },
+    {
+      "id": "gas-0065",
+      "type": "vraifaux",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Chaque saveur est perçue par une zone précise de la langue : le sucré sur la pointe, l'amer au fond.",
+      "answer": false,
+      "fun": "C'est une vieille carte scolaire fausse, née d'une mauvaise traduction. Tous les récepteurs sont partout sur la langue.",
+      "tags": [
+        "piège",
+        "science"
+      ]
+    },
+    {
+      "id": "gas-0066",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Pourquoi une mousse à la gélatine ne prend-elle pas avec de l'ananas frais ?",
+      "choices": [
+        "Trop d'acidité",
+        "Une enzyme découpe la gélatine",
+        "Trop de sucre",
+        "Trop d'eau"
+      ],
+      "answer": 1,
+      "fun": "La broméline digère les protéines. Avec de l'ananas en boîte, cuit, ça marche : la chaleur détruit l'enzyme.",
+      "tags": [
+        "science",
+        "pâtisserie"
+      ]
+    },
+    {
+      "id": "gas-0067",
+      "type": "vraifaux",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "On déconseille de donner du miel à un bébé de moins d'un an.",
+      "answer": true,
+      "fun": "Le miel peut contenir des spores de botulisme, inoffensives pour nous mais pas pour un intestin de nourrisson.",
+      "tags": [
+        "santé"
+      ]
+    },
+    {
+      "id": "gas-0068",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Comment appelle-t-on la réaction qui dore et parfume une viande saisie ou une croûte de pain ?",
+      "choices": [
+        "La caramélisation",
+        "La réaction de Maillard",
+        "L'oxydation",
+        "La fermentation"
+      ],
+      "answer": 1,
+      "fun": "Elle porte le nom d'un médecin français, Louis-Camille Maillard. C'est elle qui distingue une viande grillée d'une viande bouillie.",
+      "tags": [
+        "science",
+        "cuisson"
+      ]
+    },
+    {
+      "id": "gas-0069",
+      "type": "vraifaux",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Le café robusta contient plus de caféine que l'arabica.",
+      "answer": true,
+      "fun": "Environ deux fois plus. La caféine est un insecticide naturel : le robusta se défend mieux, d'où son nom.",
+      "tags": [
+        "boissons"
+      ]
+    },
+    {
+      "id": "gas-0070",
+      "type": "estimation",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Combien de mois faut-il affiner au minimum un Parmigiano Reggiano AOP ?",
+      "answer": 12,
+      "unit": "mois",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Douze mois minimum, souvent vingt-quatre ou trente-six. Chaque meule est testée au marteau : le son dit si l'intérieur est sain.",
+      "tags": [
+        "fromages"
+      ]
+    },
+    {
+      "id": "gas-0071",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Quelle variété de riz utilise-t-on pour un risotto ?",
+      "choices": [
+        "Basmati",
+        "Arborio",
+        "Thaï",
+        "Riz rouge"
+      ],
+      "answer": 1,
+      "fun": "Il faut un riz qui relâche son amidon : c'est l'amidon qui rend le plat crémeux, pas la crème.",
+      "tags": [
+        "italie"
+      ]
+    },
+    {
+      "id": "gas-0072",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Laquelle de ces marques de chocolat n'est pas belge ?",
+      "choices": [
+        "Leonidas",
+        "Daskalides",
+        "Lindt",
+        "Neuhaus"
+      ],
+      "answer": 2,
+      "fun": "Lindt est suisse. C'est Neuhaus, à Bruxelles, qui a inventé la praline fourrée.",
+      "tags": [
+        "chocolat"
+      ]
+    },
+    {
+      "id": "gas-0073",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Laquelle de ces villes n'a pas donné son nom à une saucisse ?",
+      "choices": [
+        "Morteau",
+        "Montbéliard",
+        "Montauban",
+        "Strasbourg"
+      ],
+      "answer": 2,
+      "fun": "Morteau et Montbéliard sont deux IGP voisines du Doubs, fumées au bois de résineux dans un « tuyé ».",
+      "tags": [
+        "charcuterie"
+      ]
+    },
+    {
+      "id": "gas-0074",
+      "type": "vraifaux",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "La sauce Worcestershire contient des anchois.",
+      "answer": true,
+      "fun": "Elle descend en droite ligne du garum romain, une sauce de poisson fermenté. Le nuoc-mâm est un cousin.",
+      "tags": [
+        "condiments"
+      ]
+    },
+    {
+      "id": "gas-0075",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Sous quel nom connaît-on mieux l'églefin quand il est fumé ?",
+      "choices": [
+        "Le haddock",
+        "Le maquereau",
+        "Le colin",
+        "Le lieu"
+      ],
+      "answer": 0,
+      "fun": "Sa couleur jaune vient souvent d'un colorant : le fumage seul ne la donne pas.",
+      "tags": [
+        "poisson"
+      ]
+    },
+    {
+      "id": "gas-0076",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Quel est l'ingrédient de base de la frittata italienne ?",
+      "choices": [
+        "La pomme de terre",
+        "L'œuf",
+        "La farine",
+        "Le fromage"
+      ],
+      "answer": 1,
+      "fun": "Une omelette épaisse, garnie de restes, finie au four et servie ouverte. Le contraire de l'omelette française roulée.",
+      "tags": [
+        "italie"
+      ]
+    },
+    {
+      "id": "gas-0077",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Lequel de ces champignons est comestible ?",
+      "choices": [
+        "L'amanite vireuse",
+        "Le bolet Satan",
+        "La trompette de la mort",
+        "L'amanite phalloïde"
+      ],
+      "answer": 2,
+      "fun": "Malgré son nom, la trompette de la mort est un excellent champignon. Elle se ramasse en automne, et se voit très mal dans les feuilles.",
+      "tags": [
+        "piège",
+        "nature"
+      ]
+    },
+    {
+      "id": "gas-0078",
+      "type": "vraifaux",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Le curry est une épice.",
+      "answer": false,
+      "fun": "C'est un mélange, différent d'une maison à l'autre. Le mot vient d'un terme tamoul désignant simplement un plat en sauce.",
+      "tags": [
+        "épices",
+        "piège"
+      ]
+    },
+    {
+      "id": "gas-0079",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Quel effet particulier produit le poivre de Sichuan en bouche ?",
+      "choices": [
+        "Un picotement anesthésiant",
+        "Une sensation de froid",
+        "Un goût sucré",
+        "Une amertume durable"
+      ],
+      "answer": 0,
+      "fun": "Il n'est même pas apparenté au poivre : c'est une baie d'un arbuste à agrumes, et elle fait vibrer les lèvres.",
+      "tags": [
+        "épices"
+      ]
+    },
+    {
+      "id": "gas-0080",
+      "type": "estimation",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "À quelle température le beurre fond-il ?",
+      "answer": 32,
+      "unit": "°C",
+      "tol": {
+        "pct": 15
+      },
+      "fun": "Un peu en dessous de la température du corps : c'est exactement pour ça qu'il fond en bouche.",
+      "tags": [
+        "science",
+        "cuisson"
+      ]
+    },
+    {
+      "id": "gas-0081",
+      "type": "estimation",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "À partir de quelle température le sucre commence-t-il à caraméliser ?",
+      "answer": 165,
+      "unit": "°C",
+      "tol": {
+        "pct": 12
+      },
+      "fun": "Vingt degrés plus haut, c'est amer et fichu. Entre les deux, il n'y a qu'une poignée de secondes.",
+      "tags": [
+        "pâtisserie",
+        "science"
+      ]
+    },
+    {
+      "id": "gas-0082",
+      "type": "estimation",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Combien de calories apportent 100 g d'huile d'olive ?",
+      "answer": 900,
+      "unit": "kcal",
+      "tol": {
+        "pct": 10
+      },
+      "fun": "C'est le maximum possible pour un aliment : de la graisse pure, sans une goutte d'eau.",
+      "tags": [
+        "santé"
+      ]
+    },
+    {
+      "id": "gas-0083",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Pourquoi le manioc doit-il être traité avant d'être mangé ?",
+      "choices": [
+        "Il est trop dur",
+        "Il contient du cyanure",
+        "Il est trop acide",
+        "Il ne se digère pas cru"
+      ],
+      "answer": 1,
+      "fun": "Râper, tremper, presser, cuire : chaque étape en enlève une partie. Le tapioca, c'est son amidon, une fois tout cela fait.",
+      "tags": [
+        "santé",
+        "origines"
+      ]
+    },
+    {
+      "id": "gas-0084",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Qu'est-ce qui donne au roquefort ses veines bleues ?",
+      "choices": [
+        "Une moisissure",
+        "Une algue",
+        "Un colorant",
+        "Une bactérie du lait"
+      ],
+      "answer": 0,
+      "fun": "Un champignon, Penicillium roqueforti, cultivé à l'origine sur du pain de seigle laissé à moisir dans les caves.",
+      "tags": [
+        "fromages",
+        "science"
+      ]
+    },
+    {
+      "id": "gas-0085",
+      "type": "vraifaux",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Un vin effervescent produit en France hors de la Champagne peut être appelé champagne s'il suit la même méthode.",
+      "answer": false,
+      "fun": "Même méthode, autre nom : ce sera un crémant. L'appellation est l'une des plus férocement défendues au monde.",
+      "tags": [
+        "alcool",
+        "piège"
+      ]
+    },
+    {
+      "id": "gas-0086",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Que garantit la mention « single malt » sur une bouteille de whisky ?",
+      "choices": [
+        "Un seul type de fût",
+        "Une seule distillerie",
+        "Une seule année de récolte",
+        "Un seul passage en alambic"
+      ],
+      "answer": 1,
+      "fun": "Un seul établissement, et de l'orge maltée uniquement. Ça n'empêche pas d'assembler des fûts d'âges différents.",
+      "tags": [
+        "alcool"
+      ]
+    },
+    {
+      "id": "gas-0087",
+      "type": "estimation",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Combien pèse une baguette de pain ordinaire ?",
+      "answer": 250,
+      "unit": "g",
+      "tol": {
+        "pct": 20
+      },
+      "fun": "Un quart de kilo pour environ 65 cm. La ficelle en fait la moitié, le pain fait le double.",
+      "tags": [
+        "boulangerie"
+      ]
+    },
+    {
+      "id": "gas-0088",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "En boucherie, que désignent l'araignée, la hampe et la poire ?",
+      "choices": [
+        "Des morceaux de bœuf",
+        "Des découpes de porc",
+        "Des abats",
+        "Des types de cuisson"
+      ],
+      "answer": 0,
+      "fun": "Les morceaux du boucher : peu nombreux, très bons, longtemps gardés pour l'arrière-boutique.",
+      "tags": [
+        "viande",
+        "vocabulaire"
+      ]
+    },
+    {
+      "id": "gas-0089",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Quel ingrédient n'entre pas dans le thé tibétain traditionnel ?",
+      "choices": [
+        "Le beurre",
+        "Le sel",
+        "Le citron",
+        "Le lait"
+      ],
+      "answer": 2,
+      "fun": "Beurre de yak et sel : plus proche d'un bouillon que d'un thé. À 4 000 mètres, ça tient au corps.",
+      "tags": [
+        "boissons"
+      ]
+    },
+    {
+      "id": "gas-0090",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Lequel de ces plats n'est pas une spécialité à base de fromage fondu ?",
+      "choices": [
+        "L'aligot",
+        "La truffade",
+        "La garbure",
+        "La raclette"
+      ],
+      "answer": 2,
+      "fun": "La garbure est une soupe béarnaise au chou et au confit. L'aligot, lui, se travaille à la tome fraîche jusqu'à filer.",
+      "tags": [
+        "fromages",
+        "régions"
+      ]
+    },
+    {
+      "id": "gas-0091",
+      "type": "estimation",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Quel pourcentage minimum de maïs la loi américaine impose-t-elle pour qu'un whiskey soit un bourbon ?",
+      "answer": 51,
+      "unit": "%",
+      "tol": {
+        "pct": 10
+      },
+      "fun": "Le reste est libre : seigle, blé ou orge. Et le fût doit être neuf et brûlé à l'intérieur, ce qui donne la couleur.",
+      "tags": [
+        "alcool"
+      ]
+    },
+    {
+      "id": "gas-0092",
+      "type": "vraifaux",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Par son mode de fabrication, le saké est plus proche de la bière que du vin.",
+      "answer": true,
+      "fun": "On part d'un amidon, le riz, qu'il faut d'abord convertir en sucre. Le vin, lui, part d'un jus déjà sucré.",
+      "tags": [
+        "alcool",
+        "piège"
+      ]
+    },
+    {
+      "id": "gas-0093",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Que mesure-t-on pour classer une huile d'olive en « vierge extra » ?",
+      "choices": [
+        "Son acidité",
+        "Sa densité",
+        "Sa couleur",
+        "Son taux d'eau"
+      ],
+      "answer": 0,
+      "fun": "Moins de 0,8 % d'acidité libre, et aucun défaut au goût. Une huile trop acide trahit des olives abîmées ou pressées trop tard.",
+      "tags": [
+        "technique"
+      ]
+    },
+    {
+      "id": "gas-0094",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "En cuisine, qu'est-ce qu'une brunoise ?",
+      "choices": [
+        "Une découpe en tout petits dés",
+        "Une sauce brune",
+        "Une cuisson au four",
+        "Un bouillon clarifié"
+      ],
+      "answer": 0,
+      "fun": "Des dés de deux à trois millimètres. C'est l'exercice qui trahit immédiatement un cuisinier pressé.",
+      "tags": [
+        "technique",
+        "vocabulaire"
+      ]
+    },
+    {
+      "id": "gas-0095",
+      "type": "estimation",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Combien de mois dure l'affinage minimum d'un comté AOP ?",
+      "answer": 4,
+      "unit": "mois",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Quatre mois pour le minimum légal, mais les meules intéressantes commencent vers douze, et certaines tiennent trois ans.",
+      "tags": [
+        "fromages"
+      ]
+    },
+    {
+      "id": "gas-0096",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "De quoi est composé le dashi, bouillon de base de la cuisine japonaise ?",
+      "choices": [
+        "Algue kombu et bonite séchée",
+        "Os de porc et gingembre",
+        "Poulet et soja",
+        "Champignons et miso"
+      ],
+      "answer": 0,
+      "fun": "Deux ingrédients, dix minutes, et une bombe d'umami. C'est la base de presque toutes les soupes japonaises.",
+      "tags": [
+        "japon",
+        "technique"
+      ]
+    },
+    {
+      "id": "gas-0097",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Qu'est-ce que le gochujang coréen ?",
+      "choices": [
+        "Une pâte de piment fermentée",
+        "Un alcool de riz",
+        "Un vinaigre noir",
+        "Une algue confite"
+      ],
+      "answer": 0,
+      "fun": "Piment, riz gluant et soja, fermentés des mois en jarre. Sucré, salé et piquant en même temps.",
+      "tags": [
+        "condiments",
+        "corée"
+      ]
+    },
+    {
+      "id": "gas-0098",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Le kopi luwak, l'un des cafés les plus chers au monde, doit sa particularité à quoi ?",
+      "choices": [
+        "Une altitude extrême",
+        "Un passage dans le tube digestif d'une civette",
+        "Un séchage sous la neige",
+        "Une torréfaction au charbon"
+      ],
+      "answer": 1,
+      "fun": "L'animal mange les cerises, digère la pulpe, et les grains ressortent entiers. Le procédé a hélas donné naissance à des élevages en cage.",
+      "tags": [
+        "boissons",
+        "insolite"
+      ]
+    },
+    {
+      "id": "gas-0099",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Qu'est-ce qui rend le fromage sarde casu marzu si particulier ?",
+      "choices": [
+        "Il est affiné sous la mer",
+        "Il contient des larves vivantes",
+        "Il est fait de lait humain",
+        "Il se mange gelé"
+      ],
+      "answer": 1,
+      "fun": "Des larves de mouche y digèrent la pâte. Sa vente est interdite dans l'Union européenne, ce qui n'a jamais arrêté grand monde en Sardaigne.",
+      "tags": [
+        "fromages",
+        "insolite"
+      ]
+    },
+    {
+      "id": "gas-0100",
+      "type": "estimation",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Quelle est la contenance, en centilitres, d'un clavelin, la bouteille du vin jaune du Jura ?",
+      "answer": 62,
+      "unit": "cl",
+      "tol": {
+        "exact": true
+      },
+      "fun": "C'est ce qui reste d'un litre après six ans et trois mois sous voile de levure. Le reste s'est évaporé.",
+      "tags": [
+        "alcool",
+        "insolite"
       ]
     }
   ]

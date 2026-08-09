@@ -1,47 +1,61 @@
 /* =====================================================================
    Quiz Famille · js/profil.js
-   Profils et statistiques. Dépend de js/api.js pour le réseau.
+   Le profil de jeu : prénom, date de naissance, avatar, statistiques.
 
-   L'identité, c'est un surnom que toi seul connais. Il ne quitte jamais
-   ton navigateur : on n'envoie que son empreinte SHA-256. La base ne
-   peut donc pas te le révéler, même si quelqu'un la lisait en entier.
+   L'identité vient de js/auth.js (email + mot de passe). Ici on ne
+   manipule que ce que les autres joueurs ont le droit de voir.
+   L'email n'apparaît nulle part dans ces données, c'est volontaire :
+   on joue avec des prénoms, pas avec des adresses.
+
+   On stocke la DATE DE NAISSANCE, jamais l'âge. L'âge se recalcule ;
+   un âge stocké devient faux au premier anniversaire.
    ===================================================================== */
 (function (global) {
 'use strict';
 
 var LS = 'quiz.profil.v1';
-var SEL = 'quiz-famille:';   // sel fixe, contre les tables arc-en-ciel toutes faites
+var P  = null;
 
-function rpc(nom, corps) {
-  return global.Quiz.api('/rpc/' + nom, { method: 'POST', body: corps || {} });
+function garder(p) {
+  P = p;
+  try { p ? localStorage.setItem(LS, JSON.stringify(p)) : localStorage.removeItem(LS); }
+  catch (e) {}
+  document.dispatchEvent(new CustomEvent('quiz:profil', { detail: p || null }));
+}
+function courant() {
+  if (P) return P;
+  try { P = JSON.parse(localStorage.getItem(LS)); } catch (e) { P = null; }
+  return P;
 }
 
-/* crypto.subtle n'existe qu'en HTTPS ou sur localhost. En double-clic
-   depuis le disque, cette page ne marchera pas, et c'est normal. */
-async function empreinte(surnom) {
-  if (!global.crypto || !crypto.subtle) throw new Error('Cette page doit être ouverte en HTTPS.');
-  var texte = SEL + String(surnom).trim().toLowerCase();
-  var bin = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(texte));
-  return Array.from(new Uint8Array(bin))
-    .map(function (o) { return o.toString(16).padStart(2, '0'); }).join('');
+/* Va chercher le profil en base. Renvoie null si l'utilisateur est
+   connecté mais n'a pas encore rempli son profil — c'est l'état normal
+   juste après la confirmation de l'email. */
+async function charger() {
+  if (!global.Quiz.Auth.connecte()) { garder(null); return null; }
+  var r = await global.Quiz.rpc('mon_profil', {});
+  var p = (r && r[0]) || null;
+  garder(p);
+  return p;
 }
 
-function dire(e) {
-  var m = (e && e.message) || '';
-  if (m.indexOf('surnom_pris') >= 0)     return 'Ce surnom est déjà pris. Trouves-en un autre.';
-  if (m.indexOf('surnom_inconnu') >= 0)  return 'Aucun profil avec ce surnom.';
-  if (m.indexOf('hash_invalide') >= 0)   return 'Surnom illisible, réessaie.';
-  if (m.indexOf('Failed to fetch') >= 0) return 'Pas de réseau. Le jeu marche quand même, sans historique.';
-  return m || 'Erreur inconnue.';
+async function creer(prenom, naissance, avatar, couleur) {
+  var r = await global.Quiz.rpc('creer_profil', {
+    p_prenom: prenom, p_naissance: naissance,
+    p_avatar: avatar || null, p_couleur: couleur || '#D8A94B'
+  });
+  garder(r && r[0]); return P;
 }
 
-/* ---- session locale -------------------------------------------------
-   On garde l'empreinte sur l'appareil pour ne pas retaper le surnom à
-   chaque partie. Qui a le téléphone déverrouillé est donc le joueur :
-   assumé, c'est un jeu de famille. */
-function garder(p) { try { localStorage.setItem(LS, JSON.stringify(p)); } catch (e) {} }
-function courant() { try { return JSON.parse(localStorage.getItem(LS)); } catch (e) { return null; } }
-function oublier() { try { localStorage.removeItem(LS); } catch (e) {} }
+async function maj(champs) {
+  var r = await global.Quiz.rpc('maj_profil', {
+    p_prenom:    champs.prenom    || null,
+    p_naissance: champs.naissance || null,
+    p_avatar:    champs.avatar    || null,
+    p_couleur:   champs.couleur   || null
+  });
+  garder(r && r[0]); return P;
+}
 
 function age(naissance) {
   var n = new Date(naissance), a = new Date();
@@ -52,62 +66,31 @@ function age(naissance) {
 }
 function handicapPour(a) { return a <= 7 ? 'enfant' : a <= 10 ? 'decouverte' : 'normal'; }
 
-async function creer(surnom, prenom, naissance, avatar, couleur) {
-  var h = await empreinte(surnom);
-  var r = await rpc('creer_profil', {
-    p_hash: h, p_prenom: prenom, p_naissance: naissance,
-    p_avatar: avatar || null, p_couleur: couleur || '#D8A94B'
-  });
-  var p = r[0]; p.hash = h; p.surnom = surnom; garder(p); return p;
-}
-
-async function connexion(surnom) {
-  var h = await empreinte(surnom);
-  var r = await rpc('connexion', { p_hash: h });
-  var p = r[0]; p.hash = h; p.surnom = surnom; garder(p); return p;
-}
-
-async function maj(champs) {
-  var p = courant();
-  if (!p) throw new Error('surnom_inconnu');
-  await rpc('maj_profil', {
-    p_hash: p.hash,
-    p_prenom: champs.prenom || null,
-    p_naissance: champs.naissance || null,
-    p_avatar: champs.avatar || null,
-    p_couleur: champs.couleur || null
-  });
-  Object.keys(champs).forEach(function (k) { if (champs[k]) p[k] = champs[k]; });
-  garder(p); return p;
-}
-
-/* Ce que le jeu affiche des autres : prénom, avatar, âge. Jamais le surnom. */
-async function publique(id) {
-  var r = await global.Quiz.api('/profils_publics?id=eq.' + encodeURIComponent(id) + '&select=*');
-  return r && r[0];
-}
-
-/* ---- écriture d'une partie -----------------------------------------
-   Une seule requête, en fin de partie. Le jeu ne dépend jamais de son
-   succès : si ça casse, on a joué quand même. */
-async function enregistrerPartie(mode, salon, lignes, reponses) {
-  return rpc('enregistrer_partie', {
+/* Écriture d'une partie. Une seule requête, en fin de partie.
+   Le jeu ne dépend jamais de son succès : si ça casse, on a joué. */
+function enregistrerPartie(mode, salon, lignes, reponses) {
+  return global.Quiz.rpc('enregistrer_partie', {
     p_mode: mode, p_salon: salon || null,
-    p_lignes: lignes, p_reponses: reponses || []
+    p_lignes: lignes || [], p_reponses: reponses || []
   });
 }
 
-/* ---- statistiques --------------------------------------------------- */
 var stats = {
-  global:     function (id) { return rpc('stats_global',     { p_profil: id }).then(function (r) { return r[0]; }); },
-  categories: function (id) { return rpc('stats_categories', { p_profil: id }); },
-  difficulte: function (id) { return rpc('stats_difficulte', { p_profil: id }); },
-  periode:    function (id, grain) { return rpc('stats_periode', { p_profil: id, p_grain: grain || 'week' }); }
+  global:     function (id) { return global.Quiz.rpc('stats_global',     { p_profil: id }).then(function (r) { return r && r[0]; }); },
+  categories: function (id) { return global.Quiz.rpc('stats_categories', { p_profil: id }); },
+  difficulte: function (id) { return global.Quiz.rpc('stats_difficulte', { p_profil: id }); },
+  periode:    function (id, g) { return global.Quiz.rpc('stats_periode', { p_profil: id, p_grain: g || 'week' }); }
 };
 
-/* ---- photo ----------------------------------------------------------
-   96 px de côté, recadrée au centre, en WebP. Une photo de téléphone
-   fait 4 Mo ; celle-ci fera 4 Ko et tient dans une colonne texte. */
+function classement(jours, minimum) {
+  return global.Quiz.rpc('classement', {
+    p_jours: jours || 90, p_minimum: minimum === undefined ? 20 : minimum
+  });
+}
+
+/* Photo réduite à 96 px, recadrée au centre, en WebP. Une photo de
+   téléphone fait 4 Mo ; celle-ci fait 4 Ko et tient dans une colonne
+   texte, sans avoir à monter un bucket Storage. */
 function photo96(fichier) {
   return new Promise(function (ok, non) {
     var img = new Image(), url = URL.createObjectURL(fichier);
@@ -118,7 +101,7 @@ function photo96(fichier) {
       x.drawImage(img, (img.width - cote) / 2, (img.height - cote) / 2, cote, cote, 0, 0, 96, 96);
       URL.revokeObjectURL(url);
       var d = c.toDataURL('image/webp', 0.8);
-      if (d.indexOf('data:image/webp') !== 0) d = c.toDataURL('image/jpeg', 0.8);  // vieux Safari
+      if (d.indexOf('data:image/webp') !== 0) d = c.toDataURL('image/jpeg', 0.8); // vieux Safari
       ok(d);
     };
     img.onerror = function () { URL.revokeObjectURL(url); non(new Error('Image illisible.')); };
@@ -128,10 +111,10 @@ function photo96(fichier) {
 
 global.Quiz = global.Quiz || {};
 global.Quiz.Profil = {
-  empreinte: empreinte, dire: dire, creer: creer, connexion: connexion, maj: maj,
-  courant: courant, oublier: oublier, publique: publique, photo96: photo96,
-  age: age, handicapPour: handicapPour,
-  enregistrerPartie: enregistrerPartie, stats: stats
+  courant: courant, charger: charger, creer: creer, maj: maj,
+  age: age, handicapPour: handicapPour, photo96: photo96,
+  enregistrerPartie: enregistrerPartie, stats: stats, classement: classement,
+  COULEURS: ['#D8A94B','#3FA9C9','#C8372D','#4FA96B','#8E6BB8','#E08A3C']
 };
 
 })(window);

@@ -4,139 +4,243 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Quiz Famille</title>
+<meta name="theme-color" content="#0A2A24">
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <script>
 tailwind.config = { theme: { extend: {
   fontFamily: { sans:['Inter','sans-serif'], serif:['Playfair Display','serif'] },
-  colors: { q: { blue:'#41B6E6', dark:'#002B49', red:'#E4002B', sand:'#F5F1EA' } }
+  colors: { q: { blue:'#3FA9C9', dark:'#0A2A24', red:'#C8372D', sand:'#F4EAD5', or:'#D8A94B' } }
 }}}
 </script>
 <style>
-  body{background:#0b1a26}
-  .hero-pattern{background-color:#002B49;
-    background-image:radial-gradient(circle at 20% 10%,rgba(65,182,230,.22),transparent 45%),
-                     radial-gradient(circle at 85% 70%,rgba(228,0,43,.18),transparent 50%)}
-  .card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);
-    border-radius:1.25rem;backdrop-filter:blur(8px)}
-  .kicker{font-size:.68rem;font-weight:800;letter-spacing:.26em;text-transform:uppercase}
-  .kicker-line{display:block;height:3px;width:60px;background:#E4002B;margin:.55rem 0 0;border-radius:2px}
-  .btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;
-    padding:.85rem 1.3rem;border-radius:.8rem;font-size:.9rem;font-weight:700;cursor:pointer;
-    border:1px solid transparent;transition:all .25s cubic-bezier(.16,1,.3,1);min-height:48px}
-  .btn:disabled{opacity:.4;cursor:not-allowed}
-  .btn-primary{background:#41B6E6;color:#002B49}
-  .btn-primary:hover:not(:disabled){background:#6cc9ee;transform:translateY(-2px)}
-  .btn-ghost{background:rgba(255,255,255,.06);color:#e2e8f0;border-color:rgba(255,255,255,.14)}
-  .btn-ghost:hover:not(:disabled){background:rgba(255,255,255,.12);transform:translateY(-2px)}
-  .btn.actif{background:rgba(65,182,230,.18);border-color:#41B6E6;color:#fff}
-  .inp{width:100%;background:rgba(0,0,0,.32);border:1px solid rgba(255,255,255,.13);
-    border-radius:.7rem;padding:.7rem .9rem;color:#f1f5f9;font-size:.95rem;min-height:46px}
-  .inp:focus{outline:none;border-color:#41B6E6;box-shadow:0 0 0 3px rgba(65,182,230,.14)}
-  .lbl{font-size:.66rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
-    color:#7e93a6;display:block;margin-bottom:.35rem}
-  .cat-tuile{position:relative;text-align:left;padding:1rem;border-radius:1rem;
-    background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.09);color:#94a3b8;
-    transition:all .25s cubic-bezier(.16,1,.3,1);cursor:pointer;min-height:112px}
-  .cat-tuile:hover{transform:translateY(-2px)}
-  .cat-tuile i{font-size:1.3rem;color:var(--c)}
-  .cat-nom{display:block;font-weight:700;color:#e2e8f0;margin-top:.5rem;font-size:.95rem}
-  .cat-blurb{display:block;font-size:.72rem;line-height:1.4;margin-top:.25rem;color:#64748b}
-  .cat-age{display:block;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;
-    margin-top:.45rem;color:#475569}
-  .cat-tuile.on{background:color-mix(in srgb, var(--c) 14%, transparent);border-color:var(--c)}
-  .cat-tuile.on .cat-nom{color:#fff}
-  .cat-tuile.on::after{content:"\f00c";font-family:"Font Awesome 6 Free";font-weight:900;
-    position:absolute;top:.8rem;right:.9rem;color:var(--c);font-size:.8rem}
-  .prop{display:block;width:100%;text-align:left;background:rgba(0,0,0,.28);
-    border:1px solid rgba(255,255,255,.08);border-radius:.9rem;padding:1rem 1.15rem;
-    font-size:1.05rem;color:#e2e8f0;min-height:60px}
-  .prop-btn{cursor:pointer;transition:all .25s cubic-bezier(.16,1,.3,1)}
-  .prop-btn:hover:not(:disabled){border-color:#41B6E6;background:rgba(65,182,230,.1);transform:translateY(-2px)}
-  .prop-btn:disabled{opacity:.55;cursor:default}
-  .lettre{display:inline-block;width:1.6rem;font-weight:800;color:#41B6E6}
-  .verdict-bon{border-color:rgba(52,211,153,.45)!important;background:rgba(52,211,153,.07)!important}
-  .verdict-faux{border-color:rgba(228,0,43,.45)!important;background:rgba(228,0,43,.07)!important}
-  table{width:100%;border-collapse:collapse;font-size:.85rem}
-  th{text-align:left;font-size:.62rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
-    color:#7e93a6;padding:.5rem .6rem;border-bottom:1px solid rgba(255,255,255,.1)}
-  td{padding:.6rem .6rem;border-bottom:1px solid rgba(255,255,255,.055);color:#cbd5e1}
-  input[type=range]{accent-color:#41B6E6}
+/* =========================================================
+   Même charte que reflexe.html : feutre, papier, laiton.
+   Tokens à la manière de css/pages.css du site RFE.
+   ========================================================= */
+:root{
+  --feutre:#0E3B32; --feutre-bas:#082019; --feutre-panneau:#12463C;
+  --creme:#F4EAD5; --creme-ombre:#E2D3B4; --encre:#17241F; --encre-pale:#5C6F66;
+  --laiton:#D8A94B; --laiton-clair:#F0C978; --cerise:#C8372D; --paon:#3FA9C9;
+  --vert-ok:#4FA96B;
+  --r-sm:10px; --r-md:14px; --r-lg:20px; --r-xl:26px; --r-full:999px;
+  --o-douce:0 6px 20px rgba(0,0,0,.22);
+  --o-carte:0 18px 40px rgba(0,0,0,.34), 0 2px 0 rgba(255,255,255,.55) inset;
+  --o-laiton:0 8px 22px rgba(216,169,75,.32);
+  --glisse:all .3s cubic-bezier(.16,1,.3,1);
+}
+*{-webkit-tap-highlight-color:transparent}
+body{
+  margin:0;min-height:100dvh;font-family:Inter,-apple-system,sans-serif;color:var(--creme);
+  background:
+    radial-gradient(ellipse at 15% -10%, rgba(21,86,74,.85), transparent 55%),
+    radial-gradient(ellipse at 90% 105%, rgba(216,169,75,.10), transparent 50%),
+    linear-gradient(170deg, var(--feutre) 0%, var(--feutre-bas) 100%);
+  background-attachment:fixed;}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.5;z-index:0;
+  background-image:
+    repeating-linear-gradient(45deg, rgba(255,255,255,.014) 0 2px, transparent 2px 4px),
+    repeating-linear-gradient(-45deg, rgba(0,0,0,.03) 0 2px, transparent 2px 4px);}
+.ecran{position:relative;z-index:1}
 
-  /* .btn-red manquait : braquage.js s'en sert, ses boutons étaient transparents */
-  .btn-red{background:#E4002B;color:#fff}
-  .btn-red:hover:not(:disabled){background:#ff2549;transform:translateY(-2px)}
+/* ---------- typographie ---------- */
+.titre{font-family:'Playfair Display',serif;font-weight:900;line-height:1.04;color:#fff}
+.kicker{font-size:.66rem;letter-spacing:.28em;text-transform:uppercase;font-weight:800;color:var(--laiton)}
+.kicker-line{display:block;height:2px;width:52px;margin:.5rem 0 0;border-radius:2px;
+  background:linear-gradient(90deg,var(--laiton),transparent)}
+.mini{font-size:.72rem;color:rgba(244,234,213,.55);line-height:1.55}
+.creme{color:var(--creme)}
 
-  /* Choix du mode : une grille de cartes. Les modes injectent leur bouton
-     dans #modes, ces règles le remettent en forme quoi qu'il arrive. */
-  #modes{display:grid;grid-template-columns:1fr;gap:.85rem}
-  @media (min-width:640px){#modes{grid-template-columns:1fr 1fr}}
-  #modes>button{
-    position:relative;display:block;width:100%;flex:none;text-align:left;
-    min-height:98px;padding:1.15rem 1.25rem 1.15rem 4rem;
-    border-radius:1rem;border:1px solid rgba(255,255,255,.10);
-    background:rgba(255,255,255,.035);color:#fff;
-    font-size:1.02rem;font-weight:700;line-height:1.25;cursor:pointer;
-    transition:all .28s cubic-bezier(.16,1,.3,1)}
-  #modes>button>i{
-    position:absolute;left:1.3rem;top:1.25rem;width:1.7rem;text-align:center;
-    font-size:1.4rem;color:var(--c)}
-  #modes>button::after{
-    display:block;margin-top:.35rem;font-size:.74rem;font-weight:400;
-    line-height:1.45;color:#7e93a6;white-space:normal}
-  #modes>button:hover:not(:disabled){
-    transform:translateY(-3px);border-color:var(--c);
-    background:color-mix(in srgb,var(--c) 13%,transparent)}
-  #modes>button:disabled{opacity:.42;cursor:not-allowed;transform:none}
+/* ---------- le camembert ---------- */
+.parts{position:absolute;border-radius:50%;opacity:.16;filter:blur(1px);pointer-events:none;
+  background:conic-gradient(#3FA9C9 0 60deg,#C8372D 60deg 120deg,#D8A94B 120deg 180deg,
+                            #4FA96B 180deg 240deg,#8E6BB8 240deg 300deg,#E08A3C 300deg 360deg);
+  -webkit-mask:radial-gradient(circle, transparent 34%, #000 35%);
+          mask:radial-gradient(circle, transparent 34%, #000 35%);}
+.pastilles{display:flex;gap:.4rem;justify-content:center;margin:1.1rem 0}
+.pastilles i{width:.55rem;height:.55rem;border-radius:50%;display:block}
 
-  #btnJouerPartie{--c:#41B6E6}
-  #btnJouerPartie::after{content:"Chacun son tour, une question, des points. Le plus simple pour commencer."}
-  #btnBraquage{--c:#E4002B}
-  #btnBraquage::after{content:"En équipes. Trois jokers, du vol de points, et une mise sur la dernière question."}
-  #btnSolo{--c:#a78bfa}
-  #btnSolo::after{content:"Tout seul, contre ton propre record."}
-  #btnChrono{--c:#f59e0b}
-  #btnChrono::after{content:"Soixante secondes en relais. On enchaîne, on ne réfléchit pas."}
-  #btnCamembert{--c:#22c55e}
-  #btnCamembert::after{content:"Le dé, les parts à remplir, la question du centre pour finir."}
-  #btnReflexe{--c:#fbbf24}
-  #btnReflexe::after{content:"Chacun sur son téléphone, la même question au même instant. Sans tablette au milieu."}
+/* ---------- panneaux et papier ---------- */
+.card{background:linear-gradient(160deg, var(--feutre-panneau), rgba(8,32,25,.75));
+  border:1px solid rgba(216,169,75,.22);border-radius:var(--r-lg);box-shadow:var(--o-douce)}
+.carte-papier{background:linear-gradient(168deg,#FBF4E6 0%,var(--creme) 55%,var(--creme-ombre) 100%);
+  color:var(--encre);border-radius:var(--r-xl);padding:1.7rem 1.6rem;
+  box-shadow:var(--o-carte);position:relative;overflow:hidden}
+.carte-papier::before{content:"";position:absolute;inset:.45rem;border:1px solid rgba(23,36,31,.13);
+  border-radius:calc(var(--r-xl) - .45rem);pointer-events:none}
+.carte-papier .enonce{font-family:'Playfair Display',serif;font-weight:700;
+  font-size:clamp(1.4rem,4.6vw,2rem);line-height:1.26}
+
+/* ---------- boutons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;
+  min-height:52px;padding:.9rem 1.3rem;border-radius:var(--r-full);
+  font-weight:700;font-size:.95rem;cursor:pointer;border:1px solid transparent;transition:var(--glisse)}
+.btn:active:not(:disabled){transform:scale(.975)}
+.btn:disabled{opacity:.38;cursor:not-allowed}
+.btn-primary{background:linear-gradient(135deg,var(--laiton-clair),var(--laiton));
+  color:#2A1E06;box-shadow:var(--o-laiton)}
+.btn-primary:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 12px 28px rgba(216,169,75,.4)}
+.btn-ghost{background:rgba(244,234,213,.05);border-color:rgba(244,234,213,.24);color:var(--creme)}
+.btn-ghost:hover:not(:disabled){background:rgba(244,234,213,.11);transform:translateY(-2px)}
+.btn-red{background:var(--cerise);color:#fff}
+.btn-red:hover:not(:disabled){background:#DC4C41;transform:translateY(-2px)}
+.btn.actif{background:rgba(216,169,75,.2);border-color:var(--laiton);color:#fff}
+
+/* ---------- champs ---------- */
+.inp{width:100%;padding:.8rem 1rem;border-radius:var(--r-md);font-size:1rem;min-height:48px;
+  background:rgba(8,32,25,.5);border:1px solid rgba(244,234,213,.18);color:#fff;transition:var(--glisse)}
+.inp::placeholder{color:rgba(244,234,213,.3)}
+.inp:focus{outline:none;border-color:var(--laiton);box-shadow:0 0 0 3px rgba(216,169,75,.16)}
+.lbl{display:block;margin-bottom:.35rem;font-size:.62rem;font-weight:800;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--laiton)}
+
+/* ---------- les deux portes de l'accueil ---------- */
+.porte{position:relative;display:block;width:100%;text-align:left;cursor:pointer;
+  padding:1.6rem 1.5rem 1.5rem;border-radius:var(--r-xl);overflow:hidden;
+  background:linear-gradient(160deg, var(--feutre-panneau), rgba(8,32,25,.85));
+  border:1px solid rgba(216,169,75,.24);box-shadow:var(--o-douce);transition:var(--glisse)}
+.porte:hover{transform:translateY(-3px);border-color:var(--laiton);box-shadow:0 16px 36px rgba(0,0,0,.34)}
+.porte i.ico{font-size:1.7rem;color:var(--laiton-clair)}
+.porte b{display:block;font-family:'Playfair Display',serif;font-weight:900;
+  font-size:1.5rem;color:#fff;margin-top:.7rem}
+.porte span{display:block;font-size:.8rem;line-height:1.5;color:rgba(244,234,213,.62);margin-top:.4rem}
+.porte em{display:inline-block;margin-top:.9rem;font-style:normal;font-size:.62rem;font-weight:800;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--laiton)}
+
+/* ---------- tuiles de catégories ---------- */
+.cat-tuile{position:relative;text-align:left;padding:1rem;border-radius:var(--r-md);min-height:118px;
+  background:rgba(244,234,213,.04);border:1px solid rgba(244,234,213,.12);
+  color:rgba(244,234,213,.6);cursor:pointer;transition:var(--glisse)}
+.cat-tuile:hover{transform:translateY(-2px)}
+.cat-tuile i{font-size:1.3rem;color:var(--c)}
+.cat-nom{display:block;font-weight:700;color:var(--creme);margin-top:.5rem;font-size:.95rem}
+.cat-blurb{display:block;font-size:.72rem;line-height:1.4;margin-top:.25rem;color:rgba(244,234,213,.45)}
+.cat-age{display:block;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;
+  margin-top:.45rem;color:var(--laiton);opacity:.7}
+.cat-tuile.on{background:color-mix(in srgb, var(--c) 20%, transparent);border-color:var(--c)}
+.cat-tuile.on .cat-nom{color:#fff}
+.cat-tuile.on::after{content:"\f00c";font-family:"Font Awesome 6 Free";font-weight:900;
+  position:absolute;top:.8rem;right:.9rem;color:var(--c);font-size:.8rem}
+
+/* ---------- propositions : des cartons crème ---------- */
+.prop{display:block;width:100%;text-align:left;margin-bottom:.7rem;padding:1.1rem 1.15rem;
+  border-radius:var(--r-md);font-size:1.05rem;font-weight:600;min-height:60px;
+  background:linear-gradient(170deg,#FBF4E6,var(--creme));color:var(--encre);
+  border:1px solid var(--creme-ombre);box-shadow:0 4px 0 rgba(0,0,0,.22)}
+.prop-btn{cursor:pointer;transition:var(--glisse)}
+.prop-btn:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 7px 0 rgba(0,0,0,.24)}
+.prop-btn:active:not(:disabled){transform:translateY(2px);box-shadow:0 1px 0 rgba(0,0,0,.22)}
+.prop-btn:disabled{opacity:.62;cursor:default;box-shadow:0 2px 0 rgba(0,0,0,.18)}
+.lettre{display:inline-flex;width:1.9rem;height:1.9rem;margin-right:.7rem;border-radius:50%;
+  align-items:center;justify-content:center;font-weight:900;font-size:.85rem;
+  background:var(--feutre);color:var(--laiton-clair)}
+.verdict-bon{background:linear-gradient(170deg,#EAF6E9,#D8EED6)!important;
+  border-color:#8FC49A!important;box-shadow:0 4px 0 rgba(37,92,50,.3)!important}
+.verdict-faux{background:linear-gradient(170deg,#FBE9E6,#F2D6D1)!important;
+  border-color:#D89A90!important;box-shadow:0 4px 0 rgba(120,40,32,.28)!important}
+
+/* ---------- grille des modes ---------- */
+#modes{display:grid;grid-template-columns:1fr;gap:.85rem}
+@media (min-width:640px){#modes{grid-template-columns:1fr 1fr}}
+#modes>button{position:relative;display:block;width:100%;flex:none;text-align:left;
+  min-height:104px;padding:1.2rem 1.3rem 1.2rem 4.1rem;border-radius:var(--r-lg);
+  border:1px solid rgba(244,234,213,.12);background:rgba(244,234,213,.04);
+  color:#fff;font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:900;
+  line-height:1.15;cursor:pointer;transition:var(--glisse)}
+#modes>button>i{position:absolute;left:1.35rem;top:1.35rem;width:1.7rem;text-align:center;
+  font-size:1.4rem;color:var(--c)}
+#modes>button::after{display:block;margin-top:.4rem;font-family:Inter,sans-serif;font-size:.75rem;
+  font-weight:400;line-height:1.45;color:rgba(244,234,213,.5);white-space:normal}
+#modes>button:hover:not(:disabled){transform:translateY(-3px);border-color:var(--c);
+  background:color-mix(in srgb,var(--c) 14%,transparent)}
+#modes>button:disabled{opacity:.4;cursor:not-allowed;transform:none}
+#btnJouerPartie{--c:#D8A94B}
+#btnJouerPartie::after{content:"Chacun son tour, une question, des points. Le plus simple pour commencer."}
+#btnBraquage{--c:#C8372D}
+#btnBraquage::after{content:"En équipes. Trois jokers, du vol de points, et une mise sur la dernière question."}
+#btnSolo{--c:#8E6BB8}
+#btnSolo::after{content:"Tout seul, contre ton propre record."}
+#btnChrono{--c:#E08A3C}
+#btnChrono::after{content:"Soixante secondes en relais. On enchaîne, on ne réfléchit pas."}
+#btnCamembert{--c:#4FA96B}
+#btnCamembert::after{content:"Le dé, les parts à remplir, la question du centre pour finir."}
+
+/* ---------- tableaux ---------- */
+table{width:100%;border-collapse:collapse;font-size:.87rem}
+th{text-align:left;padding:.5rem .55rem;font-size:.58rem;font-weight:800;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--laiton);border-bottom:1px solid rgba(216,169,75,.25)}
+td{padding:.62rem .55rem;border-bottom:1px solid rgba(244,234,213,.08);color:rgba(244,234,213,.85)}
+tr:last-child td{border-bottom:none}
+
+/* app.js et les modes posent des classes Tailwind dans leurs gabarits.
+   On les recale sur la palette plutôt que d'aller les modifier. */
+.text-white{color:#fff!important}
+.text-slate-500,.text-slate-600{color:rgba(244,234,213,.45)!important}
+.text-slate-400,.text-slate-300{color:rgba(244,234,213,.66)!important}
+.text-slate-200{color:var(--creme)!important}
+.text-emerald-400,.text-emerald-300{color:var(--vert-ok)!important}
+.text-red-400,.text-red-300{color:#E8836F!important}
+.text-q-blue{color:var(--laiton-clair)!important}
+.text-q-red{color:var(--cerise)!important}
+input[type=range]{accent-color:var(--laiton)}
+input[type=checkbox]{accent-color:var(--laiton)}
 </style>
 </head>
-<body class="font-sans text-slate-200 antialiased">
+<body class="font-sans antialiased">
 
 <!-- ============ ACCUEIL ============ -->
 <section id="ecran-accueil" class="ecran">
-  <header class="hero-pattern border-b border-white/10">
-    <div class="max-w-4xl mx-auto px-5 py-16 md:py-24 text-center">
-      <p class="kicker text-q-blue">Jeu de société · maison</p>
+  <div class="max-w-2xl mx-auto px-5 py-14 md:py-20">
+    <div class="relative text-center">
+      <span class="parts" style="width:18rem;height:18rem;top:-4.5rem;left:50%;margin-left:-9rem"></span>
+      <p class="kicker">Jeu de société · maison</p>
       <span class="kicker-line mx-auto"></span>
-      <h1 class="font-serif text-5xl md:text-7xl font-black text-white mt-6 leading-none">
-        Quiz<br><span class="text-q-blue">Famille</span></h1>
-      <p class="mt-6 text-slate-300 max-w-xl mx-auto leading-relaxed">
+      <h1 class="titre mt-5" style="font-size:clamp(3.2rem,15vw,5.5rem)">
+        Quiz<br><span style="color:var(--laiton-clair)">Famille</span></h1>
+      <div class="pastilles">
+        <i style="background:#3FA9C9"></i><i style="background:#C8372D"></i><i style="background:#D8A94B"></i>
+        <i style="background:#4FA96B"></i><i style="background:#8E6BB8"></i><i style="background:#E08A3C"></i>
+      </div>
+      <p class="creme opacity-80 max-w-md mx-auto leading-relaxed text-sm">
         Chacun joue à son niveau. Le petit de 7 ans a ses questions,
         son grand-père a les siennes, et personne ne s'ennuie.</p>
-      <div class="mt-9 flex flex-col sm:flex-row gap-3 justify-center">
-        <button id="btnJouer" class="btn btn-primary text-base px-8">
-          <i class="fa-solid fa-play"></i>Nouvelle partie</button>
-        <a href="reflexe.html" class="btn btn-ghost">
-          <i class="fa-solid fa-bolt"></i>Réflexe · sur les téléphones</a>
-      </div>
-      <p id="chargement" class="mt-8 text-xs text-slate-500">Chargement des questions…</p>
-      <p class="mt-3 text-[.65rem] text-slate-600">
-        <a href="tools/test-backend.html" class="hover:text-slate-400">banc de test réseau</a></p>
     </div>
-  </header>
+
+    <p class="kicker text-center mt-12 mb-4" style="opacity:.7">Comment vous jouez ce soir</p>
+
+    <div class="grid gap-4 md:grid-cols-2">
+      <button id="btnJouer" class="porte">
+        <i class="fa-solid fa-table-list ico"></i>
+        <b>Tous autour de la table</b>
+        <span>Un seul écran, posé au milieu. On saisit les joueurs et leurs âges,
+              puis on choisit entre cinq modes&nbsp;: partie libre, Braquage,
+              Camembert, Chrono, Solo.</span>
+        <em>Sur cet appareil <i class="fa-solid fa-arrow-right ml-1"></i></em>
+      </button>
+
+      <a href="reflexe.html" class="porte">
+        <i class="fa-solid fa-bolt ico"></i>
+        <b>Chacun son téléphone</b>
+        <span>Le mode Réflexe. Même question, même seconde, sur tous les téléphones.
+              On ouvre une table, on passe le code, et tout le monde répond en même temps.</span>
+        <em>Sur les téléphones <i class="fa-solid fa-arrow-right ml-1"></i></em>
+      </a>
+    </div>
+
+    <p id="chargement" class="mini text-center mt-8">Chargement des questions…</p>
+    <p class="text-center mt-3">
+      <a href="tools/test-backend.html" class="mini underline decoration-dotted">banc de test réseau</a></p>
+  </div>
 </section>
 
 <!-- ============ CONFIGURATION ============ -->
 <section id="ecran-config" class="ecran hidden">
-  <div class="max-w-4xl mx-auto px-5 py-10 space-y-7">
+  <div class="max-w-3xl mx-auto px-5 py-10 space-y-7">
     <div>
-      <p class="kicker text-q-blue">Avant de commencer</p><span class="kicker-line"></span>
-      <h2 class="font-serif text-3xl md:text-4xl font-black text-white mt-4">Qui joue&nbsp;?</h2>
-      <p class="text-sm text-slate-400 mt-2">
+      <p class="kicker">Avant de commencer</p><span class="kicker-line"></span>
+      <h2 class="titre mt-4" style="font-size:clamp(2rem,7vw,2.8rem)">Qui joue&nbsp;?</h2>
+      <p class="text-sm creme opacity-70 mt-2">
         L'âge choisit les questions. Le handicap équilibre les estimations.</p>
     </div>
 
@@ -145,8 +249,8 @@ tailwind.config = { theme: { extend: {
       <i class="fa-solid fa-user-plus"></i>Ajouter un joueur</button>
 
     <div class="pt-4">
-      <p class="kicker text-q-red">Le contenu</p><span class="kicker-line"></span>
-      <h2 class="font-serif text-2xl font-bold text-white mt-3 mb-4">Catégories</h2>
+      <p class="kicker" style="color:var(--cerise)">Le contenu</p><span class="kicker-line"></span>
+      <h2 class="titre mt-3 mb-4" style="font-size:1.6rem">Catégories</h2>
       <div id="categories" class="grid grid-cols-2 md:grid-cols-3 gap-3"></div>
     </div>
 
@@ -154,41 +258,36 @@ tailwind.config = { theme: { extend: {
       <div>
         <label class="lbl" for="diff">Difficulté maximale · <span id="diffTxt">5</span></label>
         <input id="diff" type="range" min="1" max="5" step="1" class="w-full">
-        <p class="text-xs text-slate-500 mt-1">1 tout le monde sait · 3 il faut réfléchir · 5 pour les spécialistes</p>
+        <p class="mini mt-1">1 tout le monde sait · 3 il faut réfléchir · 5 pour les spécialistes</p>
       </div>
       <div class="w-40">
         <label class="lbl" for="nbq">Questions par joueur</label>
         <input id="nbq" class="inp" type="number" min="1" max="30" value="5">
       </div>
       <label class="flex items-start gap-3 cursor-pointer">
-        <input id="alcool" type="checkbox" class="mt-1 w-5 h-5 accent-q-blue">
-        <span class="text-sm text-slate-300">Écarter les questions sur l'alcool
-          <span class="block text-xs text-slate-500">Forcé si un joueur a moins de 13 ans.</span></span>
+        <input id="alcool" type="checkbox" class="mt-1 w-5 h-5">
+        <span class="text-sm creme opacity-85">Écarter les questions sur l'alcool
+          <span class="block mini">Forcé si un joueur a moins de 13 ans.</span></span>
       </label>
     </div>
 
     <div class="card p-5">
-      <p class="kicker text-q-blue mb-3">Ce qui reste à jouer</p>
+      <p class="kicker mb-3">Ce qui reste à jouer</p>
       <div id="dispo"></div>
-      <button id="btnOublier" class="btn btn-ghost mt-4 text-xs">
+      <button id="btnOublier" class="btn btn-ghost mt-4 text-xs" style="min-height:44px">
         <i class="fa-solid fa-rotate-left"></i>Oublier les questions déjà posées</button>
     </div>
 
     <div class="pt-2">
-      <p class="kicker text-q-blue">Comment on joue</p><span class="kicker-line"></span>
-      <h2 class="font-serif text-2xl font-bold text-white mt-3 mb-4">Le mode de jeu</h2>
+      <p class="kicker">Comment on joue</p><span class="kicker-line"></span>
+      <h2 class="titre mt-3 mb-4" style="font-size:1.6rem">Le mode de jeu</h2>
       <div id="modes">
         <button id="btnJouerPartie" disabled>
           <i class="fa-solid fa-dice"></i>Partie libre</button>
-        <button id="btnReflexe" onclick="location.href='reflexe.html'">
-          <i class="fa-solid fa-bolt"></i>Réflexe · sur les téléphones</button>
       </div>
-      <p class="text-xs text-slate-600 mt-3">
-        Réflexe se joue sur les téléphones, un par joueur, et n'a pas besoin de cet écran-ci&nbsp;:
-        les joueurs se retrouvent avec un code de partie. Les cinq autres modes se jouent ici, tous ensemble.</p>
     </div>
 
-    <div class="pb-10">
+    <div class="pb-12">
       <button id="btnRetour" class="btn btn-ghost">
         <i class="fa-solid fa-arrow-left"></i>Retour</button>
     </div>
@@ -197,43 +296,48 @@ tailwind.config = { theme: { extend: {
 
 <!-- ============ JEU ============ -->
 <section id="ecran-jeu" class="ecran hidden">
-  <div class="max-w-3xl mx-auto px-5 py-8">
+  <div class="max-w-2xl mx-auto px-5 py-8">
 
-    <div class="flex items-center justify-between mb-5">
+    <div class="flex items-end justify-between mb-5">
       <div>
-        <p id="jTour" class="kicker text-slate-500">Manche 1</p>
-        <p id="jJoueur" class="font-serif text-3xl font-black text-white leading-tight">—</p>
+        <p id="jTour" class="kicker" style="color:rgba(244,234,213,.45)">Manche 1</p>
+        <p id="jJoueur" class="titre" style="font-size:2rem">—</p>
       </div>
       <div class="text-right">
-        <p class="kicker text-slate-500">Score</p>
-        <p id="jScore" class="font-serif text-3xl font-black text-q-blue">0 pts</p>
+        <p class="kicker">Score</p>
+        <p id="jScore" class="titre" style="font-size:2rem;color:var(--laiton-clair)">0 pts</p>
       </div>
     </div>
 
-    <div class="card p-6 md:p-8">
-      <p id="qCat" class="kicker">—</p><span class="kicker-line"></span>
-      <p id="qMeta" class="text-xs text-slate-500 mt-3"></p>
-      <p id="qEnonce" class="font-serif text-2xl md:text-3xl font-bold text-white mt-4 leading-snug"></p>
-      <div id="zoneReponse" class="mt-6 space-y-3"></div>
+    <div class="carte-papier">
+      <div class="flex items-center justify-between">
+        <p id="qCat" class="text-[.62rem] font-extrabold tracking-[.24em] uppercase">—</p>
+        <p id="qMeta" class="text-[.68rem]" style="color:#8A7A5C"></p>
+      </div>
+      <p id="qEnonce" class="enonce mt-4"></p>
     </div>
 
+    <div id="zoneReponse" class="mt-6 space-y-3"></div>
     <div id="feedback" class="hidden"></div>
 
-    <div class="flex gap-3 mt-6 pb-10">
+    <div class="flex gap-3 mt-6 pb-12">
       <button id="btnAbandon" class="btn btn-ghost"><i class="fa-solid fa-xmark"></i>Arrêter</button>
       <button id="btnSuivant" class="btn btn-primary flex-1 hidden">
-        Question suivante<i class="fa-solid fa-arrow-right"></i></button>
+        Carte suivante<i class="fa-solid fa-arrow-right"></i></button>
     </div>
   </div>
 </section>
 
 <!-- ============ FIN ============ -->
 <section id="ecran-fin" class="ecran hidden">
-  <div class="max-w-2xl mx-auto px-5 py-12">
-    <p class="kicker text-q-blue">Terminé</p><span class="kicker-line"></span>
-    <h2 class="font-serif text-4xl font-black text-white mt-4 mb-7">Le classement</h2>
+  <div class="max-w-xl mx-auto px-5 py-14">
+    <div class="relative">
+      <span class="parts" style="width:14rem;height:14rem;top:-4rem;right:-3rem;opacity:.2"></span>
+      <p class="kicker" style="color:var(--cerise)">Fin de partie</p><span class="kicker-line"></span>
+      <h2 class="titre mt-4" style="font-size:clamp(2.2rem,8vw,3rem)">Le classement</h2>
+    </div>
 
-    <div class="card p-5">
+    <div class="card p-5 mt-7">
       <table><tbody id="podium"></tbody></table>
     </div>
 

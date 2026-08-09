@@ -1,7 +1,7 @@
 {
   "category": "histoire",
   "label": "Histoire & Grandes dates",
-  "version": 3,
+  "version": 4,
   "questions": [
     {
       "id": "his-0001",
@@ -686,6 +686,1083 @@
       "fun": "Hong Kong lui est passé entre les mains à l'issue de la première, en 1842, et n'est revenu à la Chine qu'en 1997.",
       "tags": [
         "asie"
+      ]
+    },
+    {
+      "id": "his-0041",
+      "type": "qcm",
+      "difficulty": 1,
+      "minAge": 8,
+      "q": "Quel animal préhistorique ressemblait à un éléphant couvert de poils ?",
+      "choices": [
+        "Le mammouth",
+        "Le rhinocéros",
+        "Le bison",
+        "Le tigre à dents de sabre"
+      ],
+      "answer": 0,
+      "fun": "On en retrouve encore des congelés en Sibérie, avec la peau, les poils et parfois le dernier repas dans l'estomac.",
+      "tags": [
+        "préhistoire"
+      ]
+    },
+    {
+      "id": "his-0042",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 9,
+      "q": "Dans quelle grotte française a-t-on découvert de célèbres peintures préhistoriques ?",
+      "choices": [
+        "Lascaux",
+        "Les Eyzies",
+        "Chauvet-Pont-d'Arc",
+        "Niaux"
+      ],
+      "answer": 0,
+      "fun": "Quatre adolescents et un chien l'ont trouvée en 1940. La grotte a dû être refermée : le souffle des visiteurs abîmait les peintures.",
+      "tags": [
+        "préhistoire",
+        "france"
+      ]
+    },
+    {
+      "id": "his-0043",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 9,
+      "q": "Quel monument égyptien a un corps de lion et une tête humaine ?",
+      "choices": [
+        "L'obélisque",
+        "Le Sphinx",
+        "Le mastaba",
+        "Le scarabée de Karnak"
+      ],
+      "answer": 1,
+      "fun": "Il lui manque le nez depuis des siècles. Les histoires de boulet de canon napoléonien sont fausses : il avait déjà disparu bien avant.",
+      "tags": [
+        "antiquité",
+        "égypte"
+      ]
+    },
+    {
+      "id": "his-0044",
+      "type": "libre",
+      "difficulty": 2,
+      "minAge": 9,
+      "q": "Quel chef gaulois a été vaincu par César à Alésia ?",
+      "answer": "Vercingétorix",
+      "accept": [
+        "vercingetorix"
+      ],
+      "fun": "Il a passé six ans en prison à Rome avant d'être exécuté, le temps que César organise son défilé de victoire.",
+      "tags": [
+        "antiquité",
+        "france"
+      ]
+    },
+    {
+      "id": "his-0045",
+      "type": "qcm",
+      "difficulty": 1,
+      "minAge": 8,
+      "q": "Quel paquebot a coulé en 1912 après avoir heurté un iceberg ?",
+      "choices": [
+        "Le Lusitania",
+        "Le Titanic",
+        "Le Normandie",
+        "Le Britannic"
+      ],
+      "answer": 1,
+      "fun": "Il transportait vingt canots pour deux mille deux cents personnes. C'était plus que ce que la loi exigeait à l'époque.",
+      "tags": [
+        "xxe siècle"
+      ]
+    },
+    {
+      "id": "his-0046",
+      "type": "estimation",
+      "difficulty": 2,
+      "minAge": 10,
+      "q": "En quelle année la Seconde Guerre mondiale a-t-elle commencé en Europe ?",
+      "answer": 1939,
+      "unit": "",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Le 1er septembre, avec l'invasion de la Pologne. La France et le Royaume-Uni déclarent la guerre deux jours plus tard.",
+      "tags": [
+        "xxe siècle"
+      ]
+    },
+    {
+      "id": "his-0047",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 10,
+      "q": "Quelle ville romaine a été ensevelie par l'éruption du Vésuve ?",
+      "choices": [
+        "Ostie",
+        "Pompéi",
+        "Ravenne",
+        "Syracuse"
+      ],
+      "answer": 1,
+      "fun": "La cendre a moulé les corps. En coulant du plâtre dans les cavités, les archéologues ont retrouvé les postures exactes des habitants.",
+      "tags": [
+        "antiquité"
+      ]
+    },
+    {
+      "id": "his-0048",
+      "type": "vraifaux",
+      "difficulty": 2,
+      "minAge": 10,
+      "q": "Christophe Colomb est mort persuadé d'avoir atteint l'Asie.",
+      "answer": true,
+      "fun": "D'où le nom d'« Indiens » donné aux habitants. Le continent porte le prénom d'un autre navigateur, Amerigo Vespucci, qui avait compris, lui.",
+      "tags": [
+        "explorations",
+        "piège"
+      ]
+    },
+    {
+      "id": "his-0049",
+      "type": "libre",
+      "difficulty": 2,
+      "minAge": 9,
+      "q": "Comment appelait-on les combattants des arènes romaines ?",
+      "answer": "Les gladiateurs",
+      "accept": [
+        "gladiateurs",
+        "les gladiateurs",
+        "gladiateur"
+      ],
+      "fun": "La plupart des combats ne finissaient pas par une mort : un gladiateur formé coûtait trop cher pour être gaspillé.",
+      "tags": [
+        "antiquité"
+      ]
+    },
+    {
+      "id": "his-0050",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 10,
+      "q": "Quelle reine de France a été guillotinée en 1793 ?",
+      "choices": [
+        "Catherine de Médicis",
+        "Marie-Antoinette",
+        "Anne d'Autriche",
+        "Marie de Médicis"
+      ],
+      "answer": 1,
+      "fun": "La phrase sur la brioche ne vient pas d'elle : elle circulait déjà avant son arrivée en France.",
+      "tags": [
+        "révolution",
+        "france",
+        "piège"
+      ]
+    },
+    {
+      "id": "his-0051",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 10,
+      "q": "Qui a lancé depuis Londres l'appel à poursuivre le combat, en juin 1940 ?",
+      "choices": [
+        "Philippe Pétain",
+        "Charles de Gaulle",
+        "Jean Moulin",
+        "Georges Clemenceau"
+      ],
+      "answer": 1,
+      "fun": "Presque personne ne l'a entendu : l'appel du 18 juin n'a pas été enregistré, et il n'en existe aucune bande sonore.",
+      "tags": [
+        "xxe siècle",
+        "france"
+      ]
+    },
+    {
+      "id": "his-0052",
+      "type": "estimation",
+      "difficulty": 2,
+      "minAge": 11,
+      "q": "En quelle année a eu lieu le Débarquement de Normandie ?",
+      "answer": 1944,
+      "unit": "",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Le 6 juin. La météo était si mauvaise que les Allemands avaient jugé un débarquement impossible ce jour-là.",
+      "tags": [
+        "xxe siècle"
+      ]
+    },
+    {
+      "id": "his-0053",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 9,
+      "q": "Quel pays a construit une muraille longue de plusieurs milliers de kilomètres ?",
+      "choices": [
+        "L'Inde",
+        "La Chine",
+        "La Perse",
+        "Le Japon"
+      ],
+      "answer": 1,
+      "fun": "Ce n'est pas un mur unique mais des tronçons bâtis sur près de deux mille ans. Et non, on ne la voit pas à l'œil nu depuis l'espace.",
+      "tags": [
+        "antiquité",
+        "piège"
+      ]
+    },
+    {
+      "id": "his-0054",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Dans quelle ville Jeanne d'Arc fait-elle sacrer Charles VII ?",
+      "choices": [
+        "Paris",
+        "Reims",
+        "Orléans",
+        "Rouen"
+      ],
+      "answer": 1,
+      "fun": "Le sacre à Reims était la seule chose qui rendait un roi de France incontestable. Tout son plan tenait dans ce déplacement.",
+      "tags": [
+        "moyen âge",
+        "france"
+      ]
+    },
+    {
+      "id": "his-0055",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 12,
+      "q": "Quel roi d'Angleterre a été contraint de signer la Grande Charte en 1215 ?",
+      "choices": [
+        "Richard Cœur de Lion",
+        "Jean sans Terre",
+        "Henri II",
+        "Édouard Ier"
+      ],
+      "answer": 1,
+      "fun": "Ses barons en avaient assez des impôts de guerre. Le texte limite pour la première fois par écrit ce qu'un roi peut faire.",
+      "tags": [
+        "moyen âge"
+      ]
+    },
+    {
+      "id": "his-0056",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Qui a dessiné les jardins du château de Versailles ?",
+      "choices": [
+        "Le Nôtre",
+        "Le Vau",
+        "Mansart",
+        "Le Brun"
+      ],
+      "answer": 0,
+      "fun": "Il a redressé un marécage. Les fontaines n'ont jamais pu couler toutes en même temps : il n'y avait pas assez d'eau.",
+      "tags": [
+        "france",
+        "xviie siècle"
+      ]
+    },
+    {
+      "id": "his-0057",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Que signifie le mot « Mésopotamie » ?",
+      "choices": [
+        "Terre du soleil",
+        "Entre les fleuves",
+        "Pays du blé",
+        "Berceau des rois"
+      ],
+      "answer": 1,
+      "fun": "Entre le Tigre et l'Euphrate, dans l'Irak actuel. C'est là qu'apparaît la première écriture connue.",
+      "tags": [
+        "antiquité",
+        "mots"
+      ]
+    },
+    {
+      "id": "his-0058",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Sous l'Ancien Régime, en quoi consistait la corvée ?",
+      "choices": [
+        "Un impôt payé en travail",
+        "Une taxe sur le pain",
+        "Une amende",
+        "Un service militaire"
+      ],
+      "answer": 0,
+      "fun": "Des journées de travail gratuit dues au seigneur ou au roi, souvent pour entretenir les routes. Beaucoup de routes françaises datent de là.",
+      "tags": [
+        "france",
+        "ancien régime"
+      ]
+    },
+    {
+      "id": "his-0059",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Dans quel pays a-t-on découvert une armée de guerriers en terre cuite ?",
+      "choices": [
+        "Au Japon",
+        "En Inde",
+        "En Chine",
+        "En Corée"
+      ],
+      "answer": 2,
+      "fun": "Des paysans creusaient un puits en 1974. Il y a plus de huit mille statues, et aucune n'a le même visage.",
+      "tags": [
+        "antiquité",
+        "archéologie"
+      ]
+    },
+    {
+      "id": "his-0060",
+      "type": "libre",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Qui fut le premier homme envoyé dans l'espace ?",
+      "answer": "Youri Gagarine",
+      "accept": [
+        "gagarine",
+        "youri gagarine",
+        "yuri gagarine"
+      ],
+      "fun": "Un seul tour de la Terre, 108 minutes, en 1961. Il a fini le vol en parachute, éjecté de sa capsule à sept kilomètres d'altitude.",
+      "tags": [
+        "xxe siècle",
+        "espace"
+      ]
+    },
+    {
+      "id": "his-0061",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Quel roi de France a été guillotiné en 1793 ?",
+      "choices": [
+        "Louis XIV",
+        "Louis XV",
+        "Louis XVI",
+        "Louis XVIII"
+      ],
+      "answer": 2,
+      "fun": "Passionné de serrurerie, il tenait un journal où il notait ses chasses. Le 14 juillet 1789, il a écrit : « Rien ».",
+      "tags": [
+        "révolution",
+        "france"
+      ]
+    },
+    {
+      "id": "his-0062",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Quel conquérant a fondé la ville d'Alexandrie et vaincu l'Empire perse ?",
+      "choices": [
+        "Jules César",
+        "Alexandre le Grand",
+        "Hannibal",
+        "Périclès"
+      ],
+      "answer": 1,
+      "fun": "Il est mort à 32 ans après avoir conquis un empire allant de la Grèce à l'Inde. Personne n'a jamais retrouvé sa tombe.",
+      "tags": [
+        "antiquité"
+      ]
+    },
+    {
+      "id": "his-0063",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "De quelle région d'Europe venaient les Vikings ?",
+      "choices": [
+        "Des Pays-Bas",
+        "De Scandinavie",
+        "D'Écosse",
+        "De Bretagne"
+      ],
+      "answer": 1,
+      "fun": "Leurs casques n'avaient pas de cornes : l'idée vient d'un costume d'opéra du XIXe siècle.",
+      "tags": [
+        "moyen âge",
+        "piège"
+      ]
+    },
+    {
+      "id": "his-0064",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Quelle guerre a opposé le Nord et le Sud des États-Unis ?",
+      "choices": [
+        "La guerre d'Indépendance",
+        "La guerre de Sécession",
+        "La guerre de 1812",
+        "La guerre du Mexique"
+      ],
+      "answer": 1,
+      "fun": "Plus de morts américains que dans les deux guerres mondiales réunies. La photographie l'a couverte, ce qui a changé le regard du public sur la guerre.",
+      "tags": [
+        "xixe siècle"
+      ]
+    },
+    {
+      "id": "his-0065",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Quel président américain a proclamé l'abolition de l'esclavage pendant la guerre de Sécession ?",
+      "choices": [
+        "Washington",
+        "Jefferson",
+        "Lincoln",
+        "Grant"
+      ],
+      "answer": 2,
+      "fun": "Il a été assassiné cinq jours après la reddition du Sud, dans un théâtre, pendant une comédie.",
+      "tags": [
+        "xixe siècle"
+      ]
+    },
+    {
+      "id": "his-0066",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Où a eu lieu la catastrophe nucléaire de 1986 ?",
+      "choices": [
+        "À Fukushima",
+        "À Tchernobyl",
+        "À Three Mile Island",
+        "À Kychtym"
+      ],
+      "answer": 1,
+      "fun": "La ville voisine de Pripiat a été évacuée en trois heures, avec la consigne de ne rien emporter. Elle est vide depuis.",
+      "tags": [
+        "xxe siècle"
+      ]
+    },
+    {
+      "id": "his-0067",
+      "type": "libre",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Qui a prononcé le discours « I have a dream » en 1963 ?",
+      "answer": "Martin Luther King",
+      "accept": [
+        "martin luther king",
+        "luther king",
+        "king"
+      ],
+      "fun": "La partie la plus célèbre du discours n'était pas écrite. Une chanteuse dans son dos lui a lancé : « parle-leur du rêve, Martin ».",
+      "tags": [
+        "xxe siècle"
+      ]
+    },
+    {
+      "id": "his-0068",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Contre quel système Nelson Mandela s'est-il battu en Afrique du Sud ?",
+      "choices": [
+        "La colonisation",
+        "L'apartheid",
+        "La monarchie",
+        "Le communisme"
+      ],
+      "answer": 1,
+      "fun": "Vingt-sept ans de prison, dont dix-huit sur une île, à casser des cailloux dans une carrière de chaux qui lui a abîmé les yeux.",
+      "tags": [
+        "xxe siècle"
+      ]
+    },
+    {
+      "id": "his-0069",
+      "type": "libre",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Comment appelait-on la route commerciale reliant la Chine à l'Europe ?",
+      "answer": "La route de la soie",
+      "accept": [
+        "route de la soie",
+        "la route de la soie",
+        "soie"
+      ],
+      "fun": "Presque personne ne la parcourait en entier : les marchandises passaient de main en main sur des milliers de kilomètres.",
+      "tags": [
+        "moyen âge",
+        "commerce"
+      ]
+    },
+    {
+      "id": "his-0070",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 12,
+      "q": "Sur quelle ville la première bombe atomique a-t-elle été larguée, le 6 août 1945 ?",
+      "choices": [
+        "Nagasaki",
+        "Hiroshima",
+        "Tokyo",
+        "Kyoto"
+      ],
+      "answer": 1,
+      "fun": "Kyoto figurait sur la liste des cibles. Un secrétaire d'État américain, qui y avait passé son voyage de noces, l'en a fait retirer.",
+      "tags": [
+        "xxe siècle"
+      ]
+    },
+    {
+      "id": "his-0071",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Quel empire Gengis Khan a-t-il fondé au XIIIe siècle ?",
+      "choices": [
+        "L'Empire ottoman",
+        "L'Empire mongol",
+        "L'Empire perse",
+        "L'Empire moghol"
+      ],
+      "answer": 1,
+      "fun": "Le plus grand empire d'un seul tenant de l'histoire. Il tenait grâce à un service de courrier à cheval capable de traverser l'Asie en semaines.",
+      "tags": [
+        "moyen âge"
+      ]
+    },
+    {
+      "id": "his-0072",
+      "type": "estimation",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Combien d'années a duré la Seconde Guerre mondiale ?",
+      "answer": 6,
+      "unit": "ans",
+      "tol": {
+        "exact": true
+      },
+      "fun": "De septembre 1939 à septembre 1945. En Asie, elle avait commencé bien avant, dès l'invasion de la Chine.",
+      "tags": [
+        "xxe siècle"
+      ]
+    },
+    {
+      "id": "his-0073",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Quel objet a permis de déchiffrer les hiéroglyphes égyptiens ?",
+      "choices": [
+        "Le papyrus d'Ebers",
+        "La pierre de Rosette",
+        "Le masque de Toutankhamon",
+        "L'obélisque de Louxor"
+      ],
+      "answer": 1,
+      "fun": "Un même texte gravé en trois écritures. Champollion a mis quatorze ans à le percer, en s'appuyant sur le copte qu'il parlait.",
+      "tags": [
+        "égypte",
+        "archéologie"
+      ]
+    },
+    {
+      "id": "his-0074",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Qui a réalisé le premier vol motorisé contrôlé, en 1903 ?",
+      "choices": [
+        "Clément Ader",
+        "Les frères Wright",
+        "Louis Blériot",
+        "Santos-Dumont"
+      ],
+      "answer": 1,
+      "fun": "Le premier vol a duré douze secondes et parcouru trente-sept mètres. Deux fabricants de bicyclettes venaient de changer le siècle.",
+      "tags": [
+        "xxe siècle",
+        "inventions"
+      ]
+    },
+    {
+      "id": "his-0075",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Quel pays a mis en orbite le premier satellite artificiel, Spoutnik ?",
+      "choices": [
+        "Les États-Unis",
+        "L'URSS",
+        "La France",
+        "Le Royaume-Uni"
+      ],
+      "answer": 1,
+      "fun": "Une sphère de 58 cm qui ne faisait que biper. Le choc a été tel aux États-Unis que la NASA a été créée dans la foulée.",
+      "tags": [
+        "xxe siècle",
+        "espace"
+      ]
+    },
+    {
+      "id": "his-0076",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Qui a été le premier président des États-Unis ?",
+      "choices": [
+        "Thomas Jefferson",
+        "George Washington",
+        "Benjamin Franklin",
+        "John Adams"
+      ],
+      "answer": 1,
+      "fun": "On lui a proposé d'être appelé « Votre Altesse ». Il a préféré « Monsieur le Président », et le titre est resté.",
+      "tags": [
+        "xviiie siècle"
+      ]
+    },
+    {
+      "id": "his-0077",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Quelle ville italienne est considérée comme le berceau de la Renaissance ?",
+      "choices": [
+        "Rome",
+        "Venise",
+        "Florence",
+        "Milan"
+      ],
+      "answer": 2,
+      "fun": "Une famille de banquiers, les Médicis, y a financé à peu près tous les artistes de son temps. L'argent du prêt a fait la peinture.",
+      "tags": [
+        "renaissance"
+      ]
+    },
+    {
+      "id": "his-0078",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Quel régime politique existait à Rome avant l'Empire ?",
+      "choices": [
+        "La monarchie",
+        "La République",
+        "La tyrannie",
+        "La démocratie directe"
+      ],
+      "answer": 1,
+      "fun": "Cinq siècles de République, avec deux consuls élus chaque année pour éviter qu'un seul homme prenne tout. Ça a fini par rater.",
+      "tags": [
+        "antiquité"
+      ]
+    },
+    {
+      "id": "his-0079",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Quelle dynastie a été surnommée celle des « rois fainéants » ?",
+      "choices": [
+        "Les Mérovingiens",
+        "Les Carolingiens",
+        "Les Capétiens",
+        "Les Valois"
+      ],
+      "answer": 0,
+      "fun": "Le surnom vient surtout de leurs successeurs, qui avaient tout intérêt à les faire passer pour incapables avant de prendre leur place.",
+      "tags": [
+        "moyen âge",
+        "france"
+      ]
+    },
+    {
+      "id": "his-0080",
+      "type": "libre",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Comment appelait-on la prêtresse qui rendait les oracles à Delphes ?",
+      "answer": "La Pythie",
+      "accept": [
+        "pythie",
+        "la pythie"
+      ],
+      "fun": "Elle rendait ses réponses assise au-dessus d'une faille. Des géologues ont retrouvé sur place des gaz capables de provoquer des transes.",
+      "tags": [
+        "antiquité",
+        "grèce"
+      ]
+    },
+    {
+      "id": "his-0081",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Quelle écriture ne figure PAS sur la pierre de Rosette ?",
+      "choices": [
+        "Le grec",
+        "Le démotique",
+        "Les hiéroglyphes",
+        "Le latin"
+      ],
+      "answer": 3,
+      "fun": "Le même décret gravé trois fois : hiéroglyphes, démotique et grec. C'est le grec, que tout le monde savait lire, qui a servi de clé.",
+      "tags": [
+        "égypte",
+        "piège"
+      ]
+    },
+    {
+      "id": "his-0082",
+      "type": "estimation",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "En quelle année Constantinople est-elle tombée aux mains des Ottomans ?",
+      "answer": 1453,
+      "unit": "",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Les remparts avaient tenu mille ans. Ce sont des canons géants, fondus sur place, qui en sont venus à bout.",
+      "tags": [
+        "moyen âge"
+      ]
+    },
+    {
+      "id": "his-0083",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Quel animal Louis XII avait-il choisi comme emblème ?",
+      "choices": [
+        "Le porc-épic",
+        "La salamandre",
+        "Le lion",
+        "L'hermine"
+      ],
+      "answer": 0,
+      "fun": "Un animal qui pique de près comme de loin : le message était clair pour ses ennemis. La salamandre, c'est François Ier.",
+      "tags": [
+        "france",
+        "renaissance"
+      ]
+    },
+    {
+      "id": "his-0084",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Quel nom le navigateur Abel Tasman a-t-il donné à l'Australie au XVIIe siècle ?",
+      "choices": [
+        "La Terre australe",
+        "La Nouvelle-Hollande",
+        "La Nouvelle-Zélande",
+        "La Terre de Van Diemen"
+      ],
+      "answer": 1,
+      "fun": "Il était néerlandais, et il a nommé la région d'après son pays. La Tasmanie, elle, porte aujourd'hui son nom à lui.",
+      "tags": [
+        "explorations"
+      ]
+    },
+    {
+      "id": "his-0085",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Quel traité de 1957 a créé la Communauté économique européenne ?",
+      "choices": [
+        "Le traité de Maastricht",
+        "Le traité de Rome",
+        "Le traité de Paris",
+        "Le traité de Lisbonne"
+      ],
+      "answer": 1,
+      "fun": "Six pays signataires. Les documents remis aux délégués étaient en partie des pages blanches : le texte final n'était pas prêt à temps.",
+      "tags": [
+        "xxe siècle",
+        "europe"
+      ]
+    },
+    {
+      "id": "his-0086",
+      "type": "libre",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Quel homme politique a fait abolir définitivement l'esclavage dans les colonies françaises en 1848 ?",
+      "answer": "Victor Schœlcher",
+      "accept": [
+        "schoelcher",
+        "victor schoelcher",
+        "schœlcher"
+      ],
+      "fun": "L'esclavage avait déjà été aboli en 1794, puis rétabli par Napoléon huit ans plus tard. Il a donc fallu recommencer.",
+      "tags": [
+        "xixe siècle",
+        "france"
+      ]
+    },
+    {
+      "id": "his-0087",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Qui était le « Prince Noir », redouté pendant la guerre de Cent Ans ?",
+      "choices": [
+        "Un prince anglais",
+        "Un chef breton",
+        "Un roi de Castille",
+        "Un condottiere italien"
+      ],
+      "answer": 0,
+      "fun": "Édouard de Woodstock, fils aîné du roi d'Angleterre. Il est mort avant son père et n'a jamais régné.",
+      "tags": [
+        "moyen âge"
+      ]
+    },
+    {
+      "id": "his-0088",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Que devaient faire les Bourgeois de Calais en 1347, selon le récit qu'en fait Froissart ?",
+      "choices": [
+        "Se livrer en chemise, la corde au cou",
+        "Payer une rançon en or",
+        "Incendier la ville",
+        "Prêter serment au roi de France"
+      ],
+      "answer": 0,
+      "fun": "Six notables, pieds nus, pour épargner la ville affamée. Rodin en a tiré une sculpture où aucun n'a l'air héroïque, ce qui a choqué la ville.",
+      "tags": [
+        "moyen âge",
+        "france"
+      ]
+    },
+    {
+      "id": "his-0089",
+      "type": "vraifaux",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "L'impression à caractères mobiles existait en Asie bien avant Gutenberg.",
+      "answer": true,
+      "fun": "En Chine dès le XIe siècle, en Corée ensuite. L'apport de Gutenberg est l'alliage métallique et la presse, dans un monde à alphabet court.",
+      "tags": [
+        "moyen âge",
+        "inventions",
+        "piège"
+      ]
+    },
+    {
+      "id": "his-0090",
+      "type": "libre",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Comment s'appelait l'impôt sur le sel sous l'Ancien Régime ?",
+      "answer": "La gabelle",
+      "accept": [
+        "gabelle",
+        "la gabelle"
+      ],
+      "fun": "Il variait tellement d'une province à l'autre que la contrebande de sel faisait vivre des villages entiers, avec ses guetteurs et ses passeurs.",
+      "tags": [
+        "france",
+        "ancien régime"
+      ]
+    },
+    {
+      "id": "his-0091",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Quel dirigeant français a été à la fois président de la République puis empereur ?",
+      "choices": [
+        "Napoléon Ier",
+        "Napoléon III",
+        "Thiers",
+        "Mac-Mahon"
+      ],
+      "answer": 1,
+      "fun": "Élu président en 1848, il fait un coup d'État trois ans plus tard faute de pouvoir se représenter, et se proclame empereur.",
+      "tags": [
+        "xixe siècle",
+        "france"
+      ]
+    },
+    {
+      "id": "his-0092",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Qui a arrêté une armée arabe à Poitiers en 732 ?",
+      "choices": [
+        "Clovis",
+        "Charles Martel",
+        "Charlemagne",
+        "Pépin le Bref"
+      ],
+      "answer": 1,
+      "fun": "Il n'était pas roi mais maire du palais, l'homme fort derrière un souverain sans pouvoir. Son petit-fils s'appellera Charlemagne.",
+      "tags": [
+        "moyen âge",
+        "france"
+      ]
+    },
+    {
+      "id": "his-0093",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Quel pays a élu la première femme Première ministre au monde, en 1960 ?",
+      "choices": [
+        "L'Inde",
+        "Israël",
+        "Le Sri Lanka",
+        "La Norvège"
+      ],
+      "answer": 2,
+      "fun": "Sirimavo Bandaranaike, à Ceylan. Elle a dirigé le pays trois fois, la dernière sous la présidence de sa propre fille.",
+      "tags": [
+        "xxe siècle"
+      ]
+    },
+    {
+      "id": "his-0094",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 12,
+      "q": "Combien de temps a duré la guerre la plus courte de l'histoire, entre le Royaume-Uni et Zanzibar ?",
+      "choices": [
+        "38 minutes",
+        "3 heures",
+        "2 jours",
+        "11 jours"
+      ],
+      "answer": 0,
+      "fun": "Le 27 août 1896. Un bombardement naval, un palais en ruine, et un sultan en fuite avant l'heure du déjeuner.",
+      "tags": [
+        "xixe siècle",
+        "insolite",
+        "records"
+      ]
+    },
+    {
+      "id": "his-0095",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "De quelle institution Voltaire a-t-il dit qu'elle n'était « ni sainte, ni romaine, ni empire » ?",
+      "choices": [
+        "Le Vatican",
+        "Le Saint-Empire romain germanique",
+        "La République de Venise",
+        "L'Empire byzantin"
+      ],
+      "answer": 1,
+      "fun": "Un assemblage de centaines de principautés allemandes qui a tout de même tenu huit siècles, jusqu'à ce que Napoléon y mette fin.",
+      "tags": [
+        "moyen âge",
+        "europe"
+      ]
+    },
+    {
+      "id": "his-0096",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Quel événement de 1618 a déclenché la guerre de Trente Ans ?",
+      "choices": [
+        "Une défenestration à Prague",
+        "L'assassinat d'un roi",
+        "Une famine en Bavière",
+        "Un mariage annulé"
+      ],
+      "answer": 0,
+      "fun": "Deux gouverneurs jetés par une fenêtre du château de Prague. Ils ont survécu à la chute, en atterrissant dans un tas de fumier.",
+      "tags": [
+        "xviie siècle",
+        "europe"
+      ]
+    },
+    {
+      "id": "his-0097",
+      "type": "estimation",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Combien de jours ont été purement et simplement supprimés du calendrier lors du passage au calendrier grégorien, en 1582 ?",
+      "answer": 10,
+      "unit": "jours",
+      "tol": {
+        "exact": true
+      },
+      "fun": "On est passé du jeudi 4 octobre au vendredi 15. Le calendrier julien avait pris du retard sur le soleil depuis l'Antiquité.",
+      "tags": [
+        "renaissance",
+        "science"
+      ]
+    },
+    {
+      "id": "his-0098",
+      "type": "vraifaux",
+      "difficulty": 5,
+      "minAge": 12,
+      "q": "Le mot « salaire » vient du sel.",
+      "answer": true,
+      "fun": "Du latin « salarium », lié à « sal ». Le sel valait cher : il conservait la viande, et sans lui on ne passait pas l'hiver.",
+      "tags": [
+        "antiquité",
+        "mots"
+      ]
+    },
+    {
+      "id": "his-0099",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Quel souverain africain du XIVe siècle a marqué les chroniqueurs arabes par son pèlerinage à La Mecque ?",
+      "choices": [
+        "Mansa Moussa",
+        "Chaka Zoulou",
+        "Sonni Ali",
+        "Ménélik II"
+      ],
+      "answer": 0,
+      "fun": "Empereur du Mali, il traversa l'Égypte en 1324 en distribuant tant d'or que le cours du métal, dit-on, en fut durablement perturbé au Caire.",
+      "tags": [
+        "moyen âge",
+        "afrique"
+      ]
+    },
+    {
+      "id": "his-0100",
+      "type": "estimation",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "En quelle année le Grand Incendie de Londres a-t-il ravagé la ville ?",
+      "answer": 1666,
+      "unit": "",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Parti d'une boulangerie, il a détruit treize mille maisons et fait officiellement six morts. Le chiffre n'a jamais convaincu personne.",
+      "tags": [
+        "xviie siècle"
       ]
     }
   ]

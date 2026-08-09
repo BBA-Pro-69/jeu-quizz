@@ -1,7 +1,7 @@
 {
   "category": "geek",
   "label": "Jeux vidéo, BD & Manga",
-  "version": 2,
+  "version": 3,
   "note": "Catégorie 'revanche des enfants' : volontairement calibrée pour que les plus jeunes battent les adultes.",
   "questions": [
     {
@@ -342,6 +342,1421 @@
       "fun": "Plus de 300 millions d'exemplaires. Et il a été racheté par Microsoft pour 2,5 milliards de dollars.",
       "tags": [
         "records"
+      ]
+    },
+    {
+      "id": "gek-0021",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 6,
+      "q": "De quel type est Pikachu ?",
+      "choices": [
+        "Feu",
+        "Eau",
+        "Électrik",
+        "Plante"
+      ],
+      "answer": 2,
+      "fun": "Son nom vient de deux bruitages japonais : « pika » pour l'étincelle et « chu » pour le cri de la souris.",
+      "tags": [
+        "pokémon"
+      ]
+    },
+    {
+      "id": "gek-0022",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 6,
+      "q": "Dans Minecraft, quel outil faut-il pour casser de la pierre ?",
+      "choices": [
+        "La hache",
+        "La pioche",
+        "La pelle",
+        "L'épée"
+      ],
+      "answer": 1,
+      "fun": "Avec la main, ça marche aussi, mais le bloc disparaît sans rien laisser. Trente secondes de perdues pour rien.",
+      "tags": [
+        "jeux vidéo"
+      ]
+    },
+    {
+      "id": "gek-0023",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 5,
+      "q": "Que ramasse Mario pour devenir grand ?",
+      "choices": [
+        "Une étoile",
+        "Une fleur",
+        "Un champignon",
+        "Une pièce"
+      ],
+      "answer": 2,
+      "fun": "La fleur donne les boules de feu, l'étoile rend invincible quelques secondes. Le champignon, lui, fait juste grandir.",
+      "tags": [
+        "jeux vidéo"
+      ]
+    },
+    {
+      "id": "gek-0024",
+      "type": "libre",
+      "difficulty": 2,
+      "minAge": 6,
+      "q": "Comment s'appelle le dinosaure vert que Mario chevauche ?",
+      "answer": "Yoshi",
+      "accept": [
+        "yoshi"
+      ],
+      "fun": "Il avale les ennemis avec sa langue et peut pondre l'œuf juste après. Personne n'a jamais trouvé ça bizarre.",
+      "tags": [
+        "jeux vidéo"
+      ]
+    },
+    {
+      "id": "gek-0025",
+      "type": "qcm",
+      "difficulty": 2,
+      "minAge": 7,
+      "q": "Quel est le métier de Mario ?",
+      "choices": [
+        "Pompier",
+        "Plombier",
+        "Menuisier",
+        "Facteur"
+      ],
+      "answer": 1,
+      "fun": "Il était charpentier dans Donkey Kong. On l'a reclassé plombier parce que le jeu suivant se passait dans des tuyaux.",
+      "tags": [
+        "jeux vidéo"
+      ]
+    },
+    {
+      "id": "gek-0026",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 8,
+      "q": "Quel est le métier d'Obélix ?",
+      "choices": [
+        "Forgeron",
+        "Livreur de menhirs",
+        "Chasseur",
+        "Barde"
+      ],
+      "answer": 1,
+      "fun": "Il les taille et les livre, tout seul, sur son dos. Le village n'a jamais expliqué à qui.",
+      "tags": [
+        "bd"
+      ]
+    },
+    {
+      "id": "gek-0027",
+      "type": "libre",
+      "difficulty": 3,
+      "minAge": 8,
+      "q": "Comment s'appelle le druide du village d'Astérix ?",
+      "answer": "Panoramix",
+      "accept": [
+        "panoramix",
+        "le druide panoramix"
+      ],
+      "fun": "Tous les Gaulois de la série ont un nom en « -ix », comme les vrais chefs gaulois : Vercingétorix, Ambiorix.",
+      "tags": [
+        "bd"
+      ]
+    },
+    {
+      "id": "gek-0028",
+      "type": "libre",
+      "difficulty": 3,
+      "minAge": 8,
+      "q": "Comment s'appelle le petit chien blanc d'Obélix ?",
+      "answer": "Idéfix",
+      "accept": [
+        "idefix"
+      ],
+      "fun": "Il hurle chaque fois qu'un arbre est arraché. C'est le premier écologiste de la bande dessinée.",
+      "tags": [
+        "bd"
+      ]
+    },
+    {
+      "id": "gek-0029",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 8,
+      "q": "Combien sont les frères Dalton, ennemis de Lucky Luke ?",
+      "choices": [
+        "Deux",
+        "Trois",
+        "Quatre",
+        "Cinq"
+      ],
+      "answer": 2,
+      "fun": "Joe, William, Jack et Averell, du plus petit au plus grand. Les vrais Dalton, eux, ont existé et étaient bien quatre frères.",
+      "tags": [
+        "bd"
+      ]
+    },
+    {
+      "id": "gek-0030",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 8,
+      "q": "Quel animal jaune à taches noires dit « Houba houba » ?",
+      "choices": [
+        "Le Marsupilami",
+        "Le Gorgonzola",
+        "Le Zorglub",
+        "Le Schtroumpf sauvage"
+      ],
+      "answer": 0,
+      "fun": "Franquin l'a inventé pour Spirou, et il lui a donné une queue de huit mètres capable de faire à peu près n'importe quoi.",
+      "tags": [
+        "bd"
+      ]
+    },
+    {
+      "id": "gek-0031",
+      "type": "libre",
+      "difficulty": 3,
+      "minAge": 8,
+      "q": "Quel capitaine à barbe noire accompagne Tintin dans ses aventures ?",
+      "answer": "Le capitaine Haddock",
+      "accept": [
+        "haddock",
+        "capitaine haddock",
+        "le capitaine haddock"
+      ],
+      "fun": "Hergé a piqué son nom à un poisson fumé aperçu dans son assiette. « Mille sabords » et « bachi-bouzouk » ont suivi.",
+      "tags": [
+        "bd"
+      ]
+    },
+    {
+      "id": "gek-0032",
+      "type": "estimation",
+      "difficulty": 3,
+      "minAge": 8,
+      "q": "Combien de boules de cristal faut-il réunir dans Dragon Ball ?",
+      "answer": 7,
+      "unit": "boules",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Les réunir fait apparaître le dragon Shenron, qui exauce un vœu. Ensuite elles se dispersent aux quatre coins du monde et redeviennent des pierres.",
+      "tags": [
+        "manga"
+      ]
+    },
+    {
+      "id": "gek-0033",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Dans Death Note, quel objet permet de tuer quelqu'un ?",
+      "choices": [
+        "Un miroir",
+        "Un carnet",
+        "Une montre",
+        "Un stylo"
+      ],
+      "answer": 1,
+      "fun": "Il suffit d'y écrire un nom en ayant le visage en tête. La série est interdite dans plusieurs écoles chinoises où des élèves y inscrivaient le nom de leurs professeurs.",
+      "tags": [
+        "manga"
+      ]
+    },
+    {
+      "id": "gek-0034",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 7,
+      "q": "Quel gros animal gris et poilu dort dans la forêt, dans un célèbre film du studio Ghibli ?",
+      "choices": [
+        "Totoro",
+        "Ponyo",
+        "Calcifer",
+        "Jiji"
+      ],
+      "answer": 0,
+      "fun": "Il est devenu le logo du studio. On ne le voit finalement que quelques minutes dans tout le film.",
+      "tags": [
+        "animation",
+        "japon"
+      ]
+    },
+    {
+      "id": "gek-0035",
+      "type": "vraifaux",
+      "difficulty": 3,
+      "minAge": 8,
+      "q": "Un manga se lit de droite à gauche.",
+      "answer": true,
+      "fun": "Les éditeurs français ont d'abord retourné les pages, jusqu'à ce que les lecteurs réclament le sens d'origine.",
+      "tags": [
+        "manga"
+      ]
+    },
+    {
+      "id": "gek-0036",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 8,
+      "q": "Quelle technologie a fait le succès de Pokémon Go ?",
+      "choices": [
+        "La réalité augmentée",
+        "La 3D sans lunettes",
+        "La reconnaissance vocale",
+        "Le retour de force"
+      ],
+      "answer": 0,
+      "fun": "À l'été 2016, des attroupements se formaient dans les parcs à toute heure. Des musées et des cimetières ont dû demander leur retrait du jeu.",
+      "tags": [
+        "jeux vidéo",
+        "pokémon"
+      ]
+    },
+    {
+      "id": "gek-0037",
+      "type": "libre",
+      "difficulty": 3,
+      "minAge": 8,
+      "q": "De quelle planète Superman est-il originaire ?",
+      "answer": "Krypton",
+      "accept": [
+        "krypton",
+        "planete krypton"
+      ],
+      "fun": "Le seul truc capable de l'affaiblir est un morceau de sa planète natale. Les scénaristes l'ont inventé pour que l'acteur radio puisse prendre des vacances.",
+      "tags": [
+        "comics"
+      ]
+    },
+    {
+      "id": "gek-0038",
+      "type": "libre",
+      "difficulty": 3,
+      "minAge": 8,
+      "q": "Dans quelle ville Batman fait-il régner l'ordre ?",
+      "answer": "Gotham City",
+      "accept": [
+        "gotham",
+        "gotham city"
+      ],
+      "fun": "Gotham était un vieux surnom de New York. Le nom vient d'un village anglais dont les habitants faisaient semblant d'être fous pour éviter les impôts du roi.",
+      "tags": [
+        "comics"
+      ]
+    },
+    {
+      "id": "gek-0039",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 9,
+      "q": "Qui prononce la phrase « De grands pouvoirs impliquent de grandes responsabilités » ?",
+      "choices": [
+        "L'oncle Ben",
+        "Tante May",
+        "Nick Fury",
+        "Le professeur Xavier"
+      ],
+      "answer": 0,
+      "fun": "Elle n'apparaît d'abord qu'en légende, dans la dernière case du premier épisode de Spider-Man. Aucun personnage ne la dit vraiment.",
+      "tags": [
+        "comics"
+      ]
+    },
+    {
+      "id": "gek-0040",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 9,
+      "q": "Lequel de ces personnages n'appartient PAS à l'univers Marvel ?",
+      "choices": [
+        "Thor",
+        "Wonder Woman",
+        "Hulk",
+        "Daredevil"
+      ],
+      "answer": 1,
+      "fun": "Wonder Woman est DC, comme Batman et Superman. Elle a été créée par l'inventeur d'un ancêtre du détecteur de mensonges, d'où le lasso de vérité.",
+      "tags": [
+        "comics",
+        "piège"
+      ]
+    },
+    {
+      "id": "gek-0041",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Dans quel pays Tetris a-t-il été inventé ?",
+      "choices": [
+        "Au Japon",
+        "En URSS",
+        "Aux États-Unis",
+        "En Finlande"
+      ],
+      "answer": 1,
+      "fun": "Son créateur, employé d'un institut d'État, n'a touché aucun droit pendant dix ans : le jeu appartenait à l'Union soviétique.",
+      "tags": [
+        "jeux vidéo",
+        "histoire"
+      ]
+    },
+    {
+      "id": "gek-0042",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 9,
+      "q": "Dans Space Invaders, que doit-on repousser ?",
+      "choices": [
+        "Des zombies",
+        "Des extraterrestres",
+        "Des astéroïdes",
+        "Des robots"
+      ],
+      "answer": 1,
+      "fun": "Le jeu accélère au fil de la partie parce que la machine de 1978 calculait plus vite à mesure qu'il restait moins d'ennemis. Un bug devenu une règle.",
+      "tags": [
+        "jeux vidéo",
+        "rétro"
+      ]
+    },
+    {
+      "id": "gek-0043",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "De quelle série de jeux vidéo Lara Croft est-elle l'héroïne ?",
+      "choices": [
+        "Uncharted",
+        "Tomb Raider",
+        "Prince of Persia",
+        "Assassin's Creed"
+      ],
+      "answer": 1,
+      "fun": "Elle devait s'appeler Laura Cruz et être sud-américaine. L'éditeur a préféré une Anglaise, plus vendeuse à l'export.",
+      "tags": [
+        "jeux vidéo"
+      ]
+    },
+    {
+      "id": "gek-0044",
+      "type": "estimation",
+      "difficulty": 3,
+      "minAge": 9,
+      "q": "Combien de joueurs s'affrontent dans une partie classique de Fortnite ?",
+      "answer": 100,
+      "unit": "joueurs",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Le principe vient d'un roman puis d'un film japonais, Battle Royale, où des lycéens s'entretuent sur une île.",
+      "tags": [
+        "jeux vidéo"
+      ]
+    },
+    {
+      "id": "gek-0045",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 9,
+      "q": "Dans Les Sims, que se passe-t-il si on retire l'échelle d'une piscine occupée ?",
+      "choices": [
+        "Le Sim sort par le bord",
+        "Le Sim se noie",
+        "Rien",
+        "La piscine se vide"
+      ],
+      "answer": 1,
+      "fun": "Une cruauté devenue un classique d'Internet. Les développeurs ont fini par supprimer les échelles dans Les Sims 4.",
+      "tags": [
+        "jeux vidéo",
+        "internet"
+      ]
+    },
+    {
+      "id": "gek-0046",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "À quoi sert Twitch ?",
+      "choices": [
+        "Retoucher des photos",
+        "Diffuser des parties en direct",
+        "Stocker des fichiers",
+        "Composer de la musique"
+      ],
+      "answer": 1,
+      "fun": "La plateforme est née d'un site où un type se filmait 24 heures sur 24. Le jeu vidéo est arrivé après, et a tout emporté.",
+      "tags": [
+        "internet"
+      ]
+    },
+    {
+      "id": "gek-0047",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Quel objet est représenté par l'icône « Enregistrer » de la plupart des logiciels ?",
+      "choices": [
+        "Une disquette",
+        "Un tiroir",
+        "Une cassette",
+        "Un classeur"
+      ],
+      "answer": 0,
+      "fun": "Un support que plus personne n'a vu depuis vingt ans. Des enfants pensent aujourd'hui que c'est un dessin d'imprimante.",
+      "tags": [
+        "informatique",
+        "rétro"
+      ]
+    },
+    {
+      "id": "gek-0048",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Comment appelle-t-on la disposition de clavier utilisée dans les pays anglophones ?",
+      "choices": [
+        "AZERTY",
+        "QWERTY",
+        "QWERTZ",
+        "DVORAK"
+      ],
+      "answer": 1,
+      "fun": "L'ordre des touches vient des machines à écrire : il fallait éloigner les lettres fréquemment tapées ensemble pour que les tiges ne se coincent pas.",
+      "tags": [
+        "informatique"
+      ]
+    },
+    {
+      "id": "gek-0049",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 11,
+      "q": "Que craignait-on lors du « bug de l'an 2000 » ?",
+      "choices": [
+        "Une panne d'électricité mondiale",
+        "Que les ordinateurs lisent l'année 1900",
+        "Un virus géant",
+        "La fin d'Internet"
+      ],
+      "answer": 1,
+      "fun": "Les vieux programmes ne stockaient que deux chiffres pour l'année. Des milliards ont été dépensés à corriger, et il ne s'est presque rien passé.",
+      "tags": [
+        "informatique",
+        "histoire"
+      ]
+    },
+    {
+      "id": "gek-0050",
+      "type": "libre",
+      "difficulty": 3,
+      "minAge": 10,
+      "q": "Comment appelle-t-on le symbole « @ » en français ?",
+      "answer": "L'arobase",
+      "accept": [
+        "arobase",
+        "l arobase",
+        "arrobase"
+      ],
+      "fun": "Les Italiens l'appellent « chiocciola », l'escargot, et les Néerlandais « queue de singe ».",
+      "tags": [
+        "informatique",
+        "mots"
+      ]
+    },
+    {
+      "id": "gek-0051",
+      "type": "qcm",
+      "difficulty": 3,
+      "minAge": 9,
+      "q": "Quelle est la case la plus chère du Monopoly français ?",
+      "choices": [
+        "L'avenue des Champs-Élysées",
+        "La rue de la Paix",
+        "La rue de Rivoli",
+        "Le boulevard Saint-Michel"
+      ],
+      "answer": 1,
+      "fun": "Dans la version d'origine, américaine, c'est Boardwalk, une promenade en planches d'Atlantic City.",
+      "tags": [
+        "jeux de société"
+      ]
+    },
+    {
+      "id": "gek-0052",
+      "type": "estimation",
+      "difficulty": 3,
+      "minAge": 9,
+      "q": "Combien de cases compte un échiquier ?",
+      "answer": 64,
+      "unit": "cases",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Une vieille légende dit que l'inventeur du jeu demanda un grain de riz sur la première case, deux sur la deuxième, et ainsi de suite. Le royaume n'y a pas suffi.",
+      "tags": [
+        "jeux de société"
+      ]
+    },
+    {
+      "id": "gek-0053",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 10,
+      "q": "Lequel de ces personnages n'existe pas dans le Cluedo ?",
+      "choices": [
+        "Le colonel Moutarde",
+        "Mademoiselle Rose",
+        "Le docteur Olive",
+        "Le professeur Violet"
+      ],
+      "answer": 2,
+      "fun": "Le docteur Olive a bien existé… mais dans les versions récentes seulement. Le classique s'arrête à six suspects, tous nommés d'après une couleur.",
+      "tags": [
+        "jeux de société"
+      ]
+    },
+    {
+      "id": "gek-0054",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 10,
+      "q": "Quel était le métier d'Ernő Rubik, l'inventeur du Rubik's Cube ?",
+      "choices": [
+        "Architecte",
+        "Mathématicien",
+        "Horloger",
+        "Ingénieur du son"
+      ],
+      "answer": 0,
+      "fun": "Il l'a conçu comme un exercice pour ses étudiants, pour leur faire comprendre les volumes. Il a mis un mois à le résoudre lui-même.",
+      "tags": [
+        "jeux de société"
+      ]
+    },
+    {
+      "id": "gek-0055",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Quel dé est le plus emblématique de Donjons & Dragons ?",
+      "choices": [
+        "Le dé à 6 faces",
+        "Le dé à 12 faces",
+        "Le dé à 20 faces",
+        "Le dé à 100 faces"
+      ],
+      "answer": 2,
+      "fun": "Faire 20 est une réussite critique, faire 1 un échec critique. C'est de là que vient l'expression « faire un 20 naturel ».",
+      "tags": [
+        "jeux de rôle"
+      ]
+    },
+    {
+      "id": "gek-0056",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Que fabriquait Nintendo à sa création, en 1889 ?",
+      "choices": [
+        "Des cartes à jouer",
+        "Des jouets en bois",
+        "Des machines à coudre",
+        "Des aspirateurs"
+      ],
+      "answer": 0,
+      "fun": "Des cartes japonaises peintes à la main, les hanafuda. L'entreprise en vend toujours.",
+      "tags": [
+        "jeux vidéo",
+        "histoire"
+      ]
+    },
+    {
+      "id": "gek-0057",
+      "type": "libre",
+      "difficulty": 4,
+      "minAge": 10,
+      "q": "Qui a créé Mario et Zelda ?",
+      "answer": "Shigeru Miyamoto",
+      "accept": [
+        "miyamoto",
+        "shigeru miyamoto"
+      ],
+      "fun": "L'idée de Zelda lui est venue de ses souvenirs d'enfance : explorer les grottes et les forêts derrière chez lui, à Kyoto.",
+      "tags": [
+        "jeux vidéo"
+      ]
+    },
+    {
+      "id": "gek-0058",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Dans quel jeu Mario est-il apparu pour la première fois ?",
+      "choices": [
+        "Super Mario Bros.",
+        "Donkey Kong",
+        "Mario Bros.",
+        "Punch-Out"
+      ],
+      "answer": 1,
+      "fun": "Il s'y appelait Jumpman et devait sauver une demoiselle d'un gorille. Le nom Mario viendrait du propriétaire de l'entrepôt loué par Nintendo aux États-Unis.",
+      "tags": [
+        "jeux vidéo",
+        "piège"
+      ]
+    },
+    {
+      "id": "gek-0059",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 10,
+      "q": "Quel jeu était livré avec la Game Boy à sa sortie ?",
+      "choices": [
+        "Tetris",
+        "Super Mario Land",
+        "Pokémon Rouge",
+        "Zelda"
+      ],
+      "answer": 0,
+      "fun": "Un choix étrange pour une console de jeu d'action, et le coup de génie du lancement : Tetris a attiré des adultes qui n'avaient jamais joué.",
+      "tags": [
+        "jeux vidéo",
+        "rétro"
+      ]
+    },
+    {
+      "id": "gek-0060",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Quelle a été la dernière console de salon de Sega ?",
+      "choices": [
+        "La Saturn",
+        "La Dreamcast",
+        "La Mega Drive",
+        "La Game Gear"
+      ],
+      "answer": 1,
+      "fun": "Elle avait un modem intégré et jouait en ligne dès 1999. Trop tôt, trop cher : Sega a arrêté le matériel pour ne plus faire que des jeux.",
+      "tags": [
+        "jeux vidéo",
+        "rétro"
+      ]
+    },
+    {
+      "id": "gek-0061",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Quel jeu de 1972 a lancé l'industrie du jeu vidéo, chez Atari ?",
+      "choices": [
+        "Pong",
+        "Pac-Man",
+        "Breakout",
+        "Asteroids"
+      ],
+      "answer": 0,
+      "fun": "La première borne installée dans un bar est tombée en panne au bout de quelques jours : le bac à pièces débordait.",
+      "tags": [
+        "jeux vidéo",
+        "rétro"
+      ]
+    },
+    {
+      "id": "gek-0062",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Quelle entreprise a racheté Minecraft en 2014 ?",
+      "choices": [
+        "Google",
+        "Microsoft",
+        "Sony",
+        "Tencent"
+      ],
+      "answer": 1,
+      "fun": "Deux milliards et demi de dollars pour un jeu fait au départ par un seul développeur suédois.",
+      "tags": [
+        "jeux vidéo"
+      ]
+    },
+    {
+      "id": "gek-0063",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "De quel pays vient Ubisoft, l'éditeur d'Assassin's Creed et de Rayman ?",
+      "choices": [
+        "Du Canada",
+        "De France",
+        "De Suède",
+        "Des États-Unis"
+      ],
+      "answer": 1,
+      "fun": "Fondé par cinq frères et sœurs bretons dans une ferme, près de Carentoir. Le plus gros studio du groupe est aujourd'hui à Montréal.",
+      "tags": [
+        "jeux vidéo",
+        "france"
+      ]
+    },
+    {
+      "id": "gek-0064",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "The Witcher est d'abord…",
+      "choices": [
+        "Un jeu vidéo",
+        "Une série de romans polonais",
+        "Un film tchèque",
+        "Un jeu de rôle papier"
+      ],
+      "answer": 1,
+      "fun": "Andrzej Sapkowski a vendu ses droits pour une somme fixe, persuadé que le jeu ne marcherait pas. Il a passé des années à le regretter.",
+      "tags": [
+        "jeux vidéo",
+        "livres"
+      ]
+    },
+    {
+      "id": "gek-0065",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 13,
+      "q": "Quel studio développe la série Grand Theft Auto ?",
+      "choices": [
+        "Rockstar",
+        "Bethesda",
+        "Naughty Dog",
+        "Capcom"
+      ],
+      "answer": 0,
+      "fun": "La vue de dessus des premiers épisodes venait d'un bug d'affichage sur un jeu de course que l'équipe a trouvé plus amusant que le jeu prévu.",
+      "tags": [
+        "jeux vidéo"
+      ]
+    },
+    {
+      "id": "gek-0066",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Quel jeu de 1993 a popularisé le tir à la première personne ?",
+      "choices": [
+        "Quake",
+        "Doom",
+        "Half-Life",
+        "Duke Nukem"
+      ],
+      "answer": 1,
+      "fun": "Il s'est installé sur tellement d'ordinateurs d'entreprise que plusieurs sociétés ont dû l'interdire par note de service.",
+      "tags": [
+        "jeux vidéo",
+        "rétro"
+      ]
+    },
+    {
+      "id": "gek-0067",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "D'où vient le mot « bug » en informatique ?",
+      "choices": [
+        "D'un vrai insecte coincé dans une machine",
+        "D'un acronyme militaire",
+        "Du nom d'un ingénieur",
+        "D'un mot allemand"
+      ],
+      "answer": 0,
+      "fun": "Un papillon de nuit coincé dans un relais du calculateur Mark II, en 1947. L'équipe l'a scotché dans le carnet de bord avec la mention « premier vrai cas de bug trouvé ».",
+      "tags": [
+        "informatique",
+        "histoire"
+      ]
+    },
+    {
+      "id": "gek-0068",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Dans quel laboratoire le World Wide Web a-t-il été inventé ?",
+      "choices": [
+        "Au MIT",
+        "Au CERN",
+        "Chez IBM",
+        "À la NASA"
+      ],
+      "answer": 1,
+      "fun": "Tim Berners-Lee voulait juste que les physiciens du CERN partagent leurs documents. Son patron a annoté le projet : « vague, mais prometteur ».",
+      "tags": [
+        "informatique",
+        "histoire"
+      ]
+    },
+    {
+      "id": "gek-0069",
+      "type": "estimation",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "En quelle année Google a-t-il été fondé ?",
+      "answer": 1998,
+      "unit": "",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Le nom est une faute d'orthographe de « googol », le chiffre 1 suivi de cent zéros. Le premier serveur tenait dans une boîte en Lego.",
+      "tags": [
+        "informatique",
+        "histoire"
+      ]
+    },
+    {
+      "id": "gek-0070",
+      "type": "estimation",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "En quelle année Wikipédia a-t-elle été lancée ?",
+      "answer": 2001,
+      "unit": "",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Elle devait n'être qu'un brouillon ouvert alimentant une encyclopédie sérieuse rédigée par des experts. Le brouillon a mangé le projet principal.",
+      "tags": [
+        "informatique",
+        "histoire"
+      ]
+    },
+    {
+      "id": "gek-0071",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Quel animal sert de mascotte à Linux ?",
+      "choices": [
+        "Un manchot",
+        "Un renard",
+        "Un gnou",
+        "Un caméléon"
+      ],
+      "answer": 0,
+      "fun": "Il s'appelle Tux. Linus Torvalds a choisi un manchot parce qu'il s'était fait mordre par l'un d'eux dans un zoo australien.",
+      "tags": [
+        "informatique"
+      ]
+    },
+    {
+      "id": "gek-0072",
+      "type": "estimation",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "En quelle année le premier iPhone est-il sorti ?",
+      "answer": 2007,
+      "unit": "",
+      "tol": {
+        "exact": true
+      },
+      "fun": "Il ne savait ni copier-coller, ni filmer, ni installer d'applications : l'App Store n'est arrivé qu'un an plus tard.",
+      "tags": [
+        "informatique",
+        "histoire"
+      ]
+    },
+    {
+      "id": "gek-0073",
+      "type": "libre",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Qui est l'auteur du manga One Piece ?",
+      "answer": "Eiichiro Oda",
+      "accept": [
+        "oda",
+        "eiichiro oda",
+        "eichiro oda"
+      ],
+      "fun": "Il dessine depuis 1997 sans presque jamais s'arrêter, et affirmait au départ que la série durerait cinq ans.",
+      "tags": [
+        "manga"
+      ]
+    },
+    {
+      "id": "gek-0074",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Dans L'Attaque des Titans, pourquoi l'humanité vit-elle derrière d'immenses murs ?",
+      "choices": [
+        "À cause d'une guerre nucléaire",
+        "Pour se protéger de géants",
+        "À cause d'une épidémie",
+        "Pour retenir la mer"
+      ],
+      "answer": 1,
+      "fun": "Trois murs concentriques, et la noblesse installée au centre, la plus loin possible du danger. Le manga en a fait tout son propos.",
+      "tags": [
+        "manga"
+      ]
+    },
+    {
+      "id": "gek-0075",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Dans Demon Slayer, pourquoi Tanjiro protège-t-il sa sœur Nezuko ?",
+      "choices": [
+        "Elle est aveugle",
+        "Elle a été transformée en démon",
+        "Elle est amnésique",
+        "Elle est recherchée"
+      ],
+      "answer": 1,
+      "fun": "Elle garde un morceau de bambou dans la bouche pour ne pas mordre. Le manga a battu tous les records de vente au Japon en 2020.",
+      "tags": [
+        "manga"
+      ]
+    },
+    {
+      "id": "gek-0076",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Dans My Hero Academia, comment appelle-t-on les super-pouvoirs ?",
+      "choices": [
+        "Les alters",
+        "Les dons",
+        "Les sceaux",
+        "Les nen"
+      ],
+      "answer": 0,
+      "fun": "Ils sont devenus la norme : c'est le héros principal qui est anormal, puisqu'il naît sans rien.",
+      "tags": [
+        "manga"
+      ]
+    },
+    {
+      "id": "gek-0077",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "D'où vient le pseudonyme « Hergé », le créateur de Tintin ?",
+      "choices": [
+        "De sa ville natale",
+        "De ses initiales inversées",
+        "Du nom de son chien",
+        "D'un mot flamand"
+      ],
+      "answer": 1,
+      "fun": "Georges Remi : R.G., prononcé à la française. Simple, et personne ne l'a jamais appelé autrement.",
+      "tags": [
+        "bd"
+      ]
+    },
+    {
+      "id": "gek-0078",
+      "type": "libre",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Qui a créé Gaston Lagaffe ?",
+      "answer": "Franquin",
+      "accept": [
+        "franquin",
+        "andre franquin"
+      ],
+      "fun": "Gaston est apparu sans prévenir dans le journal Spirou, sans histoire ni explication, comme un employé qu'on n'avait jamais embauché.",
+      "tags": [
+        "bd"
+      ]
+    },
+    {
+      "id": "gek-0079",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 10,
+      "q": "De quelle race est Bill, le chien de Boule ?",
+      "choices": [
+        "Un beagle",
+        "Un cocker",
+        "Un labrador",
+        "Un épagneul breton"
+      ],
+      "answer": 1,
+      "fun": "Un cocker anglais roux, inspiré de celui du dessinateur Roba. La tortue Caroline, elle, est arrivée bien après.",
+      "tags": [
+        "bd"
+      ]
+    },
+    {
+      "id": "gek-0080",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 10,
+      "q": "Dans Kid Paddle, comment s'appellent les petits monstres verts du jeu vidéo ?",
+      "choices": [
+        "Les Blorks",
+        "Les Gloubs",
+        "Les Krogs",
+        "Les Zorks"
+      ],
+      "answer": 0,
+      "fun": "Midam a créé le personnage pour une page de magazine de jeux vidéo. Le remplissage est devenu la série principale.",
+      "tags": [
+        "bd"
+      ]
+    },
+    {
+      "id": "gek-0081",
+      "type": "libre",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Quel scénariste, disparu en 2018, a co-créé Spider-Man, Hulk et les X-Men ?",
+      "answer": "Stan Lee",
+      "accept": [
+        "stan lee",
+        "lee"
+      ],
+      "fun": "Il apparaît en petit rôle dans presque tous les films Marvel : livreur, vigile, passant. Un jeu de piste pour les spectateurs.",
+      "tags": [
+        "comics"
+      ]
+    },
+    {
+      "id": "gek-0082",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 12,
+      "q": "Quel super-héros est apparu le premier, en 1938 ?",
+      "choices": [
+        "Batman",
+        "Superman",
+        "Captain America",
+        "Flash"
+      ],
+      "answer": 1,
+      "fun": "Ses deux créateurs ont vendu leurs droits pour 130 dollars. Ils ont passé le reste de leur vie à se battre pour être crédités.",
+      "tags": [
+        "comics",
+        "histoire"
+      ]
+    },
+    {
+      "id": "gek-0083",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 10,
+      "q": "Quelle innovation a fait le succès de la Wii en 2006 ?",
+      "choices": [
+        "L'écran tactile",
+        "La détection de mouvement",
+        "La 3D",
+        "Le jeu en ligne gratuit"
+      ],
+      "answer": 1,
+      "fun": "Nintendo assumait une console moins puissante que ses concurrentes. Des maisons de retraite s'y sont mises pour le bowling.",
+      "tags": [
+        "jeux vidéo"
+      ]
+    },
+    {
+      "id": "gek-0084",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 11,
+      "q": "Qu'est-ce qu'un « speedrun » ?",
+      "choices": [
+        "Terminer un jeu le plus vite possible",
+        "Jouer sans mourir",
+        "Un mode multijoueur rapide",
+        "Un tournoi chronométré"
+      ],
+      "answer": 0,
+      "fun": "Les meilleurs exploitent les bugs pour traverser les murs. Certains records se jouent désormais à quelques images près.",
+      "tags": [
+        "jeux vidéo",
+        "internet"
+      ]
+    },
+    {
+      "id": "gek-0085",
+      "type": "qcm",
+      "difficulty": 4,
+      "minAge": 10,
+      "q": "Dans Zelda: Ocarina of Time, comment s'appelle la fée qui accompagne Link ?",
+      "choices": [
+        "Navi",
+        "Taya",
+        "Fay",
+        "Ciela"
+      ],
+      "answer": 0,
+      "fun": "Son « Hé ! Écoute ! » répété est resté comme l'une des choses les plus agaçantes de l'histoire du jeu vidéo.",
+      "tags": [
+        "jeux vidéo"
+      ]
+    },
+    {
+      "id": "gek-0086",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 11,
+      "q": "Par quelles touches commence le célèbre code Konami ?",
+      "choices": [
+        "Haut, haut, bas, bas",
+        "Gauche, droite, B, A",
+        "B, A, start",
+        "Haut, bas, gauche, droite"
+      ],
+      "answer": 0,
+      "fun": "Haut, haut, bas, bas, gauche, droite, gauche, droite, B, A. Son auteur l'avait créé pour lui seul, parce qu'il n'arrivait pas à finir son propre jeu pour le tester.",
+      "tags": [
+        "jeux vidéo",
+        "rétro"
+      ]
+    },
+    {
+      "id": "gek-0087",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 10,
+      "q": "Comment s'appelle le fantôme rouge de Pac-Man ?",
+      "choices": [
+        "Blinky",
+        "Pinky",
+        "Inky",
+        "Clyde"
+      ],
+      "answer": 0,
+      "fun": "Chacun a son caractère programmé : le rouge poursuit, le rose coupe la route, l'orange fait n'importe quoi.",
+      "tags": [
+        "jeux vidéo",
+        "rétro"
+      ]
+    },
+    {
+      "id": "gek-0088",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 12,
+      "q": "Quelle console est restée le plus gros échec commercial de Nintendo ?",
+      "choices": [
+        "Le Virtual Boy",
+        "La GameCube",
+        "La Wii U",
+        "Le Game Boy Micro"
+      ],
+      "answer": 0,
+      "fun": "Un casque rouge et noir sur pied, à poser sur une table, qui donnait la migraine en vingt minutes. Retiré de la vente en moins d'un an.",
+      "tags": [
+        "jeux vidéo",
+        "rétro"
+      ]
+    },
+    {
+      "id": "gek-0089",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 12,
+      "q": "D'où vient le nom du langage de programmation Python ?",
+      "choices": [
+        "Du serpent",
+        "Des Monty Python",
+        "D'un acronyme",
+        "D'une ville grecque"
+      ],
+      "answer": 1,
+      "fun": "Son créateur lisait les scripts des Monty Python en écrivant le langage. Les logos à serpents sont un contresens assumé.",
+      "tags": [
+        "informatique"
+      ]
+    },
+    {
+      "id": "gek-0090",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 12,
+      "q": "D'où vient le mot « spam » pour désigner les courriers indésirables ?",
+      "choices": [
+        "D'un sketch comique",
+        "D'un acronyme anglais",
+        "Du nom d'un pirate",
+        "D'un virus des années 1980"
+      ],
+      "answer": 0,
+      "fun": "Un sketch des Monty Python où un restaurant ne sert que du jambon en boîte, et où le mot revient sans arrêt jusqu'à couvrir la conversation.",
+      "tags": [
+        "informatique",
+        "mots"
+      ]
+    },
+    {
+      "id": "gek-0091",
+      "type": "estimation",
+      "difficulty": 5,
+      "minAge": 10,
+      "q": "Quel âge a le Grand Schtroumpf ?",
+      "answer": 542,
+      "unit": "ans",
+      "tol": {
+        "pct": 5
+      },
+      "fun": "Les autres Schtroumpfs n'en ont qu'une centaine. Il déteste qu'on lui rappelle l'écart.",
+      "tags": [
+        "bd"
+      ]
+    },
+    {
+      "id": "gek-0092",
+      "type": "libre",
+      "difficulty": 5,
+      "minAge": 12,
+      "q": "Qui a créé Blake et Mortimer ?",
+      "answer": "Edgar P. Jacobs",
+      "accept": [
+        "edgar p jacobs",
+        "jacobs",
+        "edgar jacobs",
+        "edgar pierre jacobs"
+      ],
+      "fun": "Ancien chanteur d'opéra, il a d'abord travaillé avec Hergé avant de partir faire sa propre série, bourrée de texte là où Tintin allait à l'essentiel.",
+      "tags": [
+        "bd"
+      ]
+    },
+    {
+      "id": "gek-0093",
+      "type": "libre",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Quel dessinateur italien a créé le marin Corto Maltese ?",
+      "answer": "Hugo Pratt",
+      "accept": [
+        "hugo pratt",
+        "pratt"
+      ],
+      "fun": "Il donnait à son héros sa propre ligne de main : celle de la chance, que Corto s'était taillée lui-même au rasoir faute d'en avoir une.",
+      "tags": [
+        "bd"
+      ]
+    },
+    {
+      "id": "gek-0094",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 12,
+      "q": "De quel peuple Thorgal, héros de bande dessinée, est-il élevé ?",
+      "choices": [
+        "Les Celtes",
+        "Les Vikings",
+        "Les Mongols",
+        "Les Saxons"
+      ],
+      "answer": 1,
+      "fun": "Recueilli enfant par un chef viking, alors qu'il vient d'ailleurs — beaucoup plus loin qu'on ne le croit au premier album.",
+      "tags": [
+        "bd"
+      ]
+    },
+    {
+      "id": "gek-0095",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Quel a été le premier message transmis sur ARPANET, l'ancêtre d'Internet ?",
+      "choices": [
+        "« HELLO »",
+        "« LO »",
+        "« TEST »",
+        "« 1234 »"
+      ],
+      "answer": 1,
+      "fun": "Ils tapaient « LOGIN ». Le système a planté après deux lettres. Le premier message d'Internet est donc un plantage.",
+      "tags": [
+        "informatique",
+        "histoire"
+      ]
+    },
+    {
+      "id": "gek-0096",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Pourquoi le raccourci Ctrl+Alt+Suppr a-t-il été conçu avec trois touches éloignées ?",
+      "choices": [
+        "Pour éviter de l'activer par accident",
+        "Par contrainte électrique",
+        "Pour occuper les deux mains",
+        "C'est un hasard"
+      ],
+      "answer": 0,
+      "fun": "Son inventeur, chez IBM, ne l'avait prévu que pour les développeurs. Il a plus tard résumé les choses ainsi : « je l'ai peut-être inventé, mais c'est Bill Gates qui l'a rendu célèbre ».",
+      "tags": [
+        "informatique"
+      ]
+    },
+    {
+      "id": "gek-0097",
+      "type": "vraifaux",
+      "difficulty": 5,
+      "minAge": 12,
+      "q": "Hulk était gris dans son tout premier numéro.",
+      "answer": true,
+      "fun": "L'imprimeur n'arrivait pas à sortir un gris régulier d'une case à l'autre. Le vert a été choisi par défaut, et il est resté.",
+      "tags": [
+        "comics"
+      ]
+    },
+    {
+      "id": "gek-0098",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Aux échecs, que désigne la prise « en passant » ?",
+      "choices": [
+        "Une prise du roi",
+        "Une prise de pion après son double pas",
+        "Un échange de tours",
+        "Une promotion anticipée"
+      ],
+      "answer": 1,
+      "fun": "La règle la plus contestée du jeu, y compris entre joueurs sérieux. Elle existe pour empêcher un pion d'échapper à un adversaire par son double pas initial.",
+      "tags": [
+        "jeux de société"
+      ]
+    },
+    {
+      "id": "gek-0099",
+      "type": "qcm",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "Combien d'intersections compte un plateau de go standard ?",
+      "choices": [
+        "64",
+        "100",
+        "361",
+        "400"
+      ],
+      "answer": 2,
+      "fun": "19 lignes sur 19. Il y a plus de parties de go possibles que d'atomes dans l'univers observable, ce qui explique qu'un ordinateur n'ait battu un champion qu'en 2016.",
+      "tags": [
+        "jeux de société"
+      ]
+    },
+    {
+      "id": "gek-0100",
+      "type": "vraifaux",
+      "difficulty": 5,
+      "minAge": 13,
+      "q": "« Wi-Fi » est l'abréviation de « Wireless Fidelity ».",
+      "answer": false,
+      "fun": "Le nom a été inventé par une agence de communication parce qu'il sonnait bien, sans rien vouloir dire. L'explication est venue après, pour rassurer tout le monde.",
+      "tags": [
+        "informatique",
+        "piège"
       ]
     }
   ]
